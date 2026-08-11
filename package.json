@@ -1,0 +1,8 @@
+{
+  "name": "vibewebstudio-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter web-passenger build",
+    "dev": "pnpm --filter web-passenger dev"
+  }
+}
