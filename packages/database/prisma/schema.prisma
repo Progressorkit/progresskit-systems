@@ -1,0 +1,269 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+/// Enums
+enum Role {
+  PASSENGER
+  DISPATCHER
+  DRIVER
+  ADMIN
+}
+
+enum OrderType {
+  PASSENGER
+  CARGO
+  HYBRID
+}
+
+enum TripStatus {
+  PLANNED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ListingStatus {
+  OPEN
+  CLOSED
+  EXPIRED
+}
+
+enum BidStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum EscrowStatus {
+  PENDING
+  HELD
+  RELEASED
+  FAILED
+}
+
+/// Models
+model User {
+  id               String     @id @default(uuid())
+  email            String     @unique
+  password         String
+  name             String?
+  phone            String?    @unique
+  role             Role       @default(PASSENGER)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  // Relations
+  driverProfile    Driver?    @relation(fields: [driverProfileId], references: [id])
+  driverProfileId  String?
+  organization     Organization? @relation(fields: [organizationId], references: [id])
+  organizationId   String?
+  orders           Order[]    @relation("UserOrders")
+}
+
+model Organization {
+  id         String   @id @default(uuid())
+  name       String
+  verified   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  carriers   Carrier[]
+}
+
+model Carrier {
+  id               String    @id @default(uuid())
+  name             String
+  organization     Organization? @relation(fields: [organizationId], references: [id])
+  organizationId   String?
+  verified         Boolean   @default(false)
+  ratingScore      Decimal?  @db.Decimal(3,2)
+  cancellationRate Decimal?  @db.Decimal(5,4)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  vehicles         Vehicle[]
+  drivers          Driver[]
+  trips            Trip[]
+  listings         MarketplaceListing[]
+}
+
+model Vehicle {
+  id             String   @id @default(uuid())
+  carrier        Carrier? @relation(fields: [carrierId], references: [id])
+  carrierId      String?
+  plateNumber    String?  @unique
+  model          String?
+  seats          Int?
+  // capacity specs
+  cargoWeightKg  Decimal? @db.Decimal(10,2)
+  cargoVolumeM3  Decimal? @db.Decimal(10,3)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  trips          Trip[]
+}
+
+model Driver {
+  id           String   @id @default(uuid())
+  user         User     @relation(fields: [userId], references: [id])
+  userId       String   @unique
+  carrier      Carrier? @relation(fields: [carrierId], references: [id])
+  carrierId    String?
+  licenseNo    String?
+  active       Boolean  @default(true)
+  vehicle      Vehicle? @relation(fields: [vehicleId], references: [id])
+  vehicleId    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  trips        Trip[]
+}
+
+/// Order is a domain entity separate from Trip and Route
+model Order {
+  id                 String     @id @default(uuid())
+  reference          String     @unique
+  type               OrderType
+
+  // Passenger-specific
+  passengerCount     Int?       @default(0)
+  luggageCount       Int?       @default(0)
+
+  // Cargo-specific
+  cargoWeightKg      Decimal?   @db.Decimal(10,2)
+  cargoVolumeM3      Decimal?   @db.Decimal(10,3)
+  packageCount       Int?       @default(0)
+  isPallet           Boolean?   @default(false)
+
+  // Pickup
+  pickupAddress      String
+  pickupLat          Decimal    @db.Decimal(9,6)
+  pickupLng          Decimal    @db.Decimal(9,6)
+  pickupWindowStart  DateTime?
+  pickupWindowEnd    DateTime?
+
+  // Dropoff
+  dropoffAddress     String
+  dropoffLat         Decimal    @db.Decimal(9,6)
+  dropoffLng         Decimal    @db.Decimal(9,6)
+  dropoffWindowStart DateTime?
+  dropoffWindowEnd   DateTime?
+
+  // Pricing & Escrow
+  priceAmount        Decimal    @db.Decimal(10,2)
+  currency           String     @default("EUR")
+  escrowStatus       EscrowStatus @default(PENDING)
+
+  // Relations
+  createdBy          User?      @relation("UserOrders", fields: [createdById], references: [id])
+  createdById        String?
+
+  assignedTrip       Trip?      @relation(fields: [tripId], references: [id])
+  tripId             String?
+
+  listedOnMarketplace Boolean    @default(false)
+
+  payments           Payment[]
+
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  @@index([pickupLat, pickupLng])
+  @@index([dropoffLat, dropoffLng])
+}
+
+model Trip {
+  id           String    @id @default(uuid())
+  carrier      Carrier   @relation(fields: [carrierId], references: [id])
+  carrierId    String
+  vehicle      Vehicle?  @relation(fields: [vehicleId], references: [id])
+  vehicleId    String?
+  driver       Driver?   @relation(fields: [driverId], references: [id])
+  driverId     String?
+
+  orders       Order[]   @relation()
+
+  status       TripStatus @default(PLANNED)
+  plannedStart DateTime?
+  plannedEnd   DateTime?
+  actualStart  DateTime?
+  actualEnd    DateTime?
+
+  totalPrice   Decimal?  @db.Decimal(10,2)
+
+  routeStops   RouteStop[]
+
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model RouteStop {
+  id              String   @id @default(uuid())
+  trip            Trip     @relation(fields: [tripId], references: [id])
+  tripId          String
+  sequenceOrder   Int
+  locationName    String?
+  lat             Decimal  @db.Decimal(9,6)
+  lng             Decimal  @db.Decimal(9,6)
+  estimatedArrival DateTime?
+
+  createdAt       DateTime @default(now())
+
+  @@index([tripId, sequenceOrder])
+  @@index([lat, lng])
+}
+
+/// Marketplace for trading unassigned or excess Orders
+model MarketplaceListing {
+  id              String   @id @default(uuid())
+  order           Order    @relation(fields: [orderId], references: [id])
+  orderId         String   @unique
+  sellerCarrier   Carrier? @relation(fields: [sellerCarrierId], references: [id])
+  sellerCarrierId String?
+
+  startingPrice   Decimal? @db.Decimal(10,2)
+  currency        String   @default("EUR")
+  status          ListingStatus @default(OPEN)
+  bestMatchScore  Decimal? @db.Decimal(5,4)
+
+  bids            Bid[]
+
+  createdAt       DateTime @default(now())
+  expiresAt       DateTime?
+}
+
+model Bid {
+  id               String   @id @default(uuid())
+  listing          MarketplaceListing @relation(fields: [listingId], references: [id])
+  listingId        String
+  bidderCarrier    Carrier? @relation(fields: [bidderCarrierId], references: [id])
+  bidderCarrierId  String?
+
+  amount           Decimal  @db.Decimal(10,2)
+  bestMatchScore   Decimal? @db.Decimal(5,4)
+  status           BidStatus @default(PENDING)
+
+  createdAt        DateTime @default(now())
+}
+
+model Payment {
+  id           String   @id @default(uuid())
+  order        Order    @relation(fields: [orderId], references: [id])
+  orderId      String
+  amount       Decimal  @db.Decimal(10,2)
+  currency     String   @default("EUR")
+  provider     String?
+  status       EscrowStatus @default(PENDING)
+  createdAt    DateTime @default(now())
+}
+
+/// Notes:
+/// - Lat/Lng stored as Decimal for predictable JSON/TS handling. For performant spatial queries
+///   use native PostGIS geometry columns and GIST indexes created in SQL migrations (see infrastructure/docker/initdb/postgis-init.sql).
+/// - Order is intentionally separate from Trip and Route: Orders can be created, listed, priced and then assigned to Trips by VRP or Dispatcher.
