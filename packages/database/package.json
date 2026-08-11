@@ -1,0 +1,24 @@
+{
+  "name": "@transport360/database",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.11.0",
+    "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "prisma": "^5.11.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "db:seed": "ts-node prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
