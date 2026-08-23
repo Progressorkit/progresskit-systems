@@ -761,13 +761,491 @@
       align-items: start;
     }
 
+    .featured-projects {
+      margin-top: 4px;
+    }
+
     .featured-projects:empty {
       display: none;
     }
 
-    .featured-project {
-      grid-column: 1 / -1;
-      margin-bottom: 22px;
+    .featured-intro .section-kicker {
+      color: var(--system-blue-soft);
+    }
+
+    .selected-work-intro {
+      margin-top: clamp(42px, 6vw, 72px);
+    }
+
+    .gotrans-featured {
+      position: relative;
+      padding: clamp(14px, 2.4vw, 26px);
+      border-color: rgba(69, 184, 255, 0.4);
+      background:
+        linear-gradient(145deg, rgba(69, 184, 255, 0.08), transparent 34%),
+        linear-gradient(325deg, rgba(201, 135, 82, 0.05), transparent 32%),
+        var(--panel);
+      box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.46),
+        inset 0 1px 0 rgba(197, 235, 255, 0.08);
+    }
+
+    .gotrans-featured::before {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: min(42%, 430px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--system-blue), transparent);
+      content: "";
+    }
+
+    .gotrans-masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+      gap: 24px;
+      align-items: end;
+      padding: clamp(6px, 1vw, 12px) clamp(4px, 1vw, 10px) clamp(24px, 3vw, 34px);
+    }
+
+    .gotrans-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1.56fr) minmax(260px, 0.74fr);
+      gap: 10px;
+    }
+
+    .gotrans-shot {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(69, 184, 255, 0.28);
+      border-radius: 8px;
+      background: #020407;
+    }
+
+    .gotrans-shot--primary {
+      grid-row: span 2;
+    }
+
+    .gotrans-shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #020407;
+    }
+
+    .gotrans-shot figcaption {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid rgba(146, 216, 255, 0.2);
+      border-radius: 6px;
+      padding: 7px 9px;
+      background: rgba(3, 7, 11, 0.84);
+      color: var(--text-muted);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      line-height: 1.35;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .gotrans-shot figcaption span:last-child {
+      color: var(--system-blue-soft);
+      text-align: right;
+    }
+
+    .gotrans-intro {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(24px, 4vw, 54px);
+      align-items: start;
+      margin-top: clamp(28px, 4vw, 48px);
+      padding: 0 clamp(4px, 1vw, 10px);
+    }
+
+    .gotrans-logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .gotrans-logo {
+      display: block;
+      width: clamp(66px, 9vw, 104px);
+      height: auto;
+      filter: drop-shadow(0 14px 24px rgba(0, 96, 170, 0.24));
+    }
+
+    .gotrans-eyebrow {
+      color: var(--system-blue-soft);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+    }
+
+    .gotrans-featured .gotrans-title {
+      margin-top: 3px;
+      font-size: clamp(38px, 5vw, 58px);
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+    }
+
+    .gotrans-headline {
+      margin-top: 0;
+      color: var(--system-blue-soft);
+      font-size: clamp(18px, 2vw, 23px);
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .gotrans-masthead-note {
+      min-width: 0;
+      border-left: 1px solid rgba(69, 184, 255, 0.26);
+      padding-left: clamp(18px, 3vw, 30px);
+    }
+
+    .gotrans-status-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px 14px;
+      margin-top: 20px;
+    }
+
+    .gotrans-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(69, 184, 255, 0.3);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--system-blue-soft);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .gotrans-status::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--system-blue);
+      box-shadow: 0 0 12px rgba(69, 184, 255, 0.7);
+      content: "";
+    }
+
+    .gotrans-overview {
+      min-width: 0;
+    }
+
+    .gotrans-summary {
+      display: grid;
+      gap: 11px;
+    }
+
+    .gotrans-featured .gotrans-summary p {
+      margin-top: 0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .gotrans-delivery {
+      display: grid;
+      gap: 8px;
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .gotrans-intro > .gotrans-delivery {
+      margin-top: 0;
+      border-top: 0;
+      border-left: 1px solid var(--line);
+      padding-top: 0;
+      padding-left: clamp(18px, 3vw, 30px);
+    }
+
+    .gotrans-delivery p {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 0;
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .gotrans-delivery strong {
+      color: var(--copper);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+    }
+
+    .gotrans-overview .project-tags {
+      margin-top: 22px;
+    }
+
+    .gotrans-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: clamp(22px, 3vw, 34px);
+    }
+
+    .gotrans-pillar,
+    .gotrans-case-block,
+    .gotrans-architecture,
+    .gotrans-validation,
+    .gotrans-finding {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(5, 9, 13, 0.58);
+    }
+
+    .gotrans-pillar {
+      min-height: 190px;
+      padding: clamp(18px, 2vw, 24px);
+    }
+
+    .gotrans-pillar-index {
+      color: var(--copper);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    .gotrans-pillar h4 {
+      margin-top: 28px;
+      color: var(--text);
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+
+    .gotrans-featured .gotrans-pillar p {
+      margin-top: 10px;
+      font-size: 12.5px;
+      line-height: 1.65;
+    }
+
+    .gotrans-case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .gotrans-case-block {
+      padding: clamp(18px, 2vw, 24px);
+    }
+
+    .gotrans-case-label {
+      color: var(--copper);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .gotrans-case-block h4 {
+      margin-top: 12px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .gotrans-featured .gotrans-case-block p {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .gotrans-architecture {
+      margin-top: 12px;
+      padding: clamp(20px, 3vw, 32px);
+      scroll-margin-top: 20px;
+    }
+
+    .gotrans-section-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 10px 24px;
+    }
+
+    .gotrans-section-heading h4 {
+      margin-top: 8px;
+      color: var(--text);
+      font-size: clamp(22px, 3vw, 31px);
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    .gotrans-section-heading p {
+      max-width: 560px;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .gotrans-architecture-map {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .gotrans-architecture-layer {
+      min-width: 0;
+      border: 1px solid rgba(146, 181, 211, 0.17);
+      border-radius: 7px;
+      padding: 16px;
+      background: rgba(3, 7, 10, 0.62);
+    }
+
+    .gotrans-architecture-layer strong,
+    .gotrans-node strong {
+      display: block;
+      color: var(--system-blue-soft);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      letter-spacing: 0.07em;
+      line-height: 1.45;
+    }
+
+    .gotrans-nodes {
+      display: grid;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .gotrans-node {
+      border-left: 2px solid rgba(69, 184, 255, 0.52);
+      padding: 8px 9px;
+      background: rgba(69, 184, 255, 0.035);
+    }
+
+    .gotrans-node.is-development {
+      border-left-color: var(--copper);
+    }
+
+    .gotrans-node.is-planned {
+      border-left-style: dashed;
+      border-left-color: var(--text-dim);
+    }
+
+    .gotrans-node span {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-dim);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 8px;
+      letter-spacing: 0.06em;
+      line-height: 1.45;
+    }
+
+    .gotrans-validation {
+      margin-top: 12px;
+      padding: clamp(22px, 3.5vw, 38px);
+      border-color: rgba(69, 184, 255, 0.32);
+      background:
+        linear-gradient(135deg, rgba(69, 184, 255, 0.075), transparent 38%),
+        rgba(5, 9, 13, 0.74);
+    }
+
+    .gotrans-validation-lead {
+      max-width: 760px;
+      margin-top: 14px;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .gotrans-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .gotrans-metric {
+      min-width: 0;
+      border: 1px solid rgba(146, 181, 211, 0.18);
+      border-radius: 7px;
+      padding: 15px;
+      background: rgba(2, 6, 9, 0.68);
+    }
+
+    .gotrans-metric-label,
+    .gotrans-metric-status {
+      color: var(--text-dim);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    .gotrans-metric-value {
+      display: block;
+      margin-top: 11px;
+      color: var(--system-blue-soft);
+      font-size: clamp(23px, 3vw, 34px);
+      font-weight: 760;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .gotrans-metric p {
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .gotrans-metric-status {
+      display: block;
+      margin-top: 13px;
+      color: var(--copper);
+    }
+
+    .gotrans-finding {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+      gap: clamp(20px, 4vw, 48px);
+      align-items: center;
+      margin-top: 12px;
+      padding: clamp(20px, 3vw, 30px);
+      border-color: rgba(201, 135, 82, 0.32);
+    }
+
+    .gotrans-finding h4 {
+      margin-top: 8px;
+      color: var(--text);
+      font-size: clamp(20px, 2.8vw, 28px);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    .gotrans-finding p {
+      margin-top: 0;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .project-card {
@@ -809,6 +1287,94 @@
 
     .project-gallery.portrait-gallery img {
       object-fit: contain;
+    }
+
+    .glikemia-project {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.35fr);
+      gap: clamp(18px, 3vw, 36px);
+      padding: clamp(14px, 2vw, 22px);
+    }
+
+    .glikemia-project .project-gallery {
+      height: clamp(500px, 56vw, 680px);
+      align-self: start;
+    }
+
+    .glikemia-project .project-copy {
+      min-width: 0;
+      padding: clamp(12px, 2vw, 22px) 0;
+    }
+
+    .glikemia-project h3 {
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .glikemia-project .project-headline {
+      color: var(--system-blue-soft);
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.45;
+    }
+
+    .project-description {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .project-description p {
+      margin-top: 0;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+      list-style: none;
+    }
+
+    .project-tags li {
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(69, 184, 255, 0.06);
+      color: var(--system-blue-soft);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .project-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+      list-style: none;
+    }
+
+    .project-highlights li {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: rgba(6, 10, 14, 0.46);
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .project-highlights strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--copper);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .stat-box {
@@ -1010,6 +1576,64 @@
       .process-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .gotrans-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gotrans-shot--primary {
+        grid-row: auto;
+        grid-column: 1 / -1;
+      }
+
+      .gotrans-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .gotrans-masthead {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .gotrans-masthead-note {
+        border-top: 1px solid rgba(69, 184, 255, 0.26);
+        border-left: 0;
+        padding-top: 18px;
+        padding-left: 0;
+      }
+
+      .gotrans-intro > .gotrans-delivery {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+        padding-top: 18px;
+        padding-left: 0;
+      }
+
+      .gotrans-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .gotrans-pillars,
+      .gotrans-case-grid,
+      .gotrans-architecture-map,
+      .gotrans-finding {
+        grid-template-columns: 1fr;
+      }
+
+      .gotrans-pillar {
+        min-height: 0;
+      }
+
+      .glikemia-project {
+        grid-template-columns: 1fr;
+      }
+
+      .glikemia-project .project-gallery {
+        min-height: 480px;
+        height: min(68vh, 620px);
+      }
     }
 
     @media (max-width: 620px) {
@@ -1121,12 +1745,39 @@
         padding: 10px;
       }
 
+      .gotrans-featured {
+        padding: 10px;
+      }
+
+      .gotrans-gallery,
+      .gotrans-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .gotrans-delivery p {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .gotrans-shot--primary {
+        grid-column: auto;
+      }
+
       .project-gallery {
         height: 210px;
       }
 
       .project-gallery.portrait-gallery {
         height: 360px;
+      }
+
+      .glikemia-project .project-gallery.portrait-gallery {
+        min-height: 420px;
+        height: min(68vh, 540px);
+      }
+
+      .project-highlights {
+        grid-template-columns: 1fr;
       }
 
       .contact-card {
@@ -1344,15 +1995,232 @@
       `,
 
       DOWODY: `
-        <section class="module-section work-section stamped-section stamped-section--work" aria-labelledby="work-title">
-          <div class="section-intro">
+        <section class="module-section work-section stamped-section stamped-section--work" aria-labelledby="featured-work-title">
+          <div class="section-intro featured-intro">
             <div>
-              <div class="section-kicker">CASE STUDIES</div>
-              <h2 id="work-title">SELECTED WORK</h2>
+              <div class="section-kicker">FEATURED / FLAGSHIP CASE STUDY</div>
+              <h2 id="featured-work-title">FEATURED SYSTEM</h2>
             </div>
           </div>
           <span class="system-stamp system-stamp--work" aria-hidden="true"></span>
-          <div class="featured-projects"></div>
+          <div class="featured-projects">
+            <article class="tile gotrans-featured" aria-labelledby="gotrans-title">
+              <header class="gotrans-masthead">
+                <div class="gotrans-logo-lockup">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-logo.png"
+                    class="gotrans-logo"
+                    width="1254"
+                    height="1254"
+                    alt="Logo platformy GoTrans360"
+                    loading="eager"
+                    decoding="async"
+                  >
+                  <div>
+                    <div class="gotrans-eyebrow">FEATURED SYSTEM // EUROPEAN TRANSPORT PLATFORM</div>
+                    <h3 id="gotrans-title" class="gotrans-title">GoTrans360</h3>
+                  </div>
+                </div>
+                <div class="gotrans-masthead-note">
+                  <div class="gotrans-headline">To nie jest landing page. To wielomodułowy system.</div>
+                  <div class="gotrans-status-row">
+                    <span class="gotrans-status">PRODUCT DEVELOPMENT // ACTIVE</span>
+                  </div>
+                </div>
+              </header>
+
+              <div class="gotrans-gallery" aria-label="Finalne screenshoty działającego systemu GoTrans360">
+                <figure class="gotrans-shot gotrans-shot--primary">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-platform-capabilities.png"
+                    width="1920"
+                    height="1080"
+                    alt="Ekran GoTrans360 pokazujący moduły platformy i etapy procesu transportowego"
+                    loading="eager"
+                    decoding="async"
+                  >
+                  <figcaption><span>PRODUCT SCOPE</span><span>DEVELOPMENT SURFACE</span></figcaption>
+                </figure>
+                <figure class="gotrans-shot">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-carrier-onboarding.png"
+                    width="1920"
+                    height="1080"
+                    alt="Formularz rejestracji firmy transportowej w GoTrans360"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <figcaption><span>CARRIER ONBOARDING</span><span>DEVELOPMENT FLOW</span></figcaption>
+                </figure>
+                <figure class="gotrans-shot">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-passenger-portal.png"
+                    width="1920"
+                    height="1080"
+                    alt="Portal pasażera GoTrans360 z wyszukiwarką połączeń"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <figcaption><span>PASSENGER PORTAL</span><span>IMPLEMENTED UI</span></figcaption>
+                </figure>
+              </div>
+
+              <div class="gotrans-intro">
+                <div class="gotrans-overview">
+                  <div class="gotrans-summary">
+                    <p>GoTrans360 to rozwijana europejska platforma transportowa, która łączy pasażerów, przesyłki / cargo i operacje dyspozytorskie w jednym ekosystemie.</p>
+                    <p>Architektura rozdziela interfejsy według ról, ale współdzieli dane i logikę transportową. Monorepo wielu aplikacji jest przygotowane do rozszerzania poza relacje PL ↔ DE na kolejne rynki europejskie.</p>
+                  </div>
+
+                  <ul class="project-tags" aria-label="Potwierdzony stack GoTrans360">
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>Next.js</li>
+                    <li>pnpm</li>
+                    <li>Turborepo</li>
+                    <li>Prisma</li>
+                    <li>PostgreSQL</li>
+                    <li>PostGIS</li>
+                    <li>Leaflet</li>
+                  </ul>
+                </div>
+
+                <div class="gotrans-delivery" aria-label="Stan realizacji modułów GoTrans360">
+                  <p><strong>IMPLEMENTED</strong><span>Auth i panel dyspozytora, UI portalu pasażera, API tras i floty oraz warstwa Prisma/PostgreSQL/PostGIS.</span></p>
+                  <p><strong>DEVELOPMENT / PROTOTYPE</strong><span>Rezerwacja end-to-end, pełny workflow dyspozytorski, Smart Match / VRP i współdzielone typy domenowe.</span></p>
+                  <p><strong>PLANNED</strong><span>Kompletny workflow cargo/B2B i aplikacja kierowcy.</span></p>
+                </div>
+              </div>
+
+              <div class="gotrans-case-grid">
+                <section class="gotrans-case-block">
+                  <div class="gotrans-case-label">PROBLEM</div>
+                  <h4>Rozproszone operacje transportowe</h4>
+                  <p>W relacjach PL ↔ DE pasażerowie, cargo i dyspozycja funkcjonują jako osobne procesy: telefon, komunikatory, arkusze i ręczne ustalanie tras rozdzielają operacyjne dane.</p>
+                </section>
+                <section class="gotrans-case-block">
+                  <div class="gotrans-case-label">SOLUTION</div>
+                  <h4>Jedna architektura, interfejsy zgodne z rolą</h4>
+                  <p>Wspólna warstwa danych i logiki integruje te procesy, zachowując osobne powierzchnie produktu i przygotowując system do rozszerzania na kolejne rynki europejskie.</p>
+                </section>
+              </div>
+
+              <div class="gotrans-pillars" aria-label="Trzy filary produktu GoTrans360">
+                <section class="gotrans-pillar">
+                  <span class="gotrans-pillar-index">01 // CORE PILLAR</span>
+                  <h4>PASSENGERS</h4>
+                  <p>Warstwa UI portalu i wyszukiwarki jest zaimplementowana. Pełna rezerwacja i obsługa przewozu end-to-end pozostają w rozwoju.</p>
+                </section>
+                <section class="gotrans-pillar">
+                  <span class="gotrans-pillar-index">02 // CORE PILLAR</span>
+                  <h4>CARGO</h4>
+                  <p>Przesyłki i ładunki B2C/B2B są częścią domeny produktu. Dedykowany, kompletny workflow cargo/B2B jest planowany.</p>
+                </section>
+                <section class="gotrans-pillar">
+                  <span class="gotrans-pillar-index">03 // CORE PILLAR</span>
+                  <h4>DISPATCH</h4>
+                  <p>Auth, panel operacyjny oraz API tras i floty są zaimplementowane. Pełny workflow i Smart Match / VRP są rozwijane jako prototyp.</p>
+                </section>
+              </div>
+
+              <section id="gotrans-architecture" class="gotrans-architecture" aria-labelledby="gotrans-architecture-title">
+                <div class="gotrans-section-heading">
+                  <div>
+                    <div class="gotrans-case-label">SYSTEM ARCHITECTURE</div>
+                    <h4 id="gotrans-architecture-title">Monorepo. Wiele aplikacji. Wspólne fundamenty.</h4>
+                  </div>
+                  <p>Czytelny przekrój modułów i ich dojrzałości — bez sugerowania, że planowane przepływy są już ukończonym produktem.</p>
+                </div>
+
+                <div class="gotrans-architecture-map">
+                  <div class="gotrans-architecture-layer">
+                    <strong>ROLE-BASED SURFACES</strong>
+                    <div class="gotrans-nodes">
+                      <div class="gotrans-node"><strong>web-passenger</strong><span>IMPLEMENTED UI // FLOW IN DEVELOPMENT</span></div>
+                      <div class="gotrans-node"><strong>web-dispatcher</strong><span>AUTH + DASHBOARD IMPLEMENTED</span></div>
+                      <div class="gotrans-node is-planned"><strong>app-driver</strong><span>PLANNED MODULE</span></div>
+                    </div>
+                  </div>
+
+                  <div class="gotrans-architecture-layer">
+                    <strong>SERVICES + LOGIC</strong>
+                    <div class="gotrans-nodes">
+                      <div class="gotrans-node"><strong>api-core</strong><span>TRIPS + FLEET API IMPLEMENTED</span></div>
+                      <div class="gotrans-node is-development"><strong>vrp-engine</strong><span>SMART MATCH // DEVELOPMENT PROTOTYPE</span></div>
+                      <div class="gotrans-node is-planned"><strong>cargo / B2B</strong><span>PLANNED WORKFLOW</span></div>
+                    </div>
+                  </div>
+
+                  <div class="gotrans-architecture-layer">
+                    <strong>DATA + SHARED PACKAGES</strong>
+                    <div class="gotrans-nodes">
+                      <div class="gotrans-node"><strong>database</strong><span>PRISMA // POSTGRESQL // POSTGIS</span></div>
+                      <div class="gotrans-node is-development"><strong>ui-shared</strong><span>SHARED FOUNDATION // DEVELOPMENT</span></div>
+                      <div class="gotrans-node is-development"><strong>domain types</strong><span>CONSOLIDATION IN DEVELOPMENT</span></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="gotrans-validation" aria-labelledby="gotrans-validation-title">
+                <div class="gotrans-section-heading">
+                  <div>
+                    <div class="gotrans-case-label">ENGINEERING VALIDATION</div>
+                    <h4 id="gotrans-validation-title">TESTED, NOT ASSUMED.</h4>
+                  </div>
+                </div>
+                <p class="gotrans-validation-lead">Portfolio metrics are backed by reproducible tests against the working development system. Claims that could not be technically confirmed were intentionally excluded.</p>
+
+                <div class="gotrans-metrics" aria-label="Zweryfikowane wyniki testów GoTrans360">
+                  <article class="gotrans-metric">
+                    <span class="gotrans-metric-label">TESTED SCALE</span>
+                    <span class="gotrans-metric-value">12,567</span>
+                    <p>Validated against a dataset of 12,567 routes in a controlled test environment.</p>
+                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                  </article>
+                  <article class="gotrans-metric">
+                    <span class="gotrans-metric-label">MEASURED // /TRIPS</span>
+                    <span class="gotrans-metric-value">5.35 s</span>
+                    <p>Median full-dataset response. The endpoint is currently unpaginated; the test completed without errors.</p>
+                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                  </article>
+                  <article class="gotrans-metric">
+                    <span class="gotrans-metric-label">MEASURED PAYLOAD</span>
+                    <span class="gotrans-metric-value">13.41 MB</span>
+                    <p>Full response from the non-paginated /trips endpoint — a concrete optimization target.</p>
+                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                  </article>
+                  <article class="gotrans-metric">
+                    <span class="gotrans-metric-label">VALIDATED // SMART MATCH</span>
+                    <span class="gotrans-metric-value">2</span>
+                    <p>Two proposals reproduced from the screen's exact demo scenario in API and logic runs.</p>
+                    <span class="gotrans-metric-status">VERIFIED</span>
+                  </article>
+                  <article class="gotrans-metric">
+                    <span class="gotrans-metric-label">MEASURED // SMART MATCH</span>
+                    <span class="gotrans-metric-value">15.21 ms</span>
+                    <p>Median API response across three runs, with zero API and logic errors.</p>
+                    <span class="gotrans-metric-status">VERIFIED</span>
+                  </article>
+                </div>
+              </section>
+
+              <aside class="gotrans-finding" aria-labelledby="gotrans-finding-title">
+                <div>
+                  <div class="gotrans-case-label">ENGINEERING FINDING</div>
+                  <h4 id="gotrans-finding-title">Pagination is the next measurable step.</h4>
+                </div>
+                <p>The test confirmed the dataset scale while exposing pagination as a concrete optimization target. To właśnie wartość realnej walidacji: ograniczenie zostało zmierzone i nazwane, zamiast przykryte marketingową deklaracją.</p>
+              </aside>
+            </article>
+          </div>
+
+          <div class="section-intro selected-work-intro">
+            <div>
+              <div class="section-kicker">PORTFOLIO</div>
+              <h2 id="selected-work-title">SELECTED WORK</h2>
+            </div>
+          </div>
           <div class="tile-grid selected-work-grid">
             <article class="tile project-card">
               <div class="project-gallery" aria-label="Galeria projektu Obserwator">
@@ -1389,19 +2257,49 @@
               </div>
             </article>
 
-            <article class="tile project-card">
+            <article class="tile project-card glikemia-project">
               <div class="project-gallery portrait-gallery" aria-label="Galeria aplikacji Glikemia Premium">
-                <img src="apka1.jpg" class="active" alt="Ekran startowy aplikacji Glikemia Premium" loading="eager">
-                <img src="apka2.jpg" alt="Formularz pomiaru w aplikacji Glikemia Premium" loading="lazy" decoding="async">
-                <img src="apka3.jpg" alt="Raport glikemii w aplikacji Glikemia Premium" loading="lazy" decoding="async">
-                <img src="apka4.jpg" alt="Historia pomiarów w aplikacji Glikemia Premium" loading="lazy" decoding="async">
-                <img src="apka6.jpg" alt="Potwierdzenie raportu PDF w aplikacji Glikemia Premium" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-measurement.jpg" class="active" alt="Formularz zapisu glikemii, WW, WBT, kontekstu i notatki w aplikacji Glikemia Premium" loading="eager">
+                <img src="assets/projects/glikemia/glikemia-history.jpg" alt="Historia pomiarów Glikemia Premium z filtrami, wykresem i usuwaniem wpisów" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-language.jpg" alt="Wybór języka interfejsu aplikacji Glikemia Premium" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-report-summary.jpg" alt="Podsumowanie i pierwsze strony wielostronicowego raportu PDF dla 10 000 pomiarów" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-report-pages.jpg" alt="Dalsze strony raportu PDF z historią pomiarów Glikemia Premium" loading="lazy" decoding="async">
               </div>
               <div class="project-copy">
                 <div class="tile-header">APLIKACJA: GLIKEMIA PREMIUM</div>
-                <h3>MONITOROWANIE ZDROWIA</h3>
-                <p>Kompleksowe rozwiązanie mobile dla diabetyków z analityką danych.</p>
-                <div class="stat-box">STATUS: <span class="stat-num">GOTOWE DO SKALOWANIA</span></div>
+                <h3>Glikemia Premium</h3>
+                <p class="project-headline">Prywatny, lokalny dziennik glikemii zaprojektowany do codziennego, wieloletniego użytkowania.</p>
+
+                <div class="project-description">
+                  <p>Glikemia Premium to aplikacja .NET MAUI do lokalnego prowadzenia historii pomiarów glikemii. Projekt powstał na bazie realnej potrzeby użytkownika, który wcześniej prowadził pomiary ręcznie w papierowym zeszycie. Celem było stworzenie prostego narzędzia, które zachowuje szybkość tradycyjnego dziennika, ale dodaje historię, filtrowanie, wykresy i raportowanie.</p>
+                  <p>Aplikacja działa lokalnie i nie wymaga konta użytkownika, własnej chmury ani reklam. Dane pomiarowe przechowywane są w SQLite na urządzeniu użytkownika.</p>
+                  <p>Interfejs umożliwia zapis glikemii, WW, WBT, kontekstu przed lub po posiłku oraz notatek. Historia korzysta z paginacji, asynchronicznych zapytań SQLite i wirtualizowanego CollectionView, dzięki czemu pozostaje płynna również przy dużej liczbie wpisów.</p>
+                  <p>Projekt zawiera filtrowanie historii, wykresy, usuwanie błędnych wpisów z potwierdzeniem, generowanie wielostronicowych raportów PDF oraz wielojęzyczny interfejs.</p>
+                </div>
+
+                <ul class="project-tags" aria-label="Technologie i cechy projektu">
+                  <li>.NET MAUI</li>
+                  <li>C#</li>
+                  <li>XAML</li>
+                  <li>SQLite</li>
+                  <li>Android</li>
+                  <li>Local-first</li>
+                  <li>Offline</li>
+                  <li>Privacy-first</li>
+                  <li>PDF reports</li>
+                  <li>Data visualization</li>
+                  <li>Multilingual UI</li>
+                  <li>PL / EN / DE / ES / IT / UK / RU</li>
+                </ul>
+
+                <ul class="project-highlights" aria-label="Najważniejsze decyzje i rezultaty techniczne">
+                  <li><strong>Local-first</strong>Brak własnej chmury i brak obowiązkowego konta użytkownika.</li>
+                  <li><strong>Historia na lata danych</strong>Paginacja, asynchroniczne zapytania SQLite i wirtualizowany CollectionView.</li>
+                  <li><strong>Raportowanie</strong>Wielostronicowy raport PDF z historią i podsumowaniem danych.</li>
+                  <li><strong>Wielojęzyczność</strong>Interfejs przygotowany dla wielu rynków i siedmiu języków.</li>
+                </ul>
+
+                <div class="stat-box">TEST NA FIZYCZNYM ANDROIDZIE: <span class="stat-num">10 000 WPISÓW // BRAK CRASHA // BRAK ANR</span> // LISTA NIE RENDERUJE 10 000 ELEMENTÓW JEDNOCZEŚNIE</div>
               </div>
             </article>
           </div>
