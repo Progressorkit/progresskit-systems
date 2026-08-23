@@ -8,7 +8,7 @@
     content="ProgressorKit Systems — software engineering, product systems, integracje i automatyzacja procesów."
   />
   <title>ProgressorKit Systems | Software Engineering</title>
-  <link rel="icon" href="assets/brand/progressorkit-symbol.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/brand/progressorkit-primary.png" type="image/png" />
 
   <style>
     * {
@@ -36,8 +36,9 @@
       --text-dim: #6f7c87;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
       --radius: 10px;
-      --brand-symbol: url("assets/brand/progressorkit-symbol.svg");
-      --brand-relief-mask: var(--brand-symbol);
+      --brand-primary: url("assets/brand/progressorkit-primary.png");
+      --brand-stamp: url("assets/brand/progressorkit-stamp.png");
+      --brand-relief-mask: var(--brand-primary);
     }
 
     html,
@@ -130,11 +131,7 @@
       width: 38px;
       flex: 0 0 38px;
       aspect-ratio: 1;
-      background: linear-gradient(145deg, #d8e3e9 0%, #7e9caf 48%, var(--system-blue) 100%);
-      filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.08));
-      -webkit-mask: var(--brand-symbol) center / contain no-repeat;
-      mask: var(--brand-symbol) center / contain no-repeat;
-      opacity: 0.92;
+      background: var(--brand-primary) center / contain no-repeat;
     }
 
     .brand-lockup h1 {
@@ -228,6 +225,7 @@
     }
 
     .module-section {
+      position: relative;
       animation: moduleEnter 420ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
     }
 
@@ -304,13 +302,9 @@
       transform: translateY(-50%);
     }
 
-    .brand-relief__motion,
-    .brand-relief__layer {
+    .brand-relief__motion {
       position: absolute;
       inset: 7%;
-    }
-
-    .brand-relief__motion {
       transform: translate3d(var(--relief-x), var(--relief-y), 0) rotate(var(--relief-rotate));
       transform-origin: center;
       transition: transform 560ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -321,10 +315,35 @@
       transition-duration: 110ms;
     }
 
+    .brand-relief__image,
     .brand-relief__layer {
+      position: absolute;
       inset: 0;
+    }
+
+    .brand-relief__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 13px 24px rgba(0, 0, 0, 0.3));
+      opacity: 0.92;
+      user-select: none;
+      transition:
+        opacity 260ms ease,
+        filter 260ms ease;
+      -webkit-user-drag: none;
+    }
+
+    #brand-relief.is-active .brand-relief__image {
+      filter: drop-shadow(0 15px 28px rgba(0, 0, 0, 0.34));
+      opacity: 1;
+    }
+
+    .brand-relief__layer {
       -webkit-mask-image: var(--brand-relief-mask);
       mask-image: var(--brand-relief-mask);
+      mask-mode: alpha;
       -webkit-mask-position: center;
       mask-position: center;
       -webkit-mask-repeat: no-repeat;
@@ -333,57 +352,20 @@
       mask-size: contain;
     }
 
-    .brand-relief__shadow {
-      background: rgba(0, 0, 0, 0.86);
-      filter: blur(0.45px) drop-shadow(8px 11px 15px rgba(0, 0, 0, 0.34));
-      opacity: 0.82;
-      transform: translate3d(3px, 4px, 0);
-    }
-
-    .brand-relief__edge {
-      background: linear-gradient(142deg, rgba(178, 204, 219, 0.42), rgba(63, 82, 94, 0.1) 45%, rgba(0, 0, 0, 0.5) 78%);
-      filter: blur(0.15px);
-      opacity: 0.42;
-      transform: translate3d(-1.5px, -1.5px, 0);
-    }
-
-    .brand-relief__face {
-      background:
-        radial-gradient(circle at 34% 28%, rgba(116, 139, 152, 0.18), transparent 33%),
-        linear-gradient(142deg, #283139 0%, #192127 38%, #10161b 66%, #090d10 100%);
-      filter:
-        drop-shadow(-1px -1px 0 rgba(164, 195, 211, 0.1))
-        drop-shadow(1.5px 2px 0 rgba(0, 0, 0, 0.78));
-    }
-
-    .brand-relief__texture {
-      background:
-        repeating-linear-gradient(116deg, rgba(223, 237, 244, 0.052) 0 0.55px, transparent 0.7px 2.7px),
-        repeating-linear-gradient(24deg, rgba(0, 0, 0, 0.12) 0 0.65px, transparent 0.8px 3.4px),
-        linear-gradient(132deg, rgba(198, 216, 225, 0.05), rgba(0, 0, 0, 0.15));
-      mix-blend-mode: soft-light;
-      opacity: 0.36;
-      transition: opacity 260ms ease;
-    }
-
     .brand-relief__light {
       background: radial-gradient(
         circle at var(--pointer-x) var(--pointer-y),
-        rgba(69, 184, 255, 0.34) 0%,
-        rgba(69, 184, 255, 0.13) 18%,
-        transparent 46%
+        rgba(181, 228, 255, 0.25) 0%,
+        rgba(69, 184, 255, 0.1) 18%,
+        transparent 43%
       );
       mix-blend-mode: screen;
-      opacity: 0.08;
+      opacity: 0.04;
       transition: opacity 420ms ease;
     }
 
-    #brand-relief.is-active .brand-relief__texture {
-      opacity: 0.54;
-    }
-
     #brand-relief.is-active .brand-relief__light {
-      opacity: 0.52;
+      opacity: 0.38;
       transition-duration: 180ms;
     }
 
@@ -392,9 +374,9 @@
         112deg,
         transparent 36%,
         rgba(198, 225, 238, 0.02) 43%,
-        rgba(230, 245, 251, 0.38) 48%,
-        rgba(201, 135, 82, 0.2) 50%,
-        rgba(134, 204, 237, 0.12) 53%,
+        rgba(230, 245, 251, 0.28) 48%,
+        rgba(201, 135, 82, 0.12) 50%,
+        rgba(134, 204, 237, 0.08) 53%,
         transparent 59%
       );
       background-position: 150% 0;
@@ -414,17 +396,72 @@
       }
 
       18% {
-        opacity: 0.48;
+        opacity: 0.36;
       }
 
       72% {
-        opacity: 0.22;
+        opacity: 0.16;
       }
 
       100% {
         background-position: -70% 0;
         opacity: 0;
       }
+    }
+
+    .stamped-section {
+      isolation: isolate;
+    }
+
+    .stamped-section > :not(.system-stamp) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .system-stamp {
+      --stamp-size: 74px;
+      position: absolute;
+      z-index: 2;
+      display: block;
+      width: var(--stamp-size);
+      aspect-ratio: 1;
+      background: var(--brand-stamp) center / contain no-repeat;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.22));
+      opacity: 0.58;
+      pointer-events: auto;
+      transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+    }
+
+    .system-stamp:hover {
+      opacity: 0.7;
+      transform: translate3d(0, -1px, 0);
+    }
+
+    .system-stamp--approach,
+    .system-stamp--areas,
+    .system-stamp--process {
+      top: 2px;
+      right: 4px;
+    }
+
+    .system-stamp--work {
+      --stamp-size: 68px;
+      top: 4px;
+      right: 6px;
+    }
+
+    .system-stamp--contact {
+      --stamp-size: 82px;
+      right: 18px;
+      bottom: 16px;
+    }
+
+    .system-stamp--brief {
+      --stamp-size: 70px;
+      top: 18px;
+      right: 18px;
     }
 
     .eyebrow,
@@ -473,6 +510,31 @@
       color: var(--text-muted);
       font-size: clamp(15px, 1.8vw, 18px);
       line-height: 1.75;
+    }
+
+    .hero-capabilities {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
+      color: var(--text-dim);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .hero-capabilities span + span::before {
+      margin-inline: 10px;
+      color: var(--copper);
+      content: "//";
+      opacity: 0.72;
+    }
+
+    .hero-capabilities + .actions {
+      margin-top: 26px;
     }
 
     .actions {
@@ -911,6 +973,10 @@
         min-width: 0;
       }
 
+      .hero-content {
+        max-width: 60%;
+      }
+
       #brand-relief {
         right: -142px;
         width: min(58vw, 490px);
@@ -984,12 +1050,34 @@
         padding: 28px 20px;
       }
 
+      .hero-content {
+        max-width: none;
+      }
+
       #brand-relief {
         top: 46%;
         right: -202px;
         width: 390px;
         opacity: 0.46;
         pointer-events: none;
+      }
+
+      .system-stamp {
+        --stamp-size: 50px;
+        opacity: 0.5;
+      }
+
+      .system-stamp--approach,
+      .system-stamp--work,
+      .system-stamp--areas,
+      .system-stamp--contact,
+      .system-stamp--brief {
+        display: none;
+      }
+
+      .system-stamp--process {
+        top: 2px;
+        right: 4px;
       }
 
       .hero-card h2 {
@@ -1097,6 +1185,10 @@
       .brand-relief__sheen {
         display: none;
       }
+
+      .system-stamp:hover {
+        transform: none;
+      }
     }
 
     @media print {
@@ -1198,9 +1290,15 @@
       HERO: `
         <section class="module-section panel-card hero-card" aria-labelledby="hero-title">
           <div class="hero-content">
-            <div class="eyebrow">SYSTEM_01 // SOFTWARE ENGINEERING</div>
-            <h2 id="hero-title">OD PROBLEMU OPERACYJNEGO <span>DO DZIAŁAJĄCEGO SYSTEMU.</span></h2>
-            <p>Projektuję aplikacje i systemy, które porządkują procesy, łączą dane i automatyzują pracę tam, gdzie przynosi to realną wartość.</p>
+            <div class="eyebrow">SOFTWARE ENGINEERING // .NET // WEB SYSTEMS</div>
+            <h2 id="hero-title">ZŁOŻONE SYSTEMY. <span>PRECYZYJNA ARCHITEKTURA.</span></h2>
+            <p>Projektuję i rozwijam systemy biznesowe, aplikacje C#/.NET oraz rozwiązania webowe — od architektury i backendu po interfejs, integracje i wdrożenie.</p>
+            <div class="hero-capabilities" role="list" aria-label="Kompetencje">
+              <span role="listitem">SYSTEMY BIZNESOWE</span>
+              <span role="listitem">C# / .NET</span>
+              <span role="listitem">WEB APPLICATIONS</span>
+              <span role="listitem">INTEGRACJE</span>
+            </div>
             <div class="actions">
               <button class="cta-button" type="button" data-module="DOWODY">ZOBACZ REALIZACJE</button>
               <button class="cta-button secondary" type="button" data-module="KONTAKT">OMÓW PROJEKT</button>
@@ -1208,10 +1306,7 @@
           </div>
           <div id="brand-relief" aria-hidden="true">
             <div class="brand-relief__motion">
-              <span class="brand-relief__layer brand-relief__shadow"></span>
-              <span class="brand-relief__layer brand-relief__edge"></span>
-              <span class="brand-relief__layer brand-relief__face"></span>
-              <span class="brand-relief__layer brand-relief__texture"></span>
+              <img src="assets/brand/progressorkit-primary.png" class="brand-relief__image" alt="" draggable="false" decoding="async">
               <span class="brand-relief__layer brand-relief__light"></span>
               <span class="brand-relief__layer brand-relief__sheen"></span>
             </div>
@@ -1220,7 +1315,7 @@
       `,
 
       ANALIZA: `
-        <section class="module-section" aria-labelledby="approach-title">
+        <section class="module-section stamped-section stamped-section--approach" aria-labelledby="approach-title">
           <div class="section-intro">
             <div>
               <h2 id="approach-title">PODEJŚCIE</h2>
@@ -1244,17 +1339,19 @@
               </ul>
             </article>
           </div>
+          <span class="system-stamp system-stamp--approach" aria-hidden="true"></span>
         </section>
       `,
 
       DOWODY: `
-        <section class="module-section work-section" aria-labelledby="work-title">
+        <section class="module-section work-section stamped-section stamped-section--work" aria-labelledby="work-title">
           <div class="section-intro">
             <div>
               <div class="section-kicker">CASE STUDIES</div>
               <h2 id="work-title">SELECTED WORK</h2>
             </div>
           </div>
+          <span class="system-stamp system-stamp--work" aria-hidden="true"></span>
           <div class="featured-projects"></div>
           <div class="tile-grid selected-work-grid">
             <article class="tile project-card">
@@ -1312,7 +1409,7 @@
       `,
 
       OBSZARY: `
-        <section class="module-section" aria-labelledby="areas-title">
+        <section class="module-section stamped-section stamped-section--areas" aria-labelledby="areas-title">
           <div class="section-intro">
             <div>
               <h2 id="areas-title">OBSZARY</h2>
@@ -1332,11 +1429,12 @@
               <p>Od analizy problemu i architektury po implementację, testy i działający produkt.</p>
             </article>
           </div>
+          <span class="system-stamp system-stamp--areas" aria-hidden="true"></span>
         </section>
       `,
 
       PROCES: `
-        <section class="module-section" aria-labelledby="process-title">
+        <section class="module-section stamped-section stamped-section--process" aria-labelledby="process-title">
           <div class="section-intro">
             <div>
               <h2 id="process-title">PROCES</h2>
@@ -1364,11 +1462,12 @@
               <p>Testy, stabilizacja i uruchomienie rozwiązania.</p>
             </article>
           </div>
+          <span class="system-stamp system-stamp--process" aria-hidden="true"></span>
         </section>
       `,
 
       KONTAKT: `
-        <section class="module-section panel-card contact-card" aria-labelledby="contact-title">
+        <section class="module-section panel-card contact-card stamped-section stamped-section--contact" aria-labelledby="contact-title">
           <div class="contact-content">
             <div class="eyebrow">KONTAKT</div>
             <h2 id="contact-title">POROZMAWIAJMY O PROJEKCIE</h2>
@@ -1379,11 +1478,12 @@
               <a href="https://www.facebook.com/profile.php?id=61574306963115" target="_blank" rel="noopener noreferrer" class="cta-button secondary">PROFIL FACEBOOK</a>
             </div>
           </div>
+          <span class="system-stamp system-stamp--contact" aria-hidden="true"></span>
         </section>
       `,
 
       BRIEF: `
-        <section class="module-section panel-card brief-card" aria-labelledby="brief-title">
+        <section class="module-section panel-card brief-card stamped-section stamped-section--brief" aria-labelledby="brief-title">
           <h2 id="brief-title">BRIEF PROJEKTOWY</h2>
           <p class="brief-intro">Wypełnij poniższe pola. Możesz wydrukować ten dokument do PDF i wysłać na nasz e-mail.</p>
 
@@ -1433,6 +1533,7 @@
             <button class="cta-button" type="button" data-action="print">ZAPISZ / DRUKUJ BRIEF</button>
             <button class="cta-button secondary" type="button" data-module="KONTAKT">WRÓĆ</button>
           </div>
+          <span class="system-stamp system-stamp--brief" aria-hidden="true"></span>
         </section>
       `
     };
