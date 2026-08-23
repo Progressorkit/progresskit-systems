@@ -8,6 +8,7 @@
     content="ProgressorKit Systems — software engineering, product systems, integracje i automatyzacja procesów."
   />
   <title>ProgressorKit Systems | Software Engineering</title>
+  <link rel="icon" href="assets/brand/progressorkit-symbol.svg" type="image/svg+xml" />
 
   <style>
     * {
@@ -35,7 +36,8 @@
       --text-dim: #6f7c87;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
       --radius: 10px;
-      --brand-relief-mask: none;
+      --brand-symbol: url("assets/brand/progressorkit-symbol.svg");
+      --brand-relief-mask: var(--brand-symbol);
     }
 
     html,
@@ -65,7 +67,6 @@
     }
 
     #background-surface,
-    #brand-relief,
     #atmosphere {
       position: fixed;
       inset: 0;
@@ -89,70 +90,6 @@
       background-size: 64px 64px;
       content: "";
       mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 82%);
-    }
-
-    /*
-      Foundation for the final SVG mark:
-      point --brand-relief-mask at the final SVG asset and tune sizing.
-      The current geometry is intentionally abstract and is not a temporary logo.
-    */
-    #brand-relief {
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-
-    #brand-relief::before {
-      width: min(68vw, 820px);
-      aspect-ratio: 1;
-      border: 1px solid rgba(132, 184, 224, 0.055);
-      border-radius: 50%;
-      background:
-        conic-gradient(
-          from 18deg,
-          transparent 0 10%,
-          rgba(104, 180, 231, 0.032) 10% 11%,
-          transparent 11% 34%,
-          rgba(201, 135, 82, 0.026) 34% 35%,
-          transparent 35% 100%
-        ),
-        repeating-radial-gradient(
-          circle,
-          transparent 0 70px,
-          rgba(129, 176, 211, 0.044) 71px 72px,
-          transparent 73px 112px
-        ),
-        radial-gradient(circle at 42% 38%, rgba(91, 164, 214, 0.045), transparent 45%);
-      box-shadow:
-        inset 24px 24px 54px rgba(0, 0, 0, 0.72),
-        inset -18px -18px 48px rgba(104, 171, 218, 0.025),
-        18px 22px 54px rgba(0, 0, 0, 0.3),
-        -1px -1px 0 rgba(132, 184, 224, 0.045);
-      content: "";
-      opacity: 0.82;
-      transform: rotate(-12deg) translate3d(6vw, 2vh, 0);
-      -webkit-mask-image: var(--brand-relief-mask);
-      mask-image: var(--brand-relief-mask);
-      -webkit-mask-position: center;
-      mask-position: center;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: contain;
-      mask-size: contain;
-    }
-
-    #brand-relief::after {
-      position: absolute;
-      width: min(52vw, 620px);
-      height: min(52vw, 620px);
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      border-radius: 50%;
-      box-shadow:
-        inset -1px -1px 0 rgba(113, 179, 224, 0.038),
-        1px 1px 0 rgba(0, 0, 0, 0.55);
-      content: "";
-      transform: translate3d(5vw, 1vh, 0);
     }
 
     #atmosphere {
@@ -182,7 +119,22 @@
     }
 
     .brand-lockup {
+      display: flex;
       min-width: max-content;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-symbol {
+      display: block;
+      width: 38px;
+      flex: 0 0 38px;
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, #d8e3e9 0%, #7e9caf 48%, var(--system-blue) 100%);
+      filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.08));
+      -webkit-mask: var(--brand-symbol) center / contain no-repeat;
+      mask: var(--brand-symbol) center / contain no-repeat;
+      opacity: 0.92;
     }
 
     .brand-lockup h1 {
@@ -328,42 +280,151 @@
       padding: clamp(34px, 7vw, 84px);
     }
 
-    .hero-card::after {
-      position: absolute;
-      top: 50%;
-      right: clamp(-180px, -8vw, -60px);
-      width: clamp(300px, 36vw, 500px);
-      aspect-ratio: 1;
-      border: 1px solid rgba(118, 186, 230, 0.055);
-      border-radius: 50%;
-      background:
-        repeating-radial-gradient(
-          circle,
-          transparent 0 48px,
-          rgba(115, 178, 219, 0.045) 49px 50px,
-          transparent 51px 82px
-        ),
-        conic-gradient(
-          from 28deg,
-          transparent 0 63%,
-          rgba(69, 184, 255, 0.035) 63% 64%,
-          transparent 64% 88%,
-          rgba(201, 135, 82, 0.025) 88% 89%,
-          transparent 89%
-        );
-      box-shadow:
-        inset 18px 18px 42px rgba(0, 0, 0, 0.42),
-        inset -1px -1px 0 rgba(130, 199, 240, 0.035);
-      content: "";
-      opacity: 0.46;
-      pointer-events: none;
-      transform: translateY(-50%) rotate(-9deg);
-    }
-
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 790px;
+    }
+
+    #brand-relief {
+      --pointer-x: 50%;
+      --pointer-y: 50%;
+      --relief-x: 0px;
+      --relief-y: 0px;
+      --relief-rotate: 0deg;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      right: clamp(-118px, -7vw, -58px);
+      width: clamp(390px, 43vw, 540px);
+      aspect-ratio: 1;
+      contain: layout paint style;
+      isolation: isolate;
+      pointer-events: auto;
+      transform: translateY(-50%);
+    }
+
+    .brand-relief__motion,
+    .brand-relief__layer {
+      position: absolute;
+      inset: 7%;
+    }
+
+    .brand-relief__motion {
+      transform: translate3d(var(--relief-x), var(--relief-y), 0) rotate(var(--relief-rotate));
+      transform-origin: center;
+      transition: transform 560ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    #brand-relief.is-active .brand-relief__motion {
+      will-change: transform;
+      transition-duration: 110ms;
+    }
+
+    .brand-relief__layer {
+      inset: 0;
+      -webkit-mask-image: var(--brand-relief-mask);
+      mask-image: var(--brand-relief-mask);
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
+
+    .brand-relief__shadow {
+      background: rgba(0, 0, 0, 0.86);
+      filter: blur(0.45px) drop-shadow(8px 11px 15px rgba(0, 0, 0, 0.34));
+      opacity: 0.82;
+      transform: translate3d(3px, 4px, 0);
+    }
+
+    .brand-relief__edge {
+      background: linear-gradient(142deg, rgba(178, 204, 219, 0.42), rgba(63, 82, 94, 0.1) 45%, rgba(0, 0, 0, 0.5) 78%);
+      filter: blur(0.15px);
+      opacity: 0.42;
+      transform: translate3d(-1.5px, -1.5px, 0);
+    }
+
+    .brand-relief__face {
+      background:
+        radial-gradient(circle at 34% 28%, rgba(116, 139, 152, 0.18), transparent 33%),
+        linear-gradient(142deg, #283139 0%, #192127 38%, #10161b 66%, #090d10 100%);
+      filter:
+        drop-shadow(-1px -1px 0 rgba(164, 195, 211, 0.1))
+        drop-shadow(1.5px 2px 0 rgba(0, 0, 0, 0.78));
+    }
+
+    .brand-relief__texture {
+      background:
+        repeating-linear-gradient(116deg, rgba(223, 237, 244, 0.052) 0 0.55px, transparent 0.7px 2.7px),
+        repeating-linear-gradient(24deg, rgba(0, 0, 0, 0.12) 0 0.65px, transparent 0.8px 3.4px),
+        linear-gradient(132deg, rgba(198, 216, 225, 0.05), rgba(0, 0, 0, 0.15));
+      mix-blend-mode: soft-light;
+      opacity: 0.36;
+      transition: opacity 260ms ease;
+    }
+
+    .brand-relief__light {
+      background: radial-gradient(
+        circle at var(--pointer-x) var(--pointer-y),
+        rgba(69, 184, 255, 0.34) 0%,
+        rgba(69, 184, 255, 0.13) 18%,
+        transparent 46%
+      );
+      mix-blend-mode: screen;
+      opacity: 0.08;
+      transition: opacity 420ms ease;
+    }
+
+    #brand-relief.is-active .brand-relief__texture {
+      opacity: 0.54;
+    }
+
+    #brand-relief.is-active .brand-relief__light {
+      opacity: 0.52;
+      transition-duration: 180ms;
+    }
+
+    .brand-relief__sheen {
+      background-image: linear-gradient(
+        112deg,
+        transparent 36%,
+        rgba(198, 225, 238, 0.02) 43%,
+        rgba(230, 245, 251, 0.38) 48%,
+        rgba(201, 135, 82, 0.2) 50%,
+        rgba(134, 204, 237, 0.12) 53%,
+        transparent 59%
+      );
+      background-position: 150% 0;
+      background-size: 260% 100%;
+      mix-blend-mode: screen;
+      opacity: 0;
+    }
+
+    #brand-relief.is-sheening .brand-relief__sheen {
+      animation: reliefSheen 720ms cubic-bezier(0.2, 0.66, 0.22, 1) both;
+    }
+
+    @keyframes reliefSheen {
+      0% {
+        background-position: 150% 0;
+        opacity: 0;
+      }
+
+      18% {
+        opacity: 0.48;
+      }
+
+      72% {
+        opacity: 0.22;
+      }
+
+      100% {
+        background-position: -70% 0;
+        opacity: 0;
+      }
     }
 
     .eyebrow,
@@ -850,6 +911,12 @@
         min-width: 0;
       }
 
+      #brand-relief {
+        right: -142px;
+        width: min(58vw, 490px);
+        opacity: 0.78;
+      }
+
       .nav-horizontal {
         width: 100%;
         justify-content: flex-start;
@@ -894,6 +961,11 @@
         letter-spacing: 0.09em;
       }
 
+      .brand-symbol {
+        width: 32px;
+        flex-basis: 32px;
+      }
+
       .nav-horizontal {
         gap: 4px;
       }
@@ -907,26 +979,17 @@
         padding: 18px 12px 46px;
       }
 
-      #brand-relief::before {
-        width: 118vw;
-        transform: rotate(-12deg) translate3d(14vw, 0, 0);
-      }
-
-      #brand-relief::after {
-        width: 92vw;
-        height: 92vw;
-        transform: translate3d(12vw, 0, 0);
-      }
-
       .hero-card {
         min-height: 470px;
         padding: 28px 20px;
       }
 
-      .hero-card::after {
-        right: -250px;
+      #brand-relief {
+        top: 46%;
+        right: -202px;
         width: 390px;
-        opacity: 0.2;
+        opacity: 0.46;
+        pointer-events: none;
       }
 
       .hero-card h2 {
@@ -1016,6 +1079,24 @@
       .cta-button::before {
         display: none !important;
       }
+
+      #brand-relief {
+        --pointer-x: 58%;
+        --pointer-y: 38%;
+        pointer-events: none;
+      }
+
+      .brand-relief__motion {
+        transform: none !important;
+      }
+
+      .brand-relief__light {
+        opacity: 0.14;
+      }
+
+      .brand-relief__sheen {
+        display: none;
+      }
     }
 
     @media print {
@@ -1082,13 +1163,15 @@
 </head>
 <body>
   <div id="background-surface" aria-hidden="true"></div>
-  <div id="brand-relief" aria-hidden="true"></div>
   <div id="atmosphere" aria-hidden="true"></div>
 
   <header id="header-console">
     <div class="brand-lockup">
-      <h1>PROGRESSORKIT SYSTEMS</h1>
-      <p>SOFTWARE ENGINEERING // PRODUCT SYSTEMS</p>
+      <span class="brand-symbol" aria-hidden="true"></span>
+      <div>
+        <h1>PROGRESSORKIT SYSTEMS</h1>
+        <p>SOFTWARE ENGINEERING // PRODUCT SYSTEMS</p>
+      </div>
     </div>
 
     <nav class="nav-horizontal" aria-label="Główna nawigacja">
@@ -1121,6 +1204,16 @@
             <div class="actions">
               <button class="cta-button" type="button" data-module="DOWODY">ZOBACZ REALIZACJE</button>
               <button class="cta-button secondary" type="button" data-module="KONTAKT">OMÓW PROJEKT</button>
+            </div>
+          </div>
+          <div id="brand-relief" aria-hidden="true">
+            <div class="brand-relief__motion">
+              <span class="brand-relief__layer brand-relief__shadow"></span>
+              <span class="brand-relief__layer brand-relief__edge"></span>
+              <span class="brand-relief__layer brand-relief__face"></span>
+              <span class="brand-relief__layer brand-relief__texture"></span>
+              <span class="brand-relief__layer brand-relief__light"></span>
+              <span class="brand-relief__layer brand-relief__sheen"></span>
             </div>
           </div>
         </section>
@@ -1345,9 +1438,11 @@
     };
 
     const sliderIntervals = new Set();
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const navigationModule = {
       BRIEF: "KONTAKT"
     };
+    let teardownBrandRelief = () => {};
 
     function stopSliders() {
       sliderIntervals.forEach((intervalId) => window.clearInterval(intervalId));
@@ -1357,7 +1452,7 @@
     function startSliders() {
       stopSliders();
 
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (reducedMotionQuery.matches) {
         return;
       }
 
@@ -1395,16 +1490,146 @@
       });
     }
 
+    function setupBrandRelief() {
+      teardownBrandRelief();
+
+      const relief = document.getElementById("brand-relief");
+      if (!relief) {
+        teardownBrandRelief = () => {};
+        return;
+      }
+
+      let pointerFrame = null;
+      let latestPointer = null;
+      let sheenRunning = false;
+      let sheenTimer = null;
+
+      const onMotionPreferenceChange = () => setupBrandRelief();
+      reducedMotionQuery.addEventListener("change", onMotionPreferenceChange);
+
+      if (reducedMotionQuery.matches) {
+        teardownBrandRelief = () => {
+          reducedMotionQuery.removeEventListener("change", onMotionPreferenceChange);
+        };
+        return;
+      }
+
+      function renderPointer() {
+        pointerFrame = null;
+
+        if (!latestPointer) {
+          return;
+        }
+
+        const bounds = relief.getBoundingClientRect();
+        const x = Math.min(1, Math.max(0, (latestPointer.clientX - bounds.left) / bounds.width));
+        const y = Math.min(1, Math.max(0, (latestPointer.clientY - bounds.top) / bounds.height));
+        const horizontal = (x - 0.5) * 2;
+        const vertical = (y - 0.5) * 2;
+
+        relief.style.setProperty("--pointer-x", `${(x * 100).toFixed(2)}%`);
+        relief.style.setProperty("--pointer-y", `${(y * 100).toFixed(2)}%`);
+        relief.style.setProperty("--relief-x", `${(horizontal * 5).toFixed(2)}px`);
+        relief.style.setProperty("--relief-y", `${(vertical * 4.5).toFixed(2)}px`);
+        relief.style.setProperty("--relief-rotate", `${(horizontal * 1.2).toFixed(2)}deg`);
+      }
+
+      function queuePointer(event) {
+        latestPointer = event;
+
+        if (pointerFrame === null) {
+          pointerFrame = window.requestAnimationFrame(renderPointer);
+        }
+      }
+
+      function startSheen() {
+        if (sheenRunning) {
+          return;
+        }
+
+        sheenRunning = true;
+        relief.classList.add("is-sheening");
+        sheenTimer = window.setTimeout(finishSheen, 760);
+      }
+
+      function finishSheen() {
+        if (sheenTimer !== null) {
+          window.clearTimeout(sheenTimer);
+          sheenTimer = null;
+        }
+
+        relief.classList.remove("is-sheening");
+        sheenRunning = false;
+      }
+
+      function onPointerEnter(event) {
+        relief.classList.add("is-active");
+        queuePointer(event);
+        startSheen();
+      }
+
+      function onPointerLeave() {
+        latestPointer = null;
+
+        if (pointerFrame !== null) {
+          window.cancelAnimationFrame(pointerFrame);
+          pointerFrame = null;
+        }
+
+        relief.classList.remove("is-active");
+        relief.style.setProperty("--pointer-x", "50%");
+        relief.style.setProperty("--pointer-y", "50%");
+        relief.style.setProperty("--relief-x", "0px");
+        relief.style.setProperty("--relief-y", "0px");
+        relief.style.setProperty("--relief-rotate", "0deg");
+        finishSheen();
+      }
+
+      function onAnimationEnd(event) {
+        if (event.animationName !== "reliefSheen") {
+          return;
+        }
+
+        finishSheen();
+      }
+
+      relief.addEventListener("pointerenter", onPointerEnter);
+      relief.addEventListener("pointermove", queuePointer);
+      relief.addEventListener("pointerleave", onPointerLeave);
+      relief.addEventListener("animationend", onAnimationEnd);
+
+      teardownBrandRelief = () => {
+        if (pointerFrame !== null) {
+          window.cancelAnimationFrame(pointerFrame);
+        }
+
+        if (sheenTimer !== null) {
+          window.clearTimeout(sheenTimer);
+        }
+
+        relief.removeEventListener("pointerenter", onPointerEnter);
+        relief.removeEventListener("pointermove", queuePointer);
+        relief.removeEventListener("pointerleave", onPointerLeave);
+        relief.removeEventListener("animationend", onAnimationEnd);
+        reducedMotionQuery.removeEventListener("change", onMotionPreferenceChange);
+      };
+    }
+
     function loadModule(key) {
       if (!Object.prototype.hasOwnProperty.call(modules, key)) {
         return;
       }
 
       stopSliders();
+      teardownBrandRelief();
 
       const content = document.getElementById("p-content");
       content.innerHTML = modules[key];
       updateActiveNavigation(key);
+
+      if (key === "HERO") {
+        setupBrandRelief();
+      }
 
       if (key === "DOWODY") {
         startSliders();
@@ -1436,7 +1661,10 @@
       window.setInterval(updateClock, 1000);
     });
 
-    window.addEventListener("beforeunload", stopSliders);
+    window.addEventListener("beforeunload", () => {
+      stopSliders();
+      teardownBrandRelief();
+    });
   </script>
 </body>
 </html>
