@@ -1,10 +1,10 @@
-# ProgressorKit Systems
+# ProgressKit Systems
 
 Portfolio software engineering poświęcone projektowaniu i wdrażaniu aplikacji biznesowych, systemów produktowych, integracji oraz automatyzacji procesów.
 
 ## Live
 
-[https://progressorkit.github.io/ProgressorKit-Systems/](https://progressorkit.github.io/ProgressorKit-Systems/)
+[https://progressorkit.github.io/progresskit-systems/](https://progressorkit.github.io/progresskit-systems/)
 
 ## Stack
 
