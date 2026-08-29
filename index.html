@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="ProgressKit Systems — software engineering, product systems, integracje i automatyzacja procesów."
+    content="ProgressKit Systems — strony internetowe, aplikacje, systemy, integracje i automatyzacja procesów."
   />
-  <title>ProgressKit Systems | Software Engineering</title>
+  <title>ProgressKit Systems | Strony, aplikacje i systemy</title>
   <link rel="icon" href="assets/brand/progressorkit-primary.png" type="image/png" />
 
   <style>
@@ -33,6 +33,9 @@
       --signal: #e30613;
       --signal-bright: #ff1825;
       --signal-dark: #8f0911;
+      --action-blue: #2388ff;
+      --action-blue-bright: #78bdff;
+      --action-blue-deep: #082b62;
       --steel: #7e8387;
       --steel-dark: #34383c;
       --white-primary: #f4f4f2;
@@ -1890,7 +1893,10 @@
     }
 
     .brand-lockup p {
-      color: var(--steel-dark);
+      color: var(--steel);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .nav-horizontal {
@@ -1904,8 +1910,9 @@
       border-radius: 0;
       padding: 10px 0;
       color: var(--text-dim);
-      font-size: 9.5px;
-      letter-spacing: 0.13em;
+      font-size: clamp(13px, 0.78vw, 15px);
+      font-weight: 800;
+      letter-spacing: 0.045em;
     }
 
     .nav-item::after {
@@ -1937,6 +1944,8 @@
 
     .nav-item.active {
       color: var(--text);
+      font-weight: 900;
+      text-shadow: 0 0 10px rgba(255, 24, 37, 0.22);
     }
 
     #panel {
@@ -2031,8 +2040,9 @@
     .eyebrow,
     .section-kicker {
       color: var(--steel);
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
     }
 
     .eyebrow::before,
@@ -2633,7 +2643,8 @@
 
       .nav-item {
         padding-block: 8px;
-        font-size: 8.5px;
+        font-size: 9.5px;
+        letter-spacing: 0.055em;
       }
 
       #panel {
@@ -2761,6 +2772,913 @@
       }
     }
 
+    /* Progressive case-study library: lightweight covers first, evidence on demand. */
+    .case-library {
+      display: grid;
+      gap: clamp(28px, 5vw, 64px);
+      margin-top: clamp(30px, 5vw, 58px);
+    }
+
+    .case-cover {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(330px, 0.78fr);
+      min-height: clamp(520px, 64vw, 720px);
+      overflow: clip;
+      border: 1px solid rgba(126, 131, 135, 0.3);
+      background: var(--bg-surface, #0a0a0b);
+      box-shadow: 0 28px 76px rgba(0, 0, 0, 0.38);
+      content-visibility: auto;
+      contain-intrinsic-size: auto 680px;
+    }
+
+    .case-cover::before {
+      position: absolute;
+      z-index: 4;
+      top: -1px;
+      left: -1px;
+      width: clamp(88px, 14vw, 180px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--signal-bright), transparent);
+      box-shadow: 0 0 8px rgba(255, 24, 37, 0.38);
+      content: "";
+    }
+
+    .case-cover__visual {
+      position: relative;
+      min-width: 0;
+      min-height: 520px;
+      overflow: hidden;
+      border-right: 1px solid rgba(126, 131, 135, 0.22);
+      background: #050505;
+      isolation: isolate;
+    }
+
+    .case-cover--reverse .case-cover__visual {
+      order: 2;
+      border-right: 0;
+      border-left: 1px solid rgba(126, 131, 135, 0.22);
+    }
+
+    .case-cover__visual::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 56%, rgba(5, 5, 5, 0.76)),
+        linear-gradient(90deg, rgba(5, 5, 5, 0.14), transparent 35%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .case-cover__visual > img:not(.case-cover__logo) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.88) contrast(1.04);
+      transition: transform 420ms ease, filter 420ms ease;
+    }
+
+    .case-cover:hover .case-cover__visual > img:not(.case-cover__logo) {
+      transform: scale(1.012);
+      filter: saturate(1) contrast(1.04);
+    }
+
+    .case-cover__logo {
+      position: absolute;
+      z-index: 3;
+      top: clamp(22px, 3vw, 38px);
+      left: clamp(22px, 3vw, 38px);
+      width: clamp(64px, 7vw, 92px);
+      height: auto;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.58));
+    }
+
+    .case-cover__visual-label {
+      position: absolute;
+      z-index: 3;
+      right: clamp(18px, 2vw, 28px);
+      bottom: clamp(18px, 2vw, 28px);
+      color: var(--white-secondary, #d7d7d3);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .case-cover__copy {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(34px, 4vw, 56px);
+      background:
+        linear-gradient(145deg, rgba(227, 6, 19, 0.04), transparent 35%),
+        var(--bg-surface, #0a0a0b);
+    }
+
+    .case-cover--reverse .case-cover__copy {
+      order: 1;
+    }
+
+    .case-cover__index,
+    .case-cover__status {
+      color: var(--signal-bright);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .case-cover__copy h3 {
+      margin-top: clamp(22px, 3vw, 36px);
+      color: var(--white-primary, #f4f4f2);
+      font-family: "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+      font-size: clamp(42px, 4.8vw, 62px);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 0.94;
+      text-transform: uppercase;
+    }
+
+    .case-cover__summary {
+      max-width: 560px;
+      margin-top: 24px;
+      color: var(--white-secondary, #d7d7d3);
+      font-size: clamp(16px, 1.7vw, 20px);
+      line-height: 1.6;
+    }
+
+    .case-cover__features {
+      display: grid;
+      gap: 10px;
+      margin-top: 30px;
+      list-style: none;
+    }
+
+    .case-cover__features li {
+      position: relative;
+      border-top: 1px solid rgba(126, 131, 135, 0.22);
+      padding: 11px 0 0 20px;
+      color: var(--steel, #7e8387);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .case-cover__features li::before {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 7px;
+      height: 2px;
+      background: var(--signal-bright);
+      box-shadow: 0 0 6px rgba(255, 24, 37, 0.4);
+      content: "";
+    }
+
+    .case-cover__footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .case-cover__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--steel, #7e8387);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    .case-cover__status::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--signal-bright);
+      box-shadow: 0 0 8px rgba(255, 24, 37, 0.52);
+      content: "";
+    }
+
+    .case-cover__trigger {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid rgba(255, 24, 37, 0.58);
+      padding: 12px 16px;
+      background: rgba(227, 6, 19, 0.06);
+      color: var(--white-primary, #f4f4f2);
+      cursor: pointer;
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .case-cover__trigger::after {
+      color: var(--signal-bright);
+      content: "+";
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .case-cover__trigger:hover,
+    .case-cover__trigger:focus-visible {
+      border-color: var(--signal-bright);
+      background: rgba(227, 6, 19, 0.14);
+      outline: 0;
+    }
+
+    .case-cover__trigger[aria-expanded="true"]::after {
+      content: "−";
+    }
+
+    .case-cover__detail {
+      display: none;
+      grid-column: 1 / -1;
+      order: 3;
+      min-width: 0;
+      border-top: 1px solid rgba(255, 24, 37, 0.3);
+      padding: clamp(14px, 2.5vw, 28px);
+      background: #070708;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 1200px;
+    }
+
+    .case-cover.is-open {
+      overflow: visible;
+      content-visibility: visible;
+    }
+
+    .case-cover.is-open .case-cover__detail {
+      display: block;
+    }
+
+    .case-cover__detail > .tile {
+      width: 100%;
+      margin: 0;
+    }
+
+    .case-templates {
+      display: none;
+    }
+
+    .glikemia-cover {
+      background:
+        radial-gradient(circle at 68% 26%, rgba(227, 6, 19, 0.11), transparent 34%),
+        #050505;
+    }
+
+    .glikemia-cover::after {
+      background: linear-gradient(180deg, transparent 72%, rgba(5, 5, 5, 0.82));
+    }
+
+    .glikemia-cover__phone {
+      position: absolute;
+      width: min(57%, 440px) !important;
+      height: auto !important;
+      border: 1px solid rgba(215, 215, 211, 0.16);
+      border-radius: clamp(18px, 2.5vw, 30px);
+      object-fit: contain !important;
+      box-shadow: 0 28px 62px rgba(0, 0, 0, 0.54);
+    }
+
+    .glikemia-cover__phone--primary {
+      z-index: 1;
+      top: 5%;
+      left: 18%;
+    }
+
+    .glikemia-cover__phone--secondary {
+      z-index: 0;
+      top: 15%;
+      left: 54%;
+      opacity: 0.56;
+      transform: scale(0.9) !important;
+    }
+
+    .technical-disclosure {
+      margin-top: 12px;
+      border: 1px solid rgba(126, 131, 135, 0.28);
+      background: rgba(10, 10, 11, 0.8);
+    }
+
+    .gotrans-detail-label {
+      margin: clamp(26px, 4vw, 42px) 10px 12px;
+    }
+
+    .gotrans-detail-label + .gotrans-pillars {
+      margin-top: 0;
+    }
+
+    .technical-disclosure > summary {
+      display: flex;
+      min-height: 62px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 22px;
+      color: var(--white-primary, #f4f4f2);
+      cursor: pointer;
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      list-style: none;
+      text-transform: uppercase;
+    }
+
+    .technical-disclosure > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .technical-disclosure > summary::after {
+      color: var(--signal-bright);
+      content: "+";
+      font-size: 18px;
+    }
+
+    .technical-disclosure[open] > summary::after {
+      content: "−";
+    }
+
+    .technical-disclosure__body {
+      border-top: 1px solid rgba(126, 131, 135, 0.22);
+      padding: 0 clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px);
+    }
+
+    @media (max-width: 900px) {
+      .case-cover,
+      .case-cover--reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .case-cover__visual,
+      .case-cover--reverse .case-cover__visual {
+        order: 1;
+        min-height: clamp(380px, 72vw, 560px);
+        border-right: 0;
+        border-bottom: 1px solid rgba(126, 131, 135, 0.22);
+        border-left: 0;
+      }
+
+      .case-cover__copy,
+      .case-cover--reverse .case-cover__copy {
+        order: 2;
+      }
+
+      .case-cover__detail {
+        order: 3;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .case-library {
+        gap: 24px;
+      }
+
+      .case-cover {
+        min-height: 0;
+      }
+
+      .case-cover__visual,
+      .case-cover--reverse .case-cover__visual {
+        min-height: 300px;
+      }
+
+      .case-cover__copy {
+        padding: 30px 22px 34px;
+      }
+
+      .case-cover__copy h3 {
+        font-size: clamp(38px, 13vw, 56px);
+      }
+
+      .case-cover__footer {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .case-cover__trigger {
+        width: 100%;
+      }
+
+      .case-cover__detail {
+        padding: 8px;
+      }
+
+      .glikemia-cover__phone {
+        width: min(59%, 300px) !important;
+      }
+    }
+
+    /* Stronger section rhythm and a single, controlled blue interaction layer. */
+    .section-lead {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--steel);
+      font-size: clamp(15px, 1.4vw, 18px);
+      line-height: 1.7;
+    }
+
+    .approach-section,
+    .areas-section,
+    .process-section {
+      display: flex;
+      min-height: max(620px, calc(100vh - 170px));
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: clamp(38px, 5vw, 68px);
+    }
+
+    .approach-section .section-intro,
+    .process-section .section-intro {
+      margin-bottom: clamp(28px, 4vw, 48px);
+    }
+
+    .approach-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid rgba(126, 131, 135, 0.24);
+      background: rgba(7, 8, 10, 0.78);
+      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.38);
+    }
+
+    .approach-card {
+      min-height: clamp(330px, 34vw, 430px);
+      border: 0;
+      border-radius: 0;
+      padding: clamp(34px, 5vw, 68px);
+      background:
+        linear-gradient(145deg, rgba(227, 6, 19, 0.045), transparent 38%),
+        rgba(10, 10, 11, 0.82);
+      box-shadow: none;
+    }
+
+    .approach-card + .approach-card {
+      border-left: 1px solid rgba(126, 131, 135, 0.24);
+    }
+
+    .approach-card .tile-header {
+      margin-bottom: clamp(34px, 4vw, 54px);
+    }
+
+    .audience-card__index {
+      color: var(--signal-bright);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .approach-card h3 {
+      max-width: 560px;
+      margin-top: clamp(30px, 3.2vw, 48px);
+      color: var(--white-primary);
+      font-family: "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+      font-size: clamp(32px, 3.4vw, 50px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .approach-card:nth-child(even) h3 {
+      color: var(--signal-bright);
+      text-shadow: 0 0 18px rgba(255, 24, 37, 0.12);
+    }
+
+    .audience-card__for,
+    .audience-card__description {
+      max-width: 620px;
+      color: var(--white-secondary);
+      font-size: clamp(16px, 1.15vw, 18px);
+      line-height: 1.65;
+    }
+
+    .audience-card__for {
+      margin-top: 24px;
+    }
+
+    .audience-card__description {
+      margin-top: 12px;
+      color: var(--steel);
+    }
+
+    .audience-capabilities {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+      list-style: none;
+    }
+
+    .audience-capabilities li {
+      position: relative;
+      border-top: 1px solid rgba(126, 131, 135, 0.2);
+      padding: 11px 0 0 18px;
+      color: var(--white-secondary);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .audience-capabilities li::before {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 6px;
+      height: 2px;
+      background: var(--signal-bright);
+      box-shadow: 0 0 7px rgba(255, 24, 37, 0.42);
+      content: "";
+    }
+
+    .areas-section {
+      position: relative;
+      isolation: isolate;
+      min-height: max(720px, calc(100vh - 140px));
+      justify-content: center;
+      overflow: hidden;
+      border-top: 1px solid rgba(227, 6, 19, 0.4);
+      border-bottom: 1px solid rgba(126, 131, 135, 0.24);
+      padding: clamp(52px, 6vw, 92px) clamp(20px, 3.2vw, 52px) clamp(58px, 7vw, 104px);
+      background:
+        radial-gradient(circle at 82% 18%, rgba(126, 131, 135, 0.055), transparent 28%),
+        linear-gradient(125deg, rgba(227, 6, 19, 0.055), transparent 34%),
+        rgba(7, 8, 10, 0.94);
+      box-shadow:
+        inset 0 1px 0 rgba(244, 244, 242, 0.025),
+        inset 0 -40px 90px rgba(0, 0, 0, 0.2);
+    }
+
+    .areas-section::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(126, 131, 135, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126, 131, 135, 0.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      content: "";
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 92%);
+    }
+
+    .areas-section .section-intro {
+      z-index: 1;
+      margin-bottom: clamp(34px, 4.5vw, 60px);
+    }
+
+    .areas-section .section-lead {
+      max-width: 650px;
+    }
+
+    .areas-section .area-grid {
+      z-index: 1;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .area-card {
+      display: flex;
+      min-height: clamp(440px, 35vw, 520px);
+      flex-direction: column;
+      border-color: rgba(126, 131, 135, 0.3);
+      padding: clamp(28px, 3.2vw, 46px);
+      background:
+        linear-gradient(160deg, rgba(244, 244, 242, 0.035), transparent 34%),
+        linear-gradient(330deg, rgba(227, 6, 19, 0.035), transparent 35%),
+        rgba(12, 13, 15, 0.94);
+      box-shadow: 0 22px 52px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(244, 244, 242, 0.035);
+    }
+
+    .area-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: clamp(42px, 5vw, 72px);
+    }
+
+    .area-card__index {
+      color: var(--signal-bright);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .area-card__symbol {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(126, 131, 135, 0.3);
+      color: var(--white-secondary);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .area-card h3 {
+      max-width: 360px;
+      font-family: "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+      font-size: clamp(28px, 2.7vw, 42px);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+
+    .area-card:nth-child(2) h3 {
+      color: var(--signal-bright);
+      text-shadow: 0 0 18px rgba(255, 24, 37, 0.12);
+    }
+
+    .area-card > p {
+      margin-top: 22px;
+      color: var(--white-secondary);
+      font-size: clamp(16px, 1.2vw, 18px);
+      line-height: 1.68;
+    }
+
+    .area-capabilities {
+      display: grid;
+      gap: 10px;
+      margin: 28px 0 32px;
+      list-style: none;
+    }
+
+    .area-capabilities li {
+      position: relative;
+      border-top: 1px solid rgba(126, 131, 135, 0.2);
+      padding: 10px 0 0 18px;
+      color: var(--white-secondary);
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .area-capabilities li::before {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 6px;
+      height: 2px;
+      background: var(--signal-bright);
+      box-shadow: 0 0 7px rgba(255, 24, 37, 0.42);
+      content: "";
+    }
+
+    .glass-cta,
+    .case-cover__trigger {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(120, 189, 255, 0.58);
+      border-radius: 999px;
+      padding: 12px 18px;
+      background:
+        linear-gradient(180deg, rgba(151, 209, 255, 0.23) 0%, rgba(35, 136, 255, 0.18) 46%, rgba(8, 43, 98, 0.48) 100%),
+        rgba(8, 25, 53, 0.72);
+      backdrop-filter: blur(14px) saturate(138%);
+      -webkit-backdrop-filter: blur(14px) saturate(138%);
+      box-shadow:
+        inset 0 1px 0 rgba(220, 241, 255, 0.38),
+        inset 0 -1px 0 rgba(3, 17, 42, 0.75),
+        inset 0 0 18px rgba(72, 159, 255, 0.1),
+        0 9px 24px rgba(0, 48, 112, 0.3),
+        0 0 22px rgba(35, 136, 255, 0.13);
+      color: #f4f9ff;
+      cursor: pointer;
+      font-family: "Courier New", ui-monospace, monospace;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .glass-cta::before {
+      position: absolute;
+      z-index: -1;
+      top: 2px;
+      right: 14%;
+      left: 14%;
+      height: 42%;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(226, 244, 255, 0.18), transparent);
+      content: "";
+      pointer-events: none;
+    }
+
+    .glass-cta::after {
+      margin-left: 12px;
+      color: var(--action-blue-bright);
+      content: "→";
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .glass-cta:hover,
+    .glass-cta:focus-visible,
+    .case-cover__trigger:hover,
+    .case-cover__trigger:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(144, 204, 255, 0.9);
+      background:
+        linear-gradient(180deg, rgba(177, 221, 255, 0.29), rgba(35, 136, 255, 0.24) 48%, rgba(8, 43, 98, 0.52)),
+        rgba(8, 29, 62, 0.82);
+      box-shadow:
+        inset 0 1px 0 rgba(235, 248, 255, 0.5),
+        inset 0 -1px 0 rgba(3, 17, 42, 0.72),
+        0 12px 28px rgba(0, 54, 125, 0.36),
+        0 0 26px rgba(35, 136, 255, 0.2);
+      filter: brightness(1.05);
+      outline: 0;
+    }
+
+    .area-card__cta {
+      align-self: flex-start;
+      margin-top: auto;
+      padding-inline: 20px;
+      font-size: 11px;
+      letter-spacing: 0.065em;
+    }
+
+    .case-cover__trigger {
+      border-color: rgba(120, 189, 255, 0.52);
+      background:
+        linear-gradient(180deg, rgba(151, 209, 255, 0.2), rgba(35, 136, 255, 0.16) 48%, rgba(8, 43, 98, 0.46)),
+        rgba(8, 25, 53, 0.7);
+    }
+
+    .case-cover__trigger::after {
+      color: var(--action-blue-bright);
+      text-shadow: 0 0 10px rgba(35, 136, 255, 0.5);
+    }
+
+    .process-section .process-grid {
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid rgba(126, 131, 135, 0.24);
+      background: rgba(7, 8, 10, 0.8);
+      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.36);
+    }
+
+    .process-section .process-card {
+      display: flex;
+      min-height: clamp(290px, 27vw, 370px);
+      flex-direction: column;
+      border: 0;
+      border-right: 1px solid rgba(126, 131, 135, 0.2);
+      border-radius: 0;
+      padding: clamp(28px, 3vw, 44px);
+      background:
+        linear-gradient(150deg, rgba(244, 244, 242, 0.025), transparent 34%),
+        rgba(10, 10, 11, 0.86);
+      box-shadow: none;
+    }
+
+    .process-section .process-card:last-child {
+      border-right: 0;
+    }
+
+    .process-section .process-card .step-index {
+      margin-bottom: auto;
+    }
+
+    .process-section .process-card h3 {
+      margin-top: clamp(46px, 5vw, 76px);
+      font-size: clamp(20px, 2vw, 28px);
+    }
+
+    .process-section .process-card:nth-child(even) h3 {
+      color: var(--signal-bright);
+      text-shadow: 0 0 16px rgba(255, 24, 37, 0.1);
+    }
+
+    .brief-flow {
+      margin-top: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(126, 131, 135, 0.24);
+      background: rgba(7, 8, 10, 0.58);
+    }
+
+    .brief-flow .brief-section {
+      margin-top: 0;
+      border-top: 0;
+      border-bottom: 1px solid rgba(126, 131, 135, 0.2);
+      padding: clamp(24px, 3vw, 38px);
+    }
+
+    .brief-flow .brief-section:last-child {
+      border-bottom: 0;
+    }
+
+    .brief-card > .actions {
+      margin-top: 28px;
+    }
+
+    .contact-card {
+      min-height: max(540px, calc(100vh - 180px));
+    }
+
+    @media (max-width: 980px) {
+      .areas-section .area-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .areas-section,
+      .approach-section,
+      .process-section {
+        min-height: 0;
+      }
+
+      .area-card,
+      .approach-card {
+        min-height: 0;
+      }
+
+      .approach-card + .approach-card {
+        border-top: 1px solid rgba(126, 131, 135, 0.24);
+        border-left: 0;
+      }
+
+      .process-section .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-section .process-card:nth-child(2) {
+        border-right: 0;
+      }
+
+      .process-section .process-card:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(126, 131, 135, 0.2);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .areas-section {
+        margin-inline: -2px;
+        padding: 42px 12px 50px;
+      }
+
+      .area-card {
+        padding: 28px 22px 30px;
+      }
+
+      .area-card__top {
+        margin-bottom: 38px;
+      }
+
+      .area-card__cta,
+      .glass-cta {
+        width: 100%;
+      }
+
+      .process-section .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-section .process-card,
+      .process-section .process-card:nth-child(2) {
+        min-height: 250px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(126, 131, 135, 0.2);
+      }
+
+      .process-section .process-card:last-child {
+        border-bottom: 0;
+      }
+
+      .brief-flow .brief-section {
+        padding: 22px 16px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -2874,14 +3792,14 @@
       <span class="brand-symbol" aria-hidden="true"></span>
       <div>
         <h1>PROGRESSKIT SYSTEMS</h1>
-        <p>SOFTWARE ENGINEERING // PRODUCT SYSTEMS</p>
+        <p>STRONY // APLIKACJE // SYSTEMY</p>
       </div>
     </div>
 
     <nav class="nav-horizontal" aria-label="Główna nawigacja">
       <button class="nav-item active" type="button" data-module="HERO" aria-pressed="true">START</button>
       <button class="nav-item" type="button" data-module="ANALIZA" aria-pressed="false">PODEJŚCIE</button>
-      <button class="nav-item" type="button" data-module="DOWODY" aria-pressed="false">CASE STUDIES</button>
+      <button class="nav-item" type="button" data-module="DOWODY" aria-pressed="false">REALIZACJE</button>
       <button class="nav-item" type="button" data-module="OBSZARY" aria-pressed="false">OBSZARY</button>
       <button class="nav-item" type="button" data-module="PROCES" aria-pressed="false">PROCES</button>
       <button class="nav-item" type="button" data-module="KONTAKT" aria-pressed="false">KONTAKT</button>
@@ -2954,11 +3872,11 @@
             <article class="offer-file">
               <span class="offer-index">03</span>
               <h3>SYSTEMY</h3>
-              <p>Backend // bazy danych // integracje // rozbudowane aplikacje biznesowe</p>
+              <p>Zaplecze systemu // bazy danych // integracje // rozbudowane aplikacje biznesowe</p>
             </article>
             <button class="offer-file offer-file--action" type="button" data-module="DOWODY">
               <span class="offer-index">04</span>
-              <span class="offer-action-title">REALIZACJE / CASE STUDIES</span>
+              <span class="offer-action-title">REALIZACJE</span>
               <span class="offer-action-copy">Zobacz działające projekty i ich techniczne zaplecze.</span>
               <span class="offer-arrow" aria-hidden="true">→</span>
             </button>
@@ -2967,27 +3885,35 @@
       `,
 
       ANALIZA: `
-        <section class="module-section stamped-section stamped-section--approach" aria-labelledby="approach-title">
+        <section class="module-section approach-section stamped-section stamped-section--approach" aria-labelledby="approach-title">
           <div class="section-intro">
             <div>
+              <div class="section-kicker">OD PROBLEMU DO DZIAŁAJĄCEGO ROZWIĄZANIA</div>
               <h2 id="approach-title">PODEJŚCIE</h2>
+              <p class="section-lead">Najpierw porządkuję to, co naprawdę wymaga poprawy. Dopiero później dobieram technologię i sposób realizacji.</p>
             </div>
           </div>
-          <div class="tile-grid">
-            <article class="tile">
-              <div class="tile-header">ANALIZA_PROBLEMU</div>
-              <ul class="signal-list">
-                <li>Ręczne procesy generują błędy i zabierają czas.</li>
-                <li>Dane funkcjonują w rozproszonych narzędziach.</li>
-                <li>Istniejące rozwiązania przestają skalować się razem z organizacją.</li>
+          <div class="tile-grid approach-grid">
+            <article class="tile approach-card">
+              <div class="audience-card__index">01 // STRONY I SKLEPY</div>
+              <h3>STRONY, SKLEPY I MAŁE REALIZACJE</h3>
+              <p class="audience-card__for">Dla lokalnych firm, artystów, usług, marek osobistych i osób potrzebujących strony, sklepu lub portfolio.</p>
+              <p class="audience-card__description">Tworzę czytelną obecność w sieci, która pokazuje ofertę i ułatwia klientowi kontakt lub zakup.</p>
+              <ul class="audience-capabilities">
+                <li>Strony firmowe</li>
+                <li>Sklepy internetowe</li>
+                <li>Portfolio i strony usługowe</li>
               </ul>
             </article>
-            <article class="tile">
-              <div class="tile-header">ARCHITEKTURA_ROZWIĄZANIA</div>
-              <ul class="signal-list">
-                <li>System projektowany wokół rzeczywistego procesu biznesowego.</li>
-                <li>Jasny podział odpowiedzialności, danych i integracji.</li>
-                <li>Automatyzacja stosowana tam, gdzie ogranicza koszt lub ryzyko operacyjne.</li>
+            <article class="tile approach-card">
+              <div class="audience-card__index">02 // APLIKACJE I SYSTEMY</div>
+              <h3>FIRMY, APLIKACJE I SYSTEMY</h3>
+              <p class="audience-card__for">Dla większych firm rozwijających aplikacje, procesy biznesowe, systemy, integracje lub automatyzacje.</p>
+              <p class="audience-card__description">Buduję narzędzia, które łączą dane, porządkują pracę i zdejmują z zespołu powtarzalne zadania.</p>
+              <ul class="audience-capabilities">
+                <li>Aplikacje webowe i mobilne</li>
+                <li>Systemy biznesowe</li>
+                <li>Integracje i automatyzacje</li>
               </ul>
             </article>
           </div>
@@ -2999,81 +3925,194 @@
         <section class="module-section work-section stamped-section stamped-section--work" aria-labelledby="featured-work-title">
           <div class="section-intro featured-intro">
             <div>
-              <div class="section-kicker">FEATURED / FLAGSHIP CASE STUDY</div>
-              <h2 id="featured-work-title">FEATURED SYSTEM</h2>
+              <div class="section-kicker">REALIZACJE / WYBRANE PROJEKTY</div>
+              <h2 id="featured-work-title">REALIZACJE</h2>
             </div>
           </div>
           <span class="system-stamp system-stamp--work" aria-hidden="true"></span>
-          <div class="featured-projects">
+
+          <div class="case-library">
+            <article class="case-cover" data-case="gotrans">
+              <div class="case-cover__visual">
+                <img
+                  src="assets/projects/gotrans360/gotrans360-cover.webp"
+                  width="1600"
+                  height="900"
+                  alt="Ekran platformy transportowej GoTrans360 z modułami produktu"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                >
+                <img
+                  src="assets/projects/gotrans360/gotrans360-logo-cover.webp"
+                  class="case-cover__logo"
+                  width="180"
+                  height="180"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                >
+                <span class="case-cover__visual-label">GŁÓWNY PROJEKT // TRANSPORT EUROPEJSKI</span>
+              </div>
+              <div class="case-cover__copy">
+                <span class="case-cover__index">CASE 01 // GŁÓWNA REALIZACJA</span>
+                <h3>GoTrans360</h3>
+                <p class="case-cover__summary">Platforma, która łączy pasażerów, przewoźników i dyspozytorów w jednym miejscu.</p>
+                <ul class="case-cover__features" aria-label="Najważniejsze funkcje GoTrans360">
+                  <li>Rezerwacje pasażerskie i obsługa przewozu</li>
+                  <li>Panel operacyjny dla dyspozytora</li>
+                  <li>Trasy, flota i wspólna warstwa danych</li>
+                </ul>
+                <div class="case-cover__footer">
+                  <span class="case-cover__status">ROZWÓJ PRODUKTU // AKTYWNY</span>
+                  <button class="case-cover__trigger" type="button" data-case-study="case-template-gotrans" aria-expanded="false" aria-controls="case-detail-gotrans">
+                    <span>OTWÓRZ REALIZACJĘ</span>
+                  </button>
+                </div>
+              </div>
+              <div id="case-detail-gotrans" class="case-cover__detail" aria-live="polite" aria-hidden="true"></div>
+            </article>
+
+            <article class="case-cover case-cover--reverse" data-case="glikemia">
+              <div class="case-cover__visual glikemia-cover">
+                <img
+                  src="assets/projects/glikemia/glikemia-history-cover.webp"
+                  class="glikemia-cover__phone glikemia-cover__phone--primary"
+                  width="640"
+                  height="1422"
+                  alt="Historia pomiarów i wykres w aplikacji Glikemia Premium"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <img
+                  src="assets/projects/glikemia/glikemia-measurement-cover.webp"
+                  class="glikemia-cover__phone glikemia-cover__phone--secondary"
+                  width="520"
+                  height="1156"
+                  alt="Formularz zapisu pomiaru w aplikacji Glikemia Premium"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="case-cover__visual-label">APLIKACJA MOBILNA // DANE LOKALNE</span>
+              </div>
+              <div class="case-cover__copy">
+                <span class="case-cover__index">CASE 02 // APLIKACJA</span>
+                <h3>Glikemia Premium</h3>
+                <p class="case-cover__summary">Prywatny dziennik glikemii, który porządkuje codzienne pomiary i działa bez obowiązkowej chmury.</p>
+                <ul class="case-cover__features" aria-label="Najważniejsze funkcje Glikemii Premium">
+                  <li>Pomiary, historia, filtry i wykresy</li>
+                  <li>Dane przechowywane lokalnie na urządzeniu</li>
+                  <li>Wielojęzyczność i raporty PDF</li>
+                </ul>
+                <div class="case-cover__footer">
+                  <span class="case-cover__status">APLIKACJA MOBILNA // ANDROID</span>
+                  <button class="case-cover__trigger" type="button" data-case-study="case-template-glikemia" aria-expanded="false" aria-controls="case-detail-glikemia">
+                    <span>OTWÓRZ REALIZACJĘ</span>
+                  </button>
+                </div>
+              </div>
+              <div id="case-detail-glikemia" class="case-cover__detail" aria-live="polite" aria-hidden="true"></div>
+            </article>
+
+            <article class="case-cover" data-case="rwr">
+              <div class="case-cover__visual">
+                <img
+                  data-cover-src="assets/projects/rwr/rwr-cover.webp"
+                  width="1600"
+                  height="840"
+                  alt="Ekran logowania do systemu RWR na tle autobusu"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="case-cover__visual-label">NARZĘDZIE BIZNESOWE // OPERACJE</span>
+              </div>
+              <div class="case-cover__copy">
+                <span class="case-cover__index">CASE 03 // BIZNES</span>
+                <h3>RWR System</h3>
+                <p class="case-cover__summary">System porządkujący pracę kontrolerów, raporty wyjazdów i rozliczenia.</p>
+                <ul class="case-cover__features" aria-label="Najważniejsze funkcje RWR System">
+                  <li>Wprowadzanie i kontrola danych operacyjnych</li>
+                  <li>Raporty zbiorcze i eksport PDF</li>
+                  <li>Mniej ręcznej pracy przy rozliczeniach</li>
+                </ul>
+                <div class="case-cover__footer">
+                  <span class="case-cover__status">SYSTEM BIZNESOWY // WDROŻENIE</span>
+                  <button class="case-cover__trigger" type="button" data-case-study="case-template-rwr" aria-expanded="false" aria-controls="case-detail-rwr">
+                    <span>OTWÓRZ REALIZACJĘ</span>
+                  </button>
+                </div>
+              </div>
+              <div id="case-detail-rwr" class="case-cover__detail" aria-live="polite" aria-hidden="true"></div>
+            </article>
+
+            <article class="case-cover case-cover--reverse" data-case="obserwator">
+              <div class="case-cover__visual">
+                <img
+                  data-cover-src="assets/projects/obserwator/obserwator-cover.webp"
+                  width="1600"
+                  height="840"
+                  alt="Strona główna serwisu Obserwator Marka Zaworskiego"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <span class="case-cover__visual-label">PLATFORMA AUTORA // PUBLIKACJA</span>
+              </div>
+              <div class="case-cover__copy">
+                <span class="case-cover__index">CASE 04 // STRONA WWW</span>
+                <h3>Obserwator</h3>
+                <p class="case-cover__summary">Serwis autora z archiwum treści i dedykowanymi narzędziami do publikacji.</p>
+                <ul class="case-cover__features" aria-label="Najważniejsze funkcje projektu Obserwator">
+                  <li>Wyrazista strona zgodna z charakterem autora</li>
+                  <li>Archiwum niezależnych treści</li>
+                  <li>Autoryzowany panel publikacji</li>
+                </ul>
+                <div class="case-cover__footer">
+                  <span class="case-cover__status">STRONA + NARZĘDZIA</span>
+                  <button class="case-cover__trigger" type="button" data-case-study="case-template-obserwator" aria-expanded="false" aria-controls="case-detail-obserwator">
+                    <span>OTWÓRZ REALIZACJĘ</span>
+                  </button>
+                </div>
+              </div>
+              <div id="case-detail-obserwator" class="case-cover__detail" aria-live="polite" aria-hidden="true"></div>
+            </article>
+          </div>
+
+          <div class="case-templates" aria-hidden="true">
+            <template id="case-template-gotrans">
             <article class="tile gotrans-featured" aria-labelledby="gotrans-title">
               <header class="gotrans-masthead">
                 <div class="gotrans-logo-lockup">
                   <img
-                    src="assets/projects/gotrans360/gotrans360-logo.png"
+                    src="assets/projects/gotrans360/gotrans360-logo-cover.webp"
                     class="gotrans-logo"
-                    width="1254"
-                    height="1254"
+                    width="180"
+                    height="180"
                     alt="Logo platformy GoTrans360"
                     loading="eager"
                     decoding="async"
                   >
                   <div>
-                    <div class="gotrans-eyebrow">FEATURED SYSTEM // EUROPEAN TRANSPORT PLATFORM</div>
+                    <div class="gotrans-eyebrow">WYRÓŻNIONY PROJEKT // EUROPEJSKA PLATFORMA TRANSPORTOWA</div>
                     <h3 id="gotrans-title" class="gotrans-title">GoTrans360</h3>
                   </div>
                 </div>
                 <div class="gotrans-masthead-note">
-                  <div class="gotrans-headline">To nie jest landing page. To wielomodułowy system.</div>
+                  <div class="gotrans-headline">To nie jest zwykła strona. To wielomodułowy system.</div>
                   <div class="gotrans-status-row">
-                    <span class="gotrans-status">PRODUCT DEVELOPMENT // ACTIVE</span>
+                    <span class="gotrans-status">ROZWÓJ PRODUKTU // AKTYWNY</span>
                   </div>
                 </div>
               </header>
 
-              <div class="gotrans-gallery" aria-label="Finalne screenshoty działającego systemu GoTrans360">
-                <figure class="gotrans-shot gotrans-shot--primary">
-                  <img
-                    src="assets/projects/gotrans360/gotrans360-platform-capabilities.png"
-                    width="1920"
-                    height="1080"
-                    alt="Ekran GoTrans360 pokazujący moduły platformy i etapy procesu transportowego"
-                    loading="eager"
-                    decoding="async"
-                  >
-                  <figcaption><span>PRODUCT SCOPE</span><span>DEVELOPMENT SURFACE</span></figcaption>
-                </figure>
-                <figure class="gotrans-shot">
-                  <img
-                    src="assets/projects/gotrans360/gotrans360-carrier-onboarding.png"
-                    width="1920"
-                    height="1080"
-                    alt="Formularz rejestracji firmy transportowej w GoTrans360"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <figcaption><span>CARRIER ONBOARDING</span><span>DEVELOPMENT FLOW</span></figcaption>
-                </figure>
-                <figure class="gotrans-shot">
-                  <img
-                    src="assets/projects/gotrans360/gotrans360-passenger-portal.png"
-                    width="1920"
-                    height="1080"
-                    alt="Portal pasażera GoTrans360 z wyszukiwarką połączeń"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <figcaption><span>PASSENGER PORTAL</span><span>IMPLEMENTED UI</span></figcaption>
-                </figure>
-              </div>
-
               <div class="gotrans-intro">
                 <div class="gotrans-overview">
                   <div class="gotrans-summary">
-                    <p>GoTrans360 to rozwijana europejska platforma transportowa, która łączy pasażerów, przesyłki / cargo i operacje dyspozytorskie w jednym ekosystemie.</p>
-                    <p>Architektura rozdziela interfejsy według ról, ale współdzieli dane i logikę transportową. Monorepo wielu aplikacji jest przygotowane do rozszerzania poza relacje PL ↔ DE na kolejne rynki europejskie.</p>
+                    <div class="gotrans-case-label">CO TO JEST</div>
+                    <p>GoTrans360 to rozwijana europejska platforma transportowa, która łączy pasażerów, przesyłki i pracę dyspozytora w jednym systemie.</p>
+                    <p>Każda rola otrzymuje własny interfejs, ale wszystkie części systemu korzystają ze wspólnych danych i logiki transportowej. Projekt jest przygotowany do rozszerzania poza relacje PL ↔ DE na kolejne rynki europejskie.</p>
                   </div>
 
-                  <ul class="project-tags" aria-label="Potwierdzony stack GoTrans360">
+                  <ul class="project-tags" aria-label="Potwierdzone technologie GoTrans360">
                     <li>TypeScript</li>
                     <li>React</li>
                     <li>Next.js</li>
@@ -3087,9 +4126,10 @@
                 </div>
 
                 <div class="gotrans-delivery" aria-label="Stan realizacji modułów GoTrans360">
-                  <p><strong>IMPLEMENTED</strong><span>Auth i panel dyspozytora, UI portalu pasażera, API tras i floty oraz warstwa Prisma/PostgreSQL/PostGIS.</span></p>
-                  <p><strong>DEVELOPMENT / PROTOTYPE</strong><span>Rezerwacja end-to-end, pełny workflow dyspozytorski, Smart Match / VRP i współdzielone typy domenowe.</span></p>
-                  <p><strong>PLANNED</strong><span>Kompletny workflow cargo/B2B i aplikacja kierowcy.</span></p>
+                  <div class="gotrans-case-label">CO ZOSTAŁO ZROBIONE</div>
+                  <p><strong>WDROŻONE</strong><span>Logowanie i panel dyspozytora, interfejs portalu pasażera, API tras i floty oraz warstwa Prisma/PostgreSQL/PostGIS.</span></p>
+                  <p><strong>W ROZWOJU / PROTOTYP</strong><span>Pełna rezerwacja, kompletny proces dyspozytorski, Smart Match / VRP i wspólne typy domenowe.</span></p>
+                  <p><strong>PLANOWANE</strong><span>Kompletny proces obsługi przesyłek B2B i aplikacja kierowcy.</span></p>
                 </div>
               </div>
 
@@ -3097,67 +4137,108 @@
                 <section class="gotrans-case-block">
                   <div class="gotrans-case-label">PROBLEM</div>
                   <h4>Rozproszone operacje transportowe</h4>
-                  <p>W relacjach PL ↔ DE pasażerowie, cargo i dyspozycja funkcjonują jako osobne procesy: telefon, komunikatory, arkusze i ręczne ustalanie tras rozdzielają operacyjne dane.</p>
+                  <p>W relacjach PL ↔ DE przewóz pasażerów, przesyłki i dyspozycja funkcjonują jako osobne procesy: telefon, komunikatory, arkusze i ręczne ustalanie tras rozdzielają dane operacyjne.</p>
                 </section>
                 <section class="gotrans-case-block">
-                  <div class="gotrans-case-label">SOLUTION</div>
+                  <div class="gotrans-case-label">ROZWIĄZANIE</div>
                   <h4>Jedna architektura, interfejsy zgodne z rolą</h4>
                   <p>Wspólna warstwa danych i logiki integruje te procesy, zachowując osobne powierzchnie produktu i przygotowując system do rozszerzania na kolejne rynki europejskie.</p>
                 </section>
               </div>
 
+              <div class="gotrans-detail-label gotrans-case-label">NAJWAŻNIEJSZE FUNKCJE</div>
               <div class="gotrans-pillars" aria-label="Trzy filary produktu GoTrans360">
                 <section class="gotrans-pillar">
-                  <span class="gotrans-pillar-index">01 // CORE PILLAR</span>
-                  <h4>PASSENGERS</h4>
-                  <p>Warstwa UI portalu i wyszukiwarki jest zaimplementowana. Pełna rezerwacja i obsługa przewozu end-to-end pozostają w rozwoju.</p>
+                  <span class="gotrans-pillar-index">01 // GŁÓWNY OBSZAR</span>
+                  <h4>PASAŻEROWIE</h4>
+                  <p>Interfejs portalu i wyszukiwarki jest gotowy. Pełna rezerwacja i obsługa przewozu od początku do końca pozostają w rozwoju.</p>
                 </section>
                 <section class="gotrans-pillar">
-                  <span class="gotrans-pillar-index">02 // CORE PILLAR</span>
-                  <h4>CARGO</h4>
-                  <p>Przesyłki i ładunki B2C/B2B są częścią domeny produktu. Dedykowany, kompletny workflow cargo/B2B jest planowany.</p>
+                  <span class="gotrans-pillar-index">02 // GŁÓWNY OBSZAR</span>
+                  <h4>PRZESYŁKI</h4>
+                  <p>Przesyłki i ładunki B2C/B2B są częścią produktu. Dedykowany, kompletny proces ich obsługi jest planowany.</p>
                 </section>
                 <section class="gotrans-pillar">
-                  <span class="gotrans-pillar-index">03 // CORE PILLAR</span>
-                  <h4>DISPATCH</h4>
-                  <p>Auth, panel operacyjny oraz API tras i floty są zaimplementowane. Pełny workflow i Smart Match / VRP są rozwijane jako prototyp.</p>
+                  <span class="gotrans-pillar-index">03 // GŁÓWNY OBSZAR</span>
+                  <h4>DYSPOZYCJA</h4>
+                  <p>Logowanie, panel operacyjny oraz API tras i floty są wdrożone. Pełny proces i Smart Match / VRP są rozwijane jako prototyp.</p>
                 </section>
               </div>
 
+              <div class="gotrans-detail-label gotrans-case-label">JAK TO WYGLĄDA</div>
+              <div class="gotrans-gallery" aria-label="Zrzuty ekranu działającego systemu GoTrans360">
+                <figure class="gotrans-shot gotrans-shot--primary">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-platform-capabilities.png"
+                    width="1920"
+                    height="1080"
+                    alt="Ekran GoTrans360 pokazujący moduły platformy i etapy procesu transportowego"
+                    loading="eager"
+                    decoding="async"
+                  >
+                  <figcaption><span>ZAKRES PRODUKTU</span><span>STAN ROZWOJU</span></figcaption>
+                </figure>
+                <figure class="gotrans-shot">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-carrier-onboarding.png"
+                    width="1920"
+                    height="1080"
+                    alt="Formularz rejestracji firmy transportowej w GoTrans360"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <figcaption><span>REJESTRACJA PRZEWOŹNIKA</span><span>PROCES W ROZWOJU</span></figcaption>
+                </figure>
+                <figure class="gotrans-shot">
+                  <img
+                    src="assets/projects/gotrans360/gotrans360-passenger-portal.png"
+                    width="1920"
+                    height="1080"
+                    alt="Portal pasażera GoTrans360 z wyszukiwarką połączeń"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <figcaption><span>PORTAL PASAŻERA</span><span>GOTOWY INTERFEJS</span></figcaption>
+                </figure>
+              </div>
+
+              <details class="technical-disclosure">
+                <summary>TECHNICZNIE // ARCHITEKTURA, WALIDACJA I WYNIKI TESTÓW</summary>
+                <div class="technical-disclosure__body">
               <section id="gotrans-architecture" class="gotrans-architecture" aria-labelledby="gotrans-architecture-title">
                 <div class="gotrans-section-heading">
                   <div>
-                    <div class="gotrans-case-label">SYSTEM ARCHITECTURE</div>
-                    <h4 id="gotrans-architecture-title">Monorepo. Wiele aplikacji. Wspólne fundamenty.</h4>
+                    <div class="gotrans-case-label">ARCHITEKTURA SYSTEMU</div>
+                    <h4 id="gotrans-architecture-title">Jedno repozytorium. Wiele aplikacji. Wspólne fundamenty.</h4>
                   </div>
                   <p>Czytelny przekrój modułów i ich dojrzałości — bez sugerowania, że planowane przepływy są już ukończonym produktem.</p>
                 </div>
 
                 <div class="gotrans-architecture-map">
                   <div class="gotrans-architecture-layer">
-                    <strong>ROLE-BASED SURFACES</strong>
+                    <strong>INTERFEJSY WEDŁUG RÓL</strong>
                     <div class="gotrans-nodes">
-                      <div class="gotrans-node"><strong>web-passenger</strong><span>IMPLEMENTED UI // FLOW IN DEVELOPMENT</span></div>
-                      <div class="gotrans-node"><strong>web-dispatcher</strong><span>AUTH + DASHBOARD IMPLEMENTED</span></div>
-                      <div class="gotrans-node is-planned"><strong>app-driver</strong><span>PLANNED MODULE</span></div>
+                      <div class="gotrans-node"><strong>web-passenger</strong><span>INTERFEJS GOTOWY // PROCES W ROZWOJU</span></div>
+                      <div class="gotrans-node"><strong>web-dispatcher</strong><span>LOGOWANIE + PANEL GOTOWE</span></div>
+                      <div class="gotrans-node is-planned"><strong>app-driver</strong><span>MODUŁ PLANOWANY</span></div>
                     </div>
                   </div>
 
                   <div class="gotrans-architecture-layer">
-                    <strong>SERVICES + LOGIC</strong>
+                    <strong>USŁUGI + LOGIKA</strong>
                     <div class="gotrans-nodes">
-                      <div class="gotrans-node"><strong>api-core</strong><span>TRIPS + FLEET API IMPLEMENTED</span></div>
-                      <div class="gotrans-node is-development"><strong>vrp-engine</strong><span>SMART MATCH // DEVELOPMENT PROTOTYPE</span></div>
-                      <div class="gotrans-node is-planned"><strong>cargo / B2B</strong><span>PLANNED WORKFLOW</span></div>
+                      <div class="gotrans-node"><strong>api-core</strong><span>API TRAS + FLOTY WDROŻONE</span></div>
+                      <div class="gotrans-node is-development"><strong>vrp-engine</strong><span>SMART MATCH // PROTOTYP W ROZWOJU</span></div>
+                      <div class="gotrans-node is-planned"><strong>przesyłki / B2B</strong><span>PROCES PLANOWANY</span></div>
                     </div>
                   </div>
 
                   <div class="gotrans-architecture-layer">
-                    <strong>DATA + SHARED PACKAGES</strong>
+                    <strong>DANE + PAKIETY WSPÓLNE</strong>
                     <div class="gotrans-nodes">
                       <div class="gotrans-node"><strong>database</strong><span>PRISMA // POSTGRESQL // POSTGIS</span></div>
-                      <div class="gotrans-node is-development"><strong>ui-shared</strong><span>SHARED FOUNDATION // DEVELOPMENT</span></div>
-                      <div class="gotrans-node is-development"><strong>domain types</strong><span>CONSOLIDATION IN DEVELOPMENT</span></div>
+                      <div class="gotrans-node is-development"><strong>ui-shared</strong><span>WSPÓLNA BAZA // W ROZWOJU</span></div>
+                      <div class="gotrans-node is-development"><strong>domain types</strong><span>PORZĄDKOWANIE W TOKU</span></div>
                     </div>
                   </div>
                 </div>
@@ -3166,70 +4247,66 @@
               <section class="gotrans-validation" aria-labelledby="gotrans-validation-title">
                 <div class="gotrans-section-heading">
                   <div>
-                    <div class="gotrans-case-label">ENGINEERING VALIDATION</div>
-                    <h4 id="gotrans-validation-title">TESTED, NOT ASSUMED.</h4>
+                    <div class="gotrans-case-label">WERYFIKACJA TECHNICZNA</div>
+                    <h4 id="gotrans-validation-title">ZMIERZONE, NIE ZAŁOŻONE.</h4>
                   </div>
                 </div>
-                <p class="gotrans-validation-lead">Portfolio metrics are backed by reproducible tests against the working development system. Claims that could not be technically confirmed were intentionally excluded.</p>
+                <p class="gotrans-validation-lead">Metryki prezentowane na stronie pochodzą z powtarzalnych testów działającej wersji rozwojowej systemu. Informacje, których nie udało się potwierdzić technicznie, zostały celowo pominięte.</p>
 
                 <div class="gotrans-metrics" aria-label="Zweryfikowane wyniki testów GoTrans360">
                   <article class="gotrans-metric">
-                    <span class="gotrans-metric-label">TESTED SCALE</span>
+                    <span class="gotrans-metric-label">TESTOWANA SKALA</span>
                     <span class="gotrans-metric-value">12,567</span>
-                    <p>Validated against a dataset of 12,567 routes in a controlled test environment.</p>
-                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                    <p>Zweryfikowano na zbiorze 12 567 tras w kontrolowanym środowisku testowym.</p>
+                    <span class="gotrans-metric-status">POTWIERDZONE Z OGRANICZENIAMI</span>
                   </article>
                   <article class="gotrans-metric">
-                    <span class="gotrans-metric-label">MEASURED // /TRIPS</span>
+                    <span class="gotrans-metric-label">POMIAR // /TRIPS</span>
                     <span class="gotrans-metric-value">5.35 s</span>
-                    <p>Median full-dataset response. The endpoint is currently unpaginated; the test completed without errors.</p>
-                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                    <p>Mediana odpowiedzi dla pełnego zbioru. Endpoint nie ma obecnie paginacji; test zakończył się bez błędów.</p>
+                    <span class="gotrans-metric-status">POTWIERDZONE Z OGRANICZENIAMI</span>
                   </article>
                   <article class="gotrans-metric">
-                    <span class="gotrans-metric-label">MEASURED PAYLOAD</span>
+                    <span class="gotrans-metric-label">ZMIERZONY ROZMIAR DANYCH</span>
                     <span class="gotrans-metric-value">13.41 MB</span>
-                    <p>Full response from the non-paginated /trips endpoint — a concrete optimization target.</p>
-                    <span class="gotrans-metric-status">VERIFIED WITH LIMITATIONS</span>
+                    <p>Pełna odpowiedź endpointu /trips bez paginacji — konkretny cel optymalizacji.</p>
+                    <span class="gotrans-metric-status">POTWIERDZONE Z OGRANICZENIAMI</span>
                   </article>
                   <article class="gotrans-metric">
-                    <span class="gotrans-metric-label">VALIDATED // SMART MATCH</span>
+                    <span class="gotrans-metric-label">WALIDACJA // SMART MATCH</span>
                     <span class="gotrans-metric-value">2</span>
-                    <p>Two proposals reproduced from the screen's exact demo scenario in API and logic runs.</p>
-                    <span class="gotrans-metric-status">VERIFIED</span>
+                    <p>Dwie propozycje odtworzone z dokładnego scenariusza demonstracyjnego w testach API i logiki.</p>
+                    <span class="gotrans-metric-status">POTWIERDZONE</span>
                   </article>
                   <article class="gotrans-metric">
-                    <span class="gotrans-metric-label">MEASURED // SMART MATCH</span>
+                    <span class="gotrans-metric-label">POMIAR // SMART MATCH</span>
                     <span class="gotrans-metric-value">15.21 ms</span>
-                    <p>Median API response across three runs, with zero API and logic errors.</p>
-                    <span class="gotrans-metric-status">VERIFIED</span>
+                    <p>Mediana czasu odpowiedzi API z trzech prób, bez błędów API i logiki.</p>
+                    <span class="gotrans-metric-status">POTWIERDZONE</span>
                   </article>
                 </div>
               </section>
 
               <aside class="gotrans-finding" aria-labelledby="gotrans-finding-title">
                 <div>
-                  <div class="gotrans-case-label">ENGINEERING FINDING</div>
+                  <div class="gotrans-case-label">WNIOSEK Z TESTÓW</div>
                   <h4 id="gotrans-finding-title">Paginacja jest kolejnym mierzalnym krokiem.</h4>
                 </div>
                 <p>Test potwierdził skalę zbioru danych, jednocześnie ujawniając brak paginacji endpointu /trips jako konkretny, mierzalny cel optymalizacyjny. To właśnie wartość realnej walidacji: ograniczenie zostało zmierzone i nazwane, zamiast przykryte marketingową deklaracją.</p>
               </aside>
+                </div>
+              </details>
             </article>
-          </div>
+            </template>
 
-          <div class="section-intro selected-work-intro">
-            <div>
-              <div class="section-kicker">PORTFOLIO</div>
-              <h2 id="selected-work-title">SELECTED WORK</h2>
-            </div>
-          </div>
-          <div class="tile-grid selected-work-grid">
+            <template id="case-template-glikemia">
             <article class="tile project-card glikemia-project">
               <div class="project-gallery portrait-gallery" aria-label="Galeria aplikacji Glikemia Premium">
-                <img src="assets/projects/glikemia/glikemia-measurement.jpg" class="active" alt="Formularz zapisu glikemii, WW, WBT, kontekstu i notatki w aplikacji Glikemia Premium" loading="eager">
-                <img src="assets/projects/glikemia/glikemia-history.jpg" alt="Historia pomiarów Glikemia Premium z filtrami, wykresem i usuwaniem wpisów" loading="lazy" decoding="async">
-                <img src="assets/projects/glikemia/glikemia-language.jpg" alt="Wybór języka interfejsu aplikacji Glikemia Premium" loading="lazy" decoding="async">
-                <img src="assets/projects/glikemia/glikemia-report-summary.jpg" alt="Podsumowanie i pierwsze strony wielostronicowego raportu PDF dla 10 000 pomiarów" loading="lazy" decoding="async">
-                <img src="assets/projects/glikemia/glikemia-report-pages.jpg" alt="Dalsze strony raportu PDF z historią pomiarów Glikemia Premium" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-measurement.jpg" class="active" width="1080" height="2400" alt="Formularz zapisu glikemii, WW, WBT, kontekstu i notatki w aplikacji Glikemia Premium" loading="eager" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-history.jpg" width="1080" height="2400" alt="Historia pomiarów Glikemia Premium z filtrami, wykresem i usuwaniem wpisów" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-language.jpg" width="1080" height="2400" alt="Wybór języka interfejsu aplikacji Glikemia Premium" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-report-summary.jpg" width="1080" height="2400" alt="Podsumowanie i pierwsze strony wielostronicowego raportu PDF dla 10 000 pomiarów" loading="lazy" decoding="async">
+                <img src="assets/projects/glikemia/glikemia-report-pages.jpg" width="1080" height="2400" alt="Dalsze strony raportu PDF z historią pomiarów Glikemia Premium" loading="lazy" decoding="async">
               </div>
               <div class="project-copy">
                 <div class="tile-header">APLIKACJA: GLIKEMIA PREMIUM</div>
@@ -3249,34 +4326,36 @@
                   <li>XAML</li>
                   <li>SQLite</li>
                   <li>Android</li>
-                  <li>Local-first</li>
-                  <li>Offline</li>
-                  <li>Privacy-first</li>
-                  <li>PDF reports</li>
-                  <li>Data visualization</li>
-                  <li>Multilingual UI</li>
+                  <li>Dane lokalne</li>
+                  <li>Tryb offline</li>
+                  <li>Prywatność</li>
+                  <li>Raporty PDF</li>
+                  <li>Wizualizacja danych</li>
+                  <li>Wielojęzyczny interfejs</li>
                   <li>PL / EN / DE / ES / IT / UK / RU</li>
                 </ul>
 
                 <ul class="project-highlights" aria-label="Najważniejsze decyzje i rezultaty techniczne">
-                  <li><strong>Local-first</strong>Brak własnej chmury i brak obowiązkowego konta użytkownika.</li>
+                  <li><strong>Dane lokalne</strong>Brak własnej chmury i brak obowiązkowego konta użytkownika.</li>
                   <li><strong>Historia na lata danych</strong>Paginacja, asynchroniczne zapytania SQLite i wirtualizowany CollectionView.</li>
                   <li><strong>Raportowanie</strong>Wielostronicowy raport PDF z historią i podsumowaniem danych.</li>
                   <li><strong>Wielojęzyczność</strong>Interfejs przygotowany dla wielu rynków i siedmiu języków.</li>
                 </ul>
 
-                <div class="stat-box">TEST NA FIZYCZNYM ANDROIDZIE: <span class="stat-num">10 000 WPISÓW // BRAK CRASHA // BRAK ANR</span> // LISTA NIE RENDERUJE 10 000 ELEMENTÓW JEDNOCZEŚNIE</div>
+                <div class="stat-box">TEST NA FIZYCZNYM ANDROIDZIE: <span class="stat-num">10 000 WPISÓW // BRAK AWARII // BRAK ANR</span> // LISTA NIE RENDERUJE 10 000 ELEMENTÓW JEDNOCZEŚNIE</div>
               </div>
             </article>
+            </template>
 
+            <template id="case-template-rwr">
             <article class="tile project-card">
               <div class="project-gallery" aria-label="Galeria projektu RWR System">
-                <img src="rwr0.png" class="active" alt="Ekran logowania RWR System" loading="eager">
-                <img src="rwr1.png" alt="Formularz wpisów RWR System" loading="lazy" decoding="async">
-                <img src="rwr2.png" alt="Raport wyjazdów RWR System" loading="lazy" decoding="async">
-                <img src="rwr3.png" alt="Wprowadzanie danych w RWR System" loading="lazy" decoding="async">
-                <img src="rwr4.png" alt="Wyniki zbiorcze RWR System" loading="lazy" decoding="async">
-                <img src="rwr5.png" alt="Raport PDF wygenerowany przez RWR System" loading="lazy" decoding="async">
+                <img src="rwr0.png" class="active" width="1920" height="1008" alt="Ekran logowania RWR System" loading="eager" decoding="async">
+                <img src="rwr1.png" width="1920" height="1008" alt="Formularz wpisów RWR System" loading="lazy" decoding="async">
+                <img src="rwr2.png" width="1920" height="1008" alt="Raport wyjazdów RWR System" loading="lazy" decoding="async">
+                <img src="rwr3.png" width="1920" height="1008" alt="Wprowadzanie danych w RWR System" loading="lazy" decoding="async">
+                <img src="rwr4.png" width="1920" height="1080" alt="Wyniki zbiorcze RWR System" loading="lazy" decoding="async">
+                <img src="rwr5.png" width="1920" height="1008" alt="Raport PDF wygenerowany przez RWR System" loading="lazy" decoding="async">
               </div>
               <div class="project-copy">
                 <div class="tile-header">SYSTEM: RWR SYSTEM</div>
@@ -3285,16 +4364,18 @@
                 <div class="stat-box">WYNIK: <span class="stat-num">-40% CZASU</span> obsługi.</div>
               </div>
             </article>
+            </template>
 
+            <template id="case-template-obserwator">
             <article class="tile project-card">
               <div class="project-gallery" aria-label="Galeria projektu Obserwator">
-                <img src="zaworski1.png" class="active" alt="Strona główna projektu Obserwator" loading="eager">
-                <img src="zaworski2.png" alt="Archiwum projektu Obserwator" loading="lazy" decoding="async">
-                <img src="zaworski3.png" alt="Moduł projektu Bielik" loading="lazy" decoding="async">
-                <img src="zaworski4.png" alt="Okno autoryzacji projektu Bielik" loading="lazy" decoding="async">
-                <img src="zaworski5.png" alt="Potwierdzenie autoryzacji projektu Bielik" loading="lazy" decoding="async">
-                <img src="zaworski6.png" alt="Raport operacyjny projektu Bielik" loading="lazy" decoding="async">
-                <img src="zaworski7.png" alt="Formularz publikacji w projekcie Obserwator" loading="lazy" decoding="async">
+                <img src="zaworski1.png" class="active" width="1920" height="1008" alt="Strona główna projektu Obserwator" loading="eager" decoding="async">
+                <img src="zaworski2.png" width="1920" height="1008" alt="Archiwum projektu Obserwator" loading="lazy" decoding="async">
+                <img src="zaworski3.png" width="1920" height="1008" alt="Moduł projektu Bielik" loading="lazy" decoding="async">
+                <img src="zaworski4.png" width="1920" height="1008" alt="Okno autoryzacji projektu Bielik" loading="lazy" decoding="async">
+                <img src="zaworski5.png" width="1920" height="1008" alt="Potwierdzenie autoryzacji projektu Bielik" loading="lazy" decoding="async">
+                <img src="zaworski6.png" width="1920" height="1008" alt="Raport operacyjny projektu Bielik" loading="lazy" decoding="async">
+                <img src="zaworski7.png" width="1920" height="1008" alt="Formularz publikacji w projekcie Obserwator" loading="lazy" decoding="async">
               </div>
               <div class="project-copy">
                 <div class="tile-header">AUTOR: MAREK ZAWORSKI</div>
@@ -3303,30 +4384,63 @@
                 <div class="stat-box">WYNIK: <span class="stat-num">SKALOWALNY SYSTEM</span></div>
               </div>
             </article>
+            </template>
 
           </div>
         </section>
       `,
 
       OBSZARY: `
-        <section class="module-section stamped-section stamped-section--areas" aria-labelledby="areas-title">
+        <section class="module-section areas-section stamped-section stamped-section--areas" aria-labelledby="areas-title">
           <div class="section-intro">
             <div>
+              <div class="section-kicker">CO MOGĘ DLA CIEBIE ZBUDOWAĆ</div>
               <h2 id="areas-title">OBSZARY</h2>
+              <p class="section-lead">Od prostej strony po narzędzie, które porządkuje codzienną pracę firmy.</p>
             </div>
           </div>
           <div class="area-grid">
             <article class="tile area-card">
-              <div class="tile-header">CUSTOM SOFTWARE</div>
-              <p>Dedykowane aplikacje webowe, systemy operacyjne i narzędzia wspierające rzeczywiste procesy biznesowe.</p>
+              <div class="area-card__top">
+                <span class="area-card__index">01 // WWW</span>
+                <span class="area-card__symbol" aria-hidden="true">⌁</span>
+              </div>
+              <h3>STRONY I SKLEPY</h3>
+              <p>Nowoczesne strony internetowe, sklepy online i serwisy dla firm, twórców, marek osobistych i lokalnych biznesów.</p>
+              <ul class="area-capabilities">
+                <li>Strony firmowe i usługowe</li>
+                <li>Sklepy internetowe</li>
+                <li>Portfolio i marki osobiste</li>
+              </ul>
+              <button class="glass-cta area-card__cta" type="button" data-module="DOWODY">ZOBACZ PRZYKŁADY</button>
             </article>
             <article class="tile area-card">
-              <div class="tile-header">SYSTEM INTEGRATION</div>
-              <p>API, przepływy danych i integracje łączące istniejące systemy w spójne środowisko.</p>
+              <div class="area-card__top">
+                <span class="area-card__index">02 // APP</span>
+                <span class="area-card__symbol" aria-hidden="true">◇</span>
+              </div>
+              <h3>APLIKACJE I NARZĘDZIA</h3>
+              <p>Aplikacje webowe i mobilne oraz narzędzia wspierające codzienną pracę, sprzedaż i obsługę klientów.</p>
+              <ul class="area-capabilities">
+                <li>Aplikacje webowe i mobilne</li>
+                <li>Panele i narzędzia wewnętrzne</li>
+                <li>Obsługa sprzedaży i klientów</li>
+              </ul>
+              <button class="glass-cta area-card__cta" type="button" data-module="DOWODY">ZOBACZ PRZYKŁADY</button>
             </article>
             <article class="tile area-card">
-              <div class="tile-header">PRODUCT DEVELOPMENT</div>
-              <p>Od analizy problemu i architektury po implementację, testy i działający produkt.</p>
+              <div class="area-card__top">
+                <span class="area-card__index">03 // API</span>
+                <span class="area-card__symbol" aria-hidden="true">⌬</span>
+              </div>
+              <h3>SYSTEMY I INTEGRACJE</h3>
+              <p>Rozbudowane systemy biznesowe, zaplecze operacyjne, automatyzacje, API i połączenia między usługami.</p>
+              <ul class="area-capabilities">
+                <li>Systemy operacyjne dla firm</li>
+                <li>Automatyzacje i API</li>
+                <li>Integracje danych i usług</li>
+              </ul>
+              <button class="glass-cta area-card__cta" type="button" data-module="DOWODY">ZOBACZ PRZYKŁADY</button>
             </article>
           </div>
           <span class="system-stamp system-stamp--areas" aria-hidden="true"></span>
@@ -3334,10 +4448,12 @@
       `,
 
       PROCES: `
-        <section class="module-section stamped-section stamped-section--process" aria-labelledby="process-title">
+        <section class="module-section process-section stamped-section stamped-section--process" aria-labelledby="process-title">
           <div class="section-intro">
             <div>
+              <div class="section-kicker">CZTERY CZYTELNE ETAPY</div>
               <h2 id="process-title">PROCES</h2>
+              <p class="section-lead">Wiesz, co dzieje się z projektem od pierwszej rozmowy do uruchomienia gotowego rozwiązania.</p>
             </div>
           </div>
           <div class="process-grid">
@@ -3354,7 +4470,7 @@
             <article class="tile process-card">
               <span class="step-index">03 //</span>
               <h3>IMPLEMENTACJA</h3>
-              <p>Frontend, backend, integracje i automatyzacja.</p>
+              <p>Interfejs, logika systemu, integracje i automatyzacja.</p>
             </article>
             <article class="tile process-card">
               <span class="step-index">04 //</span>
@@ -3374,7 +4490,7 @@
             <p>Jeżeli masz proces, produkt lub system, który wymaga uporządkowania albo rozbudowy, opisz krótko problem i oczekiwany rezultat.</p>
             <a class="contact-email" href="mailto:progresskit7@gmail.com">progresskit7@gmail.com</a>
             <div class="actions">
-              <button class="cta-button" type="button" data-module="BRIEF">ROZPOCZNIJ BRIEF</button>
+              <button class="cta-button" type="button" data-module="BRIEF">OPISZ PROJEKT</button>
               <a href="https://www.facebook.com/profile.php?id=61574306963115" target="_blank" rel="noopener noreferrer" class="cta-button secondary">PROFIL FACEBOOK</a>
             </div>
           </div>
@@ -3384,9 +4500,10 @@
 
       BRIEF: `
         <section class="module-section panel-card brief-card stamped-section stamped-section--brief" aria-labelledby="brief-title">
-          <h2 id="brief-title">BRIEF PROJEKTOWY</h2>
+          <h2 id="brief-title">OPIS PROJEKTU</h2>
           <p class="brief-intro">Wypełnij poniższe pola. Możesz wydrukować ten dokument do PDF i wysłać na nasz e-mail.</p>
 
+          <div class="brief-flow">
           <div class="brief-section">
             <h3>01 // KONTEKST</h3>
             <div class="brief-fields">
@@ -3428,9 +4545,10 @@
               </div>
             </div>
           </div>
+          </div>
 
           <div class="actions">
-            <button class="cta-button" type="button" data-action="print">ZAPISZ / DRUKUJ BRIEF</button>
+            <button class="cta-button" type="button" data-action="print">ZAPISZ / DRUKUJ OPIS</button>
             <button class="cta-button secondary" type="button" data-module="KONTAKT">WRÓĆ</button>
           </div>
           <span class="system-stamp system-stamp--brief" aria-hidden="true"></span>
@@ -3440,24 +4558,90 @@
 
     const sliderIntervals = new Set();
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // PERF_LAZY_DOM_START
+    const caseStudyFragments = Object.create(null);
+
+    modules.DOWODY = modules.DOWODY
+      .replace(/<template id="(case-template-[^"]+)">\s*([\s\S]*?)\s*<\/template>/g, (_, templateId, fragment) => {
+        caseStudyFragments[templateId] = fragment;
+        return "";
+      })
+      .replace(/\s*<div class="case-templates" aria-hidden="true">\s*<\/div>/, "");
+    // PERF_LAZY_DOM_END
+
     const navigationModule = {
       BRIEF: "KONTAKT"
     };
     let teardownBrandRelief = () => {};
+    let teardownDeferredCoverLoading = () => {};
+
+    function stopDeferredCoverLoading() {
+      teardownDeferredCoverLoading();
+      teardownDeferredCoverLoading = () => {};
+    }
+
+    function setupDeferredCoverLoading(root) {
+      const deferredImages = Array.from(root.querySelectorAll("img[data-cover-src]"));
+
+      if (!deferredImages.length) {
+        return;
+      }
+
+      const loadImage = (image) => {
+        image.src = image.dataset.coverSrc;
+        image.removeAttribute("data-cover-src");
+      };
+
+      const panel = document.getElementById("panel");
+      let frameId = null;
+
+      const loadApproachingImages = () => {
+        frameId = null;
+        const panelBounds = panel.getBoundingClientRect();
+
+        deferredImages.forEach((image) => {
+          if (!image.dataset.coverSrc) {
+            return;
+          }
+
+          const imageBounds = image.getBoundingClientRect();
+          const approachesViewport = imageBounds.top <= panelBounds.bottom + 600
+            && imageBounds.bottom >= panelBounds.top - 600;
+
+          if (approachesViewport) {
+            loadImage(image);
+          }
+        });
+      };
+
+      const onPanelScroll = () => {
+        if (frameId === null) {
+          frameId = window.requestAnimationFrame(loadApproachingImages);
+        }
+      };
+
+      panel.addEventListener("scroll", onPanelScroll, { passive: true });
+      teardownDeferredCoverLoading = () => {
+        panel.removeEventListener("scroll", onPanelScroll);
+        if (frameId !== null) {
+          window.cancelAnimationFrame(frameId);
+        }
+      };
+    }
 
     function stopSliders() {
       sliderIntervals.forEach((intervalId) => window.clearInterval(intervalId));
       sliderIntervals.clear();
     }
 
-    function startSliders() {
+    function startSliders(root = document) {
       stopSliders();
 
       if (reducedMotionQuery.matches) {
         return;
       }
 
-      document.querySelectorAll(".project-gallery").forEach((gallery) => {
+      root.querySelectorAll(".project-gallery").forEach((gallery) => {
         const images = Array.from(gallery.querySelectorAll("img"));
         let current = 0;
 
@@ -3472,6 +4656,53 @@
         }, 3000);
 
         sliderIntervals.add(intervalId);
+      });
+    }
+
+    function closeCaseStudy(caseCover) {
+      const trigger = caseCover.querySelector("[data-case-study]");
+      const detail = caseCover.querySelector(".case-cover__detail");
+
+      caseCover.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.querySelector("span").textContent = "OTWÓRZ REALIZACJĘ";
+      detail.setAttribute("aria-hidden", "true");
+    }
+
+    function toggleCaseStudy(trigger) {
+      const caseCover = trigger.closest(".case-cover");
+      const detail = caseCover?.querySelector(".case-cover__detail");
+      const fragment = caseStudyFragments[trigger.dataset.caseStudy];
+
+      if (!caseCover || !detail || !fragment) {
+        return;
+      }
+
+      const wasOpen = caseCover.classList.contains("is-open");
+      stopSliders();
+
+      document.querySelectorAll(".case-cover.is-open").forEach((openCase) => {
+        closeCaseStudy(openCase);
+      });
+
+      if (wasOpen) {
+        return;
+      }
+
+      if (!detail.hasChildNodes()) {
+        const template = document.createElement("template");
+        template.innerHTML = fragment;
+        detail.append(template.content.cloneNode(true));
+      }
+
+      detail.setAttribute("aria-hidden", "false");
+      caseCover.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+      trigger.querySelector("span").textContent = "ZAMKNIJ REALIZACJĘ";
+      startSliders(detail);
+
+      window.requestAnimationFrame(() => {
+        detail.scrollIntoView({ behavior: reducedMotionQuery.matches ? "auto" : "smooth", block: "start" });
       });
     }
 
@@ -3623,6 +4854,7 @@
 
       stopSliders();
       teardownBrandRelief();
+      stopDeferredCoverLoading();
 
       const content = document.getElementById("p-content");
       content.innerHTML = modules[key];
@@ -3633,7 +4865,7 @@
       }
 
       if (key === "DOWODY") {
-        startSliders();
+        setupDeferredCoverLoading(content);
       }
 
       document.getElementById("panel").scrollTop = 0;
@@ -3643,6 +4875,12 @@
       const moduleTrigger = event.target.closest("[data-module]");
       if (moduleTrigger) {
         loadModule(moduleTrigger.dataset.module);
+        return;
+      }
+
+      const caseStudyTrigger = event.target.closest("[data-case-study]");
+      if (caseStudyTrigger) {
+        toggleCaseStudy(caseStudyTrigger);
         return;
       }
 
