@@ -103,7 +103,7 @@
       background:
         radial-gradient(circle at 16% 12%, rgba(143, 9, 17, 0.1), transparent 34%),
         radial-gradient(circle at 84% 86%, rgba(201, 135, 82, 0.07), transparent 30%),
-        linear-gradient(145deg, #0b1016 0%, #06080b 48%, #0a0e13 100%);
+        linear-gradient(145deg, #091b32 0%, #06080b 48%, #0a0e13 100%);
     }
 
     #background-surface::after {
@@ -314,6 +314,7 @@
       --relief-x: 0px;
       --relief-y: 0px;
       --relief-rotate: 0deg;
+      --relief-scale: 1;
       position: absolute;
       z-index: 1;
       top: 50%;
@@ -329,12 +330,13 @@
     .brand-relief__motion {
       position: absolute;
       inset: 7%;
-      transform: translate3d(var(--relief-x), var(--relief-y), 0) rotate(var(--relief-rotate));
+      transform: translate3d(var(--relief-x), var(--relief-y), 0) rotate(var(--relief-rotate)) scale(var(--relief-scale));
       transform-origin: center;
       transition: transform 560ms cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
     #brand-relief.is-active .brand-relief__motion {
+      --relief-scale: 1.018;
       will-change: transform;
       transition-duration: 110ms;
     }
@@ -374,6 +376,7 @@
       mask-repeat: no-repeat;
       -webkit-mask-size: contain;
       mask-size: contain;
+      pointer-events: none;
     }
 
     .brand-relief__light {
@@ -2251,22 +2254,76 @@
     }
 
     .brand-relief__image {
-      filter: grayscale(1) contrast(1.12) brightness(0.92) drop-shadow(0 28px 42px rgba(0, 0, 0, 0.58));
-      opacity: 0.96;
+      filter:
+        grayscale(0.48)
+        contrast(1.28)
+        brightness(1.12)
+        drop-shadow(0 0 16px rgba(255, 24, 37, 0.82))
+        drop-shadow(0 0 32px rgba(35, 136, 255, 0.52))
+        drop-shadow(0 0 42px rgba(227, 6, 19, 0.48))
+        drop-shadow(0 34px 52px rgba(0, 0, 0, 0.68));
+      opacity: 1;
     }
 
     #brand-relief.is-active .brand-relief__image {
-      filter: grayscale(1) contrast(1.16) brightness(0.98) drop-shadow(0 30px 46px rgba(0, 0, 0, 0.62));
+      filter:
+        grayscale(0.26)
+        contrast(1.36)
+        brightness(1.22)
+        drop-shadow(0 0 18px rgba(255, 62, 74, 0.98))
+        drop-shadow(0 0 40px rgba(35, 136, 255, 0.76))
+        drop-shadow(0 0 56px rgba(227, 6, 19, 0.7))
+        drop-shadow(0 36px 56px rgba(0, 0, 0, 0.7));
     }
 
     .brand-relief__light {
-      background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255, 24, 37, 0.74) 0%, rgba(227, 6, 19, 0.34) 20%, rgba(143, 9, 17, 0.08) 44%, transparent 62%);
+      background:
+        radial-gradient(
+          circle at var(--pointer-x) var(--pointer-y),
+          rgba(255, 238, 240, 1) 0%,
+          rgba(255, 52, 64, 0.98) 8%,
+          rgba(255, 0, 20, 0.78) 22%,
+          rgba(227, 6, 19, 0.36) 43%,
+          transparent 64%
+        ),
+        radial-gradient(circle at 42% 46%, rgba(255, 24, 37, 0.82), transparent 48%),
+        radial-gradient(circle at 64% 54%, rgba(35, 136, 255, 0.66), transparent 52%);
       mix-blend-mode: screen;
-      opacity: 0.38;
+      opacity: 1;
+      filter: drop-shadow(0 0 20px rgba(255, 24, 37, 0.94)) drop-shadow(0 0 38px rgba(35, 136, 255, 0.62)) drop-shadow(0 0 48px rgba(227, 6, 19, 0.68));
+      transform: scale(1);
+      animation: reliefIdleGlow 4.4s ease-in-out infinite alternate;
+      transition: opacity 280ms ease, filter 280ms ease, transform 280ms ease;
     }
 
     #brand-relief.is-active .brand-relief__light {
-      opacity: 0.62;
+      background:
+        radial-gradient(
+          circle at var(--pointer-x) var(--pointer-y),
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 96, 108, 1) 7%,
+          rgba(255, 0, 20, 0.94) 23%,
+          rgba(227, 6, 19, 0.5) 45%,
+          transparent 66%
+        ),
+        radial-gradient(circle at 42% 46%, rgba(255, 24, 37, 1), transparent 50%),
+        radial-gradient(circle at 64% 54%, rgba(72, 162, 255, 0.92), transparent 54%);
+      opacity: 1;
+      filter: drop-shadow(0 0 24px rgba(255, 52, 64, 1)) drop-shadow(0 0 48px rgba(35, 136, 255, 0.86)) drop-shadow(0 0 68px rgba(227, 6, 19, 0.82));
+      transform: scale(1.02);
+      animation: none;
+    }
+
+    @keyframes reliefIdleGlow {
+      from {
+        opacity: 0.94;
+        transform: scale(0.995);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.01);
+      }
     }
 
     .brand-relief__sheen {
@@ -3746,7 +3803,9 @@
       }
 
       .brand-relief__light {
-        opacity: 0.14;
+        opacity: 1;
+        transform: none;
+        animation: none;
       }
 
       .brand-relief__sheen {
@@ -4798,9 +4857,9 @@
 
         relief.style.setProperty("--pointer-x", `${(x * 100).toFixed(2)}%`);
         relief.style.setProperty("--pointer-y", `${(y * 100).toFixed(2)}%`);
-        relief.style.setProperty("--relief-x", `${(horizontal * 5).toFixed(2)}px`);
-        relief.style.setProperty("--relief-y", `${(vertical * 4.5).toFixed(2)}px`);
-        relief.style.setProperty("--relief-rotate", `${(horizontal * 1.2).toFixed(2)}deg`);
+        relief.style.setProperty("--relief-x", `${(horizontal * 7).toFixed(2)}px`);
+        relief.style.setProperty("--relief-y", `${(vertical * 6).toFixed(2)}px`);
+        relief.style.setProperty("--relief-rotate", `${(horizontal * 1.6).toFixed(2)}deg`);
       }
 
       function queuePointer(event) {
