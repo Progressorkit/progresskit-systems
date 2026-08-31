@@ -17,5 +17,5 @@ Projekt pozostaje lekką, statyczną aplikacją typu single-page. Nie wymaga fra
 
 ## Kontakt
 
-- E-mail: `progresskit7@gmail.com`
+- E-mail: `pawel@progresskit.pl`
 - [Facebook — Marek Zaworski](https://www.facebook.com/profile.php?id=61574306963115)
