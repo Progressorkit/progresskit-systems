@@ -2068,6 +2068,8 @@
     }
 
     .hero-card h2 {
+      position: relative;
+      isolation: isolate;
       max-width: 900px;
       margin-top: 26px;
       color: var(--text);
@@ -2078,6 +2080,26 @@
       letter-spacing: -0.055em;
       line-height: 0.82;
       text-transform: uppercase;
+    }
+
+    .hero-card h2::before {
+      position: absolute;
+      z-index: -1;
+      inset: -0.5em -0.36em -0.4em;
+      background:
+        radial-gradient(ellipse at 28% 48%, rgba(255, 24, 37, 0.39), transparent 58%),
+        radial-gradient(ellipse at 72% 54%, rgba(35, 136, 255, 0.255), transparent 60%);
+      content: "";
+      filter: blur(23px);
+      pointer-events: none;
+      transform: translate3d(-2%, 0, 0) scale(0.98);
+      animation: heroHeadlineGlow 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroHeadlineGlow {
+      to {
+        transform: translate3d(4%, 1.5%, 0) scale(1.04);
+      }
     }
 
     .hero-card h2 span {
