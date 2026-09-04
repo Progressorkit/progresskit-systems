@@ -4963,7 +4963,74 @@
       document.getElementById("panel").scrollTop = 0;
     }
 
+    const analyticsContext = (() => {
+      const params = new URLSearchParams(window.location.search);
+
+      let referrerHost = null;
+      if (document.referrer) {
+        try {
+          referrerHost = new URL(document.referrer).hostname || null;
+        } catch {
+          referrerHost = null;
+        }
+      }
+
+      return {
+        referrer_host: referrerHost,
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+      };
+    })();
+
+    function sendAnalyticsEvent(eventType) {
+      const payload = {
+        event_type: eventType,
+        path: window.location.pathname || "/",
+        ...analyticsContext,
+      };
+
+      const body = JSON.stringify(payload);
+
+      try {
+        if ("sendBeacon" in navigator) {
+          const blob = new Blob([body], { type: "application/json" });
+          if (navigator.sendBeacon("/_analytics/event", blob)) {
+            return;
+          }
+        }
+
+        fetch("/_analytics/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body,
+          credentials: "same-origin",
+          keepalive: true,
+        }).catch(() => {});
+      } catch {
+        // Analytics must never affect the portfolio UI.
+      }
+    }
+
     document.addEventListener("click", (event) => {
+      const mailLink = event.target.closest('a[href^="mailto:"]');
+      if (mailLink) {
+        sendAnalyticsEvent("contact_click");
+      }
+
+      const externalLink = event.target.closest('a[href^="http://"], a[href^="https://"]');
+      if (externalLink) {
+        sendAnalyticsEvent("external_click");
+      }
+
+      const caseStudyAnalyticsTrigger = event.target.closest("[data-case-study]");
+      if (
+        caseStudyAnalyticsTrigger &&
+        !caseStudyAnalyticsTrigger.closest(".case-cover")?.classList.contains("is-open")
+      ) {
+        sendAnalyticsEvent("project_open");
+      }
+
       const moduleTrigger = event.target.closest("[data-module]");
       if (moduleTrigger) {
         loadModule(moduleTrigger.dataset.module);
@@ -4987,6 +5054,7 @@
     }
 
     window.addEventListener("load", () => {
+      sendAnalyticsEvent("page_view");
       loadModule("HERO");
       updateClock();
       window.setInterval(updateClock, 1000);
