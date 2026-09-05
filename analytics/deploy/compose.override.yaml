@@ -1,0 +1,12 @@
+services:
+  analytics:
+    build:
+      context: /srv/progresskit/apps/progresskit-analytics
+    container_name: progresskit-analytics
+    restart: unless-stopped
+    environment:
+      PK_ANALYTICS_DB: /data/analytics.db
+    volumes:
+      - /srv/progresskit/data/progresskit-analytics:/data
+    networks:
+      default: {}

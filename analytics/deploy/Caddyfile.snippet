@@ -1,0 +1,8 @@
+@progresskit_analytics {
+    path /_analytics/event
+    method POST
+}
+
+handle @progresskit_analytics {
+    reverse_proxy analytics:8091
+}
