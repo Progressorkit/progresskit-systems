@@ -92,7 +92,7 @@ class ProductTests(unittest.TestCase):
         from preview import app as preview_app
         preview = TestClient(preview_app)
         for path in ('/glikemia-premium/', '/glikemia-premium/',
-                     '/glikemia-premium/product.js', '/assets/projects/glikemia/product-measurement.webp',
+                     '/glikemia-premium/product.js', '/progresskit-mail/', '/progresskit-mail/mail.css', '/assets/projects/mail/mail-inbox-google.webp', '/assets/projects/glikemia/product-measurement.webp',
                      '/api/glikemia/downloads', '/api/glikemia/reviews'):
             self.assertEqual(preview.get(path).status_code, 200)
         for path in ('/download/glikemia-premium', '/downloads/glikemia-premium.apk'):

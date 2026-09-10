@@ -1,0 +1,24 @@
+@import url('../assets/progresskit-product-shell.css');
+
+:root{
+  --product-accent:#ef4352;
+  --product-accent-soft:rgba(239,67,82,.075);
+}
+body{background:
+  radial-gradient(circle at 84% 8%,rgba(239,67,82,.065),transparent 22%),
+  radial-gradient(circle at 16% 72%,rgba(207,215,222,.035),transparent 28%),
+  linear-gradient(180deg,#060708 0%,#050607 58%,#070809 100%)}
+.product-wordmark{display:flex;align-items:center;gap:12px;color:var(--pk-muted);font:700 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}.product-wordmark::before{content:"//";color:var(--product-accent)}
+.hero-mail .hero-art img{max-height:560px;border-color:rgba(239,67,82,.23)}
+.hero-mail .hero-art::after{content:"REAL MESSAGE // ANDROID CLIENT";position:absolute;right:7%;bottom:5%;padding:8px 10px;border:1px solid rgba(239,67,82,.26);border-radius:7px;background:rgba(5,6,7,.86);color:#c8ced2;font:700 8px/1 var(--mono);letter-spacing:.11em}
+.proof-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.proof{padding:16px;border:1px solid var(--pk-line);border-radius:10px;background:#090b0d}.proof strong{display:block;font:800 10px/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase}.proof span{display:block;margin-top:6px;color:var(--pk-muted);font-size:13px}.proof::before{content:"";display:block;width:26px;height:2px;margin-bottom:12px;background:linear-gradient(90deg,var(--product-accent),transparent)}
+.mail-gallery figure:first-child{border-color:rgba(239,67,82,.3)}
+.mail-gallery img{background:#111}
+.mail-gallery .redacted-note{display:block;margin-top:5px;color:#7f898f;font:700 9px/1.4 var(--mono);letter-spacing:.05em}
+.arch-section .card{padding:28px}.arch-section h3{margin-bottom:18px}
+.build-status{display:grid;grid-template-columns:1fr 1fr;gap:16px}.build-status .card{min-height:190px}.build-status ul{padding-left:18px;color:var(--pk-muted)}.build-status li+li{margin-top:8px}.status-live{color:var(--pk-ok);font:800 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}.status-dev{color:var(--product-accent);font:800 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.tech-line{margin-top:20px;color:#8b949a;font:700 10px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:920px){.proof-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.product-wordmark{display:none}.proof-strip,.build-status{grid-template-columns:1fr}.hero-mail .hero-art::after{display:none}}
+
+.status-title{margin-top:12px}.closing-links{margin-top:24px}

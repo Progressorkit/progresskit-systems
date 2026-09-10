@@ -8,7 +8,8 @@ root = Path(__file__).resolve().parents[1]
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 app.include_router(router)
 app.mount('/assets', StaticFiles(directory=root/'assets'), name='assets')
-app.mount('/glikemia-premium', StaticFiles(directory=root/'glikemia-premium', html=True), name='product')
+app.mount('/glikemia-premium', StaticFiles(directory=root/'glikemia-premium', html=True), name='glikemia-product')
+app.mount('/progresskit-mail', StaticFiles(directory=root/'progresskit-mail', html=True), name='mail-product')
 @app.get('/')
 def home():
     return FileResponse(root/'index.html')
