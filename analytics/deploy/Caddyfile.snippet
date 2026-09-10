@@ -6,3 +6,33 @@
 handle @progresskit_analytics {
     reverse_proxy analytics:8091
 }
+
+# Place these handlers before any SPA fallback / file_server.
+@glikemia_api path /api/glikemia/* /download/glikemia-premium /downloads/glikemia-premium.apk
+handle @glikemia_api {
+    reverse_proxy analytics:8091
+}
+
+# Never expose backend source, databases, deployment files or dotfiles.
+@private_paths {
+    path /analytics /analytics/* /tests /tests/* /scripts /scripts/* /docs /docs/* /.git/* /.env* /*.db /*.db-* /downloads /downloads/*
+    not path /downloads/glikemia-premium.apk
+}
+handle @private_paths {
+    respond 404
+}
+
+handle /glikemia-premium/* {
+    header {
+        Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        Cache-Control no-cache
+    }
+    file_server
+}
+redir /glikemia-premium /glikemia-premium/ 308
+
+# Caddy >=2.8: suppress access logs for product routes and their assets.
+@glikemia_private_logs path /glikemia-premium /glikemia-premium/* /api/glikemia/* /download/glikemia-premium /downloads/glikemia-premium.apk /assets/projects/glikemia/*
+log_skip @glikemia_private_logs

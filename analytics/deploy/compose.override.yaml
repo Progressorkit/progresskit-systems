@@ -6,7 +6,11 @@ services:
     restart: unless-stopped
     environment:
       PK_ANALYTICS_DB: /data/analytics.db
+      PK_PRODUCT_DB: /data/product.db
+      PK_APK_PATH: /downloads/glikemia-premium.apk
+      PK_PUBLIC_ORIGIN: https://progresskit.pl
     volumes:
       - /srv/progresskit/data/progresskit-analytics:/data
+      - /srv/progresskit/downloads:/downloads:ro
     networks:
       default: {}

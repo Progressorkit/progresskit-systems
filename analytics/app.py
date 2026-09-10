@@ -202,6 +202,9 @@ def summary():
 
         result["campaigns"] = [dict(row) for row in campaigns]
 
+    with closing(product_connect()) as product_db:
+        result["glikemia_downloads"] = product_db.execute("SELECT total FROM downloads WHERE id=1").fetchone()[0]
+
     return result
 
 
@@ -229,6 +232,7 @@ pre{white-space:pre-wrap}
 <main>
 <h1>ProgressKit Analytics</h1>
 <div class="grid">
+<div class="card"><small>Glikemia / pobrania APK</small><div id="glikemia" class="value">—</div></div>
 <div class="card"><small>Aktywność / 5 min</small><div id="m5" class="value">—</div></div>
 <div class="card"><small>Aktywność / 30 min</small><div id="m30" class="value">—</div></div>
 <div class="card"><small>Page views / dziś</small><div id="today" class="value">—</div></div>
@@ -245,6 +249,7 @@ async function refresh() {
   const r = await fetch('./summary', {cache:'no-store'});
   const d = await r.json();
 
+  glikemia.textContent = d.glikemia_downloads;
   m5.textContent = d.events_5m;
   m30.textContent = d.events_30m;
   today.textContent = d.page_views_today;
@@ -267,3 +272,7 @@ setInterval(refresh, 10000);
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+# Product API shares the existing service; product records use a separate persistent database.
+from product import router as product_router, connect as product_connect
+app.include_router(product_router)
