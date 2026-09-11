@@ -788,5 +788,74 @@
     window.addEventListener('pageshow', refreshHomeDownloadCount);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshHomeDownloadCount(); });
   </script>
+
+  <!-- PK_ANALYTICS_V4 -->
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+
+      let referrerHost = null;
+      if (document.referrer) {
+        try {
+          referrerHost = new URL(document.referrer).hostname || null;
+        } catch {}
+      }
+
+      const context = {
+        referrer_host: referrerHost,
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+      };
+
+      function sendAnalyticsEvent(eventType) {
+        const body = JSON.stringify({
+          event_type: eventType,
+          path: window.location.pathname || "/",
+          ...context,
+        });
+
+        try {
+          if ("sendBeacon" in navigator) {
+            const blob = new Blob([body], { type: "application/json" });
+            if (navigator.sendBeacon("/_analytics/event", blob)) return;
+          }
+
+          fetch("/_analytics/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body,
+            credentials: "same-origin",
+            keepalive: true,
+          }).catch(() => {});
+        } catch {}
+      }
+
+      document.addEventListener("click", (event) => {
+        if (event.target.closest('a[href^="mailto:"]')) {
+          sendAnalyticsEvent("contact_click");
+        }
+
+        if (event.target.closest('a[href^="http://"], a[href^="https://"]')) {
+          sendAnalyticsEvent("external_click");
+        }
+
+        if (
+          event.target.closest(
+            'a[href="glikemia-premium/"], a[href="/glikemia-premium/"], ' +
+            'a[href="progresskit-mail/"], a[href="/progresskit-mail/"], ' +
+            'details.project-detail > summary'
+          )
+        ) {
+          sendAnalyticsEvent("project_open");
+        }
+      });
+
+      window.addEventListener("load", () => {
+        sendAnalyticsEvent("page_view");
+      });
+    })();
+  </script>
+
 </body>
 </html>
