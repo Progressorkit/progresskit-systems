@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+ok 1 - Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+  ---
+  duration_ms: 1.488351
+  type: 'test'
+  ...
+# Subtest: Every circular project has a unique signed offset and the selected one is centered
+ok 2 - Every circular project has a unique signed offset and the selected one is centered
+  ---
+  duration_ms: 0.536117
+  type: 'test'
+  ...
+# Subtest: Orbital positions remain distinct on the perspective projection for every real filter size
+ok 3 - Orbital positions remain distinct on the perspective projection for every real filter size
+  ---
+  duration_ms: 5.781565
+  type: 'test'
+  ...
+# Subtest: Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+ok 4 - Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+  ---
+  duration_ms: 50.491524
+  type: 'test'
+  ...
+# Subtest: Energy pause survives category changes and reduced motion cannot be overridden
+ok 5 - Energy pause survives category changes and reduced motion cannot be overridden
+  ---
+  duration_ms: 4.756181
+  type: 'test'
+  ...
+# Subtest: Fractional phases preserve a unique five-node window across both wrap directions
+ok 6 - Fractional phases preserve a unique five-node window across both wrap directions
+  ---
+  duration_ms: 3.355514
+  type: 'test'
+  ...
+# Subtest: Actual animation frames follow a curved trajectory and wire the same live positions
+ok 7 - Actual animation frames follow a curved trajectory and wire the same live positions
+  ---
+  duration_ms: 5.66314
+  type: 'test'
+  ...
+# Subtest: Interrupted rotation continues from its current phase without a snap or duplicated seam
+ok 8 - Interrupted rotation continues from its current phase without a snap or duplicated seam
+  ---
+  duration_ms: 13.166125
+  type: 'test'
+  ...
+# Subtest: Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+ok 9 - Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+  ---
+  duration_ms: 8.779595
+  type: 'test'
+  ...
+# Subtest: Leaving the viewport cancels a pending neighbor projection and releases its motion work
+ok 10 - Leaving the viewport cancels a pending neighbor projection and releases its motion work
+  ---
+  duration_ms: 2.859939
+  type: 'test'
+  ...
+# Subtest: A delayed projection commits the final module pose before emitting even with dropped frames
+ok 11 - A delayed projection commits the final module pose before emitting even with dropped frames
+  ---
+  duration_ms: 3.252883
+  type: 'test'
+  ...
+# Subtest: Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+ok 12 - Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+  ---
+  duration_ms: 4.744128
+  type: 'test'
+  ...
+# Subtest: Rapid keyboard steps keep focus on a visible, interactive selected module
+ok 13 - Rapid keyboard steps keep focus on a visible, interactive selected module
+  ---
+  duration_ms: 4.103173
+  type: 'test'
+  ...
+# Subtest: Moving state spans the settle interval and repeated steps do not restore wires early
+ok 14 - Moving state spans the settle interval and repeated steps do not restore wires early
+  ---
+  duration_ms: 6.912839
+  type: 'test'
+  ...
+# Subtest: Ring neighbors center fully before opening, with immediate reduced-motion opening
+ok 15 - Ring neighbors center fully before opening, with immediate reduced-motion opening
+  ---
+  duration_ms: 7.489363
+  type: 'test'
+  ...
+# Subtest: Category filter is persistent data selection without clones or source mutation
+ok 16 - Category filter is persistent data selection without clones or source mutation
+  ---
+  duration_ms: 4.653024
+  type: 'test'
+  ...
+# Subtest: All and invalid-category recovery restore all 14 real identities
+ok 17 - All and invalid-category recovery restore all 14 real identities
+  ---
+  duration_ms: 0.1714
+  type: 'test'
+  ...
+# Subtest: A one-project category stays valid and missing selected identity falls back safely
+ok 18 - A one-project category stays valid and missing selected identity falls back safely
+  ---
+  duration_ms: 4.318045
+  type: 'test'
+  ...
+# Subtest: Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+ok 19 - Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+  ---
+  duration_ms: 11.207929
+  type: 'test'
+  ...
+# Subtest: Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+ok 20 - Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+  ---
+  duration_ms: 0.260253
+  type: 'test'
+  ...
+# Subtest: Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+ok 21 - Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+  ---
+  duration_ms: 13.923722
+  type: 'test'
+  ...
+# Subtest: Deep links roundtrip category/project without rewriting search, UTM or deployment path
+ok 22 - Deep links roundtrip category/project without rewriting search, UTM or deployment path
+  ---
+  duration_ms: 5.24413
+  type: 'test'
+  ...
+# Subtest: Six-slice wheel keeps six distinct usable modules and all real filter sizes
+ok 23 - Six-slice wheel keeps six distinct usable modules and all real filter sizes
+  ---
+  duration_ms: 3.787396
+  type: 'test'
+  ...
+# Subtest: A child losing implicit touch capture does not cancel the viewport swipe
+ok 24 - A child losing implicit touch capture does not cancel the viewport swipe
+  ---
+  duration_ms: 4.548799
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 194.716683

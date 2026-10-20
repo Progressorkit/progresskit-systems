@@ -15,7 +15,7 @@ handle @glikemia_api {
 
 # Never expose backend source, databases, deployment files or dotfiles.
 @private_paths {
-    path /analytics /analytics/* /tests /tests/* /scripts /scripts/* /docs /docs/* /.git/* /.env* /*.db /*.db-* /downloads /downloads/*
+    path /analytics /analytics/* /tests /tests/* /scripts /scripts/* /docs /docs/* /catalog /catalog/* /templates /templates/* /.git /.git/* /.env* /*.db /*.db-* /downloads /downloads/* /summary /health
     not path /downloads/glikemia-premium.apk
 }
 handle @private_paths {
@@ -32,6 +32,17 @@ handle /glikemia-premium/* {
     file_server
 }
 redir /glikemia-premium /glikemia-premium/ 308
+
+handle /progresskit-mail/* {
+    header {
+        Content-Security-Policy "default-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        Cache-Control no-cache
+    }
+    file_server
+}
+redir /progresskit-mail /progresskit-mail/ 308
 
 # Caddy >=2.8: suppress access logs for product routes and their assets.
 @glikemia_private_logs path /glikemia-premium /glikemia-premium/* /api/glikemia/* /download/glikemia-premium /downloads/glikemia-premium.apk /assets/projects/glikemia/*

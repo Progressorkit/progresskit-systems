@@ -1,0 +1,919 @@
+{
+  "startedAt": "2026-10-20T12:40:30.669Z",
+  "base": "http://127.0.0.1:8098/",
+  "api": "http://127.0.0.1:8098/",
+  "checks": [
+    {
+      "name": "Mobile 320 first view and compact mechanism spacing",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 selects Tax with readable title, status and action",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 exposes all fourteen projects through next",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 Tax expands the same aluminum module in normal page flow",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 reads full Tax by ordinary page scroll without nested scrolling",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 close restores natural stage height and usable focus",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 320 wraps the longest catalogue project name without clipping",
+      "result": "PASS",
+      "details": "Lud&Pra / ProgressKit Community"
+    },
+    {
+      "name": "Mobile 390 first view and compact mechanism spacing",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 selects Tax with readable title, status and action",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 exposes all fourteen projects through next",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 Tax expands the same aluminum module in normal page flow",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 reads full Tax by ordinary page scroll without nested scrolling",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 close restores natural stage height and usable focus",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile 390 wraps the longest catalogue project name without clipping",
+      "result": "PASS",
+      "details": "Lud&Pra / ProgressKit Community"
+    },
+    {
+      "name": "Mobile to desktop resize preserves the open project and Escape restores focus",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Actual mobile Tax selection, natural page scroll and close recording",
+      "result": "PASS",
+      "details": "174 actual CDP browser frames; 5.17s"
+    },
+    {
+      "name": "Services and collaboration show their material surfaces and readable actions",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Kontakt and Usługi links reach their existing sections",
+      "result": "PASS",
+      "details": "Both anchors reached; email inspected without sending"
+    },
+    {
+      "name": "Desktop 1440 first view retains the six-module orbit",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Desktop 1440 hover expansion keeps its existing bounded panel",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Desktop 1366 first view retains the six-module orbit",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Desktop 1366 hover expansion keeps its existing bounded panel",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "APK bytes, prior full-download proof and range-safe counter are preserved",
+      "result": "PASS",
+      "details": "Range 206/32 bytes; SHA unchanged; counter 1 → 1; full GET not repeated"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "result": "PASS",
+      "details": "0 errors"
+    },
+    {
+      "name": "No failed browser requests",
+      "result": "PASS",
+      "details": "0 failures"
+    },
+    {
+      "name": "No browser HTTP errors",
+      "result": "PASS",
+      "details": "0 errors"
+    }
+  ],
+  "artifacts": [
+    "mobile-320x568-first-view.png",
+    "mobile-320-tax-collapsed.png",
+    "mobile-320-tax-expanded-full-module.png",
+    "mobile-320-tax-actions-after-page-scroll.png",
+    "mobile-320-longest-name.png",
+    "mobile-390x844-first-view.png",
+    "mobile-390-tax-collapsed.png",
+    "mobile-390-tax-expanded-full-module.png",
+    "mobile-390-tax-actions-after-page-scroll.png",
+    "mobile-390-longest-name.png",
+    "orientation-mobile-to-desktop-open.png",
+    "mobile-tax-page-scroll.mp4",
+    "services-material-mobile.png",
+    "collaboration-material-mobile.png",
+    "services-collaboration-styles.json",
+    "desktop-1440x900-first-view.png",
+    "desktop-1440-expanded-smoke.png",
+    "desktop-1366x768-first-view.png",
+    "desktop-1366-expanded-smoke.png",
+    "apk-preservation.json"
+  ],
+  "geometry": [
+    {
+      "case": "mobile-first-view",
+      "width": 320,
+      "height": 568,
+      "documentHeight": 9391,
+      "scrollY": 0,
+      "stage": {
+        "x": 12,
+        "y": 346.375,
+        "width": 296,
+        "height": 216,
+        "right": 308,
+        "bottom": 562.375,
+        "documentTop": 346.375
+      },
+      "card": {
+        "x": 20,
+        "y": 354.375,
+        "width": 280,
+        "height": 194,
+        "right": 300,
+        "bottom": 548.375,
+        "documentTop": 354.375
+      },
+      "next": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0,
+        "documentTop": 0
+      },
+      "narrow": true
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-tax",
+      "slab": {
+        "x": 20,
+        "y": 81.375,
+        "width": 280,
+        "height": 194,
+        "right": 300,
+        "bottom": 275.375
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "ProgressKit Tax",
+          "rect": {
+            "x": 80,
+            "y": 145.671875,
+            "width": 116.84375,
+            "height": 18.390625,
+            "right": 196.84375,
+            "bottom": 164.0625
+          },
+          "scrollWidth": 117,
+          "clientWidth": 117,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 171.0625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 189.0625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 214.375,
+            "width": 200,
+            "height": 44,
+            "right": 280,
+            "bottom": 258.375
+          },
+          "scrollWidth": 200,
+          "clientWidth": 200,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "case": "mobile-tax-expanded",
+      "width": 320,
+      "height": 568,
+      "closedLayout": {
+        "documentHeight": 9391,
+        "scrollY": 273,
+        "stage": {
+          "x": 12,
+          "y": 73.375,
+          "width": 296,
+          "height": 216,
+          "right": 308,
+          "bottom": 289.375,
+          "documentTop": 346.375
+        },
+        "card": {
+          "x": 20,
+          "y": 81.375,
+          "width": 280,
+          "height": 194,
+          "right": 300,
+          "bottom": 275.375,
+          "documentTop": 354.375
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 273
+        },
+        "narrow": true
+      },
+      "full": {
+        "documentHeight": 10095,
+        "scrollY": 947,
+        "stage": {
+          "x": 12,
+          "y": -600.625,
+          "width": 296,
+          "height": 919.453125,
+          "right": 308,
+          "bottom": 318.828125,
+          "documentTop": 346.375
+        },
+        "card": {
+          "x": 20,
+          "y": -426.39776611328125,
+          "width": 281.6598815917969,
+          "height": 731.7942504882812,
+          "right": 301.6598815917969,
+          "bottom": 305.396484375,
+          "documentTop": 520.6022338867188
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 947
+        },
+        "narrow": true
+      },
+      "natural": [
+        {
+          "selector": ".project-slice",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 891,
+          "scrollHeight": 891
+        },
+        {
+          "selector": "[data-slice-panel]",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 702,
+          "scrollHeight": 702
+        },
+        {
+          "selector": ".project-slice__body",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 473,
+          "scrollHeight": 473
+        }
+      ]
+    },
+    {
+      "case": "native-tax-touch-scroll",
+      "width": 320,
+      "before": {
+        "page": 273,
+        "body": 0,
+        "panel": 0
+      },
+      "after": {
+        "page": 566,
+        "body": 0,
+        "panel": 0
+      }
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-tax",
+      "slab": {
+        "x": 20,
+        "y": 81.375,
+        "width": 280,
+        "height": 194,
+        "right": 300,
+        "bottom": 275.375
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "ProgressKit Tax",
+          "rect": {
+            "x": 80,
+            "y": 145.671875,
+            "width": 116.84375,
+            "height": 18.390625,
+            "right": 196.84375,
+            "bottom": 164.0625
+          },
+          "scrollWidth": 117,
+          "clientWidth": 117,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 171.0625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 189.0625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 214.375,
+            "width": 200,
+            "height": 44,
+            "right": 280,
+            "bottom": 258.375
+          },
+          "scrollWidth": 200,
+          "clientWidth": 200,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "case": "mobile-close-restored",
+      "width": 320,
+      "restored": {
+        "documentHeight": 9391,
+        "scrollY": 240,
+        "stage": {
+          "x": 12,
+          "y": 106.375,
+          "width": 296,
+          "height": 216,
+          "right": 308,
+          "bottom": 322.375,
+          "documentTop": 346.375
+        },
+        "card": {
+          "x": 20,
+          "y": 114.375,
+          "width": 280,
+          "height": 194,
+          "right": 300,
+          "bottom": 308.375,
+          "documentTop": 354.375
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 240
+        },
+        "narrow": true
+      }
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-community",
+      "slab": {
+        "x": 20,
+        "y": 81.375,
+        "width": 280,
+        "height": 194,
+        "right": 300,
+        "bottom": 275.375
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "Lud&Pra / ProgressKit Community",
+          "rect": {
+            "x": 80,
+            "y": 136.484375,
+            "width": 200,
+            "height": 36.78125,
+            "right": 280,
+            "bottom": 173.265625
+          },
+          "scrollWidth": 200,
+          "clientWidth": 200,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 180.265625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 198.265625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 214.375,
+            "width": 200,
+            "height": 44,
+            "right": 280,
+            "bottom": 258.375
+          },
+          "scrollWidth": 200,
+          "clientWidth": 200,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "case": "mobile-first-view",
+      "width": 390,
+      "height": 844,
+      "documentHeight": 8735,
+      "scrollY": 0,
+      "stage": {
+        "x": 12,
+        "y": 356.875,
+        "width": 366,
+        "height": 216,
+        "right": 378,
+        "bottom": 572.875,
+        "documentTop": 356.875
+      },
+      "card": {
+        "x": 20,
+        "y": 364.875,
+        "width": 350,
+        "height": 194,
+        "right": 370,
+        "bottom": 558.875,
+        "documentTop": 364.875
+      },
+      "next": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0,
+        "documentTop": 0
+      },
+      "narrow": true
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-tax",
+      "slab": {
+        "x": 20,
+        "y": 80.875,
+        "width": 350,
+        "height": 194,
+        "right": 370,
+        "bottom": 274.875
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "ProgressKit Tax",
+          "rect": {
+            "x": 80,
+            "y": 145.171875,
+            "width": 116.84375,
+            "height": 18.390625,
+            "right": 196.84375,
+            "bottom": 163.5625
+          },
+          "scrollWidth": 117,
+          "clientWidth": 117,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 170.5625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 188.5625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 213.875,
+            "width": 270,
+            "height": 44,
+            "right": 350,
+            "bottom": 257.875
+          },
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "case": "mobile-tax-expanded",
+      "width": 390,
+      "height": 844,
+      "closedLayout": {
+        "documentHeight": 8735,
+        "scrollY": 284,
+        "stage": {
+          "x": 12,
+          "y": 72.875,
+          "width": 366,
+          "height": 216,
+          "right": 378,
+          "bottom": 288.875,
+          "documentTop": 356.875
+        },
+        "card": {
+          "x": 20,
+          "y": 80.875,
+          "width": 350,
+          "height": 194,
+          "right": 370,
+          "bottom": 274.875,
+          "documentTop": 364.875
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 284
+        },
+        "narrow": true
+      },
+      "full": {
+        "documentHeight": 9329,
+        "scrollY": 847,
+        "stage": {
+          "x": 12,
+          "y": -490.125,
+          "width": 366,
+          "height": 809.5625,
+          "right": 378,
+          "bottom": 319.4375,
+          "documentTop": 356.875
+        },
+        "card": {
+          "x": 20,
+          "y": -201.64202880859375,
+          "width": 354.15972900390625,
+          "height": 507.69158935546875,
+          "right": 374.15972900390625,
+          "bottom": 306.049560546875,
+          "documentTop": 645.3579711914062
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 847
+        },
+        "narrow": true
+      },
+      "natural": [
+        {
+          "selector": ".project-slice",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 782,
+          "scrollHeight": 782
+        },
+        {
+          "selector": "[data-slice-panel]",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 593,
+          "scrollHeight": 593
+        },
+        {
+          "selector": ".project-slice__body",
+          "overflowY": "visible",
+          "maxHeight": "none",
+          "height": 364,
+          "scrollHeight": 364
+        }
+      ]
+    },
+    {
+      "case": "native-tax-touch-scroll",
+      "width": 390,
+      "before": {
+        "page": 284,
+        "body": 0,
+        "panel": 0
+      },
+      "after": {
+        "page": 585,
+        "body": 0,
+        "panel": 0
+      }
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-tax",
+      "slab": {
+        "x": 20,
+        "y": 80.875,
+        "width": 350,
+        "height": 194,
+        "right": 370,
+        "bottom": 274.875
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "ProgressKit Tax",
+          "rect": {
+            "x": 80,
+            "y": 145.171875,
+            "width": 116.84375,
+            "height": 18.390625,
+            "right": 196.84375,
+            "bottom": 163.5625
+          },
+          "scrollWidth": 117,
+          "clientWidth": 117,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 170.5625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 188.5625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 213.875,
+            "width": 270,
+            "height": 44,
+            "right": 350,
+            "bottom": 257.875
+          },
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "case": "mobile-close-restored",
+      "width": 390,
+      "restored": {
+        "documentHeight": 8735,
+        "scrollY": 113,
+        "stage": {
+          "x": 12,
+          "y": 243.875,
+          "width": 366,
+          "height": 216,
+          "right": 378,
+          "bottom": 459.875,
+          "documentTop": 356.875
+        },
+        "card": {
+          "x": 20,
+          "y": 251.875,
+          "width": 350,
+          "height": 194,
+          "right": 370,
+          "bottom": 445.875,
+          "documentTop": 364.875
+        },
+        "next": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0,
+          "documentTop": 113
+        },
+        "narrow": true
+      }
+    },
+    {
+      "case": "collapsed-readable",
+      "id": "progresskit-community",
+      "slab": {
+        "x": 20,
+        "y": 80.875,
+        "width": 350,
+        "height": 194,
+        "right": 370,
+        "bottom": 274.875
+      },
+      "parts": [
+        {
+          "selector": "h3",
+          "text": "Lud&Pra / ProgressKit Community",
+          "rect": {
+            "x": 80,
+            "y": 145.171875,
+            "width": 260.28125,
+            "height": 18.390625,
+            "right": 340.28125,
+            "bottom": 163.5625
+          },
+          "scrollWidth": 260,
+          "clientWidth": 260,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__stage",
+          "text": "W rozwoju",
+          "rect": {
+            "x": 80,
+            "y": 170.5625,
+            "width": 53.21875,
+            "height": 18,
+            "right": 133.21875,
+            "bottom": 188.5625
+          },
+          "scrollWidth": 51,
+          "clientWidth": 51,
+          "visibility": "visible",
+          "blocked": 0
+        },
+        {
+          "selector": ".showroom-card__action",
+          "text": "Odkryj projekt\n↗",
+          "rect": {
+            "x": 80,
+            "y": 213.875,
+            "width": 270,
+            "height": 44,
+            "right": 350,
+            "bottom": 257.875
+          },
+          "scrollWidth": 270,
+          "clientWidth": 270,
+          "visibility": "visible",
+          "blocked": 0
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "finishedAt": "2026-10-20T12:40:59.852Z",
+  "totals": {
+    "PASS": 26,
+    "FAIL": 0
+  }
+}

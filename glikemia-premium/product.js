@@ -47,7 +47,11 @@ form.addEventListener('submit', async event => {
     form.reset(); await prepareForm(); statusLine.textContent = data.message;
   } catch (error) { await prepareForm(); statusLine.textContent = error.message || 'Nie udało się wysłać opinii.'; }
 });
-document.querySelectorAll('a[href="/download/glikemia-premium"]').forEach(link => link.addEventListener('click', () => setTimeout(refreshCount, 1500)));
+document.querySelectorAll('a[href="/download/glikemia-premium"]').forEach(link => link.addEventListener('click', () => {
+  // Download completion is asynchronous and may take longer than a fixed 1.5 s.
+  // Refresh a few times without tracking the visitor; the API only returns the aggregate counter.
+  [4000, 12000, 30000].forEach(delay => setTimeout(refreshCount, delay));
+}));
 window.addEventListener('pageshow', refreshCount);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshCount(); });
 loadReviews(); prepareForm();

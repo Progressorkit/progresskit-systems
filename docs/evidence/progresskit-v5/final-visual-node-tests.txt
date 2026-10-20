@@ -1,0 +1,44 @@
+✔ Polish search ignores accents, letter case and redundant whitespace (2.071209ms)
+✔ Every search word must match; unknown query returns an empty result (0.629558ms)
+✔ Category, technology and stage combine, and technology matching is exact (0.369384ms)
+✔ Unknown stage is distinct from implemented maturity levels (0.501962ms)
+✔ Share links preserve deployment subpath, campaign and anchor while roundtripping filters (3.242279ms)
+✔ Reset removes filter parameters without losing campaign context (1.090311ms)
+✔ Search treats markup as text and limits restored query length (0.714645ms)
+✔ Opening another drawer and then closing it leaves a restorable single project state (0.768963ms)
+✔ Filtering a project closes its drawer and clearing filters does not resurrect an unlinked drawer (0.712889ms)
+✔ Hover cannot switch category while crossing another row or tapping a touchscreen (0.853067ms)
+✔ Keyboard activation retains native disclosure behavior after a mouse hover (0.531874ms)
+✔ A touch pointer leaving on a hybrid laptop cannot trigger the mouse close timer (0.242591ms)
+✔ only same-origin catalogue routes and local raster media become URLs (3.365549ms)
+✔ normalization handles wrappers, duplicates and invalid media without invented stages (7.093795ms)
+✔ unknown IDs never populate or open a dialog; safe real anchors remain a fallback (2.67028ms)
+✔ data is rendered as text, with a safe case-study CTA and neutral presentation without media (1.402177ms)
+✔ native cancel handler prevents immediate close, reverses presentation and returns focus (1.525ms)
+✔ reopen invalidates a closing timer and stale close event, preserving the new project (1.199126ms)
+✔ reduced motion closes immediately and restores focus to the showroom if its trigger disappeared (0.744814ms)
+✔ changing to reduced motion completes a pending close immediately (0.677007ms)
+✔ backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does (2.735749ms)
+✔ missing native modal support uses normal catalogue navigation (0.961154ms)
+✔ external close request targets the active project and destroy releases handlers (0.914246ms)
+✔ an obsolete image error cannot hide the next project image (0.53219ms)
+✔ a close listener may open another project without focus returning behind the modal (0.396619ms)
+✔ reopening and switching projects reset the shared scroller before focus enters the presentation (0.356835ms)
+✔ Circular indexes wrap in both directions for 14, 3 and 1 project (2.193653ms)
+✔ Every circular project has a unique signed offset and the selected one is centered (0.693426ms)
+✔ Ring neighbors center fully before opening, with immediate reduced-motion opening (19.149734ms)
+✔ Category filter is persistent data selection without clones or source mutation (7.972562ms)
+✔ All and invalid-category recovery restore all 14 real identities (0.527525ms)
+✔ A one-project category stays valid and missing selected identity falls back safely (6.006322ms)
+✔ Drag intent suppresses accidental click while leaving vertical gestures to scrolling (5.162028ms)
+✔ Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin (0.309579ms)
+✔ Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent (5.051394ms)
+✔ Deep links roundtrip category/project without rewriting search, UTM or deployment path (10.252788ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 215.897979

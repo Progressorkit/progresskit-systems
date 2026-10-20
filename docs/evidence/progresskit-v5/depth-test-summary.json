@@ -1,0 +1,81 @@
+{
+  "asOf": "2026-10-15",
+  "baselineCommit": "584717934bf72dfef2a5efbc365badc1d228c1ec",
+  "repositoryTests": {
+    "python": 84,
+    "node": 54,
+    "pass": 138,
+    "fail": 0,
+    "skip": 0
+  },
+  "http": {
+    "pass": 107,
+    "fail": 0,
+    "publicFiles": 57,
+    "origin": "http://127.0.0.1:8095"
+  },
+  "sourceChecks": {
+    "cssSyntax": "PASS:2 changed CSS",
+    "svgXml": "PASS:hero and2structuralSVG",
+    "projectNodes": 14,
+    "screenshotImagesInsideNodes": 0,
+    "visibleStageElements": 14,
+    "galleryImagesInCatalog": 9,
+    "noDuplicateDomIds": true,
+    "unchangedBaselineFiles": [
+      "catalog/projects.json",
+      "catalog/brand.json",
+      "assets/project-hologram.js",
+      "assets/project-hologram.css",
+      "assets/brand/hero-landscape-v5.webp",
+      "assets/brand/progressorkit-stamp.png",
+      "assets/hero-space.js",
+      "assets/brand/stone-material.svg",
+      "assets/brand-atmosphere.css",
+      "assets/engineering-exhibit.js",
+      "assets/engineering-exhibit.css",
+      "assets/home-atmosphere.css",
+      "assets/site-v5.js"
+    ],
+    "h1DeformationFilterRemoved": true,
+    "frontArcZIndex": 8,
+    "rearNodeZIndex": "2..5",
+    "frontNodeZIndex": "10..16",
+    "continuousProjection": {
+      "k": 0.24,
+      "frontY": 1.3157894736842106,
+      "rearY": -0.8064516129032259,
+      "frontScale": 1,
+      "rearScale": 0.6129032258064516
+    },
+    "newMotionRegressions": 8
+  },
+  "publicBytes": 5920598,
+  "previousPublicBytes": 5893482,
+  "browser": "NOT RUN: No browser is available; discovery []",
+  "visualAcceptance": "OPEN",
+  "runtimePerformanceAndSharpness": "NOT RUN",
+  "deployment": "NOT DEPLOYED",
+  "sha256": {
+    "catalog/projects.json": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/project-hologram.js": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+    "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+    "assets/brand/hero-landscape-v5.webp": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+    "assets/hero-space.js": "97ca07c30ea17aeed64f879a66ea0111f434b1a32052ea9d8526f79d8c55299b",
+    "assets/brand/stone-material.svg": "f3d99545fc29a467f2f55decd89f71bfcc52dd33c1c156f33827103ce74ea938",
+    "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+    "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+    "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+    "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+    "assets/site-v5.js": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+    "scripts/showroom_markup.py": "a48220bbec73a20858a784496427b724e9a9f645615e5b579e4075fae7c2d260",
+    "assets/project-showroom.js": "a26d1c7c315321828da33da9297554cc4cec72ce989a3d4fdeaff6c9a1a81e20",
+    "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+    "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+    "templates/hero-scene.svg": "693b2dc879873163051d19d13a5f34ae702dd7af34dafb224a6d1f67e81f1cc0",
+    "index.html": "b34901f685b7a72f6099c9e28fa82e75cd7229003ba7a8582d172c5d1b4d263f",
+    "tests/project-showroom.test.cjs": "534aee52f3ba5e01a31cdc6d3d37cee522dffdd009fff509d0badc00aa2bfe3e"
+  }
+}

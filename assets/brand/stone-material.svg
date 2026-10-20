@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="512" viewBox="0 0 1024 512">
+  <defs>
+    <linearGradient id="mineral" x1="0.14" y1="0" x2="0.83" y2="1">
+      <stop stop-color="#bdb6a7"/>
+      <stop offset="0.35" stop-color="#a6a091"/>
+      <stop offset="0.73" stop-color="#b8b09e"/>
+      <stop offset="1" stop-color="#908778"/>
+    </linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.048" numOctaves="3" seed="17" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncR type="linear" slope="0.62" intercept="0.17"/><feFuncG type="linear" slope="0.62" intercept="0.17"/><feFuncB type="linear" slope="0.62" intercept="0.17"/></feComponentTransfer>
+      <feBlend in2="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <filter id="fracture" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.021 0.056" numOctaves="2" seed="6" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/></filter>
+  </defs>
+  <path d="M0 0H1024V512H0Z" fill="url(#mineral)" opacity="0.95" filter="url(#grain)"/>
+  <g fill="none" stroke-linecap="round" filter="url(#fracture)">
+    <g stroke="#4e4b42" opacity="0.48">
+      <path d="M-40 412C23 387 39 341 104 322S171 271 229 266 297 204 363 184 446 144 489 119 590 110 644 41 700 5 743-24" stroke-width="3.2"/>
+      <path d="M107 321c41-3 63 19 100 8s68-22 100-13 63-18 102-12 57-27 93-29 103-60 157-61 93-36 142-53 80-16 113-49 79-22 118-71" stroke-width="1.8"/>
+      <path d="M503 275c-4 31 26 41 26 71s45 29 58 57 39 55 71 67l61 60M363 184c-1-39-24-38-29-75s-35-49-20-95" stroke-width="1.1"/>
+      <path d="M665 529c20-35 17-63 57-80s74-53 83-88 40-51 66-72 22-85 51-113 65-58 112-67" stroke-width="2.4"/>
+      <path d="M804 363c30 7 39 44 82 39s57 10 72 25 51 12 83 37M230 266c-26-22-16-48-41-74s2-64-29-84-28-54-49-73M647 215c-19-28-3-48-21-64s-21-32-17-58" stroke-width="0.75"/>
+    </g>
+    <g stroke="#dfd3bb" opacity="0.38">
+      <path d="M-40 415C23 390 41 345 107 325S174 275 232 270 301 208 366 188 449 148 492 123 593 114 647 45 703 9 746-20" stroke-width="1.3"/>
+      <path d="M110 325c41-3 63 19 100 8s68-22 100-13 63-18 102-12 57-27 93-29 103-60 157-61 93-36 142-53 80-16 113-49 79-22 118-71" stroke-width="0.7"/>
+      <path d="M669 529c20-35 17-63 57-80s74-53 83-88 40-51 66-72 22-85 51-113 65-58 112-67" stroke-width="0.85"/>
+    </g>
+    <path d="M713 444c41-20 64-48 72-81s45-57 76-81 30-77 51-99" stroke="#76463d" stroke-width="1.4" opacity="0.18"/>
+  </g>
+</svg>

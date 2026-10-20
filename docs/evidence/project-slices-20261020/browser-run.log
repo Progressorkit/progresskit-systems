@@ -1,0 +1,45 @@
+PASS Desktop first view at 1440x900
+PASS Desktop first view at 1366x768
+PASS First-view Kontakt and Usługi actions are visible and usable at 320x568
+PASS Open slice and every action fit the stage and browser at 320x568
+PASS First-view Kontakt and Usługi actions are visible and usable at 390x844
+PASS Open slice and every action fit the stage and browser at 390x844
+PASS First-view Kontakt and Usługi actions are visible and usable at 768x844
+PASS Open slice and every action fit the stage and browser at 768x844
+PASS First-view Kontakt and Usługi actions are visible and usable at 1366x768
+PASS Open slice and every action fit the stage and browser at 1366x768
+PASS First-view Kontakt and Usługi actions are visible and usable at 1440x900
+PASS Open slice and every action fit the stage and browser at 1440x900
+PASS Hover opens a slice with its real source summary and actions: Glikemia Premium
+PASS Expanded body and action remain stable during pointer travel
+PASS Escape closes the expanded slice
+PASS Hovering a visible neighboring slice preserves its body and action
+PASS Keyboard Enter opens the selected project
+PASS Browser Back closes keyboard-open details and restores focus outside hidden content
+PASS Moving keyboard focus into hover-open details cancels delayed pointer-leave closure: Focus moved into details after 48.7ms; details stayed open for 400ms
+PASS Arrow navigation from the expanded panel restores focus to the selected module: glikemia-premium → progresskit-mail; focus restored to progresskit-mail
+PASS Support modules and SVG energy remain frozen while details are open
+PASS Desktop navigation and commercial hero actions remain usable with a slice open
+PASS Turning to the next project removes the opened project from the URL
+PASS Ordinary project action navigates to its local project page: /projekty/progresskit-translator/
+PASS Fourteen source projects and category totals are preserved
+PASS All fourteen projects remain reachable through next navigation
+PASS Contact and services anchors resolve on the page
+PASS Contact email uses a valid mailto URL: 3 mailto links inspected; no email sent
+PASS No horizontal overflow at 320px
+PASS No horizontal overflow at 390px
+PASS No horizontal overflow at 768px
+PASS No horizontal overflow at 1366px
+PASS No horizontal overflow at 1440px
+PASS Actual desktop interaction clip: 187 actual browser frames, 5.63 seconds
+PASS Mobile tap opens details without navigating
+PASS Mobile close control closes details
+PASS Coarse touch horizontal swipe turns the orbit without opening details: glikemia-premium → progresskit-mail; coarse touch browser emulation
+PASS Mobile vertical touch gesture keeps native page scrolling: 389 → 574px; touch browser emulation
+PASS Reduced motion is respected and slice interaction remains available
+PASS Catalogue keeps all fourteen ordinary project links usable without JavaScript: 14 unique visible and hit-testable links; ordinary navigation verified
+PASS Local CPU-throttled performance diagnostics are captured: CPU rate 4, 5 turns, 261 sampled RAF intervals; no hardware FPS threshold
+PASS No browser JavaScript errors: 0 errors
+PASS No failed network requests: 0 failures
+PASS No HTTP error responses: 0 responses
+REPORT /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/project-slices-20261020/browser-report.json {"PASS":44,"FAIL":0}

@@ -1,0 +1,36 @@
+<dialog class="project-hologram" id="project-hologram" aria-labelledby="hologram-title" aria-describedby="hologram-summary">
+  <div class="project-hologram__surface" data-hologram-surface>
+    <header class="project-hologram__toolbar">
+      <span class="project-hologram__category" data-hologram-category></span>
+      <button class="project-hologram__close" type="button" data-hologram-close aria-label="Zamknij prezentację projektu">Zamknij <span aria-hidden="true">×</span></button>
+    </header>
+    <div class="project-hologram__layout">
+      <div class="project-hologram__visual">
+        <figure class="project-hologram__figure" data-hologram-figure hidden>
+          <div class="project-hologram__image-slot" data-hologram-image-slot></div>
+          <figcaption data-hologram-caption></figcaption>
+        </figure>
+        <div class="project-hologram__identity" data-hologram-identity aria-hidden="true">
+          <span data-hologram-identity-category></span>
+          <p data-hologram-identity-name></p>
+        </div>
+      </div>
+      <div class="project-hologram__copy">
+        <span class="project-hologram__stage" data-hologram-stage></span>
+        <h2 id="hologram-title" data-hologram-name>Prezentacja projektu</h2>
+        <p class="project-hologram__summary" id="hologram-summary" data-hologram-summary></p>
+        <section class="project-hologram__problem" aria-labelledby="hologram-problem-title">
+          <h3 id="hologram-problem-title">Problem</h3>
+          <p data-hologram-problem></p>
+        </section>
+        <section class="project-hologram__technologies" data-hologram-technologies aria-labelledby="hologram-technologies-title" hidden>
+          <h3 id="hologram-technologies-title">Technologie</h3>
+          <ul data-hologram-technology-list></ul>
+        </section>
+        <div class="project-hologram__actions">
+          <a class="project-hologram__project-link" data-hologram-project-link>Zobacz cały projekt <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

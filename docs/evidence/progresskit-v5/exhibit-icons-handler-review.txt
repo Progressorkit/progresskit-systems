@@ -1,0 +1,14 @@
+PASS horizontal ignored Up/Down keep selection and native defaults
+PASS vertical ignored Left/Right keep selection and native defaults
+PASS horizontal Right/Left changes selection, wraps, and focuses its tab
+PASS vertical Down/Up changes selection, wraps, and focuses its tab
+PASS Home/End work in both orientations
+PASS modified arrows keep native defaults
+PASS click activates exactly its panel and focuses the selected tab
+PASS Escape closes nested analysis and focuses its native summary
+PASS second Escape returns to the selected tab
+PASS Escape in a hidden panel leaves focus and state alone
+PASS orientation change updates ARIA and keyboard contract without selecting a project
+PASS reduced motion suppresses entry class and clears an existing entry class
+PASS ARIA tabs and panels retain all labels and control relationships
+{"checks":13,"failures":0,"source":"/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/engineering-exhibit.js","sha256":"6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688","scope":"actual production handlers in synthetic DOM; not browser focus/render/touch proof"}

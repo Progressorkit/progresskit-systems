@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-20",
+  "preview": "http://127.0.0.1:8098/",
+  "status": "LOCAL_REVIEW_READY",
+  "ownerVisualApproval": "PENDING",
+  "changes": [
+    "Six separate aluminium project modules in the first view, with all 14 catalogue projects preserved.",
+    "The actual module expands on hover, tap or keyboard activation; details pause the orbit.",
+    "Existing Kontakt and authorized Usługi are visible without scrolling; Usługi anchors existing competency content.",
+    "Existing native case links, APK routes and aggregate download counter are preserved."
+  ],
+  "validation": {
+    "generatorAndSyntax": "PASS",
+    "nodeFiles": 4,
+    "nodeTests": {
+      "project-showroom": {
+        "tests": 24,
+        "pass": 24,
+        "fail": 0
+      },
+      "hero-space": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0
+      },
+      "catalog-filters": {
+        "tests": 12,
+        "pass": 12,
+        "fail": 0
+      },
+      "project-hologram": {
+        "tests": 15,
+        "pass": 15,
+        "fail": 0
+      }
+    },
+    "nodeTotalPASS": 56,
+    "pythonFullSuitePASS": 84,
+    "pythonFinalGeneratedSiteRecheckPASS": 18,
+    "browser": {
+      "PASS": 44,
+      "FAIL": 0
+    },
+    "apkFullTransferAndRange": "PASS",
+    "copyAudit": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "performance": {
+    "kind": "Local headless Chrome, CPU throttling rate 4; not physical GPU/FPS acceptance.",
+    "cpu": "Intel Core i7-8650U",
+    "rafIntervalsP50ms": 16.699999999999818,
+    "rafIntervalsP95ms": 49.90000000000009,
+    "diagnostic": "local-perf-diagnostics.json"
+  },
+  "physicalAndroid": {
+    "status": "NOT_RUN",
+    "reason": "No authorized Android device is connected.",
+    "authorizedDevices": 0
+  },
+  "contact": {
+    "route": "#kontakt -> mailto:pawel@progresskit.pl",
+    "brief": "Existing local TXT/print/email-client flow; no server form submission.",
+    "thirdPartyMessagesSent": false
+  },
+  "content": {
+    "catalogChanged": false,
+    "unapprovedTextAdded": false,
+    "consultation": "copy-consultation.json",
+    "proposalApplied": false
+  },
+  "git": {
+    "branch": "main",
+    "head": "d6662ca591e1796e46cce550272450f73a88c71a",
+    "preexistingDirtyFilesSnapshotted": 137,
+    "baseline": "/tmp/progresskit-slices-20261020/baseline",
+    "changedSinceSnapshot": [
+      "404.html",
+      "assets/project-showroom.js",
+      "progresskit-mail/index.html",
+      "projekty/adivara/index.html",
+      "projekty/glikemia-premium/index.html",
+      "projekty/gotrans360/index.html",
+      "projekty/ignira/index.html",
+      "projekty/index.html",
+      "projekty/kan-system/index.html",
+      "projekty/obserwator/index.html",
+      "projekty/progresskit-analytics/index.html",
+      "projekty/progresskit-community/index.html",
+      "projekty/progresskit-infrastructure/index.html",
+      "projekty/progresskit-mail/index.html",
+      "projekty/progresskit-systems/index.html",
+      "projekty/progresskit-tax/index.html",
+      "projekty/progresskit-translator/index.html",
+      "projekty/vaeloria/index.html",
+      "prywatnosc/index.html",
+      "scripts/build-site.py",
+      "scripts/showroom_markup.py",
+      "templates/about-contact.html",
+      "tests/project-showroom.test.cjs",
+      "index.html",
+      "scripts/stage-public.py"
+    ],
+    "newSource": [
+      "assets/project-slices.css"
+    ],
+    "commitCreated": false,
+    "pushPerformed": false,
+    "deploymentPerformed": false
+  },
+  "artifacts": {
+    "firstView": "desktop-1440x900-first-view.png",
+    "expandedModule": "desktop-slice-expanded.png",
+    "mobile": "mobile-390x844-first-view.png",
+    "mobileExpanded": "mobile-slice-expanded.png",
+    "video": "desktop-interaction.mp4"
+  },
+  "previewProcess": {
+    "port": 8098,
+    "database": "/tmp/progresskit-slices-20261020/preview.db",
+    "databaseIsolated": true,
+    "restartCommand": "PK_PREVIEW_PORT=8098 PK_PRODUCT_DB=/tmp/progresskit-slices-20261020/preview.db PK_PYTHON=/tmp/progresskit-slices-20261020/venv/bin/python sh scripts/preview.sh"
+  }
+}

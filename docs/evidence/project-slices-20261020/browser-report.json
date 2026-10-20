@@ -1,0 +1,1394 @@
+{
+  "startedAt": "2026-10-20T08:33:34.235Z",
+  "base": "http://127.0.0.1:8098/",
+  "checks": [
+    {
+      "name": "Desktop first view at 1440x900",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Desktop first view at 1366x768",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "First-view Kontakt and Usługi actions are visible and usable at 320x568",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Open slice and every action fit the stage and browser at 320x568",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "First-view Kontakt and Usługi actions are visible and usable at 390x844",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Open slice and every action fit the stage and browser at 390x844",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "First-view Kontakt and Usługi actions are visible and usable at 768x844",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Open slice and every action fit the stage and browser at 768x844",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "First-view Kontakt and Usługi actions are visible and usable at 1366x768",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Open slice and every action fit the stage and browser at 1366x768",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "First-view Kontakt and Usługi actions are visible and usable at 1440x900",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Open slice and every action fit the stage and browser at 1440x900",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Hover opens a slice with its real source summary and actions",
+      "result": "PASS",
+      "details": "Glikemia Premium"
+    },
+    {
+      "name": "Expanded body and action remain stable during pointer travel",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Escape closes the expanded slice",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Hovering a visible neighboring slice preserves its body and action",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Keyboard Enter opens the selected project",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Browser Back closes keyboard-open details and restores focus outside hidden content",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Moving keyboard focus into hover-open details cancels delayed pointer-leave closure",
+      "result": "PASS",
+      "details": "Focus moved into details after 48.7ms; details stayed open for 400ms"
+    },
+    {
+      "name": "Arrow navigation from the expanded panel restores focus to the selected module",
+      "result": "PASS",
+      "details": "glikemia-premium → progresskit-mail; focus restored to progresskit-mail"
+    },
+    {
+      "name": "Support modules and SVG energy remain frozen while details are open",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Desktop navigation and commercial hero actions remain usable with a slice open",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Turning to the next project removes the opened project from the URL",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Ordinary project action navigates to its local project page",
+      "result": "PASS",
+      "details": "/projekty/progresskit-translator/"
+    },
+    {
+      "name": "Fourteen source projects and category totals are preserved",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "All fourteen projects remain reachable through next navigation",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Contact and services anchors resolve on the page",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Contact email uses a valid mailto URL",
+      "result": "PASS",
+      "details": "3 mailto links inspected; no email sent"
+    },
+    {
+      "name": "No horizontal overflow at 320px",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "No horizontal overflow at 390px",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "No horizontal overflow at 768px",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "No horizontal overflow at 1366px",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "No horizontal overflow at 1440px",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Actual desktop interaction clip",
+      "result": "PASS",
+      "details": "187 actual browser frames, 5.63 seconds"
+    },
+    {
+      "name": "Mobile tap opens details without navigating",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Mobile close control closes details",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Coarse touch horizontal swipe turns the orbit without opening details",
+      "result": "PASS",
+      "details": "glikemia-premium → progresskit-mail; coarse touch browser emulation"
+    },
+    {
+      "name": "Mobile vertical touch gesture keeps native page scrolling",
+      "result": "PASS",
+      "details": "389 → 574px; touch browser emulation"
+    },
+    {
+      "name": "Reduced motion is respected and slice interaction remains available",
+      "result": "PASS",
+      "details": ""
+    },
+    {
+      "name": "Catalogue keeps all fourteen ordinary project links usable without JavaScript",
+      "result": "PASS",
+      "details": "14 unique visible and hit-testable links; ordinary navigation verified"
+    },
+    {
+      "name": "Local CPU-throttled performance diagnostics are captured",
+      "result": "PASS",
+      "details": "CPU rate 4, 5 turns, 261 sampled RAF intervals; no hardware FPS threshold"
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "result": "PASS",
+      "details": "0 errors"
+    },
+    {
+      "name": "No failed network requests",
+      "result": "PASS",
+      "details": "0 failures"
+    },
+    {
+      "name": "No HTTP error responses",
+      "result": "PASS",
+      "details": "0 responses"
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "httpFailures": [],
+  "artifacts": [
+    "desktop-1440x900-first-view.png",
+    "desktop-1366x768-first-view.png",
+    "first-view-cta-320x568.png",
+    "slice-bounds-320x568.png",
+    "first-view-cta-390x844.png",
+    "slice-bounds-390x844.png",
+    "first-view-cta-768x844.png",
+    "slice-bounds-768x844.png",
+    "first-view-cta-1366x768.png",
+    "slice-bounds-1366x768.png",
+    "first-view-cta-1440x900.png",
+    "slice-bounds-1440x900.png",
+    "desktop-slice-expanded.png",
+    "desktop-neighbor-expanded.png",
+    "desktop-interaction.mp4",
+    "mobile-390x844-first-view.png",
+    "mobile-slice-expanded.png",
+    "reduced-motion-slice.png",
+    "local-perf-diagnostics.json"
+  ],
+  "geometry": [
+    {
+      "case": "commercial-first-view",
+      "width": 320,
+      "height": 568,
+      "entries": [
+        {
+          "tag": "A",
+          "text": "Kontakt",
+          "rect": {
+            "x": 16,
+            "y": 260.75,
+            "width": 138,
+            "height": 50,
+            "right": 154,
+            "bottom": 310.75
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Usługi",
+          "rect": {
+            "x": 166,
+            "y": 260.75,
+            "width": 138,
+            "height": 50,
+            "right": 304,
+            "bottom": 310.75
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "expanded-bounds",
+      "width": 320,
+      "height": 568,
+      "stage": {
+        "x": 12,
+        "y": 85.75,
+        "width": 296,
+        "height": 700,
+        "right": 308,
+        "bottom": 785.75
+      },
+      "slab": {
+        "x": 24,
+        "y": 97.75,
+        "width": 272,
+        "height": 458.25,
+        "right": 296,
+        "bottom": 556
+      },
+      "panel": {
+        "x": 31,
+        "y": 207.78125,
+        "width": 258,
+        "height": 340.21875,
+        "right": 289,
+        "bottom": 548
+      },
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "text": "Zamknij ×",
+          "rect": {
+            "x": 176,
+            "y": 216.78125,
+            "width": 102,
+            "height": 44,
+            "right": 278,
+            "bottom": 260.78125
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "ZOBACZ CAŁY PROJEKT\n→",
+          "rect": {
+            "x": 42,
+            "y": 387,
+            "width": 236,
+            "height": 44,
+            "right": 278,
+            "bottom": 431
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "POBIERZ GLIKEMIA PREMIUM",
+          "rect": {
+            "x": 42,
+            "y": 439,
+            "width": 236,
+            "height": 44,
+            "right": 278,
+            "bottom": 483
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "KONTAKT",
+          "rect": {
+            "x": 42,
+            "y": 491,
+            "width": 236,
+            "height": 44,
+            "right": 278,
+            "bottom": 535
+          },
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "commercial-first-view",
+      "width": 390,
+      "height": 844,
+      "entries": [
+        {
+          "tag": "A",
+          "text": "Kontakt",
+          "rect": {
+            "x": 16,
+            "y": 277.25,
+            "width": 173,
+            "height": 50,
+            "right": 189,
+            "bottom": 327.25
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Usługi",
+          "rect": {
+            "x": 201,
+            "y": 277.25,
+            "width": 173,
+            "height": 50,
+            "right": 374,
+            "bottom": 327.25
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "expanded-bounds",
+      "width": 390,
+      "height": 844,
+      "stage": {
+        "x": 12,
+        "y": 86.25,
+        "width": 366,
+        "height": 700,
+        "right": 378,
+        "bottom": 786.25
+      },
+      "slab": {
+        "x": 24,
+        "y": 98.25,
+        "width": 342,
+        "height": 620,
+        "right": 366,
+        "bottom": 718.25
+      },
+      "panel": {
+        "x": 31,
+        "y": 208.28125,
+        "width": 328,
+        "height": 501.96875,
+        "right": 359,
+        "bottom": 710.25
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "text": "Zamknij ×",
+          "rect": {
+            "x": 246,
+            "y": 217.28125,
+            "width": 102,
+            "height": 44,
+            "right": 348,
+            "bottom": 261.28125
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "ZOBACZ CAŁY PROJEKT\n→",
+          "rect": {
+            "x": 42,
+            "y": 549.25,
+            "width": 306,
+            "height": 44,
+            "right": 348,
+            "bottom": 593.25
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "POBIERZ GLIKEMIA PREMIUM",
+          "rect": {
+            "x": 42,
+            "y": 601.25,
+            "width": 306,
+            "height": 44,
+            "right": 348,
+            "bottom": 645.25
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "KONTAKT",
+          "rect": {
+            "x": 42,
+            "y": 653.25,
+            "width": 306,
+            "height": 44,
+            "right": 348,
+            "bottom": 697.25
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "commercial-first-view",
+      "width": 768,
+      "height": 844,
+      "entries": [
+        {
+          "tag": "A",
+          "text": "Kontakt",
+          "rect": {
+            "x": 24,
+            "y": 358.59375,
+            "width": 110,
+            "height": 54,
+            "right": 134,
+            "bottom": 412.59375
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Usługi",
+          "rect": {
+            "x": 144,
+            "y": 358.59375,
+            "width": 110,
+            "height": 54,
+            "right": 254,
+            "bottom": 412.59375
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "expanded-bounds",
+      "width": 768,
+      "height": 844,
+      "stage": {
+        "x": 307.1875,
+        "y": 87,
+        "width": 444.8125,
+        "height": 560,
+        "right": 752,
+        "bottom": 647
+      },
+      "slab": {
+        "x": 319.1875,
+        "y": 99,
+        "width": 420.796875,
+        "height": 500,
+        "right": 739.984375,
+        "bottom": 599
+      },
+      "panel": {
+        "x": 330.1875,
+        "y": 209.296875,
+        "width": 398.796875,
+        "height": 378.703125,
+        "right": 728.984375,
+        "bottom": 588
+      },
+      "viewport": {
+        "width": 768,
+        "height": 844
+      },
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "text": "Zamknij ×",
+          "rect": {
+            "x": 609.984375,
+            "y": 220.296875,
+            "width": 102,
+            "height": 44,
+            "right": 711.984375,
+            "bottom": 264.296875
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "ZOBACZ CAŁY PROJEKT\n→",
+          "rect": {
+            "x": 347.1875,
+            "y": 469,
+            "width": 364.796875,
+            "height": 46,
+            "right": 711.984375,
+            "bottom": 515
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "POBIERZ GLIKEMIA PREMIUM",
+          "rect": {
+            "x": 347.1875,
+            "y": 525,
+            "width": 244.796875,
+            "height": 46,
+            "right": 591.984375,
+            "bottom": 571
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "KONTAKT",
+          "rect": {
+            "x": 601.984375,
+            "y": 525,
+            "width": 110,
+            "height": 46,
+            "right": 711.984375,
+            "bottom": 571
+          },
+          "viewport": {
+            "width": 768,
+            "height": 844
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "commercial-first-view",
+      "width": 1366,
+      "height": 768,
+      "entries": [
+        {
+          "tag": "A",
+          "text": "Kontakt",
+          "rect": {
+            "x": 61.46875,
+            "y": 472.25,
+            "width": 142,
+            "height": 54,
+            "right": 203.46875,
+            "bottom": 526.25
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Usługi",
+          "rect": {
+            "x": 215.46875,
+            "y": 472.25,
+            "width": 142,
+            "height": 54,
+            "right": 357.46875,
+            "bottom": 526.25
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "expanded-bounds",
+      "width": 1366,
+      "height": 768,
+      "stage": {
+        "x": 573.71875,
+        "y": 97,
+        "width": 768.265625,
+        "height": 560,
+        "right": 1341.984375,
+        "bottom": 657
+      },
+      "slab": {
+        "x": 647.828125,
+        "y": 109,
+        "width": 620,
+        "height": 500,
+        "right": 1267.828125,
+        "bottom": 609
+      },
+      "panel": {
+        "x": 658.828125,
+        "y": 226.078125,
+        "width": 598,
+        "height": 371.921875,
+        "right": 1256.828125,
+        "bottom": 598
+      },
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "text": "Zamknij ×",
+          "rect": {
+            "x": 1137.828125,
+            "y": 237.078125,
+            "width": 102,
+            "height": 44,
+            "right": 1239.828125,
+            "bottom": 281.078125
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "ZOBACZ CAŁY PROJEKT\n→",
+          "rect": {
+            "x": 675.828125,
+            "y": 535,
+            "width": 215.9375,
+            "height": 46,
+            "right": 891.765625,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "POBIERZ GLIKEMIA PREMIUM",
+          "rect": {
+            "x": 901.765625,
+            "y": 535,
+            "width": 218.0625,
+            "height": 46,
+            "right": 1119.828125,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "KONTAKT",
+          "rect": {
+            "x": 1129.828125,
+            "y": 535,
+            "width": 110,
+            "height": 46,
+            "right": 1239.828125,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "commercial-first-view",
+      "width": 1440,
+      "height": 900,
+      "entries": [
+        {
+          "tag": "A",
+          "text": "Kontakt",
+          "rect": {
+            "x": 64.796875,
+            "y": 490.3125,
+            "width": 142,
+            "height": 54,
+            "right": 206.796875,
+            "bottom": 544.3125
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Usługi",
+          "rect": {
+            "x": 218.796875,
+            "y": 490.3125,
+            "width": 142,
+            "height": 54,
+            "right": 360.796875,
+            "bottom": 544.3125
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "expanded-bounds",
+      "width": 1440,
+      "height": 900,
+      "stage": {
+        "x": 604.796875,
+        "y": 97,
+        "width": 811.1875,
+        "height": 560,
+        "right": 1415.984375,
+        "bottom": 657
+      },
+      "slab": {
+        "x": 700.375,
+        "y": 109,
+        "width": 620,
+        "height": 500,
+        "right": 1320.375,
+        "bottom": 609
+      },
+      "panel": {
+        "x": 711.375,
+        "y": 226.125,
+        "width": 598,
+        "height": 371.875,
+        "right": 1309.375,
+        "bottom": 598
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "controls": [
+        {
+          "tag": "BUTTON",
+          "text": "Zamknij ×",
+          "rect": {
+            "x": 1190.375,
+            "y": 237.125,
+            "width": 102,
+            "height": 44,
+            "right": 1292.375,
+            "bottom": 281.125
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "ZOBACZ CAŁY PROJEKT\n→",
+          "rect": {
+            "x": 728.375,
+            "y": 535,
+            "width": 215.9375,
+            "height": 46,
+            "right": 944.3125,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "POBIERZ GLIKEMIA PREMIUM",
+          "rect": {
+            "x": 954.3125,
+            "y": 535,
+            "width": 218.0625,
+            "height": 46,
+            "right": 1172.375,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "KONTAKT",
+          "rect": {
+            "x": 1182.375,
+            "y": 535,
+            "width": 110,
+            "height": 46,
+            "right": 1292.375,
+            "bottom": 581
+          },
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "blocked": [],
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "historyFocus": {
+    "tag": "DIV",
+    "project": null,
+    "viewport": true,
+    "blocked": false
+  },
+  "pointerLeaveFocus": {
+    "focusAfterLeaveMs": 48.66320799999812,
+    "waitAfterFocusMs": 400
+  },
+  "frozenPose": {
+    "before": {
+      "sliceOpen": true,
+      "support": [
+        {
+          "id": "progresskit-translator",
+          "transform": "matrix3d(0.806031, 0, -0.198816, 0, 0, 0.830189, 0, 0, 0.239483, 0, 0.970901, 0, -321.768, -174.623, 0, 1)"
+        },
+        {
+          "id": "vaeloria",
+          "transform": "matrix3d(0.908928, 0, -0.224196, 0, 0, 0.93617, 0, 0, 0.239483, 0, 0.970901, 0, -348.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "progresskit-community",
+          "transform": "matrix(1, 0, 0, 1, -110, 130.909)"
+        },
+        {
+          "id": "progresskit-tax",
+          "transform": "matrix3d(0.908928, 0, 0.224196, 0, 0, 0.93617, 0, 0, -0.239483, 0, 0.970901, 0, 128.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "adivara",
+          "transform": "matrix3d(0.806031, 0, 0.198816, 0, 0, 0.830189, 0, 0, -0.239483, 0, 0.970901, 0, 101.768, -174.623, 0, 1)"
+        }
+      ],
+      "svg": [
+        {
+          "index": 39,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        },
+        {
+          "index": 43,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 44,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, -69.8246)",
+          "dash": "0px"
+        },
+        {
+          "index": 48,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 49,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -209.486, -60.4737)",
+          "dash": "0px"
+        },
+        {
+          "index": 53,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 54,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -328.36, 94.7894)",
+          "dash": "0px"
+        },
+        {
+          "index": 58,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 59,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, 88.8679)",
+          "dash": "0px"
+        },
+        {
+          "index": 63,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 64,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 420.49, 121.385)",
+          "dash": "0px"
+        },
+        {
+          "index": 68,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 69,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 46.0852, -13.3037)",
+          "dash": "0px"
+        },
+        {
+          "index": 117,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        }
+      ]
+    },
+    "afterToggle": {
+      "sliceOpen": true,
+      "support": [
+        {
+          "id": "progresskit-translator",
+          "transform": "matrix3d(0.806031, 0, -0.198816, 0, 0, 0.830189, 0, 0, 0.239483, 0, 0.970901, 0, -321.768, -174.623, 0, 1)"
+        },
+        {
+          "id": "vaeloria",
+          "transform": "matrix3d(0.908928, 0, -0.224196, 0, 0, 0.93617, 0, 0, 0.239483, 0, 0.970901, 0, -348.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "progresskit-community",
+          "transform": "matrix(1, 0, 0, 1, -110, 130.909)"
+        },
+        {
+          "id": "progresskit-tax",
+          "transform": "matrix3d(0.908928, 0, 0.224196, 0, 0, 0.93617, 0, 0, -0.239483, 0, 0.970901, 0, 128.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "adivara",
+          "transform": "matrix3d(0.806031, 0, 0.198816, 0, 0, 0.830189, 0, 0, -0.239483, 0, 0.970901, 0, 101.768, -174.623, 0, 1)"
+        }
+      ],
+      "svg": [
+        {
+          "index": 39,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        },
+        {
+          "index": 43,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 44,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, -69.8246)",
+          "dash": "0px"
+        },
+        {
+          "index": 48,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 49,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -209.486, -60.4737)",
+          "dash": "0px"
+        },
+        {
+          "index": 53,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 54,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -328.36, 94.7894)",
+          "dash": "0px"
+        },
+        {
+          "index": 58,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 59,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, 88.8679)",
+          "dash": "0px"
+        },
+        {
+          "index": 63,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 64,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 420.49, 121.385)",
+          "dash": "0px"
+        },
+        {
+          "index": 68,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 69,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 46.0852, -13.3037)",
+          "dash": "0px"
+        },
+        {
+          "index": 117,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        }
+      ]
+    },
+    "afterRestore": {
+      "sliceOpen": true,
+      "support": [
+        {
+          "id": "progresskit-translator",
+          "transform": "matrix3d(0.806031, 0, -0.198816, 0, 0, 0.830189, 0, 0, 0.239483, 0, 0.970901, 0, -321.768, -174.623, 0, 1)"
+        },
+        {
+          "id": "vaeloria",
+          "transform": "matrix3d(0.908928, 0, -0.224196, 0, 0, 0.93617, 0, 0, 0.239483, 0, 0.970901, 0, -348.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "progresskit-community",
+          "transform": "matrix(1, 0, 0, 1, -110, 130.909)"
+        },
+        {
+          "id": "progresskit-tax",
+          "transform": "matrix3d(0.908928, 0, 0.224196, 0, 0, 0.93617, 0, 0, -0.239483, 0, 0.970901, 0, 128.802, 16.0639, 0, 1)"
+        },
+        {
+          "id": "adivara",
+          "transform": "matrix3d(0.806031, 0, 0.198816, 0, 0, 0.830189, 0, 0, -0.239483, 0, 0.970901, 0, 101.768, -174.623, 0, 1)"
+        }
+      ],
+      "svg": [
+        {
+          "index": 39,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        },
+        {
+          "index": 43,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 44,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, -69.8246)",
+          "dash": "0px"
+        },
+        {
+          "index": 48,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 49,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -209.486, -60.4737)",
+          "dash": "0px"
+        },
+        {
+          "index": 53,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 54,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, -328.36, 94.7894)",
+          "dash": "0px"
+        },
+        {
+          "index": 58,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 59,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 0, 88.8679)",
+          "dash": "0px"
+        },
+        {
+          "index": 63,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 64,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 420.49, 121.385)",
+          "dash": "0px"
+        },
+        {
+          "index": 68,
+          "name": "showroom-orbit-pulse",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "0px"
+        },
+        {
+          "index": 69,
+          "name": "showroom-spark-flow",
+          "playState": "paused",
+          "transform": "matrix(1, 0, 0, 1, 46.0852, -13.3037)",
+          "dash": "0px"
+        },
+        {
+          "index": 117,
+          "name": "showroom-energy-flow",
+          "playState": "paused",
+          "transform": "none",
+          "dash": "-88.1952px"
+        }
+      ]
+    }
+  },
+  "finishedAt": "2026-10-20T08:34:46.551Z",
+  "totals": {
+    "PASS": 44,
+    "FAIL": 0
+  }
+}

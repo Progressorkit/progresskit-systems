@@ -1,0 +1,710 @@
+{
+  "asOf": "2026-10-15",
+  "origin": "http://127.0.0.1:8095",
+  "publicFiles": 57,
+  "pass": 107,
+  "fail": 0,
+  "checks": [
+    {
+      "path": "/404.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "031771f0fed5244c3c0ac9d9914910b7b267569fc5d3d5191a24a485bffa3232"
+    },
+    {
+      "path": "/assets/brand-atmosphere.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d"
+    },
+    {
+      "path": "/assets/brand/hero-landscape-v5.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad"
+    },
+    {
+      "path": "/assets/brand/monument-font-license.txt",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "e81d9dced49fea2a7d576cbea283873de58563c5d488f954deb282843c3ea79c"
+    },
+    {
+      "path": "/assets/brand/monument-serif-bold.ttf",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "3a48e198db686dcea39b3116c582b66427c2bc41c44409f19e5af7e0da446190"
+    },
+    {
+      "path": "/assets/brand/motto-serif-italic.ttf",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "1d7476da447f9455a47c41adfd6ac2b1fc1b65e660f3ea4bf36128506c7e094c"
+    },
+    {
+      "path": "/assets/brand/progressorkit-primary.png",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532"
+    },
+    {
+      "path": "/assets/brand/progressorkit-stamp.png",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+    },
+    {
+      "path": "/assets/brand/stone-material.svg",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "f3d99545fc29a467f2f55decd89f71bfcc52dd33c1c156f33827103ce74ea938"
+    },
+    {
+      "path": "/assets/engineering-exhibit.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9"
+    },
+    {
+      "path": "/assets/engineering-exhibit.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688"
+    },
+    {
+      "path": "/assets/hero-monument.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52"
+    },
+    {
+      "path": "/assets/hero-space.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "97ca07c30ea17aeed64f879a66ea0111f434b1a32052ea9d8526f79d8c55299b"
+    },
+    {
+      "path": "/assets/hero.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc"
+    },
+    {
+      "path": "/assets/home-atmosphere.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70"
+    },
+    {
+      "path": "/assets/progresskit-product-shell.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557"
+    },
+    {
+      "path": "/assets/project-hologram.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16"
+    },
+    {
+      "path": "/assets/project-hologram.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae"
+    },
+    {
+      "path": "/assets/project-showroom.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6"
+    },
+    {
+      "path": "/assets/project-showroom.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "a26d1c7c315321828da33da9297554cc4cec72ce989a3d4fdeaff6c9a1a81e20"
+    },
+    {
+      "path": "/assets/projects/glikemia/product-language.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c"
+    },
+    {
+      "path": "/assets/projects/glikemia/product-measurement.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "710f95be5c4ad7f729020b666119d2c73492ec0227c95eae2e95a229404f0a58"
+    },
+    {
+      "path": "/assets/projects/glikemia/product-qr.png",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "b9b96cdd7792d85833cec2946f7d4ec99a1fa255b878f67d003151236360007e"
+    },
+    {
+      "path": "/assets/projects/mail/mail-delete-redacted.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "e06c9fa6cedebd5d3268be0c871f95bd300a36ccba066cba61649b186a6fb261"
+    },
+    {
+      "path": "/assets/projects/mail/mail-splash.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1"
+    },
+    {
+      "path": "/assets/projects/progresskit-community/community-desktop.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c"
+    },
+    {
+      "path": "/assets/projects/progresskit-community/community-mobile.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "05b969cfdeee4cf7306d198b2795ae508bab7dcc89bf988023167c1474e36462"
+    },
+    {
+      "path": "/assets/projects/progresskit-translator/translator-start.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78"
+    },
+    {
+      "path": "/assets/projects/vaeloria/earth-exploration.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "8ac36043d9d0e66dec147b2aa974c5149ab4850a5df1e3938cd6d8fb58e29894"
+    },
+    {
+      "path": "/assets/projects/vaeloria/tactical-battle.webp",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "0e51c68bdecf5d89ae62e5e418343f566d62539a56707a0f72b8a49a791dc187"
+    },
+    {
+      "path": "/assets/site-v4.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d"
+    },
+    {
+      "path": "/assets/site-v5.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83"
+    },
+    {
+      "path": "/assets/site-v5.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec"
+    },
+    {
+      "path": "/glikemia-premium/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9"
+    },
+    {
+      "path": "/glikemia-premium/product.css",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f"
+    },
+    {
+      "path": "/glikemia-premium/product.js",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5"
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "b34901f685b7a72f6099c9e28fa82e75cd7229003ba7a8582d172c5d1b4d263f"
+    },
+    {
+      "path": "/og-progresskit.jpg",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "4a2bebfed7c8e177f1c5f119dce3f7121140b0d0f583cf180a941a91a68a34dd"
+    },
+    {
+      "path": "/progresskit-mail/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "61cf3cb6e7766bb47b2feb66c32aab1bbe11deb03aef635fcf4d7fc0d2cf60af"
+    },
+    {
+      "path": "/projekty/adivara/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "e4a834fad8014ba480ca56be5fb2325f7ba90a42da29dc517425b75369becfec"
+    },
+    {
+      "path": "/projekty/glikemia-premium/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "90e7e4d042b40e6bf21a899de709ff7ab5199dcfd3889a04f86de4d3088686f7"
+    },
+    {
+      "path": "/projekty/gotrans360/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "57891e5500dc152bb33bd93ddbb709e1db4d367275e78c79741c39f192c2e0bf"
+    },
+    {
+      "path": "/projekty/ignira/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "f6f92d51dba178a9feb26d3a1ec685da37340fda2ebac5f4984e9b9a5edc1cff"
+    },
+    {
+      "path": "/projekty/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "6678e39e93def7cd8db596f40ff6f0ec4992d01b7609a5eb6c7c0c836b53ccc0"
+    },
+    {
+      "path": "/projekty/kan-system/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "5a4af93aed69e573d45a7e98b14172f4972b05af1bf0d4898a1ce2fe87161fd7"
+    },
+    {
+      "path": "/projekty/obserwator/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "a344718555c8a773e809ec036c939317a5b34c3e509281ea0212965c179b98d0"
+    },
+    {
+      "path": "/projekty/progresskit-analytics/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "9a80a75bc9091c2a3fd39b80568f114632d7dde9351fbe2cb076be2fa7bcbd44"
+    },
+    {
+      "path": "/projekty/progresskit-community/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "dedd7338a4eacb1ff4529e9d42a220a8d576f9d708a9e7c30a0941075781c060"
+    },
+    {
+      "path": "/projekty/progresskit-infrastructure/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "d40a8c93338a6ebac9d4d6e1abf9f2dcabdbcc822b85d2f464123368725da496"
+    },
+    {
+      "path": "/projekty/progresskit-mail/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "c5634b1f1d266b82c05cbead827dc6d3df0e675b28df9e2efd5d024f509a8497"
+    },
+    {
+      "path": "/projekty/progresskit-systems/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "5b216c8ed29c0733d427086c3209658b65bc4a165337c0edb300c553a11acd14"
+    },
+    {
+      "path": "/projekty/progresskit-tax/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "cdb5010d6f0f36686a0c08eb138a06db587e980d71f096e045fdb2068a253410"
+    },
+    {
+      "path": "/projekty/progresskit-translator/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "ec0833fa27db241047e75a2285b5481aaad36747c818f37ce43a9a4725f6a638"
+    },
+    {
+      "path": "/projekty/vaeloria/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "959d0889efec90d966aae6f3116f71ca83655388bc82cf490c8c1b0a39f0fa2d"
+    },
+    {
+      "path": "/prywatnosc/index.html",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "6bc5d09d1a05bb67bbf6f841919c646cbd33f19549363c9b12c556d8da856f65"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "3f6a263eac95bcbd9ccb40ec2c8df6d036ddd0e7787fe6c41f5a1fbc7ddfe188"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "check": "public-bytes",
+      "pass": true,
+      "sha256": "f46973b8f5e46cb7d5f60765e790bc13d84ef36b6fce367a1332c35817cf0d30"
+    },
+    {
+      "path": "/glikemia-premium/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/glikemia-premium",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/progresskit-mail/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/progresskit-mail",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/adivara/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/adivara",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/glikemia-premium/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/glikemia-premium",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/gotrans360/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/gotrans360",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/ignira/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/ignira",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/kan-system/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/kan-system",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/obserwator/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/obserwator",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-analytics/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-analytics",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-community/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-community",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-infrastructure/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-infrastructure",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-mail/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-mail",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-systems/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-systems",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-tax/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-tax",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-translator/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/progresskit-translator",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/projekty/vaeloria/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/projekty/vaeloria",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/prywatnosc/",
+      "status": 200,
+      "check": "directory-route",
+      "pass": true
+    },
+    {
+      "path": "/prywatnosc",
+      "status": 308,
+      "check": "canonical-redirect",
+      "pass": true
+    },
+    {
+      "path": "/.git/config",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/catalog/projects.json",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/templates/hero-scene.svg",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/analytics/app.py",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/docs/PROGRESSKIT_V5_FINAL_VISUAL_REPORT.md",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/scripts/showroom_markup.py",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/scripts/engineering_exhibit.py",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/tests/project-showroom.test.cjs",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/summary",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/health",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/.env",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/assets/category-worlds.css",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    },
+    {
+      "path": "/assets/projects/vaeloria/vaeloria-cover.png",
+      "status": 404,
+      "check": "private-denied",
+      "pass": true
+    }
+  ],
+  "browserVerification": "NOT RUN",
+  "deployment": "NOT DEPLOYED"
+}

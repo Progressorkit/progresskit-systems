@@ -1,4 +1,9 @@
 {
   "name": "progressorkit-systems",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build-site.py",
+    "check": "python3 scripts/build-site.py --check && node --check assets/site-v5.js && node --check assets/hero-space.js && node --check assets/project-showroom.js && node --check assets/project-hologram.js && node --check assets/engineering-exhibit.js && node --check glikemia-premium/product.js",
+    "test": "node --test tests/*.test.cjs"
+  }
 }

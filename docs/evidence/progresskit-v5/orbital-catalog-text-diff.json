@@ -1,0 +1,127 @@
+[
+  {
+    "path": "/projects/0/cases/0/rootCause",
+    "before": "Brak drugiego klucza sortowania przy legalnych remisach timestampu.",
+    "after": "Brak drugiego klucza sortowania, gdy znaczniki czasu są identyczne."
+  },
+  {
+    "path": "/projects/0/cases/1/verification",
+    "before": "Historyczny raport dokumentuje test przełomu dnia i roku. Kod obecnie korzysta z jednego snapshotu daty i zakresu od początku dnia do początku następnego.",
+    "after": "Historyczny raport dokumentuje test przełomu dnia i roku. Kod obecnie korzysta z jednego odczytu daty i zakresu od początku dnia do początku następnego."
+  },
+  {
+    "path": "/projects/0/sources/0/label",
+    "before": "Glikemia Premium — przegląd kodu i konfiguracji",
+    "after": "Glikemia Premium: przegląd kodu i konfiguracji"
+  },
+  {
+    "path": "/projects/0/sources/1/label",
+    "before": "Glikemia Premium — raport QA granic dat i integralności historii",
+    "after": "Glikemia Premium: raport QA granic dat i integralności historii"
+  },
+  {
+    "path": "/projects/1/solution",
+    "before": "Androidowy klient korzysta z lokalnego cache, szyfrowanego magazynu danych dostępowych i backendu przypisywania urządzeń. Transport IMAP/SMTP i sygnały push są rozdzielone od interfejsu.",
+    "after": "Androidowy klient korzysta z lokalnej pamięci podręcznej, szyfrowanego magazynu danych dostępowych i backendu przypisywania urządzeń. Transport IMAP/SMTP i sygnały push są rozdzielone od interfejsu."
+  },
+  {
+    "path": "/projects/1/architecture/1",
+    "before": "Room przechowuje cache poczty, Keystore chroni tożsamość i klucz szyfrujący dane dostępowe",
+    "after": "Room przechowuje pamięć podręczną poczty, Keystore chroni tożsamość i klucz szyfrujący dane dostępowe"
+  },
+  {
+    "path": "/projects/1/remaining/0",
+    "before": "Pełny lifecycle FCM, świeży zewnętrzny inbound i niezależne potwierdzenie uwierzytelnienia wiadomości wymagają dalszych dowodów.",
+    "after": "Pełny cykl życia FCM, odbiór nowej wiadomości z zewnątrz i niezależne potwierdzenie uwierzytelnienia wiadomości wymagają dalszych dowodów."
+  },
+  {
+    "path": "/projects/1/sources/0/label",
+    "before": "ProgressKit Mail — aktualny kod klienta i usług",
+    "after": "ProgressKit Mail: aktualny kod klienta i usług"
+  },
+  {
+    "path": "/projects/1/sources/1/label",
+    "before": "ProgressKit Mail — raport odczytu MIME",
+    "after": "ProgressKit Mail: raport odczytu MIME"
+  },
+  {
+    "path": "/projects/1/sources/2/label",
+    "before": "ProgressKit Mail — raport wysyłki i zamknięcia technicznego",
+    "after": "ProgressKit Mail: raport wysyłki i zamknięcia technicznego"
+  },
+  {
+    "path": "/projects/2/cases/0/solution",
+    "before": "ASR wybiera tryb lokalny tylko dla potwierdzonego zainstalowanego języka. Selektor TTS preferuje zgodny gotowy głos niewymagający sieci, z kontrolowanym fallbackiem.",
+    "after": "ASR wybiera tryb lokalny tylko dla potwierdzonego zainstalowanego języka. Selektor TTS preferuje zgodny gotowy głos niewymagający sieci, z kontrolowanym trybem zastępczym."
+  },
+  {
+    "path": "/projects/2/sources/0/label",
+    "before": "ProgressKit Translator — kod wersji 0.2.2",
+    "after": "ProgressKit Translator: kod wersji 0.2.2"
+  },
+  {
+    "path": "/projects/2/sources/1/label",
+    "before": "ProgressKit Translator — raport 0.2.2 ASR/TTS",
+    "after": "ProgressKit Translator: raport 0.2.2 ASR/TTS"
+  },
+  {
+    "path": "/projects/2/sources/1/scope",
+    "before": "Historyczny build i testy z 13 października 2026; odrębne ograniczenia fizycznego odsłuchu i metadanych ASR.",
+    "after": "Historyczna kompilacja i testy z 13 października 2026; odrębne ograniczenia fizycznego odsłuchu i metadanych ASR."
+  },
+  {
+    "path": "/projects/3/sources/0/label",
+    "before": "Vaeloria — przegląd bieżącej gry i mapy systemów",
+    "after": "Vaeloria: przegląd bieżącej gry i mapy systemów"
+  },
+  {
+    "path": "/projects/3/sources/1/label",
+    "before": "Vaeloria — raport Lasu Ziemi 2.0",
+    "after": "Vaeloria: raport Lasu Ziemi 2.0"
+  },
+  {
+    "path": "/projects/3/sources/2/label",
+    "before": "Vaeloria — baseline wydajności 13 października 2026",
+    "after": "Vaeloria: pomiary bazowe wydajności 13 października 2026"
+  },
+  {
+    "path": "/projects/4/sources/1/label",
+    "before": "Community Discovery — walidacja i closure, 14.10.2026",
+    "after": "Community Discovery: walidacja i podsumowanie, 14.10.2026"
+  },
+  {
+    "path": "/projects/4/sources/2/label",
+    "before": "Lud&Pra V2 — przegląd, 14.10.2026",
+    "after": "Lud&Pra V2: przegląd, 14.10.2026"
+  },
+  {
+    "path": "/projects/5/sources/1/label",
+    "before": "Sprint 04B — raport, 11.10.2026",
+    "after": "Sprint 04B: raport, 11.10.2026"
+  },
+  {
+    "path": "/projects/9/features/4",
+    "before": "Formularz przekazujący plik do zewnętrznej usługi — realizacja zgłoszenia niezweryfikowana",
+    "after": "Formularz przekazujący plik do zewnętrznej usługi. Realizacja zgłoszenia pozostaje niezweryfikowana"
+  },
+  {
+    "path": "/projects/11/sources/0/label",
+    "before": "ProgressKit Systems — audyt kodu i konfiguracji",
+    "after": "ProgressKit Systems: audyt kodu i konfiguracji"
+  },
+  {
+    "path": "/projects/12/sources/0/label",
+    "before": "ProgressKit Analytics — audyt kodu i konfiguracji",
+    "after": "ProgressKit Analytics: audyt kodu i konfiguracji"
+  },
+  {
+    "path": "/projects/13/features/2",
+    "before": "Workflow GitHub Pages i skrypt przygotowania artefaktu",
+    "after": "Automatyzacja publikacji GitHub Pages i skrypt przygotowania artefaktu"
+  },
+  {
+    "path": "/projects/13/sources/0/label",
+    "before": "Zaplecze ProgressKit — audyt kodu i konfiguracji",
+    "after": "Zaplecze ProgressKit: audyt kodu i konfiguracji"
+  }
+]

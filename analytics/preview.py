@@ -1,21 +1,35 @@
 """Local preview exposes only explicitly public paths, never the repository root."""
 from pathlib import Path
+import importlib.util
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse, RedirectResponse
 from product import router
 root = Path(__file__).resolve().parents[1]
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 app.include_router(router)
-app.mount('/assets', StaticFiles(directory=root/'assets'), name='assets')
-app.mount('/glikemia-premium', StaticFiles(directory=root/'glikemia-premium', html=True), name='product')
-@app.get('/')
-def home():
-    return FileResponse(root/'index.html')
-# Legacy homepage images only; no arbitrary file lookup.
-for path in list(root.glob('*.png')) + list(root.glob('*.jpg')):
-    def response_for(file):
-        def image_response():
-            return FileResponse(file)
-        return image_response
-    app.add_api_route('/'+path.name, response_for(path), methods=['GET'])
+spec=importlib.util.spec_from_file_location('stage_public',root/'scripts/stage-public.py')
+public=importlib.util.module_from_spec(spec);spec.loader.exec_module(public)
+
+def response_for(file):
+    def response():
+        return FileResponse(file)
+    return response
+
+def redirect_to(url):
+    def redirect():
+        return RedirectResponse(url,status_code=308)
+    return redirect
+
+# Use the release allowlist, including catalog pages, without exposing raw assets.
+for name in public.public_files():
+    route='/'+name
+    app.add_api_route(route,response_for(root/name),methods=['GET'])
+    if name.endswith('index.html'):
+        directory=route[:-len('index.html')]
+        app.add_api_route(directory,response_for(root/name),methods=['GET'])
+        if directory!='/':
+            app.add_api_route(directory.rstrip('/'),redirect_to(directory),methods=['GET'])
+
+@app.get('/{missing:path}')
+def not_found(missing:str):
+    return FileResponse(root/'404.html',status_code=404)

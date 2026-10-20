@@ -1,0 +1,54 @@
+<svg class="hero__scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1983 793" preserveAspectRatio="xMaxYMid slice" role="img" aria-labelledby="hero-scene-title">
+  <title id="hero-scene-title">Góry, czerwony księżyc, monumentalny mur z oryginalnym PK i drobna sylwetka wędrowca na zboczu.</title>
+  <defs>
+    <!-- Contact shadows follow the original alpha. No replacement logo geometry. -->
+    <filter id="wall-contact-relief" x="-15%" y="-15%" width="130%" height="135%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.4" result="soft-alpha"/>
+      <feOffset in="soft-alpha" dx="2.2" dy="3.6" result="contact-alpha"/>
+      <feFlood flood-color="#000000" flood-opacity="0.95" result="contact-ink"/>
+      <feComposite in="contact-ink" in2="contact-alpha" operator="in" result="contact-shadow"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.16" numOctaves="3" seed="8" result="rock-grain"/>
+      <feColorMatrix in="rock-grain" type="saturate" values="0" result="gray-grain"/>
+      <feComponentTransfer in="gray-grain" result="stone-grain"><feFuncR type="linear" slope="0.26" intercept="0.14"/><feFuncG type="linear" slope="0.25" intercept="0.14"/><feFuncB type="linear" slope="0.24" intercept="0.14"/></feComponentTransfer>
+      <feComposite in="stone-grain" in2="SourceAlpha" operator="in" result="stone-face"/>
+      <feComponentTransfer in="SourceGraphic" result="original-metal-tint"><feFuncA type="linear" slope="0.32"/></feComponentTransfer>
+      <feOffset in="SourceAlpha" dx="1.1" dy="2.1" result="inset-offset"/>
+      <feComposite in="SourceAlpha" in2="inset-offset" operator="out" result="inset-edge"/>
+      <feFlood flood-color="#020303" flood-opacity="0.95" result="inset-ink"/>
+      <feComposite in="inset-ink" in2="inset-edge" operator="in" result="inner-shadow"/>
+      <feOffset in="SourceAlpha" dx="-0.7" dy="-1.1" result="rim-offset"/>
+      <feComposite in="SourceAlpha" in2="rim-offset" operator="out" result="rim-edge"/>
+      <feFlood flood-color="#c78c7a" flood-opacity="0.58" result="rim-ink"/>
+      <feComposite in="rim-ink" in2="rim-edge" operator="in" result="stone-rim"/>
+      <feMerge><feMergeNode in="contact-shadow"/><feMergeNode in="stone-face"/><feMergeNode in="original-metal-tint"/><feMergeNode in="inner-shadow"/><feMergeNode in="stone-rim"/></feMerge>
+    </filter>
+    <linearGradient id="hero-scene-shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070707" stop-opacity="0.13"/>
+      <stop offset="0.62" stop-color="#070707" stop-opacity="0"/>
+      <stop offset="1" stop-color="#070707" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <image class="hero__landscape-image" href="@@LANDSCAPE@@" width="1983" height="793"/>
+  <!-- Wall coordinates are shared with the landscape at every viewport size. -->
+  <g class="hero__wall-relief" transform="translate(1600 240) matrix(1 -0.16 0 1 0 0)">
+    <image class="hero__wall-logo" href="assets/brand/progressorkit-stamp.png" width="260" height="260" opacity="0.86" filter="url(#wall-contact-relief)"/>
+  </g>
+  <!-- A small, decorative scale reference, grounded on the ascending rock ridge. -->
+  <g class="hero__climber" transform="translate(1396 580)" aria-hidden="true">
+    <!-- This wrapper travels at most 2.9 source pixels; the inner group keeps
+         independent pointer parallax. The ground contact travels with it. -->
+    <g class="hero__climber-travel">
+    <ellipse cx="-1" cy="0.5" rx="8" ry="1.3" fill="#030505" opacity="0.65"/>
+    <g class="hero__climber-motion" fill="#141916" stroke="#8d7965" stroke-opacity="0.42" stroke-width="0.35" stroke-linejoin="round">
+      <path d="M.8-25c1.8-1.1 4.2.3 4.3 2.2l-.4 2-2.5.8-2.3-2c-.5-1.1.1-2.4.9-3Z"/>
+      <path d="m.3-20.8 3.6-.2 2.7 3.3-1 4.7-3.2 2.3-4.7-1.6.2-5.5Z"/>
+      <path d="m-2-12 4.6.7-3.5 5.3L-4-1.1-7 .2l-.4-1.1 2.9-1.1 1.9-5Z"/>
+      <path d="m1-12 3.8-.6L7-9.6l-.9 4.2-2.3 1.6-1.3-.9 2.1-2 .2-2-2.6-.5L-.5-7.3l-.9-2Z"/>
+      <path d="m5-18.7 2.8 2.6 3.1-1.3.7 1.1L7.3-14 3.8-17Z"/>
+      <path d="m-2-19.5-2.9 1.2-1.2 4.9 1.8 2.6 2.3-1.5 1.4-5Z" fill="#101410"/>
+      <path d="m10.8-16.4 1.1 12" fill="none" stroke="#9d7b69" stroke-opacity="0.55" stroke-width="0.55"/>
+    </g>
+    </g>
+  </g>
+  <path d="M0 0H1983V793H0Z" fill="url(#hero-scene-shade)"/>
+</svg>

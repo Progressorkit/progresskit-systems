@@ -1,0 +1,132 @@
+{
+  "checks": [
+    {
+      "case": "Complete Tax title/category/status/action hit-test",
+      "width": 320,
+      "result": "PASS",
+      "header": {
+        "clip": "polygon(0px 0px, calc(100% - 14px) 0px, 100% 14px, 100% 100%, 14px 100%, 0px calc(100% - 14px))",
+        "parts": [
+          {
+            "text": "SAAS",
+            "visible": true,
+            "width": 240,
+            "scroll": 240
+          },
+          {
+            "text": "ProgressKit Tax",
+            "visible": true,
+            "width": 117,
+            "scroll": 117
+          },
+          {
+            "text": "W rozwoju",
+            "visible": true,
+            "width": 51,
+            "scroll": 51
+          },
+          {
+            "text": "Odkryj projekt\n↗",
+            "visible": true,
+            "width": 200,
+            "scroll": 200
+          }
+        ]
+      }
+    },
+    {
+      "case": "Collaboration buttons and page width",
+      "width": 320,
+      "result": "PASS",
+      "actions": [
+        {
+          "text": "POROZMAWIAJMY O PROJEKCIE →",
+          "width": 246,
+          "scroll": 244,
+          "client": 244,
+          "height": 50
+        },
+        {
+          "text": "PRZEDSTAW SWÓJ POMYSŁ ↓",
+          "width": 246,
+          "scroll": 244,
+          "client": 244,
+          "height": 50
+        },
+        {
+          "text": "ZOBACZ, JAK PRACUJĘ ↓",
+          "width": 246,
+          "scroll": 244,
+          "client": 244,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "case": "Complete Tax title/category/status/action hit-test",
+      "width": 390,
+      "result": "PASS",
+      "header": {
+        "clip": "polygon(0px 0px, calc(100% - 14px) 0px, 100% 14px, 100% 100%, 14px 100%, 0px calc(100% - 14px))",
+        "parts": [
+          {
+            "text": "SAAS",
+            "visible": true,
+            "width": 310,
+            "scroll": 310
+          },
+          {
+            "text": "ProgressKit Tax",
+            "visible": true,
+            "width": 117,
+            "scroll": 117
+          },
+          {
+            "text": "W rozwoju",
+            "visible": true,
+            "width": 51,
+            "scroll": 51
+          },
+          {
+            "text": "Odkryj projekt\n↗",
+            "visible": true,
+            "width": 270,
+            "scroll": 270
+          }
+        ]
+      }
+    },
+    {
+      "case": "Collaboration buttons and page width",
+      "width": 390,
+      "result": "PASS",
+      "actions": [
+        {
+          "text": "POROZMAWIAJMY O PROJEKCIE →",
+          "width": 316,
+          "scroll": 314,
+          "client": 314,
+          "height": 50
+        },
+        {
+          "text": "PRZEDSTAW SWÓJ POMYSŁ ↓",
+          "width": 316,
+          "scroll": 314,
+          "client": 314,
+          "height": 50
+        },
+        {
+          "text": "ZOBACZ, JAK PRACUJĘ ↓",
+          "width": 316,
+          "scroll": 314,
+          "client": 314,
+          "height": 50
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "PASS": 4,
+    "FAIL": 0
+  }
+}

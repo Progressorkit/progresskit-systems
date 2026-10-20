@@ -1,5 +1,12 @@
 # Glikemia Premium — dystrybucja bezpośrednia
 
+> Dokument historycznej implementacji dystrybucji. Aktualną architekturę V5,
+> zakres plików publicznych i bramki publikacji opisują
+> [PROGRESSKIT_V5_ARCHITECTURE.md](PROGRESSKIT_V5_ARCHITECTURE.md) oraz
+> [PROGRESSKIT_V5_DEPLOYMENT.md](PROGRESSKIT_V5_DEPLOYMENT.md).
+> W V5 strona produktu jest generowana; jej źródło to katalog oraz szablon,
+> a nie ręcznie edytowany plik wynikowy HTML.
+
 Status: zaimplementowane lokalnie; MANUAL SERVER DEPLOYMENT REQUIRED.
 Nie wykonano commit/push/tag/merge ani zmian na VPS. Nie potwierdzono działania
 nowych ścieżek na publicznym progresskit.pl.

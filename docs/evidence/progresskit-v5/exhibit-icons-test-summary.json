@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-10-15",
+  "baselineCommit": "babd14ccb6ab396ce962cf91a0c3b80a6d7ffbfc",
+  "repositoryTests": {
+    "python": 82,
+    "node": 36,
+    "pass": 118,
+    "fail": 0,
+    "skip": 0,
+    "pythonRerunAfterMotto": true,
+    "nodeProductionCodeUnchangedAfterRun": true
+  },
+  "exhibitHandlersSyntheticDom": {
+    "pass": 13,
+    "fail": 0,
+    "browserProof": false
+  },
+  "localHttp": {
+    "pass": 107,
+    "fail": 0,
+    "publicFiles": 57
+  },
+  "sourceChecks": {
+    "cssFiles": [
+      "assets/hero-monument.css",
+      "assets/project-showroom.css",
+      "assets/engineering-exhibit.css",
+      "assets/brand-atmosphere.css"
+    ],
+    "svgXml": "PASS",
+    "unchangedBaselineFiles": [
+      "catalog/projects.json",
+      "catalog/brand.json",
+      "assets/project-showroom.js",
+      "assets/project-hologram.js",
+      "assets/brand/hero-landscape-v5.webp",
+      "assets/brand/progressorkit-stamp.png"
+    ],
+    "mottoExactAndImmediateAfterH1": true,
+    "mottoFontUnmodifiedLocalSource": true,
+    "glyphCoverage": "fc-query: all quote codepoints covered"
+  },
+  "browser": "NOT RUN: No browser is available; discovery []",
+  "visualAcceptance": "OPEN",
+  "push": "NOT RUN",
+  "deployment": "NOT DEPLOYED",
+  "sha256": {
+    "catalog/projects.json": "992e8c5330d946e4b0bd99316ea67548c04e3568ade04071e347dfdedb134487",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/project-showroom.js": "3d588a14c72faa84e9dd5551a627d9ae096a3d0a0ba534396782b46a00fa6a76",
+    "assets/project-hologram.js": "b78d4ddc6483d238f64e72ee2d0daaf9254091e135acfdec3377d4af06be2f08",
+    "assets/brand/hero-landscape-v5.webp": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+    "assets/hero-monument.css": "1240409d0a0d68b4710ed2dbdc9d271c0a3704ab46fdae10366e8553498b46e5",
+    "assets/project-showroom.css": "2564e44122116db2c63c84bcb94efaacd39ac4315e0db713570290c700b3a028",
+    "assets/engineering-exhibit.css": "442ce6bfddfabac59af88ffc4afb4f3af689a6fd4cb90fcb325d21d3a5fead6a",
+    "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+    "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+    "assets/hero-space.js": "633a2ad9690f0da9210e309d7aaebc407ceb719feca362be22aaaf83e4c86466",
+    "templates/hero-scene.svg": "a2944ebc08f22ceeaba3579e7b1ca6790092f1f81cc1ee8488f8fa7e64ba739d",
+    "scripts/build-site.py": "142b39e5f7097df13a6e51948bb6649b3965bb9619b30ddf78e1cdc73e062215",
+    "scripts/showroom_markup.py": "84e7dc690ca2cc54db4317150075fd9060368bb9b8ae6882986af07c26796034",
+    "scripts/stage-public.py": "2e210d82118e1a69655e169ff2f6254d54494f233214e61e91f6fc758966051e",
+    "assets/brand/motto-serif-italic.ttf": "1d7476da447f9455a47c41adfd6ac2b1fc1b65e660f3ea4bf36128506c7e094c",
+    "index.html": "cb5046deba684f34addb3993bd85e293a433a35a928a0f9b9cc01806b897fa42"
+  }
+}

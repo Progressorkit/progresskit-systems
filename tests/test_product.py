@@ -18,6 +18,9 @@ sys.path.insert(0,str(workspace/'analytics'))
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 import product
+# Bind this module's private fixture even when another suite imported product first.
+# The persistence assertion below must reload the same configured database.
+importlib.reload(product)
 app=FastAPI(); app.include_router(product.router)
 client=TestClient(app)
 
@@ -120,16 +123,46 @@ class ProductTests(unittest.TestCase):
         self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 0)
 
     def test_interrupted_send_not_counted(self):
+        apk = Path(temporary.name) / 'failed-send.apk'
+        content = b'synthetic failed-send fixture'
+        apk.write_bytes(content)
+        sent = []
         async def run():
             async def send(message):
+                sent.append(message)
                 if message['type'] == 'http.response.body':
                     raise OSError('simulated disconnected client')
             async def receive():
-                return {'type': 'http.disconnect'}
-            response = product.CountedAPKResponse(product.APK_PATH)
-            await response({'type':'http', 'method':'GET', 'headers':[], 'extensions':{}}, receive, send)
-        with self.assertRaises(OSError):
+                raise AssertionError('ASGI 2.4 must observe the failed send, not a receive disconnect.')
+            response = product.CountedAPKResponse(apk)
+            # ASGI 2.4 reports disconnect through send(). Earlier specs also listen
+            # on receive(), which can cancel the stream before the body is attempted.
+            await response({'type':'http', 'method':'GET', 'headers':[], 'extensions':{},
+                            'asgi':{'version':'3.0', 'spec_version':'2.4'}}, receive, send)
+        with self.assertRaisesRegex(OSError, 'simulated disconnected client'):
             asyncio.run(run())
+        self.assertEqual([message['type'] for message in sent],
+                         ['http.response.start', 'http.response.body'])
+        self.assertEqual(sent[-1]['body'], content)
+        self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 0)
+
+    def test_disconnect_before_body_not_counted(self):
+        apk = Path(temporary.name) / 'pre-body-disconnect.apk'
+        apk.write_bytes(b'synthetic pre-body disconnect fixture')
+        sent = []
+        received = []
+        async def run():
+            async def send(message):
+                sent.append(message)
+            async def receive():
+                received.append('http.disconnect')
+                return {'type':'http.disconnect'}
+            await product.CountedAPKResponse(apk)(
+                {'type':'http', 'method':'GET', 'headers':[], 'extensions':{},
+                 'asgi':{'version':'3.0', 'spec_version':'2.3'}}, receive, send)
+        asyncio.run(run())
+        self.assertEqual(received, ['http.disconnect'])
+        self.assertFalse(any(message['type'] == 'http.response.body' for message in sent))
         self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 0)
 
     def test_truncated_body_not_counted(self):

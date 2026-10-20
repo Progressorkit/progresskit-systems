@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-20",
+  "status": "LOCAL_REVIEW_READY",
+  "ownerVisualApproval": "PENDING",
+  "preview": "http://127.0.0.1:8098/",
+  "scopeChangedFiles": [
+    "assets/project-showroom.js",
+    "assets/project-slices.css"
+  ],
+  "snapshot": "/tmp/progresskit-mobile-correction/baseline",
+  "preservedBaselineFiles": 173,
+  "preservedPreviousEvidenceFiles": 37,
+  "publicHtmlAndCopyUnchanged": true,
+  "hologramTextUnchanged": true,
+  "newChecks": {
+    "browser": {
+      "PASS": 26,
+      "FAIL": 0
+    },
+    "finalVisualReadability": {
+      "PASS": 4,
+      "FAIL": 0
+    },
+    "showroomUnitPASS": 24,
+    "generatorAndSyntax": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "notRepeated": [
+    "Historical 84-test full Python suite",
+    "Unchanged catalog, hero and hologram Node suites",
+    "Full APK download: previous successful full-transfer hash proof retained; local SHA and HTTP Range/counter rechecked instead."
+  ],
+  "mobileEvidence": "Chrome touch emulation at 320x568 and 390x844; no new physical-phone acceptance claim.",
+  "behavior": {
+    "narrowForegroundModules": 1,
+    "reachableProjects": 14,
+    "mobileDescriptionScrolling": "Normal document scroll; natural module and stage heights.",
+    "desktopOrbit": "Existing six-module spatial orbit retained.",
+    "servicesAndCollaboration": "Neutral gray aluminum, graphite recesses, red primary actions."
+  },
+  "git": {
+    "branch": "main",
+    "head": "d6662ca591e1796e46cce550272450f73a88c71a",
+    "commitCreated": false,
+    "pushPerformed": false,
+    "deploymentPerformed": false
+  },
+  "video": {
+    "result": "PASS",
+    "details": "177 actual CDP browser frames; 5.04s",
+    "recordedAt": "2026-10-20T12:43:59.439Z"
+  },
+  "artifacts": {
+    "320": {
+      "firstView": "mobile-320x568-first-view.png",
+      "selection": "mobile-320-tax-collapsed.png",
+      "expandedTax": "mobile-320-tax-expanded-full-module.png",
+      "expandedTop": "mobile-320-tax-expanded-top.png",
+      "actionsAfterPageScroll": "mobile-320-tax-actions-after-page-scroll.png",
+      "longestName": "mobile-320-longest-name.png",
+      "collaboration": "collaboration-material-320.png"
+    },
+    "390": {
+      "firstView": "mobile-390x844-first-view.png",
+      "selection": "mobile-390-tax-collapsed.png",
+      "expandedTax": "mobile-390-tax-expanded-full-module.png",
+      "expandedTop": "mobile-390-tax-expanded-top.png",
+      "actionsAfterPageScroll": "mobile-390-tax-actions-after-page-scroll.png",
+      "longestName": "mobile-390-longest-name.png",
+      "collaboration": "collaboration-material-390.png"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "measuredAt": "2026-10-20T08:34:46.452Z",
+  "browser": "155.0.8059.39",
+  "cpuThrottlingRate": 4,
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "durationMs": 6336.795527000009,
+  "turns": [
+    {
+      "prior": "glikemia-premium",
+      "next": "progresskit-mail"
+    },
+    {
+      "prior": "progresskit-mail",
+      "next": "progresskit-translator"
+    },
+    {
+      "prior": "progresskit-translator",
+      "next": "vaeloria"
+    },
+    {
+      "prior": "vaeloria",
+      "next": "progresskit-community"
+    },
+    {
+      "prior": "progresskit-community",
+      "next": "progresskit-tax"
+    }
+  ],
+  "openCloseCycles": 1,
+  "caveat": "Local headless Chrome diagnostics with emulated CPU throttling. RAF intervals and CDP metrics describe this run and do not establish hardware FPS or physical Android performance.",
+  "rafIntervalsMs": {
+    "count": 261,
+    "min": 16.5,
+    "p50": 16.699999999999818,
+    "p95": 49.90000000000009,
+    "p99": 66.60000000000036,
+    "max": 99.90000000000055,
+    "above33ms": 89,
+    "above50ms": 6
+  },
+  "longTasks": [
+    {
+      "start": 5744.899999999441,
+      "duration": 69
+    },
+    {
+      "start": 5893.399999999441,
+      "duration": 52
+    },
+    {
+      "start": 6754.5,
+      "duration": 70
+    },
+    {
+      "start": 6860.5,
+      "duration": 122
+    },
+    {
+      "start": 7881.899999999441,
+      "duration": 106
+    }
+  ],
+  "cdpMetrics": {
+    "before": {
+      "Timestamp": 4522.832174,
+      "AudioHandlers": 0,
+      "AudioWorkletProcessors": 0,
+      "Documents": 1,
+      "Frames": 1,
+      "JSEventListeners": 149,
+      "LayoutObjects": 1311,
+      "MediaKeySessions": 0,
+      "MediaKeys": 0,
+      "Nodes": 2479,
+      "Resources": 27,
+      "ContextLifecycleStateObservers": 35,
+      "V8PerContextDatas": 2,
+      "WorkerGlobalScopes": 0,
+      "UACSSResources": 0,
+      "RTCPeerConnections": 0,
+      "ResourceFetchers": 1,
+      "AdSubframes": 0,
+      "DetachedScriptStates": 0,
+      "ArrayBufferContents": 0,
+      "LayoutCount": 62,
+      "RecalcStyleCount": 67,
+      "LayoutDuration": 0.251274,
+      "RecalcStyleDuration": 0.200013,
+      "DevToolsCommandDuration": 0.120159,
+      "ScriptDuration": 0.05449,
+      "V8CompileDuration": 0.000128,
+      "TaskDuration": 1.192166,
+      "TaskOtherDuration": 0.566102,
+      "ThreadTime": 1.51098,
+      "ProcessTime": 2.59,
+      "JSHeapUsedSize": 2568352,
+      "JSHeapTotalSize": 3784704,
+      "FirstMeaningfulPaint": 0,
+      "DomContentLoaded": 4521.760098,
+      "NavigationStart": 4521.179858
+    },
+    "after": {
+      "Timestamp": 4529.169458,
+      "AudioHandlers": 0,
+      "AudioWorkletProcessors": 0,
+      "Documents": 1,
+      "Frames": 1,
+      "JSEventListeners": 149,
+      "LayoutObjects": 1409,
+      "MediaKeySessions": 0,
+      "MediaKeys": 0,
+      "Nodes": 2553,
+      "Resources": 28,
+      "ContextLifecycleStateObservers": 35,
+      "V8PerContextDatas": 2,
+      "WorkerGlobalScopes": 0,
+      "UACSSResources": 0,
+      "RTCPeerConnections": 0,
+      "ResourceFetchers": 1,
+      "AdSubframes": 0,
+      "DetachedScriptStates": 0,
+      "ArrayBufferContents": 0,
+      "LayoutCount": 275,
+      "RecalcStyleCount": 332,
+      "LayoutDuration": 0.338576,
+      "RecalcStyleDuration": 2.645441,
+      "DevToolsCommandDuration": 0.268682,
+      "ScriptDuration": 0.340823,
+      "V8CompileDuration": 0.000128,
+      "TaskDuration": 5.697628,
+      "TaskOtherDuration": 2.103978,
+      "ThreadTime": 7.419407,
+      "ProcessTime": 10.18,
+      "JSHeapUsedSize": 2927588,
+      "JSHeapTotalSize": 4308992,
+      "FirstMeaningfulPaint": 4521.664624,
+      "DomContentLoaded": 4521.760098,
+      "NavigationStart": 4521.179858
+    },
+    "deltas": {
+      "TaskDuration": 4.505462,
+      "ScriptDuration": 0.286333,
+      "LayoutDuration": 0.08730199999999999,
+      "RecalcStyleDuration": 2.4454279999999997,
+      "LayoutCount": 213,
+      "RecalcStyleCount": 265,
+      "JSHeapUsedSize": 359236,
+      "Nodes": 74,
+      "Frames": 0
+    }
+  }
+}
