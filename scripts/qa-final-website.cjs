@@ -2,6 +2,7 @@
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
+const { createHash } = require('node:crypto');
 const { spawnSync } = require('node:child_process');
 const { chromium } = require(process.env.PK_PLAYWRIGHT || '/home/pawe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const base = process.argv[2] || 'http://127.0.0.1:8099/';
@@ -10,6 +11,15 @@ if (new URL(base).hostname !== '127.0.0.1') throw Error('Use only the isolated l
 fs.mkdirSync(out, { recursive: true });
 const report = { startedAt: new Date().toISOString(), base, checks: [], errors: [], resources: [], screenshots: [], measurements: [] };
 const ids = JSON.parse(fs.readFileSync(path.join(__dirname, '../catalog/projects.json'))).projects.map(p => p.id);
+const reviewIds = ['progresskit-tax','progresskit-translator','progresskit-mail','glikemia-premium','vaeloria','progresskit-community'];
+function uiFingerprint(){
+  const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+  const inputs=new Set(['index.html','catalog/projects.json','catalog/brand.json',
+    'scripts/build-site.py','scripts/stage-public.py','scripts/showroom_markup.py','scripts/delivery_markup.py',
+    'scripts/qa-final-website.cjs','templates/site.html','templates/about-contact.html','templates/project-hologram.html']);
+  for(const m of html.matchAll(/(?:href|src)="(assets\/[^"?]+\.(?:css|js))"/g))inputs.add(m[1]);
+  return [...inputs].sort().map(name=>({path:name,sha256:createHash('sha256').update(fs.readFileSync(path.join(root,name))).digest('hex')}));
+}
 const assert = (v, m) => { if (!v) throw Error(m); };
 async function check(name, work) {
   try { const details = await work(); report.checks.push({ name, status: 'PASS', details }); console.log('PASS', name); }
@@ -49,6 +59,7 @@ async function bounds(page) {
   });
 }
 async function main() {
+  report.sourceBefore=uiFingerprint();
   const browser = await chromium.launch({ executablePath: process.env.PK_CHROME || '/usr/bin/google-chrome', headless: true,
     args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   report.browser = browser.version();
@@ -69,6 +80,27 @@ async function main() {
         assert(await page.locator('h1').count() === 1, 'Exactly one H1');
         for (const id of ['uslugi', 'kontakt', 'ekosystem', 'wydania']) assert(await page.locator(`#${id}`).count() === 1, `Missing ${id}`);
       });
+      await check(`${width}: readable rail modules without overlap or circular decoration`, async () => {
+        const layout=await page.evaluate(()=>({rings:document.querySelectorAll('.showroom-orbit,.showroom-orbit-front').length,
+          modules:[...document.querySelectorAll('.showroom-card:not(.is-orbit-hidden)')].map(card=>{
+            const title=card.querySelector('h3'),stage=card.querySelector('.showroom-card__stage'),action=card.querySelector('.showroom-card__action');
+            return {id:card.dataset.projectId,rect:card.getBoundingClientRect().toJSON(),title:title.getBoundingClientRect().toJSON(),
+              stage:stage.getBoundingClientRect().toJSON(),action:action.getBoundingClientRect().toJSON(),
+              fonts:[title,stage,action].map(e=>parseFloat(getComputedStyle(e).fontSize))};
+          })}));
+        assert(layout.rings===0,'Circular decoration remains in rendered markup');
+        assert(layout.modules.length===(width<600?1:6),'Incorrect number of readable modules');
+        for(const m of layout.modules){
+          assert(m.fonts[0]>=20&&m.fonts[1]>=12&&m.fonts[2]>=14,JSON.stringify(m));
+          assert(m.title.left>=m.rect.left-1&&m.title.right<=m.rect.right+1&&m.action.bottom<=m.rect.bottom+1,JSON.stringify(m));
+          assert(m.title.bottom<=m.stage.top+1&&m.stage.bottom<=m.action.top+1,'Name, stage or action overlap: '+m.id);
+        }
+        for(let i=0;i<layout.modules.length;i++)for(let j=i+1;j<layout.modules.length;j++){
+          const a=layout.modules[i].rect,b=layout.modules[j].rect;
+          assert(Math.min(a.right,b.right)-Math.max(a.left,b.left)<=1||Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)<=1,'Module faces overlap');
+        }
+        return layout;
+      });
       // Every real catalog item must remain reachable through the existing mechanism.
       for (const id of ids) {
         await check(`${width}: expand ${id} with natural page scroll`, async () => {
@@ -80,7 +112,7 @@ async function main() {
           const action = page.locator('.is-slice-expanded .project-slice__actions a').first();
           await action.scrollIntoViewIfNeeded();
           assert(await action.isVisible(), 'CTA unreachable by page scroll');
-          if (['progresskit-tax','progresskit-mail','progresskit-translator'].includes(id)) {
+          if (reviewIds.includes(id)) {
             await shot(page, `${width}-${id}-expanded.png`, page.locator('.is-slice-expanded'));
             if (width < 600) {
               await action.scrollIntoViewIfNeeded();
@@ -98,6 +130,14 @@ async function main() {
         await page.locator(`#${id}`).scrollIntoViewIfNeeded();
         await shot(page, `${width}-${id}.png`, page.locator(`#${id}`));
       }
+      await check(`${width}: one interactive project collection and explicit ecosystem roadmap`,async()=>{
+        assert(await page.locator('[data-engineering-select],[data-engineering-case]').count()===0,'Duplicate interactive catalog remains');
+        assert(await page.locator('.delivery-flow>li').count()===4,'Expected four connected roadmap roles');
+        assert(await page.locator('[data-ecosystem-project]').count()===3,'Existing product map links lost');
+        const text=await page.locator('#ekosystem').innerText();
+        assert(text.includes('Local AI Agents')&&text.includes('Voice Gateway')&&text.includes('Planowane'),'Roadmap roles or status missing');
+        assert(text.includes('nie stanowią dostępnej oferty'),'Roadmap boundary missing');
+      });
       if (width < 600) {
         await check(`${width}: touch navigation and page scrolling`, async () => {
           await page.evaluate(() => scrollTo(0, 0));
@@ -181,7 +221,7 @@ async function main() {
     const context = await browser.newContext({ viewport: { width:390,height:844 } });
     const film = await context.newPage();
     await film.goto(base, { waitUntil: 'networkidle' });
-    const frames = '/tmp/progresskit-final-20261022/frames'; fs.mkdirSync(frames,{recursive:true});
+    const frames = fs.mkdtempSync('/tmp/progresskit-ui-v2-mobile-frames-');
     const cdp = await context.newCDPSession(film); let n = 0;
     cdp.on('Page.screencastFrame', async e => { fs.writeFileSync(path.join(frames, `${String(n++).padStart(6,'0')}.jpg`), Buffer.from(e.data,'base64')); await cdp.send('Page.screencastFrameAck',{sessionId:e.sessionId}).catch(()=>{}); });
     await cdp.send('Page.startScreencast',{format:'jpeg',quality:78,maxWidth:390,maxHeight:844,everyNthFrame:2});
@@ -194,8 +234,32 @@ async function main() {
     const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',path.join(frames,'%06d.jpg'),'-vf','pad=ceil(iw/2)*2:ceil(ih/2)*2','-c:v','libx264','-pix_fmt','yuv420p',path.join(out,'mobile-interaction.mp4')],{encoding:'utf8'});
     report.recording={frames:n,status:encode.status===0?'PASS':'BLOCKED',error:encode.stderr};
     await context.close();
+    const desktopContext=await browser.newContext({viewport:{width:1440,height:900}});
+    const desktop=await desktopContext.newPage();await desktop.goto(base,{waitUntil:'networkidle'});
+    const desktopFrames=fs.mkdtempSync('/tmp/progresskit-ui-v2-desktop-frames-');
+    const desktopCdp=await desktopContext.newCDPSession(desktop);let dn=0;
+    desktopCdp.on('Page.screencastFrame',async e=>{fs.writeFileSync(path.join(desktopFrames,`${String(dn++).padStart(6,'0')}.jpg`),Buffer.from(e.data,'base64'));await desktopCdp.send('Page.screencastFrameAck',{sessionId:e.sessionId}).catch(()=>{});});
+    await desktopCdp.send('Page.startScreencast',{format:'jpeg',quality:82,maxWidth:1440,maxHeight:900,everyNthFrame:2});
+    // Choose the visible Tax plate directly, then complete the six requested cycles.
+    await desktop.locator('.showroom-card:not(.is-orbit-hidden) [data-showroom-open="progresskit-tax"]').click();
+    await desktop.waitForTimeout(550);await desktop.mouse.wheel(0,300);await desktop.waitForTimeout(300);
+    await desktop.keyboard.press('Escape');await desktop.waitForTimeout(700);
+    for(const id of reviewIds.slice(1)){
+      await open(desktop,id);await desktop.waitForTimeout(500);
+      await desktop.mouse.wheel(0,240);await desktop.waitForTimeout(200);
+      await desktop.keyboard.press('Escape');await desktop.waitForTimeout(700);
+    }
+    await desktopCdp.send('Page.stopScreencast');
+    const desktopEncode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',path.join(desktopFrames,'%06d.jpg'),'-vf','pad=ceil(iw/2)*2:ceil(ih/2)*2','-c:v','libx264','-pix_fmt','yuv420p',path.join(out,'desktop-mechanism.mp4')],{encoding:'utf8'});
+    report.desktopRecording={frames:dn,status:desktopEncode.status===0?'PASS':'BLOCKED',error:desktopEncode.stderr,projects:reviewIds};
+    await desktopContext.close();
     await check('No console errors or failing resources', async () => { assert(!report.errors.length,JSON.stringify(report.errors)); assert(!report.resources.length,JSON.stringify(report.resources)); });
   } finally {
+    report.sourceAfter=uiFingerprint();
+    await check('UI inputs remained unchanged throughout the complete browser review',async()=>{
+      assert(JSON.stringify(report.sourceBefore)===JSON.stringify(report.sourceAfter),'UI source changed during review; rerun the complete review');
+      return {files:report.sourceBefore.length};
+    });
     await browser.close(); report.finishedAt=new Date().toISOString();
     report.totals={PASS:report.checks.filter(c=>c.status==='PASS').length,FAIL:report.checks.filter(c=>c.status==='FAIL').length};
     fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2)+'\n');

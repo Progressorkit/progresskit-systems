@@ -1,0 +1,17 @@
+{
+  "recordedUtc": "2026-10-22T20:29:30.199614+00:00",
+  "change": {
+    "changedFiles": [
+      "assets/visual-acceptance.css"
+    ],
+    "addedLine": ".project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }",
+    "previousSha256": "b05b14a4612fcd5967d31d9c32f275fc92d18acd699eb0e747fc6ff3b7474551",
+    "currentSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+    "removingExactAddedLineReproducesPreviousHash": true
+  },
+  "archiveDescriptor": "pre-status-contrast-fix/ARCHIVE_DESCRIPTOR.json",
+  "sourceBeforeAfterEqual": true,
+  "newScanFinishedUtc": "2026-10-22T20:29:07.072528+00:00",
+  "scaAndApkRerun": false,
+  "reason": "Only exact CSS rule changed; dependency inventory, backend, catalog and APK remain identical."
+}

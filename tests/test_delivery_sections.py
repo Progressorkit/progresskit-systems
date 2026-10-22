@@ -39,7 +39,7 @@ class DeliverySectionsTests(unittest.TestCase):
         DELIVERY.render_delivery(self.projects)
         self.assertEqual(before, self.projects)
         nodes = [attrs['data-ecosystem-project'] for tag, attrs in self.page.elements
-                 if tag == 'article' and 'data-ecosystem-project' in attrs]
+                 if 'data-ecosystem-project' in attrs]
         self.assertEqual(['progresskit-tax', 'progresskit-translator', 'progresskit-mail'], nodes)
         self.assertTrue(set(nodes).issubset({p['id'] for p in self.projects}))
 
@@ -49,10 +49,41 @@ class DeliverySectionsTests(unittest.TestCase):
                 'Tax — obsługa biura',
                 'Translator — niezależny moduł językowy offline-first',
                 'Mail — komunikacja e-mail',
+                'Local AI Agents', 'Voice Gateway', 'bezpieczny komunikator',
                 'Roadmapa: bezpieczny komunikator, lokalni agenci AI, integracje telefoniczne.',
                 'Planowane połączenia między produktami; nie stanowią dostępnej oferty.'):
             self.assertIn(label, text)
-        self.assertEqual(3, self.page.text.count('W rozwoju'))
+        self.assertEqual(2, self.page.text.count('W rozwoju'))
+        self.assertEqual(1, self.page.text.count('Prototyp'))
+
+    def test_main_flow_is_an_ordered_roadmap_and_independent_communication_is_a_separate_branch(self):
+        flow_nodes = [(tag, attrs) for tag, attrs in self.page.elements
+                      if 'delivery-flow__node' in attrs.get('class', '').split()]
+        self.assertEqual(['li'] * 4, [tag for tag, _ in flow_nodes])
+        self.assertEqual(['progresskit-tax', 'progresskit-translator', 'local-ai-agents', 'voice-gateway'],
+                         [attrs.get('data-ecosystem-project', attrs.get('data-ecosystem-concept'))
+                          for _, attrs in flow_nodes])
+        branches = [attrs for tag, attrs in self.page.elements
+                    if 'delivery-branch' in attrs.get('class', '').split()]
+        self.assertEqual(['progresskit-mail', 'secure-messenger'],
+                         [attrs.get('data-ecosystem-project', attrs.get('data-ecosystem-concept'))
+                          for attrs in branches])
+        self.assertEqual(1, sum(tag == 'ol' and 'delivery-flow' in attrs.get('class', '').split()
+                                for tag, attrs in self.page.elements))
+        relationships = [attrs for _, attrs in self.page.elements if 'data-integration-status' in attrs]
+        self.assertEqual(5, len(relationships))
+        self.assertEqual({'planned'}, {attrs['data-integration-status'] for attrs in relationships})
+
+    def test_roadmap_concepts_do_not_become_catalogue_projects_or_unverified_release_badges(self):
+        concepts = [attrs['data-ecosystem-concept'] for _, attrs in self.page.elements
+                    if 'data-ecosystem-concept' in attrs]
+        self.assertEqual(['local-ai-agents', 'voice-gateway', 'secure-messenger'], concepts)
+        catalogue_ids = {project['id'] for project in self.projects}
+        self.assertTrue(set(concepts).isdisjoint(catalogue_ids))
+        for _, attrs in self.page.elements:
+            if 'data-ecosystem-project' in attrs or 'data-ecosystem-concept' in attrs:
+                self.assertNotIn('release-channel', attrs)
+                self.assertNotIn('commercial-status', attrs)
 
     def test_release_explanation_does_not_assign_stable_or_commercial_to_products(self):
         text = ''.join(self.page.text)

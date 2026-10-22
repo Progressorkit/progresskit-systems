@@ -1,0 +1,295 @@
+{
+  "reviewedAt": "2026-10-22T20:28:34.865032+00:00",
+  "scope": "Independent read-only source review and authentic MP4 frame inspection; no source edits and no fresh browser suite run by this reviewer.",
+  "gitHead": "c515f3fcd25de29ee3c57bff1b26c777a506cac1",
+  "sourceState": "Uncommitted V2 candidate; hashes below bind this review to exact bytes.",
+  "inputs": [
+    {
+      "path": "index.html",
+      "sha256": "e72dfdba244818c4cc5703fddbc90b8f4f6899f195759fede2844e5b2b715165"
+    },
+    {
+      "path": "assets/project-showroom.js",
+      "sha256": "09198cffd75d7504042a30b5f2858a68638489e13d427cfe4ef8113af0242bd9"
+    },
+    {
+      "path": "assets/project-showroom.css",
+      "sha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6"
+    },
+    {
+      "path": "assets/project-slices.css",
+      "sha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2"
+    },
+    {
+      "path": "assets/project-mechanism.css",
+      "sha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1"
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "sha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56"
+    },
+    {
+      "path": "scripts/showroom_markup.py",
+      "sha256": "e25629a3db648357c7af0126c7265663feb043c918abfdda534232296708eca4"
+    },
+    {
+      "path": "scripts/delivery_markup.py",
+      "sha256": "887a1b4aa5206b8e823100af61e1645e2de92aa964a36ef1dc4b90c6418acac0"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "sha256": "8e202cd62e63e663606b864eb1729e4fa90013fa2b5c2154cfd3c7531f21bc33"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "sha256": "8a2262ef0c5342d819df65491a80f37ddb5f2c681240f127e513bba5bd73aa0b"
+    },
+    {
+      "path": "catalog/projects.json",
+      "sha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d"
+    },
+    {
+      "path": "tests/project-showroom.test.cjs",
+      "sha256": "4c1a3d94b8aeeb2b16500f90ccc48b6644fc8586b36336fad4e29d208b383eb3"
+    },
+    {
+      "path": "tests/test_delivery_sections.py",
+      "sha256": "6e30d75afd7ac408cd8ddf253a08c43856f1299f4eb632e9d111681c7c2e3e7a"
+    },
+    {
+      "path": "tests/test_homepage_composition.py",
+      "sha256": "06c218b99597668cdb8451ef1dfbdf7134ef7214cb01ffeb09d74154fe3dc266"
+    }
+  ],
+  "generatedDom": {
+    "status": "PASS",
+    "showroomCollections": 1,
+    "projectCount": 14,
+    "uniqueProjectCount": 14,
+    "catalogueOrderPreserved": true,
+    "ringOrCoreElements": 0,
+    "engineeringSelectors": 0,
+    "straightGuideFrames": 1
+  },
+  "sourceReview": [
+    {
+      "area": "Neighbor selection and freeze",
+      "status": "PASS",
+      "evidence": "openSlice sets state.index to opened identity, cancels phaseFrame, stops gestures, renders one disclosure, and retains the pose while open."
+    },
+    {
+      "area": "Natural reading flow",
+      "status": "PASS",
+      "evidence": "Expanded module participates in track flow, viewport/track can grow, body uses overflow visible, and placeSlice has no viewport-height cap."
+    },
+    {
+      "area": "URL, focus and navigation",
+      "status": "PASS",
+      "evidence": "Project/category query updates preserve unrelated query/hash; close restores an accessible trigger; next/previous close before selecting; popstate restores visible focus."
+    },
+    {
+      "area": "Reduced motion and lifecycle",
+      "status": "PASS",
+      "evidence": "Reduced motion bypasses requestAnimationFrame rotation and WAAPI opening; signal animation is disabled; hidden/offscreen lifecycle cancels pending work."
+    },
+    {
+      "area": "Catalogue, routes and roadmap",
+      "status": "PASS",
+      "evidence": "Fourteen original identities and routes retained; no second engineering selector on homepage; source analyses remain on case pages; every map relation is explicitly planned."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "P2",
+      "status": "FOUND_FIXED",
+      "file": "assets/visual-acceptance.css",
+      "line": 119,
+      "summary": "The theme selector for the live selected-project status loses to the legacy ID selector, leaving dark small text on graphite.",
+      "evidence": [
+        "assets/project-slices.css:138 sets #showroom-status color #3a4b58",
+        "assets/project-showroom.css:43 sets ID-specific 11px shorthand; mobile line126 sets10px",
+        "New .project-showroom .showroom-filterbar p selector cannot override those ID selectors",
+        "Authentic mobile MP4 frame inspection shows the low-contrast line beneath the All projects filter"
+      ],
+      "paletteEndpointContrastRatios": [
+        {
+          "background": "#2e373d",
+          "ratio": 1.35
+        },
+        {
+          "background": "#20292f",
+          "ratio": 1.64
+        },
+        {
+          "background": "#343d43",
+          "ratio": 1.23
+        }
+      ],
+      "suggestion": "Give the intended theme color and font size a matching .project-showroom #showroom-status selector; verify the actual rendered line.",
+      "originalStatus": "OPEN_AT_REVIEW",
+      "closure": {
+        "status": "FIXED",
+        "checkedAt": "2026-10-22T20:32:50.580941+00:00",
+        "sourceVerification": {
+          "status": "PASS",
+          "path": "assets/visual-acceptance.css",
+          "line": 121,
+          "rule": ".project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }",
+          "sha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+          "explanation": "The class-plus-ID selector overrides the legacy ID-only color and font-size rules, including the max-width:700px rule. The fix is not inside a media query."
+        },
+        "actualComputedEvidence": {
+          "provider": "/root/domain_audit",
+          "verificationMode": "Reviewer read and verified the persisted sibling-agent browser artifact; this is not a new browser measurement by this reviewer.",
+          "path": "docs/evidence/visual-acceptance-v2-20261022/contrast-review.json",
+          "sha256": "d37b6f688883e5167f0a29305f20a5f610271fea195b9251d0cefeef1dd6355d",
+          "checkedAt": "2026-10-22T20:29:20.935965+00:00",
+          "base": "http://127.0.0.1:8100",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "sourceHtmlSha256": "e72dfdba244818c4cc5703fddbc90b8f4f6899f195759fede2844e5b2b715165",
+          "visualAcceptanceCssSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+          "check": {
+            "name": "showroom live status",
+            "selector": "#showroom-status",
+            "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+            "foreground": "rgb(209, 220, 227)",
+            "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+            "computedBackgroundImage": "none",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "backgroundBounds": [
+              [
+                32,
+                41,
+                47
+              ],
+              [
+                55.25,
+                64.1,
+                70.01
+              ]
+            ],
+            "ratio": 7.574,
+            "threshold": 4.5,
+            "visible": true,
+            "unknownImages": [],
+            "status": "PASS"
+          },
+          "methodLimit": "Computed-style foreground versus ancestor background gradient-stop bounds including alpha overlays. Palette approximation only; not pixel sampling, anti-aliasing/overlap verification, screen-reader testing or a complete WCAG audit."
+        },
+        "requestedViewportChecks": [
+          {
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "actualComputedStatus": "PASS",
+            "foreground": "rgb(209, 220, 227)",
+            "fontSize": "14px",
+            "contrastRatio": 7.574,
+            "threshold": 4.5,
+            "evidencePath": "docs/evidence/visual-acceptance-v2-20261022/contrast-review.json",
+            "evidenceProvider": "/root/domain_audit"
+          },
+          {
+            "viewport": {
+              "width": 390,
+              "height": 844
+            },
+            "actualComputedStatus": "NOT_IN_REFERENCED_ARTIFACT",
+            "sourceCascadeStatus": "PASS",
+            "note": "The same unqualified class-plus-ID fix overrides the mobile 10px ID-only rule. This source conclusion is not a fresh computed-style or contrast measurement at390."
+          }
+        ],
+        "independentBrowserAttempt": {
+          "status": "BLOCKED_ENVIRONMENT",
+          "base": "http://127.0.0.1:8100/",
+          "error": "page.goto: net::ERR_CONNECTION_REFUSED",
+          "execution": "Own Playwright Chrome attempt used require_escalated; no preview/server kill or cleanup command was executed by this reviewer.",
+          "context": "Parent later confirmed preview process exited with SIGTERM/143; this is an environment interruption, not a product assertion failure. No processes were started or stopped after parent requested waiting.",
+          "incompleteAttemptPath": "/tmp/progresskit-p2-status-closure-8100-20261022.json",
+          "excludedOldPreviewAttempt": "The earlier8099 measurements loaded an old preview without the V2 theme and are excluded from candidate acceptance."
+        },
+        "boundary": "P2 is closed by the specific source fix plus actual1440 browser evidence matching current HTML/CSS hashes. A new actual390 computed measurement is not claimed. Original finding evidence and review inputs remain unchanged."
+      }
+    }
+  ],
+  "videoInspection": {
+    "status": "REVIEWED_SAMPLES",
+    "sources": [
+      {
+        "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/desktop-mechanism.mp4",
+        "sha256": "62f3e29c1dee16091c14e764dbbc741853c9dcc4b8d0f0a899befc9c51a6c2e4"
+      },
+      {
+        "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/mobile-interaction.mp4",
+        "sha256": "4bcaa2c9ae9636893193c581604de1cdf587383f1fc82dc23b84a33dd9d58ea0"
+      }
+    ],
+    "authenticFramesViewed": [
+      "/tmp/progresskit-independent-v2-desktop-start.png",
+      "/tmp/progresskit-independent-v2-desktop-open.png",
+      "/tmp/progresskit-independent-v2-mobile.png"
+    ],
+    "sampleSheetsViewed": [
+      "/tmp/progresskit-independent-v2-desktop-samples.png",
+      "/tmp/progresskit-independent-v2-mobile-samples.png"
+    ],
+    "observation": "Samples show straight guides, readable module names, single expanded project details, native page reading flow and mobile Mail disclosure. Contact sheets sample authentic video frames, without generated or reconstructed imagery. They do not prove physical-device smoothness or hardware FPS."
+  },
+  "historicalFirstBrowserRun": {
+    "totals": {
+      "PASS": 78,
+      "FAIL": 1
+    },
+    "note": "Preserved first run78PASS/1FAIL; only1920 duplicate-catalog check failed after starting before regenerated map HTML. This is historical evidence, not the final browser-accepted result.",
+    "failures": [
+      {
+        "name": "1920: one interactive project collection and explicit ecosystem roadmap",
+        "status": "FAIL",
+        "details": "Duplicate interactive catalog remains"
+      }
+    ]
+  },
+  "testBoundary": {
+    "reportedByRoot": {
+      "nodePass": 65,
+      "showroomPass": 33,
+      "pythonPass": 111
+    },
+    "independentlyRerunByReviewer": false,
+    "finalBrowserAccepted": "IN_PROGRESS_AT_REVIEW"
+  },
+  "verdict": "No material functional source defect found in mechanism/open-close/generator. The confirmed P2 theme issue was FOUND_FIXED by an ID-specific theme rule and matching1440 computed-style evidence. Actual390 computed-style remeasurement is not present in the referenced artifact; owner visual acceptance and physical-device performance remain separate.",
+  "closureSourceSnapshot": {
+    "index.html": "e72dfdba244818c4cc5703fddbc90b8f4f6899f195759fede2844e5b2b715165",
+    "assets/visual-acceptance.css": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56"
+  },
+  "additionalRootMobileVerification": {
+    "artifact": "mobile-status-verification.json",
+    "screenshot": "390-status-after-fix.png",
+    "attribution": "Main agent actual Chromium after preview restart, separate from independent reviewer measurements",
+    "status": "PASS",
+    "actual": {
+      "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+      "color": "rgb(209, 220, 227)",
+      "fontSize": "14px",
+      "lineHeight": "23.8px",
+      "rect": {
+        "x": 12,
+        "y": 200.234375,
+        "width": 366,
+        "height": 47.59375,
+        "top": 200.234375,
+        "right": 378,
+        "bottom": 247.828125,
+        "left": 12
+      },
+      "overflow": false
+    },
+    "cssSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56"
+  }
+}

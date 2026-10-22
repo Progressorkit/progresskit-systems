@@ -1,0 +1,31 @@
+rules:
+  - id: progresskit-untrusted-dom-assignment
+    languages: [generic]
+    pattern-regex: '\.(?:innerHTML|outerHTML)\s*='
+    message: Review active HTML assignments; render untrusted content as text.
+    severity: ERROR
+  - id: progresskit-active-html-sink
+    languages: [generic]
+    pattern-regex: '\.insertAdjacentHTML\s*\(|document\.write\s*\('
+    message: HTML parsing sinks require explicit review of input provenance.
+    severity: ERROR
+  - id: progresskit-dynamic-javascript
+    languages: [generic]
+    pattern-regex: '\beval\s*\(|\bnew\s+Function\s*\('
+    message: Do not execute strings as JavaScript.
+    severity: ERROR
+  - id: progresskit-python-shell
+    languages: [generic]
+    pattern-regex: 'shell\s*=\s*True'
+    message: Supply subprocess arguments without shell interpolation.
+    severity: ERROR
+  - id: progresskit-unsafe-deserialization
+    languages: [generic]
+    pattern-regex: '\bpickle\.loads?\s*\(|\byaml\.load\s*\('
+    message: Do not deserialize untrusted executable objects.
+    severity: ERROR
+  - id: progresskit-disabled-tls-verification
+    languages: [generic]
+    pattern-regex: 'verify\s*=\s*False|_create_unverified_context\s*\('
+    message: Keep server certificate validation enabled.
+    severity: ERROR

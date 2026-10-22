@@ -1,0 +1,73 @@
+{
+  "finishedUtc": "2026-10-22T20:29:30.198917+00:00",
+  "baselineCommit": "c515f3fcd25de29ee3c57bff1b26c777a506cac1",
+  "status": "PASS_LOCAL_SCOPED_REVIEW",
+  "sourceFiles": 92,
+  "sourceMapCanonicalSha256": "365eace87e69ef069f4d717af750b787af9575d4e3609deb8b898a17bed0baa5",
+  "sourceUnchangedDuringAndAfterScans": true,
+  "sast": {
+    "name": "sast",
+    "startedUtc": "2026-10-22T20:28:56.303309+00:00",
+    "exit": 0,
+    "status": "PASS",
+    "errors": 0,
+    "findings": 0,
+    "scannedFiles": 44,
+    "ruleCount": 6
+  },
+  "sastVersion": "1.168.0",
+  "sastScope": [
+    "analytics",
+    "assets",
+    "scripts",
+    "glikemia-premium"
+  ],
+  "sastSkippedOver1MB": [
+    "assets/brand/progressorkit-primary.png",
+    "assets/brand/progressorkit-stamp.png",
+    "assets/projects/gotrans360/gotrans360-logo.png",
+    "assets/projects/vaeloria/vaeloria-cover.png"
+  ],
+  "gitleaksVersion": "8.30.1",
+  "gitleaksRawStatus": "FAIL",
+  "gitleaksHistoryFindings": 4,
+  "gitleaksWorktreeFindings": 3,
+  "gitleaksReviewedStatus": "PASS",
+  "gitleaksReviewedBenign": 7,
+  "gitleaksSyntheticFixtureFindings": 3,
+  "gitleaksPublicSigningFingerprintFindings": 4,
+  "gitleaksUnreviewedFindings": 0,
+  "scaStatus": "PASS",
+  "scaPackages": 18,
+  "scaAdvisories": 0,
+  "scaDatabaseFresh": true,
+  "scaDatabaseUpdatedAt": "2026-10-22T13:15:26.425424764Z",
+  "scaDatabaseNextUpdate": "2026-10-23T13:15:26.425424534Z",
+  "apkIntegrityStatus": "PASS",
+  "apkSha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b",
+  "catalogCount": 14,
+  "catalogUnchanged": true,
+  "backendUnchanged": true,
+  "networkUsedForTheseScans": false,
+  "sourceOrInventoryUploaded": false,
+  "runtimeSourceEditsByThisAudit": false,
+  "limitations": [
+    "SAST uses six local pattern rules; no whole-program data-flow claim. Four over-1MB PNG binaries skipped by Semgrep.",
+    "SCA covers exact installed 18-package Python test/runtime environment; package.json has no dependencies. No APK/native-image/Docker-image SCA claim.",
+    "APK checksum/ZIP CRC/signature verification is static evidence; physical Android runtime was not tested.",
+    "Local evidence does not validate VPS/Caddy/HTTPS, production distributed rate limiting, external services or deployment.",
+    "Broad analytics requirements ranges remain unchanged; this audit binds the tested local installed inventory, not future dependency resolution."
+  ],
+  "previousEvidenceArchive": "pre-status-contrast-fix/",
+  "changeSincePreviousSourceSnapshot": {
+    "changedFiles": [
+      "assets/visual-acceptance.css"
+    ],
+    "addedLine": ".project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }",
+    "previousSha256": "b05b14a4612fcd5967d31d9c32f275fc92d18acd699eb0e747fc6ff3b7474551",
+    "currentSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+    "removingExactAddedLineReproducesPreviousHash": true
+  },
+  "scaReusedUnchangedInventory": true,
+  "apkEvidenceReusedUnchangedArtifact": true
+}

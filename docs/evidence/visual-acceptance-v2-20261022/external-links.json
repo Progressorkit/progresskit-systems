@@ -1,0 +1,33 @@
+{
+  "scope": "Read-only GET of four public destinations only; HTTP reachability, not product acceptance or authentication verification",
+  "checkedAt": "2026-10-22T20:23:10.726169+00:00",
+  "PASS": 4,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "checks": [
+    {
+      "url": "https://vaeloria.progresskit.pl/",
+      "code": 200,
+      "finalUrl": "https://vaeloria.progresskit.pl/",
+      "status": "PASS"
+    },
+    {
+      "url": "https://github.com/Progressorkit/Maria-Salon",
+      "code": 200,
+      "finalUrl": "https://github.com/Progressorkit/Maria-Salon",
+      "status": "PASS"
+    },
+    {
+      "url": "https://github.com/Progressorkit/marekzaworski.github.io",
+      "code": 200,
+      "finalUrl": "https://github.com/Progressorkit/marekzaworski.github.io",
+      "status": "PASS"
+    },
+    {
+      "url": "https://www.tiktok.com/@progresskit",
+      "code": 200,
+      "finalUrl": "https://www.tiktok.com/@progresskit",
+      "status": "PASS"
+    }
+  ]
+}

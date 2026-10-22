@@ -1,0 +1,1781 @@
+{
+  "createdUtc": "2026-10-22T20:36:27.859506+00:00",
+  "baseHead": "c515f3fcd25de29ee3c57bff1b26c777a506cac1",
+  "branch": "main",
+  "scope": "Visual acceptance V2 local candidate only. No push/deployment/production changes.",
+  "selfExcluded": "docs/evidence/visual-acceptance-v2-20261022/delivery-manifest.json",
+  "securitySourceFingerprint": "365eace87e69ef069f4d717af750b787af9575d4e3609deb8b898a17bed0baa5",
+  "filesCount": 354,
+  "files": [
+    {
+      "path": "404.html",
+      "bytes": 4544,
+      "sha256": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6"
+    },
+    {
+      "path": "assets/project-mechanism.css",
+      "bytes": 6375,
+      "sha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1"
+    },
+    {
+      "path": "assets/project-showroom.js",
+      "bytes": 34359,
+      "sha256": "09198cffd75d7504042a30b5f2858a68638489e13d427cfe4ef8113af0242bd9"
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "bytes": 19232,
+      "sha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56"
+    },
+    {
+      "path": "docs/FINAL_UI_CORRECTION_V2_20261022.md",
+      "bytes": 12052,
+      "sha256": "55de41e8ab583e6a17fcb4f3c9a352a9e739405e168b5bb96e8fb896e13c2169"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/390-status-after-fix.png",
+      "bytes": 130032,
+      "sha256": "04d91be0fda507cfb5f26a636a0b285c4f9b40adc2eba35f745e8fcfc6643794"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/README.md",
+      "bytes": 3561,
+      "sha256": "3993f1f3169eeed42b3118d900bbc5ebeaf42e4b248ea7004b8e173a272e4ca0"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/before/1440-first.png",
+      "bytes": 654121,
+      "sha256": "eb3b9332068a777b70a91ae5dcd07f9fe54eef6d82abcb67cde8bb539b0d731d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/before/1920-first.png",
+      "bytes": 907641,
+      "sha256": "115dad8974c0c7dbcdd606c21fb6f8966bfc436702a42f1aa8f5f038222a35c8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/before/320-first.png",
+      "bytes": 128215,
+      "sha256": "1785bda688aec4b1154f0acab4dbc5dc5542f757e6f1b652609aedebf0810ac6"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/before/390-first.png",
+      "bytes": 202420,
+      "sha256": "177da8bfd0fa77013472f264d4a6f7e65459dbfa8b01bc7c8874978f80d117f4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/before/provenance.json",
+      "bytes": 1067,
+      "sha256": "6b0a3ee5331a4fec7834ac8df6eb7544ec9ff9e5ef2ae0f8e86fe744279db964"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-ekosystem.png",
+      "bytes": 336116,
+      "sha256": "300898f9405933fa2393f96fdacf3aab8f7bd9b152aad5ebaf00fdf9f0c7f865"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-first.png",
+      "bytes": 452396,
+      "sha256": "b6067f2690bb4984161298d90bd5aa3fe4f134f6476bf1a0b0e3c02f7ae291ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-glikemia-premium-expanded.png",
+      "bytes": 384926,
+      "sha256": "db0c1af1dc18fabf88019d44f5b2abcbea37625aa333d879ced3d07047e77193"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-kontakt.png",
+      "bytes": 294898,
+      "sha256": "d44d43ee3f2df133678bc9c358aa60002a1584e87666ceee50067d1b9a1c1c87"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-progresskit-community-expanded.png",
+      "bytes": 405277,
+      "sha256": "38fe164c67304590dc168244c7def83f82848c8b35cc6ca7817918dfc85a239a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-progresskit-mail-expanded.png",
+      "bytes": 368083,
+      "sha256": "f83ff1c50d0c18600e0da3ec7bc683b014372e9e4a07073343e62d3d942ba495"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-progresskit-tax-expanded.png",
+      "bytes": 395990,
+      "sha256": "be744054c2963a3e915c7cf942264b3a2d29fde63b5a047cac5f6a3aa18a0d84"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-progresskit-translator-expanded.png",
+      "bytes": 421200,
+      "sha256": "0747cb3b9b991c036abcf207310243fcf7d4fae14595dea41877a9beb9b47d1c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-uslugi.png",
+      "bytes": 312809,
+      "sha256": "2258919c9c4e18742df4ce92fb4d9617b2b1928b066dca2604012be7fe8b2e35"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-vaeloria-expanded.png",
+      "bytes": 496621,
+      "sha256": "6adcda66024cf14d25664b26c8f2345e2caf3561ca5cbe91ef4c7a3dea36a1e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1440-wydania.png",
+      "bytes": 318155,
+      "sha256": "d1afd01c480a5cec5c147f78ba7a110de47fc7f69e10aecfe731e0b33ccd3ec1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-ekosystem.png",
+      "bytes": 469752,
+      "sha256": "4061d0c6bfe1b7685e85e51e6125317b0cfa920bf27ed40f8daaf39dc4a7e20a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-first.png",
+      "bytes": 586193,
+      "sha256": "2c138b4ffc791af9092df9466bdbd92fdb8222823265d0611b4075b1be7215ac"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-glikemia-premium-expanded.png",
+      "bytes": 561329,
+      "sha256": "13a0ca1c617e3a7644a514519ba72c7948484f2b1e0f6d997dfb32be11feb178"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-kontakt.png",
+      "bytes": 407088,
+      "sha256": "b5dea156a5b5cc6a222d6b0fe19e1f26e47d565b377eecc95e822f906b11e7b5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-progresskit-community-expanded.png",
+      "bytes": 591557,
+      "sha256": "9bfa97465283284e7228a1d30a38daf7d39cd6a7cceab92e78b3fbfe4c337ab9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-progresskit-mail-expanded.png",
+      "bytes": 545125,
+      "sha256": "ba0af6e28304fc9416cb5862c5195e48486ff766d8174811e6923f295507d76a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-progresskit-tax-expanded.png",
+      "bytes": 518120,
+      "sha256": "0570966b2579877ff2b36bbd1dda15715a54a98238db8d8595fa2f503ec18bf4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-progresskit-translator-expanded.png",
+      "bytes": 582665,
+      "sha256": "b18b4b4188165d9025c65d7597270b435c5fc13b4bbb218afbc75d58d900f53b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-uslugi.png",
+      "bytes": 384172,
+      "sha256": "7961778b33f2c3fd158df8430373083d993af5cc08604daecf91594bf25793d8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-vaeloria-expanded.png",
+      "bytes": 601331,
+      "sha256": "76b2dfe2d40420db05924d4cec6ad8eefcd13a21a0c184225e844497f37dcce5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/1920-wydania.png",
+      "bytes": 527753,
+      "sha256": "e5173fb7bf3dea8cf6504f3f6444fd0d82516cc447b3caf216bb46c3895b12a2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-ekosystem.png",
+      "bytes": 82021,
+      "sha256": "dcc984213b5f0eb9efb8a0dbccc3d8402a0a776359c653f724861dc98b63d6ac"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-first.png",
+      "bytes": 100423,
+      "sha256": "513ccf17a1c9360b4f84437b2fa7f792cebddaca90859bfa2b6a155996eeee8c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 82826,
+      "sha256": "449cf5bbabae1113ab4ff6507869792bf7d905a7d8a15d21c0ca0d7efb33170b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-glikemia-premium-expanded.png",
+      "bytes": 97547,
+      "sha256": "c54d6b53b24c11de40a2a43feff4d78e9450ead89464a5e5dfdc9f85091fc4a8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-kontakt.png",
+      "bytes": 80018,
+      "sha256": "4b29908d5568080471d53a330d3f3a607e204a3fea980478fd1c7988d26abc08"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-navigation.png",
+      "bytes": 74799,
+      "sha256": "57a5c431ed881ca05da8f367f1328680870cdfc857a1c97c3be78bb5799d3c39"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 73366,
+      "sha256": "99f5d1111f7a33f9772d4175786f6b4557679175cb8a53ca1cc752640db751ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-community-expanded.png",
+      "bytes": 101735,
+      "sha256": "3d6bbc2834d106c9c52a03479ad7b59b0596e125fe294d5e59efd5ce8bda32da"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 73631,
+      "sha256": "68521156a5bc208334424a8e1b792b7a8e02428952d7800f778d95c308a1a267"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-mail-expanded.png",
+      "bytes": 93403,
+      "sha256": "6d42edd192493cf371512eb26996906da2981a3bd4ed34ff600a93fe129f7341"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 74281,
+      "sha256": "adab17f2dd220f56fa4be452c571c4fae31a2d98e2e99bae25d20fde6aa0bea7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-tax-expanded.png",
+      "bytes": 94718,
+      "sha256": "652a9f3939ebcfa665ee1ff1ae24a9b32438976d9b8803da52a41cecee81f14a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 83921,
+      "sha256": "af61ca22987057102fb1fa95f12d2f206d5b97eaf3d5705c23005ceb1779f37a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-progresskit-translator-expanded.png",
+      "bytes": 97667,
+      "sha256": "222b2e95cc402301e0954381d8752938f9803c401687ca48ad01dbb3a73eae6c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-uslugi.png",
+      "bytes": 69881,
+      "sha256": "929b15d8aed0b017546c28f9026de71a2a791b9750eeab91ebbd426e63f7d78c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-vaeloria-actions-after-scroll.png",
+      "bytes": 102198,
+      "sha256": "1ab03e1f3b667cef0d3c6b3ced497a6fbcdc3d2e6f63491afefaea99945f1a45"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-vaeloria-expanded.png",
+      "bytes": 90111,
+      "sha256": "65aec3a01da7a41673e7e5f319d5c4d8aba798facd76f47b85dc0f8f17712f67"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/320-wydania.png",
+      "bytes": 81264,
+      "sha256": "aa7128d62d8c0ae24065462ddf3c70f78f9a499700df26db9e80623ade4d51f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-ekosystem.png",
+      "bytes": 131085,
+      "sha256": "6554e6b8a6c74e981194dcce7845c5ccadf01d81ce6f58035f0efd107a3d7cf7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-first.png",
+      "bytes": 149991,
+      "sha256": "2b757e338706db0a4aa5ed5b9b796498ffb3b96707812ad9b2789f6a3705afa8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 125879,
+      "sha256": "0a656a224ef9b48eb41c46ccdd127ed30bf41e641fe9033a3e0045b0f311b0f3"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-glikemia-premium-expanded.png",
+      "bytes": 144283,
+      "sha256": "eb0d5d2b84d49c95cb0fe31d9076bf0d5f6c60479cc141949204dc0880f09da9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-kontakt.png",
+      "bytes": 120967,
+      "sha256": "6a8033c59b23fb6e965e0d7462d9bd60d845a9c4423eaa98682d6e095e22071d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-navigation.png",
+      "bytes": 130221,
+      "sha256": "3ee95c9d0c929da14f36a4c797329ceb4db658138388c331e51e1d40946a0467"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 142393,
+      "sha256": "755e97806645114b1e2974ba2624dacd46568aa48d43223f6861d192e886d04f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-community-expanded.png",
+      "bytes": 164254,
+      "sha256": "f413c4a910f01a9d69060625d85c389399359bf1a9c1dd85b5efbfb5bd1c040f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 113311,
+      "sha256": "62df3fc391d6d8bd979c8c8e6d12e9eea8a06be59fb9c621039b3e61c23e9bfc"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-mail-expanded.png",
+      "bytes": 139898,
+      "sha256": "0a22d6ce56fbb81ae620d995811d4bf5ef9296dc2b408eaba43f6ca135b3115d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 157879,
+      "sha256": "ada40729b02f1ba8e6da7c73046f76d56cfdac60fa55f507be66f4afb8333b2c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-tax-expanded.png",
+      "bytes": 156480,
+      "sha256": "18978e6f95eaa81c460b1d2af853e867878e947f4248a6b9b190293268eea984"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 134373,
+      "sha256": "a59ce8b8a2bb3b251159ceb862a9bb06aab19c1fc769022a2536c1d6da4b462a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-progresskit-translator-expanded.png",
+      "bytes": 147976,
+      "sha256": "a15aa1d100c40c7e9087c4e655f307b537c00bbb46e1f2d28eb456cf54bdfb7f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-uslugi.png",
+      "bytes": 138661,
+      "sha256": "f87697f312ffcf80aca8908aeb5949f82d716b1fedd7b42a1ade250eddaca075"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-vaeloria-actions-after-scroll.png",
+      "bytes": 171250,
+      "sha256": "55b7fc50453eaa393fdf8add533b71c9be83269b9f5ab3dacb66daa55d6968d5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-vaeloria-expanded.png",
+      "bytes": 158894,
+      "sha256": "4da9089e2c844108a1d0dee7b0c9b16e726eab52f46196149673dd36641c2c94"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/390-wydania.png",
+      "bytes": 139431,
+      "sha256": "5b375a17c1d56a07e3e01e79f04e5177ffaf04afeaf1225b4f3b0ca8c580ef44"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/desktop-mechanism.mp4",
+      "bytes": 2609905,
+      "sha256": "02f92b06c0a7bb30e97352845e96130ff21a80b99d95af476e8a4c8e906bad61"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/mobile-interaction.mp4",
+      "bytes": 973686,
+      "sha256": "1a6535b19c02e016fb7816cd3bbfd2ac7427384eed4d06c7dbaabd89bc5c799f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-accepted/report.json",
+      "bytes": 56841,
+      "sha256": "1e254619cf5480cfb2eebb8a39d6930a810e665efada8b0244b21a3927bd6764"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-ekosystem.png",
+      "bytes": 336116,
+      "sha256": "300898f9405933fa2393f96fdacf3aab8f7bd9b152aad5ebaf00fdf9f0c7f865"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-first.png",
+      "bytes": 452396,
+      "sha256": "b6067f2690bb4984161298d90bd5aa3fe4f134f6476bf1a0b0e3c02f7ae291ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-glikemia-premium-expanded.png",
+      "bytes": 384926,
+      "sha256": "db0c1af1dc18fabf88019d44f5b2abcbea37625aa333d879ced3d07047e77193"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-kontakt.png",
+      "bytes": 294898,
+      "sha256": "d44d43ee3f2df133678bc9c358aa60002a1584e87666ceee50067d1b9a1c1c87"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-progresskit-community-expanded.png",
+      "bytes": 426720,
+      "sha256": "2225457e60226f3d5daa30584d5339e63e0d0a60144509929458f92f3c3f0778"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-progresskit-mail-expanded.png",
+      "bytes": 368083,
+      "sha256": "f83ff1c50d0c18600e0da3ec7bc683b014372e9e4a07073343e62d3d942ba495"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-progresskit-tax-expanded.png",
+      "bytes": 395990,
+      "sha256": "be744054c2963a3e915c7cf942264b3a2d29fde63b5a047cac5f6a3aa18a0d84"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-progresskit-translator-expanded.png",
+      "bytes": 421200,
+      "sha256": "0747cb3b9b991c036abcf207310243fcf7d4fae14595dea41877a9beb9b47d1c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-uslugi.png",
+      "bytes": 312809,
+      "sha256": "2258919c9c4e18742df4ce92fb4d9617b2b1928b066dca2604012be7fe8b2e35"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-vaeloria-expanded.png",
+      "bytes": 496621,
+      "sha256": "6adcda66024cf14d25664b26c8f2345e2caf3561ca5cbe91ef4c7a3dea36a1e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1440-wydania.png",
+      "bytes": 318155,
+      "sha256": "d1afd01c480a5cec5c147f78ba7a110de47fc7f69e10aecfe731e0b33ccd3ec1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-ekosystem.png",
+      "bytes": 469752,
+      "sha256": "4061d0c6bfe1b7685e85e51e6125317b0cfa920bf27ed40f8daaf39dc4a7e20a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-first.png",
+      "bytes": 585774,
+      "sha256": "868fea2ad5ede7b6223c55c749ab6678716c0fae301e54eba17364eea9670e44"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-glikemia-premium-expanded.png",
+      "bytes": 561329,
+      "sha256": "13a0ca1c617e3a7644a514519ba72c7948484f2b1e0f6d997dfb32be11feb178"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-kontakt.png",
+      "bytes": 407088,
+      "sha256": "b5dea156a5b5cc6a222d6b0fe19e1f26e47d565b377eecc95e822f906b11e7b5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-progresskit-community-expanded.png",
+      "bytes": 591706,
+      "sha256": "11420b25f559ef6887590c94d752ea43112ed97c1e5a011e45713f4f2e44b42a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-progresskit-mail-expanded.png",
+      "bytes": 545125,
+      "sha256": "ba0af6e28304fc9416cb5862c5195e48486ff766d8174811e6923f295507d76a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-progresskit-tax-expanded.png",
+      "bytes": 515739,
+      "sha256": "7f7b754f5c52d4f1e5852f158e93fec48f18f2b2137a204944cf0b9b6289c8df"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-progresskit-translator-expanded.png",
+      "bytes": 582665,
+      "sha256": "b18b4b4188165d9025c65d7597270b435c5fc13b4bbb218afbc75d58d900f53b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-uslugi.png",
+      "bytes": 384172,
+      "sha256": "7961778b33f2c3fd158df8430373083d993af5cc08604daecf91594bf25793d8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-vaeloria-expanded.png",
+      "bytes": 601331,
+      "sha256": "76b2dfe2d40420db05924d4cec6ad8eefcd13a21a0c184225e844497f37dcce5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/1920-wydania.png",
+      "bytes": 527753,
+      "sha256": "e5173fb7bf3dea8cf6504f3f6444fd0d82516cc447b3caf216bb46c3895b12a2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-ekosystem.png",
+      "bytes": 81987,
+      "sha256": "704e56349514e21654e481558f94385eb48fcd518085503d76bcedc6d986af7d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-first.png",
+      "bytes": 100633,
+      "sha256": "c0c98357acf12a51b07660881b76e84458dd35972bfeb48b893f1cd2dc740f30"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 82655,
+      "sha256": "39efc71fc05a3fee1a620d59ae0dce9fc9573226030fc1ad42bc3657e5749528"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-glikemia-premium-expanded.png",
+      "bytes": 97666,
+      "sha256": "a45307525f2bc1a7a7e467de6d382b6b08e22b8d08704773b135d0a78f7a5aa7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-kontakt.png",
+      "bytes": 84360,
+      "sha256": "b690cacf564c1ca708b2204acb6852697b604769b7e520dc3771db556dea39ef"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-navigation.png",
+      "bytes": 74728,
+      "sha256": "064d77b4728fd1cf6e8345e8230bf9c28c5ac95efe2260407ac45796d1b3431e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 73476,
+      "sha256": "2d1521169a6a320d5062da19762b3a91b3542eb9631c552e8da93c5f3c21dbca"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-community-expanded.png",
+      "bytes": 101678,
+      "sha256": "df17310bd83ad155ac2ba07012f5ef2dbd410dd91007e6296496eb8a192a5df3"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 73269,
+      "sha256": "fbe5679fa155a0bf721cf0a52f72003f51d4de5d441133f89c4a874c80d5892b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-mail-expanded.png",
+      "bytes": 93248,
+      "sha256": "6fe1b0f3dcc453708d6525c4c843f640462e0b1d7f2cac4b7436730847c62f4d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 73927,
+      "sha256": "7796bab799045ef4822cc8172b6fcca5056c16d8e50311116163e7d4576ec2ba"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-tax-expanded.png",
+      "bytes": 95058,
+      "sha256": "4446d7b452de84c8af454dbf91b65ce85cbca0bc8e6d33544d0801a5d15f33b4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 83965,
+      "sha256": "21b76f531d14df4a0f93802eecd70b0d7053ed61d5c941dce2ece7e0f5b4710a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-progresskit-translator-expanded.png",
+      "bytes": 97414,
+      "sha256": "de2d199617de03b1a7d319ec0a54172e8f2ed38a049dd64dbfd379abf7a010f5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-uslugi.png",
+      "bytes": 69658,
+      "sha256": "798936a656e0ae3d0caac2531b99b0baf20852d88d7cdf1baf85412d86e909ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-vaeloria-actions-after-scroll.png",
+      "bytes": 102067,
+      "sha256": "2c769eb2a5765e93ca657b3e24b5b29de9e6367e7ce6eee235024defe9666382"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-vaeloria-expanded.png",
+      "bytes": 90468,
+      "sha256": "b64965a20e7e8ef4790ec1aa4fa81bdba8c3e505bbf055f614f0e121a127a068"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/320-wydania.png",
+      "bytes": 80850,
+      "sha256": "46e4779f16e4847f9af0998a095e9a6994d3f7d1d0f6092a444042576dbd90f6"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-ekosystem.png",
+      "bytes": 131250,
+      "sha256": "98822355ebc35dd34f95c6cdcc7dda487ee9ff0e31469480d4983303204afd18"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-first.png",
+      "bytes": 150153,
+      "sha256": "4f1fc361639194c1d88d8647d3c6dfe3ef2480b340973b2bf501708ab3763f08"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 125975,
+      "sha256": "ebd271a9591f1a3f3867d7b7efc66a3d78a65d2650371f34b1d5cdcd29db275a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-glikemia-premium-expanded.png",
+      "bytes": 144299,
+      "sha256": "1e35c92f422dd4d2deb79100097319153c0f29caa51330a3a7f099df54368aa2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-kontakt.png",
+      "bytes": 121901,
+      "sha256": "927b3014dfcec83f86af65cb5190f132136fbe5d34e9ebd3ce4146954c5be3a7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-navigation.png",
+      "bytes": 129975,
+      "sha256": "90f85865af56b0261ba174f78c1a95cd6fbc04b540c74989b9e731c294cd491e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 142659,
+      "sha256": "fce58efb374c83d04af95a729939eea15c37bce4f14ea9b76706abae77b84920"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-community-expanded.png",
+      "bytes": 164938,
+      "sha256": "f1acbf56694af43cb709061c33f6d555cf195c141184e023a8a5743a1e42ee1f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 113215,
+      "sha256": "ace2fcdea8c95b65c7766894752f5376f3e010f9a05767fddf802fd489be3dd0"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-mail-expanded.png",
+      "bytes": 139764,
+      "sha256": "b13319e2de6366e141081f2fb6fbbe6e536b27a46d3d1140a67c05c22b9dc7ff"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 157761,
+      "sha256": "7018e50d64239433654409b7b888141bcc7140d123b455b6c7bbf08bc58caa33"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-tax-expanded.png",
+      "bytes": 156380,
+      "sha256": "02a9091923c12d089941c242446701ed8178378472921c136c074648d065b2d8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 134435,
+      "sha256": "452c27bd3908d6ece2a138410e1c434acfa1b3ecd450f2bad405b9a5837dfb91"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-progresskit-translator-expanded.png",
+      "bytes": 148994,
+      "sha256": "e278a5e6d78ddfe2735664c9657045cd811db50812b939cac5669aa72cc825f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-uslugi.png",
+      "bytes": 137614,
+      "sha256": "82a47c3bf84824903aca06499d2abc823456b99cdde96ce28549962de6cce7e9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-vaeloria-actions-after-scroll.png",
+      "bytes": 171176,
+      "sha256": "2810a938dea82a1ffaf84c2034da4d38eae5f46e72cf57024e7e88894b95da47"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-vaeloria-expanded.png",
+      "bytes": 159148,
+      "sha256": "0d59cf72fe1595c189760548c7651e41652eb9c1ef58ec027fcc33bff785116a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/390-wydania.png",
+      "bytes": 139307,
+      "sha256": "9f1710ac295bee8563b6bbfce5608c94843a576f417ac9655bafef1d9166970c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/desktop-mechanism.mp4",
+      "bytes": 2519628,
+      "sha256": "64d509e4182026f3f510f7af8b8406c8733155b4213183e2bf446e3e71422aac"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/mobile-interaction.mp4",
+      "bytes": 977380,
+      "sha256": "f6fc0376b5d4f07e078c7378f92216cf1d3e5d5a94a21ecddcff6b56d1533f58"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/report.json",
+      "bytes": 56793,
+      "sha256": "790a1c8eba7a40df65ce48d299363ec1dc2bb1023defdaa4050c77d31f36c5cd"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-before-status-fix/superseded.json",
+      "bytes": 358,
+      "sha256": "4489d5d760e9665c1bb51a22731af9d9fa9193bda4beb7ca96d273c492838569"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-ekosystem.png",
+      "bytes": 336664,
+      "sha256": "1e205a127087d71ce01b9110f6325eeb8cab0df598f2ec6b049d741f96f8dba5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-first.png",
+      "bytes": 452396,
+      "sha256": "b6067f2690bb4984161298d90bd5aa3fe4f134f6476bf1a0b0e3c02f7ae291ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-glikemia-premium-expanded.png",
+      "bytes": 384926,
+      "sha256": "db0c1af1dc18fabf88019d44f5b2abcbea37625aa333d879ced3d07047e77193"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-kontakt.png",
+      "bytes": 296203,
+      "sha256": "6c72d98b9d8229ef326a8bccd4fb7a0122e8713878f3f8bc1f8fbdb5f5447d23"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-progresskit-community-expanded.png",
+      "bytes": 426720,
+      "sha256": "2225457e60226f3d5daa30584d5339e63e0d0a60144509929458f92f3c3f0778"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-progresskit-mail-expanded.png",
+      "bytes": 368083,
+      "sha256": "f83ff1c50d0c18600e0da3ec7bc683b014372e9e4a07073343e62d3d942ba495"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-progresskit-tax-expanded.png",
+      "bytes": 395990,
+      "sha256": "be744054c2963a3e915c7cf942264b3a2d29fde63b5a047cac5f6a3aa18a0d84"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-progresskit-translator-expanded.png",
+      "bytes": 421200,
+      "sha256": "0747cb3b9b991c036abcf207310243fcf7d4fae14595dea41877a9beb9b47d1c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-uslugi.png",
+      "bytes": 312678,
+      "sha256": "a7ff0f88f366023ad4aca89d1146855eef93afe2764d9946a162da197364495a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-vaeloria-expanded.png",
+      "bytes": 496621,
+      "sha256": "6adcda66024cf14d25664b26c8f2345e2caf3561ca5cbe91ef4c7a3dea36a1e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1440-wydania.png",
+      "bytes": 308365,
+      "sha256": "456baf03beea0026a946f41b9a5d9eafa0778bbbef9c9d35e762a15a4cd32e7c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-ekosystem.png",
+      "bytes": 514989,
+      "sha256": "5f2cb0a0a3a927613c044e84797f04b966075057d08243ff0796a9517a088c2c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-first.png",
+      "bytes": 584071,
+      "sha256": "95ebcd2d6019f317c25bcaaf0ab54d763e2ed6b43b33a529c42504b34a886cad"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-glikemia-premium-expanded.png",
+      "bytes": 548275,
+      "sha256": "6d841780e6a3a4e5abca0b84318e90326b7e199c8ccd5f55ff16936eb2bdfe75"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-kontakt.png",
+      "bytes": 406038,
+      "sha256": "4897173daed5adfb48fc6b8ef652d7b402646458b1be81da8a035a8b7e856b16"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-progresskit-community-expanded.png",
+      "bytes": 552573,
+      "sha256": "0cf1577efc03bf10aba883a9f82baf940b770f0448d64d2d93ec322204a24f06"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-progresskit-mail-expanded.png",
+      "bytes": 532743,
+      "sha256": "cce1f2ca2af64e17120b7274b9dd7e62958e7aecf935ef3e1b507381c536c0a5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-progresskit-tax-expanded.png",
+      "bytes": 511309,
+      "sha256": "c8480fba53a34ba859c4ad6801fa24820a307a65dea0f2e2eef4672e4b6c9eca"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-progresskit-translator-expanded.png",
+      "bytes": 544911,
+      "sha256": "7bb7b29790e7f5c89c58ff2f1ba340aad4436702e8fe23c043d96bfe0c51dc78"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-uslugi.png",
+      "bytes": 395823,
+      "sha256": "82ce81fe6e295700c5901168294b63e9d6bcc0a90c67de2778c8993e422a70f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-vaeloria-expanded.png",
+      "bytes": 600185,
+      "sha256": "ec476add21aa7f990937e174df3742b06d50b179d7718d4ae10846b3a99b1505"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/1920-wydania.png",
+      "bytes": 436342,
+      "sha256": "857d87f69869f147c8bb112ab4841b401785c54383017563d3963afbbd20ecec"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-ekosystem.png",
+      "bytes": 81226,
+      "sha256": "da2df8c97677245d481ab4165dc583383baa91ca1ad98fb061e180468f703164"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-first.png",
+      "bytes": 100633,
+      "sha256": "c0c98357acf12a51b07660881b76e84458dd35972bfeb48b893f1cd2dc740f30"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 82655,
+      "sha256": "39efc71fc05a3fee1a620d59ae0dce9fc9573226030fc1ad42bc3657e5749528"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-glikemia-premium-expanded.png",
+      "bytes": 97666,
+      "sha256": "a45307525f2bc1a7a7e467de6d382b6b08e22b8d08704773b135d0a78f7a5aa7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-kontakt.png",
+      "bytes": 86937,
+      "sha256": "abd0b41f19ef5d470c5169461f11901fc1ce58cb7d0549bdf45f155981ce3d7f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-navigation.png",
+      "bytes": 74726,
+      "sha256": "e4ee226e202a118e4e6a5e6cd564a5dfaaaa9c51da10d2a3e5d09f759b5e967c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 73476,
+      "sha256": "2d1521169a6a320d5062da19762b3a91b3542eb9631c552e8da93c5f3c21dbca"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-community-expanded.png",
+      "bytes": 101678,
+      "sha256": "df17310bd83ad155ac2ba07012f5ef2dbd410dd91007e6296496eb8a192a5df3"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 73269,
+      "sha256": "fbe5679fa155a0bf721cf0a52f72003f51d4de5d441133f89c4a874c80d5892b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-mail-expanded.png",
+      "bytes": 93248,
+      "sha256": "6fe1b0f3dcc453708d6525c4c843f640462e0b1d7f2cac4b7436730847c62f4d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 73927,
+      "sha256": "7796bab799045ef4822cc8172b6fcca5056c16d8e50311116163e7d4576ec2ba"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-tax-expanded.png",
+      "bytes": 95058,
+      "sha256": "4446d7b452de84c8af454dbf91b65ce85cbca0bc8e6d33544d0801a5d15f33b4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 83965,
+      "sha256": "21b76f531d14df4a0f93802eecd70b0d7053ed61d5c941dce2ece7e0f5b4710a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-progresskit-translator-expanded.png",
+      "bytes": 97414,
+      "sha256": "de2d199617de03b1a7d319ec0a54172e8f2ed38a049dd64dbfd379abf7a010f5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-uslugi.png",
+      "bytes": 69881,
+      "sha256": "929b15d8aed0b017546c28f9026de71a2a791b9750eeab91ebbd426e63f7d78c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-vaeloria-actions-after-scroll.png",
+      "bytes": 102067,
+      "sha256": "2c769eb2a5765e93ca657b3e24b5b29de9e6367e7ce6eee235024defe9666382"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-vaeloria-expanded.png",
+      "bytes": 90468,
+      "sha256": "b64965a20e7e8ef4790ec1aa4fa81bdba8c3e505bbf055f614f0e121a127a068"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/320-wydania.png",
+      "bytes": 81340,
+      "sha256": "d99614fbcdda4366db3c4e11205aa11f74100f91f49e4f2f4dda976568bc8c29"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-ekosystem.png",
+      "bytes": 130127,
+      "sha256": "1c0c69e47ed6eb09b5373fe542b29db9658372e43993b0372c2671b51ba5a551"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-first.png",
+      "bytes": 150153,
+      "sha256": "4f1fc361639194c1d88d8647d3c6dfe3ef2480b340973b2bf501708ab3763f08"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 125975,
+      "sha256": "ebd271a9591f1a3f3867d7b7efc66a3d78a65d2650371f34b1d5cdcd29db275a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-glikemia-premium-expanded.png",
+      "bytes": 144299,
+      "sha256": "1e35c92f422dd4d2deb79100097319153c0f29caa51330a3a7f099df54368aa2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-kontakt.png",
+      "bytes": 124838,
+      "sha256": "159a37765fbb51f53943b50134c81accd2577250a0f672aef5fb31cb26283786"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-navigation.png",
+      "bytes": 129975,
+      "sha256": "90f85865af56b0261ba174f78c1a95cd6fbc04b540c74989b9e731c294cd491e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 142658,
+      "sha256": "50090379458cc70222ece73524ccfb8d32dd87fdf3e4fce72140d58e35e9117c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-community-expanded.png",
+      "bytes": 164938,
+      "sha256": "f1acbf56694af43cb709061c33f6d555cf195c141184e023a8a5743a1e42ee1f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 113215,
+      "sha256": "ace2fcdea8c95b65c7766894752f5376f3e010f9a05767fddf802fd489be3dd0"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-mail-expanded.png",
+      "bytes": 139764,
+      "sha256": "b13319e2de6366e141081f2fb6fbbe6e536b27a46d3d1140a67c05c22b9dc7ff"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 157761,
+      "sha256": "7018e50d64239433654409b7b888141bcc7140d123b455b6c7bbf08bc58caa33"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-tax-expanded.png",
+      "bytes": 156380,
+      "sha256": "02a9091923c12d089941c242446701ed8178378472921c136c074648d065b2d8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 134436,
+      "sha256": "a1629f5283b1823bcec4603674a2e9b0fe74a60382eee8a207507ce6e1aa65a3"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-progresskit-translator-expanded.png",
+      "bytes": 148994,
+      "sha256": "e278a5e6d78ddfe2735664c9657045cd811db50812b939cac5669aa72cc825f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-uslugi.png",
+      "bytes": 138797,
+      "sha256": "93d64b56a0d464613114657b5c08cdf8d85c52dd32f4d12fcc85b6e55de23814"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-vaeloria-actions-after-scroll.png",
+      "bytes": 171176,
+      "sha256": "2810a938dea82a1ffaf84c2034da4d38eae5f46e72cf57024e7e88894b95da47"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-vaeloria-expanded.png",
+      "bytes": 159148,
+      "sha256": "0d59cf72fe1595c189760548c7651e41652eb9c1ef58ec027fcc33bff785116a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/390-wydania.png",
+      "bytes": 141253,
+      "sha256": "0da50dfe03ad2818aaf0e35b9eabca3e3663864457fffd6615c494b7c24fa88e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/desktop-mechanism.mp4",
+      "bytes": 2391028,
+      "sha256": "62f3e29c1dee16091c14e764dbbc741853c9dcc4b8d0f0a899befc9c51a6c2e4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/mobile-interaction.mp4",
+      "bytes": 764704,
+      "sha256": "4bcaa2c9ae9636893193c581604de1cdf587383f1fc82dc23b84a33dd9d58ea0"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-first/report.json",
+      "bytes": 48983,
+      "sha256": "88d4cd23606ea8732e0599e08cfe2891a7dd202356fa424d528e368ac248637e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-ekosystem.png",
+      "bytes": 336116,
+      "sha256": "300898f9405933fa2393f96fdacf3aab8f7bd9b152aad5ebaf00fdf9f0c7f865"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-first.png",
+      "bytes": 452396,
+      "sha256": "b6067f2690bb4984161298d90bd5aa3fe4f134f6476bf1a0b0e3c02f7ae291ab"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-glikemia-premium-expanded.png",
+      "bytes": 384926,
+      "sha256": "db0c1af1dc18fabf88019d44f5b2abcbea37625aa333d879ced3d07047e77193"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-kontakt.png",
+      "bytes": 294898,
+      "sha256": "d44d43ee3f2df133678bc9c358aa60002a1584e87666ceee50067d1b9a1c1c87"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-progresskit-community-expanded.png",
+      "bytes": 405277,
+      "sha256": "38fe164c67304590dc168244c7def83f82848c8b35cc6ca7817918dfc85a239a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-progresskit-mail-expanded.png",
+      "bytes": 368083,
+      "sha256": "f83ff1c50d0c18600e0da3ec7bc683b014372e9e4a07073343e62d3d942ba495"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-progresskit-tax-expanded.png",
+      "bytes": 395990,
+      "sha256": "be744054c2963a3e915c7cf942264b3a2d29fde63b5a047cac5f6a3aa18a0d84"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-progresskit-translator-expanded.png",
+      "bytes": 421200,
+      "sha256": "0747cb3b9b991c036abcf207310243fcf7d4fae14595dea41877a9beb9b47d1c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-uslugi.png",
+      "bytes": 312809,
+      "sha256": "2258919c9c4e18742df4ce92fb4d9617b2b1928b066dca2604012be7fe8b2e35"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-vaeloria-expanded.png",
+      "bytes": 496621,
+      "sha256": "6adcda66024cf14d25664b26c8f2345e2caf3561ca5cbe91ef4c7a3dea36a1e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1440-wydania.png",
+      "bytes": 318155,
+      "sha256": "d1afd01c480a5cec5c147f78ba7a110de47fc7f69e10aecfe731e0b33ccd3ec1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-ekosystem.png",
+      "bytes": 469752,
+      "sha256": "4061d0c6bfe1b7685e85e51e6125317b0cfa920bf27ed40f8daaf39dc4a7e20a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-first.png",
+      "bytes": 586193,
+      "sha256": "2c138b4ffc791af9092df9466bdbd92fdb8222823265d0611b4075b1be7215ac"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-glikemia-premium-expanded.png",
+      "bytes": 561329,
+      "sha256": "13a0ca1c617e3a7644a514519ba72c7948484f2b1e0f6d997dfb32be11feb178"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-kontakt.png",
+      "bytes": 407088,
+      "sha256": "b5dea156a5b5cc6a222d6b0fe19e1f26e47d565b377eecc95e822f906b11e7b5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-progresskit-community-expanded.png",
+      "bytes": 591557,
+      "sha256": "9bfa97465283284e7228a1d30a38daf7d39cd6a7cceab92e78b3fbfe4c337ab9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-progresskit-mail-expanded.png",
+      "bytes": 545125,
+      "sha256": "ba0af6e28304fc9416cb5862c5195e48486ff766d8174811e6923f295507d76a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-progresskit-tax-expanded.png",
+      "bytes": 518120,
+      "sha256": "0570966b2579877ff2b36bbd1dda15715a54a98238db8d8595fa2f503ec18bf4"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-progresskit-translator-expanded.png",
+      "bytes": 582665,
+      "sha256": "b18b4b4188165d9025c65d7597270b435c5fc13b4bbb218afbc75d58d900f53b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-uslugi.png",
+      "bytes": 384172,
+      "sha256": "7961778b33f2c3fd158df8430373083d993af5cc08604daecf91594bf25793d8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-vaeloria-expanded.png",
+      "bytes": 601331,
+      "sha256": "76b2dfe2d40420db05924d4cec6ad8eefcd13a21a0c184225e844497f37dcce5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/1920-wydania.png",
+      "bytes": 527753,
+      "sha256": "e5173fb7bf3dea8cf6504f3f6444fd0d82516cc447b3caf216bb46c3895b12a2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-ekosystem.png",
+      "bytes": 82021,
+      "sha256": "dcc984213b5f0eb9efb8a0dbccc3d8402a0a776359c653f724861dc98b63d6ac"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-first.png",
+      "bytes": 100423,
+      "sha256": "513ccf17a1c9360b4f84437b2fa7f792cebddaca90859bfa2b6a155996eeee8c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 82826,
+      "sha256": "449cf5bbabae1113ab4ff6507869792bf7d905a7d8a15d21c0ca0d7efb33170b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-glikemia-premium-expanded.png",
+      "bytes": 97547,
+      "sha256": "c54d6b53b24c11de40a2a43feff4d78e9450ead89464a5e5dfdc9f85091fc4a8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-kontakt.png",
+      "bytes": 80018,
+      "sha256": "4b29908d5568080471d53a330d3f3a607e204a3fea980478fd1c7988d26abc08"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-navigation.png",
+      "bytes": 74799,
+      "sha256": "57a5c431ed881ca05da8f367f1328680870cdfc857a1c97c3be78bb5799d3c39"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 64507,
+      "sha256": "83f17a3c4cc9894fceab2c91bc61c96b7a1191a94ee05adff8946a9d3367b9c9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-community-expanded.png",
+      "bytes": 102284,
+      "sha256": "c55aecf38f1970f7d8e37eebd0f9380398db30023eeb789a4fa9ac2b8afb0098"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 73631,
+      "sha256": "68521156a5bc208334424a8e1b792b7a8e02428952d7800f778d95c308a1a267"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-mail-expanded.png",
+      "bytes": 93403,
+      "sha256": "6d42edd192493cf371512eb26996906da2981a3bd4ed34ff600a93fe129f7341"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 74281,
+      "sha256": "adab17f2dd220f56fa4be452c571c4fae31a2d98e2e99bae25d20fde6aa0bea7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-tax-expanded.png",
+      "bytes": 94718,
+      "sha256": "652a9f3939ebcfa665ee1ff1ae24a9b32438976d9b8803da52a41cecee81f14a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 83921,
+      "sha256": "af61ca22987057102fb1fa95f12d2f206d5b97eaf3d5705c23005ceb1779f37a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-progresskit-translator-expanded.png",
+      "bytes": 97667,
+      "sha256": "222b2e95cc402301e0954381d8752938f9803c401687ca48ad01dbb3a73eae6c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-uslugi.png",
+      "bytes": 69881,
+      "sha256": "929b15d8aed0b017546c28f9026de71a2a791b9750eeab91ebbd426e63f7d78c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-vaeloria-actions-after-scroll.png",
+      "bytes": 75462,
+      "sha256": "f9c46b4104677c575143bcb09e5b7c188e7365409731f32b48c334e5af185cc7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-vaeloria-expanded.png",
+      "bytes": 90111,
+      "sha256": "65aec3a01da7a41673e7e5f319d5c4d8aba798facd76f47b85dc0f8f17712f67"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/320-wydania.png",
+      "bytes": 81264,
+      "sha256": "aa7128d62d8c0ae24065462ddf3c70f78f9a499700df26db9e80623ade4d51f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-ekosystem.png",
+      "bytes": 131085,
+      "sha256": "6554e6b8a6c74e981194dcce7845c5ccadf01d81ce6f58035f0efd107a3d7cf7"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-first.png",
+      "bytes": 149991,
+      "sha256": "2b757e338706db0a4aa5ed5b9b796498ffb3b96707812ad9b2789f6a3705afa8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 125877,
+      "sha256": "2d92162f490bc0b9c110e2bc1cde298ef019fc77cb07973836e7bfc3e3623614"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-glikemia-premium-expanded.png",
+      "bytes": 144283,
+      "sha256": "eb0d5d2b84d49c95cb0fe31d9076bf0d5f6c60479cc141949204dc0880f09da9"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-kontakt.png",
+      "bytes": 120967,
+      "sha256": "6a8033c59b23fb6e965e0d7462d9bd60d845a9c4423eaa98682d6e095e22071d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-navigation.png",
+      "bytes": 130221,
+      "sha256": "3ee95c9d0c929da14f36a4c797329ceb4db658138388c331e51e1d40946a0467"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 142394,
+      "sha256": "918cf724e35c86735fb282523f5a71a6afafab66c69d8f0fcd61dd4c8cc9d96e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-community-expanded.png",
+      "bytes": 164254,
+      "sha256": "f413c4a910f01a9d69060625d85c389399359bf1a9c1dd85b5efbfb5bd1c040f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 113311,
+      "sha256": "62df3fc391d6d8bd979c8c8e6d12e9eea8a06be59fb9c621039b3e61c23e9bfc"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-mail-expanded.png",
+      "bytes": 139898,
+      "sha256": "0a22d6ce56fbb81ae620d995811d4bf5ef9296dc2b408eaba43f6ca135b3115d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 157879,
+      "sha256": "ada40729b02f1ba8e6da7c73046f76d56cfdac60fa55f507be66f4afb8333b2c"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-tax-expanded.png",
+      "bytes": 156480,
+      "sha256": "18978e6f95eaa81c460b1d2af853e867878e947f4248a6b9b190293268eea984"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 134373,
+      "sha256": "a59ce8b8a2bb3b251159ceb862a9bb06aab19c1fc769022a2536c1d6da4b462a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-progresskit-translator-expanded.png",
+      "bytes": 147976,
+      "sha256": "a15aa1d100c40c7e9087c4e655f307b537c00bbb46e1f2d28eb456cf54bdfb7f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-uslugi.png",
+      "bytes": 138661,
+      "sha256": "f87697f312ffcf80aca8908aeb5949f82d716b1fedd7b42a1ade250eddaca075"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-vaeloria-actions-after-scroll.png",
+      "bytes": 171249,
+      "sha256": "e59e4de927452580db5a6c0b81c1582b1ce91fad9d98aba27f7f875a72ea1868"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-vaeloria-expanded.png",
+      "bytes": 158894,
+      "sha256": "4da9089e2c844108a1d0dee7b0c9b16e726eab52f46196149673dd36641c2c94"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/390-wydania.png",
+      "bytes": 139431,
+      "sha256": "5b375a17c1d56a07e3e01e79f04e5177ffaf04afeaf1225b4f3b0ca8c580ef44"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/browser-server-interruption/report.json",
+      "bytes": 55551,
+      "sha256": "bc6bd3ac0a228187391a35c4282323116a91ee2a57b575d8131f9f8cc9b2b0ba"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/check.log",
+      "bytes": 352,
+      "sha256": "796339752c4c4f286c6e685a33b0ed8d123ca7ea1e6b627965266c29bf2c663b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/contrast-review-before-status-fix.json",
+      "bytes": 13864,
+      "sha256": "bd4b871ca4e97514d379c3bee4a2dfca085702552c3355441df712d245c61511"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/contrast-review.cjs",
+      "bytes": 4873,
+      "sha256": "dc3197f1a52f539fd94c9ba818def3ddd1503192ed0fd6acdbaf3166de81e9b5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/contrast-review.json",
+      "bytes": 14608,
+      "sha256": "d37b6f688883e5167f0a29305f20a5f610271fea195b9251d0cefeef1dd6355d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/draft/1440-first.png",
+      "bytes": 478647,
+      "sha256": "515bbe3e25c232abe73727ca4cd151ed6dd825b8b0eee4c64edeed31c4d0f0ed"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/draft/1920-first.png",
+      "bytes": 584071,
+      "sha256": "95ebcd2d6019f317c25bcaaf0ab54d763e2ed6b43b33a529c42504b34a886cad"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/draft/390-first.png",
+      "bytes": 152015,
+      "sha256": "6e027eeb9f7f78215273a2edf8cb46ac611f3ce7976a1657c5f3e4b2b5ab32ae"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/draft/report.json",
+      "bytes": 5286,
+      "sha256": "45c5e717f0a5b4fd59875faa67e3bed7b00ecbd043edce418cbaeadbbcfb53a8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/external-links.json",
+      "bytes": 959,
+      "sha256": "531919d0ec1e4b7550593e5c854880ffcf3b5f93212b19ffea23230739212c0d"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/external-links.py",
+      "bytes": 1405,
+      "sha256": "bf44b63b156a857563ac965856c8aaff9952d34beeb4fdba456b76f6376c3397"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/http-review-before-status-fix.json",
+      "bytes": 27869,
+      "sha256": "7ba12b32c560b42d87e2c9b5b03e03f62dba4f13892fb9e95aa8b9fe3060a95e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/http-review-first.json",
+      "bytes": 27383,
+      "sha256": "ac8363e87eca986bed76a8bc6c05133705b17b0ced4d1afae40512d14c1cc9ec"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/http-review.json",
+      "bytes": 28032,
+      "sha256": "6cd4368e507c73e36a92f540c5467ea0ff891e5ebe0598a37692254ae10bef88"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/http-review.py",
+      "bytes": 3786,
+      "sha256": "82ea252a75379dcd6c8b9c3059af2a3a76dd136f1a537945ee13425ad328684b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/independent-review.json",
+      "bytes": 12879,
+      "sha256": "537c5046cba660f21c6504f8ec2b32ca54fb8ca6037c72efff961142d19975ea"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/internal-links.json",
+      "bytes": 131257,
+      "sha256": "0d4605456f8f3e36cd8d23446ca29eebe176f466337ba7d749e7aff907c16c03"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/internal-links.py",
+      "bytes": 1964,
+      "sha256": "4682bbe9bff26a6eaeccc639d584301b53111c87271ac68eb64680cdaa0c6418"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/mobile-status-verification.json",
+      "bytes": 793,
+      "sha256": "26c823b0d72ec1a96c449fba3a57584fe912cf4e513a53216510a77e30d5b291"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/node-tests.log",
+      "bytes": 15301,
+      "sha256": "e3c9c21132beed27aec991ad2b80fca0ad8cb0417dfb42ed465a004967710718"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/publication-gate.log",
+      "bytes": 52,
+      "sha256": "0a06f08939d3119ded47842adde810ce0c30b394eca66d1789bac6ccd19829b8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/python-tests.log",
+      "bytes": 17990,
+      "sha256": "5ebadfc0daf18e981efd8af1798ab44e31a7460bc948257c4ab1948550055a89"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/EVIDENCE_MANIFEST.json",
+      "bytes": 11574,
+      "sha256": "eb66bbb6a0fcbfa5dc4799d6bbcaa91da71ac92c88f6cbd9b4ea06ab1fd6d880"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/REVIEW.md",
+      "bytes": 2897,
+      "sha256": "5209bd003b27012c4ca9986d3ee2d1b92cbb7ed853f1305a5ad48d48bcf0d9a5"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/apk-integrity.json",
+      "bytes": 508,
+      "sha256": "de854c1d10d0794cb8f37914bd8494be41e757f695ce02b9931c7a23e6978024"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/baseline-verification.json",
+      "bytes": 746,
+      "sha256": "772301eb192a389b1bd0e5aeda54f334064d7c50b0ef63986f8acec291239895"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/baseline.json",
+      "bytes": 1848,
+      "sha256": "170fdcf86b97d38f073bac538bad00fd5ebf3731ffd4637dace1aee2fc3397e2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/change-revalidation.json",
+      "bytes": 788,
+      "sha256": "a4d8fc10245e5cede8b836a1f07a1d004a73bbe65c81cc209678ff316eb13279"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/commands.json",
+      "bytes": 1486,
+      "sha256": "bc17fcb80c4553e1c3ed66f158f97afbb86f84d510f3ba9792a4a9c7a2f116bb"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "f98e3007638fd0b3b2e2682884641359cbc61de15831a99efbeb4acf65cbfd72"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/final-security-summary.json",
+      "bytes": 3009,
+      "sha256": "49b316185160254ea54b7738775d13398f8b8ecdfcd420588a4ef9d763585ddd"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/final-source-after.json",
+      "bytes": 9482,
+      "sha256": "1da27ca98a50343a2a165aa94fc2e1c27c607d123069b71b91b16bbf77e01e41"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/final-source-before.json",
+      "bytes": 9465,
+      "sha256": "fe7ef85e36e30aa1f997794fef72f726c8e234d1b5e84eae0f99f959ef06bf90"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/gitleaks-history.log",
+      "bytes": 116,
+      "sha256": "2e6157dd689b5153506b1e4c5c7429e2e02c2132ff18649f2ec2dc7c24485b52"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/gitleaks-reviewed-benign.json",
+      "bytes": 8496,
+      "sha256": "ac39bdc9c7c5bf0afd24fc6a9b8424e69b4363a092152bc80dccac4c6941b244"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "4299ef0f7f7b5dda6020d9bcd90e6180ecd48ba78c36928c4c4e715644204343"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/gitleaks-worktree.log",
+      "bytes": 81,
+      "sha256": "3f50c385df6c0d08c623a2994c0ac2e2572693e5f8fee3fba2107dd52145904f"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/inventory-verification.json",
+      "bytes": 206,
+      "sha256": "571706b5839f5ef6a0c0e3a2ac10611fb28dcd8d4cf8b40cf825dde219de50e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/log-normalization.json",
+      "bytes": 907,
+      "sha256": "72886d80fb823082a450f17507df898193f6f9968b104a1b920ae6b60ca15f90"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/offline-sca-summary.json",
+      "bytes": 2178,
+      "sha256": "eeeec43c560a93edc3953ca7ae6761a8bb21eace6275441d451e23569763585a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "b15e91d426d1da10a7e5218647bd3c7554ec7406bf8df35377a065165d15d41a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/offline-sca.log",
+      "bytes": 352,
+      "sha256": "0891373b75cdda87ecc63459befdeb31dbbbdd32ef0ecc43f435d58c1b15d34b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/ARCHIVE_DESCRIPTOR.json",
+      "bytes": 8761,
+      "sha256": "7bcc1259436e80085569dec41d068a723bc047010508315748b0d614bd348ba2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/EVIDENCE_MANIFEST.json",
+      "bytes": 5349,
+      "sha256": "fb1c257ec3fa61eab6713d3d281a90ffde71bad4de619b0847141ab77fb0701b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/REVIEW.md",
+      "bytes": 2518,
+      "sha256": "b72e003ee36a4577494ddb35e2d966b696b4284f3b0abd99f5996147f225acdf"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/apk-integrity.json",
+      "bytes": 508,
+      "sha256": "de854c1d10d0794cb8f37914bd8494be41e757f695ce02b9931c7a23e6978024"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/baseline-verification.json",
+      "bytes": 746,
+      "sha256": "beb8c97cd9a89126a765df3dca6c015995648680c8197486d79631028c1ad060"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/baseline.json",
+      "bytes": 1848,
+      "sha256": "170fdcf86b97d38f073bac538bad00fd5ebf3731ffd4637dace1aee2fc3397e2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/commands.json",
+      "bytes": 1486,
+      "sha256": "bf3f28776fc43cf41645a6bc7bfa82e41b7f663238470623ffdc11e6b48badf3"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "3c0b8a2838838ce389688f1baaedca134202a54d8c4885865f9271f784196840"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/final-security-summary.json",
+      "bytes": 2412,
+      "sha256": "a7533d46308a7c6c5fd4b08f4ccc1cc8c42c4e90da7c43ffc795a52030641962"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/final-source-after.json",
+      "bytes": 9482,
+      "sha256": "aa1a7472c65682335c874e2684a8dc99f8ca18453325afa9182f14916ea65e16"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/final-source-before.json",
+      "bytes": 9465,
+      "sha256": "0b4601d6ef5bcc69dbfbd8979c91f589ace4daa3bf3b423587b4d2e2bdcb5a99"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/gitleaks-history.log",
+      "bytes": 116,
+      "sha256": "3cc4afa429b4d67575748f1b774ab1b43dedecbe49e12a7317f26b111afc377a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/gitleaks-reviewed-benign.json",
+      "bytes": 8496,
+      "sha256": "446e707128625c955a202ac6ff71b2464af8f6cd680ebef048d3bc1a9fe699f2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "e8dc30ea55383997b13462ae9c8078c4e8556c33900d67811977b9de607f1181"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/gitleaks-worktree.log",
+      "bytes": 81,
+      "sha256": "264a1ddfe095763c46228f8efac39cb2b02067097ec888b5a47331a0619d919e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/inventory-verification.json",
+      "bytes": 206,
+      "sha256": "571706b5839f5ef6a0c0e3a2ac10611fb28dcd8d4cf8b40cf825dde219de50e1"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/log-normalization.json",
+      "bytes": 907,
+      "sha256": "192f2b14195717c01c4ebfa567a7fde8cad12f2d81b92dae3c7e20ae009188b8"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/offline-sca-summary.json",
+      "bytes": 2178,
+      "sha256": "eeeec43c560a93edc3953ca7ae6761a8bb21eace6275441d451e23569763585a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "b15e91d426d1da10a7e5218647bd3c7554ec7406bf8df35377a065165d15d41a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/offline-sca.log",
+      "bytes": 352,
+      "sha256": "0891373b75cdda87ecc63459befdeb31dbbbdd32ef0ecc43f435d58c1b15d34b"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/sast.json",
+      "bytes": 2590,
+      "sha256": "8db6131cdb6f897105d3f10e2287fe5815f4ad98e162dd58d5f44771303f004a"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/sast.log",
+      "bytes": 701,
+      "sha256": "8d80955e572b3250b94df8be1f9dc4d7cde1bfa3b660f76ff937c21b2296062e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/pre-status-contrast-fix/sast.log.gz",
+      "bytes": 360,
+      "sha256": "35992f2994ce663c3b4547487beaca7dbd525f1bd00d422ade80d6f57fd1f954"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/sast.json",
+      "bytes": 2589,
+      "sha256": "0396366b7f04308ce9853908f893cdb24766a90e691e4e5519b4f815057d8a50"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/sast.log",
+      "bytes": 701,
+      "sha256": "8d80955e572b3250b94df8be1f9dc4d7cde1bfa3b660f76ff937c21b2296062e"
+    },
+    {
+      "path": "docs/evidence/visual-acceptance-v2-20261022/security/sast.log.gz",
+      "bytes": 360,
+      "sha256": "35992f2994ce663c3b4547487beaca7dbd525f1bd00d422ade80d6f57fd1f954"
+    },
+    {
+      "path": "index.html",
+      "bytes": 76060,
+      "sha256": "e72dfdba244818c4cc5703fddbc90b8f4f6899f195759fede2844e5b2b715165"
+    },
+    {
+      "path": "progresskit-mail/index.html",
+      "bytes": 14519,
+      "sha256": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d"
+    },
+    {
+      "path": "projekty/adivara/index.html",
+      "bytes": 11035,
+      "sha256": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d"
+    },
+    {
+      "path": "projekty/glikemia-premium/index.html",
+      "bytes": 13180,
+      "sha256": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c"
+    },
+    {
+      "path": "projekty/gotrans360/index.html",
+      "bytes": 11422,
+      "sha256": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d"
+    },
+    {
+      "path": "projekty/ignira/index.html",
+      "bytes": 10390,
+      "sha256": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82"
+    },
+    {
+      "path": "projekty/index.html",
+      "bytes": 47445,
+      "sha256": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e"
+    },
+    {
+      "path": "projekty/kan-system/index.html",
+      "bytes": 9803,
+      "sha256": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604"
+    },
+    {
+      "path": "projekty/obserwator/index.html",
+      "bytes": 10388,
+      "sha256": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d"
+    },
+    {
+      "path": "projekty/progresskit-analytics/index.html",
+      "bytes": 9130,
+      "sha256": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce"
+    },
+    {
+      "path": "projekty/progresskit-community/index.html",
+      "bytes": 13929,
+      "sha256": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe"
+    },
+    {
+      "path": "projekty/progresskit-infrastructure/index.html",
+      "bytes": 9139,
+      "sha256": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c"
+    },
+    {
+      "path": "projekty/progresskit-mail/index.html",
+      "bytes": 14681,
+      "sha256": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c"
+    },
+    {
+      "path": "projekty/progresskit-systems/index.html",
+      "bytes": 9820,
+      "sha256": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6"
+    },
+    {
+      "path": "projekty/progresskit-tax/index.html",
+      "bytes": 12333,
+      "sha256": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509"
+    },
+    {
+      "path": "projekty/progresskit-translator/index.html",
+      "bytes": 12366,
+      "sha256": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5"
+    },
+    {
+      "path": "projekty/vaeloria/index.html",
+      "bytes": 13885,
+      "sha256": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18"
+    },
+    {
+      "path": "prywatnosc/index.html",
+      "bytes": 6769,
+      "sha256": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "bytes": 40196,
+      "sha256": "8e202cd62e63e663606b864eb1729e4fa90013fa2b5c2154cfd3c7531f21bc33"
+    },
+    {
+      "path": "scripts/delivery_markup.py",
+      "bytes": 6695,
+      "sha256": "887a1b4aa5206b8e823100af61e1645e2de92aa964a36ef1dc4b90c6418acac0"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "bytes": 19987,
+      "sha256": "8a2262ef0c5342d819df65491a80f37ddb5f2c681240f127e513bba5bd73aa0b"
+    },
+    {
+      "path": "scripts/showroom_markup.py",
+      "bytes": 12704,
+      "sha256": "e25629a3db648357c7af0126c7265663feb043c918abfdda534232296708eca4"
+    },
+    {
+      "path": "scripts/stage-public.py",
+      "bytes": 3275,
+      "sha256": "754237fdbd0620207a3fbf5e6352fc2478563d11895db1a0e3e7a295064df469"
+    },
+    {
+      "path": "tests/project-showroom.test.cjs",
+      "bytes": 40051,
+      "sha256": "4c1a3d94b8aeeb2b16500f90ccc48b6644fc8586b36336fad4e29d208b383eb3"
+    },
+    {
+      "path": "tests/test_delivery_sections.py",
+      "bytes": 8485,
+      "sha256": "6e30d75afd7ac408cd8ddf253a08c43856f1299f4eb632e9d111681c7c2e3e7a"
+    },
+    {
+      "path": "tests/test_homepage_composition.py",
+      "bytes": 4535,
+      "sha256": "06c218b99597668cdb8451ef1dfbdf7134ef7214cb01ffeb09d74154fe3dc266"
+    }
+  ]
+}

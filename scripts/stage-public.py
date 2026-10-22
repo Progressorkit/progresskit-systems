@@ -16,7 +16,7 @@ def public_files():
         'assets/hero-monument.css','assets/home-atmosphere.css','assets/hero-space.js',
         'assets/engineering-exhibit.css','assets/engineering-exhibit.js',
         'assets/brand-atmosphere.css',
-        'assets/project-slices.css','assets/delivery.css',
+        'assets/project-slices.css','assets/delivery.css','assets/project-mechanism.css','assets/visual-acceptance.css',
         'assets/project-showroom.css','assets/project-showroom.js','assets/project-hologram.css','assets/project-hologram.js',
         'assets/brand/stone-material.svg','assets/brand/monument-serif-bold.ttf','assets/brand/motto-serif-italic.ttf','assets/brand/monument-font-license.txt',
         'assets/progresskit-product-shell.css',

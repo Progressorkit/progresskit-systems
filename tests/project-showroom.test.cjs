@@ -416,20 +416,20 @@ test('A child losing implicit touch capture does not cancel the viewport swipe',
   assert.equal(ui.opened.length,0);
 });
 
-test('An expanded desktop module keeps its source anchor and leaves vertical wheel scrolling to the page',()=>{
+test('An expanded desktop drawer uses the reading stage and leaves vertical wheel scrolling to the page',()=>{
   const ui=mount(records,{slices:true});
   const card=ui.active();
   const pose=ui.cards.map(node=>node.properties.get('--showroom-y'));
   ui.fire(ui.root,'click',{target:card.link});
   assert.equal(card.panel.hidden,false);
   assert.equal(card.link['aria-expanded'],'true');
-  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'16.00px');
   assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
   assert.deepEqual(ui.cards.map(node=>node.properties.get('--showroom-y')),pose);
-  // A longer document or shorter browser must not recenter the module while reading.
+  // A longer document or shorter browser must not reposition the reading stage.
   ui.viewport.rectangle.height=1400;ui.window.innerHeight=400;
   ui.windowNotify('resize');
-  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'16.00px');
   assert.equal(card.properties.has('--slice-height'),false);
   assert.equal(ui.fire(ui.viewport,'wheel',{target:card.body,deltaX:0,deltaY:240}).prevented,false);
   assert.equal(card.panel.hidden,false);
@@ -469,7 +469,7 @@ test('Breakpoint changes and browser Back keep one disclosure and return focus o
   assert.equal(card.panel.hidden,false);
   ui.setNarrow(false);
   assert.equal(ui.active(),card);
-  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'16.00px');
   ui.pop('http://preview.local/?q=keep&utm_source=review#projekty');
   ui.tick();
   assert.equal(card.panel.hidden,true);
@@ -506,4 +506,56 @@ test('A module passing under a stationary pointer during page scrolling does not
   ui.tick(130);
   assert.equal(card.panel.hidden,false);
   assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
+});
+
+test('Straight-guide sockets retain six unique readable faces for every actual collection size',()=>{
+  for(const length of [1,2,3,4,6,14])for(let active=0;active<length;active++){
+    const points=Array.from({length},(_,i)=>showroom.mechanism(showroom.relative(i,active,length),length));
+    const visible=points.filter(p=>p.visible);
+    assert.equal(visible.length,Math.min(6,length));
+    assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
+    assert.deepEqual(points[active],showroom.mechanism(0,length));
+    for(const p of visible){assert.equal(p.opacity,1);assert.equal(p.scale,1);assert.ok(Math.abs(p.angle)<=1.5)}
+  }
+});
+
+test('A drawer changes sockets only while fully retracted, without a circular crossing path',()=>{
+  for(let phase=0;phase<14;phase+=.125){
+    const points=Array.from({length:14},(_,i)=>showroom.mechanism(showroom.relative(i,phase,14),14));
+    const visible=points.filter(p=>p.visible&&p.opacity>0);
+    assert.ok(visible.length<=6);
+    assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
+    for(const p of points)for(const k of ['x','y','scale','opacity','angle'])assert.ok(Number.isFinite(p[k]));
+  }
+  assert.equal(showroom.mechanism(.5,14).opacity,0);
+  const before=showroom.mechanism(.49,14),after=showroom.mechanism(.51,14);
+  assert.notEqual(before.y,after.y);assert.ok(before.opacity<.021&&after.opacity<.021);
+});
+
+test('The shipped inline controller presents the first six projects on rails and reaches all fourteen',()=>{
+  const ui=mount(records,{slices:true});
+  assert.deepEqual(ui.cards.filter(c=>!c.classes.has('is-orbit-hidden')).map(c=>c.dataset.projectId),records.slice(0,6).map(p=>p.id));
+  for(let i=0;i<14;i++){
+    const active=ui.active();
+    assert.equal(active.dataset.projectId,records[i].id);
+    assert.equal(active.properties.get('--showroom-y'),showroom.mechanism(0,14).y.toFixed(6));
+    assert.equal(active.inert,false);
+    ui.fire(ui.buttons[1],'click');ui.tick(650);
+  }
+  assert.equal(ui.active().dataset.projectId,records[0].id);
+  assert.equal(ui.frames.size,0);
+});
+
+test('Selecting a visible neighboring drawer freezes the mechanism and reduced motion opens immediately',()=>{
+  const ui=mount(records,{slices:true});
+  ui.fire(ui.buttons[1],'click');ui.tick(155);
+  const card=ui.cards[2];ui.fire(ui.root,'click',{target:card.link});
+  assert.equal(ui.frames.size,0);assert.equal(card.panel.hidden,false);
+  const pose=ui.cards.map(c=>c.properties.get('--showroom-y'));ui.tick(1000);
+  assert.deepEqual(ui.cards.map(c=>c.properties.get('--showroom-y')),pose);
+  assert.equal(ui.cards.filter(c=>c.classes.has('is-slice-expanded')).length,1);
+  const reduced=mount(records,{slices:true});reduced.reduced.matches=true;
+  reduced.fire(reduced.buttons[1],'click');assert.equal(reduced.frames.size,0);
+  reduced.fire(reduced.root,'click',{target:reduced.active().link});
+  assert.equal(reduced.active().panel.hidden,false);
 });

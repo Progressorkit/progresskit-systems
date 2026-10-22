@@ -1,0 +1,571 @@
+{
+  "base": "http://127.0.0.1:8100",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "scope": "Computed-style foreground versus ancestor background gradient-stop bounds including alpha overlays. Palette approximation only; not pixel sampling, anti-aliasing/overlap verification, screen-reader testing or a complete WCAG audit.",
+  "stylesheets": [
+    "http://127.0.0.1:8100/assets/site-v4.css",
+    "http://127.0.0.1:8100/assets/site-v5.css",
+    "http://127.0.0.1:8100/assets/hero.css",
+    "http://127.0.0.1:8100/assets/hero-monument.css",
+    "http://127.0.0.1:8100/assets/project-showroom.css",
+    "http://127.0.0.1:8100/assets/project-hologram.css",
+    "http://127.0.0.1:8100/assets/home-atmosphere.css",
+    "http://127.0.0.1:8100/assets/engineering-exhibit.css",
+    "http://127.0.0.1:8100/assets/brand-atmosphere.css",
+    "http://127.0.0.1:8100/assets/project-slices.css",
+    "http://127.0.0.1:8100/assets/delivery.css",
+    "http://127.0.0.1:8100/assets/project-mechanism.css",
+    "http://127.0.0.1:8100/assets/visual-acceptance.css"
+  ],
+  "PASS": 20,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "checks": [
+    {
+      "name": "brand",
+      "selector": ".topbar .brand__title",
+      "text": "PROGRESSKIT SYSTEMS",
+      "foreground": "rgb(240, 244, 246)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "17px",
+      "fontWeight": "800",
+      "backgroundBounds": [
+        [
+          42,
+          52,
+          59
+        ],
+        [
+          70.76,
+          80.56,
+          87.42
+        ]
+      ],
+      "ratio": 7.386,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "navigation",
+      "selector": ".topbar .nav a",
+      "text": "Projekty",
+      "foreground": "rgb(224, 231, 236)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "backgroundBounds": [
+        [
+          42,
+          52,
+          59
+        ],
+        [
+          70.76,
+          80.56,
+          87.42
+        ]
+      ],
+      "ratio": 6.544,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "hero title",
+      "selector": ".hero--monument .stone-line",
+      "text": "PROGRESSKIT",
+      "foreground": "rgb(230, 236, 239)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "64.8px",
+      "fontWeight": "850",
+      "backgroundBounds": [
+        [
+          32,
+          41,
+          47
+        ],
+        [
+          55.25,
+          64.1,
+          70.01
+        ]
+      ],
+      "ratio": 8.858,
+      "threshold": 3,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "hero motto",
+      "selector": ".hero__motto",
+      "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+      "foreground": "rgb(209, 219, 225)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "21.6px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          32,
+          41,
+          47
+        ],
+        [
+          55.25,
+          64.1,
+          70.01
+        ]
+      ],
+      "ratio": 7.51,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "secondary CTA",
+      "selector": ".hero__commercial-actions .cta:nth-child(2)",
+      "text": "Usługi",
+      "foreground": "rgb(241, 244, 246)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 4px), linear-gradient(120deg, rgb(67, 81, 91), rgb(44, 57, 67))",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "backgroundBounds": [
+        [
+          44,
+          57,
+          67
+        ],
+        [
+          70.76,
+          84.48,
+          94.28
+        ]
+      ],
+      "ratio": 7.01,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "project title",
+      "selector": ".showroom-card.is-active h3",
+      "text": "Glikemia Premium",
+      "foreground": "rgb(245, 247, 248)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "23.76px",
+      "fontWeight": "700",
+      "backgroundBounds": [
+        [
+          44,
+          55,
+          63
+        ],
+        [
+          72.72,
+          84.48,
+          93.3
+        ]
+      ],
+      "ratio": 7.176,
+      "threshold": 3,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "project state",
+      "selector": ".showroom-card.is-active .showroom-card__stage",
+      "text": "W rozwoju",
+      "foreground": "rgb(240, 232, 237)",
+      "computedBackgroundColor": "rgb(44, 41, 50)",
+      "computedBackgroundImage": "none",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          44,
+          41,
+          50
+        ],
+        [
+          44,
+          41,
+          50
+        ]
+      ],
+      "ratio": 11.882,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "project action",
+      "selector": ".showroom-card.is-active .showroom-card__action",
+      "text": "Odkryj projekt ↗",
+      "foreground": "rgb(255, 198, 210)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "14px",
+      "fontWeight": "750",
+      "backgroundBounds": [
+        [
+          44,
+          55,
+          63
+        ],
+        [
+          72.72,
+          84.48,
+          93.3
+        ]
+      ],
+      "ratio": 5.236,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "showroom instructions",
+      "selector": ".showroom-instructions",
+      "text": "Wybierz projekt, aby rozwinąć moduł. Szczegóły przewijają się razem ze stroną.",
+      "foreground": "rgb(206, 216, 222)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          32,
+          41,
+          47
+        ],
+        [
+          55.25,
+          64.1,
+          70.01
+        ]
+      ],
+      "ratio": 7.294,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "service",
+      "selector": "#uslugi .competency-list li",
+      "text": "Aplikacje mobilne",
+      "foreground": "rgb(237, 243, 247)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "linear-gradient(120deg, rgb(62, 77, 87), rgb(45, 60, 71))",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "backgroundBounds": [
+        [
+          45,
+          60,
+          71
+        ],
+        [
+          62,
+          77,
+          87
+        ]
+      ],
+      "ratio": 7.805,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "ecosystem heading",
+      "selector": ".delivery-flow__heading",
+      "text": "Tax — obsługa biura",
+      "foreground": "rgb(240, 245, 248)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "22px",
+      "fontWeight": "700",
+      "backgroundBounds": [
+        [
+          34,
+          45,
+          53
+        ],
+        [
+          48,
+          58,
+          66
+        ]
+      ],
+      "ratio": 10.567,
+      "threshold": 3,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "ecosystem description",
+      "selector": ".delivery-flow__description, .delivery-roadmap p",
+      "text": "Roadmapa: bezpieczny komunikator, lokalni agenci AI, integracje telefoniczne.",
+      "foreground": "rgb(220, 230, 237)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          32,
+          47,
+          58
+        ],
+        [
+          32,
+          47,
+          58
+        ]
+      ],
+      "ratio": 10.846,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "ecosystem state",
+      "selector": ".delivery-state",
+      "text": "W rozwoju",
+      "foreground": "rgb(255, 232, 239)",
+      "computedBackgroundColor": "rgb(74, 48, 65)",
+      "computedBackgroundImage": "none",
+      "fontSize": "13px",
+      "fontWeight": "600",
+      "backgroundBounds": [
+        [
+          74,
+          48,
+          65
+        ],
+        [
+          74,
+          48,
+          65
+        ]
+      ],
+      "ratio": 10.077,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "release description",
+      "selector": ".delivery-channel h3>span",
+      "text": "— rozwiązania testowe",
+      "foreground": "rgb(219, 230, 237)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          38,
+          57,
+          69
+        ],
+        [
+          58,
+          74,
+          86
+        ]
+      ],
+      "ratio": 7.217,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "about copy",
+      "selector": "#o-mnie .about-v5__copy p",
+      "text": "ProgressKit to rozwijany przeze mnie ekosystem aplikacji, systemów i gier. Samodzielnie projektuję a",
+      "foreground": "rgb(233, 239, 243)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "22px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          35,
+          45,
+          52
+        ],
+        [
+          56.23,
+          67.06,
+          73.94
+        ]
+      ],
+      "ratio": 8.736,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "contact small",
+      "selector": "#kontakt .contact__meta small",
+      "text": "Tryb współpracy",
+      "foreground": "rgb(188, 204, 215)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          35,
+          45,
+          52
+        ],
+        [
+          56.23,
+          67.06,
+          73.94
+        ]
+      ],
+      "ratio": 6.155,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "contact address",
+      "selector": "#kontakt .contact__email",
+      "text": "pawel@progresskit.pl",
+      "foreground": "rgb(255, 182, 198)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "50.4px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          35,
+          45,
+          52
+        ],
+        [
+          56.23,
+          67.06,
+          73.94
+        ]
+      ],
+      "ratio": 6.156,
+      "threshold": 3,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "brief label",
+      "selector": "#brief .brief-grid label",
+      "text": "Jaki problem ma rozwiązać system?",
+      "foreground": "rgb(211, 225, 234)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          36,
+          53,
+          63
+        ],
+        [
+          53,
+          70,
+          80
+        ]
+      ],
+      "ratio": 7.338,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "brief input",
+      "selector": "#brief .brief-grid textarea",
+      "text": "",
+      "foreground": "rgb(239, 245, 248)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "linear-gradient(125deg, rgb(21, 38, 48), rgb(33, 52, 63))",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          21,
+          38,
+          48
+        ],
+        [
+          33,
+          52,
+          63
+        ]
+      ],
+      "ratio": 11.727,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    },
+    {
+      "name": "footer link",
+      "selector": ".footer__links a",
+      "text": "E-mail",
+      "foreground": "rgb(222, 235, 243)",
+      "computedBackgroundColor": "rgba(0, 0, 0, 0)",
+      "computedBackgroundImage": "none",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "backgroundBounds": [
+        [
+          24,
+          40,
+          49
+        ],
+        [
+          38,
+          56,
+          66
+        ]
+      ],
+      "ratio": 10.009,
+      "threshold": 4.5,
+      "visible": true,
+      "unknownImages": [],
+      "status": "PASS"
+    }
+  ],
+  "sourceFreeze": "Final run after parent confirmed source freeze",
+  "sourceHtmlSha256": "e72dfdba244818c4cc5703fddbc90b8f4f6899f195759fede2844e5b2b715165",
+  "checkedAt": "2026-10-22T20:25:45.647458+00:00"
+}

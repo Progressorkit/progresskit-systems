@@ -387,15 +387,13 @@ def homepage(data):
     serialized=json.dumps(public_projects,ensure_ascii=False,separators=(',',':')).replace('&','\\u0026').replace('<','\\u003c').replace('>','\\u003e')
     out+='<script type="application/json" id="showroom-data">'+serialized+'</script>'
     out+=(ROOT/'templates/project-hologram.html').read_text()
-    about,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
-    out+=about
-    spec=importlib.util.spec_from_file_location('engineering_exhibit',ROOT/'scripts/engineering_exhibit.py')
-    exhibit=importlib.util.module_from_spec(spec);spec.loader.exec_module(exhibit)
-    out+=exhibit.render_engineering_exhibit(projects)
-    out+=technology_section(projects)
     spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
     delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
+    about,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
     out+=delivery.render_delivery(projects)
+    out+=about
+    out+=delivery.render_case_studies()
+    out+=technology_section(projects)
     return out+contact+brief_section()
 
 
@@ -413,9 +411,10 @@ def render(content, title, description, path, prefix):
     nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
     page_styles=''
     if not path and not prefix:
-        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
+        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery','project-mechanism'))
         page_styles+='\n  <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>'
-    page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','engineering-exhibit')) if not path and not prefix else ''
+    page_styles+=('\n  ' if page_styles else '')+f'<link rel="stylesheet" href="{prefix}assets/visual-acceptance.css">'
+    page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom')) if not path and not prefix else ''
     if not page_styles:
         template=template.replace('  @@PAGE_STYLES@@\n','')
     if not page_scripts:

@@ -1,0 +1,1810 @@
+{
+  "startedAt": "2026-10-22T20:21:11.174Z",
+  "base": "http://127.0.0.1:8100/",
+  "checks": [
+    {
+      "name": "1920: first view and preserved catalog",
+      "status": "PASS"
+    },
+    {
+      "name": "1920: readable rail modules without overlap or circular decoration",
+      "status": "PASS",
+      "details": {
+        "rings": 0,
+        "modules": [
+          {
+            "id": "glikemia-premium",
+            "rect": {
+              "x": 923.2474975585938,
+              "y": 101.5,
+              "width": 349.88006591796875,
+              "height": 196,
+              "top": 101.5,
+              "right": 1273.1275634765625,
+              "bottom": 297.5,
+              "left": 923.2474975585938
+            },
+            "title": {
+              "x": 988.2252197265625,
+              "y": 148.5,
+              "width": 212.927001953125,
+              "height": 30,
+              "top": 148.5,
+              "right": 1201.1522216796875,
+              "bottom": 178.5,
+              "left": 988.2252197265625
+            },
+            "stage": {
+              "x": 988.2252197265625,
+              "y": 185.5,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 185.5,
+              "right": 1063.0120849609375,
+              "bottom": 209.5,
+              "left": 988.2252197265625
+            },
+            "action": {
+              "x": 988.2252197265625,
+              "y": 248.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 248.5,
+              "right": 1252.134765625,
+              "bottom": 280.5,
+              "left": 988.2252197265625
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-mail",
+            "rect": {
+              "x": 1429.24755859375,
+              "y": 136.5,
+              "width": 349.8798828125,
+              "height": 196,
+              "top": 136.5,
+              "right": 1779.12744140625,
+              "bottom": 332.5,
+              "left": 1429.24755859375
+            },
+            "title": {
+              "x": 1494.2252197265625,
+              "y": 183.5,
+              "width": 186.0142822265625,
+              "height": 30,
+              "top": 183.5,
+              "right": 1680.239501953125,
+              "bottom": 213.5,
+              "left": 1494.2252197265625
+            },
+            "stage": {
+              "x": 1494.2252197265625,
+              "y": 220.5,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 220.5,
+              "right": 1569.0120849609375,
+              "bottom": 244.5,
+              "left": 1494.2252197265625
+            },
+            "action": {
+              "x": 1494.2252197265625,
+              "y": 283.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 283.5,
+              "right": 1758.134765625,
+              "bottom": 315.5,
+              "left": 1494.2252197265625
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-translator",
+            "rect": {
+              "x": 938.412353515625,
+              "y": 309,
+              "width": 349.89404296875,
+              "height": 196,
+              "top": 309,
+              "right": 1288.306396484375,
+              "bottom": 505,
+              "left": 938.412353515625
+            },
+            "title": {
+              "x": 1003.3927001953125,
+              "y": 356,
+              "width": 253.923095703125,
+              "height": 30,
+              "top": 356,
+              "right": 1257.3157958984375,
+              "bottom": 386,
+              "left": 1003.3927001953125
+            },
+            "stage": {
+              "x": 1003.3927001953125,
+              "y": 393,
+              "width": 67.5888671875,
+              "height": 24,
+              "top": 393,
+              "right": 1070.9815673828125,
+              "bottom": 417,
+              "left": 1003.3927001953125
+            },
+            "action": {
+              "x": 1003.3927001953125,
+              "y": 456,
+              "width": 263.9200439453125,
+              "height": 32,
+              "top": 456,
+              "right": 1267.312744140625,
+              "bottom": 488,
+              "left": 1003.3927001953125
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "vaeloria",
+            "rect": {
+              "x": 1414.052978515625,
+              "y": 344,
+              "width": 349.89404296875,
+              "height": 196,
+              "top": 344,
+              "right": 1763.947021484375,
+              "bottom": 540,
+              "left": 1414.052978515625
+            },
+            "title": {
+              "x": 1479.0333251953125,
+              "y": 391,
+              "width": 93.8621826171875,
+              "height": 30,
+              "top": 391,
+              "right": 1572.8955078125,
+              "bottom": 421,
+              "left": 1479.0333251953125
+            },
+            "stage": {
+              "x": 1479.0333251953125,
+              "y": 428,
+              "width": 74.7899169921875,
+              "height": 24,
+              "top": 428,
+              "right": 1553.8232421875,
+              "bottom": 452,
+              "left": 1479.0333251953125
+            },
+            "action": {
+              "x": 1479.0333251953125,
+              "y": 491,
+              "width": 263.9200439453125,
+              "height": 32,
+              "top": 491,
+              "right": 1742.953369140625,
+              "bottom": 523,
+              "left": 1479.0333251953125
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-community",
+            "rect": {
+              "x": 923.2474975585938,
+              "y": 516.5,
+              "width": 349.88006591796875,
+              "height": 196,
+              "top": 516.5,
+              "right": 1273.1275634765625,
+              "bottom": 712.5,
+              "left": 923.2474975585938
+            },
+            "title": {
+              "x": 988.2252197265625,
+              "y": 563.5,
+              "width": 263.9095458984375,
+              "height": 60,
+              "top": 563.5,
+              "right": 1252.134765625,
+              "bottom": 623.5,
+              "left": 988.2252197265625
+            },
+            "stage": {
+              "x": 988.2252197265625,
+              "y": 630.5,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 630.5,
+              "right": 1063.0120849609375,
+              "bottom": 654.5,
+              "left": 988.2252197265625
+            },
+            "action": {
+              "x": 988.2252197265625,
+              "y": 663.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 663.5,
+              "right": 1252.134765625,
+              "bottom": 695.5,
+              "left": 988.2252197265625
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-tax",
+            "rect": {
+              "x": 1429.24755859375,
+              "y": 551.5,
+              "width": 349.8798828125,
+              "height": 196,
+              "top": 551.5,
+              "right": 1779.12744140625,
+              "bottom": 747.5,
+              "left": 1429.24755859375
+            },
+            "title": {
+              "x": 1494.2252197265625,
+              "y": 598.5,
+              "width": 175.18994140625,
+              "height": 30,
+              "top": 598.5,
+              "right": 1669.4151611328125,
+              "bottom": 628.5,
+              "left": 1494.2252197265625
+            },
+            "stage": {
+              "x": 1494.2252197265625,
+              "y": 635.5,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 635.5,
+              "right": 1569.0120849609375,
+              "bottom": 659.5,
+              "left": 1494.2252197265625
+            },
+            "action": {
+              "x": 1494.2252197265625,
+              "y": 698.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 698.5,
+              "right": 1758.134765625,
+              "bottom": 730.5,
+              "left": 1494.2252197265625
+            },
+            "fonts": [
+              24,
+              12,
+              14
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "1920: expand glikemia-premium with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0411376953125,
+        "right": 1757.27685546875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8090
+      }
+    },
+    {
+      "name": "1920: expand progresskit-mail with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.6109619140625,
+        "right": 1745.7843017578125,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8090
+      }
+    },
+    {
+      "name": "1920: expand progresskit-translator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.9408569335938,
+        "right": 1754.5980224609375,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8114
+      }
+    },
+    {
+      "name": "1920: expand vaeloria with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0414428710938,
+        "right": 1757.285888671875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8137
+      }
+    },
+    {
+      "name": "1920: expand progresskit-community with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0413208007812,
+        "right": 1757.2822265625,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8114
+      }
+    },
+    {
+      "name": "1920: expand progresskit-tax with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.9403686523438,
+        "right": 1754.584716796875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand adivara with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0410766601562,
+        "right": 1757.275634765625,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand gotrans360 with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.801025390625,
+        "right": 1750.861083984375,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand ignira with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.9403686523438,
+        "right": 1754.584716796875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand obserwator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0416870117188,
+        "right": 1757.29248046875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand kan-system with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 940.9407958984375,
+        "right": 1754.5968017578125,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand progresskit-systems with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.1111450195312,
+        "right": 1759.1478271484375,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand progresskit-analytics with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0413818359375,
+        "right": 1757.2840576171875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: expand progresskit-infrastructure with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 941.0415649414062,
+        "right": 1757.2889404296875,
+        "width": 1920,
+        "naturalBody": true,
+        "pageHeight": 8037
+      }
+    },
+    {
+      "name": "1920: one interactive project collection and explicit ecosystem roadmap",
+      "status": "FAIL",
+      "details": "Duplicate interactive catalog remains"
+    },
+    {
+      "name": "1920: refresh preserves selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "1440: first view and preserved catalog",
+      "status": "PASS"
+    },
+    {
+      "name": "1440: readable rail modules without overlap or circular decoration",
+      "status": "PASS",
+      "details": {
+        "rings": 0,
+        "modules": [
+          {
+            "id": "glikemia-premium",
+            "rect": {
+              "x": 626.8568725585938,
+              "y": 101.5,
+              "width": 349.88006591796875,
+              "height": 196,
+              "top": 101.5,
+              "right": 976.7369384765625,
+              "bottom": 297.5,
+              "left": 626.8568725585938
+            },
+            "title": {
+              "x": 691.8345947265625,
+              "y": 148.5,
+              "width": 210.708984375,
+              "height": 29.703125,
+              "top": 148.5,
+              "right": 902.5435791015625,
+              "bottom": 178.203125,
+              "left": 691.8345947265625
+            },
+            "stage": {
+              "x": 691.8345947265625,
+              "y": 185.203125,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 185.203125,
+              "right": 766.6214599609375,
+              "bottom": 209.203125,
+              "left": 691.8345947265625
+            },
+            "action": {
+              "x": 691.8345947265625,
+              "y": 248.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 248.5,
+              "right": 955.744140625,
+              "bottom": 280.5,
+              "left": 691.8345947265625
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-mail",
+            "rect": {
+              "x": 1044.0443115234375,
+              "y": 136.5,
+              "width": 349.8800048828125,
+              "height": 196,
+              "top": 136.5,
+              "right": 1393.92431640625,
+              "bottom": 332.5,
+              "left": 1044.0443115234375
+            },
+            "title": {
+              "x": 1109.0220947265625,
+              "y": 183.5,
+              "width": 184.0775146484375,
+              "height": 29.703125,
+              "top": 183.5,
+              "right": 1293.099609375,
+              "bottom": 213.203125,
+              "left": 1109.0220947265625
+            },
+            "stage": {
+              "x": 1109.0220947265625,
+              "y": 220.203125,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 220.203125,
+              "right": 1183.8089599609375,
+              "bottom": 244.203125,
+              "left": 1109.0220947265625
+            },
+            "action": {
+              "x": 1109.0220947265625,
+              "y": 283.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 283.5,
+              "right": 1372.931640625,
+              "bottom": 315.5,
+              "left": 1109.0220947265625
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-translator",
+            "rect": {
+              "x": 639.365478515625,
+              "y": 309,
+              "width": 349.89404296875,
+              "height": 196,
+              "top": 309,
+              "right": 989.259521484375,
+              "bottom": 505,
+              "left": 639.365478515625
+            },
+            "title": {
+              "x": 704.3458251953125,
+              "y": 356,
+              "width": 251.26763916015625,
+              "height": 29.703125,
+              "top": 356,
+              "right": 955.6134643554688,
+              "bottom": 385.703125,
+              "left": 704.3458251953125
+            },
+            "stage": {
+              "x": 704.3458251953125,
+              "y": 392.703125,
+              "width": 67.5888671875,
+              "height": 24,
+              "top": 392.703125,
+              "right": 771.9346923828125,
+              "bottom": 416.703125,
+              "left": 704.3458251953125
+            },
+            "action": {
+              "x": 704.3458251953125,
+              "y": 456,
+              "width": 263.9200439453125,
+              "height": 32,
+              "top": 456,
+              "right": 968.265869140625,
+              "bottom": 488,
+              "left": 704.3458251953125
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "vaeloria",
+            "rect": {
+              "x": 1031.521728515625,
+              "y": 344,
+              "width": 349.89404296875,
+              "height": 196,
+              "top": 344,
+              "right": 1381.415771484375,
+              "bottom": 540,
+              "left": 1031.521728515625
+            },
+            "title": {
+              "x": 1096.5020751953125,
+              "y": 391,
+              "width": 92.8936767578125,
+              "height": 29.703125,
+              "top": 391,
+              "right": 1189.395751953125,
+              "bottom": 420.703125,
+              "left": 1096.5020751953125
+            },
+            "stage": {
+              "x": 1096.5020751953125,
+              "y": 427.703125,
+              "width": 74.7899169921875,
+              "height": 24,
+              "top": 427.703125,
+              "right": 1171.2919921875,
+              "bottom": 451.703125,
+              "left": 1096.5020751953125
+            },
+            "action": {
+              "x": 1096.5020751953125,
+              "y": 491,
+              "width": 263.9200439453125,
+              "height": 32,
+              "top": 491,
+              "right": 1360.422119140625,
+              "bottom": 523,
+              "left": 1096.5020751953125
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-community",
+            "rect": {
+              "x": 626.8568725585938,
+              "y": 516.5,
+              "width": 349.88006591796875,
+              "height": 196,
+              "top": 516.5,
+              "right": 976.7369384765625,
+              "bottom": 712.5,
+              "left": 626.8568725585938
+            },
+            "title": {
+              "x": 691.8345947265625,
+              "y": 563.5,
+              "width": 263.9095458984375,
+              "height": 59.40625,
+              "top": 563.5,
+              "right": 955.744140625,
+              "bottom": 622.90625,
+              "left": 691.8345947265625
+            },
+            "stage": {
+              "x": 691.8345947265625,
+              "y": 629.90625,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 629.90625,
+              "right": 766.6214599609375,
+              "bottom": 653.90625,
+              "left": 691.8345947265625
+            },
+            "action": {
+              "x": 691.8345947265625,
+              "y": 663.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 663.5,
+              "right": 955.744140625,
+              "bottom": 695.5,
+              "left": 691.8345947265625
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          },
+          {
+            "id": "progresskit-tax",
+            "rect": {
+              "x": 1044.0443115234375,
+              "y": 551.5,
+              "width": 349.8800048828125,
+              "height": 196,
+              "top": 551.5,
+              "right": 1393.92431640625,
+              "bottom": 747.5,
+              "left": 1044.0443115234375
+            },
+            "title": {
+              "x": 1109.0220947265625,
+              "y": 598.5,
+              "width": 173.3624267578125,
+              "height": 29.703125,
+              "top": 598.5,
+              "right": 1282.384521484375,
+              "bottom": 628.203125,
+              "left": 1109.0220947265625
+            },
+            "stage": {
+              "x": 1109.0220947265625,
+              "y": 635.203125,
+              "width": 74.786865234375,
+              "height": 24,
+              "top": 635.203125,
+              "right": 1183.8089599609375,
+              "bottom": 659.203125,
+              "left": 1109.0220947265625
+            },
+            "action": {
+              "x": 1109.0220947265625,
+              "y": 698.5,
+              "width": 263.9095458984375,
+              "height": 32,
+              "top": 698.5,
+              "right": 1372.931640625,
+              "bottom": 730.5,
+              "left": 1109.0220947265625
+            },
+            "fonts": [
+              23.76,
+              12,
+              14
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "1440: expand glikemia-premium with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.8800659179688,
+        "right": 1394.292724609375,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7125
+      }
+    },
+    {
+      "name": "1440: expand progresskit-mail with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.84619140625,
+        "right": 1396.6104736328125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7125
+      }
+    },
+    {
+      "name": "1440: expand progresskit-translator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.84619140625,
+        "right": 1396.6114501953125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7148
+      }
+    },
+    {
+      "name": "1440: expand vaeloria with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.9912719726562,
+        "right": 1386.687255859375,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7171
+      }
+    },
+    {
+      "name": "1440: expand progresskit-community with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.8803100585938,
+        "right": 1394.276611328125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7148
+      }
+    },
+    {
+      "name": "1440: expand progresskit-tax with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.9273681640625,
+        "right": 1391.0567626953125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand adivara with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.9910888671875,
+        "right": 1386.702392578125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand gotrans360 with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.927734375,
+        "right": 1391.03564453125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand ignira with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.9273071289062,
+        "right": 1391.06494140625,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand obserwator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.8226318359375,
+        "right": 1398.2216796875,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand kan-system with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.8804321289062,
+        "right": 1394.2706298828125,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand progresskit-systems with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.9275512695312,
+        "right": 1391.0478515625,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand progresskit-analytics with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.84619140625,
+        "right": 1396.61279296875,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: expand progresskit-infrastructure with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 620.8462524414062,
+        "right": 1396.6083984375,
+        "width": 1440,
+        "naturalBody": true,
+        "pageHeight": 7072
+      }
+    },
+    {
+      "name": "1440: one interactive project collection and explicit ecosystem roadmap",
+      "status": "PASS"
+    },
+    {
+      "name": "1440: refresh preserves selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "390: first view and preserved catalog",
+      "status": "PASS"
+    },
+    {
+      "name": "390: readable rail modules without overlap or circular decoration",
+      "status": "PASS",
+      "details": {
+        "rings": 0,
+        "modules": [
+          {
+            "id": "glikemia-premium",
+            "rect": {
+              "x": 20,
+              "y": 364.875,
+              "width": 350,
+              "height": 194,
+              "top": 364.875,
+              "right": 370,
+              "bottom": 558.875,
+              "left": 20
+            },
+            "title": {
+              "x": 86,
+              "y": 411.875,
+              "width": 195.265625,
+              "height": 27.5,
+              "top": 411.875,
+              "right": 281.265625,
+              "bottom": 439.375,
+              "left": 86
+            },
+            "stage": {
+              "x": 86,
+              "y": 446.375,
+              "width": 74.8125,
+              "height": 24,
+              "top": 446.375,
+              "right": 160.8125,
+              "bottom": 470.375,
+              "left": 86
+            },
+            "action": {
+              "x": 86,
+              "y": 505.875,
+              "width": 262,
+              "height": 32,
+              "top": 505.875,
+              "right": 348,
+              "bottom": 537.875,
+              "left": 86
+            },
+            "fonts": [
+              22,
+              12,
+              14
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "390: expand glikemia-premium with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1201171875,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10991
+      }
+    },
+    {
+      "name": "390: expand progresskit-mail with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1202392578125,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 11041
+      }
+    },
+    {
+      "name": "390: expand progresskit-translator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.18865966796875,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 11020
+      }
+    },
+    {
+      "name": "390: expand vaeloria with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.07110595703125,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 11015
+      }
+    },
+    {
+      "name": "390: expand progresskit-community with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.12030029296875,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 11040
+      }
+    },
+    {
+      "name": "390: expand progresskit-tax with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.0372314453125,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10723
+      }
+    },
+    {
+      "name": "390: expand adivara with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.0371398925781,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10687
+      }
+    },
+    {
+      "name": "390: expand gotrans360 with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.0713195800781,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10687
+      }
+    },
+    {
+      "name": "390: expand ignira with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.12042236328125,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10559
+      }
+    },
+    {
+      "name": "390: expand obserwator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1203308105469,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10534
+      }
+    },
+    {
+      "name": "390: expand kan-system with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1204833984375,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10529
+      }
+    },
+    {
+      "name": "390: expand progresskit-systems with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.12042236328125,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10595
+      }
+    },
+    {
+      "name": "390: expand progresskit-analytics with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1202087402344,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10559
+      }
+    },
+    {
+      "name": "390: expand progresskit-infrastructure with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 370.1203308105469,
+        "width": 390,
+        "naturalBody": true,
+        "pageHeight": 10567
+      }
+    },
+    {
+      "name": "390: one interactive project collection and explicit ecosystem roadmap",
+      "status": "PASS"
+    },
+    {
+      "name": "390: touch navigation and page scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "390: refresh preserves selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "320: first view and preserved catalog",
+      "status": "PASS"
+    },
+    {
+      "name": "320: readable rail modules without overlap or circular decoration",
+      "status": "PASS",
+      "details": {
+        "rings": 0,
+        "modules": [
+          {
+            "id": "glikemia-premium",
+            "rect": {
+              "x": 20,
+              "y": 354.375,
+              "width": 280,
+              "height": 194,
+              "top": 354.375,
+              "right": 300,
+              "bottom": 548.375,
+              "left": 20
+            },
+            "title": {
+              "x": 86,
+              "y": 401.375,
+              "width": 192,
+              "height": 55,
+              "top": 401.375,
+              "right": 278,
+              "bottom": 456.375,
+              "left": 86
+            },
+            "stage": {
+              "x": 86,
+              "y": 463.375,
+              "width": 74.8125,
+              "height": 24,
+              "top": 463.375,
+              "right": 160.8125,
+              "bottom": 487.375,
+              "left": 86
+            },
+            "action": {
+              "x": 86,
+              "y": 495.375,
+              "width": 192,
+              "height": 32,
+              "top": 495.375,
+              "right": 278,
+              "bottom": 527.375,
+              "left": 86
+            },
+            "fonts": [
+              22,
+              12,
+              14
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "320: expand glikemia-premium with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.0570983886719,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11993
+      }
+    },
+    {
+      "name": "320: expand progresskit-mail with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.02978515625,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 12112
+      }
+    },
+    {
+      "name": "320: expand progresskit-translator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.0962219238281,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 12083
+      }
+    },
+    {
+      "name": "320: expand vaeloria with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.05706787109375,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 12050
+      }
+    },
+    {
+      "name": "320: expand progresskit-community with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.09625244140625,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 12102
+      }
+    },
+    {
+      "name": "320: expand progresskit-tax with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.15069580078125,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11770
+      }
+    },
+    {
+      "name": "320: expand adivara with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.0570068359375,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11734
+      }
+    },
+    {
+      "name": "320: expand gotrans360 with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.2247619628906,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11698
+      }
+    },
+    {
+      "name": "320: expand ignira with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.2242736816406,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11554
+      }
+    },
+    {
+      "name": "320: expand obserwator with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.1506042480469,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11526
+      }
+    },
+    {
+      "name": "320: expand kan-system with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.2244567871094,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11504
+      }
+    },
+    {
+      "name": "320: expand progresskit-systems with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.3228759765625,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11590
+      }
+    },
+    {
+      "name": "320: expand progresskit-analytics with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.0962829589844,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11590
+      }
+    },
+    {
+      "name": "320: expand progresskit-infrastructure with natural page scroll",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "count": 1,
+        "bodyOverflow": "visible",
+        "panelOverflow": "visible",
+        "left": 20,
+        "right": 300.0962219238281,
+        "width": 320,
+        "naturalBody": true,
+        "pageHeight": 11534
+      }
+    },
+    {
+      "name": "320: one interactive project collection and explicit ecosystem roadmap",
+      "status": "PASS"
+    },
+    {
+      "name": "320: touch navigation and page scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "320: refresh preserves selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion and keyboard",
+      "status": "PASS"
+    },
+    {
+      "name": "Contact brief stays local and downloads actual text",
+      "status": "PASS"
+    },
+    {
+      "name": "Catalog handles malicious search text without HTML execution",
+      "status": "PASS"
+    },
+    {
+      "name": "Repeated expansion retains bounded DOM and listeners",
+      "status": "PASS"
+    },
+    {
+      "name": "No console errors or failing resources",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "screenshots": [
+    "1920-first.png",
+    "1920-glikemia-premium-expanded.png",
+    "1920-progresskit-mail-expanded.png",
+    "1920-progresskit-translator-expanded.png",
+    "1920-vaeloria-expanded.png",
+    "1920-progresskit-community-expanded.png",
+    "1920-progresskit-tax-expanded.png",
+    "1920-uslugi.png",
+    "1920-kontakt.png",
+    "1920-ekosystem.png",
+    "1920-wydania.png",
+    "1440-first.png",
+    "1440-glikemia-premium-expanded.png",
+    "1440-progresskit-mail-expanded.png",
+    "1440-progresskit-translator-expanded.png",
+    "1440-vaeloria-expanded.png",
+    "1440-progresskit-community-expanded.png",
+    "1440-progresskit-tax-expanded.png",
+    "1440-uslugi.png",
+    "1440-kontakt.png",
+    "1440-ekosystem.png",
+    "1440-wydania.png",
+    "390-first.png",
+    "390-glikemia-premium-expanded.png",
+    "390-glikemia-premium-actions-after-scroll.png",
+    "390-progresskit-mail-expanded.png",
+    "390-progresskit-mail-actions-after-scroll.png",
+    "390-progresskit-translator-expanded.png",
+    "390-progresskit-translator-actions-after-scroll.png",
+    "390-vaeloria-expanded.png",
+    "390-vaeloria-actions-after-scroll.png",
+    "390-progresskit-community-expanded.png",
+    "390-progresskit-community-actions-after-scroll.png",
+    "390-progresskit-tax-expanded.png",
+    "390-progresskit-tax-actions-after-scroll.png",
+    "390-uslugi.png",
+    "390-kontakt.png",
+    "390-ekosystem.png",
+    "390-wydania.png",
+    "390-navigation.png",
+    "320-first.png",
+    "320-glikemia-premium-expanded.png",
+    "320-glikemia-premium-actions-after-scroll.png",
+    "320-progresskit-mail-expanded.png",
+    "320-progresskit-mail-actions-after-scroll.png",
+    "320-progresskit-translator-expanded.png",
+    "320-progresskit-translator-actions-after-scroll.png",
+    "320-vaeloria-expanded.png",
+    "320-vaeloria-actions-after-scroll.png",
+    "320-progresskit-community-expanded.png",
+    "320-progresskit-community-actions-after-scroll.png",
+    "320-progresskit-tax-expanded.png",
+    "320-progresskit-tax-actions-after-scroll.png",
+    "320-uslugi.png",
+    "320-kontakt.png",
+    "320-ekosystem.png",
+    "320-wydania.png",
+    "320-navigation.png"
+  ],
+  "measurements": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "navigation": [
+        {
+          "duration": 166.19999999552965,
+          "domContentLoaded": 156,
+          "transferSize": 76360
+        }
+      ],
+      "resources": 26,
+      "domNodes": 1026,
+      "heap": {
+        "used": 4638414,
+        "limit": 4395630592
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "navigation": [
+        {
+          "duration": 134.10000000149012,
+          "domContentLoaded": 110,
+          "transferSize": 76360
+        }
+      ],
+      "resources": 26,
+      "domNodes": 1026,
+      "heap": {
+        "used": 4360015,
+        "limit": 4395630592
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "navigation": [
+        {
+          "duration": 128.70000000298023,
+          "domContentLoaded": 100.10000000149012,
+          "transferSize": 76360
+        }
+      ],
+      "resources": 27,
+      "domNodes": 1026,
+      "heap": {
+        "used": 3255995,
+        "limit": 4395630592
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "navigation": [
+        {
+          "duration": 194.29999999701977,
+          "domContentLoaded": 180.60000000149012,
+          "transferSize": 76360
+        }
+      ],
+      "resources": 26,
+      "domNodes": 1026,
+      "heap": {
+        "used": 3147199,
+        "limit": 4395630592
+      }
+    },
+    {
+      "name": "Desktop CDP sample, not physical phone/FPS",
+      "idleSampleSeconds": 1.0038730000014766,
+      "taskSeconds": 0.0004180000000000017,
+      "scriptSeconds": 0,
+      "domCold": {
+        "documents": 1,
+        "nodes": 1872,
+        "jsEventListeners": 121
+      },
+      "domBefore": {
+        "documents": 1,
+        "nodes": 1932,
+        "jsEventListeners": 134
+      },
+      "domAfter": {
+        "documents": 1,
+        "nodes": 1932,
+        "jsEventListeners": 134
+      },
+      "warmupCycles": 1,
+      "cycles": 10
+    }
+  ],
+  "browser": "155.0.8059.39",
+  "recording": {
+    "frames": 74,
+    "status": "PASS",
+    "error": ""
+  },
+  "desktopRecording": {
+    "frames": 161,
+    "status": "PASS",
+    "error": "",
+    "projects": [
+      "progresskit-tax",
+      "progresskit-translator",
+      "progresskit-mail",
+      "glikemia-premium",
+      "vaeloria",
+      "progresskit-community"
+    ]
+  },
+  "finishedAt": "2026-10-22T20:24:27.024Z",
+  "totals": {
+    "PASS": 78,
+    "FAIL": 1
+  }
+}

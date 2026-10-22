@@ -1,0 +1,61 @@
+{
+  "recordedUtc": "2026-10-22T20:29:30.200426+00:00",
+  "networkUsed": false,
+  "scannerEnvironment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "SEMGREP_SEND_METRICS": "off",
+    "SEMGREP_ENABLE_VERSION_CHECK": "0",
+    "OTEL_SDK_DISABLED": "true",
+    "settingsAndCache": "/tmp/progresskit-visual-acceptance-v2-20261022/security only"
+  },
+  "sastArgv": [
+    "semgrep",
+    "scan",
+    "--metrics=off",
+    "--disable-version-check",
+    "--strict",
+    "--error",
+    "--config",
+    "sast-rules.yml",
+    "--json",
+    "--output",
+    "sast.json",
+    "analytics",
+    "assets",
+    "scripts",
+    "glikemia-premium"
+  ],
+  "gitleaksHistoryArgv": [
+    "gitleaks",
+    "git",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--log-opts=--all",
+    "--report-path",
+    "gitleaks-history.json",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems"
+  ],
+  "gitleaksWorktreeArgv": [
+    "gitleaks",
+    "dir",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--report-path",
+    "gitleaks-worktree.json",
+    "temporary copy of tracked/nonignored UTF-8 text files"
+  ],
+  "gitleaksHistoryCommits": 150,
+  "worktreeTextFiles": 322,
+  "scaCommandReference": "offline-sca-summary.json command: local pinned scanner image, --network none, offline-scan, skip-db-update; no downloads/uploads",
+  "apkVerifier": [
+    "apksigner",
+    "verify",
+    "--verbose",
+    "--print-certs",
+    "downloads/glikemia-premium.apk"
+  ]
+}

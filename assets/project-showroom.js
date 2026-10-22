@@ -38,6 +38,21 @@ const ProjectShowroom = {
       visible:length > 0 && edge > 0,
     };
   },
+  mechanism(offset, length) {
+    // Six staggered drawers share two straight guides. During a manual step
+    // they retract, change sockets while concealed, then slide out again.
+    // No module travels around a circle or crosses another readable face.
+    const phase = length > 0 ? ((offset % length) + length) % length : 0;
+    const nearest = Math.round(phase);
+    const slot = this.wrap(nearest, length);
+    const travel = phase - nearest;
+    const sockets = [[-1,-.95],[1,-.81],[-.94,-.12],[.94,.02],[-1,.71],[1,.85]];
+    const socket = sockets[slot] || [0,0];
+    const exposure = Math.max(0, 1 - 2 * Math.abs(travel));
+    return {x:socket[0] + travel * .08, y:socket[1], depth:1,
+      scale:1 - Math.abs(travel) * .08, angle:socket[0] * -1.5,
+      light:1, opacity:exposure, visible:length > 0 && slot < Math.min(6,length)};
+  },
   select(projects, category = '', id = '') {
     const normalized = projects.some(project => project.category === category) ? category : '';
     const items = projects.filter(project => !normalized || project.category === normalized);
@@ -106,7 +121,6 @@ if (typeof document !== 'undefined') {
     let sliceTimer;
     let sliceReturnTarget;
     let sliceHoverBlocked = false;
-    let sliceOrigin;
     let state = ProjectShowroom.select(projects);
     let previewSnapshot;
     let openId = '';
@@ -143,7 +157,8 @@ if (typeof document !== 'undefined') {
         const index = indexes.get(card.dataset.projectId);
         const included = index !== undefined;
         const offset = included ? ProjectShowroom.relative(index, displayPhase, state.items.length) : 99;
-        const point = ProjectShowroom.orbit(offset, state.items.length, inlineSlices ? 6 : 5);
+        const point = inlineSlices ? ProjectShowroom.mechanism(offset, state.items.length)
+          : ProjectShowroom.orbit(offset, state.items.length);
         const selected = included && index === state.index;
         const shown = included && (narrowLayout.matches ? selected : point.visible);
         card.hidden = false;
@@ -211,9 +226,7 @@ if (typeof document !== 'undefined') {
       if (narrowLayout.matches || collection !== geometryCollection || !allowMotion || reducedMotion.matches || document.hidden || !orbitInView) {
         geometryCollection = collection;
         lastIndex = state.index;
-        // The selected module sits at the top of the six-sided wheel. The
-        // initial window therefore presents the six existing product modules.
-        targetPhase = state.index + (inlineSlices && state.items.length >= 6 ? 3 : 0);
+        targetPhase = state.index;
         finishPhase();
         return;
       }
@@ -268,12 +281,12 @@ if (typeof document !== 'undefined') {
         viewport.style.removeProperty('--slice-stage-top');
         return;
       }
-      // Keep the source anchor, but let the real module's natural height extend
-      // the track and page instead of fitting its text into a screen-sized box.
+      // The drawer unfolds into the full reading surface; its natural height
+      // extends the page. The closed mechanism reserves its original footprint.
       const bounds = viewport.getBoundingClientRect();
-      const width = Math.min(620, bounds.width - 24);
-      const left = Math.max(12, Math.min(bounds.width - width - 12, sliceOrigin.x * bounds.width - width / 2));
-      viewport.style.setProperty('--slice-stage-top', `${sliceOrigin.top.toFixed(2)}px`);
+      const width = Math.min(820, bounds.width - 32);
+      const left = (bounds.width - width) / 2;
+      viewport.style.setProperty('--slice-stage-top', '16.00px');
       for (const [name, value] of Object.entries({left, width})) {
         sliceCard.style.setProperty(`--slice-${name}`, `${value.toFixed(2)}px`);
       }
@@ -309,17 +322,15 @@ if (typeof document !== 'undefined') {
       cancelOpen();
       clearTimeout(sliceTimer);
       // Freeze the current pose, including a partially completed manual turn.
-      // Enlarging the real module never chases the cursor around the orbit.
+      // Enlarging the real module never chases the cursor during a drawer step.
       if (phaseFrame) cancelAnimationFrame(phaseFrame);
       phaseFrame = 0;
       phaseEnds = 0;
       stopGesture();
       const before = card.getBoundingClientRect();
-      const bounds = viewport.getBoundingClientRect();
-      sliceOrigin = {x:(before.left + before.width / 2 - bounds.left) / bounds.width,
-        top:Math.max(12, before.top - bounds.top)};
       sliceReturnTarget = trigger || viewport;
       sliceCard = card;
+      state.index = state.items.findIndex(project => project.id === id);
       openId = id;
       panel.hidden = false;
       card.classList.add('is-slice-expanded');
@@ -328,7 +339,7 @@ if (typeof document !== 'undefined') {
       clearTimeout(movementTimer);
       root.classList.remove('is-orbit-moving');
       placeSlice();
-      paintGeometry();
+      render(false, false);
       syncUrl();
       panel.querySelector('.project-slice__body').scrollTop = 0;
       if (!reducedMotion.matches && typeof card.animate === 'function') {
@@ -601,7 +612,7 @@ if (typeof document !== 'undefined') {
         // that same module the sole foreground module when narrowing the page.
         if (sliceCard) state.index = state.items.findIndex(project => project.id === sliceCard.dataset.projectId);
         lastIndex = state.index;
-        targetPhase = state.index + (!narrowLayout.matches && state.items.length >= 6 ? 3 : 0);
+        targetPhase = state.index;
         displayPhase = targetPhase;
         render(false, false);
         placeSlice();

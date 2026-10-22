@@ -1,0 +1,815 @@
+{
+  "environment": "local loopback preview; isolated test database; not production",
+  "sourceHead": "c515f3fcd25de29ee3c57bff1b26c777a506cac1",
+  "publicFiles": 61,
+  "base": "http://127.0.0.1:8100",
+  "checks": [
+    {
+      "name": "public bytes 404.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 4544,
+        "actualSha256": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6",
+        "expectedSha256": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6"
+      }
+    },
+    {
+      "name": "public bytes assets/brand-atmosphere.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 2497,
+        "actualSha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+        "expectedSha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/hero-landscape-v5.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 201050,
+        "actualSha256": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad",
+        "expectedSha256": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/monument-font-license.txt",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 3857,
+        "actualSha256": "e81d9dced49fea2a7d576cbea283873de58563c5d488f954deb282843c3ea79c",
+        "expectedSha256": "e81d9dced49fea2a7d576cbea283873de58563c5d488f954deb282843c3ea79c"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/monument-serif-bold.ttf",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 331820,
+        "actualSha256": "3a48e198db686dcea39b3116c582b66427c2bc41c44409f19e5af7e0da446190",
+        "expectedSha256": "3a48e198db686dcea39b3116c582b66427c2bc41c44409f19e5af7e0da446190"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/motto-serif-italic.ttf",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 346544,
+        "actualSha256": "1d7476da447f9455a47c41adfd6ac2b1fc1b65e660f3ea4bf36128506c7e094c",
+        "expectedSha256": "1d7476da447f9455a47c41adfd6ac2b1fc1b65e660f3ea4bf36128506c7e094c"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/progressorkit-primary.png",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 1189068,
+        "actualSha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532",
+        "expectedSha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/progressorkit-stamp.png",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 1202603,
+        "actualSha256": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+        "expectedSha256": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+      }
+    },
+    {
+      "name": "public bytes assets/brand/stone-material.svg",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 2692,
+        "actualSha256": "f3d99545fc29a467f2f55decd89f71bfcc52dd33c1c156f33827103ce74ea938",
+        "expectedSha256": "f3d99545fc29a467f2f55decd89f71bfcc52dd33c1c156f33827103ce74ea938"
+      }
+    },
+    {
+      "name": "public bytes assets/delivery.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 5824,
+        "actualSha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+        "expectedSha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b"
+      }
+    },
+    {
+      "name": "public bytes assets/engineering-exhibit.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 13143,
+        "actualSha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+        "expectedSha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9"
+      }
+    },
+    {
+      "name": "public bytes assets/engineering-exhibit.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 4528,
+        "actualSha256": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+        "expectedSha256": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688"
+      }
+    },
+    {
+      "name": "public bytes assets/hero-monument.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9066,
+        "actualSha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+        "expectedSha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52"
+      }
+    },
+    {
+      "name": "public bytes assets/hero-space.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 3314,
+        "actualSha256": "97ca07c30ea17aeed64f879a66ea0111f434b1a32052ea9d8526f79d8c55299b",
+        "expectedSha256": "97ca07c30ea17aeed64f879a66ea0111f434b1a32052ea9d8526f79d8c55299b"
+      }
+    },
+    {
+      "name": "public bytes assets/hero.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 80,
+        "actualSha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+        "expectedSha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc"
+      }
+    },
+    {
+      "name": "public bytes assets/home-atmosphere.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 19439,
+        "actualSha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+        "expectedSha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70"
+      }
+    },
+    {
+      "name": "public bytes assets/progresskit-product-shell.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9694,
+        "actualSha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+        "expectedSha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557"
+      }
+    },
+    {
+      "name": "public bytes assets/project-hologram.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9285,
+        "actualSha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+        "expectedSha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16"
+      }
+    },
+    {
+      "name": "public bytes assets/project-hologram.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 14251,
+        "actualSha256": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+        "expectedSha256": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae"
+      }
+    },
+    {
+      "name": "public bytes assets/project-mechanism.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 6375,
+        "actualSha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+        "expectedSha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1"
+      }
+    },
+    {
+      "name": "public bytes assets/project-showroom.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 19060,
+        "actualSha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+        "expectedSha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6"
+      }
+    },
+    {
+      "name": "public bytes assets/project-showroom.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 34281,
+        "actualSha256": "a56746dd59046bcaa00fb3693fc3ada0d8d313333a462c1a73a7d1551c86a98f",
+        "expectedSha256": "a56746dd59046bcaa00fb3693fc3ada0d8d313333a462c1a73a7d1551c86a98f"
+      }
+    },
+    {
+      "name": "public bytes assets/project-slices.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 32354,
+        "actualSha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+        "expectedSha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-language.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 53726,
+        "actualSha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c",
+        "expectedSha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-measurement.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 49308,
+        "actualSha256": "710f95be5c4ad7f729020b666119d2c73492ec0227c95eae2e95a229404f0a58",
+        "expectedSha256": "710f95be5c4ad7f729020b666119d2c73492ec0227c95eae2e95a229404f0a58"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-qr.png",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 720,
+        "actualSha256": "b9b96cdd7792d85833cec2946f7d4ec99a1fa255b878f67d003151236360007e",
+        "expectedSha256": "b9b96cdd7792d85833cec2946f7d4ec99a1fa255b878f67d003151236360007e"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/mail/mail-delete-redacted.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 24150,
+        "actualSha256": "e06c9fa6cedebd5d3268be0c871f95bd300a36ccba066cba61649b186a6fb261",
+        "expectedSha256": "e06c9fa6cedebd5d3268be0c871f95bd300a36ccba066cba61649b186a6fb261"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/mail/mail-splash.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 19958,
+        "actualSha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1",
+        "expectedSha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-community/community-desktop.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 436464,
+        "actualSha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c",
+        "expectedSha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-community/community-mobile.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 108532,
+        "actualSha256": "05b969cfdeee4cf7306d198b2795ae508bab7dcc89bf988023167c1474e36462",
+        "expectedSha256": "05b969cfdeee4cf7306d198b2795ae508bab7dcc89bf988023167c1474e36462"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-translator/translator-start.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 653132,
+        "actualSha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78",
+        "expectedSha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/vaeloria/earth-exploration.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 379354,
+        "actualSha256": "8ac36043d9d0e66dec147b2aa974c5149ab4850a5df1e3938cd6d8fb58e29894",
+        "expectedSha256": "8ac36043d9d0e66dec147b2aa974c5149ab4850a5df1e3938cd6d8fb58e29894"
+      }
+    },
+    {
+      "name": "public bytes assets/projects/vaeloria/tactical-battle.webp",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 241266,
+        "actualSha256": "0e51c68bdecf5d89ae62e5e418343f566d62539a56707a0f72b8a49a791dc187",
+        "expectedSha256": "0e51c68bdecf5d89ae62e5e418343f566d62539a56707a0f72b8a49a791dc187"
+      }
+    },
+    {
+      "name": "public bytes assets/site-v4.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 35600,
+        "actualSha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+        "expectedSha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d"
+      }
+    },
+    {
+      "name": "public bytes assets/site-v5.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 27419,
+        "actualSha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+        "expectedSha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83"
+      }
+    },
+    {
+      "name": "public bytes assets/site-v5.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 21480,
+        "actualSha256": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+        "expectedSha256": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec"
+      }
+    },
+    {
+      "name": "public bytes assets/visual-acceptance.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 19145,
+        "actualSha256": "b05b14a4612fcd5967d31d9c32f275fc92d18acd699eb0e747fc6ff3b7474551",
+        "expectedSha256": "b05b14a4612fcd5967d31d9c32f275fc92d18acd699eb0e747fc6ff3b7474551"
+      }
+    },
+    {
+      "name": "public bytes glikemia-premium/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 10366,
+        "actualSha256": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9",
+        "expectedSha256": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9"
+      }
+    },
+    {
+      "name": "public bytes glikemia-premium/product.css",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 1817,
+        "actualSha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+        "expectedSha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f"
+      }
+    },
+    {
+      "name": "public bytes glikemia-premium/product.js",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 3772,
+        "actualSha256": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+        "expectedSha256": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5"
+      }
+    },
+    {
+      "name": "public bytes index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 93480,
+        "actualSha256": "9b5b379309c2aa0dd918a887669dde503b7691eb836339f1d7d3c6e46a625665",
+        "expectedSha256": "9b5b379309c2aa0dd918a887669dde503b7691eb836339f1d7d3c6e46a625665"
+      }
+    },
+    {
+      "name": "public bytes og-progresskit.jpg",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 120634,
+        "actualSha256": "4a2bebfed7c8e177f1c5f119dce3f7121140b0d0f583cf180a941a91a68a34dd",
+        "expectedSha256": "4a2bebfed7c8e177f1c5f119dce3f7121140b0d0f583cf180a941a91a68a34dd"
+      }
+    },
+    {
+      "name": "public bytes progresskit-mail/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 14519,
+        "actualSha256": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d",
+        "expectedSha256": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d"
+      }
+    },
+    {
+      "name": "public bytes projekty/adivara/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 11035,
+        "actualSha256": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d",
+        "expectedSha256": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d"
+      }
+    },
+    {
+      "name": "public bytes projekty/glikemia-premium/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 13180,
+        "actualSha256": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c",
+        "expectedSha256": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c"
+      }
+    },
+    {
+      "name": "public bytes projekty/gotrans360/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 11422,
+        "actualSha256": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d",
+        "expectedSha256": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d"
+      }
+    },
+    {
+      "name": "public bytes projekty/ignira/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 10390,
+        "actualSha256": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82",
+        "expectedSha256": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82"
+      }
+    },
+    {
+      "name": "public bytes projekty/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 47445,
+        "actualSha256": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e",
+        "expectedSha256": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e"
+      }
+    },
+    {
+      "name": "public bytes projekty/kan-system/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9803,
+        "actualSha256": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604",
+        "expectedSha256": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604"
+      }
+    },
+    {
+      "name": "public bytes projekty/obserwator/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 10388,
+        "actualSha256": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d",
+        "expectedSha256": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-analytics/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9130,
+        "actualSha256": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce",
+        "expectedSha256": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-community/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 13929,
+        "actualSha256": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe",
+        "expectedSha256": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-infrastructure/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9139,
+        "actualSha256": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c",
+        "expectedSha256": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-mail/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 14681,
+        "actualSha256": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c",
+        "expectedSha256": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-systems/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 9820,
+        "actualSha256": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6",
+        "expectedSha256": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-tax/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 12333,
+        "actualSha256": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509",
+        "expectedSha256": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509"
+      }
+    },
+    {
+      "name": "public bytes projekty/progresskit-translator/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 12366,
+        "actualSha256": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5",
+        "expectedSha256": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5"
+      }
+    },
+    {
+      "name": "public bytes projekty/vaeloria/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 13885,
+        "actualSha256": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18",
+        "expectedSha256": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18"
+      }
+    },
+    {
+      "name": "public bytes prywatnosc/index.html",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 6769,
+        "actualSha256": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c",
+        "expectedSha256": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c"
+      }
+    },
+    {
+      "name": "public bytes robots.txt",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 149,
+        "actualSha256": "3f6a263eac95bcbd9ccb40ec2c8df6d036ddd0e7787fe6c41f5a1fbc7ddfe188",
+        "expectedSha256": "3f6a263eac95bcbd9ccb40ec2c8df6d036ddd0e7787fe6c41f5a1fbc7ddfe188"
+      }
+    },
+    {
+      "name": "public bytes sitemap.xml",
+      "status": "PASS",
+      "details": {
+        "httpStatus": 200,
+        "bytes": 1358,
+        "actualSha256": "f46973b8f5e46cb7d5f60765e790bc13d84ef36b6fce367a1332c35817cf0d30",
+        "expectedSha256": "f46973b8f5e46cb7d5f60765e790bc13d84ef36b6fce367a1332c35817cf0d30"
+      }
+    },
+    {
+      "name": "private or missing /.git/config",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /analytics/app.py",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /catalog/projects.json",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /.env",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /templates/site.html",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /docs/PROGRESSKIT_V5_MASTER_REPORT.md",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /summary",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /health",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /api/unknown",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /projekty/unknown/",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "directory glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/adivara/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/gotrans360/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/ignira/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/kan-system/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/obserwator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-analytics/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-community/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-infrastructure/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-systems/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-tax/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-translator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/vaeloria/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory prywatnosc/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "security headers",
+      "status": "PASS",
+      "details": {
+        "date": "Thu, 22 Oct 2026 20:21:01 GMT",
+        "server": "uvicorn",
+        "content-type": "text/html; charset=utf-8",
+        "accept-ranges": "bytes",
+        "content-length": "93480",
+        "last-modified": "Thu, 22 Oct 2026 20:17:57 GMT",
+        "etag": "\"025d5c462dc68f74e8cc6bc9421ab029\"",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "content-security-policy": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "Connection": "close"
+      }
+    },
+    {
+      "name": "APK range206 without count",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "APK HEAD without count",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "name": "APK prefetch no count",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "real APK complete bytes/hash",
+      "status": "PASS",
+      "details": {
+        "bytes": 80235954,
+        "sha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b"
+      }
+    },
+    {
+      "name": "real APK counter increments exactly once",
+      "status": "PASS",
+      "details": {
+        "before": 0,
+        "after": 1
+      }
+    }
+  ],
+  "PASS": 95,
+  "FAIL": 1
+}
