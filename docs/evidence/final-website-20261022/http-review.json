@@ -1,0 +1,492 @@
+{
+  "base": "http://127.0.0.1:8099",
+  "checks": [
+    {
+      "name": "public bytes 404.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand-atmosphere.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/hero-landscape-v5.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/monument-font-license.txt",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/monument-serif-bold.ttf",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/motto-serif-italic.ttf",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/progressorkit-primary.png",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/progressorkit-stamp.png",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/brand/stone-material.svg",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/delivery.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/engineering-exhibit.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/engineering-exhibit.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/hero-monument.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/hero-space.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/hero.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/home-atmosphere.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/progresskit-product-shell.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/project-hologram.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/project-hologram.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/project-showroom.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/project-showroom.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/project-slices.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-language.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-measurement.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/glikemia/product-qr.png",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/mail/mail-delete-redacted.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/mail/mail-splash.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-community/community-desktop.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-community/community-mobile.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/progresskit-translator/translator-start.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/vaeloria/earth-exploration.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/projects/vaeloria/tactical-battle.webp",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/site-v4.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/site-v5.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes assets/site-v5.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes glikemia-premium/product.css",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes glikemia-premium/product.js",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes og-progresskit.jpg",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/adivara/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/gotrans360/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/ignira/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/kan-system/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/obserwator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-analytics/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-community/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-infrastructure/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-systems/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-tax/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/progresskit-translator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes projekty/vaeloria/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes prywatnosc/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes robots.txt",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "public bytes sitemap.xml",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "private or missing /.git/config",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /analytics/app.py",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /catalog/projects.json",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /.env",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /templates/site.html",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /docs/PROGRESSKIT_V5_MASTER_REPORT.md",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /summary",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /health",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /api/unknown",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "private or missing /projekty/unknown/",
+      "status": "PASS",
+      "details": 404
+    },
+    {
+      "name": "directory glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/adivara/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/glikemia-premium/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/gotrans360/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/ignira/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/kan-system/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/obserwator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-analytics/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-community/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-infrastructure/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-mail/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-systems/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-tax/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/progresskit-translator/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory projekty/vaeloria/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "directory prywatnosc/index.html",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "security headers",
+      "status": "PASS",
+      "details": {
+        "date": "Thu, 22 Oct 2026 18:08:41 GMT",
+        "server": "uvicorn",
+        "content-type": "text/html; charset=utf-8",
+        "accept-ranges": "bytes",
+        "content-length": "116747",
+        "last-modified": "Thu, 22 Oct 2026 17:54:10 GMT",
+        "etag": "\"d04e598e4469cae232c5dc15632c4c47\"",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "no-referrer",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "content-security-policy": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "Connection": "close"
+      }
+    },
+    {
+      "name": "APK range206 without count",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "APK prefetch no count",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "name": "real APK complete bytes/hash",
+      "status": "PASS",
+      "details": {
+        "bytes": 80235954,
+        "sha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b"
+      }
+    },
+    {
+      "name": "real APK counter increments exactly once",
+      "status": "PASS",
+      "details": {
+        "before": 1,
+        "after": 2
+      }
+    }
+  ],
+  "PASS": 93,
+  "FAIL": 0
+}

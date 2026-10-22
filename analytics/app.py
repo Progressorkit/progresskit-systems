@@ -8,6 +8,7 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, Response
 from pydantic import BaseModel, Field
+from security_headers import SecurityHeadersMiddleware
 
 DB_PATH = Path(os.getenv("PK_ANALYTICS_DB", "analytics.db"))
 ALLOWED_EVENTS = {
@@ -276,3 +277,6 @@ def health():
 # Product API shares the existing service; product records use a separate persistent database.
 from product import router as product_router, connect as product_connect
 app.include_router(product_router)
+# This private dashboard is a server-owned constant. Its exact inline CSS/JS is
+# hash-authorized only for '/', while API responses retain the strict policy.
+app.add_middleware(SecurityHeadersMiddleware, trusted_inline_pages={'/': dashboard()})

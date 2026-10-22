@@ -137,7 +137,7 @@ body::before { content:none; }
 .showroom-all span { color:#c0cdd7; }
 #showroom-status { color:#3a4b58; }
 .showroom-catalog-link a { color:#2c4354; }
-.showroom-enhanced .showroom-viewport { --showroom-origin-y:44%; --showroom-radius-x:clamp(150px,18vw,260px); --showroom-radius-y:190px; height:560px; }
+.showroom-enhanced .showroom-viewport { --showroom-base-height:560px; --showroom-origin-y:44%; --showroom-radius-x:clamp(150px,18vw,260px); --showroom-radius-y:190px; height:var(--showroom-base-height); }
 .showroom-enhanced .showroom-card { width:220px; height:170px; }
 .showroom-enhanced .showroom-card:not(.is-orbit-hidden) { opacity:min(1,calc(var(--showroom-opacity) * 1.25)); }
 .showroom-controls { position:relative; z-index:32; }
@@ -192,7 +192,7 @@ body::before { content:none; }
   left:var(--slice-left);
   top:var(--slice-top);
   width:var(--slice-width);
-  height:var(--slice-height);
+  height:auto;
   min-width:0;
   min-height:0;
   z-index:30!important;
@@ -202,7 +202,7 @@ body::before { content:none; }
   will-change:auto;
   cursor:default;
 }
-.showroom-card.is-slice-expanded .project-slice { display:grid; grid-template-rows:auto minmax(0,1fr); container-type:inline-size; overflow:hidden; border-color:#e68b9b; box-shadow:inset 1px 1px 0 #f4faff9c,inset -1px -4px 0 #4f1c2dcf,5px 7px 0 #152938,6px 8px 0 #8d9da970,0 22px 40px #060c1380; }
+.showroom-card.is-slice-expanded .project-slice { display:grid; grid-template-rows:auto auto; height:auto; container-type:inline-size; overflow:visible; border-color:#e68b9b; box-shadow:inset 1px 1px 0 #f4faff9c,inset -1px -4px 0 #4f1c2dcf,5px 7px 0 #152938,6px 8px 0 #8d9da970,0 22px 40px #060c1380; }
 .showroom-enhanced .showroom-card.is-slice-expanded .showroom-card__open { min-height:0; height:auto; gap:4px 14px; padding:10px 16px 8px; }
 .showroom-card.is-slice-expanded .showroom-card__open::after { display:none; }
 .showroom-card.is-slice-expanded .showroom-card__caption { gap:5px; }
@@ -210,7 +210,7 @@ body::before { content:none; }
 .showroom-card.is-slice-expanded .showroom-card__action { padding-top:2px; font-size:10px; }
 .project-slice__panel {
   display:grid;
-  grid-template-rows:44px minmax(0,1fr) auto;
+  grid-template-rows:44px auto auto;
   gap:12px;
   min-height:0;
   margin:0 10px 10px;
@@ -226,7 +226,7 @@ body::before { content:none; }
 }
 .project-slice__close { justify-self:end; display:inline-flex; align-items:center; justify-content:center; min-width:102px; min-height:44px; padding:8px 12px; border:1px solid #9aadb9; border-radius:3px; color:#edf4f8; background:linear-gradient(#485b69,#2c404f); font:600 12px/1.4 var(--sans); }
 .project-slice__close:hover { border-color:#f591a3; background:#4e3443; }
-.project-slice__body { display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:24px; min-width:0; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#8497a6 #1b2832; padding:0 4px 4px 0; }
+.project-slice__body { display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:24px; min-width:0; min-height:0; overflow:visible; overscroll-behavior:auto; padding:0 4px 4px 0; }
 .project-slice__body:not(:has(.project-slice__media)) { grid-template-columns:minmax(0,1fr); }
 .project-slice__media { display:grid; align-content:start; gap:8px; min-width:0; margin:0; }
 .project-slice__media img { width:100%; height:228px; object-fit:contain; object-position:top center; border:1px solid #7187947a; background:#111b23; }
@@ -245,6 +245,24 @@ body::before { content:none; }
 .is-slice-open .showroom-card:not(.is-slice-expanded) { pointer-events:none; }
 .is-slice-open .showroom-orbit *, .is-slice-open .showroom-orbit-front * { animation-play-state:paused!important; }
 .project-slice :focus-visible { outline:3px solid #fd819a; outline-offset:-4px; }
+@media screen and (min-width:701px) {
+  /* The open module extends the page while the mechanical support keeps its pose. */
+  .showroom-enhanced.is-slice-open .showroom-viewport {
+    --showroom-origin-y:calc(var(--showroom-base-height) * .44);
+    height:auto;
+    min-height:var(--showroom-base-height);
+  }
+  .showroom-enhanced.is-slice-open .showroom-track {
+    height:auto;
+    min-height:var(--showroom-base-height);
+    padding-top:var(--slice-stage-top,12px);
+    padding-bottom:24px;
+  }
+  .showroom-enhanced.is-slice-open .showroom-card.is-slice-expanded {
+    position:relative;
+    top:auto;
+  }
+}
 @container (max-width:480px) {
   .project-slice__body { grid-template-columns:minmax(0,1fr); }
   .project-slice__copy { order:0; }

@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 307,
+  "EndLine": 307,
+  "StartColumn": 47,
+  "EndColumn": 82,
+  "Match": "KEY', 'REDACTED'",
+  "Secret": "REDACTED",
+  "File": "/tmp/progresskit-final-20261022/security/progresskit-secret-source-ubbdawwr/tests/test_catalog_validation.py",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 4.450212,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "/tmp/progresskit-final-20261022/security/progresskit-secret-source-ubbdawwr/tests/test_catalog_validation.py:generic-api-key:307"
+ }
+]

@@ -1,0 +1,100 @@
+TAP version 13
+# Subtest: only same-origin catalogue routes and local raster media become URLs
+ok 1 - only same-origin catalogue routes and local raster media become URLs
+  ---
+  duration_ms: 2.434867
+  type: 'test'
+  ...
+# Subtest: projection starts from the triggering module with bounded fallback coordinates
+ok 2 - projection starts from the triggering module with bounded fallback coordinates
+  ---
+  duration_ms: 3.979285
+  type: 'test'
+  ...
+# Subtest: normalization handles wrappers, duplicates and invalid media without invented stages
+ok 3 - normalization handles wrappers, duplicates and invalid media without invented stages
+  ---
+  duration_ms: 1.182026
+  type: 'test'
+  ...
+# Subtest: unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+ok 4 - unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+  ---
+  duration_ms: 0.745068
+  type: 'test'
+  ...
+# Subtest: data is rendered as text, with a safe case-study CTA and neutral presentation without media
+ok 5 - data is rendered as text, with a safe case-study CTA and neutral presentation without media
+  ---
+  duration_ms: 0.944647
+  type: 'test'
+  ...
+# Subtest: native cancel handler prevents immediate close, reverses presentation and returns focus
+ok 6 - native cancel handler prevents immediate close, reverses presentation and returns focus
+  ---
+  duration_ms: 1.045539
+  type: 'test'
+  ...
+# Subtest: reopen invalidates a closing timer and stale close event, preserving the new project
+ok 7 - reopen invalidates a closing timer and stale close event, preserving the new project
+  ---
+  duration_ms: 1.942564
+  type: 'test'
+  ...
+# Subtest: reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+ok 8 - reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+  ---
+  duration_ms: 1.020803
+  type: 'test'
+  ...
+# Subtest: changing to reduced motion completes a pending close immediately
+ok 9 - changing to reduced motion completes a pending close immediately
+  ---
+  duration_ms: 0.755834
+  type: 'test'
+  ...
+# Subtest: backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+ok 10 - backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+  ---
+  duration_ms: 0.906078
+  type: 'test'
+  ...
+# Subtest: missing native modal support uses normal catalogue navigation
+ok 11 - missing native modal support uses normal catalogue navigation
+  ---
+  duration_ms: 0.604971
+  type: 'test'
+  ...
+# Subtest: external close request targets the active project and destroy releases handlers
+ok 12 - external close request targets the active project and destroy releases handlers
+  ---
+  duration_ms: 0.641135
+  type: 'test'
+  ...
+# Subtest: an obsolete image error cannot hide the next project image
+ok 13 - an obsolete image error cannot hide the next project image
+  ---
+  duration_ms: 0.506876
+  type: 'test'
+  ...
+# Subtest: a close listener may open another project without focus returning behind the modal
+ok 14 - a close listener may open another project without focus returning behind the modal
+  ---
+  duration_ms: 0.553925
+  type: 'test'
+  ...
+# Subtest: reopening and switching projects reset the shared scroller before focus enters the presentation
+ok 15 - reopening and switching projects reset the shared scroller before focus enters the presentation
+  ---
+  duration_ms: 0.487259
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 37.857399

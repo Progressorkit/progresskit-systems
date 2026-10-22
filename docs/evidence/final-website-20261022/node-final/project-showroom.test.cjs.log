@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+ok 1 - Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+  ---
+  duration_ms: 4.242934
+  type: 'test'
+  ...
+# Subtest: Every circular project has a unique signed offset and the selected one is centered
+ok 2 - Every circular project has a unique signed offset and the selected one is centered
+  ---
+  duration_ms: 0.955379
+  type: 'test'
+  ...
+# Subtest: Orbital positions remain distinct on the perspective projection for every real filter size
+ok 3 - Orbital positions remain distinct on the perspective projection for every real filter size
+  ---
+  duration_ms: 4.865538
+  type: 'test'
+  ...
+# Subtest: Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+ok 4 - Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+  ---
+  duration_ms: 66.266174
+  type: 'test'
+  ...
+# Subtest: Energy pause survives category changes and reduced motion cannot be overridden
+ok 5 - Energy pause survives category changes and reduced motion cannot be overridden
+  ---
+  duration_ms: 5.315615
+  type: 'test'
+  ...
+# Subtest: Fractional phases preserve a unique five-node window across both wrap directions
+ok 6 - Fractional phases preserve a unique five-node window across both wrap directions
+  ---
+  duration_ms: 1.647538
+  type: 'test'
+  ...
+# Subtest: Actual animation frames follow a curved trajectory and wire the same live positions
+ok 7 - Actual animation frames follow a curved trajectory and wire the same live positions
+  ---
+  duration_ms: 8.68729
+  type: 'test'
+  ...
+# Subtest: Interrupted rotation continues from its current phase without a snap or duplicated seam
+ok 8 - Interrupted rotation continues from its current phase without a snap or duplicated seam
+  ---
+  duration_ms: 17.254965
+  type: 'test'
+  ...
+# Subtest: Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+ok 9 - Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+  ---
+  duration_ms: 20.876289
+  type: 'test'
+  ...
+# Subtest: Leaving the viewport cancels a pending neighbor projection and releases its motion work
+ok 10 - Leaving the viewport cancels a pending neighbor projection and releases its motion work
+  ---
+  duration_ms: 5.965536
+  type: 'test'
+  ...
+# Subtest: A delayed projection commits the final module pose before emitting even with dropped frames
+ok 11 - A delayed projection commits the final module pose before emitting even with dropped frames
+  ---
+  duration_ms: 7.758315
+  type: 'test'
+  ...
+# Subtest: Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+ok 12 - Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+  ---
+  duration_ms: 12.353231
+  type: 'test'
+  ...
+# Subtest: Rapid keyboard steps keep focus on a visible, interactive selected module
+ok 13 - Rapid keyboard steps keep focus on a visible, interactive selected module
+  ---
+  duration_ms: 7.721298
+  type: 'test'
+  ...
+# Subtest: Moving state spans the settle interval and repeated steps do not restore wires early
+ok 14 - Moving state spans the settle interval and repeated steps do not restore wires early
+  ---
+  duration_ms: 9.074614
+  type: 'test'
+  ...
+# Subtest: Ring neighbors center fully before opening, with immediate reduced-motion opening
+ok 15 - Ring neighbors center fully before opening, with immediate reduced-motion opening
+  ---
+  duration_ms: 24.683033
+  type: 'test'
+  ...
+# Subtest: Category filter is persistent data selection without clones or source mutation
+ok 16 - Category filter is persistent data selection without clones or source mutation
+  ---
+  duration_ms: 8.265311
+  type: 'test'
+  ...
+# Subtest: All and invalid-category recovery restore all 14 real identities
+ok 17 - All and invalid-category recovery restore all 14 real identities
+  ---
+  duration_ms: 0.270453
+  type: 'test'
+  ...
+# Subtest: A one-project category stays valid and missing selected identity falls back safely
+ok 18 - A one-project category stays valid and missing selected identity falls back safely
+  ---
+  duration_ms: 6.246462
+  type: 'test'
+  ...
+# Subtest: Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+ok 19 - Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+  ---
+  duration_ms: 12.321452
+  type: 'test'
+  ...
+# Subtest: Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+ok 20 - Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+  ---
+  duration_ms: 0.268507
+  type: 'test'
+  ...
+# Subtest: Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+ok 21 - Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+  ---
+  duration_ms: 14.085058
+  type: 'test'
+  ...
+# Subtest: Deep links roundtrip category/project without rewriting search, UTM or deployment path
+ok 22 - Deep links roundtrip category/project without rewriting search, UTM or deployment path
+  ---
+  duration_ms: 21.923983
+  type: 'test'
+  ...
+# Subtest: Six-slice wheel keeps six distinct usable modules and all real filter sizes
+ok 23 - Six-slice wheel keeps six distinct usable modules and all real filter sizes
+  ---
+  duration_ms: 8.616075
+  type: 'test'
+  ...
+# Subtest: A child losing implicit touch capture does not cancel the viewport swipe
+ok 24 - A child losing implicit touch capture does not cancel the viewport swipe
+  ---
+  duration_ms: 11.730579
+  type: 'test'
+  ...
+# Subtest: An expanded desktop module keeps its source anchor and leaves vertical wheel scrolling to the page
+ok 25 - An expanded desktop module keeps its source anchor and leaves vertical wheel scrolling to the page
+  ---
+  duration_ms: 6.3186
+  type: 'test'
+  ...
+# Subtest: Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+ok 26 - Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+  ---
+  duration_ms: 10.845367
+  type: 'test'
+  ...
+# Subtest: Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+ok 27 - Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+  ---
+  duration_ms: 7.49695
+  type: 'test'
+  ...
+# Subtest: Manual rotation cannot open a moving neighbor through hover before a settled module is chosen
+ok 28 - Manual rotation cannot open a moving neighbor through hover before a settled module is chosen
+  ---
+  duration_ms: 9.089893
+  type: 'test'
+  ...
+# Subtest: A module passing under a stationary pointer during page scrolling does not open until the pointer moves
+ok 29 - A module passing under a stationary pointer during page scrolling does not open until the pointer moves
+  ---
+  duration_ms: 4.570318
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 366.263715

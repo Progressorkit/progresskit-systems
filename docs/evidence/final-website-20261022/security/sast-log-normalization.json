@@ -1,0 +1,37 @@
+{
+  "createdUtc": "2026-10-22T18:14:17.909479+00:00",
+  "operation": "Remove only trailing ASCII spaces/tabs from readable log lines; preserve original bytes in deterministic gzip archives.",
+  "gzipMtime": 0,
+  "gzipOriginalFilename": "",
+  "sourceFilesChanged": false,
+  "ScannerResultDocumentsChanged": false,
+  "scansRepeated": false,
+  "files": [
+    {
+      "readableLog": "docs/evidence/final-website-20261022/security/sast.log",
+      "originalBytes": 764,
+      "originalSha256": "8bdc832cf3eda531da1fa2a19385dc14e45c84ce02ed9be84dabde5645748047",
+      "originalArchive": "docs/evidence/final-website-20261022/security/sast.log.gz",
+      "archiveBytes": 360,
+      "archiveSha256": "7e2ff0443f8b1f50131cfd56beec929da05ab949379745acd8292ef304087eae",
+      "readableBytes": 701,
+      "readableSha256": "ffca4e6137feb64345e574dd6f40fadd1e3978a40ffaa37b6abca7fd1f2546c3",
+      "linesNormalized": 5,
+      "decompressionMatchesOriginal": true,
+      "deterministicCompressionVerified": true
+    },
+    {
+      "readableLog": "docs/evidence/final-website-20261022/security/sast-final.log",
+      "originalBytes": 764,
+      "originalSha256": "8bdc832cf3eda531da1fa2a19385dc14e45c84ce02ed9be84dabde5645748047",
+      "originalArchive": "docs/evidence/final-website-20261022/security/sast-final.log.gz",
+      "archiveBytes": 360,
+      "archiveSha256": "7e2ff0443f8b1f50131cfd56beec929da05ab949379745acd8292ef304087eae",
+      "readableBytes": 701,
+      "readableSha256": "ffca4e6137feb64345e574dd6f40fadd1e3978a40ffaa37b6abca7fd1f2546c3",
+      "linesNormalized": 5,
+      "decompressionMatchesOriginal": true,
+      "deterministicCompressionVerified": true
+    }
+  ]
+}

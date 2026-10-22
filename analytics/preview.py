@@ -4,8 +4,10 @@ import importlib.util
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, RedirectResponse
 from product import router
+from security_headers import SecurityHeadersMiddleware
 root = Path(__file__).resolve().parents[1]
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+app.add_middleware(SecurityHeadersMiddleware)
 app.include_router(router)
 spec=importlib.util.spec_from_file_location('stage_public',root/'scripts/stage-public.py')
 public=importlib.util.module_from_spec(spec);spec.loader.exec_module(public)

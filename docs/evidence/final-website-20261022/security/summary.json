@@ -1,0 +1,93 @@
+{
+  "createdUtc": "2026-10-22T18:05:55.170625+00:00",
+  "gitHead": "6a52e83a7fd12699190ccf0b25974486030cb162",
+  "scope": "ProgressKit Systems local website candidate only; separate from all other repositories and historical runs.",
+  "sourceFiles": 89,
+  "sourceUnchangedDuringScans": true,
+  "sourceChangesSinceScans": [],
+  "sourceFingerprint": "382c3d9b30aa2cbed0fb1cb45f2034963d10da1e9fe1dbb4f3199ce3b19772b6",
+  "pythonRegression": {
+    "passed": 105,
+    "failed": 0,
+    "skipped": 0,
+    "targetSecurityTests": 13,
+    "targetsIncludedInFullTotal": true,
+    "log": "docs/evidence/final-website-20261022/python-tests.log",
+    "logSha256": "b195282bec3e361e9fe2350c9996afba9a96ad8fd3ca590c194a1ff1a7414049"
+  },
+  "sast": {
+    "name": "sast",
+    "startedUtc": "2026-10-22T18:08:42.835866+00:00",
+    "exit": 0,
+    "status": "PASS",
+    "errors": 0,
+    "findings": 0,
+    "scannedFiles": 42,
+    "ruleCount": 6,
+    "rawReport": "sast-final.json"
+  },
+  "sca": {
+    "status": "PASS",
+    "packages": 18,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "unknown": 0,
+    "databaseFresh": true,
+    "database": {
+      "Version": 2,
+      "NextUpdate": "2026-10-23T13:15:26.425424534Z",
+      "UpdatedAt": "2026-10-22T13:15:26.425424764Z",
+      "DownloadedAt": "2026-10-22T17:58:32.709282003Z"
+    },
+    "inventoryUploaded": false,
+    "previousFindingsPreserved": "offline-sca.json and offline-sca-summary.json retain five Medium and one Low in old pip24.0; only temporary QA pip upgraded to26.2, other17 versions unchanged."
+  },
+  "secretScan": {
+    "reviewedStatus": "PASS",
+    "rawHistoryStatus": "FAIL",
+    "rawHistoryFindings": 2,
+    "rawWorktreeStatus": "FAIL",
+    "rawWorktreeFindings": 3,
+    "verifiedBenignFindings": 5,
+    "verifiedBenignSyntheticFindings": 3,
+    "verifiedBenignPublicSigningFingerprintFindings": 2,
+    "unreviewedFindings": 0,
+    "rulesOrFilesDisabled": false,
+    "sourceProof": "secret-findings-review-final.json",
+    "rawReports": [
+      "gitleaks-history-final.json",
+      "gitleaks-worktree-final.json"
+    ],
+    "previousReportsPreserved": true
+  },
+  "apk": {
+    "status": "PASS",
+    "path": "downloads/glikemia-premium.apk",
+    "bytes": 80235954,
+    "sha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b",
+    "metadataMatches": true,
+    "zipMembers": 1277,
+    "zipCrcCheck": "PASS; byte-identical archive previously checked in this audit",
+    "signatureV2": true,
+    "signatureV3": true,
+    "signerCount": 1,
+    "certificateSha256": "b0198d2e378a7b683b8e7235d3ce884b9feef5abcc2c6f2469aa141300cc88dc",
+    "signatureVerifier": "Android SDK apksigner 36.1.0, verify --verbose --print-certs",
+    "rawSignatureLogSha256": "f2c030b6cc085afb95362d6eb63a29c776596f633366fee24ecebb7fe548f5a5",
+    "personalCertificateSubjectOmitted": true,
+    "physicalAndroidRuntime": "NOT TESTED"
+  },
+  "production": "NOT TESTED; no deployment or production actions",
+  "limitations": [
+    "SAST uses six reviewed local pattern rules; no whole-program dataflow claim.",
+    "SCA covers exact local Python runtime/test/build-tool packages. JavaScript package.json declares no external package dependencies. Docker image/base OS and APK dependency/decompilation SCA were not performed.",
+    "Repository Python dependency ranges and unpinned Docker base remain reproducibility risks for future builds; current tested environment is recorded separately.",
+    "Distributed collector rate limits remain an operational risk; current collector has a pre-parser 8192-byte streaming cap.",
+    "GUI, memory/performance and accessibility evidence are maintained separately by the main QA report; no visual or physical-device PASS is inferred here."
+  ],
+  "networkPolicy": "Only public vulnerability database and the explicitly requested pip wheel were downloaded. Source/inventory scans ran locally/offline; no inventory, credentials or private data uploaded.",
+  "updatedUtc": "2026-10-22T18:10:39.543572+00:00",
+  "sourceManifest": "final-source-final-after.json"
+}

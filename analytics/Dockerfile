@@ -5,6 +5,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app.py product.py owner.py ./
+COPY app.py product.py owner.py security_headers.py ./
 
 CMD ["uvicorn","app:app","--host","0.0.0.0","--port","8091","--no-access-log"]

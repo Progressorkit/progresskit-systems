@@ -1,0 +1,1151 @@
+{
+  "createdUtc": "2026-10-22T18:14:46.380234+00:00",
+  "baseHead": "6a52e83a7fd12699190ccf0b25974486030cb162",
+  "branch": "main",
+  "scope": "Local website candidate only; no push/deployment/production changes",
+  "selfExcluded": "docs/evidence/final-website-20261022/delivery-manifest.json",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 54,
+      "sha256": "949fe6c2a8565d99df225530f42cd047966f478ae5b1f4ed2ce042c28d212385"
+    },
+    {
+      "path": "404.html",
+      "bytes": 4481,
+      "sha256": "35a62ec089cd88f4e8d4112c03dcd0f06f1a9e756f1f6d95ddc43eb15fdc66e3"
+    },
+    {
+      "path": "analytics/Dockerfile",
+      "bytes": 248,
+      "sha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9"
+    },
+    {
+      "path": "analytics/app.py",
+      "bytes": 8431,
+      "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+    },
+    {
+      "path": "analytics/preview.py",
+      "bytes": 1463,
+      "sha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243"
+    },
+    {
+      "path": "analytics/security_headers.py",
+      "bytes": 6189,
+      "sha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01"
+    },
+    {
+      "path": "assets/delivery.css",
+      "bytes": 5824,
+      "sha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b"
+    },
+    {
+      "path": "assets/project-showroom.js",
+      "bytes": 33942,
+      "sha256": "291cc1f823fcd1d867b61914f1501ff7174f0f121f2a195d956f9e025c7043b3"
+    },
+    {
+      "path": "assets/project-slices.css",
+      "bytes": 32354,
+      "sha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2"
+    },
+    {
+      "path": "docs/FINAL_WEBSITE_DELIVERY_20261022.md",
+      "bytes": 12329,
+      "sha256": "27a79d1644c3ac39bd11304de4529172fef865afea2f8dbeb55b2eeb5fbe3f83"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/README.md",
+      "bytes": 1726,
+      "sha256": "5e89733e79e18b3549a8f73d2012dcfdb6f32e31ad261cb38159485209cbda1a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-ekosystem.png",
+      "bytes": 290252,
+      "sha256": "899250da364b76ac50b5271236287a9866daceb1fe23ed60cc99fc3ca58c8381"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-first.png",
+      "bytes": 654121,
+      "sha256": "eb3b9332068a777b70a91ae5dcd07f9fe54eef6d82abcb67cde8bb539b0d731d"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-kontakt.png",
+      "bytes": 559715,
+      "sha256": "50de93ac2e6de6602b8a6f7e6d8652888ee639f050afa7f130483d11f652be3e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-progresskit-mail-expanded.png",
+      "bytes": 634616,
+      "sha256": "515b82fb38546645836e03209d92e6861e1dfba71e68f755785090a98b14ae09"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-progresskit-tax-expanded.png",
+      "bytes": 637374,
+      "sha256": "592291b725fb5ea4661cf89c7ab8de4cb5cc3d1320d12ef8a9414112163ca3ff"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-progresskit-translator-expanded.png",
+      "bytes": 702063,
+      "sha256": "3dbc09b898e35274ff4976a38a82172cdf4831c995a7299027a76b4fa5ce5a5e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-uslugi.png",
+      "bytes": 255896,
+      "sha256": "b0d53b7d1169bd1626eb41a9f734dc5e4a3fbc158e3c58d314806c74c0316535"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1440-wydania.png",
+      "bytes": 452165,
+      "sha256": "94d5849aea79f48c16a3257256d586a00d9c020e1ef40150ba5907ae2e03f736"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-ekosystem.png",
+      "bytes": 432578,
+      "sha256": "0ea056a1538eb788d9ce9f0c28826127907cc804dfc08575ec6b5936e0267092"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-first.png",
+      "bytes": 907641,
+      "sha256": "115dad8974c0c7dbcdd606c21fb6f8966bfc436702a42f1aa8f5f038222a35c8"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-kontakt.png",
+      "bytes": 790253,
+      "sha256": "cc2477ee8a36615510f4bc2cb85bcc314b217ab18e8ef5b20857da3f9a24979b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-progresskit-mail-expanded.png",
+      "bytes": 909571,
+      "sha256": "d7e9b5ec98f727cdb357c0100f5bc0347d8f9f9abc7bdf35abb3c88121f0e94c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-progresskit-tax-expanded.png",
+      "bytes": 907641,
+      "sha256": "9c75620ef59eb098aee1e329dec00d45ed0c68d09c71a466fb9178ed606a9a3a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-progresskit-translator-expanded.png",
+      "bytes": 998482,
+      "sha256": "00c7833069882e15e3e4af6d6a5f1ff02d211fb9a538042ec3c56d730cdaf709"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-uslugi.png",
+      "bytes": 402395,
+      "sha256": "c6e49baa4aea696049585487f8e4799d494c215d8ed6790ce043c25746e709ed"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/1920-wydania.png",
+      "bytes": 642557,
+      "sha256": "7c94461cd2a2b297a6da7f4b33c857b023d50aea5a8945964aec29406232935d"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-ekosystem.png",
+      "bytes": 80471,
+      "sha256": "fdfe93238181024e042a2f2deafcb2f8593fb2fb744a3fa172f190f74824c2b9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-first.png",
+      "bytes": 128215,
+      "sha256": "1785bda688aec4b1154f0acab4dbc5dc5542f757e6f1b652609aedebf0810ac6"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-kontakt.png",
+      "bytes": 118333,
+      "sha256": "71726f464dc6e565556d41691bbc9959720b8e33e293936fe0c1eb945e8c6e4b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-navigation.png",
+      "bytes": 90431,
+      "sha256": "ae413faf714a5b813751c684c9b56cdd6413138df7d78ae3d474e715ce3cd104"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 80349,
+      "sha256": "c254ef517bc2bf14f14f5d9f8fb71a12e14db8229646e7ee87f6bebb20b2f9dd"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-mail-expanded.png",
+      "bytes": 138534,
+      "sha256": "2164f8ef0f6cb6a2885ca545e3addf53d0af98d540e526deadc6a291a9c655b3"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 95039,
+      "sha256": "ce71d3482be03b363e05145292d80235686ddbd59c3cb655a3c9005214383da9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-tax-expanded.png",
+      "bytes": 143284,
+      "sha256": "e1ec9efe29dee293d4e5a9dac47db6731ca1f10440f7ecff87a1e9d0a0258d69"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 97042,
+      "sha256": "bb39271ec01764d300f9269556682cd59c7842b34b8f5c2a39aa4e9d08ca89fe"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-progresskit-translator-expanded.png",
+      "bytes": 147913,
+      "sha256": "653225e7ca534a510872dbfa535f83885b4d40b7fefbe78c75f26c9138528e57"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-uslugi.png",
+      "bytes": 71107,
+      "sha256": "933d5c4f2e1416f3bb12195b71353dc9a01b7bc587e3ac1d9b20e07c8310790f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/320-wydania.png",
+      "bytes": 78981,
+      "sha256": "27abe057ee27e8096f1d6441864ea4aff375f5225171f0e7b8aca7f75dc0227c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-ekosystem.png",
+      "bytes": 130384,
+      "sha256": "5860374b45bc70696cf6c3807c71ba47c54f2fe70ada54b99e4fe0dcd39fd776"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-first.png",
+      "bytes": 202420,
+      "sha256": "177da8bfd0fa77013472f264d4a6f7e65459dbfa8b01bc7c8874978f80d117f4"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-kontakt.png",
+      "bytes": 181691,
+      "sha256": "f25491315fc93816f30db46397e68640a959a9f962412c1fa39e8862b2afa3a0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-navigation.png",
+      "bytes": 171538,
+      "sha256": "3e6f180cbf0cf433ee4771397a3e3c92fc82bc409891bde2cd7c29e6e1514dd0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 131764,
+      "sha256": "7a6f68e5b05241a212496b68563bbcff11d0367bbbfdfe5776e3ee0892e3935a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-mail-expanded.png",
+      "bytes": 197217,
+      "sha256": "71603ed71129f5a040ee8965ceec6de05491e68e6821619e42ea7bdb321dea5c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 211917,
+      "sha256": "e93995583ff9b2373d4c56dc8dc533541cc1df86e268d8cf798315b7b41b5e34"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-tax-expanded.png",
+      "bytes": 211917,
+      "sha256": "e93995583ff9b2373d4c56dc8dc533541cc1df86e268d8cf798315b7b41b5e34"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 158619,
+      "sha256": "47f26a9da008065d3093c97842ac9b0dc0a37620a5f8d67f1bd23400d1a96ff0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-progresskit-translator-expanded.png",
+      "bytes": 213043,
+      "sha256": "c705c48fcb7a4f7ae9bcf0fbeee39733340b3a5bb8ec4892499157b30a6638a1"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-uslugi.png",
+      "bytes": 125810,
+      "sha256": "78e81822de01b0a1eba046a9ae2531ccd7756dddd1266cd403cdfb99f690168f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/390-wydania.png",
+      "bytes": 144527,
+      "sha256": "6b60d7d7a3c5f2e3e2a26280db2ddcda47135ce1bee3fe0dad67d562921ba268"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/mobile-interaction.mp4",
+      "bytes": 766135,
+      "sha256": "d1b64d96dc69fe5f532223d6bc08a52876cf3185ceeb1dd1479dd5d70afdb8de"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-accepted/report.json",
+      "bytes": 27197,
+      "sha256": "1e85d2d18b68f9942fb4826e6d8d86ce06fa04939211240e9b1bea638d9a1ea0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-ekosystem.png",
+      "bytes": 290252,
+      "sha256": "899250da364b76ac50b5271236287a9866daceb1fe23ed60cc99fc3ca58c8381"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-first.png",
+      "bytes": 653928,
+      "sha256": "821cec5782d824a04ad62650b5898a60e33e950592b9815d65a922be1f534995"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-kontakt.png",
+      "bytes": 559715,
+      "sha256": "50de93ac2e6de6602b8a6f7e6d8652888ee639f050afa7f130483d11f652be3e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-progresskit-mail-expanded.png",
+      "bytes": 634616,
+      "sha256": "515b82fb38546645836e03209d92e6861e1dfba71e68f755785090a98b14ae09"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-progresskit-tax-expanded.png",
+      "bytes": 637374,
+      "sha256": "592291b725fb5ea4661cf89c7ab8de4cb5cc3d1320d12ef8a9414112163ca3ff"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-progresskit-translator-expanded.png",
+      "bytes": 702063,
+      "sha256": "3dbc09b898e35274ff4976a38a82172cdf4831c995a7299027a76b4fa5ce5a5e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-uslugi.png",
+      "bytes": 255896,
+      "sha256": "b0d53b7d1169bd1626eb41a9f734dc5e4a3fbc158e3c58d314806c74c0316535"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1440-wydania.png",
+      "bytes": 452165,
+      "sha256": "94d5849aea79f48c16a3257256d586a00d9c020e1ef40150ba5907ae2e03f736"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-ekosystem.png",
+      "bytes": 432578,
+      "sha256": "0ea056a1538eb788d9ce9f0c28826127907cc804dfc08575ec6b5936e0267092"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-first.png",
+      "bytes": 907628,
+      "sha256": "c03d1e8b0f1a9441f5f26a87894b1e6c5e46265b63863fb3bd2feb3f2251d596"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-kontakt.png",
+      "bytes": 790253,
+      "sha256": "cc2477ee8a36615510f4bc2cb85bcc314b217ab18e8ef5b20857da3f9a24979b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-progresskit-mail-expanded.png",
+      "bytes": 909571,
+      "sha256": "d7e9b5ec98f727cdb357c0100f5bc0347d8f9f9abc7bdf35abb3c88121f0e94c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-progresskit-tax-expanded.png",
+      "bytes": 907641,
+      "sha256": "9c75620ef59eb098aee1e329dec00d45ed0c68d09c71a466fb9178ed606a9a3a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-progresskit-translator-expanded.png",
+      "bytes": 998482,
+      "sha256": "00c7833069882e15e3e4af6d6a5f1ff02d211fb9a538042ec3c56d730cdaf709"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-uslugi.png",
+      "bytes": 402395,
+      "sha256": "c6e49baa4aea696049585487f8e4799d494c215d8ed6790ce043c25746e709ed"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/1920-wydania.png",
+      "bytes": 642557,
+      "sha256": "7c94461cd2a2b297a6da7f4b33c857b023d50aea5a8945964aec29406232935d"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-ekosystem.png",
+      "bytes": 80471,
+      "sha256": "fdfe93238181024e042a2f2deafcb2f8593fb2fb744a3fa172f190f74824c2b9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-first.png",
+      "bytes": 128199,
+      "sha256": "3397dd6dba5a92ffecd32da70f3689dfcae7e30a01d23f8688db6cecbb8392c2"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-kontakt.png",
+      "bytes": 118333,
+      "sha256": "71726f464dc6e565556d41691bbc9959720b8e33e293936fe0c1eb945e8c6e4b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-navigation.png",
+      "bytes": 90409,
+      "sha256": "765ba47984dbbbd0be4aa0d8a892d8cc8b23c66accc97218b68944a3ba49bab5"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 80349,
+      "sha256": "c254ef517bc2bf14f14f5d9f8fb71a12e14db8229646e7ee87f6bebb20b2f9dd"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-mail-expanded.png",
+      "bytes": 138543,
+      "sha256": "edc974652608fbfde829ee248f6ddac1aa5b4fbc5bbee4f4181613babf05d6b0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 95039,
+      "sha256": "ce71d3482be03b363e05145292d80235686ddbd59c3cb655a3c9005214383da9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-tax-expanded.png",
+      "bytes": 143273,
+      "sha256": "5b42d7656866ab2326be2e38cefac0172620236211ca53726d3f8917b40f8b89"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 97042,
+      "sha256": "bb39271ec01764d300f9269556682cd59c7842b34b8f5c2a39aa4e9d08ca89fe"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-progresskit-translator-expanded.png",
+      "bytes": 147908,
+      "sha256": "35d36457a4a8a8441ea9f6f15ea9c3b90be9518c4800f4953bdbcb16fbd7b961"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-uslugi.png",
+      "bytes": 71107,
+      "sha256": "933d5c4f2e1416f3bb12195b71353dc9a01b7bc587e3ac1d9b20e07c8310790f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/320-wydania.png",
+      "bytes": 78981,
+      "sha256": "27abe057ee27e8096f1d6441864ea4aff375f5225171f0e7b8aca7f75dc0227c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-ekosystem.png",
+      "bytes": 130384,
+      "sha256": "5860374b45bc70696cf6c3807c71ba47c54f2fe70ada54b99e4fe0dcd39fd776"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-first.png",
+      "bytes": 202421,
+      "sha256": "c3f6df4de55c9fc6834bfd3299abd25f6d47e5c68c5639d7de4232994cc587e6"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-kontakt.png",
+      "bytes": 181691,
+      "sha256": "f25491315fc93816f30db46397e68640a959a9f962412c1fa39e8862b2afa3a0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-navigation.png",
+      "bytes": 171538,
+      "sha256": "1ef5137ef58d53d69e41563fcf6ba80cc4a09517e6c0863e9840283c4c711ba4"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 131764,
+      "sha256": "7a6f68e5b05241a212496b68563bbcff11d0367bbbfdfe5776e3ee0892e3935a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-mail-expanded.png",
+      "bytes": 197227,
+      "sha256": "102f72344b10764faa08b0c4fe47da38a004236ea1f960d604d348cdd09b116c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 211914,
+      "sha256": "7d5f29ee94c4466d088583a2aa9250d4afedc2a822f4fdee6bdfaf41bbc1f058"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-tax-expanded.png",
+      "bytes": 211914,
+      "sha256": "7d5f29ee94c4466d088583a2aa9250d4afedc2a822f4fdee6bdfaf41bbc1f058"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 158619,
+      "sha256": "47f26a9da008065d3093c97842ac9b0dc0a37620a5f8d67f1bd23400d1a96ff0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-progresskit-translator-expanded.png",
+      "bytes": 213048,
+      "sha256": "fc4791ab74855b0c3170debaac48663c2b74864802888fd867ccb345978f2b3b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-uslugi.png",
+      "bytes": 125810,
+      "sha256": "78e81822de01b0a1eba046a9ae2531ccd7756dddd1266cd403cdfb99f690168f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/390-wydania.png",
+      "bytes": 144527,
+      "sha256": "6b60d7d7a3c5f2e3e2a26280db2ddcda47135ce1bee3fe0dad67d562921ba268"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/mobile-interaction.mp4",
+      "bytes": 778843,
+      "sha256": "7a24edc16d6f1c3afd1016e86748a674cc7fa36d28d80449f82b7b74bc57e65f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-final/report.json",
+      "bytes": 27241,
+      "sha256": "eb56b1e2dc9823d43f0a93b8ea6377f4ec58955ae0b454808ba02f85a7ae7e06"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-ekosystem.png",
+      "bytes": 196932,
+      "sha256": "26639b27b843d81f318e1c8911406f43bc82d388883c6c48569442d0f96b0f81"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-first.png",
+      "bytes": 653821,
+      "sha256": "0d837b42339c0c73310320c681f973023a8a092a9152d158ef7d4f041bef9d59"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-kontakt.png",
+      "bytes": 336989,
+      "sha256": "233d6cd146607313b9c488586fb8147bb06c270d52a620336f3dc27a08158231"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-progresskit-mail-expanded.png",
+      "bytes": 182367,
+      "sha256": "fbb6d86a95ece68a68d0d7bcfeb5e42787cc08e9842bbae769d2a8006db3562d"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-progresskit-tax-expanded.png",
+      "bytes": 158619,
+      "sha256": "1d56c7bfa5b65ba6c580461389aa0c4784b3f1ecb3c33b962f086fc4f6163d41"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-progresskit-translator-expanded.png",
+      "bytes": 195346,
+      "sha256": "a57dd7d6b8fdecf798fdfb956cdc91f8efc4598844671fdc9b5d248b1791e4a0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-uslugi.png",
+      "bytes": 148377,
+      "sha256": "d88799711449017aa9a075e0b44865ba1df79f9c40355fdb394c38a14a60214b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1440-wydania.png",
+      "bytes": 153437,
+      "sha256": "1edcba786fe8520ef599f2ddc56f65440f00a92334bcfb4480b5a9001ea99148"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-ekosystem.png",
+      "bytes": 229137,
+      "sha256": "1dcd33c69f711788392ec20a32b4e56d0c0ded78898de5307d649f1e7a67c689"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-first.png",
+      "bytes": 907653,
+      "sha256": "d89f80aa7b6bdcef43b128e14d93d289cc77f29f8e5c94c1530b8af790ff765f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-kontakt.png",
+      "bytes": 400636,
+      "sha256": "88d2c9767961eef44b57f1d6e86b7f6bce0d4d5a209207284baa8b63ed05d12d"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-progresskit-mail-expanded.png",
+      "bytes": 183124,
+      "sha256": "02b315f57fd5b4aeebb63bdd6053b5b489de01dfac8077a7a0dabd266eda8014"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-progresskit-tax-expanded.png",
+      "bytes": 159085,
+      "sha256": "cb19a55bda68242057e60e67519edc5f71f07fdafbb2a6ce33355db6b7bc1f02"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-progresskit-translator-expanded.png",
+      "bytes": 195503,
+      "sha256": "406a5e3af37a02963dabe7569b9b290be590f97f7978b191bd39f594d146a793"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-uslugi.png",
+      "bytes": 175668,
+      "sha256": "3d00235258c1b5faf39701ee6b7115a0e42fb75d2cba9ea74398fd677483a3bf"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/1920-wydania.png",
+      "bytes": 158870,
+      "sha256": "25d54399d68ee79e7bea6a5b20c5dfe4647588991baa55fb23b6d2c3b350fa5b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-ekosystem.png",
+      "bytes": 148088,
+      "sha256": "e61b51fb629ee8d454113e9380bf8a2b330df18990ae11368f64d572eb341b39"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-first.png",
+      "bytes": 128170,
+      "sha256": "33bb60c3d6bd575a9d0b4191e186d110933b6995c2771a95ba48c6f1286701a9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-kontakt.png",
+      "bytes": 135476,
+      "sha256": "4f588822ee178dd8023d0273de70d6288dee57833c95fa1b25ef2d5086afb96f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-navigation.png",
+      "bytes": 92528,
+      "sha256": "6c9ae880de9a69fc02afb27ea310070a96859c8d2420ff6a66e4012df20df56b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-progresskit-mail-expanded.png",
+      "bytes": 209861,
+      "sha256": "cfa82d21414b4ae5821c4b65368a2562ee787907a93a0306f600a479e5ea3dc8"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-progresskit-tax-expanded.png",
+      "bytes": 168403,
+      "sha256": "8af10c53ed8d6c994cfafe510a14c8ba2856f582b5593831a4772e98b24ddc04"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-progresskit-translator-expanded.png",
+      "bytes": 240736,
+      "sha256": "8044f4938ad45d1fe98ce0f6cf5379510c5e6c5291a3d4ad1741ca83e712ab08"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-uslugi.png",
+      "bytes": 124506,
+      "sha256": "39821c4651603fb9ad7c7035aaaaf3c2067b954e8b400d48b6c333c18b899d94"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/320-wydania.png",
+      "bytes": 104454,
+      "sha256": "e5eecf47abd42366b5cf8ecf554c6046c3f224c9a75428e33d8503135b570aae"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-ekosystem.png",
+      "bytes": 157887,
+      "sha256": "8feb6c7e523b93a9c500781d9c78a59e456edc37e0f3e680d14b6ef97710fc0b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-first.png",
+      "bytes": 202634,
+      "sha256": "d76291ed68c7eab5db343de0c8737ed5a683e5e362f7f6e888e38d89020c4dca"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-kontakt.png",
+      "bytes": 151621,
+      "sha256": "49a8af009fec573c98aba61df60ae275ee344d042d6bdd56ed8fcd84cdbb595e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-navigation.png",
+      "bytes": 202821,
+      "sha256": "4d474c8ecd5fe23486e39287ccab38fd606e9597266d5461f1bbbbf00fa57a4a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-progresskit-mail-expanded.png",
+      "bytes": 202069,
+      "sha256": "88e479d3fa1bcff3bd19929e26dd2c95aa52bad9d40afda6a8987e395660668a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-progresskit-tax-expanded.png",
+      "bytes": 175380,
+      "sha256": "920d52d84b58fa41df127cde8660575d155509293fbf52a4f48deac2fba25852"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-progresskit-translator-expanded.png",
+      "bytes": 228024,
+      "sha256": "5bbbd8dc3edfdcb006d49e8b5a8e200506f82f829c77f49d37ac65e28ae656f4"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-uslugi.png",
+      "bytes": 99661,
+      "sha256": "3416fd0ce562db5df45c62b686d2f644eb2103c1c11495745956c024412ffd3e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/390-wydania.png",
+      "bytes": 104633,
+      "sha256": "c251cb28aa947659e057aa8be2bd58bd60d0a5179e6391e4107c89d381d38333"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/mobile-interaction.mp4",
+      "bytes": 764559,
+      "sha256": "5e71edea116e0d907107c08a57bd365f864afc086dc8b628ed3de46a326bbb97"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/browser-first/report.json",
+      "bytes": 28143,
+      "sha256": "df76ad07f885f25f4eaac1d66311130ac41b5780142e0e59c6f4c98291dcf065"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/build.log",
+      "bytes": 54,
+      "sha256": "2f363dae46bbea01adb030e93ba02dc02e14b737a883544c0c2dc6703f4fdbe9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/check-final.log",
+      "bytes": 352,
+      "sha256": "796339752c4c4f286c6e685a33b0ed8d123ca7ea1e6b627965266c29bf2c663b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/check.log",
+      "bytes": 352,
+      "sha256": "796339752c4c4f286c6e685a33b0ed8d123ca7ea1e6b627965266c29bf2c663b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/dom-listener-warmup.json",
+      "bytes": 1094,
+      "sha256": "8d4da615a4189ee5acfafc0df94cac385c3005c4cb6de81e7f244e97193d8df7"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/external-links.json",
+      "bytes": 665,
+      "sha256": "7756fa592917072acd784944e38904d3d6932b0c04911994e8d1024b486ad785"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/hover-regression.json",
+      "bytes": 560,
+      "sha256": "1dc51061e233c56656b56bc60b08b868c42eb7ea80741f18bfa077b12bbe95ee"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/http-review.json",
+      "bytes": 12081,
+      "sha256": "8d42497e526b5061d0e77eb2eab6d8833eedf8bbbfcad54a52717f89fd229b71"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/http-review.py",
+      "bytes": 2995,
+      "sha256": "70e122c2e1064fb01d76f87e72600474a644e79ea6fbd3907401a4456ab1b111"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/internal-links.json",
+      "bytes": 132750,
+      "sha256": "112d7015d1ee081e585e274662eb1fb9f21a7904faf2af8bf33778f39eec192a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/internal-links.py",
+      "bytes": 1740,
+      "sha256": "46e7c28f10ee7305bdbe4e16722d03a0c8883bea95e58e20701f8cda45ac9633"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-final/catalog-filters.test.cjs.log",
+      "bytes": 2750,
+      "sha256": "45efbd6865dca40c39d8f06bcb45c4657f59abab23f68d65df1abdf5fff68b1e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-final/hero-space.test.cjs.log",
+      "bytes": 1115,
+      "sha256": "e95d4807ee426c952b6348fc8c1841619fd123ced781264b19d5982ebffc7eb6"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-final/project-hologram.test.cjs.log",
+      "bytes": 3575,
+      "sha256": "c20005c19add79f20242c0408ff81b901f925ba9955d0eaf557d2b2cb39d61be"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-final/project-showroom.test.cjs.log",
+      "bytes": 7179,
+      "sha256": "0b3846450356ca5723126524529155eec8bc5ef77d7ea8d8b4ed612fdcfa14b7"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-final/summary.json",
+      "bytes": 574,
+      "sha256": "b73cf5a2381e7d9faa98b170b6b732bbd3ea23fe9d048678daeaf8e17c913ee4"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node-tests.log",
+      "bytes": 684,
+      "sha256": "00bd0d4257c9441103f9deca9d5821af863ae5d447b0758e90c6f0e214b90981"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node/catalog-filters.test.cjs.log",
+      "bytes": 2748,
+      "sha256": "3dae3aea7637e2bddf6b05fa1944e4dc652faa607a47056bd22f29cce26c8120"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node/hero-space.test.cjs.log",
+      "bytes": 1115,
+      "sha256": "6b9374e59cb8d4c474ee16ca9c97981b52d7398713fe521b161582cdbf9de312"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node/project-hologram.test.cjs.log",
+      "bytes": 3578,
+      "sha256": "dc31d996435c2eeffb7291bfb069fb7ac7b4d0067dc3a239f341b9c4e01bb556"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node/project-showroom.test.cjs.log",
+      "bytes": 6639,
+      "sha256": "1cc20729994733e2879b972fa2006667c5445bd215da29801bcb286a3473908f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/node/summary.json",
+      "bytes": 574,
+      "sha256": "4c56f3928dc1f7b35014db25ad9c8f847a4264cffdc38b6bc5c3602365d82ad7"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/publication-gate.log",
+      "bytes": 52,
+      "sha256": "0a06f08939d3119ded47842adde810ce0c30b394eca66d1789bac6ccd19829b8"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/python-tests.log",
+      "bytes": 16394,
+      "sha256": "b195282bec3e361e9fe2350c9996afba9a96ad8fd3ca590c194a1ff1a7414049"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/EVIDENCE_MANIFEST.json",
+      "bytes": 9666,
+      "sha256": "536098b7e648d0431e5a1c2c8e0f624010a4f73e9f483caa93015ef198d0fc03"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/apk-integrity.json",
+      "bytes": 725,
+      "sha256": "aa0d963fb1ea0f356805cc881a980b7c280c372975b1f6f1417e61565e82cad3"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/apk-signature.log",
+      "bytes": 894,
+      "sha256": "bbbbf60fafe58f212f09a56da8af8d234914556fcb74797c0c77f3dfc3f3ac04"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/catalog-inventory.json",
+      "bytes": 12489,
+      "sha256": "c96c46e826d063c8daf16c434b0c522d7238243c0fb410fc4e634bc3f8be40ab"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "82ebac5d7d0e1e5536887cff05860dcc7e0b9a741048c26025873ae3321ba76f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-scans-refresh-summary.json",
+      "bytes": 1007,
+      "sha256": "29a641e284a1bcad0a8d9de9ff3028d495e5a233882bf3c4aaa2787b612e0160"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-source-after.json",
+      "bytes": 9164,
+      "sha256": "fd7b5b67bb03644b891d74d62d81aa58760559c2a239aff78945abbef740f463"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-source-before.json",
+      "bytes": 9147,
+      "sha256": "a341253fd246119089702e3c47748e74d9fa02d531f0d32259c6acf22ca4fd89"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-source-final-after.json",
+      "bytes": 9164,
+      "sha256": "3208951242e825e1769d93d77e5acdfac054ca8ae9ccfe40720ae9cd6fb3c0d4"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/final-source-final-before.json",
+      "bytes": 9147,
+      "sha256": "b4e164d80748363d3fe982215b42029f55fc34fcf2435bb51818e3c8005ea1d3"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-history-final.json",
+      "bytes": 1800,
+      "sha256": "0fc959409478ab17db7896d79ec8db68f1f55cb9550aa1e14c5dae05fc07088f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-history-final.log",
+      "bytes": 113,
+      "sha256": "40658f87f3d8097fc8ecf5168be0d3da9f8ee9a6dd5f662746d7444d4e04cbce"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-history.json",
+      "bytes": 1800,
+      "sha256": "0fc959409478ab17db7896d79ec8db68f1f55cb9550aa1e14c5dae05fc07088f"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "ca12a15934687db0af4cc63339ca7b705c5cd16862bb9b1f71a94c3dcd4d161b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-worktree-final.json",
+      "bytes": 2242,
+      "sha256": "546f7ccc93eeab323873d38cff2897158cbd1f777ff14f49357a052498918e6c"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-worktree-final.log",
+      "bytes": 79,
+      "sha256": "8b5385410d1bb610ffc52caf7a449775c4e39f0cb19cde2b78d3a4a498fbe6d6"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-worktree.json",
+      "bytes": 702,
+      "sha256": "132106f3fa141375f6370b1a11cdde5515e55e57e65b753dfce6e649d97ffb0e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "c55ae8e26bd816168141736cc9bcb6f33c6aa8a779bdebdb7d6a12896bab8814"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca-summary.json",
+      "bytes": 3611,
+      "sha256": "3c8fc6985c98c4dcd88d7ed4b10f1c2cea865bad2703b1fd5beda38dfd6a0593"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca-v2-summary.json",
+      "bytes": 2166,
+      "sha256": "2baf780f7f2a7fa220fa9238847692e6170ec3fcf935551c54fa55dfdb5ed902"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca-v2.json",
+      "bytes": 6900,
+      "sha256": "b1d9d5ece6e15ec22d7031428ace3c26ce04c022e786b6c0d7351b4328d41732"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca-v2.log",
+      "bytes": 352,
+      "sha256": "bb264825fcf1989492c82ed3c11d64369479d88d16f853e4836a1a5482b38c5b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca.json",
+      "bytes": 27835,
+      "sha256": "056964f54bf86b52751f2143b8d7af28ab701499802cae4e53b4baf476add9fd"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/offline-sca.log",
+      "bytes": 352,
+      "sha256": "19e22b55db4ab93053cbe198bb67033e88757442b4101f653390c49aabafa6e8"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/pip-upgrade-summary.json",
+      "bytes": 576,
+      "sha256": "e1342c7fcf55fdc1b3f32a45680818f5526c14860cb5b83cf71fe6472e13cbf8"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/pip-upgrade.log",
+      "bytes": 488,
+      "sha256": "56d4afd840b71b48ae6f723db894ed689ab31b8924ad2006e664c0f8c176b890"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/python-full-v2-summary.json",
+      "bytes": 501,
+      "sha256": "062402b8d26b7302f61d0105c80fdb350ab000acec792efffd5ae747f8804af5"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/python-v2-source-after.json",
+      "bytes": 7742,
+      "sha256": "3ad62e82d9f4baeb828955458cf1dc878cfd9fc9200f2c0b9b69a37e275b0ff7"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/python-v2-source-before.json",
+      "bytes": 7742,
+      "sha256": "3ad62e82d9f4baeb828955458cf1dc878cfd9fc9200f2c0b9b69a37e275b0ff7"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/requirements-installed-v2.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "abf482a8765a5eaa042e8b0a1c7a70cba368de318bb9bd625c59ab6730102d6b"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast-final.json",
+      "bytes": 2526,
+      "sha256": "1ecf0b3ed34b8ad6a31528f194d0effafc7e5d8a79415d429871a65116ce30d9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast-final.log",
+      "bytes": 701,
+      "sha256": "ffca4e6137feb64345e574dd6f40fadd1e3978a40ffaa37b6abca7fd1f2546c3"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast-final.log.gz",
+      "bytes": 360,
+      "sha256": "7e2ff0443f8b1f50131cfd56beec929da05ab949379745acd8292ef304087eae"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast-log-normalization.json",
+      "bytes": 1679,
+      "sha256": "9a7219bc4ec3f15c9e8035c95752643459725c564ef40f0cab804857f6c542db"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast.json",
+      "bytes": 2525,
+      "sha256": "5d4d519ac028bc0d0ed39d78a01d0a26e0e9fde4140c081d0a09566be2e3a673"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast.log",
+      "bytes": 701,
+      "sha256": "ffca4e6137feb64345e574dd6f40fadd1e3978a40ffaa37b6abca7fd1f2546c3"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/sast.log.gz",
+      "bytes": 360,
+      "sha256": "7e2ff0443f8b1f50131cfd56beec929da05ab949379745acd8292ef304087eae"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/secret-findings-review-final.json",
+      "bytes": 4304,
+      "sha256": "d77a54269120082ff5bfa77c32b85b2d78fa2a2022f6c88932b9db5ab6c45542"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/secret-findings-review.json",
+      "bytes": 2642,
+      "sha256": "0d4fee33bcda5a50786debcf96cb54aec8950c755cf975fb986b2eaac885987a"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/security-headers-body-limit-target.log",
+      "bytes": 2693,
+      "sha256": "f4f03fbb1c696c41c9496a09e6ef80d59d36b1946eff300785d5fdbdf84af31e"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/summary.json",
+      "bytes": 4061,
+      "sha256": "80d76a6982e85a44c0d2bbc841e52ef5278d42e7453cbeb696d5a1bed2dd25e0"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/trivy-db-download-summary.json",
+      "bytes": 1072,
+      "sha256": "e6a46ebfe56a266703d3cc20b8afb2d8348939b108d2bff0943755888deb4db9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/trivy-db-download-v2-summary.json",
+      "bytes": 1340,
+      "sha256": "eb646b8ace0e38fe62926796fce7870d77af1e9e85bfb4ab55d07cd2cafef6d9"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/trivy-db-download-v2.log",
+      "bytes": 41227,
+      "sha256": "519d5d6addb55aa246318a0e382589971694102d66b1aeab7d2c2b67dcd26004"
+    },
+    {
+      "path": "docs/evidence/final-website-20261022/security/trivy-db-download.log",
+      "bytes": 28870,
+      "sha256": "b60ac42b925d3680b009cb45f5b7324e3141e4b0a03a6dd89832476c21926c89"
+    },
+    {
+      "path": "index.html",
+      "bytes": 116747,
+      "sha256": "19677a21cc5c758a4ac84daee84c41a4b912958a0b80b52386542cc8d4dfff92"
+    },
+    {
+      "path": "progresskit-mail/index.html",
+      "bytes": 14454,
+      "sha256": "877742f5a51236f082e715b88cf81a954fd5a67ec649941a979ee080fd24ba3f"
+    },
+    {
+      "path": "projekty/adivara/index.html",
+      "bytes": 10967,
+      "sha256": "3fcbaa2aa573dd8e9790d81daa8e2a90d7aafcb2c369e7f34cd5e65e98b54798"
+    },
+    {
+      "path": "projekty/glikemia-premium/index.html",
+      "bytes": 13112,
+      "sha256": "5d2b54aeda2110698b0d72ac0165d68bdf31cf3ff580ebd48a15cd1acd187e25"
+    },
+    {
+      "path": "projekty/gotrans360/index.html",
+      "bytes": 11354,
+      "sha256": "d265dd1b4848149945c65cd77548d958d024741bf4adfe117726ddc1789d6c81"
+    },
+    {
+      "path": "projekty/ignira/index.html",
+      "bytes": 10322,
+      "sha256": "1cf718d4d8ee0586200f98876d1cae521e519710832094ce6219ac9741604fe4"
+    },
+    {
+      "path": "projekty/index.html",
+      "bytes": 47380,
+      "sha256": "bbc6418a56d138ede7c63c55a18464e151a3c8315bf799bd2f862ec081671e0f"
+    },
+    {
+      "path": "projekty/kan-system/index.html",
+      "bytes": 9735,
+      "sha256": "91973cea6dee44c7c15669b5e4e354f0e8857f71ef7057cf11761c9cdbf9feeb"
+    },
+    {
+      "path": "projekty/obserwator/index.html",
+      "bytes": 10320,
+      "sha256": "3f9232c599e59d88769c74ad0e8b8fd3d5fec2cc76e823057f6123884e2da645"
+    },
+    {
+      "path": "projekty/progresskit-analytics/index.html",
+      "bytes": 9062,
+      "sha256": "f569d724b43faeada7ee08b65f1e071b1bae8774c07f4e3c347efbf896a684aa"
+    },
+    {
+      "path": "projekty/progresskit-community/index.html",
+      "bytes": 13861,
+      "sha256": "73ef5d7aa60d97d0211ae7f7c8ccb23841315a2d2ab7d40febf11f914e5f94a4"
+    },
+    {
+      "path": "projekty/progresskit-infrastructure/index.html",
+      "bytes": 9071,
+      "sha256": "c051b22cf0fe668693c817d6fb6be2ba1c68455dccf513a2530421f46d399b0a"
+    },
+    {
+      "path": "projekty/progresskit-mail/index.html",
+      "bytes": 14613,
+      "sha256": "9b4bd2ec0a1d9effa49dcaf801fff8f6c940c5c08ba78d584280f408bc436e4b"
+    },
+    {
+      "path": "projekty/progresskit-systems/index.html",
+      "bytes": 9752,
+      "sha256": "f4600bde460fe2c75a76c619c9190e9a3be2931eb23db636141c1d18de567bf9"
+    },
+    {
+      "path": "projekty/progresskit-tax/index.html",
+      "bytes": 12265,
+      "sha256": "b72c3ee40369b26824ed2cffcd49d4cbe3fba8fd728bb3a5fb1b31a90a22ccbd"
+    },
+    {
+      "path": "projekty/progresskit-translator/index.html",
+      "bytes": 12298,
+      "sha256": "224b4d208e66e33121248fa6e5953db2e60ced29a1e3d8e88ae9733b6322a6f7"
+    },
+    {
+      "path": "projekty/vaeloria/index.html",
+      "bytes": 13817,
+      "sha256": "0a3daa985cd95f3cfd1b7cf4ae4bd82ec270d60f49cb6c547c5c3fc9f72d3cef"
+    },
+    {
+      "path": "prywatnosc/index.html",
+      "bytes": 6704,
+      "sha256": "0009dc82eaff179d212379791da688d72b1f2fddab28db14f2621cb468cf6c78"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "bytes": 40284,
+      "sha256": "ad1b6f0b53ff9070bca7e15c9229f401689c426233169d3b398ea080b0ace164"
+    },
+    {
+      "path": "scripts/delivery_markup.py",
+      "bytes": 3536,
+      "sha256": "a48b6a29b1d2b697b0b71192bd7cb3d9575e4f799f8e9ce7f02c05e1154939f6"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "bytes": 14430,
+      "sha256": "51e9f22b55fa942a705eff6b460e64605109895a9616a3c517b255342284de80"
+    },
+    {
+      "path": "scripts/showroom_markup.py",
+      "bytes": 12313,
+      "sha256": "8b1bac977c43f2fda46be55ffe998a41efb4c5ce46738bd7edbebf2358a944e1"
+    },
+    {
+      "path": "scripts/stage-public.py",
+      "bytes": 3213,
+      "sha256": "e790acb508d4f497e45957d40a9d7b6050de93d7143c918cc8fea8173dfa06e1"
+    },
+    {
+      "path": "templates/about-contact.html",
+      "bytes": 3681,
+      "sha256": "abfb40e191419ce53d70dc06d946958d0d08ea8552d61078a9b27c3d49dbc861"
+    },
+    {
+      "path": "tests/project-showroom.test.cjs",
+      "bytes": 37107,
+      "sha256": "9c58fbc7a2a9bfd8edad4715e4ceff307b035ad25c87d67c046f9968290e700f"
+    },
+    {
+      "path": "tests/test_delivery_sections.py",
+      "bytes": 6276,
+      "sha256": "494cb6b084c9f0e8a254f56f1f5cac64340bf768a389dafb76d673199fb45881"
+    },
+    {
+      "path": "tests/test_security_headers.py",
+      "bytes": 15045,
+      "sha256": "8c46cc4928008104b679effa86b81adbb4634144aa6313cf4ad8394e70602884"
+    }
+  ],
+  "filesCount": 228,
+  "securitySourceFingerprint": "382c3d9b30aa2cbed0fb1cb45f2034963d10da1e9fe1dbb4f3199ce3b19772b6"
+}

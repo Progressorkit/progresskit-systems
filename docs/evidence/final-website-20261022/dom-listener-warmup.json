@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-10-22T18:04:28.538Z",
+  "samples": [
+    {
+      "label": "before-first-interaction",
+      "documents": 1,
+      "nodes": 2521,
+      "jsEventListeners": 137
+    },
+    {
+      "label": "warmup-one-cycle",
+      "documents": 1,
+      "nodes": 2581,
+      "jsEventListeners": 150
+    },
+    {
+      "label": "after-10-further-cycles",
+      "documents": 1,
+      "nodes": 2581,
+      "jsEventListeners": 150
+    },
+    {
+      "label": "after-20-further-cycles",
+      "documents": 1,
+      "nodes": 2581,
+      "jsEventListeners": 150
+    },
+    {
+      "label": "after-30-further-cycles",
+      "documents": 1,
+      "nodes": 2581,
+      "jsEventListeners": 150
+    }
+  ],
+  "browser": "155.0.8059.39",
+  "notes": "Separate Chromium context. Exactly one Tax warmup cycle before baseline; three batches of ten open/Escape cycles; each open animation settled350ms; every sample waited800ms then explicit HeapProfiler.collectGarbage. No product/harness edits. Counters are this headless run, not physical-device memory proof.",
+  "finishedAt": "2026-10-22T18:04:51.847Z"
+}

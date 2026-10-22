@@ -1,0 +1,350 @@
+{
+  "catalogAsOf": "2026-10-15",
+  "projectCount": 14,
+  "projects": [
+    {
+      "id": "glikemia-premium",
+      "name": "Glikemia Premium",
+      "slug": "glikemia-premium",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "glikemia-code",
+          "label": "Glikemia Premium: przegląd kodu i konfiguracji",
+          "kind": "code",
+          "revision": "3042927",
+          "scope": "MAUI, SQLite, jednostki, PDF i manifest; audyt źródeł, bez uruchomienia aplikacji."
+        },
+        {
+          "id": "glikemia-time",
+          "label": "Glikemia Premium: raport QA granic dat i integralności historii",
+          "kind": "report",
+          "revision": "3042927",
+          "scope": "Historyczne wyniki z 31 sierpnia i 9 września 2026; testy nie były ponawiane w audycie portfolio."
+        },
+        {
+          "id": "glikemia-premium-public",
+          "label": "Publiczny odczyt strony i dostępności, 15.10.2026",
+          "kind": "http",
+          "revision": "2026-10-15",
+          "scope": "Odczyt HTTPS. Dla APK tylko Range 32 B; bez pełnego pobrania, instalacji i weryfikacji sumy publicznego pliku."
+        }
+      ]
+    },
+    {
+      "id": "progresskit-mail",
+      "name": "ProgressKit Mail",
+      "slug": "progresskit-mail",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "mail-code",
+          "label": "ProgressKit Mail: aktualny kod klienta i usług",
+          "kind": "code",
+          "revision": "c9b669ce",
+          "scope": "Warstwy Android, TLS, Keystore, MIME, SMTP i kopia Sent; przegląd źródeł."
+        },
+        {
+          "id": "mail-mime",
+          "label": "ProgressKit Mail: raport odczytu MIME",
+          "kind": "report",
+          "revision": "c9b669ce + raport roboczy 2026-10-10",
+          "scope": "Historyczne reprodukcje syntetyczne i fizyczny kontrolowany HTML; bez surowej treści wiadomości."
+        },
+        {
+          "id": "mail-smtp",
+          "label": "ProgressKit Mail: raport wysyłki i zamknięcia technicznego",
+          "kind": "report",
+          "revision": "c9b669ce + raport roboczy 2026-10-10",
+          "scope": "Historyczne testy lokalne i jedna kontrolowana wysyłka; odbiór i wyniki uwierzytelnienia zgłoszone przez właściciela."
+        }
+      ]
+    },
+    {
+      "id": "progresskit-translator",
+      "name": "ProgressKit Translator",
+      "slug": "progresskit-translator",
+      "stage": "Prototyp",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "translator-code",
+          "label": "ProgressKit Translator: kod wersji 0.2.2",
+          "kind": "code",
+          "revision": "6932b069",
+          "scope": "Compose, maszyna sesji, ASR, wybór TTS, PCM i usługa foreground."
+        },
+        {
+          "id": "translator-asr",
+          "label": "ProgressKit Translator: raport 0.2.2 ASR/TTS",
+          "kind": "report",
+          "revision": "6932b069",
+          "scope": "Historyczna kompilacja i testy z 13 października 2026; odrębne ograniczenia fizycznego odsłuchu i metadanych ASR."
+        }
+      ]
+    },
+    {
+      "id": "vaeloria",
+      "name": "Vaeloria",
+      "slug": "vaeloria",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "vaeloria-code",
+          "label": "Vaeloria: przegląd bieżącej gry i mapy systemów",
+          "kind": "code",
+          "revision": "0716317a",
+          "scope": "Godot, silnik walki, eksploracja, zapis, profile jakości oraz kod kont i czatu."
+        },
+        {
+          "id": "vaeloria-forest",
+          "label": "Vaeloria: raport Lasu Ziemi 2.0",
+          "kind": "report",
+          "revision": "0716317a",
+          "scope": "Historyczne QA z 12 października 2026; osobne ograniczenia artystyczne i próby urządzenia."
+        },
+        {
+          "id": "vaeloria-performance",
+          "label": "Vaeloria: pomiary bazowe wydajności 13 października 2026",
+          "kind": "report",
+          "revision": "0716317a",
+          "scope": "Historyczne regresje i desktopowy mikropomiar ambientu; bez ponownego uruchomienia, bez ekstrapolacji na Android."
+        },
+        {
+          "id": "vaeloria-public",
+          "label": "Publiczny odczyt strony i dostępności, 15.10.2026",
+          "kind": "http",
+          "revision": "2026-10-15",
+          "scope": "Odczyt HTTPS. Dla APK tylko Range 32 B; bez pełnego pobrania, instalacji i weryfikacji sumy publicznego pliku."
+        }
+      ]
+    },
+    {
+      "id": "progresskit-community",
+      "name": "Lud&Pra / ProgressKit Community",
+      "slug": "progresskit-community",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "community-code",
+          "label": "Bieżący kod platformy",
+          "kind": "code",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Moduły API, kontrakty i manifesty technologii; odczyt 15.10.2026"
+        },
+        {
+          "id": "community-discovery",
+          "label": "Community Discovery: walidacja i podsumowanie, 14.10.2026",
+          "kind": "report",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Zapisane wyniki lokalne, izolowane dane i oddzielny smoke; bez ponownego uruchomienia"
+        },
+        {
+          "id": "community-feed-v2",
+          "label": "Lud&Pra V2: przegląd, 14.10.2026",
+          "kind": "report",
+          "revision": "aad44687c87e6b1243fe22db8facec260eb00913",
+          "scope": "Lokalny feed, sesje i agregacja rozmów; bez dowodu produkcji"
+        }
+      ]
+    },
+    {
+      "id": "progresskit-tax",
+      "name": "ProgressKit Tax",
+      "slug": "progresskit-tax",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "tax-code",
+          "label": "Bieżący kod backendu, WWW i Androida",
+          "kind": "code",
+          "revision": "d56da266d0d5237d4b8edf6254b08a93ca6ac4db",
+          "scope": "Kontrakty rejestrów, konwersja kwot, korekty i manifesty; odczyt 15.10.2026"
+        },
+        {
+          "id": "tax-04b",
+          "label": "Sprint 04B: raport, 11.10.2026",
+          "kind": "report",
+          "revision": "d56da266d0d5237d4b8edf6254b08a93ca6ac4db",
+          "scope": "Zapisane wyniki lokalne i fizycznego Androida; bez ponownego uruchomienia i bez produkcji"
+        }
+      ]
+    },
+    {
+      "id": "adivara",
+      "name": "Adivara",
+      "slug": "adivara",
+      "stage": "Prototyp",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "adivara-code",
+          "label": "Bieżący kod fundamentu Adivara",
+          "kind": "code",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+          "scope": "Warstwy aplikacji, kontrolery dostępu, model i technologie; odczyt 15.10.2026"
+        },
+        {
+          "id": "adivara-auth-review",
+          "label": "Raport centralizacji dostępu, sierpień 2026",
+          "kind": "report",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+          "scope": "Zapisane testy i ograniczenia zakresu poprawki; bez ponownego uruchomienia"
+        }
+      ]
+    },
+    {
+      "id": "gotrans360",
+      "name": "GoTrans360",
+      "slug": "gotrans360",
+      "stage": "Prototyp",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "gotrans-code",
+          "label": "Bieżący kod monorepo GoTrans360",
+          "kind": "code",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "API, scenariusz Smart Match i manifesty; odczyt 15.10.2026"
+        },
+        {
+          "id": "gotrans-benchmark",
+          "label": "Weryfikacja twierdzeń portfolio, 23.08.2026",
+          "kind": "report",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "Historyczne izolowane dane i scenariusz demonstracyjny; bez ponownego uruchomienia"
+        },
+        {
+          "id": "gotrans-architecture",
+          "label": "Audyt architektury i QA, 27.08.2026",
+          "kind": "report",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "Rozróżnienie funkcji połączonych, demonstracyjnych i planowanych"
+        }
+      ]
+    },
+    {
+      "id": "ignira",
+      "name": "Ignira / Maria-Salon",
+      "slug": "ignira",
+      "stage": null,
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "ignira-source",
+          "label": "Publiczne źródła witryny Ignira",
+          "kind": "code",
+          "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
+          "scope": "Tożsamość, galeria i przygotowanie wiadomości w przeglądarce"
+        },
+        {
+          "id": "ignira-layout",
+          "label": "Korekta układu kontaktu",
+          "kind": "commit",
+          "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
+          "scope": "Zmiana HTML/CSS; bieżące zachowanie w przeglądarce niezweryfikowane"
+        }
+      ]
+    },
+    {
+      "id": "obserwator",
+      "name": "Obserwator / Marek Zaworski",
+      "slug": "obserwator",
+      "stage": null,
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "obserwator-source",
+          "label": "Publiczne źródła serwisu autora",
+          "kind": "code",
+          "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
+          "scope": "Tożsamość, archiwum, pliki i formularz; działanie zewnętrznych usług niezweryfikowane"
+        },
+        {
+          "id": "obserwator-reading",
+          "label": "Obsługa animacji tekstu i przewijania",
+          "kind": "code",
+          "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
+          "scope": "Istniejąca logika prezentacji w przeglądarce; brak nowego testu runtime"
+        }
+      ]
+    },
+    {
+      "id": "kan-system",
+      "name": "KAN SYSTEM",
+      "slug": "kan-system",
+      "stage": null,
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "kan-portfolio-identity",
+          "label": "Historia zmiany nazwy RWR na KAN SYSTEM",
+          "kind": "commit",
+          "revision": "961c50c9820544dd8c32139d82cf8621b328f79d",
+          "scope": "Tożsamość realizacji i opis domeny; brak źródeł aplikacji"
+        },
+        {
+          "id": "kan-portfolio-history",
+          "label": "Poprawa odwołania do okładki realizacji",
+          "kind": "commit",
+          "revision": "c9bb17c8c5d30973f94d72e731c480d3d13aedc5",
+          "scope": "Prezentacja w portfolio; brak dowodu wdrożenia produktu"
+        }
+      ]
+    },
+    {
+      "id": "progresskit-systems",
+      "name": "ProgressKit Systems",
+      "slug": "progresskit-systems",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "progresskit-systems-source",
+          "label": "ProgressKit Systems: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ]
+    },
+    {
+      "id": "progresskit-analytics",
+      "name": "ProgressKit Analytics",
+      "slug": "progresskit-analytics",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "progresskit-analytics-source",
+          "label": "ProgressKit Analytics: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ]
+    },
+    {
+      "id": "progresskit-infrastructure",
+      "name": "Zaplecze ProgressKit",
+      "slug": "progresskit-infrastructure",
+      "stage": "W rozwoju",
+      "coverage": "partial",
+      "sources": [
+        {
+          "id": "progresskit-infrastructure-source",
+          "label": "Zaplecze ProgressKit: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ]
+    }
+  ],
+  "sourceScope": "Existing catalog and evidence documents only. No product repositories changed or independently rerun."
+}

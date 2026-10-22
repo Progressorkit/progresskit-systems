@@ -1,0 +1,22 @@
+
+
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 42 files tracked by git with 6 Code rules:
+  Scanning 42 files with 6 <multilang> rules.
+
+
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 0 (0 blocking)
+ • Rules run: 6
+ • Targets scanned: 42
+ • Parsed lines: ~100.0%
+ • Scan skipped:
+   ◦ Files larger than  files 1.0 MB: 4
+ • Scan was limited to files tracked by git
+ • For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 6 rules on 42 files: 0 findings.

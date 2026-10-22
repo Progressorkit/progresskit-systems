@@ -393,6 +393,9 @@ def homepage(data):
     exhibit=importlib.util.module_from_spec(spec);spec.loader.exec_module(exhibit)
     out+=exhibit.render_engineering_exhibit(projects)
     out+=technology_section(projects)
+    spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
+    delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
+    out+=delivery.render_delivery(projects)
     return out+contact+brief_section()
 
 
@@ -407,10 +410,10 @@ PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRES
 
 def render(content, title, description, path, prefix):
     template=(ROOT/'templates/site.html').read_text()
-    nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('kontakt','Kontakt')])
+    nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
     page_styles=''
     if not path and not prefix:
-        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices'))
+        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
         page_styles+='\n  <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>'
     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','engineering-exhibit')) if not path and not prefix else ''
     if not page_styles:

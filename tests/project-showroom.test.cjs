@@ -8,14 +8,27 @@ const records=Array.from({length:14},(_,i)=>({id:`project-${i}`,name:`Synthetic 
 
 // A deliberately small synthetic DOM exercises the actual shipped handlers.
 // It proves state transitions and event contracts, not browser layout or touch hardware.
-function mount(projects=records){
+function mount(projects=records,{slices=false,narrow=false}={}){
   let focused=null,url=new URL('http://preview.local/?q=keep&utm_source=review#projekty'),clock=1000,sequence=0;
   const timers=new Map(),frames=new Map(),documentEvents={},windowEvents={},opened=[],openedPoses=[],intersections=[];
   function element(){return{events:{},dataset:{},properties:new Map(),classes:new Set(),hidden:false,inert:false,
     addEventListener(key,fn){(this.events[key]??=[]).push(fn)},setAttribute(key,value){this[key]=value},focus(){focused=this},closest(){return null},
     get classList(){const node=this;return{toggle(key,on){on?node.classes.add(key):node.classes.delete(key)},add(key){node.classes.add(key)},remove(key){node.classes.delete(key)}}},
-    get style(){const node=this;return{setProperty(key,value){node.properties.set(key,value)},set zIndex(value){node.zIndex=value},get display(){return node.properties.get('display')||''},set display(value){node.properties.set('display',value)}}}};}
-  const cards=projects.map(project=>{const card=element(),link=element();card.dataset={projectId:project.id,category:project.category};link.dataset.showroomOpen=project.id;link.closest=query=>query==='[data-showroom-open]'?link:null;link.focus=()=>{if(!card.inert)focused=link};card.querySelector=()=>link;card.link=link;return card;});
+    get style(){const node=this;return{setProperty(key,value){node.properties.set(key,value)},removeProperty(key){node.properties.delete(key)},set zIndex(value){node.zIndex=value},get display(){return node.properties.get('display')||''},set display(value){node.properties.set('display',value)}}}};}
+  const cards=projects.map(project=>{
+    const card=element(),link=element(),panel=element(),body=element(),close=element();
+    card.dataset={projectId:project.id,category:project.category};link.dataset.showroomOpen=project.id;
+    link.closest=query=>query==='[data-showroom-open]'?link:query.includes('aria-hidden')&&(card.inert||card['aria-hidden']==='true')?card:null;
+    link.focus=()=>{if(!card.inert)focused=link};
+    panel.hidden=true;panel.querySelector=query=>query==='.project-slice__body'?body:close;
+    panel.closest=query=>query==='[data-slice-panel]'?panel:null;
+    body.closest=panel.closest;close.closest=query=>query==='[data-slice-close]'?close:query==='[data-slice-panel]'?panel:null;
+    card.querySelector=query=>slices&&query==='[data-slice-panel]'?panel:link;
+    card.contains=node=>[card,link,panel,body,close].includes(node);
+    card.rectangle={left:400,top:180,width:220,height:170,right:620,bottom:350};
+    card.getBoundingClientRect=()=>card.rectangle;card.scrollIntoView=options=>{card.scrolled=options};
+    Object.assign(card,{link,panel,body,close});return card;
+  });
   const gates=['',...new Set(projects.map(project=>project.category))].map(category=>Object.assign(element(),{dataset:{showroomCategory:category}}));
   const orbitNodes=Array.from({length:5},(_,index)=>{
     const node=element(),link=element(),spark=element(),circles=[element(),element()];node.dataset.orbitNode=String(index-2);
@@ -23,20 +36,25 @@ function mount(projects=records){
   });
   const buttons=[-1,1].map(step=>Object.assign(element(),{dataset:{showroomStep:String(step)}}));
   const root=element(),viewport=element(),status=element(),position=element(),energyToggle=element();
+  root.hasAttribute=name=>slices&&name==='data-showroom-slices';
+  viewport.rectangle={left:0,top:80,width:1000,height:560,right:1000,bottom:640};
+  viewport.getBoundingClientRect=()=>viewport.rectangle;viewport.matches=()=>false;
   viewport.clientWidth=1000;let captured=null;
   viewport.setPointerCapture=id=>{captured=id};viewport.hasPointerCapture=id=>captured===id;viewport.releasePointerCapture=()=>{captured=null};
   root.querySelector=query=>({'[data-showroom-viewport]':viewport,'#showroom-status':status,'[data-showroom-position]':position,'[data-showroom-motion-toggle]':energyToggle}[query]||null);
   root.querySelectorAll=query=>({'.showroom-card':cards,'[data-showroom-category]':gates,'[data-showroom-step]':buttons,'[data-showroom-enhancement]':[],'[data-orbit-node]':orbitNodes}[query]||[]);
-  root.contains=node=>node===viewport||cards.some(card=>card.link===node)||gates.includes(node)||buttons.includes(node);
+  root.contains=node=>node===viewport||cards.some(card=>card.contains(node))||gates.includes(node)||buttons.includes(node);
   const reduced={matches:false,events:{},addEventListener(key,fn){(this.events[key]??=[]).push(fn)}};
-  const document={readyState:'complete',hidden:false,get activeElement(){return focused},querySelector(query){return query==='[data-showroom]'?root:query==='#showroom-data'?{textContent:JSON.stringify(projects)}:null},
+  const narrowMedia={matches:narrow,events:{},addEventListener(key,fn){(this.events[key]??=[]).push(fn)}};
+  const document={readyState:'complete',hidden:false,get activeElement(){return focused},querySelector(query){return query==='[data-showroom]'?root:query==='#showroom-data'?{textContent:JSON.stringify(projects)}:query==='.topbar'?{getBoundingClientRect:()=>({bottom:64})}:null},
     addEventListener(key,fn){(documentEvents[key]??=[]).push(fn)},dispatchEvent(event){(documentEvents[event.type]||[]).forEach(fn=>fn(event));return true}};
   const location={get href(){return url.href},get search(){return url.search},get origin(){return url.origin}};
   const notify=(type,detail)=>document.dispatchEvent({type,detail});
   document.addEventListener('progresskit:open-project',event=>{opened.push(event.detail.id);openedPoses.push(cards.find(card=>card.dataset.projectId===event.detail.id).properties.get('--showroom-y'));notify('progresskit:hologram-open',{id:event.detail.id});});
   document.addEventListener('progresskit:close-project',event=>notify('progresskit:hologram-close',{id:event.detail.id}));
+  const window={innerHeight:900,innerWidth:1440,matchMedia(query){return query.includes('reduced-motion')?reduced:query.includes('max-width')?narrowMedia:{matches:true,addEventListener(){}}},addEventListener(key,fn){(windowEvents[key]??=[]).push(fn)}};
   vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../assets/project-showroom.js'),'utf8'),{
-    document,location,history:{replaceState(a,b,value){url=new URL(value)}},window:{matchMedia(query){return query.includes('reduced-motion')?reduced:{matches:true,addEventListener(){}}},addEventListener(key,fn){(windowEvents[key]??=[]).push(fn)}},
+    document,location,history:{replaceState(a,b,value){url=new URL(value)}},window,
     performance:{now:()=>clock},URL,console,CustomEvent:class{constructor(type,options){this.type=type;Object.assign(this,options)}},
     setTimeout(fn,ms){timers.set(++sequence,{fn,time:clock+ms});return sequence},clearTimeout(id){timers.delete(id)},
     requestAnimationFrame(fn){frames.set(++sequence,fn);return sequence},cancelAnimationFrame(id){frames.delete(id)},
@@ -44,10 +62,11 @@ function mount(projects=records){
   });
   function fire(node,type,extra={}){const event={type,target:node,prevented:false,preventDefault(){this.prevented=true},...extra};(node.events[type]||[]).forEach(fn=>fn(event));return event;}
   function tick(ms=0){clock+=ms;for(const[id,value]of[...timers])if(value.time<=clock){timers.delete(id);value.fn();}for(const[id,fn]of[...frames]){frames.delete(id);fn();}}
-  return{root,viewport,status,position,cards,gates,buttons,orbitNodes,energyToggle,document,reduced,opened,openedPoses,frames,timers,fire,tick,notify,
+  return{root,viewport,status,position,cards,gates,buttons,orbitNodes,energyToggle,document,window,reduced,opened,openedPoses,frames,timers,fire,tick,notify,
     gate:category=>gates.find(gate=>gate.dataset.showroomCategory===category),active:()=>cards.find(card=>card.classes.has('is-active')),
     intersect(visible){intersections.forEach(fn=>fn([{isIntersecting:visible}]))},windowNotify(type){(windowEvents[type]||[]).forEach(fn=>fn())},
-    get url(){return url},pop(value){url=new URL(value);(windowEvents.popstate||[]).forEach(fn=>fn());}};
+    get url(){return url},pop(value){url=new URL(value);(windowEvents.popstate||[]).forEach(fn=>fn());},
+    setNarrow(value){narrowMedia.matches=value;(narrowMedia.events.change||[]).forEach(fn=>fn({matches:value}));}};
 }
 
 test('Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project',()=>{
@@ -395,4 +414,96 @@ test('A child losing implicit touch capture does not cancel the viewport swipe',
   ui.fire(ui.viewport,'pointerup',{pointerId:7,clientX:74,clientY:100});
   assert.notEqual(ui.active().dataset.projectId,'project-0');
   assert.equal(ui.opened.length,0);
+});
+
+test('An expanded desktop module keeps its source anchor and leaves vertical wheel scrolling to the page',()=>{
+  const ui=mount(records,{slices:true});
+  const card=ui.active();
+  const pose=ui.cards.map(node=>node.properties.get('--showroom-y'));
+  ui.fire(ui.root,'click',{target:card.link});
+  assert.equal(card.panel.hidden,false);
+  assert.equal(card.link['aria-expanded'],'true');
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
+  assert.deepEqual(ui.cards.map(node=>node.properties.get('--showroom-y')),pose);
+  // A longer document or shorter browser must not recenter the module while reading.
+  ui.viewport.rectangle.height=1400;ui.window.innerHeight=400;
+  ui.windowNotify('resize');
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  assert.equal(card.properties.has('--slice-height'),false);
+  assert.equal(ui.fire(ui.viewport,'wheel',{target:card.body,deltaX:0,deltaY:240}).prevented,false);
+  assert.equal(card.panel.hidden,false);
+  assert.equal(ui.frames.size,0);
+});
+
+test('Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation',()=>{
+  const ui=mount(records,{slices:true}),card=ui.active();
+  ui.fire(ui.root,'click',{target:card.link});
+  assert.equal(ui.document.activeElement,card.close);
+  card.rectangle={...card.rectangle,top:-800,bottom:-630};
+  ui.fire(ui.root,'click',{target:card.close});
+  assert.equal(card.panel.hidden,true);
+  assert.equal(ui.root.classes.has('is-slice-open'),false);
+  assert.equal(ui.viewport.properties.has('--slice-stage-top'),false);
+  assert.equal(ui.document.activeElement,card.link);
+  assert.equal(card.scrolled.block,'start');
+  assert.equal(ui.url.searchParams.has('projekt'),false);
+  assert.equal(ui.url.searchParams.get('q'),'keep');
+  assert.equal(ui.url.hash,'#projekty');
+  card.rectangle={...card.rectangle,top:180,bottom:350};
+  ui.fire(ui.root,'click',{target:card.link});
+  ui.fire(ui.viewport,'keydown',{target:card.close,key:'ArrowRight'});
+  assert.equal(card.panel.hidden,true);
+  assert.equal(ui.viewport.properties.has('--slice-stage-top'),false);
+  assert.equal(ui.document.activeElement,ui.active().link);
+  assert.equal(ui.cards.filter(node=>node.link.tabIndex===0).length,1);
+});
+
+test('Breakpoint changes and browser Back keep one disclosure and return focus outside closed content',()=>{
+  const ui=mount(records,{slices:true}),card=ui.cards[1];
+  ui.fire(ui.root,'click',{target:card.link});
+  ui.setNarrow(true);
+  assert.equal(ui.active(),card);
+  assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,1);
+  assert.equal(ui.viewport.properties.has('--slice-stage-top'),false);
+  assert.equal(card.panel.hidden,false);
+  ui.setNarrow(false);
+  assert.equal(ui.active(),card);
+  assert.equal(ui.viewport.properties.get('--slice-stage-top'),'100.00px');
+  ui.pop('http://preview.local/?q=keep&utm_source=review#projekty');
+  ui.tick();
+  assert.equal(card.panel.hidden,true);
+  assert.equal(ui.viewport.properties.has('--slice-stage-top'),false);
+  assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,0);
+  assert.equal(ui.document.activeElement,ui.viewport);
+});
+
+test('Manual rotation cannot open a moving neighbor through hover before a settled module is chosen',()=>{
+  const ui=mount(records,{slices:true});
+  ui.fire(ui.buttons[1],'click');
+  assert.equal(ui.frames.size,1);
+  const card=ui.active();
+  ui.fire(card,'pointerenter',{pointerType:'mouse'});
+  ui.fire(card,'pointermove',{pointerType:'mouse'});
+  ui.tick(130);
+  assert.equal(ui.cards.some(node=>node.classes.has('is-slice-expanded')),false);
+  ui.tick(620);
+  assert.equal(ui.frames.size,0);
+  ui.fire(card,'pointerenter',{pointerType:'mouse'});
+  ui.fire(card,'pointermove',{pointerType:'mouse'});
+  ui.tick(130);
+  assert.equal(card.classes.has('is-slice-expanded'),true);
+  assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,1);
+});
+
+test('A module passing under a stationary pointer during page scrolling does not open until the pointer moves',()=>{
+  const ui=mount(records,{slices:true}),card=ui.active();
+  ui.fire(card,'pointerenter',{pointerType:'mouse'});
+  ui.tick(500);
+  assert.equal(card.panel.hidden,true);
+  assert.equal(ui.url.searchParams.has('projekt'),false);
+  ui.fire(card,'pointermove',{pointerType:'mouse',clientX:450,clientY:220});
+  ui.tick(130);
+  assert.equal(card.panel.hidden,false);
+  assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
 });

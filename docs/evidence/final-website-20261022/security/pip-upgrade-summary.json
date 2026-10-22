@@ -1,0 +1,25 @@
+{
+  "startedUtc": "2026-10-22T18:02:40.861955+00:00",
+  "scope": "Only pip in the dedicated temporary QA venv; no repository dependency edits",
+  "command": [
+    "/tmp/progresskit-final-20261022/venv/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--index-url",
+    "https://pypi.org/simple",
+    "pip==26.2.0"
+  ],
+  "inventoryUploaded": false,
+  "exit": 0,
+  "status": "PASS",
+  "changedPackages": {
+    "pip": {
+      "before": "24.0",
+      "after": "26.2"
+    }
+  },
+  "onlyPipChanged": true,
+  "finishedUtc": "2026-10-22T18:02:44.929733+00:00"
+}

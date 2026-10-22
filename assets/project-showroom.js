@@ -263,18 +263,18 @@ if (typeof document !== 'undefined') {
       if (announce && active()) status.textContent = `${previewSnapshot ? 'Podgląd: ' : ''}${active().name}. ${state.index + 1} z ${state.items.length}${state.category ? ` · ${active().categoryLabel || ''}` : ' · wszystkie projekty'}.`;
     }
     function placeSlice() {
-      // Narrow modules participate in document flow and use their full natural
-      // content height, rather than a viewport-sized inner scrolling surface.
-      if (!sliceCard || narrowLayout.matches) return;
+      if (!sliceCard) return;
+      if (narrowLayout.matches) {
+        viewport.style.removeProperty('--slice-stage-top');
+        return;
+      }
+      // Keep the source anchor, but let the real module's natural height extend
+      // the track and page instead of fitting its text into a screen-sized box.
       const bounds = viewport.getBoundingClientRect();
       const width = Math.min(620, bounds.width - 24);
-      const navigationBottom = document.querySelector('.topbar')?.getBoundingClientRect().bottom || 0;
-      const visibleTop = Math.min(bounds.height - 292, Math.max(12, navigationBottom - bounds.top + 12));
-      const visibleBottom = Math.max(visibleTop + 280, Math.min(bounds.height - 12, window.innerHeight - bounds.top - 12));
-      const height = Math.min(bounds.height - 24, Math.max(280, visibleBottom - visibleTop), window.innerWidth < 701 ? 620 : 500);
       const left = Math.max(12, Math.min(bounds.width - width - 12, sliceOrigin.x * bounds.width - width / 2));
-      const top = Math.max(visibleTop, Math.min(visibleBottom - height, sliceOrigin.y * bounds.height - height / 2));
-      for (const [name, value] of Object.entries({left, top, width, height})) {
+      viewport.style.setProperty('--slice-stage-top', `${sliceOrigin.top.toFixed(2)}px`);
+      for (const [name, value] of Object.entries({left, width})) {
         sliceCard.style.setProperty(`--slice-${name}`, `${value.toFixed(2)}px`);
       }
     }
@@ -287,6 +287,7 @@ if (typeof document !== 'undefined') {
       card.querySelector('[data-slice-panel]').hidden = true;
       card.querySelector('[data-showroom-open]').setAttribute('aria-expanded', 'false');
       root.classList.remove('is-slice-open');
+      viewport.style.removeProperty('--slice-stage-top');
       openId = '';
       // An explicit close must stay closed under a stationary mouse.
       sliceHoverBlocked = finePointer.matches && viewport.matches(':hover');
@@ -295,11 +296,9 @@ if (typeof document !== 'undefined') {
       if (restoreFocus) {
         const target = sliceReturnTarget && !sliceReturnTarget.closest('[inert],[hidden],[aria-hidden="true"]') ? sliceReturnTarget : viewport;
         target.focus({preventScroll:true});
-        if (narrowLayout.matches) {
-          const box = card.getBoundingClientRect();
-          const headerBottom = document.querySelector('.topbar')?.getBoundingClientRect().bottom || 0;
-          if (box.top < headerBottom || box.bottom > window.innerHeight) card.scrollIntoView({block:'start',behavior:'instant'});
-        }
+        const box = card.getBoundingClientRect();
+        const headerBottom = document.querySelector('.topbar')?.getBoundingClientRect().bottom || 0;
+        if (box.top < headerBottom || box.bottom > window.innerHeight) card.scrollIntoView({block:'start',behavior:'instant'});
       }
     }
     function openSlice(id, trigger, focus = false) {
@@ -318,7 +317,7 @@ if (typeof document !== 'undefined') {
       const before = card.getBoundingClientRect();
       const bounds = viewport.getBoundingClientRect();
       sliceOrigin = {x:(before.left + before.width / 2 - bounds.left) / bounds.width,
-        y:(before.top + before.height / 2 - bounds.top) / bounds.height};
+        top:Math.max(12, before.top - bounds.top)};
       sliceReturnTarget = trigger || viewport;
       sliceCard = card;
       openId = id;
@@ -566,11 +565,14 @@ if (typeof document !== 'undefined') {
         if (event.key === 'Escape' && sliceCard) { event.preventDefault(); closeSlice(true); }
       });
       cards.forEach(card => {
-        card.addEventListener('pointerenter', event => {
+        card.addEventListener('pointerenter', () => clearTimeout(sliceTimer));
+        card.addEventListener('pointermove', event => {
           clearTimeout(sliceTimer);
-          if (sliceCard || sliceHoverBlocked || !finePointer.matches || event.pointerType === 'touch' || gesture || locked || card.inert) return;
+          // Scrolling or a manual turn can carry a module under a stationary
+          // pointer. Hover needs an actual pointer move over a settled module.
+          if (sliceCard || sliceHoverBlocked || !finePointer.matches || event.pointerType === 'touch' || gesture || phaseFrame || locked || card.inert) return;
           sliceTimer = setTimeout(() => {
-            if (performance.now() >= suppressClickUntil && !gesture && !sliceCard && !card.inert) openSlice(card.dataset.projectId, card.querySelector('[data-showroom-open]'));
+            if (performance.now() >= suppressClickUntil && !gesture && !phaseFrame && !sliceCard && !card.inert) openSlice(card.dataset.projectId, card.querySelector('[data-showroom-open]'));
           }, 130);
         });
         card.addEventListener('pointerleave', () => {
