@@ -1,0 +1,50 @@
+{
+  "reportDate": "2026-10-23",
+  "checkedUtc": "2026-10-23T06:55:10.029328+00:00",
+  "baselineCommit": "b22201ba32c78fbc05f9b3ff46781e6041c86fe9",
+  "status": "PASS",
+  "generatedHtmlSurfaces": {
+    "urls": {
+      "unchanged": true,
+      "beforeCount": 177,
+      "afterCount": 177
+    },
+    "events": {
+      "unchanged": true,
+      "beforeCount": 0,
+      "afterCount": 0
+    },
+    "styles": {
+      "unchanged": true,
+      "beforeCount": 0,
+      "afterCount": 0
+    },
+    "scripts": {
+      "unchanged": true,
+      "beforeCount": 5,
+      "afterCount": 5
+    },
+    "forms": {
+      "unchanged": true,
+      "beforeCount": 6,
+      "afterCount": 6
+    }
+  },
+  "javascriptExactFixedTextReplacementOnly": true,
+  "manuallyReviewedGeneratorEscaping": {
+    "deliveryMarkup": "New description/label/status values still pass html.escape; product slug retains regex validation. Added fixed h3/h4/p markup has no dynamic active content.",
+    "showroomMarkup": "Only fixed aria-label and motion-button copy changed; existing data bindings and links retained."
+  },
+  "changedSourceHashes": {
+    "assets/project-showroom.js": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+    "index.html": "aa13474fc6ec45c8b2e339e68d35359840b9a83a3d4160493095c876aadda0ea",
+    "scripts/delivery_markup.py": "3d0c553a4c44e480138a02fefd13473bb4252179a895ed84b490e16d26dda67d",
+    "scripts/showroom_markup.py": "b35c0377743c9a3683ee2e4d97f5e988f8c45f6c47ff6bf691ee39de49b352f5",
+    "tests/project-showroom.test.cjs": "6604febbd74b3f1a3e96fbfe6e923c7fd18acdeff5968d478813220dd028255a",
+    "tests/test_delivery_sections.py": "d6615a4e0d0e5217972e1b8952872be8576bb157dc6039d183f49f94fae47c0c"
+  },
+  "newRequests": false,
+  "newExternalResources": false,
+  "newHtmlSink": false,
+  "reviewedBy": "security audit; independent domain reviewer separately confirmed absence of new sinks/egress in same diff"
+}

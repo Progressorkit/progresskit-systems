@@ -1,0 +1,63 @@
+{
+  "reportDate": "2026-10-23",
+  "finishedUtc": "2026-10-23T06:56:56.007259+00:00",
+  "baselineCommit": "b22201ba32c78fbc05f9b3ff46781e6041c86fe9",
+  "status": "PASS_SCOPED_SOURCE_REVIEW",
+  "sourceFiles": 92,
+  "sourceMapCanonicalSha256": "d14b472ee58da71562a2586634ece8ba8aec83280f34925a23f760a5e834d1a4",
+  "sourceUnchangedDuringAndAfterScans": true,
+  "changedSourcePaths": [
+    "assets/project-showroom.js",
+    "index.html",
+    "scripts/delivery_markup.py",
+    "scripts/showroom_markup.py",
+    "tests/project-showroom.test.cjs",
+    "tests/test_delivery_sections.py"
+  ],
+  "surfaceReview": "PASS; URLs/scripts/events/styles/forms unchanged",
+  "sast": {
+    "name": "sast",
+    "startedUtc": "2026-10-23T06:55:10.130284+00:00",
+    "exit": 0,
+    "status": "PASS",
+    "errors": 0,
+    "findings": 0,
+    "scannedFiles": 44,
+    "ruleCount": 6
+  },
+  "sastVersion": "1.168.0",
+  "sastScope": [
+    "analytics",
+    "assets",
+    "scripts",
+    "glikemia-premium"
+  ],
+  "sastSkippedOver1MB": [
+    "assets/brand/progressorkit-primary.png",
+    "assets/brand/progressorkit-stamp.png",
+    "assets/projects/gotrans360/gotrans360-logo.png",
+    "assets/projects/vaeloria/vaeloria-cover.png"
+  ],
+  "gitleaksVersion": "8.30.1",
+  "gitleaksRawStatus": "FAIL",
+  "gitleaksHistoryFindings": 4,
+  "gitleaksWorktreeFindings": 3,
+  "gitleaksReviewedStatus": "PASS",
+  "gitleaksReviewedBenign": 7,
+  "gitleaksSyntheticFixtureFindings": 3,
+  "gitleaksPublicSigningFingerprintFindings": 4,
+  "gitleaksUnreviewedFindings": 0,
+  "scaStatus": "NOT_RERUN_UNCHANGED_DEPENDENCY_MANIFESTS",
+  "currentScaPassClaimed": false,
+  "apkStatus": "NOT_RESCANNED_UNCHANGED_GIT_BLOB",
+  "backendRuntimeTests": "NOT_RERUN_UNCHANGED_BACKEND",
+  "cssCatalogBackendDependencyManifestsByteUnchanged": true,
+  "networkUsedForTheseScans": false,
+  "sourceOrInventoryUploaded": false,
+  "runtimeSourceEditsByThisAudit": false,
+  "limitations": [
+    "SAST uses six local pattern rules, not whole-program data-flow analysis; four PNG binaries over 1MB skipped.",
+    "Historical SCA/APK evidence is referenced explicitly; no new SCA, APK signature/integrity scan or runtime backend test claimed. Dependency manifest hashes are byte-identical against b22201b.",
+    "Local source evidence does not validate production/VPS/Caddy/HTTPS, deployment or physical devices."
+  ]
+}

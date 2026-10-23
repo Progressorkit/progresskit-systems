@@ -138,7 +138,7 @@ test('Actual catalog filters wire only occupied nodes and preserve hologram open
 test('Energy pause survives category changes and reduced motion cannot be overridden',()=>{
   const ui=mount();
   ui.fire(ui.energyToggle,'click');assert.ok(ui.root.classes.has('is-energy-paused'));
-  assert.equal(ui.energyToggle['aria-pressed'],'true');assert.equal(ui.energyToggle.textContent,'Wznów efekty orbity');
+  assert.equal(ui.energyToggle['aria-pressed'],'true');assert.equal(ui.energyToggle.textContent,'Wznów efekty mechanizmu');
   ui.fire(ui.gate('mobile'),'click');assert.ok(ui.root.classes.has('is-energy-paused'));
   ui.fire(ui.energyToggle,'click');assert.equal(ui.root.classes.has('is-energy-paused'),false);
   ui.reduced.matches=true;ui.reduced.events.change.forEach(fn=>fn({matches:true}));

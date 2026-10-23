@@ -1,0 +1,101 @@
+{
+  "approvalSource": "docs/APPROVED_COPY_V2_20261023.md: Zatwierdzony pakiet",
+  "baseHead": "b22201ba32c78fbc05f9b3ff46781e6041c86fe9",
+  "sourceHtmlSha256": "aa13474fc6ec45c8b2e339e68d35359840b9a83a3d4160493095c876aadda0ea",
+  "checkedAt": "2026-10-23T06:56:43.128146+00:00",
+  "scope": "Independent literal copy and source-scope review. Existing catalogue sources are not promoted to commercial or production readiness.",
+  "PASS": 13,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "checks": [
+    {
+      "name": "Catalogue bytes unchanged from approved baseline",
+      "status": "PASS",
+      "details": {
+        "sha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d"
+      }
+    },
+    {
+      "name": "All14 existing identities preserved",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium",
+        "progresskit-mail",
+        "progresskit-translator",
+        "vaeloria",
+        "progresskit-community",
+        "progresskit-tax",
+        "adivara",
+        "gotrans360",
+        "ignira",
+        "obserwator",
+        "kan-system",
+        "progresskit-systems",
+        "progresskit-analytics",
+        "progresskit-infrastructure"
+      ]
+    },
+    {
+      "name": "Owner visual approval remains OPEN and brand configuration unchanged",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "No CSS or geometry stylesheet changes",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "JS changes exactly the approved two textContent labels, without behavior or egress changes",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "Showroom template changes exactly approved aria label and initial pause text",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "Exact approved ecosystem lead and no-available-integration note present",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "All six approved role descriptions occur literally",
+      "status": "PASS",
+      "details": [
+        "Obsługa biura.",
+        "Niezależny moduł językowy offline-first.",
+        "Lokalni agenci AI.",
+        "Integracje telefoniczne.",
+        "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.",
+        "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane."
+      ]
+    },
+    {
+      "name": "All three main relationships explicitly say Planowane połączenie",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "New independent branch heading and approved case studies CTA match",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "Motto preserved",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "Release and commercial explanation unchanged",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "Public descriptions labels and statuses still HTML escaped",
+      "status": "PASS",
+      "details": null
+    }
+  ]
+}

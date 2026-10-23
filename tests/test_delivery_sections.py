@@ -46,12 +46,14 @@ class DeliverySectionsTests(unittest.TestCase):
     def test_approved_relationships_are_explicitly_planned_not_an_available_offer(self):
         text = ''.join(self.page.text)
         for label in (
-                'Tax — obsługa biura',
-                'Translator — niezależny moduł językowy offline-first',
-                'Mail — komunikacja e-mail',
-                'Local AI Agents', 'Voice Gateway', 'bezpieczny komunikator',
-                'Roadmapa: bezpieczny komunikator, lokalni agenci AI, integracje telefoniczne.',
-                'Planowane połączenia między produktami; nie stanowią dostępnej oferty.'):
+                'ProgressKit Tax', 'Obsługa biura.',
+                'ProgressKit Translator', 'Niezależny moduł językowy offline-first.',
+                'ProgressKit Mail', 'Komunikacja e-mail. Połączenie z głównym przepływem — planowane.',
+                'Local AI Agents', 'Lokalni agenci AI.', 'Voice Gateway', 'Integracje telefoniczne.',
+                'Bezpieczny komunikator', 'Niezależna komunikacja',
+                'Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.',
+                'Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.',
+                'Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.'):
             self.assertIn(label, text)
         self.assertEqual(2, self.page.text.count('W rozwoju'))
         self.assertEqual(1, self.page.text.count('Prototyp'))

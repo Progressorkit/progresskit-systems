@@ -1,0 +1,107 @@
+{
+  "reportDate": "2026-10-23",
+  "createdUtc": "2026-10-23T06:56:56.007823+00:00",
+  "baselineCommit": "b22201ba32c78fbc05f9b3ff46781e6041c86fe9",
+  "phase": "FINAL approved copy V2 local source security review",
+  "sourceMapCanonicalSha256": "d14b472ee58da71562a2586634ece8ba8aec83280f34925a23f760a5e834d1a4",
+  "rawGitleaksStatus": "FAIL",
+  "reviewedGitleaksStatus": "PASS",
+  "scaStatus": "NOT_RERUN_UNCHANGED_DEPENDENCY_MANIFESTS",
+  "files": [
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/REVIEW.md",
+      "bytes": 2191,
+      "sha256": "5ade751ace558387f5adbd6ecbcba843db977765529566281b0130df4e3e36f1"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/baseline-verification.json",
+      "bytes": 9033,
+      "sha256": "cf2e2db403a930fe8b22d9e70931239145e78abd8c11ee51817d678185ed4f88"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/baseline.json",
+      "bytes": 6377,
+      "sha256": "d81adfad88de3d8805e382a6aa221d8299c4bfd803675d0d02fcf139c64e0af8"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/commands.json",
+      "bytes": 1672,
+      "sha256": "e30c5f4a7ef8287707904c6fa8617ebc2663777784d28e33bc0f6242b4ceebaf"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/copy-surface-review.json",
+      "bytes": 1917,
+      "sha256": "656ca70df0eb887adb63ac2ea70e73767b1be5159cca1728ec4351e60f148b1a"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "51cad6039ab878cac9bfdea41ed29379fec0fc74f662bb1fef724c74b92933d6"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/final-security-summary.json",
+      "bytes": 2347,
+      "sha256": "25dfc01d09db4e4bc1e6b03cabc3533fef927796080be98c57f226123a3200ed"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/final-source-after.json",
+      "bytes": 9482,
+      "sha256": "98be6b98c0c0edec1bca85b31892bc8721e2df49382e376dc1fc45243173fc81"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/final-source-before.json",
+      "bytes": 9465,
+      "sha256": "f26dae4bd17f5ab7a2d7a0990f04c2f004964d71c7b7afd175936faf4b4b7789"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "b6f8efe157603033453cf4e003276b9cad124e0aac12e528c1481c98e2999221"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/gitleaks-reviewed-benign.json",
+      "bytes": 8701,
+      "sha256": "9f26119caebdceaefb917c65be5a281397c7c4c3865e29032683cac9aab399c3"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/gitleaks-worktree.json",
+      "bytes": 2308,
+      "sha256": "ad6a7c6ee42db44372cf69579b3c60992947d6ca924b6ebdda3991c8d509fe97"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "721850a89c61e941a5f21289bb7eeacadd97223a0d4c97732352ba46654df30f"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/log-normalization.json",
+      "bytes": 892,
+      "sha256": "3fc7dbd2e478faf5df48827b2417c14de81c5993cd196460521b3f83c55ca292"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/sast.json",
+      "bytes": 2586,
+      "sha256": "0b2d916df4dcc9030ef5499add4068aa927527d5392a55541e1a635a17c081c7"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/sast.log",
+      "bytes": 701,
+      "sha256": "8d80955e572b3250b94df8be1f9dc4d7cde1bfa3b660f76ff937c21b2296062e"
+    },
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/sast.log.gz",
+      "bytes": 360,
+      "sha256": "35992f2994ce663c3b4547487beaca7dbd525f1bd00d422ade80d6f57fd1f954"
+    }
+  ]
+}

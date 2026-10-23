@@ -1,0 +1,19 @@
+{
+  "recordedUtc": "2026-10-23T06:56:55.969642+00:00",
+  "resultsChanged": false,
+  "method": "Remove only trailing ASCII space/tab in readable logs. Exact original log bytes preserved in deterministic gzip with mtime=0 and empty filename. Scanner JSON/exit status unchanged.",
+  "entries": [
+    {
+      "path": "docs/evidence/approved-copy-v2-20261023/security/sast.log",
+      "originalBytes": 764,
+      "originalSha256": "af415ac7de418afe73ba1a375c7b3aaa2154111e6861a30519db9ef62df5ba27",
+      "rawGzipPath": "docs/evidence/approved-copy-v2-20261023/security/sast.log.gz",
+      "rawGzipBytes": 360,
+      "rawGzipSha256": "35992f2994ce663c3b4547487beaca7dbd525f1bd00d422ade80d6f57fd1f954",
+      "readableBytes": 701,
+      "readableSha256": "8d80955e572b3250b94df8be1f9dc4d7cde1bfa3b660f76ff937c21b2296062e",
+      "normalizedLines": 5,
+      "rawRoundtripVerified": true
+    }
+  ]
+}

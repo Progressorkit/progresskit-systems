@@ -269,7 +269,7 @@ if (typeof document !== 'undefined') {
       if (energyToggle) {
         energyToggle.disabled = reducedMotion.matches;
         energyToggle.setAttribute('aria-pressed', String(energyPaused || reducedMotion.matches));
-        energyToggle.textContent = reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty orbity' : 'Wstrzymaj efekty orbity';
+        energyToggle.textContent = reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty mechanizmu' : 'Wstrzymaj efekty mechanizmu';
       }
       viewport.style.setProperty('--showroom-drag', '0px');
       position.textContent = `${state.index + 1} / ${state.items.length}`;

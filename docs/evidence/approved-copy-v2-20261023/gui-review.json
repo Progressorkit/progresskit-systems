@@ -1,0 +1,1705 @@
+{
+  "base": "http://127.0.0.1:8100",
+  "browser": "155.0.8059.39",
+  "scope": "Targeted actual Chromium QA of approved copy only, four emulated viewport sizes. Not a repeat of the full 80-case mechanism regression or physical-device acceptance.",
+  "sourceHtmlSha256": "aa13474fc6ec45c8b2e339e68d35359840b9a83a3d4160493095c876aadda0ea",
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "screenshots": [
+        "1920-first.png",
+        "1920-ecosystem.png"
+      ],
+      "PASS": 14,
+      "FAIL": 0,
+      "checks": [
+        {
+          "name": "first view preserves14 projects without horizontal overflow",
+          "status": "PASS",
+          "details": {
+            "overflow": false,
+            "projects": 14,
+            "uniqueProjects": 14,
+            "label": "Mechaniczna ekspozycja projektów",
+            "motion": "Wstrzymaj efekty mechanizmu",
+            "liveStatus": {
+              "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+              "color": "rgb(209, 220, 227)",
+              "fontSize": "14px"
+            }
+          }
+        },
+        {
+          "name": "approved mechanical aria label",
+          "status": "PASS",
+          "details": "Mechaniczna ekspozycja projektów"
+        },
+        {
+          "name": "approved initial pause label",
+          "status": "PASS",
+          "details": "Wstrzymaj efekty mechanizmu"
+        },
+        {
+          "name": "pause shows approved resume label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wznów efekty mechanizmu",
+            "pressed": "true"
+          }
+        },
+        {
+          "name": "resume restores approved pause label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wstrzymaj efekty mechanizmu",
+            "pressed": "false"
+          }
+        },
+        {
+          "name": "approved ecosystem lead and explicit roadmap note",
+          "status": "PASS",
+          "details": {
+            "lead": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+            "note": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty."
+          }
+        },
+        {
+          "name": "approved four names states and role descriptions",
+          "status": "PASS",
+          "details": [
+            [
+              "ProgressKit Tax",
+              "W rozwoju",
+              "Obsługa biura."
+            ],
+            [
+              "ProgressKit Translator",
+              "Prototyp",
+              "Niezależny moduł językowy offline-first."
+            ],
+            [
+              "Local AI Agents",
+              "Planowane",
+              "Lokalni agenci AI."
+            ],
+            [
+              "Voice Gateway",
+              "Planowane",
+              "Integracje telefoniczne."
+            ]
+          ]
+        },
+        {
+          "name": "approved independent communication branch names states and descriptions",
+          "status": "PASS",
+          "details": {
+            "title": "Niezależna komunikacja",
+            "branches": [
+              [
+                "ProgressKit Mail",
+                "W rozwoju",
+                "Komunikacja e-mail. Połączenie z głównym przepływem — planowane."
+              ],
+              [
+                "Bezpieczny komunikator",
+                "Planowane",
+                "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane."
+              ]
+            ]
+          }
+        },
+        {
+          "name": "all three relationships explicitly planned",
+          "status": "PASS",
+          "details": [
+            "Planowane połączenie",
+            "Planowane połączenie",
+            "Planowane połączenie"
+          ]
+        },
+        {
+          "name": "all ecosystem labels and descriptions visible and horizontally uncut",
+          "status": "PASS",
+          "details": {
+            "clipped": [],
+            "measurements": [
+              {
+                "text": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+                "left": 250,
+                "right": 1055.375,
+                "width": 805.375,
+                "height": 28.796875,
+                "scrollWidth": 805,
+                "clientWidth": 805,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Tax",
+                "left": 250,
+                "right": 570.5,
+                "width": 320.5,
+                "height": 29.6875,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Obsługa biura.",
+                "left": 250,
+                "right": 570.5,
+                "width": 320.5,
+                "height": 26.25,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 250,
+                "right": 570.5,
+                "width": 320.5,
+                "height": 21.4375,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Translator",
+                "left": 616.5,
+                "right": 937,
+                "width": 320.5,
+                "height": 29.6875,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Niezależny moduł językowy offline-first.",
+                "left": 616.5,
+                "right": 937,
+                "width": 320.5,
+                "height": 26.25,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 616.5,
+                "right": 937,
+                "width": 320.5,
+                "height": 21.4375,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Local AI Agents",
+                "left": 983,
+                "right": 1303.5,
+                "width": 320.5,
+                "height": 29.6875,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Lokalni agenci AI.",
+                "left": 983,
+                "right": 1303.5,
+                "width": 320.5,
+                "height": 26.25,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 983,
+                "right": 1303.5,
+                "width": 320.5,
+                "height": 21.4375,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Voice Gateway",
+                "left": 1349.5,
+                "right": 1670,
+                "width": 320.5,
+                "height": 29.6875,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Integracje telefoniczne.",
+                "left": 1349.5,
+                "right": 1670,
+                "width": 320.5,
+                "height": 26.25,
+                "scrollWidth": 321,
+                "clientWidth": 321,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Mail",
+                "left": 272,
+                "right": 936,
+                "width": 664,
+                "height": 27.546875,
+                "scrollWidth": 664,
+                "clientWidth": 664,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.",
+                "left": 272,
+                "right": 936,
+                "width": 664,
+                "height": 26.25,
+                "scrollWidth": 664,
+                "clientWidth": 664,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Bezpieczny komunikator",
+                "left": 1006,
+                "right": 1670,
+                "width": 664,
+                "height": 27.546875,
+                "scrollWidth": 664,
+                "clientWidth": 664,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+                "left": 1006,
+                "right": 1670,
+                "width": 664,
+                "height": 26.25,
+                "scrollWidth": 664,
+                "clientWidth": 664,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.",
+                "left": 275,
+                "right": 1645,
+                "width": 1370,
+                "height": 28.796875,
+                "scrollWidth": 1370,
+                "clientWidth": 1370,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ecosystem uses natural page scrolling without nested scrollers",
+          "status": "PASS",
+          "details": {
+            "before": 1085,
+            "after": 1435,
+            "innerScroll": [],
+            "containers": [
+              {
+                "className": "section delivery-section delivery-ecosystem home-chapter",
+                "overflowY": "visible",
+                "scrollHeight": 946,
+                "clientHeight": 946
+              },
+              {
+                "className": "delivery-map delivery-map--flow",
+                "overflowY": "visible",
+                "scrollHeight": 262,
+                "clientHeight": 262
+              },
+              {
+                "className": "delivery-flow",
+                "overflowY": "visible",
+                "scrollHeight": 260,
+                "clientHeight": 260
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-independent",
+                "overflowY": "visible",
+                "scrollHeight": 235,
+                "clientHeight": 235
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 157,
+                "clientHeight": 157
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 157,
+                "clientHeight": 157
+              }
+            ]
+          }
+        },
+        {
+          "name": "approved case studies CTA and existing catalogue destination",
+          "status": "PASS",
+          "details": {
+            "text": "Case studies projektów →",
+            "href": "projekty/"
+          }
+        },
+        {
+          "name": "case studies CTA opens the existing catalogue",
+          "status": "PASS",
+          "details": "http://127.0.0.1:8100/projekty/"
+        },
+        {
+          "name": "no page errors or failed resource requests",
+          "status": "PASS",
+          "details": {
+            "errors": [],
+            "failedResources": []
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "screenshots": [
+        "1440-first.png",
+        "1440-ecosystem.png",
+        "1440-ecosystem-bottom.png"
+      ],
+      "PASS": 14,
+      "FAIL": 0,
+      "checks": [
+        {
+          "name": "first view preserves14 projects without horizontal overflow",
+          "status": "PASS",
+          "details": {
+            "overflow": false,
+            "projects": 14,
+            "uniqueProjects": 14,
+            "label": "Mechaniczna ekspozycja projektów",
+            "motion": "Wstrzymaj efekty mechanizmu",
+            "liveStatus": {
+              "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+              "color": "rgb(209, 220, 227)",
+              "fontSize": "14px"
+            }
+          }
+        },
+        {
+          "name": "approved mechanical aria label",
+          "status": "PASS",
+          "details": "Mechaniczna ekspozycja projektów"
+        },
+        {
+          "name": "approved initial pause label",
+          "status": "PASS",
+          "details": "Wstrzymaj efekty mechanizmu"
+        },
+        {
+          "name": "pause shows approved resume label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wznów efekty mechanizmu",
+            "pressed": "true"
+          }
+        },
+        {
+          "name": "resume restores approved pause label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wstrzymaj efekty mechanizmu",
+            "pressed": "false"
+          }
+        },
+        {
+          "name": "approved ecosystem lead and explicit roadmap note",
+          "status": "PASS",
+          "details": {
+            "lead": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+            "note": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty."
+          }
+        },
+        {
+          "name": "approved four names states and role descriptions",
+          "status": "PASS",
+          "details": [
+            [
+              "ProgressKit Tax",
+              "W rozwoju",
+              "Obsługa biura."
+            ],
+            [
+              "ProgressKit Translator",
+              "Prototyp",
+              "Niezależny moduł językowy offline-first."
+            ],
+            [
+              "Local AI Agents",
+              "Planowane",
+              "Lokalni agenci AI."
+            ],
+            [
+              "Voice Gateway",
+              "Planowane",
+              "Integracje telefoniczne."
+            ]
+          ]
+        },
+        {
+          "name": "approved independent communication branch names states and descriptions",
+          "status": "PASS",
+          "details": {
+            "title": "Niezależna komunikacja",
+            "branches": [
+              [
+                "ProgressKit Mail",
+                "W rozwoju",
+                "Komunikacja e-mail. Połączenie z głównym przepływem — planowane."
+              ],
+              [
+                "Bezpieczny komunikator",
+                "Planowane",
+                "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane."
+              ]
+            ]
+          }
+        },
+        {
+          "name": "all three relationships explicitly planned",
+          "status": "PASS",
+          "details": [
+            "Planowane połączenie",
+            "Planowane połączenie",
+            "Planowane połączenie"
+          ]
+        },
+        {
+          "name": "all ecosystem labels and descriptions visible and horizontally uncut",
+          "status": "PASS",
+          "details": {
+            "clipped": [],
+            "measurements": [
+              {
+                "text": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+                "left": 24,
+                "right": 829.375,
+                "width": 805.375,
+                "height": 28.796875,
+                "scrollWidth": 805,
+                "clientWidth": 805,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Tax",
+                "left": 24,
+                "right": 339.59375,
+                "width": 315.59375,
+                "height": 29.6875,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Obsługa biura.",
+                "left": 24,
+                "right": 339.59375,
+                "width": 315.59375,
+                "height": 26.25,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 24,
+                "right": 339.59375,
+                "width": 315.59375,
+                "height": 21.4375,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Translator",
+                "left": 382.78125,
+                "right": 698.390625,
+                "width": 315.609375,
+                "height": 29.6875,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Niezależny moduł językowy offline-first.",
+                "left": 382.78125,
+                "right": 698.390625,
+                "width": 315.609375,
+                "height": 26.25,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 382.78125,
+                "right": 698.390625,
+                "width": 315.609375,
+                "height": 21.4375,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Local AI Agents",
+                "left": 741.578125,
+                "right": 1057.1875,
+                "width": 315.609375,
+                "height": 29.6875,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Lokalni agenci AI.",
+                "left": 741.578125,
+                "right": 1057.1875,
+                "width": 315.609375,
+                "height": 26.25,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 741.578125,
+                "right": 1057.1875,
+                "width": 315.609375,
+                "height": 21.4375,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Voice Gateway",
+                "left": 1100.375,
+                "right": 1415.984375,
+                "width": 315.609375,
+                "height": 29.6875,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Integracje telefoniczne.",
+                "left": 1100.375,
+                "right": 1415.984375,
+                "width": 315.609375,
+                "height": 26.25,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Mail",
+                "left": 46,
+                "right": 695.984375,
+                "width": 649.984375,
+                "height": 27.546875,
+                "scrollWidth": 650,
+                "clientWidth": 650,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.",
+                "left": 46,
+                "right": 695.984375,
+                "width": 649.984375,
+                "height": 26.25,
+                "scrollWidth": 650,
+                "clientWidth": 650,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Bezpieczny komunikator",
+                "left": 765.984375,
+                "right": 1415.984375,
+                "width": 650,
+                "height": 27.546875,
+                "scrollWidth": 650,
+                "clientWidth": 650,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+                "left": 765.984375,
+                "right": 1415.984375,
+                "width": 650,
+                "height": 26.25,
+                "scrollWidth": 650,
+                "clientWidth": 650,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.",
+                "left": 49,
+                "right": 1390.984375,
+                "width": 1341.984375,
+                "height": 28.796875,
+                "scrollWidth": 1342,
+                "clientWidth": 1342,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ecosystem uses natural page scrolling without nested scrollers",
+          "status": "PASS",
+          "details": {
+            "before": 1227,
+            "after": 1577,
+            "innerScroll": [],
+            "containers": [
+              {
+                "className": "section delivery-section delivery-ecosystem home-chapter",
+                "overflowY": "visible",
+                "scrollHeight": 946,
+                "clientHeight": 946
+              },
+              {
+                "className": "delivery-map delivery-map--flow",
+                "overflowY": "visible",
+                "scrollHeight": 262,
+                "clientHeight": 262
+              },
+              {
+                "className": "delivery-flow",
+                "overflowY": "visible",
+                "scrollHeight": 260,
+                "clientHeight": 260
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 257,
+                "clientHeight": 257
+              },
+              {
+                "className": "delivery-independent",
+                "overflowY": "visible",
+                "scrollHeight": 235,
+                "clientHeight": 235
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 157,
+                "clientHeight": 157
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 157,
+                "clientHeight": 157
+              }
+            ]
+          }
+        },
+        {
+          "name": "approved case studies CTA and existing catalogue destination",
+          "status": "PASS",
+          "details": {
+            "text": "Case studies projektów →",
+            "href": "projekty/"
+          }
+        },
+        {
+          "name": "case studies CTA opens the existing catalogue",
+          "status": "PASS",
+          "details": "http://127.0.0.1:8100/projekty/"
+        },
+        {
+          "name": "no page errors or failed resource requests",
+          "status": "PASS",
+          "details": {
+            "errors": [],
+            "failedResources": []
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "screenshots": [
+        "390-first.png",
+        "390-ecosystem.png",
+        "390-flow-middle.png",
+        "390-communication-bottom.png",
+        "390-roadmap-note.png"
+      ],
+      "PASS": 14,
+      "FAIL": 0,
+      "checks": [
+        {
+          "name": "first view preserves14 projects without horizontal overflow",
+          "status": "PASS",
+          "details": {
+            "overflow": false,
+            "projects": 14,
+            "uniqueProjects": 14,
+            "label": "Mechaniczna ekspozycja projektów",
+            "motion": "Wstrzymaj efekty mechanizmu",
+            "liveStatus": {
+              "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+              "color": "rgb(209, 220, 227)",
+              "fontSize": "14px"
+            }
+          }
+        },
+        {
+          "name": "approved mechanical aria label",
+          "status": "PASS",
+          "details": "Mechaniczna ekspozycja projektów"
+        },
+        {
+          "name": "approved initial pause label",
+          "status": "PASS",
+          "details": "Wstrzymaj efekty mechanizmu"
+        },
+        {
+          "name": "pause shows approved resume label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wznów efekty mechanizmu",
+            "pressed": "true"
+          }
+        },
+        {
+          "name": "resume restores approved pause label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wstrzymaj efekty mechanizmu",
+            "pressed": "false"
+          }
+        },
+        {
+          "name": "approved ecosystem lead and explicit roadmap note",
+          "status": "PASS",
+          "details": {
+            "lead": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+            "note": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty."
+          }
+        },
+        {
+          "name": "approved four names states and role descriptions",
+          "status": "PASS",
+          "details": [
+            [
+              "ProgressKit Tax",
+              "W rozwoju",
+              "Obsługa biura."
+            ],
+            [
+              "ProgressKit Translator",
+              "Prototyp",
+              "Niezależny moduł językowy offline-first."
+            ],
+            [
+              "Local AI Agents",
+              "Planowane",
+              "Lokalni agenci AI."
+            ],
+            [
+              "Voice Gateway",
+              "Planowane",
+              "Integracje telefoniczne."
+            ]
+          ]
+        },
+        {
+          "name": "approved independent communication branch names states and descriptions",
+          "status": "PASS",
+          "details": {
+            "title": "Niezależna komunikacja",
+            "branches": [
+              [
+                "ProgressKit Mail",
+                "W rozwoju",
+                "Komunikacja e-mail. Połączenie z głównym przepływem — planowane."
+              ],
+              [
+                "Bezpieczny komunikator",
+                "Planowane",
+                "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane."
+              ]
+            ]
+          }
+        },
+        {
+          "name": "all three relationships explicitly planned",
+          "status": "PASS",
+          "details": [
+            "Planowane połączenie",
+            "Planowane połączenie",
+            "Planowane połączenie"
+          ]
+        },
+        {
+          "name": "all ecosystem labels and descriptions visible and horizontally uncut",
+          "status": "PASS",
+          "details": {
+            "clipped": [],
+            "measurements": [
+              {
+                "text": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+                "left": 16,
+                "right": 374,
+                "width": 358,
+                "height": 86.390625,
+                "scrollWidth": 358,
+                "clientWidth": 358,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Tax",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 29.6875,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Obsługa biura.",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 26.25,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 21.4375,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Translator",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 29.6875,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Niezależny moduł językowy offline-first.",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 26.25,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 21.4375,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Local AI Agents",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 29.6875,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Lokalni agenci AI.",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 26.25,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 21.4375,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Voice Gateway",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 29.6875,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Integracje telefoniczne.",
+                "left": 42,
+                "right": 374,
+                "width": 332,
+                "height": 26.25,
+                "scrollWidth": 332,
+                "clientWidth": 332,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Mail",
+                "left": 36,
+                "right": 374,
+                "width": 338,
+                "height": 27.546875,
+                "scrollWidth": 338,
+                "clientWidth": 338,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.",
+                "left": 36,
+                "right": 374,
+                "width": 338,
+                "height": 52.5,
+                "scrollWidth": 338,
+                "clientWidth": 338,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Bezpieczny komunikator",
+                "left": 36,
+                "right": 374,
+                "width": 338,
+                "height": 27.546875,
+                "scrollWidth": 338,
+                "clientWidth": 338,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+                "left": 36,
+                "right": 374,
+                "width": 338,
+                "height": 52.5,
+                "scrollWidth": 338,
+                "clientWidth": 338,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.",
+                "left": 37,
+                "right": 353,
+                "width": 316,
+                "height": 86.390625,
+                "scrollWidth": 316,
+                "clientWidth": 316,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ecosystem uses natural page scrolling without nested scrollers",
+          "status": "PASS",
+          "details": {
+            "before": 1743,
+            "after": 2093,
+            "innerScroll": [],
+            "containers": [
+              {
+                "className": "section delivery-section delivery-ecosystem home-chapter",
+                "overflowY": "visible",
+                "scrollHeight": 1755,
+                "clientHeight": 1755
+              },
+              {
+                "className": "delivery-map delivery-map--flow",
+                "overflowY": "visible",
+                "scrollHeight": 864,
+                "clientHeight": 864
+              },
+              {
+                "className": "delivery-flow",
+                "overflowY": "visible",
+                "scrollHeight": 864,
+                "clientHeight": 864
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 250,
+                "clientHeight": 235
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 250,
+                "clientHeight": 235
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 192,
+                "clientHeight": 177
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 153,
+                "clientHeight": 153
+              },
+              {
+                "className": "delivery-independent",
+                "overflowY": "visible",
+                "scrollHeight": 426,
+                "clientHeight": 426
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 184,
+                "clientHeight": 184
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 140,
+                "clientHeight": 140
+              }
+            ]
+          }
+        },
+        {
+          "name": "approved case studies CTA and existing catalogue destination",
+          "status": "PASS",
+          "details": {
+            "text": "Case studies projektów →",
+            "href": "projekty/"
+          }
+        },
+        {
+          "name": "case studies CTA opens the existing catalogue",
+          "status": "PASS",
+          "details": "http://127.0.0.1:8100/projekty/"
+        },
+        {
+          "name": "no page errors or failed resource requests",
+          "status": "PASS",
+          "details": {
+            "errors": [],
+            "failedResources": []
+          }
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "screenshots": [
+        "320-first.png",
+        "320-ecosystem.png",
+        "320-translator-description.png",
+        "320-flow-middle.png",
+        "320-communication-bottom.png",
+        "320-roadmap-note.png"
+      ],
+      "PASS": 14,
+      "FAIL": 0,
+      "checks": [
+        {
+          "name": "first view preserves14 projects without horizontal overflow",
+          "status": "PASS",
+          "details": {
+            "overflow": false,
+            "projects": 14,
+            "uniqueProjects": 14,
+            "label": "Mechaniczna ekspozycja projektów",
+            "motion": "Wstrzymaj efekty mechanizmu",
+            "liveStatus": {
+              "text": "Glikemia Premium. 1 z 14 · wszystkie projekty.",
+              "color": "rgb(209, 220, 227)",
+              "fontSize": "14px"
+            }
+          }
+        },
+        {
+          "name": "approved mechanical aria label",
+          "status": "PASS",
+          "details": "Mechaniczna ekspozycja projektów"
+        },
+        {
+          "name": "approved initial pause label",
+          "status": "PASS",
+          "details": "Wstrzymaj efekty mechanizmu"
+        },
+        {
+          "name": "pause shows approved resume label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wznów efekty mechanizmu",
+            "pressed": "true"
+          }
+        },
+        {
+          "name": "resume restores approved pause label and state",
+          "status": "PASS",
+          "details": {
+            "text": "Wstrzymaj efekty mechanizmu",
+            "pressed": "false"
+          }
+        },
+        {
+          "name": "approved ecosystem lead and explicit roadmap note",
+          "status": "PASS",
+          "details": {
+            "lead": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+            "note": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty."
+          }
+        },
+        {
+          "name": "approved four names states and role descriptions",
+          "status": "PASS",
+          "details": [
+            [
+              "ProgressKit Tax",
+              "W rozwoju",
+              "Obsługa biura."
+            ],
+            [
+              "ProgressKit Translator",
+              "Prototyp",
+              "Niezależny moduł językowy offline-first."
+            ],
+            [
+              "Local AI Agents",
+              "Planowane",
+              "Lokalni agenci AI."
+            ],
+            [
+              "Voice Gateway",
+              "Planowane",
+              "Integracje telefoniczne."
+            ]
+          ]
+        },
+        {
+          "name": "approved independent communication branch names states and descriptions",
+          "status": "PASS",
+          "details": {
+            "title": "Niezależna komunikacja",
+            "branches": [
+              [
+                "ProgressKit Mail",
+                "W rozwoju",
+                "Komunikacja e-mail. Połączenie z głównym przepływem — planowane."
+              ],
+              [
+                "Bezpieczny komunikator",
+                "Planowane",
+                "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane."
+              ]
+            ]
+          }
+        },
+        {
+          "name": "all three relationships explicitly planned",
+          "status": "PASS",
+          "details": [
+            "Planowane połączenie",
+            "Planowane połączenie",
+            "Planowane połączenie"
+          ]
+        },
+        {
+          "name": "all ecosystem labels and descriptions visible and horizontally uncut",
+          "status": "PASS",
+          "details": {
+            "clipped": [],
+            "measurements": [
+              {
+                "text": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.",
+                "left": 16,
+                "right": 304,
+                "width": 288,
+                "height": 115.1875,
+                "scrollWidth": 288,
+                "clientWidth": 288,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Tax",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 29.6875,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Obsługa biura.",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 26.25,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 21.4375,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Translator",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 29.6875,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Niezależny moduł językowy offline-first.",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 52.5,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 21.4375,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Local AI Agents",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 29.6875,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Lokalni agenci AI.",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 26.25,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Planowane połączenie",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 21.4375,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Voice Gateway",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 29.6875,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Integracje telefoniczne.",
+                "left": 42,
+                "right": 304,
+                "width": 262,
+                "height": 26.25,
+                "scrollWidth": 262,
+                "clientWidth": 262,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "ProgressKit Mail",
+                "left": 36,
+                "right": 304,
+                "width": 268,
+                "height": 27.546875,
+                "scrollWidth": 268,
+                "clientWidth": 268,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.",
+                "left": 36,
+                "right": 304,
+                "width": 268,
+                "height": 52.5,
+                "scrollWidth": 268,
+                "clientWidth": 268,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Bezpieczny komunikator",
+                "left": 36,
+                "right": 304,
+                "width": 268,
+                "height": 27.546875,
+                "scrollWidth": 268,
+                "clientWidth": 268,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+                "left": 36,
+                "right": 304,
+                "width": 268,
+                "height": 52.5,
+                "scrollWidth": 268,
+                "clientWidth": 268,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              },
+              {
+                "text": "Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.",
+                "left": 37,
+                "right": 283,
+                "width": 246,
+                "height": 143.984375,
+                "scrollWidth": 246,
+                "clientWidth": 246,
+                "visible": true,
+                "overflowX": "visible",
+                "overflowY": "visible"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ecosystem uses natural page scrolling without nested scrollers",
+          "status": "PASS",
+          "details": {
+            "before": 1943,
+            "after": 2293,
+            "innerScroll": [],
+            "containers": [
+              {
+                "className": "section delivery-section delivery-ecosystem home-chapter",
+                "overflowY": "visible",
+                "scrollHeight": 1900,
+                "clientHeight": 1900
+              },
+              {
+                "className": "delivery-map delivery-map--flow",
+                "overflowY": "visible",
+                "scrollHeight": 890,
+                "clientHeight": 890
+              },
+              {
+                "className": "delivery-flow",
+                "overflowY": "visible",
+                "scrollHeight": 890,
+                "clientHeight": 890
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 250,
+                "clientHeight": 235
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 276,
+                "clientHeight": 261
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 192,
+                "clientHeight": 177
+              },
+              {
+                "className": "delivery-flow__node",
+                "overflowY": "visible",
+                "scrollHeight": 153,
+                "clientHeight": 153
+              },
+              {
+                "className": "delivery-independent",
+                "overflowY": "visible",
+                "scrollHeight": 426,
+                "clientHeight": 426
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 184,
+                "clientHeight": 184
+              },
+              {
+                "className": "delivery-branch",
+                "overflowY": "visible",
+                "scrollHeight": 140,
+                "clientHeight": 140
+              }
+            ]
+          }
+        },
+        {
+          "name": "approved case studies CTA and existing catalogue destination",
+          "status": "PASS",
+          "details": {
+            "text": "Case studies projektów →",
+            "href": "projekty/"
+          }
+        },
+        {
+          "name": "case studies CTA opens the existing catalogue",
+          "status": "PASS",
+          "details": "http://127.0.0.1:8100/projekty/"
+        },
+        {
+          "name": "no page errors or failed resource requests",
+          "status": "PASS",
+          "details": {
+            "errors": [],
+            "failedResources": []
+          }
+        }
+      ]
+    }
+  ],
+  "PASS": 56,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "screenshotMethod": "Actual single viewport screenshots. Natural document scroll to target top minus90px; 800ms settle. No hidden header, modified styles, stitched capture or DOM content edits.",
+  "originalCaptureHistory": "stitching-first/"
+}

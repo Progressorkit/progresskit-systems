@@ -8,9 +8,9 @@ import re
 
 
 ECOSYSTEM = (
-    ("progresskit-tax", "tax", "Tax — obsługa biura"),
-    ("progresskit-translator", "translator", "Translator — niezależny moduł językowy offline-first"),
-    ("progresskit-mail", "mail", "Mail — komunikacja e-mail"),
+    ("progresskit-tax", "tax", "ProgressKit Tax", "Obsługa biura."),
+    ("progresskit-translator", "translator", "ProgressKit Translator", "Niezależny moduł językowy offline-first."),
+    ("progresskit-mail", "mail", "ProgressKit Mail", "Komunikacja e-mail. Połączenie z głównym przepływem — planowane."),
 )
 CHANNELS = (
     ("Beta", "rozwiązania testowe"),
@@ -28,7 +28,7 @@ def render_case_studies():
         'Wyzwania inżynieryjne.</h2></header>'
         '<p class="section-copy">Wybrane problemy z rozwoju produktów. Pełne analizy, decyzje i granice '
         'weryfikacji opisano w case studies.</p>'
-        '<a href="projekty/">Wyszukaj projekt lub technologię w pełnym katalogu →</a>'
+        '<a href="projekty/">Case studies projektów →</a>'
         '</div></section>'
     )
 
@@ -46,7 +46,7 @@ def render_delivery(projects):
         by_id[project["id"]] = project
 
     products = {}
-    for identifier, role, label in ECOSYSTEM:
+    for identifier, role, label, description in ECOSYSTEM:
         project = by_id.get(identifier)
         if project is None:
             raise ValueError("Ecosystem project is absent from the catalogue.")
@@ -59,7 +59,7 @@ def render_delivery(projects):
         if not isinstance(product_stage, str):
             raise ValueError("Invalid ecosystem project stage.")
         products[identifier] = {
-            'role': role, 'label': label, 'stage': product_stage,
+            'role': role, 'label': label, 'description': description, 'stage': product_stage,
             'link':
             f'<a class="delivery-project-link" href="projekty/{slug}/">Zobacz cały projekt '
             f'<span class="sr-only">{escape(name)}</span><span aria-hidden="true">→</span></a>',
@@ -71,32 +71,37 @@ def render_delivery(projects):
     for identifier in ('progresskit-tax', 'progresskit-translator', 'local-ai-agents', 'voice-gateway'):
         product = products.get(identifier)
         label = product['label'] if product else {'local-ai-agents': 'Local AI Agents', 'voice-gateway': 'Voice Gateway'}[identifier]
+        description = product['description'] if product else {'local-ai-agents': 'Lokalni agenci AI.', 'voice-gateway': 'Integracje telefoniczne.'}[identifier]
         status = product['stage'] if product else 'Planowane'
         attribute = 'data-ecosystem-project' if product else 'data-ecosystem-concept'
         connector = (
             '<span class="delivery-flow__connector" aria-hidden="true">↔</span>'
-            '<span class="delivery-flow__relationship" data-integration-status="planned">Planowane</span>'
+            '<span class="delivery-flow__relationship" data-integration-status="planned">Planowane połączenie</span>'
         ) if identifier != 'voice-gateway' else ''
         flow.append(
             f'<li class="delivery-flow__node" {attribute}="{identifier}">'
             f'<p class="delivery-state">{escape(status)}</p>'
             f'<h3 class="delivery-flow__heading">{escape(label)}</h3>'
+            f'<p class="delivery-flow__description">{escape(description)}</p>'
             + (product['link'] if product else '') + connector + '</li>'
         )
 
     mail = products['progresskit-mail']
     independent = (
-        '<aside class="delivery-independent" aria-labelledby="ecosystem-mail-label ecosystem-messenger-label">'
+        '<aside class="delivery-independent" aria-labelledby="ecosystem-communication-title">'
+        '<h3 id="ecosystem-communication-title">Niezależna komunikacja</h3>'
         '<div class="delivery-independent__branches">'
         '<section class="delivery-branch" data-ecosystem-project="progresskit-mail" '
         'data-integration-status="planned" aria-labelledby="ecosystem-mail-label">'
         f'<p class="delivery-state">{escape(mail["stage"])}</p>'
-        f'<h3 class="delivery-flow__heading" id="ecosystem-mail-label">{escape(mail["label"])}</h3>'
+        f'<h4 class="delivery-flow__heading" id="ecosystem-mail-label">{escape(mail["label"])}</h4>'
+        f'<p class="delivery-flow__description">{escape(mail["description"])}</p>'
         + mail['link'] + '</section>'
         '<section class="delivery-branch" data-ecosystem-concept="secure-messenger" '
         'data-integration-status="planned" aria-labelledby="ecosystem-messenger-label">'
         '<p class="delivery-state">Planowane</p>'
-        '<h3 class="delivery-flow__heading" id="ecosystem-messenger-label">bezpieczny komunikator</h3>'
+        '<h4 class="delivery-flow__heading" id="ecosystem-messenger-label">Bezpieczny komunikator</h4>'
+        '<p class="delivery-flow__description">Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.</p>'
         '</section></div></aside>'
     )
     ecosystem = (
@@ -104,10 +109,11 @@ def render_delivery(projects):
         'aria-labelledby="ecosystem-title" aria-describedby="ecosystem-roadmap-note">'
         '<div class="shell"><header class="delivery-heading">'
         '<h2 class="section-title" id="ecosystem-title">Ekosystem ProgressKit</h2>'
-        '</header><div class="delivery-map delivery-map--flow"><ol class="delivery-flow" '
+        '</header><p class="delivery-map-intro">Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.</p>'
+        '<div class="delivery-map delivery-map--flow"><ol class="delivery-flow" '
         'aria-label="Ekosystem ProgressKit">' + ''.join(flow) + '</ol></div>' + independent +
-        '<div class="delivery-roadmap" id="ecosystem-roadmap-note"><p>Roadmapa: bezpieczny komunikator, lokalni agenci AI, integracje telefoniczne.</p>'
-        '<p>Planowane połączenia między produktami; nie stanowią dostępnej oferty.</p></div>'
+        '<div class="delivery-roadmap" id="ecosystem-roadmap-note">'
+        '<p>Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.</p></div>'
         '</div></section>'
     )
     channels = ''.join(

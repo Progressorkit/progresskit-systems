@@ -1,0 +1,56 @@
+{
+  "reportDate": "2026-10-23",
+  "recordedUtc": "2026-10-23T06:56:56.007593+00:00",
+  "networkUsed": false,
+  "environment": {
+    "SEMGREP_SEND_METRICS": "off",
+    "SEMGREP_ENABLE_VERSION_CHECK": "0",
+    "OTEL_SDK_DISABLED": "true",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "settingsAndCache": "/tmp/progresskit-approved-copy-v2-20261023/security only"
+  },
+  "sastArgv": [
+    "semgrep",
+    "scan",
+    "--metrics=off",
+    "--disable-version-check",
+    "--strict",
+    "--error",
+    "--config",
+    "sast-rules.yml",
+    "--json",
+    "--output",
+    "sast.json",
+    "analytics",
+    "assets",
+    "scripts",
+    "glikemia-premium"
+  ],
+  "gitleaksHistoryArgv": [
+    "gitleaks",
+    "git",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--log-opts=--all",
+    "--report-path",
+    "gitleaks-history.json",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems"
+  ],
+  "gitleaksWorktreeArgv": [
+    "gitleaks",
+    "dir",
+    "--no-banner",
+    "--redact=100",
+    "--report-format",
+    "json",
+    "--report-path",
+    "gitleaks-worktree.json",
+    "temporary tracked/nonignored UTF-8 text worktree copy"
+  ],
+  "gitleaksHistoryCommits": 151,
+  "worktreeTextFiles": 330,
+  "surfaceReviewHelper": "Standard-library HTMLParser comparison of URL attrs, event attrs, inline style attrs, exact script attrs/content and form controls against git show b22201b:index.html; exact JS fixed-string replacement check.",
+  "unchangedVerification": "SHA-256 byte comparison of small dependency/backend/CSS/catalog/metadata files to baseline b22201b; git diff --quiet for unchanged APK. No rescan of APK, dependencies or runtime backend."
+}
