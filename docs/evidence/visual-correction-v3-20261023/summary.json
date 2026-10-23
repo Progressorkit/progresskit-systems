@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-23",
+  "baselineCommit": "78319345bcf6822d304b5de758aae0297a4ca812",
+  "preview": "http://127.0.0.1:8110/",
+  "status": "PASS_LOCAL_V3_CANDIDATE",
+  "tests": {
+    "python": {
+      "PASS": 115,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "javascript": {
+      "PASS": 69,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "browser": {
+      "PASS": 93,
+      "FAIL": 0
+    },
+    "http": {
+      "PASS": 69,
+      "FAIL": 0
+    },
+    "internalLinks": {
+      "PASS": 856,
+      "FAIL": 0
+    }
+  },
+  "screenshots": 68,
+  "videos": 2,
+  "guiSourceFilesVerified": 32,
+  "securitySourceFilesVerified": 97,
+  "securitySourceSha256": "f19ed419c4cf56562e2cce54201bcd51ab73818a6f7a6cfa2b06c7d9dc887b89",
+  "sast": {
+    "name": "sast",
+    "startedUtc": "2026-10-23T07:33:39.668693+00:00",
+    "exit": 0,
+    "status": "PASS",
+    "errors": 0,
+    "findings": 0,
+    "scannedFiles": 49,
+    "ruleCount": 6
+  },
+  "sca": {
+    "packages": 18,
+    "advisories": 0,
+    "status": "PASS"
+  },
+  "secrets": {
+    "raw": "FAIL",
+    "history": 4,
+    "worktree": 3,
+    "reviewedBenign": 7,
+    "unreviewed": 0
+  },
+  "publication": "BLOCKED ownerVisualApproval OPEN",
+  "deployment": "NOT DEPLOYED",
+  "push": false,
+  "physicalDevices": "NOT VERIFIED",
+  "recordedUtc": "2026-10-23T07:36:56.292223+00:00"
+}

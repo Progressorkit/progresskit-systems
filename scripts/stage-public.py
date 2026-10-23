@@ -17,6 +17,7 @@ def public_files():
         'assets/engineering-exhibit.css','assets/engineering-exhibit.js',
         'assets/brand-atmosphere.css',
         'assets/project-slices.css','assets/delivery.css','assets/project-mechanism.css','assets/visual-acceptance.css',
+        'assets/interface-life.css','assets/interface-life.js','assets/ecosystem-system.css','assets/ecosystem-system.js',
         'assets/project-showroom.css','assets/project-showroom.js','assets/project-hologram.css','assets/project-hologram.js',
         'assets/brand/stone-material.svg','assets/brand/monument-serif-bold.ttf','assets/brand/motto-serif-italic.ttf','assets/brand/monument-font-license.txt',
         'assets/progresskit-product-shell.css',

@@ -1,0 +1,223 @@
+/* V3: light, depth and bounded mechanical motion on the existing interface. */
+#main:has(>.hero--monument) {
+  background:
+    radial-gradient(ellipse at 81% 260px,#5a71803b,transparent 620px),
+    radial-gradient(ellipse at 36% 500px,#a51b302b,transparent 460px),
+    repeating-linear-gradient(115deg,transparent 0 119px,#a0b9cc05 120px 121px,transparent 122px 240px),
+    linear-gradient(115deg,#131b22,#0b1117 53%,#1b2731);
+}
+.topbar {
+  border-bottom-color:#596a77;
+  background:linear-gradient(115deg,#33414c,#17222c 60%,#25333e);
+  box-shadow:inset 0 1px 0 #c3d8e32e,inset 0 -2px 0 #080d12,0 8px 25px #0005;
+}
+.topbar .brand__mark { filter:drop-shadow(0 3px 5px #0008); }
+.hero.hero--monument { isolation:isolate; }
+.hero--monument::before {
+  display:block;
+  z-index:-1;
+  inset:40px -15% 0 0;
+  background:
+    radial-gradient(ellipse at var(--light-x,64%) var(--light-y,38%),#c8e0ee17,transparent 55%),
+    linear-gradient(135deg,transparent 52%,#d5e9f409 52.2%,transparent 52.4%),
+    radial-gradient(ellipse at 30% 74%,#db203c19,transparent 52%);
+  animation:interface-light 9s ease-in-out infinite alternate;
+  animation-play-state:paused;
+  opacity:.65;
+}
+.hero--monument.hero-in-view.hero-motion-enabled:not(.hero-motion-paused)::before { animation-play-state:running; }
+.hero--monument::after {
+  display:block;
+  z-index:-1;
+  inset:auto 14% 0 clamp(24px,4.5vw,88px);
+  height:158px;
+  background:
+    linear-gradient(90deg,#e63851,#9a1c30 28%,transparent 70%) 0 0 / 68% 2px no-repeat,
+    linear-gradient(90deg,#b0c4d733,transparent) 0 12px / 100% 1px no-repeat,
+    repeating-linear-gradient(90deg,#9eb9c544 0 1px,transparent 1px 18px) 0 0 / 100% 8px no-repeat,
+    linear-gradient(145deg,#15232d70,transparent 60%);
+  border-left:1px solid #94abba30;
+  transform:skewY(-7deg);
+  opacity:.85;
+}
+.hero--monument .hero__stone-title { padding-top:clamp(108px,10.3vw,160px); }
+.hero--monument h1.stone-word { line-height:1.03; gap:.035em; }
+.hero--monument .stone-line {
+  color:#f0f5f8;
+  background:linear-gradient(170deg,#fff 0%,#dce7ee 38%,#b1c2cf 54%,#e8f1f5 58%,#8297a7 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 5px 0 #03080d55,0 12px 25px #0006;
+}
+.hero--monument .stone-line--systems {
+  color:#ef6c7b;
+  background:linear-gradient(170deg,#ffc0c8,#ff8295 42%,#e96a7e 90%);
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+.hero--monument .hero__motto { color:#d0dee7; max-width:28ch; margin-top:30px; }
+.hero__commercial-actions { margin-top:36px; gap:14px; }
+.hero__commercial-actions .cta { transition:transform .2s,border-color .2s,background .2s; }
+.hero__explore { top:570px; font-size:12px; }
+.hero__explore span:last-child {
+  border-radius:3px;
+  border-color:#e26b80;
+  background:linear-gradient(130deg,#a7253d2b,#101d28);
+  box-shadow:inset 0 1px 0 #ffbac52e,0 4px 10px #0005;
+}
+.project-showroom { position:relative; }
+.showroom-enhanced .showroom-frame {
+  border-color:#7d9baa40;
+  background:
+    radial-gradient(ellipse at 50% 40%,#9cbfd91a,transparent 65%),
+    linear-gradient(105deg,#a7c2d20a,transparent 32%,#00000050);
+  box-shadow:inset 0 1px 0 #c6dbe92e,inset 0 -9px 0 #050c12,0 24px 42px #0006;
+}
+.showroom-frame::before,.showroom-frame::after {
+  border-color:#688596;
+  border-right-color:#051018;
+  background:linear-gradient(90deg,#060e15,#7995a7 28%,#21394b 52%,#050e16);
+  box-shadow:3px 2px 0 #050b11,7px 0 14px #0009;
+}
+.showroom-frame__brace {
+  background:linear-gradient(#496170,#101e29 48%,#2f4352);
+  border-color:#718fa155;
+  box-shadow:0 5px 0 #060d13,0 8px 14px #0005;
+}
+.showroom-frame__signal {
+  height:34px;
+  background:linear-gradient(#ffb1bc,#e52d4e 70%,#a31935);
+  box-shadow:0 0 11px #fa325a77;
+  animation:interface-rail 10s linear infinite;
+  animation-play-state:paused;
+}
+.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-frame__signal { animation-play-state:running; }
+.project-showroom .showroom-card .project-slice {
+  border-color:#899fab;
+  background:
+    linear-gradient(124deg,#c1d4df12,transparent 31%,#00000024 72%),
+    repeating-linear-gradient(0deg,#e8f3ff06 0 1px,transparent 1px 4px),
+    linear-gradient(135deg,#526775,#2b3b48 52%,#1b2934);
+  box-shadow:inset 1px 1px 0 #d7edff44,inset -1px -3px 0 #06131dbb,3px 6px 0 #040b11,4px 7px 0 #627f9055,0 18px 26px #0009;
+}
+.project-showroom .showroom-card.is-active .project-slice {
+  border-top-color:#ff9aae;
+  border-left-color:#ef6079;
+  background:
+    linear-gradient(125deg,#e03f5b2b,transparent 45%),
+    linear-gradient(150deg,#536c7d,#2a3b49 55%,#172733);
+  box-shadow:inset 3px 0 0 #e74764,inset 0 1px 0 #ffcad666,inset 0 -3px 0 #0a1420,3px 6px 0 #040a10,4px 7px 0 #ec63805c,0 18px 30px #0009;
+}
+.showroom-card:not(.is-slice-expanded) .project-slice::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,#d0e9fa10 46%,#d0e9fa04 50%,transparent 66%);
+  opacity:0;
+  transform:translateX(-24%);
+  animation:interface-sheen 11s ease-in-out infinite;
+  animation-play-state:paused;
+}
+.showroom-card:not(.is-slice-expanded):not(.is-orbit-hidden)::before {
+  animation:interface-settle 8s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+.showroom-card:nth-child(3n+1)::before { animation-delay:-2s; }
+.showroom-card:nth-child(3n+2)::before { animation-delay:-5s; }
+.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-card:not(.is-orbit-hidden)::before,
+.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-card.is-active .project-slice::after { animation-play-state:running; }
+.showroom-card.is-slice-expanded .project-slice { transform:none; }
+.project-showroom .project-slice__panel {
+  border-color:#6b8b9e;
+  background:radial-gradient(ellipse at top right,#42607930,transparent 65%),linear-gradient(125deg,#1d303f,#13232f);
+  box-shadow:inset 0 1px 0 #b7d7ec29,0 12px 30px #0005;
+}
+.project-showroom .project-slice__media img { border-color:#7696aa; box-shadow:0 14px 28px #020a1280; }
+.project-showroom .showroom-gate { background:linear-gradient(135deg,#334957,#192b38); border-color:#6c899b; }
+.project-showroom .showroom-gate[aria-pressed="true"] { background:linear-gradient(125deg,#542d3e,#222936); }
+.project-showroom .showroom-controls button { background:linear-gradient(#3b5262,#1a3040); border-color:#7b97a9; }
+.project-showroom .showroom-heading { border-top:1px solid #6582955c; padding-top:24px; }
+.project-showroom .showroom-heading .section-title { text-wrap:balance; }
+
+/* Distinct chapter planes replace the uninterrupted grey surface. */
+#main #uslugi {
+  background:radial-gradient(ellipse at 8% 25%,#8f243325,transparent 55%),linear-gradient(125deg,#182731,#0e1b25 65%,#203340);
+  border-top:1px solid #738d9e66;
+  box-shadow:inset 0 2px 0 #0008;
+}
+#uslugi .competency-list li {
+  border-color:#5b768a;
+  border-left-color:#eb5d78;
+  background:linear-gradient(110deg,#314b5d,#203441);
+  box-shadow:inset 0 1px 0 #cee4f118,0 6px 12px #050c1233;
+}
+#main #ekosystem { background:radial-gradient(ellipse at 50% 42%,#3f5a6d33,transparent 63%),linear-gradient(135deg,#101c25,#0a141d 60%,#142634); }
+#main #wydania {
+  border-block:1px solid #6a85975c;
+  background:radial-gradient(ellipse at 88% 22%,#9a32432b,transparent 57%),linear-gradient(115deg,#233644,#111f2b 70%);
+}
+.delivery-channel { border-color:#6c889c; background:linear-gradient(130deg,#324f61,#1d303f); box-shadow:inset 0 1px 0 #bfd6e728,0 8px 18px #050b123d; }
+#main #o-mnie { background:radial-gradient(ellipse at 15% 38%,#516c8133,transparent 60%),linear-gradient(120deg,#1b2b38,#101d28 70%); border-color:#68859860; }
+#o-mnie .collaboration { background:linear-gradient(125deg,#304b5d,#1a2c3c); border-color:#7391a5; border-top-color:#ec7389; }
+.delivery-case-studies { background:linear-gradient(115deg,#1b2e3c,#0e1e2b); border-color:#69869c6b; }
+#main #kontakt { background:radial-gradient(ellipse at 77% 20%,#af2a3d24,transparent 50%),linear-gradient(115deg,#213645,#0d1f2d 70%); border-color:#6b879860; }
+#brief { background:linear-gradient(135deg,#294458,#152c3e); border-color:#6f91aa; border-top-color:#e66782; box-shadow:inset 0 1px 0 #c4e1f433,0 12px 30px #010a1255; }
+#main .section-kicker { color:#ffa3b7; letter-spacing:.14em; }
+#main .chapter-heading { position:relative; }
+#main .chapter-heading::before { content:""; display:block; width:52px; height:3px; margin-bottom:24px; background:linear-gradient(90deg,#f16f87,#a52640); box-shadow:0 2px 0 #040d16; }
+@keyframes interface-light { from { opacity:.5; } to { opacity:.95; } }
+@keyframes interface-settle { from { transform:translateY(-1.5px); } to { transform:translateY(1.5px); } }
+@keyframes interface-sheen { 0%,32% { opacity:0; transform:translateX(-24%); } 49% { opacity:1; } 68%,100% { opacity:0; transform:translateX(24%); } }
+@keyframes interface-rail { 0% { transform:translateY(0); opacity:0; } 5% { opacity:1; } 90% { opacity:1; } 98%,100% { transform:translateY(550px); opacity:0; } }
+html[data-interface-motion="paused"] .hero--monument::before,
+html[data-interface-motion="paused"] .project-showroom .showroom-frame__signal,
+html[data-interface-motion="paused"] .project-showroom .showroom-card::before,
+html[data-interface-motion="paused"] .project-showroom .project-slice,
+html[data-interface-motion="paused"] .project-showroom .project-slice::after { animation-play-state:paused!important; }
+html[data-interface-quality="compact"] .showroom-card:not(.is-active)::before { animation:none; }
+html[data-interface-quality="compact"] .showroom-card .project-slice::after { animation:none; }
+@media (min-width:1101px) {
+  #main:has(>.hero--monument)>.hero--monument { position:sticky; top:80px; align-self:start; }
+}
+@media (min-width:701px) and (max-width:1100px) {
+  .hero--monument::before { inset:0; }
+  .hero--monument .hero__stone-title { padding-top:62px; }
+  .hero--monument::after { inset:auto 38px 0 32px; height:60px; }
+  .hero__explore { top:auto; }
+}
+@media (max-width:700px) {
+  .hero--monument::before { inset:0; }
+  .hero--monument::after { inset:auto 16px 0; height:52px; }
+  .hero--monument .hero__stone-title { padding-top:44px; padding-bottom:26px; }
+  .hero--monument h1.stone-word { font-size:clamp(36px,10.1vw,68px); }
+  .hero--monument .hero__motto { max-width:26ch; margin-top:22px; }
+  .hero__commercial-actions { margin-top:26px; }
+  .hero__explore { top:auto; font-size:11px; }
+  .showroom-frame__signal { animation-name:interface-rail-mobile; animation-duration:7s; }
+  .project-showroom .showroom-heading { margin-top:24px; padding-top:20px; }
+  #main .chapter-heading::before { margin-bottom:18px; }
+}
+@keyframes interface-rail-mobile { 0% { transform:translateY(0); opacity:0; } 8% { opacity:1; } 90% { opacity:1; } 100% { transform:translateY(180px); opacity:0; } }
+@media (prefers-reduced-motion:reduce) {
+  .hero--monument::before,.project-showroom .showroom-frame__signal,
+  .project-showroom .showroom-card::before,
+  .project-showroom .showroom-card .project-slice,.project-showroom .showroom-card .project-slice::after { animation:none!important; }
+  .hero__commercial-actions .cta { transition:none; }
+}
+@media (forced-colors:active) {
+  #main:has(>.hero--monument),.topbar,#main #uslugi,#main #ekosystem,#main #wydania,#main #o-mnie,#main #kontakt,
+  #o-mnie .collaboration,#brief,.delivery-channel,.delivery-case-studies,#uslugi .competency-list li,
+  .project-showroom .showroom-card .project-slice,.project-showroom .project-slice__panel,
+  .project-showroom .showroom-gate,.project-showroom .showroom-controls button { color:CanvasText; background:Canvas; border-color:CanvasText; box-shadow:none; }
+  .hero--monument .stone-line,.hero--monument .stone-line--systems { background:none; color:CanvasText; -webkit-text-fill-color:CanvasText; text-shadow:none; }
+  .hero--monument::before,.hero--monument::after,#main .chapter-heading::before,.project-slice::after { display:none; }
+}
+@media print {
+  #main:has(>.hero--monument),#main #uslugi,#main #ekosystem,#main #wydania,#main #o-mnie,#main #kontakt,
+  #o-mnie .collaboration,#brief,.delivery-channel,.delivery-case-studies,#uslugi .competency-list li { background:#fff; color:#111; box-shadow:none; }
+  #main:has(>.hero--monument)>.hero--monument { position:static; }
+  .hero--monument .stone-line,.hero--monument .stone-line--systems { background:none; color:#111; -webkit-text-fill-color:#111; text-shadow:none; }
+  .hero--monument::before,.hero--monument::after,#main .chapter-heading::before,.project-slice::after { display:none; }
+}

@@ -1,0 +1,409 @@
+{
+  "scope": "Read-only local Chromium8110. Product files and assertions were not edited by this reviewer.",
+  "browser": "155.0.8059.39",
+  "url": "http://127.0.0.1:8110/",
+  "currentHeroSha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+  "currentGraphSha256": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+  "finding": "One-time lazy materialization of native Attr nodes by first attribute enumeration, not recurring growth of graph DOM. Exact unchanged <= gate passes after all-role/layout warmup.",
+  "exactGateCurrentSource": [
+    {
+      "label": "exact-cold",
+      "documents": 1,
+      "nodes": 1957,
+      "jsEventListeners": 159,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    },
+    {
+      "label": "warm1-before",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 172,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    },
+    {
+      "label": "block1-after30roles-two-resizes",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 172,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      },
+      "assertion": {
+        "documents": true,
+        "nodes": true,
+        "listeners": true
+      }
+    },
+    {
+      "label": "block2-after30roles-two-resizes",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 172,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      },
+      "assertion": {
+        "documents": true,
+        "nodes": true,
+        "listeners": true
+      }
+    },
+    {
+      "label": "block3-after30roles-two-resizes",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 172,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      },
+      "assertion": {
+        "documents": true,
+        "nodes": true,
+        "listeners": true
+      }
+    }
+  ],
+  "exactGatePASS": true,
+  "attributeIsolationCurrentSource": [
+    {
+      "label": "native-cold",
+      "documents": 1,
+      "nodes": 1947,
+      "jsEventListeners": 146,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    },
+    {
+      "label": "after30-native-DOM-clicks",
+      "documents": 1,
+      "nodes": 1947,
+      "jsEventListeners": 146,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    },
+    {
+      "label": "after-explicit-attribute-enumeration",
+      "documents": 1,
+      "nodes": 2001,
+      "jsEventListeners": 146,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    },
+    {
+      "label": "after-repeat-attribute-enumeration",
+      "documents": 1,
+      "nodes": 2001,
+      "jsEventListeners": 146,
+      "live": {
+        "elements": 1061,
+        "treeNodes": 1816,
+        "details": 6,
+        "links": 3
+      }
+    }
+  ],
+  "triggerAttributeCounts": {
+    "tax": 9,
+    "translator": 9,
+    "agents": 9,
+    "voice": 9,
+    "mail": 9,
+    "messenger": 9
+  },
+  "heapSnapshotEvidence": {
+    "beforeDOMCounters": {
+      "documents": 1,
+      "nodes": 1957,
+      "jsEventListeners": 158
+    },
+    "afterDOMCounters": {
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 158
+    },
+    "nativeAttrBefore": 9,
+    "nativeAttrAfter": 54,
+    "nativeNamedNodeMapBefore": 1,
+    "nativeNamedNodeMapAfter": 6,
+    "DOMSnapshotNodeCountBefore": [
+      1929
+    ],
+    "DOMSnapshotNodeCountAfter": [
+      1929
+    ],
+    "rawSnapshotFiles": [
+      {
+        "path": "/tmp/progresskit-v3-memory-cause-before.heapsnapshot",
+        "sha256": "e74080a343317e96527b4582964883803fc7bcc9e521de2f6fcac480a4531520",
+        "bytes": 7200233,
+        "retainedOutsideRepository": true
+      },
+      {
+        "path": "/tmp/progresskit-v3-memory-cause-after.heapsnapshot",
+        "sha256": "dbd9ca2145ebe11d2d60579bb3d846edb6a620a9302f04f884b70bf5b176e76d",
+        "bytes": 7498809,
+        "retainedOutsideRepository": true
+      }
+    ]
+  },
+  "earlierSixBlockPlateau": [
+    {
+      "label": "cold-before-any-role-click",
+      "documents": 1,
+      "nodes": 1947,
+      "jsEventListeners": 145,
+      "usedSize": 916628,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "cold-harness-before",
+      "documents": 1,
+      "nodes": 1957,
+      "jsEventListeners": 158,
+      "usedSize": 1865328,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block1-after30clicks",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 158,
+      "usedSize": 1984760,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block1-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2506956,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block1-afterExtra1200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2507212,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block2-after30clicks",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2516588,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block2-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2517188,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block3-after30clicks",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2557804,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block3-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2562900,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block4-after30clicks",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2571836,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block4-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2581296,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block5-after30clicks",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2589172,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block5-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2589324,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block6-after30clicks",
+      "documents": 1,
+      "nodes": 2001,
+      "jsEventListeners": 171,
+      "usedSize": 2598700,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    },
+    {
+      "label": "block6-afterResize200ms",
+      "documents": 1,
+      "nodes": 2002,
+      "jsEventListeners": 171,
+      "usedSize": 2593588,
+      "tree": {
+        "elements": 1061,
+        "allTreeNodes": 1816,
+        "details": 6,
+        "links": 3,
+        "selected": "tax"
+      }
+    }
+  ],
+  "limitations": [
+    "Earlier six-block experiment preceded the latest hero-only gate change; current exact gate and attribute isolation record the latest hero SHA separately.",
+    "This checks retained DOM counters and live DOM under the stated interactions. It is not a claim that every possible heap leak is excluded.",
+    "Cold first-use results remain retained separately; strict documents/nodes/listeners <= assertion was not weakened."
+  ],
+  "rawReports": [
+    "/tmp/progresskit-v3-memory-review.json",
+    "/tmp/progresskit-v3-memory-attr-isolation.json"
+  ],
+  "method": {
+    "script": "probe.cjs",
+    "commandFromRepoRoot": "node docs/evidence/visual-correction-v3-20261023/lifecycle-review/probe.cjs",
+    "collection": "Real Chromium with CDP HeapProfiler.collectGarbage and Memory.getDOMCounters; live DOM counted with TreeWalker and querySelectorAll.",
+    "exactGate": "Cold snapshot; six distinct role clicks;1440→600→1440 warmup;GC before;three consecutive blocks of30roleclicks+two viewport crossings+200ms+GC;each block asserts documents/nodes/listeners <= warmed before without tolerance.",
+    "attributeIsolation": "Fresh page:30native DOM click() calls;GC;enumerate attributes of six triggers;GC;repeat attribute enumeration;GC. Raw heap comparison records native Attr and NamedNodeMap counts separately.",
+    "instrumentation": "No source edits, observer injection, retained DOM node arrays or test assertion edits. Browser interaction and collection operate only on the synthetic loopback preview."
+  }
+}

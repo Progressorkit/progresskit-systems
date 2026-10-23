@@ -1,0 +1,43 @@
+{
+  "status": "PASS_LOCAL_VISUAL_REVIEW",
+  "method": "Required six actual viewport PNG inspected visually by root. No compositing/stitching, DOM content edits or hidden navigation. Additional 320px and selected mobile Translator images inspected too.",
+  "checks": [
+    "Hero: graphite, layered aluminium, red focal accents and readable title/CTA.",
+    "Desktop map: all six connected nodes, central selected role and visible truthful development/prototype/planned labels.",
+    "Expanded Tax and Translator: existing content and actions legible without nested scroll or overlap.",
+    "Mobile: hero and staggered ecosystem remain within viewport; role details expand in natural document flow."
+  ],
+  "screenshots": [
+    {
+      "path": "browser/1440-first.png",
+      "bytes": 1008103,
+      "sha256": "9b4dfea23acb4be2932aeee62e78bf2c5b284e2dfe6c6b3834b7eab03fc53c7d"
+    },
+    {
+      "path": "browser/1440-ecosystem-map.png",
+      "bytes": 716651,
+      "sha256": "65038d99206c15f4e0dac587b30354d7962b0e56091a6ac98158541275930e53"
+    },
+    {
+      "path": "browser/1440-progresskit-tax-expanded.png",
+      "bytes": 978237,
+      "sha256": "8e5aa07df32423316978074b4504bf0f7a595b142778451fb358aee095e4d755"
+    },
+    {
+      "path": "browser/1440-progresskit-translator-expanded.png",
+      "bytes": 994717,
+      "sha256": "ea2afe45da603d08320dd9fb25af81f69ac2f568ded80b59b45b804a38bf6e13"
+    },
+    {
+      "path": "browser/390-first.png",
+      "bytes": 262389,
+      "sha256": "7b9588a62874970c5ac3172d23533631782c17e7daaf3ae643be4ff82c744c9d"
+    },
+    {
+      "path": "browser/390-ecosystem-map.png",
+      "bytes": 263248,
+      "sha256": "815f0805ba25ca81e2c1cab3d2f6356b173468a142ade7916066910b01e20b89"
+    }
+  ],
+  "limitations": "Local Chromium viewport emulation; owner visual acceptance and physical device QA not claimed."
+}

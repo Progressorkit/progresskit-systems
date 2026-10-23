@@ -1,0 +1,24 @@
+{
+  "recordedUtc": "2026-10-23T07:19:11.022170+00:00",
+  "reason": "Preserve first V3 SCA before package.json test-script edits. Final SCA will bind actual frozen package.json; dependency sections remain unchanged.",
+  "files": [
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "91bf2ef9657d847c7016c96372b8e76dc93e066be5de247fea14322fa12d4686"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca.log",
+      "bytes": 352,
+      "sha256": "46f0769b37109dd71036e251dc67d25adac1595636c679346ba8834b00c5b705"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca-summary.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca-summary.json",
+      "bytes": 2179,
+      "sha256": "1a44e8ba46c69f88a0fc8d427b92cff9dbc5eda1df594b9221024cf7005a273d"
+    }
+  ]
+}

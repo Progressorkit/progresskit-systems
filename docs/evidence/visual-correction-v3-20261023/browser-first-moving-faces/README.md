@@ -1,0 +1,1 @@
+Pierwszy przebieg przerwano po wykryciu niestabilnego hitboxu unoszonych płyt. Zachowano surowe logi i kadry. Ruch przeniesiono na dekoracyjne mocowania; finalny pełny przebieg znajduje się w ../browser/. Ten katalog nie stanowi odbioru PASS.

@@ -17,6 +17,13 @@ CHANNELS = (
     ("Stable", "rozwiązania zweryfikowane"),
     ("Commercial", "dostępność komercyjna, niezależna od statusu wydania"),
 )
+ECOSYSTEM_CONNECTIONS = (
+    ('tax', 'translator'),
+    ('translator', 'agents'),
+    ('agents', 'voice'),
+    ('tax', 'mail'),
+    ('mail', 'messenger'),
+)
 
 
 def render_case_studies():
@@ -34,7 +41,7 @@ def render_case_studies():
 
 
 def render_delivery(projects):
-    """Return two static, accessible sections without altering catalogue data."""
+    """Return progressively enhanced sections without altering catalogue data."""
     if not isinstance(projects, list):
         raise ValueError("Delivery sections require catalogue projects.")
     by_id = {}
@@ -65,54 +72,85 @@ def render_delivery(projects):
             f'<span class="sr-only">{escape(name)}</span><span aria-hidden="true">→</span></a>',
         }
 
-    # Product stages come from the reviewed catalogue. Every connecting edge is
-    # explicitly planned; concepts do not acquire a project route or release.
-    flow = []
-    for identifier in ('progresskit-tax', 'progresskit-translator', 'local-ai-agents', 'voice-gateway'):
+    # Six roles are not a second catalogue. Their details and project links stay
+    # visible without JavaScript; enhancement moves the same detail into the
+    # desktop console instead of duplicating links or accessible identities.
+    concepts = {
+        'local-ai-agents': ('agents', 'Local AI Agents', 'Lokalni agenci AI.'),
+        'voice-gateway': ('voice', 'Voice Gateway', 'Integracje telefoniczne.'),
+        'secure-messenger': ('messenger', 'Bezpieczny komunikator',
+                             'Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.'),
+    }
+
+    def render_node(identifier, tag, heading_tag, classes, relationship=False):
         product = products.get(identifier)
-        label = product['label'] if product else {'local-ai-agents': 'Local AI Agents', 'voice-gateway': 'Voice Gateway'}[identifier]
-        description = product['description'] if product else {'local-ai-agents': 'Lokalni agenci AI.', 'voice-gateway': 'Integracje telefoniczne.'}[identifier]
+        node, label, description = (
+            (product['role'], product['label'], product['description']) if product else concepts[identifier]
+        )
         status = product['stage'] if product else 'Planowane'
+        stage = {'W rozwoju': 'development', 'Prototyp': 'prototype', 'Planowane': 'planned'}.get(
+            status, 'unconfirmed'
+        )
         attribute = 'data-ecosystem-project' if product else 'data-ecosystem-concept'
+        branch_attributes = (
+            f' data-integration-status="planned" aria-labelledby="ecosystem-{node}-label"'
+        ) if tag == 'section' else ''
+        heading_id = f' id="ecosystem-{node}-label"' if tag == 'section' else ''
         connector = (
-            '<span class="delivery-flow__connector" aria-hidden="true">↔</span>'
-            '<span class="delivery-flow__relationship" data-integration-status="planned">Planowane połączenie</span>'
-        ) if identifier != 'voice-gateway' else ''
-        flow.append(
-            f'<li class="delivery-flow__node" {attribute}="{identifier}">'
-            f'<p class="delivery-state">{escape(status)}</p>'
-            f'<h3 class="delivery-flow__heading">{escape(label)}</h3>'
+            '<span class="delivery-flow__relationship" data-integration-status="planned">'
+            'Planowane połączenie</span>'
+        ) if relationship else ''
+        return (
+            f'<{tag} class="{classes} ecosystem-node" {attribute}="{identifier}" '
+            f'data-ecosystem-node="{node}" data-ecosystem-stage="{stage}"{branch_attributes}>'
+            f'<{heading_tag} class="delivery-flow__heading ecosystem-node__heading"{heading_id}>'
+            f'<button class="ecosystem-node__trigger" type="button" data-ecosystem-select="{node}" '
+            f'id="ecosystem-trigger-{node}" aria-controls="ecosystem-role-{node}" '
+            f'aria-expanded="true" aria-labelledby="ecosystem-name-{node}" '
+            f'aria-describedby="ecosystem-status-{node}">'
+            f'<span class="ecosystem-node__name" id="ecosystem-name-{node}">{escape(label)}</span>'
+            f'<span class="delivery-state" id="ecosystem-status-{node}">{escape(status)}</span>'
+            f'</button></{heading_tag}>'
+            f'<div class="ecosystem-node__detail" id="ecosystem-role-{node}" '
+            f'role="region" aria-labelledby="ecosystem-name-{node}">'
             f'<p class="delivery-flow__description">{escape(description)}</p>'
-            + (product['link'] if product else '') + connector + '</li>'
+            + (product['link'] if product else '') + '</div>' + connector + f'</{tag}>'
         )
 
-    mail = products['progresskit-mail']
+    # Product stages come from the reviewed catalogue. Every connecting edge is
+    # explicitly planned; concepts do not acquire a project route or release.
+    flow = ''.join(
+        render_node(identifier, 'li', 'h3', 'delivery-flow__node', identifier != 'voice-gateway')
+        for identifier in ('progresskit-tax', 'progresskit-translator', 'local-ai-agents', 'voice-gateway')
+    )
     independent = (
         '<aside class="delivery-independent" aria-labelledby="ecosystem-communication-title">'
         '<h3 id="ecosystem-communication-title">Niezależna komunikacja</h3>'
         '<div class="delivery-independent__branches">'
-        '<section class="delivery-branch" data-ecosystem-project="progresskit-mail" '
-        'data-integration-status="planned" aria-labelledby="ecosystem-mail-label">'
-        f'<p class="delivery-state">{escape(mail["stage"])}</p>'
-        f'<h4 class="delivery-flow__heading" id="ecosystem-mail-label">{escape(mail["label"])}</h4>'
-        f'<p class="delivery-flow__description">{escape(mail["description"])}</p>'
-        + mail['link'] + '</section>'
-        '<section class="delivery-branch" data-ecosystem-concept="secure-messenger" '
-        'data-integration-status="planned" aria-labelledby="ecosystem-messenger-label">'
-        '<p class="delivery-state">Planowane</p>'
-        '<h4 class="delivery-flow__heading" id="ecosystem-messenger-label">Bezpieczny komunikator</h4>'
-        '<p class="delivery-flow__description">Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.</p>'
-        '</section></div></aside>'
+        + render_node('progresskit-mail', 'section', 'h4', 'delivery-branch')
+        + render_node('secure-messenger', 'section', 'h4', 'delivery-branch')
+        + '</div></aside>'
+    )
+    wires = (
+        '<svg class="ecosystem-wires" data-ecosystem-wires aria-hidden="true" focusable="false" '
+        'viewBox="0 0 1000 600" preserveAspectRatio="none">'
+        + ''.join(
+            f'<path data-ecosystem-edge="{source}-{target}" data-from="{source}" '
+            f'data-to="{target}" data-integration-status="planned"></path>'
+            for source, target in ECOSYSTEM_CONNECTIONS
+        ) + '</svg>'
     )
     ecosystem = (
         '<section class="section delivery-section delivery-ecosystem home-chapter" id="ekosystem" '
-        'aria-labelledby="ecosystem-title" aria-describedby="ecosystem-roadmap-note">'
+        'data-ecosystem-system aria-labelledby="ecosystem-title" aria-describedby="ecosystem-roadmap-note">'
         '<div class="shell"><header class="delivery-heading">'
         '<h2 class="section-title" id="ecosystem-title">Ekosystem ProgressKit</h2>'
         '</header><p class="delivery-map-intro">Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.</p>'
-        '<div class="delivery-map delivery-map--flow"><ol class="delivery-flow" '
-        'aria-label="Ekosystem ProgressKit">' + ''.join(flow) + '</ol></div>' + independent +
-        '<div class="delivery-roadmap" id="ecosystem-roadmap-note">'
+        '<div class="delivery-map delivery-map--flow ecosystem-system" data-ecosystem-map>'
+        + wires + '<ol class="delivery-flow" aria-label="Ekosystem ProgressKit">' + flow + '</ol>'
+        + independent + '<div class="ecosystem-console" id="ecosystem-console" '
+        'data-ecosystem-console aria-live="polite" aria-atomic="true" hidden></div></div>'
+        + '<div class="delivery-roadmap" id="ecosystem-roadmap-note">'
         '<p>Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.</p></div>'
         '</div></section>'
     )

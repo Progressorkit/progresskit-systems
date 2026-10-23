@@ -1,0 +1,86 @@
+{
+  "reportDate": "2026-10-23",
+  "checkedUtc": "2026-10-23T07:33:39.697944+00:00",
+  "baselineCommit": "78319345bcf6822d304b5de758aae0297a4ca812",
+  "status": "PASS",
+  "existingUrlAttributesPreserved": 177,
+  "newUrlAttributes": [
+    [
+      "link",
+      "href",
+      "assets/interface-life.css"
+    ],
+    [
+      "link",
+      "href",
+      "assets/ecosystem-system.css"
+    ],
+    [
+      "script",
+      "src",
+      "assets/interface-life.js"
+    ],
+    [
+      "script",
+      "src",
+      "assets/ecosystem-system.js"
+    ]
+  ],
+  "unchangedHtmlSurfaces": {
+    "events": {
+      "unchanged": true,
+      "beforeCount": 0,
+      "afterCount": 0
+    },
+    "styles": {
+      "unchanged": true,
+      "beforeCount": 0,
+      "afterCount": 0
+    },
+    "forms": {
+      "unchanged": true,
+      "beforeCount": 6,
+      "afterCount": 6
+    },
+    "active": {
+      "unchanged": true,
+      "beforeCount": 0,
+      "afterCount": 0
+    }
+  },
+  "inlineScriptsByteUnchanged": true,
+  "beforeScripts": 5,
+  "afterScripts": 7,
+  "newExternalScriptsAreSelfOnly": true,
+  "newCssHasNoUrlOrImports": true,
+  "newJsHasNoHtmlStringSinksDynamicCodeNetworkCallsOrTimers": true,
+  "reviewedAssetSha256": {
+    "assets/interface-life.js": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+    "assets/interface-life.css": "ce22d47b5a278c4e4f6c1a13d22876ef2ad88cd0fea0c95f0fd844b8003600fb",
+    "assets/ecosystem-system.js": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+    "assets/ecosystem-system.css": "54bcccabb9f3aa55d48fb0483bac73501870e826ba5ddf87e9eb837c73c2d1c9"
+  },
+  "changedSourceHashes": {
+    "assets/ecosystem-system.css": "54bcccabb9f3aa55d48fb0483bac73501870e826ba5ddf87e9eb837c73c2d1c9",
+    "assets/ecosystem-system.js": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+    "assets/hero-space.js": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+    "assets/interface-life.css": "ce22d47b5a278c4e4f6c1a13d22876ef2ad88cd0fea0c95f0fd844b8003600fb",
+    "assets/interface-life.js": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+    "index.html": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419",
+    "package.json": "d4fe99099f701e1855c72237543858431d46956190862c76280b4f0ba9be8dc2",
+    "scripts/build-site.py": "3e8fb5d82ec9597b197c1737ed7642b05f4cc4fc3d9c7d879f0827f892b1a299",
+    "scripts/delivery_markup.py": "f3ee4c16c7e0960a69cebfa0ab5e8f3c5b564d421d39c6b8761f1c1ab824f6c9",
+    "scripts/qa-final-website.cjs": "28d62a75fbc355f5cdebf6384624dc96a3cf6928a236c87db4977ab6a93b2a41",
+    "scripts/stage-public.py": "1f432f87aa804971e9e7e134a5323d69026074d38105fad31c0d333466da135e",
+    "tests/hero-space.test.cjs": "a3835e51d363ebe3a278120888cf1b4c8c7ba60729feacce11585e7dcb18cf7f",
+    "tests/interface-life.test.cjs": "21be4ec71667740511389b2462ba55430127578f6654a4598bcc44dac0e6a247",
+    "tests/test_delivery_sections.py": "17f6944416ab9d8fb0c91be13b72f172a3278044f4acfac7cba2bb6747152850"
+  },
+  "manualReview": {
+    "markup": "Six fixed roles/five planned SVG paths; catalog label/name/stage escaping and slug/id validation retained. No new SVG URL or executable markup.",
+    "interfaceLife": "No RAF/timers; one MutationObserver on two stable aria-pressed controls, fixed media/visibility/page event listeners; reduced motion and hidden state combine with user pause.",
+    "ecosystemGraph": "Exactly six stable role records and five markup edges; existing detail nodes moved, not cloned. Only two temporary text paragraphs rebuilt per selection. One coalesced geometry RAF, canceled for hidden/offscreen, maximum two CSS flowing signals; one IO/RO graph observer each.",
+    "heroSpace": "Existing bounded single pointer RAF and CSSOM preserved. One existing IntersectionObserver now observes hero plus stage; desktop requires both visible, mobile uses hero visibility. No timer/network/new HTML sink.",
+    "limits": "Static source review does not claim measured runtime resource stability; GUI evidence is separate."
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "recordedUtc": "2026-10-23T07:33:35.549422+00:00",
+  "reason": "Exact previous final source-scan and summary bytes preserved before sticky-hero visibility correction. Existing initial-sca and pre-hitbox archives remain unchanged in their original sibling locations; historical manifest paths are mapped here for archived root files. Final refresh will cover changed hero-space.js, its unit test and QA harness. No new SCA because actual package/inventory remain unchanged.",
+  "files": [
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/EVIDENCE_MANIFEST.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/EVIDENCE_MANIFEST.json",
+      "bytes": 9212,
+      "sha256": "e4c5856dc009eb1312eeb81f2b930f30e71e3879b5c85b31fb8b20189b0c9975"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/REVIEW.md",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/REVIEW.md",
+      "bytes": 3139,
+      "sha256": "c3a20e0bb00a27a2a2ada81048f00619ded8b9c1e9cee99f8923beda3936706a"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/baseline-verification.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/baseline-verification.json",
+      "bytes": 9561,
+      "sha256": "2b26f9c0ee9bc70dc8f47e580a36b91f01a4f2e90e41c8106e3593a99feaed8d"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/baseline.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/baseline.json",
+      "bytes": 3600,
+      "sha256": "f46089e598e08e599db0b20a2916f9c6e668aded085ceacd2f7ef6788d5b7d3d"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/commands.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/commands.json",
+      "bytes": 1776,
+      "sha256": "19f8262b010cb90d37176c8c0f2addc3c18ecaec312eba61ee621202a1143d67"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/final-local-scans-summary.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "a58ff1aae18f1c57b40228bf6a3b7529c3e6075f60528c38b8c3e46a1e7da140"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/final-security-summary.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-security-summary.json",
+      "bytes": 3251,
+      "sha256": "b72983f1ca2542f7bbd8ce62e39bb2f4467590ad98ad40de1fdfc023c50fcf84"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/final-source-after.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-source-after.json",
+      "bytes": 9993,
+      "sha256": "bfb946a76fefdb95dc15df13e3dadeabba88ef74204993b9097fd9afb18c2105"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/final-source-before.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-source-before.json",
+      "bytes": 9976,
+      "sha256": "c52900aa5ebeb2283d707d624563b479ba08f32616c4db35f907f22326a16b0f"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-history.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-history.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "cac3b36a3795d53b8635c71862a36fcd6bea2a9df95448c72726d59a4b1b07c9"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-reviewed-benign.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-reviewed-benign.json",
+      "bytes": 8741,
+      "sha256": "28bfbf6da76a70d10e5b5c40b80c1efadf98b5ac9b6498b2299d1afe22496bdf"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-worktree.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "ef3efd11c15164175f7b8a17ad0ee8156bf63047aa8fb76f59108741fec6ad8a"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-worktree.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "00e790c8fa6b7bfd887d29aad2ff869c7df47ca71c7753afcd185bec9d70c747"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/inventory-verification.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/inventory-verification.json",
+      "bytes": 270,
+      "sha256": "efbd19a23198212bde6cadab4aa2d993db414052420bb846e9cf63054b517fcc"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/log-normalization.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/log-normalization.json",
+      "bytes": 880,
+      "sha256": "07c70815ed648b078dda96ea894cf01bc0c6b9dc64e1f8b6ba12bd5510b9b26b"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca-summary.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca-summary.json",
+      "bytes": 2189,
+      "sha256": "46121fe94cae31408988f62be1a6bb2937b5fb5281db702fc05639d27d119a5b"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "c57efcb298eb50941a58fcf135d0298052c1c8fd95dfb4054075b5d98891410b"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca.log",
+      "bytes": 352,
+      "sha256": "10f3710f6fc85e5788c0358df0986a06b09da3ee326bda3b7a15424c1ad60c24"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/requirements-installed.txt",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/sast-rules.yml",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/sast.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.json",
+      "bytes": 2717,
+      "sha256": "74ae9bf8d3b8330db3d6662e65b97f64fc8b3741f86e2bfc0cb4af7f48c76d95"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/sast.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.log",
+      "bytes": 701,
+      "sha256": "c6cd9cfe12239f9604b237ce342ab9759094426959ec4a7eec10a595d609c0d7"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/sast.log.gz",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.log.gz",
+      "bytes": 360,
+      "sha256": "3aed8b7c7a3e2a657d6377a045635d74376141153660d9b28db304ef96b98001"
+    },
+    {
+      "originalPath": "docs/evidence/visual-correction-v3-20261023/security/surface-review.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/surface-review.json",
+      "bytes": 3836,
+      "sha256": "354a985ddc551e0801dddee58486c8832c2bb6407cb4327a9ff2f784934357a0"
+    }
+  ]
+}

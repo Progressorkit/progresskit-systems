@@ -1,0 +1,1202 @@
+{
+  "url": "http://127.0.0.1:8110/",
+  "browser": "155.0.8059.39",
+  "checks": [
+    {
+      "name": "1920:six nodes/details,three actual links and finite planned paths",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 425.4 87.5 H 710 V 80.4 H 994.6",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 1185 144.4 V 180.4 H 433.2 V 338.8 H 411.2",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 411.2 338.8 H 431.2 V 478.9 H 988.8 V 374.7 H 1008.8",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 44.5 87.5 H 10 V 632.5 H 186.3",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 567.2 632.5 H 759.6 V 643.2 H 952.1",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1920:no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 425.4 87.5 H 710 V 80.4 H 994.6",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 1185 144.4 V 180.4 H 433.2 V 338.8 H 411.2",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 411.2 338.8 H 431.2 V 478.9 H 988.8 V 374.7 H 1008.8",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 44.5 87.5 H 10 V 632.5 H 186.3",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 567.2 632.5 H 759.6 V 643.2 H 952.1",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1920:select tax preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Obsługa biura.Zobacz cały projekt ProgressKit Tax→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:select translator preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "translator",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Niezależny moduł językowy offline-first.Zobacz cały projekt ProgressKit Translator→",
+        "stage": "prototype",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:select agents preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "agents",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Lokalni agenci AI.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:select voice preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "voice",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Integracje telefoniczne.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:select mail preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "mail",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.Zobacz cały projekt ProgressKit Mail→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:select messenger preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "messenger",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920:native Space selects Translator",
+      "status": "PASS",
+      "details": {
+        "selected": "translator"
+      }
+    },
+    {
+      "name": "1920:ArrowRight changes focus only",
+      "status": "PASS",
+      "details": {
+        "focused": "agents"
+      }
+    },
+    {
+      "name": "1920:native Enter selects Agents",
+      "status": "PASS",
+      "details": {
+        "selected": "agents"
+      }
+    },
+    {
+      "name": "1920:Escape clears selection and returns focus",
+      "status": "PASS",
+      "details": {
+        "selected": "",
+        "expanded": 0,
+        "focus": "agents"
+      }
+    },
+    {
+      "name": "1920:reduced motion stops all graph signals",
+      "status": "PASS",
+      "details": {
+        "state": "paused",
+        "animations": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "1920:no page errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440:six nodes/details,three actual links and finite planned paths",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 417 87.5 H 696 V 80.4 H 975",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 1161.7 144.4 V 180.4 H 425.1 V 338.8 H 403.1",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 403.1 338.8 H 423.1 V 478.9 H 968.9 V 374.7 H 988.9",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 43.7 87.5 H 10 V 632.5 H 182.7",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 556 632.5 H 744.6 V 643.2 H 933.3",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1440:no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 417 87.5 H 696 V 80.4 H 975",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 1161.7 144.4 V 180.4 H 425.1 V 338.8 H 403.1",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 403.1 338.8 H 423.1 V 478.9 H 968.9 V 374.7 H 988.9",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 43.7 87.5 H 10 V 632.5 H 182.7",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 556 632.5 H 744.6 V 643.2 H 933.3",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1440:select tax preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Obsługa biura.Zobacz cały projekt ProgressKit Tax→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:select translator preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "translator",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Niezależny moduł językowy offline-first.Zobacz cały projekt ProgressKit Translator→",
+        "stage": "prototype",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:select agents preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "agents",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Lokalni agenci AI.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:select voice preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "voice",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Integracje telefoniczne.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:select mail preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "mail",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.Zobacz cały projekt ProgressKit Mail→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:select messenger preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "messenger",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440:native Space selects Translator",
+      "status": "PASS",
+      "details": {
+        "selected": "translator"
+      }
+    },
+    {
+      "name": "1440:ArrowRight changes focus only",
+      "status": "PASS",
+      "details": {
+        "focused": "agents"
+      }
+    },
+    {
+      "name": "1440:native Enter selects Agents",
+      "status": "PASS",
+      "details": {
+        "selected": "agents"
+      }
+    },
+    {
+      "name": "1440:Escape clears selection and returns focus",
+      "status": "PASS",
+      "details": {
+        "selected": "",
+        "expanded": 0,
+        "focus": "agents"
+      }
+    },
+    {
+      "name": "1440:reduced motion stops all graph signals",
+      "status": "FAIL",
+      "details": {
+        "state": "running",
+        "animations": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "1440:no page errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1000:six nodes/details,three actual links and finite planned paths",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": true,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 285 93.5 H 476 V 86 H 667",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 794.3 151.5 V 187.5 H 297.5 V 414.8 H 275.5",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 275.5 414.8 H 295.5 V 556.7 H 656.5 V 460.7 H 676.5",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 30.5 93.5 H 10 V 826.5 H 125.5",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 380 826.5 H 509.3 V 838.6 H 638.5",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1000:no horizontal overflow",
+      "status": "FAIL",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": true,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 285 93.5 H 476 V 86 H 667",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 794.3 151.5 V 187.5 H 297.5 V 414.8 H 275.5",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 275.5 414.8 H 295.5 V 556.7 H 656.5 V 460.7 H 676.5",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 30.5 93.5 H 10 V 826.5 H 125.5",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 380 826.5 H 509.3 V 838.6 H 638.5",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "1000:select tax preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "tax",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Obsługa biura.Zobacz cały projekt ProgressKit Tax→",
+        "stage": "development",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:select translator preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "translator",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Niezależny moduł językowy offline-first.Zobacz cały projekt ProgressKit Translator→",
+        "stage": "prototype",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:select agents preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "agents",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Lokalni agenci AI.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:select voice preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "voice",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Integracje telefoniczne.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:select mail preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "mail",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.Zobacz cały projekt ProgressKit Mail→",
+        "stage": "development",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:select messenger preserves single real detail and clears other selections",
+      "status": "FAIL",
+      "details": {
+        "selected": "messenger",
+        "expanded": 1,
+        "parent": "panel",
+        "visible": true,
+        "panelHidden": false,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": true
+      }
+    },
+    {
+      "name": "1000:native Space selects Translator",
+      "status": "PASS",
+      "details": {
+        "selected": "translator"
+      }
+    },
+    {
+      "name": "1000:ArrowRight changes focus only",
+      "status": "PASS",
+      "details": {
+        "focused": "agents"
+      }
+    },
+    {
+      "name": "1000:native Enter selects Agents",
+      "status": "PASS",
+      "details": {
+        "selected": "agents"
+      }
+    },
+    {
+      "name": "1000:Escape clears selection and returns focus",
+      "status": "PASS",
+      "details": {
+        "selected": "",
+        "expanded": 0,
+        "focus": "agents"
+      }
+    },
+    {
+      "name": "1000:reduced motion stops all graph signals",
+      "status": "PASS",
+      "details": {
+        "state": "paused",
+        "animations": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "1000:no page errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390:six nodes/details,three actual links and finite planned paths",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 20 92 H 7 V 409.2 H 46",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 46 409.2 H 7 V 615.6 H 20",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 20 615.6 H 7 V 822 H 46",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 312 92 H 351 V 1048.5 H 312",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 20 1048.5 H 7 V 1224.8 H 46",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "390:no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 20 92 H 7 V 409.2 H 46",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 46 409.2 H 7 V 615.6 H 20",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 20 615.6 H 7 V 822 H 46",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 312 92 H 351 V 1048.5 H 312",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 20 1048.5 H 7 V 1224.8 H 46",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "390:select tax preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Obsługa biura.Zobacz cały projekt ProgressKit Tax→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:select translator preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "translator",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Niezależny moduł językowy offline-first.Zobacz cały projekt ProgressKit Translator→",
+        "stage": "prototype",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:select agents preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "agents",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Lokalni agenci AI.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:select voice preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "voice",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Integracje telefoniczne.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:select mail preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "mail",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.Zobacz cały projekt ProgressKit Mail→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:select messenger preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "messenger",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390:native Space selects Translator",
+      "status": "PASS",
+      "details": {
+        "selected": "translator"
+      }
+    },
+    {
+      "name": "390:ArrowRight changes focus only",
+      "status": "PASS",
+      "details": {
+        "focused": "agents"
+      }
+    },
+    {
+      "name": "390:native Enter selects Agents",
+      "status": "PASS",
+      "details": {
+        "selected": "agents"
+      }
+    },
+    {
+      "name": "390:Escape clears selection and returns focus",
+      "status": "PASS",
+      "details": {
+        "selected": "",
+        "expanded": 0,
+        "focus": "agents"
+      }
+    },
+    {
+      "name": "390:reduced motion stops all graph signals",
+      "status": "PASS",
+      "details": {
+        "state": "paused",
+        "animations": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "390:no page errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "320:six nodes/details,three actual links and finite planned paths",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 16 92 H 7 V 410.8 H 34",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 34 410.8 H 7 V 618.8 H 16",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 16 618.8 H 7 V 825.2 H 34",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 254 92 H 281 V 1051.7 H 254",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 16 1051.7 H 7 V 1223.3 H 34",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "320:no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "nodes": 6,
+        "details": 6,
+        "links": 3,
+        "overflow": false,
+        "motion": "running",
+        "edges": [
+          {
+            "d": "M 16 92 H 7 V 410.8 H 34",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 34 410.8 H 7 V 618.8 H 16",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 16 618.8 H 7 V 825.2 H 34",
+            "planned": "planned",
+            "flow": false
+          },
+          {
+            "d": "M 254 92 H 281 V 1051.7 H 254",
+            "planned": "planned",
+            "flow": true
+          },
+          {
+            "d": "M 16 1051.7 H 7 V 1223.3 H 34",
+            "planned": "planned",
+            "flow": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "320:select tax preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Obsługa biura.Zobacz cały projekt ProgressKit Tax→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:select translator preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "translator",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Niezależny moduł językowy offline-first.Zobacz cały projekt ProgressKit Translator→",
+        "stage": "prototype",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:select agents preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "agents",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Lokalni agenci AI.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:select voice preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "voice",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Integracje telefoniczne.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:select mail preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "mail",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Komunikacja e-mail. Połączenie z głównym przepływem — planowane.Zobacz cały projekt ProgressKit Mail→",
+        "stage": "development",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:select messenger preserves single real detail and clears other selections",
+      "status": "PASS",
+      "details": {
+        "selected": "messenger",
+        "expanded": 1,
+        "parent": "node",
+        "visible": true,
+        "panelHidden": true,
+        "panelNodeOverlaps": [],
+        "headingNodeOverlaps": [],
+        "detailText": "Osobny kierunek rozwoju. Połączenie z ekosystemem — planowane.",
+        "stage": "planned",
+        "links": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320:native Space selects Translator",
+      "status": "PASS",
+      "details": {
+        "selected": "translator"
+      }
+    },
+    {
+      "name": "320:ArrowRight changes focus only",
+      "status": "PASS",
+      "details": {
+        "focused": "agents"
+      }
+    },
+    {
+      "name": "320:native Enter selects Agents",
+      "status": "PASS",
+      "details": {
+        "selected": "agents"
+      }
+    },
+    {
+      "name": "320:Escape clears selection and returns focus",
+      "status": "PASS",
+      "details": {
+        "selected": "",
+        "expanded": 0,
+        "focus": "agents"
+      }
+    },
+    {
+      "name": "320:reduced motion stops all graph signals",
+      "status": "FAIL",
+      "details": {
+        "state": "running",
+        "animations": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "320:no page errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "actual existing pause control stops graph signals",
+      "status": "PASS",
+      "details": {
+        "global": "paused",
+        "map": "paused"
+      }
+    },
+    {
+      "name": "actual existing resume control restores visible graph signals",
+      "status": "PASS",
+      "details": {
+        "global": "running",
+        "map": "running"
+      }
+    },
+    {
+      "name": "resize moves original selected detail home without link duplication",
+      "status": "PASS",
+      "details": {
+        "parent": "mail",
+        "links": 3
+      }
+    },
+    {
+      "name": "offscreen graph pauses",
+      "status": "PASS",
+      "details": {
+        "motion": "paused"
+      }
+    },
+    {
+      "name": "no-JS fallback retains all six approved descriptions and three routes",
+      "status": "PASS",
+      "details": {
+        "count": 6,
+        "visible": 6,
+        "links": 3
+      }
+    }
+  ],
+  "screenshots": [
+    "1920-map-top.png",
+    "1440-map-top.png",
+    "1000-map-top.png",
+    "390-map-top.png",
+    "390-map-branches.png",
+    "320-map-top.png",
+    "320-map-branches.png"
+  ],
+  "PASS": 66,
+  "FAIL": 9
+}

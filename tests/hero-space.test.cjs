@@ -22,18 +22,19 @@ function mount({reduced=false}={}) {
     style:{setProperty:(name,value)=>properties.set(name,value),removeProperty:name=>properties.delete(name)},
     getBoundingClientRect:()=>({left:0,top:0,width:1000,height:600}),
   });
-  const reduce=events({matches:reduced}),fine=events({matches:true});
-  const document=events({hidden:false,querySelector:()=>hero});
+  const reduce=events({matches:reduced}),fine=events({matches:true}),desktop=events({matches:true});
+  const stage={};
+  const document=events({hidden:false,documentElement:{dataset:{}},querySelector:selector=>selector==='.project-showroom'?stage:hero});
   class Observer {constructor(callback){intersection=callback;}observe(){}}
-  const window=events({IntersectionObserver:Observer,matchMedia:query=>query.includes('reduced-motion')?reduce:fine});
+  const window=events({IntersectionObserver:Observer,matchMedia:query=>query.includes('reduced-motion')?reduce:query.includes('1101px')?desktop:fine});
   vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../assets/hero-space.js'),'utf8'),{
     document,window,IntersectionObserver:Observer,
     requestAnimationFrame(callback){frames.set(++sequence,callback);return sequence;},
     cancelAnimationFrame(id){frames.delete(id);},
   });
-  return{hero,button,document,window,reduce,fine,frames,classes,properties,
+  return{hero,stage,button,document,window,reduce,fine,desktop,frames,classes,properties,
     pointer(extra={}){hero.fire('pointermove',{pointerType:'mouse',clientX:800,clientY:200,...extra});},
-    intersect(isIntersecting){intersection([{isIntersecting}]);},
+    intersect(isIntersecting,target=hero){intersection([{isIntersecting,target}]);},
     flush(){for(const[id,callback]of[...frames]){frames.delete(id);callback();}},
   };
 }
@@ -89,4 +90,27 @@ test('Offscreen, hidden and coarse-pointer transitions cancel queued work',()=>{
   ui.pointer();assert.equal(ui.frames.size,0);
   ui.fine.matches=true;ui.fine.fire('change');ui.pointer();assert.equal(ui.frames.size,1);
   ui.reduce.matches=true;ui.reduce.fire('change');assert.equal(ui.frames.size,0);assert.equal(ui.properties.size,0);
+});
+
+test('Shared mechanism pause cancels queued hero light and blocks pointer updates until resumed',()=>{
+  const ui=mount();ui.pointer();assert.equal(ui.frames.size,1);
+  ui.document.documentElement.dataset.interfaceMotion='paused';
+  ui.window.fire('progresskit:motionchange',{detail:{paused:true}});
+  assert.equal(ui.frames.size,0);assert.equal(ui.properties.size,0);
+  assert.equal(ui.classes.has('hero-motion-enabled'),false);
+  ui.pointer();ui.flush();assert.equal(ui.properties.size,0);
+  ui.document.documentElement.dataset.interfaceMotion='running';
+  ui.window.fire('progresskit:motionchange',{detail:{paused:false}});
+  ui.pointer();ui.flush();assert.ok(ui.properties.has('--light-x'));
+});
+
+test('Desktop hero stops behind later chapters while mobile hero has its own visibility',()=>{
+  const ui=mount();ui.pointer();assert.equal(ui.frames.size,1);
+  ui.intersect(false,ui.stage);
+  assert.equal(ui.classes.has('hero-in-view'),false);assert.equal(ui.frames.size,0);
+  ui.pointer();assert.equal(ui.frames.size,0);
+  ui.desktop.matches=false;ui.desktop.fire('change');
+  assert.equal(ui.classes.has('hero-in-view'),true);
+  ui.pointer();ui.flush();assert.ok(ui.properties.has('--light-x'));
+  ui.intersect(false);assert.equal(ui.classes.has('hero-in-view'),false);assert.equal(ui.properties.size,0);
 });

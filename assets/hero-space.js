@@ -6,18 +6,26 @@
   if (!hero) return;
   const reduced = window.matchMedia('(prefers-reduced-motion:reduce)');
   const fine = window.matchMedia('(hover:hover) and (pointer:fine)');
+  const desktop = window.matchMedia('(min-width:1101px)');
+  const stage = document.querySelector('.project-showroom');
   const toggle = hero.querySelector('[data-hero-motion-toggle]');
   let userPaused = false;
   let inView = true;
+  let heroInView = true;
+  let stageInView = true;
   let frame = 0;
   let pointer = null;
+  const globallyPaused = () => document.documentElement.dataset.interfaceMotion === 'paused';
   const reset = () => {
     if (frame) cancelAnimationFrame(frame);
     frame = 0; pointer = null;
     for (const name of ['--scene-x','--scene-y','--light-x','--light-y','--climber-rise','--climber-opacity']) hero.style.removeProperty(name);
   };
   const sync = () => {
-    const enabled = !userPaused && !reduced.matches && !document.hidden;
+    // Sticky hero can intersect the viewport behind later opaque chapters.
+    // The first-row section bounds the actual desktop presentation surface.
+    inView = heroInView && (!desktop.matches || !stage || stageInView);
+    const enabled = !userPaused && !globallyPaused() && !reduced.matches && !document.hidden;
     hero.classList.toggle('hero-motion-paused', userPaused);
     hero.classList.toggle('hero-motion-enabled', enabled);
     hero.classList.toggle('hero-in-view', inView && enabled);
@@ -30,12 +38,12 @@
     if (!enabled || !inView || !fine.matches) reset();
   };
   hero.addEventListener('pointermove', event => {
-    if (event.pointerType === 'touch' || userPaused || reduced.matches || !fine.matches || !inView || document.hidden) return;
+    if (event.pointerType === 'touch' || userPaused || globallyPaused() || reduced.matches || !fine.matches || !inView || document.hidden) return;
     pointer = { x:event.clientX, y:event.clientY };
     if (frame) return;
     frame = requestAnimationFrame(() => {
       frame = 0;
-      if (!pointer || userPaused || reduced.matches || !inView || document.hidden) return;
+      if (!pointer || userPaused || globallyPaused() || reduced.matches || !inView || document.hidden) return;
       const box = hero.getBoundingClientRect();
       const x = Math.max(-1, Math.min(1, (pointer.x - box.left) / box.width * 2 - 1));
       const y = Math.max(-1, Math.min(1, (pointer.y - box.top) / box.height * 2 - 1));
@@ -58,14 +66,21 @@
   }
   reduced.addEventListener('change', sync);
   fine.addEventListener('change', sync);
+  desktop.addEventListener('change', sync);
   document.addEventListener('visibilitychange', sync);
+  window.addEventListener('progresskit:motionchange', sync);
   window.addEventListener('pagehide', () => { hero.classList.remove('hero-in-view'); reset(); });
   window.addEventListener('pageshow', sync);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      inView = entries[0].isIntersecting; sync();
+      for (const entry of entries) {
+        if (entry.target === hero) heroInView = entry.isIntersecting;
+        if (entry.target === stage) stageInView = entry.isIntersecting;
+      }
+      sync();
     });
     observer.observe(hero);
+    if (stage) observer.observe(stage);
   }
   sync();
 })();

@@ -1,0 +1,1317 @@
+{
+  "baselineCommit": "78319345bcf6822d304b5de758aae0297a4ca812",
+  "scope": "V3 visual correction, regression and real local browser/security evidence only. No push/deploy. Manifest excludes itself.",
+  "sourcePaths": [
+    "assets/ecosystem-system.css",
+    "assets/ecosystem-system.js",
+    "assets/hero-space.js",
+    "assets/interface-life.css",
+    "assets/interface-life.js",
+    "index.html",
+    "package.json",
+    "scripts/build-site.py",
+    "scripts/delivery_markup.py",
+    "scripts/qa-final-website.cjs",
+    "scripts/stage-public.py",
+    "tests/hero-space.test.cjs",
+    "tests/interface-life.test.cjs",
+    "tests/test_delivery_sections.py"
+  ],
+  "files": [
+    {
+      "path": "assets/ecosystem-system.css",
+      "bytes": 12837,
+      "sha256": "54bcccabb9f3aa55d48fb0483bac73501870e826ba5ddf87e9eb837c73c2d1c9"
+    },
+    {
+      "path": "assets/ecosystem-system.js",
+      "bytes": 10041,
+      "sha256": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66"
+    },
+    {
+      "path": "assets/hero-space.js",
+      "bytes": 4161,
+      "sha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb"
+    },
+    {
+      "path": "assets/interface-life.css",
+      "bytes": 12736,
+      "sha256": "ce22d47b5a278c4e4f6c1a13d22876ef2ad88cd0fea0c95f0fd844b8003600fb"
+    },
+    {
+      "path": "assets/interface-life.js",
+      "bytes": 2179,
+      "sha256": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4"
+    },
+    {
+      "path": "docs/VISUAL_CORRECTION_V3_20261023.md",
+      "bytes": 6409,
+      "sha256": "39fecd966c0651dc23be0e737e5171a0fe53615014385fc8d0b6d548ff060f11"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/README.md",
+      "bytes": 6687,
+      "sha256": "e9e3c95ff0cc5f42dedafbcc30fc48d2bf97c82831705af0a9fb784412ba1887"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-ecosystem-map.png",
+      "bytes": 716651,
+      "sha256": "2a76b08898747396c4ee76b30fe981043ccf261eb6d433f037200ceea8b60f1b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-ecosystem-translator.png",
+      "bytes": 722510,
+      "sha256": "79714185e0234377c89a24a3f5dcb6e8d3c43ebad3985587afc5a715ab7126b0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-ekosystem.png",
+      "bytes": 707553,
+      "sha256": "f5c8ff3a64d73e5c38b39a30a96d658665c3fa1c75dcea8635b51812086e1ea8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-first.png",
+      "bytes": 1008343,
+      "sha256": "13c12dc8470e963edff9cdd7b41ec28cad566299c862616950f504c231b97291"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-glikemia-premium-expanded.png",
+      "bytes": 966402,
+      "sha256": "30ecdeaf260784c3c97e93f66520d56d3548c30597d7d51ee787c286f10bb453"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-kontakt.png",
+      "bytes": 622233,
+      "sha256": "9f3b109f4b4eaa86de73949286a2f2a9ab2f2884d935a3794874b0ef3d022f65"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-progresskit-community-expanded.png",
+      "bytes": 973171,
+      "sha256": "59f6edf49ac76bf8f9d9f93bd888aafb2a3a523d727a2e877abc47112d5ae9b9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-progresskit-mail-expanded.png",
+      "bytes": 958812,
+      "sha256": "0e0236f6a1546d2d46f3e790f4ddd6cd72e32b1d0cba70713944d97d084bc29a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-progresskit-tax-expanded.png",
+      "bytes": 978293,
+      "sha256": "c4bac7cc6d43d81379251bac55a87168feb59595c4f2040889ae4472341d4fae"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-progresskit-translator-expanded.png",
+      "bytes": 994717,
+      "sha256": "ea2afe45da603d08320dd9fb25af81f69ac2f568ded80b59b45b804a38bf6e13"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-uslugi.png",
+      "bytes": 613524,
+      "sha256": "f7924070d90c0313b9860b754d8e827121aae4ac6c1d3686d3635234244e1f56"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-vaeloria-expanded.png",
+      "bytes": 1062664,
+      "sha256": "b10af70402b3f5a51dd26c6fe96c1947f1f94022aabfee1914353d4efde3380a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1440-wydania.png",
+      "bytes": 629547,
+      "sha256": "6fafc562ce147b1ab472a6b3f6a3a80ef1c94e4d609cc6c80f58cffcbed0dcc6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-ecosystem-map.png",
+      "bytes": 1023481,
+      "sha256": "9d1bd35de2467a832dedd71bd629b75080d7c58b00209ab883c54ba6942c5f51"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-ecosystem-translator.png",
+      "bytes": 1026899,
+      "sha256": "9e8d59868c46070fe3639d35ffa0f48f228de7e19034cedaab0eb692217fa77f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-ekosystem.png",
+      "bytes": 1064795,
+      "sha256": "76b02841bed6df921b108a4402dc9202c2c38a7f6ab160f87045e8fccebc6507"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-first.png",
+      "bytes": 1513923,
+      "sha256": "211290dd4e0b5d47ae6b4ae0bd89fdef2e679d1fccff0bfc9f81aac38aa397f6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-glikemia-premium-expanded.png",
+      "bytes": 1463980,
+      "sha256": "7f829834a49095f7becdc35d8bca2a54cb0ed99fe72da1dc1911e94a0c05266e"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-kontakt.png",
+      "bytes": 890508,
+      "sha256": "6e3b033d5ff2e04b86770130cca1db511413b80f1272ba6a99af646bd9f951ab"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-progresskit-community-expanded.png",
+      "bytes": 1428693,
+      "sha256": "39e2b6c4c113c6ead2b40f54513f239dade6705e5bf63bd4cb6e4184c81d2642"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-progresskit-mail-expanded.png",
+      "bytes": 1463776,
+      "sha256": "8efd4cac1202c2141944cf42f83de38ee32254df0a3dde602c3fc0c8ef317a4d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-progresskit-tax-expanded.png",
+      "bytes": 1453898,
+      "sha256": "6cef0162847a0c0ceecbff2134ebf7830800444dec7e35a30f8661bd4b06ffba"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-progresskit-translator-expanded.png",
+      "bytes": 1476305,
+      "sha256": "5a4ca76ee2853368c306bf3f5bb51012afcd43de378e2f907ae9974aafd05c0a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-uslugi.png",
+      "bytes": 780622,
+      "sha256": "9e5c8f64a1e51292577af600f9ba70d8e122a362166568d83c1e455f65f29ac8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-vaeloria-expanded.png",
+      "bytes": 1536073,
+      "sha256": "eb245a89626b0825d82d34b5809b6a2c528d47aacb2b3bc0f6572345645a9b4d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/1920-wydania.png",
+      "bytes": 975112,
+      "sha256": "bec937e79d045d2b74fc4b67f9d2139a8f2e2d93cb7872b46dcd2505e5762891"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-ecosystem-communication.png",
+      "bytes": 126357,
+      "sha256": "3a28c4fb09c567439bbda864af4efc0fd7be0eb4de410aae767efdc7b05e8449"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-ecosystem-map.png",
+      "bytes": 144134,
+      "sha256": "f419659fe260b230b74c5d378abcaceee43a6acb29478e17775dc6703e21ee67"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-ecosystem-translator.png",
+      "bytes": 150213,
+      "sha256": "b14f168c5247fcac65a621948b99bd943727a3479b0990d9f2dc0578a13af093"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-ekosystem.png",
+      "bytes": 133741,
+      "sha256": "1aa83c0967458cec05dee47e1e8dd589ebe364524b2512f76dfc11d1e380e76c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-first.png",
+      "bytes": 177435,
+      "sha256": "1f8b81629022cbd32d7577dea0864a04030460ff7f97f81d1692f370735c6b3a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 109904,
+      "sha256": "22fdad1f3cf6b5f6d693897ec79a1cdfbeecedd2b900528fbeba6bde051ff5ca"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-glikemia-premium-expanded.png",
+      "bytes": 157837,
+      "sha256": "51317d1df086a546435c50b6a5c1e364dbfe406374ef70169bf44e99e91aa3be"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-kontakt.png",
+      "bytes": 145204,
+      "sha256": "5a6ff23028ae6f25a65c737d847a9c1750316a77d66af10707279408e60a72b0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-navigation.png",
+      "bytes": 109015,
+      "sha256": "6f3a38dada09fc27ff5170b0bf88f7424e63512a7b519fc20d073f2915cf2106"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 109034,
+      "sha256": "8e1e817c4ea78922fd18dc498e2fce036438b47d774cce77c32de210a9a571d0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-community-expanded.png",
+      "bytes": 163297,
+      "sha256": "4d46d4f13af8f03f2bcb7dcbedfbdcbf8d581813ba227c186cbda670314765d4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 104335,
+      "sha256": "81d1b0a4ceb01aeb56b7c67eadcc0e6d2ba34a3e38bdaeca1298e29a8b8e327b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-mail-expanded.png",
+      "bytes": 155610,
+      "sha256": "eb57549dcd24ffcff9680e48a71c1ddd0eeb76b1d2fb346d300dab67812763f6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 111437,
+      "sha256": "341e2d9f0b5ff4162568f248f57e783bc3acc61fb6670a327f0897477090ee3f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-tax-expanded.png",
+      "bytes": 159413,
+      "sha256": "0d307884d3e49729231c8f624cb1e3c154f044f643988d71c7d4cb14c3ecb334"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 117689,
+      "sha256": "400350773ab8336d3e2f5453847587d73b5e492ddd293cf8dae9c5ac010e2d15"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-progresskit-translator-expanded.png",
+      "bytes": 158945,
+      "sha256": "c03f0c3434ce94fab7544b4f8e8dd16f480af25c48e874994bcdbf7a620e6428"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-uslugi.png",
+      "bytes": 113082,
+      "sha256": "3e8e0f25bd7777c1ea0e32c3518fa57c51732e12037cfdda6e7ef3417667c0b9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-vaeloria-actions-after-scroll.png",
+      "bytes": 137059,
+      "sha256": "624d25e3181d27c27f2cd6469597e89b692bf95edcbf6a0329015da7d46e5a68"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-vaeloria-expanded.png",
+      "bytes": 153415,
+      "sha256": "232988d79f4a4d77e4a7a4ac526dbf40defd58fe5729cc9663807de3446030a5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/320-wydania.png",
+      "bytes": 130711,
+      "sha256": "47c3c85085622ff28dd20939efd8105862eb1fcca7da40fbf16bd80db2f80907"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-ecosystem-communication.png",
+      "bytes": 225462,
+      "sha256": "531147c0ab2556ed1c16eb2db5e38aa100fe7af04bdeecda782998c2cf072817"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-ecosystem-map.png",
+      "bytes": 263248,
+      "sha256": "815f0805ba25ca81e2c1cab3d2f6356b173468a142ade7916066910b01e20b89"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-ecosystem-translator.png",
+      "bytes": 256593,
+      "sha256": "f065de37e8451e8ee5e8c06c537325e5279736667eacd7aa5951e5fbaa078053"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-ekosystem.png",
+      "bytes": 250176,
+      "sha256": "125e16060215820a8513e951f0915d3387f40dad71fd5331414fc1fd4bd1e1f1"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-first.png",
+      "bytes": 262420,
+      "sha256": "03269ed9d8bf8cc5a732412e1b1d7c62f5c466d70524374d7ab568cd9f5d2b22"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 197798,
+      "sha256": "a868e3e2492e6de970024d9a498bb0cb109cd51fd12d93cc0ff0ed088d5bca7d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-glikemia-premium-expanded.png",
+      "bytes": 254465,
+      "sha256": "4c3e9b999067fd973227254567e1511a7b6a0c1d3304ac9c52bea204c5cf9a7b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-kontakt.png",
+      "bytes": 218955,
+      "sha256": "2ad8ab7c684d66437854f3ba304fddf37413a446934283b4bf1f407c8496b9ca"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-navigation.png",
+      "bytes": 210914,
+      "sha256": "e4caf271d9273d1bb9308ad73889c23b4bbd4ec4f3956ecd7ebcb971fc800b74"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 227177,
+      "sha256": "a76feed438314cdf9a9f0759bd322d5253c9a50d34038b55996377b840ff8743"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-community-expanded.png",
+      "bytes": 280435,
+      "sha256": "21ab20c27c9de2ed38840ffe9e71884df223ae7968a9469df1a6982d76eff1df"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 191780,
+      "sha256": "07fd8bc8765022266737609abc64b961b83adc127e2c4fdc81e845df938a5b0f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-mail-expanded.png",
+      "bytes": 254609,
+      "sha256": "5ee1d8e6a7b7533526a764d530cd0d43786ab57132e574e91b7c5d63bc8b3dda"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 261123,
+      "sha256": "b61aab7cb1f79e89f7ac216f18a2620647d9ad57214c12f88677b864a0880513"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-tax-expanded.png",
+      "bytes": 261817,
+      "sha256": "162b3fcaf5c135087fc989a4b641bcd32bb9029e04e23e945cd1ae7a1fadcbbf"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 216119,
+      "sha256": "0b63f1cc4a89dc22dd60d5a84e5c34344469b03f4cd259ded8892a343c5c49c8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-progresskit-translator-expanded.png",
+      "bytes": 262510,
+      "sha256": "25e77c8cd42077659a8912849f825f554ad34a0de89178e76937fed1387101c5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-uslugi.png",
+      "bytes": 208569,
+      "sha256": "acc4347f74a65153078b8b1f76bb389346f341d5524f3e5bdef5d746b6c13be6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-vaeloria-actions-after-scroll.png",
+      "bytes": 251481,
+      "sha256": "dc9285ab27337cfc609e5a193ae3d4f853f4869e098dbb6c0f72c6a2b0939739"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-vaeloria-expanded.png",
+      "bytes": 272643,
+      "sha256": "ee7768943a10f44ca054537885ac80638289b5ea11a91911fbbcfcd5c515deb6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/390-wydania.png",
+      "bytes": 213577,
+      "sha256": "31813ce5de4b1767835a6ec194453908dbbac75c0d94e6d36064a3ae2587ccc5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/README.md",
+      "bytes": 528,
+      "sha256": "2479f14409987ce31e987ca0aa2f5ea358d6651b43067dedd8c2e96c86fc89cb"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/desktop-mechanism.mp4",
+      "bytes": 3789270,
+      "sha256": "da3e29f9614f520d53a40ea87757076a89abff1ac89295f15b0140e1d7f9bc6b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/mobile-interaction.mp4",
+      "bytes": 1065977,
+      "sha256": "de410d78105c9f43fe69bd52693d5b3391acd80ff75de1df41dea236fc35248c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/report.json",
+      "bytes": 68445,
+      "sha256": "51db6622a071a29cdd3085f3a565b4b662c1c20eac95bf8ba3bbcf7a364f885d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-before-lifecycle-fix/run.log",
+      "bytes": 5877,
+      "sha256": "a63fd03a0c334a045909d8678e928d26de0590d76e1e4f852d9edd4717b18715"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-first-moving-faces/1920-first.png",
+      "bytes": 1507341,
+      "sha256": "e32dfd91356acf3bbf4d8e7b180c5811b84e2f07d7b4f33f1daff6170d8088d4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-first-moving-faces/README.md",
+      "bytes": 246,
+      "sha256": "f12f533c364fdb45a477a276875eb010f948fb760fa399ba5429c35178acece4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser-first-moving-faces/interrupted.log",
+      "bytes": 8582,
+      "sha256": "ee98dfc7e1feb1e7bc7bac368f74fa50c9dbdd6fa5f9b87b9f124bb890c418e2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-ecosystem-map.png",
+      "bytes": 716651,
+      "sha256": "65038d99206c15f4e0dac587b30354d7962b0e56091a6ac98158541275930e53"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-ecosystem-translator.png",
+      "bytes": 722511,
+      "sha256": "268e97b399b5a8e68f7375906b2185256109f286bb67c75712e1bc0e08c98d20"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-ekosystem.png",
+      "bytes": 706536,
+      "sha256": "ff402eec15e1a7bc893e4620c9cb099c033cf928795871a2ef1a8931f693e02d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-first.png",
+      "bytes": 1008103,
+      "sha256": "9b4dfea23acb4be2932aeee62e78bf2c5b284e2dfe6c6b3834b7eab03fc53c7d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-glikemia-premium-expanded.png",
+      "bytes": 966389,
+      "sha256": "b2a0594fb3738463d921a796b828d13793aa50cc6c769af68296993257eda572"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-kontakt.png",
+      "bytes": 622437,
+      "sha256": "a880bf74d7d5d19e4af77dd6c5b4e7bb97d9ae83ebb7931ab6ab035f09dff574"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-progresskit-community-expanded.png",
+      "bytes": 973741,
+      "sha256": "90ce52d63e6461590f766072e9af21666b503192f814a2e97c2685e4c8b60cc9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-progresskit-mail-expanded.png",
+      "bytes": 958398,
+      "sha256": "0d50593419c0203d5bf98dd48579573ddec9f94d66fc0fbf2c0845b0b8923d99"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-progresskit-tax-expanded.png",
+      "bytes": 978237,
+      "sha256": "8e5aa07df32423316978074b4504bf0f7a595b142778451fb358aee095e4d755"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-progresskit-translator-expanded.png",
+      "bytes": 994717,
+      "sha256": "ea2afe45da603d08320dd9fb25af81f69ac2f568ded80b59b45b804a38bf6e13"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-uslugi.png",
+      "bytes": 617886,
+      "sha256": "d4a9a3cacd628ad6bad4ad0f01af5ced4a6acfe7f69bd699dd0fa9b60e263bed"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-vaeloria-expanded.png",
+      "bytes": 1062696,
+      "sha256": "fffb2949c56c58a2da900a63cf2b20ce57e25f6543eb676f90a02141d0d3e66a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1440-wydania.png",
+      "bytes": 629547,
+      "sha256": "6fafc562ce147b1ab472a6b3f6a3a80ef1c94e4d609cc6c80f58cffcbed0dcc6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-ecosystem-map.png",
+      "bytes": 1023481,
+      "sha256": "9d1bd35de2467a832dedd71bd629b75080d7c58b00209ab883c54ba6942c5f51"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-ecosystem-translator.png",
+      "bytes": 1026915,
+      "sha256": "6d2803989f958d936bbae7db829766f914c947e5afc3493a5d46fe221ab36aa7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-ekosystem.png",
+      "bytes": 1065198,
+      "sha256": "e982a282b8d380642546002e4c2f439a772a9eb11ba6869fa473633fdcdad397"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-first.png",
+      "bytes": 1513923,
+      "sha256": "9035d6a6ee07fffdf7eae11c8a7964488dda784709c5596868746e4ea186700d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-glikemia-premium-expanded.png",
+      "bytes": 1465265,
+      "sha256": "138dde1b74071369f2787f51fade642aa927665435719863ee09a4866890ccf7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-kontakt.png",
+      "bytes": 891159,
+      "sha256": "03b9d13bbc53d397db69a06c4993d2a98c54fa1949a48a582dff269a35d3d53b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-progresskit-community-expanded.png",
+      "bytes": 1428693,
+      "sha256": "39e2b6c4c113c6ead2b40f54513f239dade6705e5bf63bd4cb6e4184c81d2642"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-progresskit-mail-expanded.png",
+      "bytes": 1463589,
+      "sha256": "f5368a3bc87d2e100a1c15652b2d9cfe1b65c4b63057354508598a868f02ea53"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-progresskit-tax-expanded.png",
+      "bytes": 1453898,
+      "sha256": "6cef0162847a0c0ceecbff2134ebf7830800444dec7e35a30f8661bd4b06ffba"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-progresskit-translator-expanded.png",
+      "bytes": 1476305,
+      "sha256": "5a4ca76ee2853368c306bf3f5bb51012afcd43de378e2f907ae9974aafd05c0a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-uslugi.png",
+      "bytes": 784519,
+      "sha256": "1717240db5e1d548a81ef4d46b7bc4e1cfacbe125332345b4df7d5c249b32fb8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-vaeloria-expanded.png",
+      "bytes": 1535863,
+      "sha256": "3a05d3621caedaa30fcfe43792c5b7007cb2e4d5bd18a7b61c9c868e84de178f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/1920-wydania.png",
+      "bytes": 975112,
+      "sha256": "bec937e79d045d2b74fc4b67f9d2139a8f2e2d93cb7872b46dcd2505e5762891"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-ecosystem-communication.png",
+      "bytes": 126357,
+      "sha256": "3a28c4fb09c567439bbda864af4efc0fd7be0eb4de410aae767efdc7b05e8449"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-ecosystem-map.png",
+      "bytes": 144030,
+      "sha256": "8b06d0efb86079b5213c7144eec7d2b007280b4fcf1772ccf8a93dadc7a24054"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-ecosystem-translator.png",
+      "bytes": 150213,
+      "sha256": "b14f168c5247fcac65a621948b99bd943727a3479b0990d9f2dc0578a13af093"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-ekosystem.png",
+      "bytes": 133870,
+      "sha256": "07332e904af6e0bbd9e39c64fa0e64eb87ed493213f4e21577e04d9df8ee7c6b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-first.png",
+      "bytes": 177446,
+      "sha256": "f9301e4b6ea018459f3722475cc02741182ccf4e8aa94490e53cbcdf7ec0d60d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-glikemia-premium-actions-after-scroll.png",
+      "bytes": 109904,
+      "sha256": "22fdad1f3cf6b5f6d693897ec79a1cdfbeecedd2b900528fbeba6bde051ff5ca"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-glikemia-premium-expanded.png",
+      "bytes": 157833,
+      "sha256": "104f8e916b867e11459b2119274848e702bb55302e01cf70d583d7b8bf086f4d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-kontakt.png",
+      "bytes": 145204,
+      "sha256": "5a6ff23028ae6f25a65c737d847a9c1750316a77d66af10707279408e60a72b0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-navigation.png",
+      "bytes": 109034,
+      "sha256": "48c35cb04adfa19f7d8222c2b37c13711fc2f1ab5bbc535e12e48fc632cd36ce"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-community-actions-after-scroll.png",
+      "bytes": 109034,
+      "sha256": "8e1e817c4ea78922fd18dc498e2fce036438b47d774cce77c32de210a9a571d0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-community-expanded.png",
+      "bytes": 163297,
+      "sha256": "4d46d4f13af8f03f2bcb7dcbedfbdcbf8d581813ba227c186cbda670314765d4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-mail-actions-after-scroll.png",
+      "bytes": 104335,
+      "sha256": "81d1b0a4ceb01aeb56b7c67eadcc0e6d2ba34a3e38bdaeca1298e29a8b8e327b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-mail-expanded.png",
+      "bytes": 155610,
+      "sha256": "eb57549dcd24ffcff9680e48a71c1ddd0eeb76b1d2fb346d300dab67812763f6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-tax-actions-after-scroll.png",
+      "bytes": 111437,
+      "sha256": "341e2d9f0b5ff4162568f248f57e783bc3acc61fb6670a327f0897477090ee3f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-tax-expanded.png",
+      "bytes": 159429,
+      "sha256": "ee0a2feb91dc312a02e46bb4d384be16ab7f235138b56ba18b82c2019badb940"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-translator-actions-after-scroll.png",
+      "bytes": 117689,
+      "sha256": "400350773ab8336d3e2f5453847587d73b5e492ddd293cf8dae9c5ac010e2d15"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-progresskit-translator-expanded.png",
+      "bytes": 158926,
+      "sha256": "5a35517c43384891789ee45251548d517db96b9cd4ba7588c10bee7d9cb2c8c0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-uslugi.png",
+      "bytes": 113082,
+      "sha256": "3e8e0f25bd7777c1ea0e32c3518fa57c51732e12037cfdda6e7ef3417667c0b9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-vaeloria-actions-after-scroll.png",
+      "bytes": 137059,
+      "sha256": "624d25e3181d27c27f2cd6469597e89b692bf95edcbf6a0329015da7d46e5a68"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-vaeloria-expanded.png",
+      "bytes": 153412,
+      "sha256": "fffacff0371746d2589021b4a77971502e062817b4db5577ae715f59a1f9d4e1"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/320-wydania.png",
+      "bytes": 130711,
+      "sha256": "47c3c85085622ff28dd20939efd8105862eb1fcca7da40fbf16bd80db2f80907"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-ecosystem-communication.png",
+      "bytes": 225462,
+      "sha256": "531147c0ab2556ed1c16eb2db5e38aa100fe7af04bdeecda782998c2cf072817"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-ecosystem-map.png",
+      "bytes": 263248,
+      "sha256": "815f0805ba25ca81e2c1cab3d2f6356b173468a142ade7916066910b01e20b89"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-ecosystem-translator.png",
+      "bytes": 256699,
+      "sha256": "7356176c698fbf9775954744ffda4459c5fb463439be737130d176b8e2efecef"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-ekosystem.png",
+      "bytes": 249850,
+      "sha256": "17441c1d557fb6e47156009efdd5d0d63bbe32738c8910a6fba32b95279b8222"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-first.png",
+      "bytes": 262389,
+      "sha256": "7b9588a62874970c5ac3172d23533631782c17e7daaf3ae643be4ff82c744c9d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-glikemia-premium-actions-after-scroll.png",
+      "bytes": 197798,
+      "sha256": "8820af98480a52dca82ae77570d133ba83ba448bf0590d0b44b13fbd656c8ca3"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-glikemia-premium-expanded.png",
+      "bytes": 254469,
+      "sha256": "4b1e088d0bdc9f22b17e4f0f8354cf093eaa33ae552f0589696e6afb3a05a649"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-kontakt.png",
+      "bytes": 218955,
+      "sha256": "2ad8ab7c684d66437854f3ba304fddf37413a446934283b4bf1f407c8496b9ca"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-navigation.png",
+      "bytes": 210932,
+      "sha256": "cd38eaefdbac7f1cd0175ff16a949ad9a7387c8233eaa3238af2ebbc9c53e204"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-community-actions-after-scroll.png",
+      "bytes": 227177,
+      "sha256": "87ca3dd95aec939e571d74198e1542800e89a5313f0659629b2c80e435e172ac"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-community-expanded.png",
+      "bytes": 280417,
+      "sha256": "e683599bf40b54d7a597944c64408b32344935806054b51cb218e53d9a28ea1c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-mail-actions-after-scroll.png",
+      "bytes": 191780,
+      "sha256": "07fd8bc8765022266737609abc64b961b83adc127e2c4fdc81e845df938a5b0f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-mail-expanded.png",
+      "bytes": 254609,
+      "sha256": "5ee1d8e6a7b7533526a764d530cd0d43786ab57132e574e91b7c5d63bc8b3dda"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-tax-actions-after-scroll.png",
+      "bytes": 261074,
+      "sha256": "b4d07c27d81fdbd2e580b99516b408a211c7795477faef566cee439df69d088e"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-tax-expanded.png",
+      "bytes": 261810,
+      "sha256": "3fefb74ef2ae1ee479feb5d1f0f2769e489836f4def5c209fe809abeb4013087"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-translator-actions-after-scroll.png",
+      "bytes": 216116,
+      "sha256": "f354ff1255696956ac5fa4930ca25c7d55991b13b9d46787042a2add7de98e0b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-progresskit-translator-expanded.png",
+      "bytes": 262510,
+      "sha256": "25e77c8cd42077659a8912849f825f554ad34a0de89178e76937fed1387101c5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-uslugi.png",
+      "bytes": 208569,
+      "sha256": "acc4347f74a65153078b8b1f76bb389346f341d5524f3e5bdef5d746b6c13be6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-vaeloria-actions-after-scroll.png",
+      "bytes": 251481,
+      "sha256": "dc9285ab27337cfc609e5a193ae3d4f853f4869e098dbb6c0f72c6a2b0939739"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-vaeloria-expanded.png",
+      "bytes": 272642,
+      "sha256": "8cc05badc21aa207c75dea78af015d8ec66c9559633fbf7d61d78a82f7302436"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/390-wydania.png",
+      "bytes": 213577,
+      "sha256": "31813ce5de4b1767835a6ec194453908dbbac75c0d94e6d36064a3ae2587ccc5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/desktop-mechanism.mp4",
+      "bytes": 3678760,
+      "sha256": "d7b7db22908568e1eed4e20ebd4635904a2c76cdd0a38cd97fc6972ad02b2b1a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/mobile-interaction.mp4",
+      "bytes": 1063696,
+      "sha256": "79e99ff61cde751fd373ee347e5d581e1ad01f3857a94feb1b7064459bb00868"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/report.json",
+      "bytes": 68821,
+      "sha256": "c2498562939c0d42bb7b9c3c7168f11530a9f5a14c67f27cfe892032991b0912"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/browser/run.log",
+      "bytes": 5717,
+      "sha256": "342ae63c4ed2bd77db47217062c758aba619049e8bd2e321880dd55fc82f46d3"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/check.log",
+      "bytes": 436,
+      "sha256": "5c84f2982551aaefc72188ceb131ec4e2b96b26261e435ed707bf0dc6bea6776"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/copy-preservation.json",
+      "bytes": 310,
+      "sha256": "d48e4e160edce3a0a9eef4574219596c3b32801fcf5dcc21e61fb35778ec4946"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/http-check-first-header-case.json",
+      "bytes": 18704,
+      "sha256": "6d3bb6d415a28caf82a80db00c353ae7b961802bdcf8d0d906d5615292f0206c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/http-check.json",
+      "bytes": 18640,
+      "sha256": "bcb5fe86b271fe5b7242745ec77a502c9842a4c2c24e0311ce3c10ace3c67476"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/http-check.py",
+      "bytes": 3236,
+      "sha256": "3b62ce3f85856862d7597ea132b70158a2f20be5ccce11b3e05f249fcdf9aad0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/internal-links.json",
+      "bytes": 130934,
+      "sha256": "04b1b516c5788fabac65fac51ba31f20576461b742f084c5de591208be1188c6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/internal-links.py",
+      "bytes": 1964,
+      "sha256": "1c146e24cbcdf5373109bdc559745062b6363996e06ef70fea746966c00d29e6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/lifecycle-review/probe.cjs",
+      "bytes": 3610,
+      "sha256": "1b5448a16d8959c7155eca73976caebd9d2bc11aeb69b067fcb8d344f5b8c93a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/lifecycle-review/progresskit-v3-hero-gate-20261023.json",
+      "bytes": 9784,
+      "sha256": "5b302160ca399da17f05c9f701295059a07bf77276ae0ad9f9e7a2193bf404c9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/lifecycle-review/progresskit-v3-offscreen-20261023.json",
+      "bytes": 76485,
+      "sha256": "28cb279788c23be435c2a7ad043f8beb439805cac561e80ce8f4ada2267732b7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/lifecycle-review/summary.json",
+      "bytes": 10455,
+      "sha256": "5199a33318f2cfde27195a79699953b39de8a5411adb3de7c9b2bfc4fb55e1ed"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/1000-map-top.png",
+      "bytes": 559283,
+      "sha256": "6e5b3fb71f0848590bade1058a7cb0c391c78f7fe5e647c1fd023988138bbe8c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/1440-map-top.png",
+      "bytes": 722018,
+      "sha256": "1a15a97f13143fbf4aa1d5d7ef4a679d25457188fd07bbd571017753e851db4f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/1920-map-top.png",
+      "bytes": 1027121,
+      "sha256": "1eeb0077a36bc5d86fdf672d9d7741d6dde3399151eda5074240d07c1e383bb8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/320-map-branches.png",
+      "bytes": 125276,
+      "sha256": "f51ea948ebb5cf4331118fed998feb09e16a685cfe3ec5a0f8eca0f6d650dba2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/320-map-top.png",
+      "bytes": 148315,
+      "sha256": "ae2c1b2b7b0d051be2b21b1b0e3e8a493974ffb0ea8291afd65aa47207bade1c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/390-map-branches.png",
+      "bytes": 222601,
+      "sha256": "4da11c4a6e0bb7fe1c5bc4abe0ae4d1a8b77bfba6c2c40c3cf9e30e89501ad9c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/390-map-top.png",
+      "bytes": 255601,
+      "sha256": "97aaebdeecaa3c759dcd47860a91c30bec90ddcee75459ad8bcd972d1c3ea18e"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/README.md",
+      "bytes": 542,
+      "sha256": "da91a40ecab417809687537a812604515fc5353c91add1486df0f9368cc8d08f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/probe.cjs",
+      "bytes": 8874,
+      "sha256": "c99b7144387d64c606d448a9daddc36f19a103cb307846a5538832d059cc74e0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/report-first-raw-fail.json",
+      "bytes": 31888,
+      "sha256": "8e72055a1171143d6f22e2882d005aceccb8c1e0364afdea586f0af0a7414ed2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/map-probe/report.json",
+      "bytes": 31894,
+      "sha256": "1b9ec5c7db5a13e5ca5f87bc2449d98b4c1e734ae24c61d1edc63ecf24bec14f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/node-tests.log",
+      "bytes": 16237,
+      "sha256": "11b0459383b01c63b88e74fe3ae4ee815a837d5f32189503516a0fcea5c3a43a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/publication-gate.log",
+      "bytes": 52,
+      "sha256": "0a06f08939d3119ded47842adde810ce0c30b394eca66d1789bac6ccd19829b8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/python-tests.log",
+      "bytes": 18873,
+      "sha256": "fcb858e6a39f28e432d384473431918978cc6da381c82a06b0851495084341fd"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/EVIDENCE_MANIFEST.json",
+      "bytes": 15281,
+      "sha256": "1f630ee4516a7b218e51f298f0bcd437107f0ac4122f151378cde319a1c34ef8"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/REVIEW.md",
+      "bytes": 3708,
+      "sha256": "a7e3fb94f579d218bdf568518219efd3f5d55260fe04a076f842c2b8b12ac7cb"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/baseline-verification.json",
+      "bytes": 9561,
+      "sha256": "5c7c038728e368771de5285bf91a2c68c21037c6890fa04a053088e8c52bfb45"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/baseline.json",
+      "bytes": 3600,
+      "sha256": "f46089e598e08e599db0b20a2916f9c6e668aded085ceacd2f7ef6788d5b7d3d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/commands.json",
+      "bytes": 1776,
+      "sha256": "e9d7151baae6f05df90838a2561bf0f06c1420c54de61422a1cc68d6713c91fe"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "3ce068fa9ce08e1a4eaf9ea00383116576cb29bb12135b7596f1a2743dd1cef6"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/final-security-summary.json",
+      "bytes": 3667,
+      "sha256": "33c4b919e5e77ad2f3e10b10b5a6d75f9c50846c3afabc01341d3bb20e9ee78a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/final-source-after.json",
+      "bytes": 9993,
+      "sha256": "10a54f364732adfdd2752a3fc9500af8676f970b74c9fb8053e65fa90b2919a4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/final-source-before.json",
+      "bytes": 9976,
+      "sha256": "158ae21c23f14240a9cc558e6e49239e34638f00d24a661ce02df9ac45284fba"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "20eba8a0698ffd0898d62b569e37a0cedd7e18174ed7e98475082b09992604f9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-reviewed-benign.json",
+      "bytes": 8741,
+      "sha256": "9317c1a86d6867681cc8456f493fd935c741380c4927e885e7fe702efd5e3f09"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "5d18cf6ecef91f9b05fe1cf6152feee822ac18b90a1fa941d26e2ad3409151cc"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "ded08fc355fdc1c2d4b990bf4d25e84cf321cf50cb13d7f3d972b66d63822936"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/ARCHIVE_DESCRIPTOR.json",
+      "bytes": 1205,
+      "sha256": "a411f2292e7afe279b8e0e3a4a92141c3a818b8dbf05d2df8e5d4c9363b2a312"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca-summary.json",
+      "bytes": 2179,
+      "sha256": "1a44e8ba46c69f88a0fc8d427b92cff9dbc5eda1df594b9221024cf7005a273d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "91bf2ef9657d847c7016c96372b8e76dc93e066be5de247fea14322fa12d4686"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/initial-sca/offline-sca.log",
+      "bytes": 352,
+      "sha256": "46f0769b37109dd71036e251dc67d25adac1595636c679346ba8834b00c5b705"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/inventory-verification.json",
+      "bytes": 270,
+      "sha256": "efbd19a23198212bde6cadab4aa2d993db414052420bb846e9cf63054b517fcc"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/log-normalization.json",
+      "bytes": 880,
+      "sha256": "4f9f880e58035bf816979eb70d6329e0a87a94109229c20896c2f024ae3b1611"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/offline-sca-summary.json",
+      "bytes": 2189,
+      "sha256": "46121fe94cae31408988f62be1a6bb2937b5fb5281db702fc05639d27d119a5b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "c57efcb298eb50941a58fcf135d0298052c1c8fd95dfb4054075b5d98891410b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/offline-sca.log",
+      "bytes": 352,
+      "sha256": "10f3710f6fc85e5788c0358df0986a06b09da3ee326bda3b7a15424c1ad60c24"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/ARCHIVE_DESCRIPTOR.json",
+      "bytes": 5285,
+      "sha256": "2fca33820f792e5d9b5928faa31e5ece432ada858941bfc3927082552b655fa4"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "b197e6ca2b3d07d9c803f082debff4c5662b44713f56b69ad7f7f13424f6e6ab"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-source-after.json",
+      "bytes": 9993,
+      "sha256": "5694e4dbb9f6c5881118b3e00026d1f00591fe872e136dc9929c1419fa5e2d2f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-source-before.json",
+      "bytes": 9976,
+      "sha256": "b754facc10ecf5b12b1167c043a8a4b295528858357082b1a3ba7eab1f38c0f2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "70356b066c83970e9049c7d3808b21dd5c5514ffdcd8e5c657179165eee672ab"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "8d82f165244c1c8d24e8a22af003ecb938192f14b5184aad072e7ffc0152d57c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "2b20faa58a13eec1cce72261e2c60dcd173255a74a477707f9ecdb5e1dd30575"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.json",
+      "bytes": 2714,
+      "sha256": "7977e47a942ca56c6fa2d615230b95ec1ef3306f0ce03022e15b5c503341dcb5"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.log",
+      "bytes": 701,
+      "sha256": "c6cd9cfe12239f9604b237ce342ab9759094426959ec4a7eec10a595d609c0d7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.log.gz",
+      "bytes": 360,
+      "sha256": "3aed8b7c7a3e2a657d6377a045635d74376141153660d9b28db304ef96b98001"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/surface-review.json",
+      "bytes": 3836,
+      "sha256": "302c998f4e040ad35d7434306840e89f5b43d08cbbf2b8e549f5bae3840f40ae"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/ARCHIVE_DESCRIPTOR.json",
+      "bytes": 8995,
+      "sha256": "055e2381979670e032e5b73789e5734c4e7a24aeee5bb0bab3cbdfba5e7eb275"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/EVIDENCE_MANIFEST.json",
+      "bytes": 9212,
+      "sha256": "e4c5856dc009eb1312eeb81f2b930f30e71e3879b5c85b31fb8b20189b0c9975"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/REVIEW.md",
+      "bytes": 3139,
+      "sha256": "c3a20e0bb00a27a2a2ada81048f00619ded8b9c1e9cee99f8923beda3936706a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/baseline-verification.json",
+      "bytes": 9561,
+      "sha256": "2b26f9c0ee9bc70dc8f47e580a36b91f01a4f2e90e41c8106e3593a99feaed8d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/baseline.json",
+      "bytes": 3600,
+      "sha256": "f46089e598e08e599db0b20a2916f9c6e668aded085ceacd2f7ef6788d5b7d3d"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/commands.json",
+      "bytes": 1776,
+      "sha256": "19f8262b010cb90d37176c8c0f2addc3c18ecaec312eba61ee621202a1143d67"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-local-scans-summary.json",
+      "bytes": 1007,
+      "sha256": "a58ff1aae18f1c57b40228bf6a3b7529c3e6075f60528c38b8c3e46a1e7da140"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-security-summary.json",
+      "bytes": 3251,
+      "sha256": "b72983f1ca2542f7bbd8ce62e39bb2f4467590ad98ad40de1fdfc023c50fcf84"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-source-after.json",
+      "bytes": 9993,
+      "sha256": "bfb946a76fefdb95dc15df13e3dadeabba88ef74204993b9097fd9afb18c2105"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/final-source-before.json",
+      "bytes": 9976,
+      "sha256": "c52900aa5ebeb2283d707d624563b479ba08f32616c4db35f907f22326a16b0f"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-history.json",
+      "bytes": 3786,
+      "sha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-history.log",
+      "bytes": 113,
+      "sha256": "cac3b36a3795d53b8635c71862a36fcd6bea2a9df95448c72726d59a4b1b07c9"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-reviewed-benign.json",
+      "bytes": 8741,
+      "sha256": "28bfbf6da76a70d10e5b5c40b80c1efadf98b5ac9b6498b2299d1afe22496bdf"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-worktree.json",
+      "bytes": 2332,
+      "sha256": "ef3efd11c15164175f7b8a17ad0ee8156bf63047aa8fb76f59108741fec6ad8a"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/gitleaks-worktree.log",
+      "bytes": 79,
+      "sha256": "00e790c8fa6b7bfd887d29aad2ff869c7df47ca71c7753afcd185bec9d70c747"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/inventory-verification.json",
+      "bytes": 270,
+      "sha256": "efbd19a23198212bde6cadab4aa2d993db414052420bb846e9cf63054b517fcc"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/log-normalization.json",
+      "bytes": 880,
+      "sha256": "07c70815ed648b078dda96ea894cf01bc0c6b9dc64e1f8b6ba12bd5510b9b26b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca-summary.json",
+      "bytes": 2189,
+      "sha256": "46121fe94cae31408988f62be1a6bb2937b5fb5281db702fc05639d27d119a5b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca.json",
+      "bytes": 6900,
+      "sha256": "c57efcb298eb50941a58fcf135d0298052c1c8fd95dfb4054075b5d98891410b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/offline-sca.log",
+      "bytes": 352,
+      "sha256": "10f3710f6fc85e5788c0358df0986a06b09da3ee326bda3b7a15424c1ad60c24"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.json",
+      "bytes": 2717,
+      "sha256": "74ae9bf8d3b8330db3d6662e65b97f64fc8b3741f86e2bfc0cb4af7f48c76d95"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.log",
+      "bytes": 701,
+      "sha256": "c6cd9cfe12239f9604b237ce342ab9759094426959ec4a7eec10a595d609c0d7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/sast.log.gz",
+      "bytes": 360,
+      "sha256": "3aed8b7c7a3e2a657d6377a045635d74376141153660d9b28db304ef96b98001"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/pre-sticky-visibility-fix/surface-review.json",
+      "bytes": 3836,
+      "sha256": "354a985ddc551e0801dddee58486c8832c2bb6407cb4327a9ff2f784934357a0"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/requirements-installed.txt",
+      "bytes": 320,
+      "sha256": "9cb3664b9460f99a3e5107b3b23161f2994a1514fd4663a27fd4cf3d0b71a455"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/sast-rules.yml",
+      "bytes": 1261,
+      "sha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/sast.json",
+      "bytes": 2716,
+      "sha256": "612cfb261c1f77f7a7a67fd1453e88cd539ba7d3f3f113c1299d5f39f0a7a58c"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/sast.log",
+      "bytes": 701,
+      "sha256": "c6cd9cfe12239f9604b237ce342ab9759094426959ec4a7eec10a595d609c0d7"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/sast.log.gz",
+      "bytes": 360,
+      "sha256": "3aed8b7c7a3e2a657d6377a045635d74376141153660d9b28db304ef96b98001"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/security/surface-review.json",
+      "bytes": 4069,
+      "sha256": "c9303c44baafcc2261a55883f98c8dfb0f0b74314a9b20084bf776d34775070b"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/summary.json",
+      "bytes": 1314,
+      "sha256": "7b4fd8365a9dcc72132c4d44078b28f9012adc338189933242fe80bebdd8a2a3"
+    },
+    {
+      "path": "docs/evidence/visual-correction-v3-20261023/visual-review.json",
+      "bytes": 1856,
+      "sha256": "719c49a4fcf30cf7b39c2dd16892c04de6ded76f048456ed505c40020898b7c9"
+    },
+    {
+      "path": "index.html",
+      "bytes": 81198,
+      "sha256": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419"
+    },
+    {
+      "path": "package.json",
+      "bytes": 551,
+      "sha256": "d4fe99099f701e1855c72237543858431d46956190862c76280b4f0ba9be8dc2"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "bytes": 40407,
+      "sha256": "3e8fb5d82ec9597b197c1737ed7642b05f4cc4fc3d9c7d879f0827f892b1a299"
+    },
+    {
+      "path": "scripts/delivery_markup.py",
+      "bytes": 9163,
+      "sha256": "f3ee4c16c7e0960a69cebfa0ab5e8f3c5b564d421d39c6b8761f1c1ab824f6c9"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "bytes": 31167,
+      "sha256": "28d62a75fbc355f5cdebf6384624dc96a3cf6928a236c87db4977ab6a93b2a41"
+    },
+    {
+      "path": "scripts/stage-public.py",
+      "bytes": 3398,
+      "sha256": "1f432f87aa804971e9e7e134a5323d69026074d38105fad31c0d333466da135e"
+    },
+    {
+      "path": "tests/hero-space.test.cjs",
+      "bytes": 7133,
+      "sha256": "a3835e51d363ebe3a278120888cf1b4c8c7ba60729feacce11585e7dcb18cf7f"
+    },
+    {
+      "path": "tests/interface-life.test.cjs",
+      "bytes": 1018,
+      "sha256": "21be4ec71667740511389b2462ba55430127578f6654a4598bcc44dac0e6a247"
+    },
+    {
+      "path": "tests/test_delivery_sections.py",
+      "bytes": 16198,
+      "sha256": "17f6944416ab9d8fb0c91be13b72f172a3278044f4acfac7cba2bb6747152850"
+    }
+  ]
+}

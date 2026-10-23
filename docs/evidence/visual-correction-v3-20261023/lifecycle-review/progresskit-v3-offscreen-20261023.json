@@ -1,0 +1,2644 @@
+{
+  "base": "http://127.0.0.1:8110/",
+  "startedAt": "2026-10-23T07:26:13.821Z",
+  "browser": "155.0.8059.39",
+  "snapshots": [
+    {
+      "label": "fresh-top",
+      "scrollY": 0,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      },
+      "running": [
+        {
+          "name": "interface-light",
+          "playState": "running",
+          "currentTime": 1116.6329999958211,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "SECTION",
+            "id": "start",
+            "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+            "hidden": false,
+            "dataset": {
+              "heroArt": "present"
+            },
+            "rect": {
+              "top": 80,
+              "bottom": 800,
+              "left": 0,
+              "right": 604.796875,
+              "width": 604.796875,
+              "height": 720
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "sticky",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "MAIN",
+              "id": "main",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 79,
+                "bottom": 7307.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7228.03125
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "BODY",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 0,
+                "bottom": 7426.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "clip visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "HTML",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {
+                "interfaceQuality": "full",
+                "interfaceMotion": "running"
+              },
+              "rect": {
+                "top": 0,
+                "bottom": 7426.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-rail",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": null,
+          "target": {
+            "tag": "I",
+            "id": "",
+            "class": "showroom-frame__signal",
+            "hidden": false,
+            "dataset": {},
+            "rect": {
+              "top": 199.73284912109375,
+              "bottom": 233.73284912109375,
+              "left": 1007.390625,
+              "right": 1013.390625,
+              "width": 6,
+              "height": 34
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-frame",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 119,
+                "bottom": 749,
+                "left": 620.796875,
+                "right": 1399.984375,
+                "width": 779.1875,
+                "height": 630
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card is-active",
+            "hidden": false,
+            "dataset": {
+              "projectId": "glikemia-premium",
+              "category": "mobile"
+            },
+            "rect": {
+              "top": 101.5,
+              "bottom": 297.5,
+              "left": 626.8568725585938,
+              "right": 976.7369384765625,
+              "width": 349.88006591796875,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-sheen",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::after",
+          "target": {
+            "tag": "DIV",
+            "id": "",
+            "class": "project-slice",
+            "hidden": false,
+            "dataset": {},
+            "rect": {
+              "top": 101.5,
+              "bottom": 297.5,
+              "left": 626.8568725585938,
+              "right": 976.7369384765625,
+              "width": 349.88006591796875,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "relative",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "class": "showroom-card is-active",
+              "hidden": false,
+              "dataset": {
+                "projectId": "glikemia-premium",
+                "category": "mobile"
+              },
+              "rect": {
+                "top": 101.5,
+                "bottom": 297.5,
+                "left": 626.8568725585938,
+                "right": 976.7369384765625,
+                "width": 349.88006591796875,
+                "height": 196
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card",
+            "hidden": false,
+            "dataset": {
+              "projectId": "progresskit-mail",
+              "category": "mobile"
+            },
+            "rect": {
+              "top": 136.5,
+              "bottom": 332.5,
+              "left": 1044.0443115234375,
+              "right": 1393.92431640625,
+              "width": 349.8800048828125,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card",
+            "hidden": false,
+            "dataset": {
+              "projectId": "progresskit-translator",
+              "category": "mobile"
+            },
+            "rect": {
+              "top": 309,
+              "bottom": 505,
+              "left": 639.365478515625,
+              "right": 989.259521484375,
+              "width": 349.89404296875,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card",
+            "hidden": false,
+            "dataset": {
+              "projectId": "vaeloria",
+              "category": "games"
+            },
+            "rect": {
+              "top": 344,
+              "bottom": 540,
+              "left": 1031.521728515625,
+              "right": 1381.415771484375,
+              "width": 349.89404296875,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card",
+            "hidden": false,
+            "dataset": {
+              "projectId": "progresskit-community",
+              "category": "platforms"
+            },
+            "rect": {
+              "top": 516.5,
+              "bottom": 712.5,
+              "left": 626.8568725585938,
+              "right": 976.7369384765625,
+              "width": 349.88006591796875,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "interface-settle",
+          "playState": "running",
+          "currentTime": 1099.9669999999273,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "ARTICLE",
+            "id": "",
+            "class": "showroom-card",
+            "hidden": false,
+            "dataset": {
+              "projectId": "progresskit-tax",
+              "category": "saas"
+            },
+            "rect": {
+              "top": 551.5,
+              "bottom": 747.5,
+              "left": 1044.0443115234375,
+              "right": 1393.92431640625,
+              "width": 349.8800048828125,
+              "height": 196
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "absolute",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "DIV",
+              "id": "showroom-track",
+              "class": "showroom-track",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "showroom-viewport",
+              "hidden": false,
+              "dataset": {
+                "showroomViewport": ""
+              },
+              "rect": {
+                "top": 97,
+                "bottom": 777,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 680
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 97,
+                "bottom": 1289.0625,
+                "left": 604.796875,
+                "right": 1415.984375,
+                "width": 811.1875,
+                "height": 1192.0625
+              },
+              "style": {
+                "display": "flex",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        }
+      ],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced showroom-in-view",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": 79,
+          "bottom": 1329.0625,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": 97,
+          "bottom": 777,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        },
+        "rect": {
+          "top": 1584.453125,
+          "bottom": 2304.453125,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 5669.078125,
+          "bottom": 6222.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    },
+    {
+      "label": "tax-selected",
+      "scrollY": 1166,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      },
+      "running": [
+        {
+          "name": "interface-light",
+          "playState": "running",
+          "currentTime": 1949.884000003742,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "SECTION",
+            "id": "start",
+            "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+            "hidden": false,
+            "dataset": {
+              "heroArt": "present"
+            },
+            "rect": {
+              "top": 80,
+              "bottom": 800,
+              "left": 0,
+              "right": 604.796875,
+              "width": 604.796875,
+              "height": 720
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "sticky",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "MAIN",
+              "id": "main",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -1087,
+                "bottom": 6141.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7228.03125
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "BODY",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -1166,
+                "bottom": 6260.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "clip visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "HTML",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {
+                "interfaceQuality": "full",
+                "interfaceMotion": "running"
+              },
+              "rect": {
+                "top": -1166,
+                "bottom": 6260.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ecosystem-planned-signal",
+          "playState": "running",
+          "currentTime": 583.3,
+          "pseudoElement": null,
+          "target": {
+            "tag": "path",
+            "id": "",
+            "class": "is-flowing",
+            "dataset": {
+              "ecosystemEdge": "tax-translator",
+              "from": "tax",
+              "to": "translator",
+              "integrationStatus": "planned"
+            },
+            "rect": {
+              "top": 499.6297912597656,
+              "bottom": 506.7100830078125,
+              "left": 441.39617919921875,
+              "right": 998.5881958007812,
+              "width": 557.1920166015625,
+              "height": 7.080291748046875
+            },
+            "style": {
+              "display": "inline",
+              "visibility": "visible",
+              "opacity": "0.95",
+              "overflow": "visible",
+              "position": "static",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "svg",
+              "id": "",
+              "class": "ecosystem-wires",
+              "dataset": {
+                "ecosystemWires": ""
+              },
+              "rect": {
+                "top": 419.453125,
+                "bottom": 1137.453125,
+                "left": 25,
+                "right": 1414.984375,
+                "width": 1389.984375,
+                "height": 718
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+              "hidden": false,
+              "dataset": {
+                "ecosystemMap": "",
+                "ecosystemReady": "true",
+                "selectedNode": "tax",
+                "motionState": "running"
+              },
+              "rect": {
+                "top": 418.453125,
+                "bottom": 1138.453125,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 720
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 250.0625,
+                "bottom": 1251.25,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 1001.1875
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ecosystem-planned-signal",
+          "playState": "running",
+          "currentTime": 583.3,
+          "pseudoElement": null,
+          "target": {
+            "tag": "path",
+            "id": "",
+            "class": "is-flowing",
+            "dataset": {
+              "ecosystemEdge": "tax-mail",
+              "from": "tax",
+              "to": "mail",
+              "integrationStatus": "planned"
+            },
+            "rect": {
+              "top": 506.7100830078125,
+              "bottom": 1050.1961669921875,
+              "left": 34.98551940917969,
+              "right": 207.43544006347656,
+              "width": 172.44992065429688,
+              "height": 543.486083984375
+            },
+            "style": {
+              "display": "inline",
+              "visibility": "visible",
+              "opacity": "0.95",
+              "overflow": "visible",
+              "position": "static",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "svg",
+              "id": "",
+              "class": "ecosystem-wires",
+              "dataset": {
+                "ecosystemWires": ""
+              },
+              "rect": {
+                "top": 419.453125,
+                "bottom": 1137.453125,
+                "left": 25,
+                "right": 1414.984375,
+                "width": 1389.984375,
+                "height": 718
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+              "hidden": false,
+              "dataset": {
+                "ecosystemMap": "",
+                "ecosystemReady": "true",
+                "selectedNode": "tax",
+                "motionState": "running"
+              },
+              "rect": {
+                "top": 418.453125,
+                "bottom": 1138.453125,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 720
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 250.0625,
+                "bottom": 1251.25,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 1001.1875
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        }
+      ],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": -1087,
+          "bottom": 163.0625,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": -1069,
+          "bottom": -389,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "running"
+        },
+        "rect": {
+          "top": 418.453125,
+          "bottom": 1138.453125,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 4503.078125,
+          "bottom": 5056.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    },
+    {
+      "label": "map-paused",
+      "scrollY": 1366,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "paused"
+      },
+      "running": [],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced is-energy-paused",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": -1287,
+          "bottom": -36.9375,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": -1269,
+          "bottom": -589,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        },
+        "rect": {
+          "top": 218.453125,
+          "bottom": 938.453125,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 4303.078125,
+          "bottom": 4856.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    },
+    {
+      "label": "map-resumed",
+      "scrollY": 1366,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      },
+      "running": [
+        {
+          "name": "interface-light",
+          "playState": "running",
+          "currentTime": 2200.0170000039525,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "SECTION",
+            "id": "start",
+            "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+            "hidden": false,
+            "dataset": {
+              "heroArt": "present"
+            },
+            "rect": {
+              "top": 80,
+              "bottom": 800,
+              "left": 0,
+              "right": 604.796875,
+              "width": 604.796875,
+              "height": 720
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "sticky",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "MAIN",
+              "id": "main",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -1287,
+                "bottom": 5941.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7228.03125
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "BODY",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -1366,
+                "bottom": 6060.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "clip visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "HTML",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {
+                "interfaceQuality": "full",
+                "interfaceMotion": "running"
+              },
+              "rect": {
+                "top": -1366,
+                "bottom": 6060.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ecosystem-planned-signal",
+          "playState": "running",
+          "currentTime": 66.69999999999999,
+          "pseudoElement": null,
+          "target": {
+            "tag": "path",
+            "id": "",
+            "class": "is-flowing",
+            "dataset": {
+              "ecosystemEdge": "tax-translator",
+              "from": "tax",
+              "to": "translator",
+              "integrationStatus": "planned"
+            },
+            "rect": {
+              "top": 299.6297912597656,
+              "bottom": 306.7100830078125,
+              "left": 441.39617919921875,
+              "right": 998.5881958007812,
+              "width": 557.1920166015625,
+              "height": 7.080291748046875
+            },
+            "style": {
+              "display": "inline",
+              "visibility": "visible",
+              "opacity": "0.95",
+              "overflow": "visible",
+              "position": "static",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "svg",
+              "id": "",
+              "class": "ecosystem-wires",
+              "dataset": {
+                "ecosystemWires": ""
+              },
+              "rect": {
+                "top": 219.453125,
+                "bottom": 937.453125,
+                "left": 25,
+                "right": 1414.984375,
+                "width": 1389.984375,
+                "height": 718
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+              "hidden": false,
+              "dataset": {
+                "ecosystemMap": "",
+                "ecosystemReady": "true",
+                "selectedNode": "tax",
+                "motionState": "running"
+              },
+              "rect": {
+                "top": 218.453125,
+                "bottom": 938.453125,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 720
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 50.0625,
+                "bottom": 1051.25,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 1001.1875
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ecosystem-planned-signal",
+          "playState": "running",
+          "currentTime": 66.69999999999999,
+          "pseudoElement": null,
+          "target": {
+            "tag": "path",
+            "id": "",
+            "class": "is-flowing",
+            "dataset": {
+              "ecosystemEdge": "tax-mail",
+              "from": "tax",
+              "to": "mail",
+              "integrationStatus": "planned"
+            },
+            "rect": {
+              "top": 306.7100830078125,
+              "bottom": 850.1961669921875,
+              "left": 34.98551940917969,
+              "right": 207.43544006347656,
+              "width": 172.44992065429688,
+              "height": 543.486083984375
+            },
+            "style": {
+              "display": "inline",
+              "visibility": "visible",
+              "opacity": "0.95",
+              "overflow": "visible",
+              "position": "static",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "svg",
+              "id": "",
+              "class": "ecosystem-wires",
+              "dataset": {
+                "ecosystemWires": ""
+              },
+              "rect": {
+                "top": 219.453125,
+                "bottom": 937.453125,
+                "left": 25,
+                "right": 1414.984375,
+                "width": 1389.984375,
+                "height": 718
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "absolute",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+              "hidden": false,
+              "dataset": {
+                "ecosystemMap": "",
+                "ecosystemReady": "true",
+                "selectedNode": "tax",
+                "motionState": "running"
+              },
+              "rect": {
+                "top": 218.453125,
+                "bottom": 938.453125,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 720
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "relative",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class": "shell",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": 50.0625,
+                "bottom": 1051.25,
+                "left": 24,
+                "right": 1415.984375,
+                "width": 1391.984375,
+                "height": 1001.1875
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        }
+      ],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": -1287,
+          "bottom": -36.9375,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": -1269,
+          "bottom": -589,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "running"
+        },
+        "rect": {
+          "top": 218.453125,
+          "bottom": 938.453125,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 4303.078125,
+          "bottom": 4856.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    },
+    {
+      "label": "contact-after-200ms",
+      "scrollY": 5428,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      },
+      "running": [
+        {
+          "name": "interface-light",
+          "playState": "running",
+          "currentTime": 2450.013000003952,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "SECTION",
+            "id": "start",
+            "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+            "hidden": false,
+            "dataset": {
+              "heroArt": "present"
+            },
+            "rect": {
+              "top": 80,
+              "bottom": 800,
+              "left": 0,
+              "right": 604.796875,
+              "width": 604.796875,
+              "height": 720
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "sticky",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "MAIN",
+              "id": "main",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -5349,
+                "bottom": 1879.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7228.03125
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "BODY",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -5428,
+                "bottom": 1998.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "clip visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "HTML",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {
+                "interfaceQuality": "full",
+                "interfaceMotion": "running"
+              },
+              "rect": {
+                "top": -5428,
+                "bottom": 1998.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        }
+      ],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": -5349,
+          "bottom": -4098.9375,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": -5331,
+          "bottom": -4651,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        },
+        "rect": {
+          "top": -3843.546875,
+          "bottom": -3123.546875,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 241.078125,
+          "bottom": 794.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    },
+    {
+      "label": "contact-after-500ms",
+      "scrollY": 5428,
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      },
+      "running": [
+        {
+          "name": "interface-light",
+          "playState": "running",
+          "currentTime": 2749.9390000039525,
+          "pseudoElement": "::before",
+          "target": {
+            "tag": "SECTION",
+            "id": "start",
+            "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+            "hidden": false,
+            "dataset": {
+              "heroArt": "present"
+            },
+            "rect": {
+              "top": 80,
+              "bottom": 800,
+              "left": 0,
+              "right": 604.796875,
+              "width": 604.796875,
+              "height": 720
+            },
+            "style": {
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "overflow": "visible",
+              "position": "sticky",
+              "contentVisibility": "visible"
+            }
+          },
+          "parents": [
+            {
+              "tag": "MAIN",
+              "id": "main",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -5349,
+                "bottom": 1879.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7228.03125
+              },
+              "style": {
+                "display": "grid",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "BODY",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {},
+              "rect": {
+                "top": -5428,
+                "bottom": 1998.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "clip visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            },
+            {
+              "tag": "HTML",
+              "id": "",
+              "class": "",
+              "hidden": false,
+              "dataset": {
+                "interfaceQuality": "full",
+                "interfaceMotion": "running"
+              },
+              "rect": {
+                "top": -5428,
+                "bottom": 1998.03125,
+                "left": 0,
+                "right": 1440,
+                "width": 1440,
+                "height": 7426.03125
+              },
+              "style": {
+                "display": "block",
+                "visibility": "visible",
+                "opacity": "1",
+                "overflow": "visible",
+                "position": "static",
+                "contentVisibility": "visible"
+              }
+            }
+          ]
+        }
+      ],
+      "hero": {
+        "tag": "SECTION",
+        "id": "start",
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "hidden": false,
+        "dataset": {
+          "heroArt": "present"
+        },
+        "rect": {
+          "top": 80,
+          "bottom": 800,
+          "left": 0,
+          "right": 604.796875,
+          "width": 604.796875,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "sticky",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroom": {
+        "tag": "SECTION",
+        "id": "projekty",
+        "class": "project-showroom section showroom-enhanced",
+        "hidden": false,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        },
+        "rect": {
+          "top": -5349,
+          "bottom": -4098.9375,
+          "left": 604.796875,
+          "right": 1439.984375,
+          "width": 835.1875,
+          "height": 1250.0625
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "clip",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "showroomViewport": {
+        "tag": "DIV",
+        "id": "",
+        "class": "showroom-viewport",
+        "hidden": false,
+        "dataset": {
+          "showroomViewport": ""
+        },
+        "rect": {
+          "top": -5331,
+          "bottom": -4651,
+          "left": 604.796875,
+          "right": 1415.984375,
+          "width": 811.1875,
+          "height": 680
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "map": {
+        "tag": "DIV",
+        "id": "",
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "hidden": false,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        },
+        "rect": {
+          "top": -3843.546875,
+          "bottom": -3123.546875,
+          "left": 24,
+          "right": 1415.984375,
+          "width": 1391.984375,
+          "height": 720
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      },
+      "contact": {
+        "tag": "SECTION",
+        "id": "kontakt",
+        "class": "section contact-section home-chapter",
+        "hidden": false,
+        "dataset": {},
+        "rect": {
+          "top": 241.078125,
+          "bottom": 794.65625,
+          "left": 0,
+          "right": 1439.984375,
+          "width": 1439.984375,
+          "height": 553.578125
+        },
+        "style": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": "1",
+          "overflow": "visible",
+          "position": "relative",
+          "contentVisibility": "visible"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-10-23T07:26:18.180Z"
+}

@@ -1,0 +1,36 @@
+{
+  "head": "78319345bcf6822d304b5de758aae0297a4ca812",
+  "finishedUtc": "2026-10-23T07:33:50.796696+00:00",
+  "sourceFiles": 97,
+  "sourceUnchanged": true,
+  "changedInputs": [],
+  "textWorktreeFilesScanned": 456,
+  "results": [
+    {
+      "name": "sast",
+      "startedUtc": "2026-10-23T07:33:39.668693+00:00",
+      "exit": 0,
+      "status": "PASS",
+      "errors": 0,
+      "findings": 0,
+      "scannedFiles": 49,
+      "ruleCount": 6
+    },
+    {
+      "name": "gitleaks-history",
+      "startedUtc": "2026-10-23T07:33:44.059628+00:00",
+      "exit": 1,
+      "status": "FAIL",
+      "findings": 4
+    },
+    {
+      "name": "gitleaks-worktree",
+      "startedUtc": "2026-10-23T07:33:49.885353+00:00",
+      "exit": 1,
+      "status": "FAIL",
+      "findings": 3
+    }
+  ],
+  "networkUsed": false,
+  "scope": "Six local Semgrep pattern rules plus default redacted Gitleaks full Git history and tracked/nonignored UTF-8 text worktree. No claim of whole-program flow analysis or APK decompilation."
+}

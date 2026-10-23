@@ -1,0 +1,97 @@
+{
+  "recordedUtc": "2026-10-23T07:21:38.270120+00:00",
+  "reason": "First V3 source freeze scans preserved; GUI found moving interactive hitboxes and root then changed only interface-life.css plus QA harness. Finalization detected source drift and withheld final status. These scans remain historical and are superseded by final refresh. No findings/status hidden.",
+  "files": [
+    {
+      "sourceTempName": "sast.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.json",
+      "originalBytes": 2714,
+      "originalSha256": "7977e47a942ca56c6fa2d615230b95ec1ef3306f0ce03022e15b5c503341dcb5",
+      "readableBytes": 2714,
+      "readableSha256": "7977e47a942ca56c6fa2d615230b95ec1ef3306f0ce03022e15b5c503341dcb5"
+    },
+    {
+      "sourceTempName": "sast.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.log",
+      "originalBytes": 764,
+      "originalSha256": "bfdaa9136f6572e604587a41d5f8690939998c3e937820d9db663fd652f11c97",
+      "readableBytes": 701,
+      "readableSha256": "c6cd9cfe12239f9604b237ce342ab9759094426959ec4a7eec10a595d609c0d7",
+      "rawGzipPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast.log.gz",
+      "rawGzipSha256": "3aed8b7c7a3e2a657d6377a045635d74376141153660d9b28db304ef96b98001",
+      "normalization": "Trailing ASCII spaces/tabs only; raw roundtrip verified."
+    },
+    {
+      "sourceTempName": "sast-rules.yml",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/sast-rules.yml",
+      "originalBytes": 1261,
+      "originalSha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2",
+      "readableBytes": 1261,
+      "readableSha256": "254a403d19fa9d34b08894a21f0eb562aeea3792471bd869881cd12d1e1c99c2"
+    },
+    {
+      "sourceTempName": "gitleaks-history.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-history.json",
+      "originalBytes": 3786,
+      "originalSha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2",
+      "readableBytes": 3786,
+      "readableSha256": "538be371b2d746bce1b2f7d5d5a2b7a3de65f5a0fe5006e4374b24a707e2c1e2"
+    },
+    {
+      "sourceTempName": "gitleaks-history.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-history.log",
+      "originalBytes": 113,
+      "originalSha256": "70356b066c83970e9049c7d3808b21dd5c5514ffdcd8e5c657179165eee672ab",
+      "readableBytes": 113,
+      "readableSha256": "70356b066c83970e9049c7d3808b21dd5c5514ffdcd8e5c657179165eee672ab"
+    },
+    {
+      "sourceTempName": "gitleaks-worktree.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-worktree.json",
+      "originalBytes": 2332,
+      "originalSha256": "8d82f165244c1c8d24e8a22af003ecb938192f14b5184aad072e7ffc0152d57c",
+      "readableBytes": 2332,
+      "readableSha256": "8d82f165244c1c8d24e8a22af003ecb938192f14b5184aad072e7ffc0152d57c"
+    },
+    {
+      "sourceTempName": "gitleaks-worktree.log",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/gitleaks-worktree.log",
+      "originalBytes": 79,
+      "originalSha256": "2b20faa58a13eec1cce72261e2c60dcd173255a74a477707f9ecdb5e1dd30575",
+      "readableBytes": 79,
+      "readableSha256": "2b20faa58a13eec1cce72261e2c60dcd173255a74a477707f9ecdb5e1dd30575"
+    },
+    {
+      "sourceTempName": "final-source-before.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-source-before.json",
+      "originalBytes": 9976,
+      "originalSha256": "b754facc10ecf5b12b1167c043a8a4b295528858357082b1a3ba7eab1f38c0f2",
+      "readableBytes": 9976,
+      "readableSha256": "b754facc10ecf5b12b1167c043a8a4b295528858357082b1a3ba7eab1f38c0f2"
+    },
+    {
+      "sourceTempName": "final-source-after.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-source-after.json",
+      "originalBytes": 9993,
+      "originalSha256": "5694e4dbb9f6c5881118b3e00026d1f00591fe872e136dc9929c1419fa5e2d2f",
+      "readableBytes": 9993,
+      "readableSha256": "5694e4dbb9f6c5881118b3e00026d1f00591fe872e136dc9929c1419fa5e2d2f"
+    },
+    {
+      "sourceTempName": "final-local-scans-summary.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/final-local-scans-summary.json",
+      "originalBytes": 1007,
+      "originalSha256": "b197e6ca2b3d07d9c803f082debff4c5662b44713f56b69ad7f7f13424f6e6ab",
+      "readableBytes": 1007,
+      "readableSha256": "b197e6ca2b3d07d9c803f082debff4c5662b44713f56b69ad7f7f13424f6e6ab"
+    },
+    {
+      "sourceTempName": "surface-review.json",
+      "archivedPath": "docs/evidence/visual-correction-v3-20261023/security/pre-hitbox-fix-scans/surface-review.json",
+      "originalBytes": 3836,
+      "originalSha256": "302c998f4e040ad35d7434306840e89f5b43d08cbbf2b8e549f5bae3840f40ae",
+      "readableBytes": 3836,
+      "readableSha256": "302c998f4e040ad35d7434306840e89f5b43d08cbbf2b8e549f5bae3840f40ae"
+    }
+  ]
+}

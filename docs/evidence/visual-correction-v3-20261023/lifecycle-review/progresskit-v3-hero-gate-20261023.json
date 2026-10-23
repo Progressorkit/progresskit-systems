@@ -1,0 +1,375 @@
+{
+  "base": "http://127.0.0.1:8110/",
+  "startedAt": "2026-10-23T07:28:54.614Z",
+  "browser": "155.0.8059.39",
+  "checks": [
+    {
+      "name": "Desktop hero initially animates",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop hidden hero and map stop after200and500ms",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop visible hero resumes after return",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile hero animates at initial load",
+      "status": "PASS"
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "desktop-initial-top",
+      "scrollY": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "top": 80,
+        "bottom": 800,
+        "dataset": {
+          "heroArt": "present"
+        }
+      },
+      "showroom": {
+        "class": "project-showroom section showroom-enhanced showroom-in-view",
+        "top": 79,
+        "bottom": 1329.0625,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        }
+      },
+      "map": {
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "top": 1584.453125,
+        "bottom": 2304.453125,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        }
+      },
+      "contact": {
+        "class": "section contact-section home-chapter",
+        "top": 5669.078125,
+        "bottom": 6222.65625,
+        "dataset": {}
+      },
+      "infinite": [
+        {
+          "name": "interface-light",
+          "target": "start",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-rail",
+          "target": "showroom-frame__signal",
+          "pseudo": null
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card is-active",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-sheen",
+          "target": "project-slice",
+          "pseudo": "::after"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        }
+      ],
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      }
+    },
+    {
+      "label": "desktop-contact-200ms",
+      "scrollY": 5428,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled",
+        "top": 80,
+        "bottom": 800,
+        "dataset": {
+          "heroArt": "present"
+        }
+      },
+      "showroom": {
+        "class": "project-showroom section showroom-enhanced",
+        "top": -5349,
+        "bottom": -4098.9375,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        }
+      },
+      "map": {
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "top": -3843.546875,
+        "bottom": -3123.546875,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        }
+      },
+      "contact": {
+        "class": "section contact-section home-chapter",
+        "top": 241.078125,
+        "bottom": 794.65625,
+        "dataset": {}
+      },
+      "infinite": [],
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      }
+    },
+    {
+      "label": "desktop-contact-500ms",
+      "scrollY": 5428,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled",
+        "top": 80,
+        "bottom": 800,
+        "dataset": {
+          "heroArt": "present"
+        }
+      },
+      "showroom": {
+        "class": "project-showroom section showroom-enhanced",
+        "top": -5349,
+        "bottom": -4098.9375,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        }
+      },
+      "map": {
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "top": -3843.546875,
+        "bottom": -3123.546875,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        }
+      },
+      "contact": {
+        "class": "section contact-section home-chapter",
+        "top": 241.078125,
+        "bottom": 794.65625,
+        "dataset": {}
+      },
+      "infinite": [],
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      }
+    },
+    {
+      "label": "desktop-return-top",
+      "scrollY": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "top": 80,
+        "bottom": 800,
+        "dataset": {
+          "heroArt": "present"
+        }
+      },
+      "showroom": {
+        "class": "project-showroom section showroom-enhanced showroom-in-view",
+        "top": 79,
+        "bottom": 1329.0625,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        }
+      },
+      "map": {
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "top": 1584.453125,
+        "bottom": 2304.453125,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        }
+      },
+      "contact": {
+        "class": "section contact-section home-chapter",
+        "top": 5669.078125,
+        "bottom": 6222.65625,
+        "dataset": {}
+      },
+      "infinite": [
+        {
+          "name": "interface-light",
+          "target": "start",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-rail",
+          "target": "showroom-frame__signal",
+          "pseudo": null
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card is-active",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-sheen",
+          "target": "project-slice",
+          "pseudo": "::after"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card",
+          "pseudo": "::before"
+        }
+      ],
+      "htmlDataset": {
+        "interfaceQuality": "full",
+        "interfaceMotion": "running"
+      }
+    },
+    {
+      "label": "mobile-initial-top",
+      "scrollY": 0,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "hero": {
+        "class": "hero hero--landscape hero--monument hero-has-motion-toggle hero-motion-enabled hero-in-view",
+        "top": 65,
+        "bottom": 429.5,
+        "dataset": {
+          "heroArt": "present"
+        }
+      },
+      "showroom": {
+        "class": "project-showroom section showroom-enhanced showroom-narrow showroom-in-view",
+        "top": 429.5,
+        "bottom": 1472.453125,
+        "dataset": {
+          "showroom": "",
+          "showroomSlices": ""
+        }
+      },
+      "map": {
+        "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+        "top": 1698.234375,
+        "bottom": 3041.265625,
+        "dataset": {
+          "ecosystemMap": "",
+          "ecosystemReady": "true",
+          "selectedNode": "tax",
+          "motionState": "paused"
+        }
+      },
+      "contact": {
+        "class": "section contact-section home-chapter",
+        "top": 7843.28125,
+        "bottom": 8576.578125,
+        "dataset": {}
+      },
+      "infinite": [
+        {
+          "name": "interface-light",
+          "target": "start",
+          "pseudo": "::before"
+        },
+        {
+          "name": "interface-rail-mobile",
+          "target": "showroom-frame__signal",
+          "pseudo": null
+        },
+        {
+          "name": "interface-settle",
+          "target": "showroom-card is-active",
+          "pseudo": "::before"
+        }
+      ],
+      "htmlDataset": {
+        "interfaceQuality": "compact",
+        "interfaceMotion": "running"
+      }
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-10-23T07:28:58.305Z",
+  "totals": {
+    "PASS": 4,
+    "FAIL": 0
+  },
+  "boundary": "Targeted GUI only. Mobile390x844 verifies fresh-load hero motion; the paired showroom is also geometrically in view in this viewport, so this sample does not by itself prove independence from stage visibility."
+}

@@ -1,0 +1,234 @@
+{
+  "reportDate": "2026-10-23",
+  "checkedUtc": "2026-10-23T07:22:19.415553+00:00",
+  "baselineCommit": "78319345bcf6822d304b5de758aae0297a4ca812",
+  "baselineGroups": {
+    "backend": {
+      "analytics/Dockerfile": {
+        "bytes": 248,
+        "sha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 248,
+        "currentSha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9"
+      },
+      "analytics/app.py": {
+        "bytes": 8431,
+        "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 8431,
+        "currentSha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+      },
+      "analytics/deploy/Caddyfile.snippet": {
+        "bytes": 1823,
+        "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 1823,
+        "currentSha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+      },
+      "analytics/deploy/compose.override.yaml": {
+        "bytes": 510,
+        "sha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 510,
+        "currentSha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4"
+      },
+      "analytics/owner.py": {
+        "bytes": 1112,
+        "sha256": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 1112,
+        "currentSha256": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5"
+      },
+      "analytics/preview.py": {
+        "bytes": 1463,
+        "sha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 1463,
+        "currentSha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243"
+      },
+      "analytics/product.py": {
+        "bytes": 7984,
+        "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 7984,
+        "currentSha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+      },
+      "analytics/requirements.txt": {
+        "bytes": 35,
+        "sha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 35,
+        "currentSha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879"
+      },
+      "analytics/security_headers.py": {
+        "bytes": 6189,
+        "sha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 6189,
+        "currentSha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01"
+      },
+      "scripts/preview.sh": {
+        "bytes": 382,
+        "sha256": "624ecd5a9e25494e34f1303a5ac3433e696d88a1b18ed346e2f22b636108af84",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 382,
+        "currentSha256": "624ecd5a9e25494e34f1303a5ac3433e696d88a1b18ed346e2f22b636108af84"
+      }
+    },
+    "dependencyManifests": {
+      "analytics/requirements.txt": {
+        "bytes": 35,
+        "sha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 35,
+        "currentSha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879"
+      },
+      "package.json": {
+        "bytes": 467,
+        "sha256": "02b0539bab379e1e6b9caccc106a8f824e683b75857b82154596a0baf0a06661",
+        "byteUnchangedAgainstBaseline": false,
+        "currentBytes": 551,
+        "currentSha256": "d4fe99099f701e1855c72237543858431d46956190862c76280b4f0ba9be8dc2",
+        "scriptsOnlyChange": true,
+        "dependencySectionsUnchanged": true
+      }
+    },
+    "catalog": {
+      "catalog/brand.json": {
+        "bytes": 134,
+        "sha256": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 134,
+        "currentSha256": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b"
+      },
+      "catalog/projects.json": {
+        "bytes": 68909,
+        "sha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 68909,
+        "currentSha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d"
+      }
+    },
+    "apkMetadata": {
+      "downloads/glikemia-premium.json": {
+        "bytes": 160,
+        "sha256": "2f9e34e70c7c9056902c5297e82de7a3b8eeada9bfe55bff608e1b1ab2112429",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 160,
+        "currentSha256": "2f9e34e70c7c9056902c5297e82de7a3b8eeada9bfe55bff608e1b1ab2112429"
+      }
+    },
+    "securityTests": {
+      "tests/test_security_headers.py": {
+        "bytes": 15045,
+        "sha256": "8c46cc4928008104b679effa86b81adbb4634144aa6313cf4ad8394e70602884",
+        "byteUnchangedAgainstBaseline": true,
+        "currentBytes": 15045,
+        "currentSha256": "8c46cc4928008104b679effa86b81adbb4634144aa6313cf4ad8394e70602884"
+      }
+    }
+  },
+  "existingStylesheets": {
+    "assets/brand-atmosphere.css": {
+      "bytes": 2497,
+      "sha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/category-worlds.css": {
+      "bytes": 13866,
+      "sha256": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/delivery.css": {
+      "bytes": 5824,
+      "sha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/engineering-exhibit.css": {
+      "bytes": 13143,
+      "sha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/hero-monument.css": {
+      "bytes": 9066,
+      "sha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/hero.css": {
+      "bytes": 80,
+      "sha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/home-atmosphere.css": {
+      "bytes": 19439,
+      "sha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/progresskit-product-shell.css": {
+      "bytes": 9694,
+      "sha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/project-hologram.css": {
+      "bytes": 9285,
+      "sha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/project-mechanism.css": {
+      "bytes": 6375,
+      "sha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/project-showroom.css": {
+      "bytes": 19060,
+      "sha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/project-slices.css": {
+      "bytes": 32354,
+      "sha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/site-v4.css": {
+      "bytes": 35600,
+      "sha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/site-v5.css": {
+      "bytes": 27419,
+      "sha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "assets/visual-acceptance.css": {
+      "bytes": 19232,
+      "sha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "glikemia-premium/product.css": {
+      "bytes": 1817,
+      "sha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+      "byteUnchangedAgainstBaseline": true
+    },
+    "progresskit-mail/mail.css": {
+      "bytes": 2563,
+      "sha256": "4f32049e5d909b2ae8425d0b282ad08b9b9ee85636790ccf150036d2a0b8367e",
+      "byteUnchangedAgainstBaseline": true
+    }
+  },
+  "packageJsonScriptOnlyChanges": [
+    "package.json"
+  ],
+  "newJavaScriptDependencies": false,
+  "apk": {
+    "path": "downloads/glikemia-premium.apk",
+    "gitTreeEntry": "100644 blob e769ca329b22fad193803b9fd6bb6ffa383604c9 80235954\tdownloads/glikemia-premium.apk",
+    "gitDiffUnchangedAgainstBaseline": true,
+    "newIntegrityScan": false,
+    "previousEvidence": "docs/evidence/visual-acceptance-v2-20261022/security/apk-integrity.json",
+    "previousEvidenceSha256": "de854c1d10d0794cb8f37914bd8494be41e757f695ce02b9931c7a23e6978024"
+  },
+  "backendRuntimeTests": "NOT_RERUN_UNCHANGED_BACKEND",
+  "sourceFiles": 97,
+  "sourceUnchangedDuringAndAfterScans": true,
+  "sourceMapCanonicalSha256": "5c874912b404044181f7982405cbd0eae5be3ec0d7621793579d11d9ed1c6fa7"
+}

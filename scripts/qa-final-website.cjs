@@ -21,6 +21,11 @@ function uiFingerprint(){
   return [...inputs].sort().map(name=>({path:name,sha256:createHash('sha256').update(fs.readFileSync(path.join(root,name))).digest('hex')}));
 }
 const assert = (v, m) => { if (!v) throw Error(m); };
+function telemetry(page, scope) {
+  page.on('pageerror',e=>report.errors.push({scope,type:'pageerror',message:e.message}));
+  page.on('console',m=>{if(m.type()==='error')report.errors.push({scope,type:'console',message:m.text()});});
+  page.on('response',r=>{if(r.status()>=400)report.resources.push({scope,url:r.url(),status:r.status()});});
+}
 async function check(name, work) {
   try { const details = await work(); report.checks.push({ name, status: 'PASS', details }); console.log('PASS', name); }
   catch (e) { report.checks.push({ name, status: 'FAIL', details: e.message }); console.log('FAIL', name, e.message); }
@@ -68,9 +73,7 @@ async function main() {
       const context = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, isMobile: width < 600, hasTouch: width < 600 });
       const page = await context.newPage();
       page.setDefaultTimeout(8000);
-      page.on('pageerror', e => report.errors.push({ width, type: 'pageerror', message: e.message }));
-      page.on('console', m => { if (m.type() === 'error') report.errors.push({ width, type: 'console', message: m.text() }); });
-      page.on('response', r => { if (r.status() >= 400) report.resources.push({ width, url: r.url(), status: r.status() }); });
+      telemetry(page,`${width}:viewport`);
       await page.goto(base, { waitUntil: 'networkidle' });
       await page.locator('.showroom-enhanced').waitFor();
       await shot(page, `${width}-first.png`);
@@ -138,6 +141,48 @@ async function main() {
         assert(text.includes('Local AI Agents')&&text.includes('Voice Gateway')&&text.includes('Planowane'),'Roadmap roles or status missing');
         assert(text.includes('nie stanowią dostępnej oferty'),'Roadmap boundary missing');
       });
+      await check(`${width}: six selectable ecosystem roles with truthful stages and unique project links`,async()=>{
+        const map=page.locator('[data-ecosystem-map]');
+        assert(await map.getAttribute('data-ecosystem-ready')==='true','Map enhancement failed');
+        assert(await map.locator('[data-ecosystem-select]').count()===6,'Expected six native node buttons');
+        assert(await map.locator('[data-ecosystem-edge][data-integration-status="planned"]').count()===5,'Every connection must remain planned');
+        const stages={tax:'development',translator:'prototype',agents:'planned',voice:'planned',mail:'development',messenger:'planned'};
+        const states=[];
+        for(const [id,stage]of Object.entries(stages)){
+          const trigger=map.locator(`[data-ecosystem-select="${id}"]`);
+          await trigger.click();
+          assert(await trigger.getAttribute('aria-expanded')==='true','Selected role not expanded: '+id);
+          assert(await map.locator('[data-ecosystem-select][aria-expanded="true"]').count()===1,'More than one selected role');
+          assert(await map.locator(`[data-ecosystem-node="${id}"]`).getAttribute('data-ecosystem-stage')===stage,'False development stage: '+id);
+          const detail=page.locator('#'+await trigger.getAttribute('aria-controls'));
+          assert(await detail.isVisible(),'Selected description hidden: '+id);
+          const state=await detail.evaluate(el=>({parent:el.parentElement.id,height:el.clientHeight,scrollHeight:el.scrollHeight,overflowY:getComputedStyle(el).overflowY,
+            width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth+1,visibleDescriptions:[...document.querySelectorAll('.ecosystem-node__detail')].filter(x=>!x.hidden).length}));
+          assert(state.visibleDescriptions===1&&!state.overflow,'Role state or page overflow: '+id);
+          assert(!['auto','scroll'].includes(state.overflowY)&&state.scrollHeight<=state.height+2,'Nested role scroll: '+id);
+          assert(width>900?state.parent==='ecosystem-console':state.parent!=='ecosystem-console','Wrong role placement: '+id);
+          states.push({id,stage,...state});
+        }
+        assert(await map.locator('.delivery-project-link').count()===3,'Project links duplicated or removed');
+        await map.locator('[data-ecosystem-select="tax"]').click();
+        await shot(page,`${width}-ecosystem-map.png`,map);
+        await map.locator('[data-ecosystem-select="translator"]').click();
+        await shot(page,`${width}-ecosystem-translator.png`,width<600?map.locator('[data-ecosystem-node="translator"]'):map);
+        if(width<600)await shot(page,`${width}-ecosystem-communication.png`,map.locator('.delivery-independent'));
+        return states;
+      });
+      await check(`${width}: ecosystem native keyboard activation, arrow focus and Escape`,async()=>{
+        const translator=page.locator('[data-ecosystem-select="translator"]');
+        await translator.focus();await page.keyboard.press('ArrowRight');
+        assert(await page.evaluate(()=>document.activeElement?.dataset.ecosystemSelect)==='agents','Arrow focus failed');
+        await page.keyboard.press('Enter');
+        assert(await page.locator('[data-ecosystem-select="agents"]').getAttribute('aria-expanded')==='true','Enter failed');
+        await page.keyboard.press('End');await page.keyboard.press('Space');
+        assert(await page.locator('[data-ecosystem-select="messenger"]').getAttribute('aria-expanded')==='true','Space failed');
+        await page.keyboard.press('Escape');
+        assert(await page.locator('[data-ecosystem-select][aria-expanded="true"]').count()===0,'Escape did not clear role');
+        assert(await page.evaluate(()=>document.activeElement?.dataset.ecosystemSelect)==='messenger','Escape lost focus');
+      });
       if (width < 600) {
         await check(`${width}: touch navigation and page scrolling`, async () => {
           await page.evaluate(() => scrollTo(0, 0));
@@ -165,6 +210,7 @@ async function main() {
     }
     const reduced = await browser.newContext({ viewport: { width:390,height:844 }, reducedMotion: 'reduce' });
     const page = await reduced.newPage();
+    telemetry(page,'reduced-motion');
     await page.goto(base, { waitUntil: 'networkidle' });
     await check('Reduced motion and keyboard', async () => {
       assert(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches), 'Preference not active');
@@ -176,8 +222,19 @@ async function main() {
       assert(await page.evaluate(() => document.activeElement !== document.body), 'No keyboard focus');
     });
     await reduced.close();
+    for(const width of [1440,390]){
+      const fallback=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:false});
+      const fallbackPage=await fallback.newPage();telemetry(fallbackPage,`${width}:no-js`);await fallbackPage.goto(base,{waitUntil:'networkidle'});
+      await check(`${width}: ecosystem descriptions and links remain available without JavaScript`,async()=>{
+        assert(await fallbackPage.locator('.ecosystem-node__detail:visible').count()===6,'Fallback hides role descriptions');
+        assert(await fallbackPage.locator('#ekosystem .delivery-project-link:visible').count()===3,'Fallback lost project links');
+        assert(!await fallbackPage.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),'Fallback horizontal overflow');
+      });
+      await fallback.close();
+    }
     const workContext = await browser.newContext({ viewport: { width:1440,height:900 }, acceptDownloads: true });
     const work = await workContext.newPage();
+    telemetry(work,'work:interaction-motion-memory');
     await work.goto(base, {waitUntil:'networkidle'});
     await check('Contact brief stays local and downloads actual text', async () => {
       const requests=[];work.on('request',r=>{if(r.method()!=='GET') requests.push(r.url());});
@@ -193,6 +250,70 @@ async function main() {
       await work.goto(base+'projekty/?q='+encodeURIComponent('<img src=x onerror=alert(1)>'),{waitUntil:'networkidle'});
       assert(await work.locator('#catalog-empty').isVisible(),'Search error state missing');
       assert(await work.locator('img[src="x"]').count()===0,'Search injected markup');
+    });
+    await work.goto(base,{waitUntil:'networkidle'});
+    const infinite=()=>work.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running'&&a.effect?.getTiming().iterations===Infinity).map(a=>({name:a.animationName,target:a.effect?.target?.className?.baseVal??a.effect?.target?.className})));
+    await check('V3 hero has bounded visible motion and the shared pause stops pointer light too',async()=>{
+      await work.waitForTimeout(300);
+      const running=await infinite();assert(running.length>0&&running.length<=10,JSON.stringify(running));
+      assert(running.some(a=>a.name==='interface-light'),'Hero directional light is not animating');
+      const box=await work.locator('.hero--monument').boundingBox();
+      await work.mouse.move(box.x+box.width*.3,box.y+120);await work.waitForTimeout(100);
+      const lightBefore=await work.locator('.hero--monument').evaluate(el=>el.style.getPropertyValue('--light-x'));
+      await work.mouse.move(box.x+box.width*.65,box.y+200);await work.waitForTimeout(100);
+      const lightAfter=await work.locator('.hero--monument').evaluate(el=>el.style.getPropertyValue('--light-x'));
+      assert(lightBefore!==''&&lightAfter!==''&&lightBefore!==lightAfter,'Hero pointer light is static');
+      const signal=()=>work.locator('.showroom-frame__signal').evaluate(el=>getComputedStyle(el).transform);
+      const before=await signal();await work.waitForTimeout(450);const after=await signal();
+      assert(before!==after,'Visible rail signal is static');
+      const toggle=work.locator('[data-showroom-motion-toggle]');await toggle.click();await work.waitForTimeout(100);
+      assert((await infinite()).length===0,'Pause left running infinite motion');
+      await work.mouse.move(100,200);await work.mouse.move(300,350);await work.waitForTimeout(100);
+      assert(await work.locator('.hero--monument').evaluate(el=>el.style.getPropertyValue('--light-x'))==='','Pointer light still moves while paused');
+      await toggle.click();await work.waitForTimeout(100);
+      assert((await infinite()).length>0,'Resume did not restore visible motion');
+      return {running,before,after,lightBefore,lightAfter};
+    });
+    await check('V3 ecosystem animates at most two planned paths and stops offscreen or paused',async()=>{
+      await work.locator('[data-ecosystem-select="tax"]').click();await work.waitForTimeout(250);
+      const flowing=work.locator('[data-ecosystem-edge].is-flowing');
+      assert(await flowing.count()===2,'Selected Tax must highlight only its two planned edges');
+      const before=await flowing.first().evaluate(el=>getComputedStyle(el).strokeDashoffset);
+      await work.waitForTimeout(350);const after=await flowing.first().evaluate(el=>getComputedStyle(el).strokeDashoffset);
+      assert(before!==after,'Planned path signal is static');
+      assert((await infinite()).filter(a=>a.name==='ecosystem-planned-signal').length===2,'Unexpected graph animation count');
+      await work.locator('[data-showroom-motion-toggle]').click();await work.locator('#ekosystem').scrollIntoViewIfNeeded();await work.waitForTimeout(100);
+      assert((await infinite()).length===0,'Global pause did not stop map');
+      await work.locator('[data-showroom-motion-toggle]').click();await work.locator('#ekosystem').scrollIntoViewIfNeeded();await work.waitForTimeout(100);
+      assert((await infinite()).filter(a=>a.name==='ecosystem-planned-signal').length===2,'Global resume did not restore map');
+      await work.locator('#kontakt').scrollIntoViewIfNeeded();await work.waitForTimeout(200);
+      assert((await infinite()).length===0,'Offscreen hero or map still animates');
+      await work.emulateMedia({reducedMotion:'reduce'});await work.locator('#ekosystem').scrollIntoViewIfNeeded();await work.waitForTimeout(100);
+      assert((await infinite()).length===0,'Reduced motion did not stop graph');
+      await work.emulateMedia({reducedMotion:'no-preference'});
+      return {selectedEdges:2,before,after,allConnections:'planned'};
+    });
+    await check('V3 repeated role selection and desktop/mobile resize retain unique DOM and bounded listeners',async()=>{
+      const cdp=await workContext.newCDPSession(work);
+      await work.locator('[data-ecosystem-select="tax"]').click();await work.waitForTimeout(200);
+      await cdp.send('HeapProfiler.collectGarbage');const cold=await cdp.send('Memory.getDOMCounters');
+      // Keep first-use node/style setup separate from recurring growth. Exercise
+      // every role and both layouts once, retaining the cold observation too.
+      for(const id of ['translator','agents','voice','mail','messenger','tax'])await work.locator(`[data-ecosystem-select="${id}"]`).click();
+      await work.setViewportSize({width:600,height:900});
+      await work.waitForFunction(()=>document.querySelector('#ecosystem-role-tax').parentElement.dataset.ecosystemNode==='tax');
+      await work.setViewportSize({width:1440,height:900});
+      await work.waitForFunction(()=>document.querySelector('#ecosystem-role-tax').parentElement.id==='ecosystem-console');
+      await work.waitForTimeout(200);await cdp.send('HeapProfiler.collectGarbage');const before=await cdp.send('Memory.getDOMCounters');
+      for(let i=0;i<5;i++)for(const id of ['translator','agents','voice','mail','messenger','tax'])await work.locator(`[data-ecosystem-select="${id}"]`).click();
+      await work.setViewportSize({width:600,height:900});
+      await work.waitForFunction(()=>document.querySelector('#ecosystem-role-tax').parentElement.dataset.ecosystemNode==='tax');
+      await work.setViewportSize({width:1440,height:900});
+      await work.waitForFunction(()=>document.querySelector('#ecosystem-role-tax').parentElement.id==='ecosystem-console');
+      await work.waitForTimeout(200);await cdp.send('HeapProfiler.collectGarbage');const after=await cdp.send('Memory.getDOMCounters');
+      assert(after.documents<=before.documents&&after.nodes<=before.nodes&&after.jsEventListeners<=before.jsEventListeners,JSON.stringify({before,after}));
+      assert(await work.locator('.ecosystem-node__detail').count()===6&&await work.locator('#ekosystem .delivery-project-link').count()===3,'Resize cloned roles or links');
+      return {cold,before,after,warmupRoleSelections:6,warmupViewportCrossings:2,roleSelections:30,viewportCrossings:2};
     });
     await work.goto(base,{waitUntil:'networkidle'});
     const perf=await workContext.newCDPSession(work);await perf.send('Performance.enable');
@@ -220,6 +341,7 @@ async function main() {
     await workContext.close();
     const context = await browser.newContext({ viewport: { width:390,height:844 } });
     const film = await context.newPage();
+    telemetry(film,'mobile-recording');
     await film.goto(base, { waitUntil: 'networkidle' });
     const frames = fs.mkdtempSync('/tmp/progresskit-ui-v2-mobile-frames-');
     const cdp = await context.newCDPSession(film); let n = 0;
@@ -235,7 +357,7 @@ async function main() {
     report.recording={frames:n,status:encode.status===0?'PASS':'BLOCKED',error:encode.stderr};
     await context.close();
     const desktopContext=await browser.newContext({viewport:{width:1440,height:900}});
-    const desktop=await desktopContext.newPage();await desktop.goto(base,{waitUntil:'networkidle'});
+    const desktop=await desktopContext.newPage();telemetry(desktop,'desktop-recording');await desktop.goto(base,{waitUntil:'networkidle'});
     const desktopFrames=fs.mkdtempSync('/tmp/progresskit-ui-v2-desktop-frames-');
     const desktopCdp=await desktopContext.newCDPSession(desktop);let dn=0;
     desktopCdp.on('Page.screencastFrame',async e=>{fs.writeFileSync(path.join(desktopFrames,`${String(dn++).padStart(6,'0')}.jpg`),Buffer.from(e.data,'base64'));await desktopCdp.send('Page.screencastFrameAck',{sessionId:e.sessionId}).catch(()=>{});});
