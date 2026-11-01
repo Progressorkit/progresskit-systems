@@ -367,6 +367,7 @@ if (typeof document !== 'undefined') {
         sliceAnimations.push(panel.animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,delay:220,fill:'backwards'}));
       }
       if (focus) panel.querySelector('[data-slice-close]').focus({preventScroll:true});
+      document.dispatchEvent(new CustomEvent('progresskit:slice-open', {detail:{id}}));
     }
     function move(delta) {
       if (locked || state.items.length < 2) return;

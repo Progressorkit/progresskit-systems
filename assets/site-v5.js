@@ -377,9 +377,10 @@ if (typeof document !== 'undefined') {
     track('page_view');
     document.addEventListener('click', event => {
       if (event.target.closest('a[href^="mailto:"]')) track('contact_click');
-      else if (event.target.closest('a[href^="https://"]')) track('external_click');
-      if (event.target.closest('.project-drawer > summary, a[href*="projekty/"]:not([data-showroom-open])')) track('project_open');
+      else if (event.target.closest('a[href^="http://"], a[href^="https://"]')) track('external_click');
+      if (event.target.closest('.project-drawer > summary, a[href*="projekty/"]:not([data-showroom-open]), a[href="glikemia-premium/"], a[href="/glikemia-premium/"], a[href="progresskit-mail/"], a[href="/progresskit-mail/"]')) track('project_open');
     });
     document.addEventListener('progresskit:hologram-open', () => track('project_open'));
+    document.addEventListener('progresskit:slice-open', () => track('project_open'));
   }
 }

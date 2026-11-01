@@ -94,10 +94,15 @@ class ProductTests(unittest.TestCase):
     def test_non_download_requests(self):
         from preview import app as preview_app
         preview = TestClient(preview_app)
-        for path in ('/glikemia-premium/', '/glikemia-premium/',
-                     '/glikemia-premium/product.js', '/assets/projects/glikemia/product-measurement.webp',
+        for path in ('/glikemia-premium/', '/progresskit-mail/',
+                     '/glikemia-premium/product.js', '/assets/site-v5.css',
+                     '/assets/projects/mail/mail-splash.webp', '/assets/projects/glikemia/product-measurement.webp',
                      '/api/glikemia/downloads', '/api/glikemia/reviews'):
             self.assertEqual(preview.get(path).status_code, 200)
+        for path in ('/progresskit-mail/mail.css', '/assets/projects/mail/mail-inbox-google.webp',
+                     '/assets/projects/mail/mail-account.webp', '/assets/projects/mail/mail-menu.webp',
+                     '/assets/projects/mail/mail-security.webp'):
+            self.assertEqual(preview.get(path).status_code, 404)
         for path in ('/download/glikemia-premium', '/downloads/glikemia-premium.apk'):
             self.assertEqual(client.head(path).status_code, 405)
             for header in ('Purpose', 'Sec-Purpose', 'X-Purpose', 'X-Moz'):

@@ -588,3 +588,17 @@ test('Filtering a pending inline extrusion cancels it without leaking a hidden p
   assert.equal(ui.cards.filter(card=>!card.classes.has('is-orbit-hidden')).length,3);
   assert.equal(ui.frames.size,0);
 });
+
+test('Inline analytics event follows successful opening once and excludes cancelled extrusion',()=>{
+  const ui=mount(records,{slices:true}),events=[];
+  ui.document.addEventListener('progresskit:slice-open',event=>events.push(event.detail.id));
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(650);
+  assert.deepEqual(events,['project-0']);
+  assert.equal(ui.cards[0].panel.hidden,false);
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(650);
+  assert.deepEqual(events,['project-0']);
+  ui.fire(ui.root,'click',{target:ui.cards[4].link});
+  ui.fire(ui.gate('mobile'),'click');ui.tick(1000);
+  assert.deepEqual(events,['project-0']);
+  assert.equal(ui.cards[4].panel.hidden,true);
+});

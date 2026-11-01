@@ -3,4 +3,8 @@ __pycache__/
 *.db
 *.db-shm
 *.db-wal
+
+# Local builds and Python environments
 .local/
+.venv/
+.pytest_cache/
