@@ -88,7 +88,7 @@ def render_delivery(projects):
             (product['role'], product['label'], product['description']) if product else concepts[identifier]
         )
         status = product['stage'] if product else 'Planowane'
-        stage = {'W rozwoju': 'development', 'Prototyp': 'prototype', 'Planowane': 'planned'}.get(
+        stage = {'W rozwoju': 'development', 'Prototyp': 'prototype', 'Wersja testowa': 'testing', 'Planowane': 'planned'}.get(
             status, 'unconfirmed'
         )
         attribute = 'data-ecosystem-project' if product else 'data-ecosystem-concept'

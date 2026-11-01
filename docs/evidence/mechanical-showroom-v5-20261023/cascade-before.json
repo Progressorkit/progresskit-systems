@@ -1,0 +1,740 @@
+{
+  "stylesheets": [
+    "http://127.0.0.1:8130/assets/site-v4.css",
+    "http://127.0.0.1:8130/assets/site-v5.css",
+    "http://127.0.0.1:8130/assets/hero.css",
+    "http://127.0.0.1:8130/assets/hero-monument.css",
+    "http://127.0.0.1:8130/assets/project-showroom.css",
+    "http://127.0.0.1:8130/assets/project-hologram.css",
+    "http://127.0.0.1:8130/assets/home-atmosphere.css",
+    "http://127.0.0.1:8130/assets/engineering-exhibit.css",
+    "http://127.0.0.1:8130/assets/brand-atmosphere.css",
+    "http://127.0.0.1:8130/assets/project-slices.css",
+    "http://127.0.0.1:8130/assets/delivery.css",
+    "http://127.0.0.1:8130/assets/project-mechanism.css",
+    "http://127.0.0.1:8130/assets/visual-acceptance.css",
+    "http://127.0.0.1:8130/assets/interface-life.css",
+    "http://127.0.0.1:8130/assets/ecosystem-system.css",
+    "http://127.0.0.1:8130/assets/owner-finish.css"
+  ],
+  "targets": [
+    {
+      "selector": ".showroom-viewport",
+      "rect": {
+        "x": 604.796875,
+        "y": 97,
+        "width": 811.1875,
+        "height": 680,
+        "top": 97,
+        "right": 1415.984375,
+        "bottom": 777,
+        "left": 604.796875
+      },
+      "computed": {
+        "display": "block",
+        "position": "relative",
+        "width": "811.188px",
+        "height": "680px",
+        "left": "0px",
+        "top": "0px",
+        "transform": "none",
+        "clipPath": "none",
+        "backgroundImage": "none",
+        "padding": "0px",
+        "perspective": "1200px"
+      },
+      "matched": [
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*",
+          "conditions": [],
+          "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "transition: none !important; animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-viewport",
+          "conditions": [],
+          "css": "position: relative; min-width: 0px; outline-offset: 8px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [],
+          "css": "--showroom-radius-x: clamp(160px,36vw,480px); --showroom-radius-y: 150px; --showroom-origin-y: 40%; height: 540px; touch-action: pan-y pinch-zoom; user-select: none; cursor: grab;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "--showroom-radius-x: clamp(100px,33vw,220px); --showroom-radius-y: 145px; height: 500px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [
+            "print"
+          ],
+          "css": "height: auto;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-viewport",
+          "conditions": [],
+          "css": "order: 0;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [],
+          "css": "--showroom-base-height: 560px; --showroom-origin-y: 44%; --showroom-radius-x: clamp(150px,18vw,260px); --showroom-radius-y: 190px; height: var(--showroom-base-height);"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [
+            "(max-width: 1050px) and (min-width: 701px)"
+          ],
+          "css": "--showroom-radius-x: clamp(110px,17vw,175px);"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "height: 700px; --showroom-origin-y: 37%; --showroom-radius-x: clamp(60px,22vw,145px); --showroom-radius-y: 160px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [],
+          "css": "--showroom-base-height: 680px; --rack-card-width: min(350px,calc((100% - 70px) / 2)); --showroom-origin-y: 340px; --showroom-radius-x: calc((100% - var(--rack-card-width)) / 2 - 22px); --showroom-radius-y: 250px; max-width: 900px; width: 100%; margin-inline: auto; perspective: 1200px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-viewport",
+          "conditions": [
+            "screen and (max-width: 700px)"
+          ],
+          "css": "perspective: none;"
+        }
+      ]
+    },
+    {
+      "selector": ".showroom-card.is-active",
+      "rect": {
+        "x": 626.8568725585938,
+        "y": 101.5,
+        "width": 349.88006591796875,
+        "height": 196,
+        "top": 101.5,
+        "right": 976.7369384765625,
+        "bottom": 297.5,
+        "left": 626.8568725585938
+      },
+      "computed": {
+        "display": "block",
+        "position": "absolute",
+        "width": "350px",
+        "height": "196px",
+        "left": "197px",
+        "top": "340px",
+        "transform": "matrix3d(0.999657, 0, -0.0261769, 0, 0, 1, 0, 0, 0.0261769, 0, 0.999657, 0, -175, -335.5, 0, 1)",
+        "clipPath": "none",
+        "backgroundImage": "none",
+        "padding": "0px",
+        "perspective": "none"
+      },
+      "matched": [
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*",
+          "conditions": [],
+          "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "transition: none !important; animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-card",
+          "conditions": [],
+          "css": "flex: 0 0 min(86vw, 340px); min-width: 0px; scroll-snap-align: center;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [],
+          "css": "--showroom-x: 0; --showroom-y: 0; --showroom-angle: 0deg; --showroom-scale: 1; --showroom-light: 1; --showroom-opacity: 0; position: absolute; width: 340px; height: 178px; top: var(--showroom-origin-y); left: 50%; opacity: var(--showroom-opacity); filter: brightness(var(--showroom-light)); transform: translate(-50%,-50%) translate(calc(var(--showroom-x) * var(--showroom-radius-x) + var(--showroom-drag,0px)),calc(var(--showroom-y) * var(--showroom-radius-y) + var(--showroom-lift,0px))) rotateY(clamp(-16deg,var(--showroom-angle),16deg)) scale(var(--showroom-scale)); transform-origin: center center; backface-visibility: visible; transition: none; will-change: transform;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [
+            "(max-width: 1050px)"
+          ],
+          "css": "width: 320px; height: 174px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-card",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "flex-basis: min(86vw, 320px);"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "width: min(84vw, 280px); height: 156px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-card, .showroom-gate, .showroom-gate::before, .showroom-gate__icon, .showroom-card__open",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-showroom.css",
+          "selector": ".showroom-enhanced .showroom-card, .showroom-enhanced .showroom-card.is-active",
+          "conditions": [
+            "print"
+          ],
+          "css": "position: static; width: auto; height: auto; filter: none; transform: none; break-inside: avoid; margin-bottom: 20px; opacity: 1 !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [],
+          "css": "width: 220px; height: 170px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-card:not(.is-orbit-hidden)",
+          "conditions": [],
+          "css": "opacity: min(1,calc(var(--showroom-opacity) * 1.25));"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-card.is-active:not(.is-slice-expanded)",
+          "conditions": [],
+          "css": "z-index: 20 !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "width: min(68vw, 240px); height: 170px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-card",
+          "conditions": [],
+          "css": "width: var(--rack-card-width); height: 196px; will-change: auto; left: calc(50% + var(--showroom-x) * var(--showroom-radius-x)); transform: translate(-50%,-50%) translateX(var(--showroom-drag,0px))\n    translateY(calc(var(--showroom-y) * var(--showroom-radius-y)))\n    rotateY(var(--showroom-angle)) scale(var(--showroom-scale));"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-card:not(.is-orbit-hidden)",
+          "conditions": [],
+          "css": "opacity: var(--showroom-opacity);"
+        }
+      ]
+    },
+    {
+      "selector": ".showroom-card.is-active .project-slice",
+      "rect": {
+        "x": 626.8568725585938,
+        "y": 101.5,
+        "width": 349.88006591796875,
+        "height": 196,
+        "top": 101.5,
+        "right": 976.7369384765625,
+        "bottom": 297.5,
+        "left": 626.8568725585938
+      },
+      "computed": {
+        "display": "block",
+        "position": "relative",
+        "width": "350px",
+        "height": "196px",
+        "left": "0px",
+        "top": "0px",
+        "transform": "none",
+        "clipPath": "polygon(0px 0px, calc(100% - 16px) 0px, 100% 16px, 100% 100%, 16px 100%, 0px calc(100% - 16px))",
+        "backgroundImage": "linear-gradient(115deg, rgba(217, 44, 69, 0.23), rgba(0, 0, 0, 0) 48%), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.043) 0px, rgba(255, 255, 255, 0.043) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 4px), linear-gradient(140deg, rgb(94, 84, 89), rgb(49, 48, 56) 60%, rgb(34, 37, 43))",
+        "padding": "0px",
+        "perspective": "none"
+      },
+      "matched": [
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*",
+          "conditions": [],
+          "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "transition: none !important; animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".project-slice",
+          "conditions": [],
+          "css": "position: relative; height: 100%; min-width: 0px; border-width: 1px; border-style: solid; border-color: rgb(241, 243, 243) rgb(174, 179, 181) rgb(88, 97, 102); border-image: none; border-radius: 4px 14px 4px 4px; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 3px), linear-gradient(118deg, rgb(192, 196, 197) 0%, rgb(234, 237, 237) 21%, rgb(185, 190, 192) 43%, rgb(140, 149, 154) 100%); box-shadow: rgba(255, 255, 255, 0.6) 1px 1px 0px inset, rgba(89, 99, 107, 0.75) -1px -5px 0px inset, rgb(39, 52, 62) 4px 6px 0px, rgba(145, 157, 165, 0.5) 5px 7px 0px, rgba(17, 24, 32, 0.5) 0px 16px 24px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-card:not(.is-slice-expanded) .project-slice",
+          "conditions": [],
+          "css": "clip-path: polygon(12% 0px, 88% 0px, 100% 50%, 88% 100%, 12% 100%, 0px 50%); border-radius: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".showroom-card.is-active .project-slice",
+          "conditions": [],
+          "css": "border-color: rgb(245, 164, 177); box-shadow: rgba(244, 250, 255, 0.68) 1px 1px 0px inset, rgba(139, 28, 51, 0.75) -1px -4px 0px inset, rgb(49, 32, 44) 4px 6px 0px, rgba(233, 151, 162, 0.5) 5px 7px 0px, rgba(7, 15, 23, 0.49) 0px 17px 30px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".topbar, .project-showroom, .project-slice, .project-slice__panel, .project-slice__close, .project-slice__actions a, .hero__commercial-actions .cta",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "color: canvastext; background: canvas; border-color: canvastext; box-shadow: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".project-slice",
+          "conditions": [
+            "print"
+          ],
+          "css": "height: auto; background: rgb(255, 255, 255); color: rgb(17, 17, 17); box-shadow: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-card:not(.is-slice-expanded) .project-slice",
+          "conditions": [],
+          "css": "clip-path: polygon(0px 0px, calc(100% - 16px) 0px, 100% 16px, 100% 100%, 16px 100%, 0px calc(100% - 16px));"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/visual-acceptance.css",
+          "selector": ".project-showroom .showroom-card .project-slice",
+          "conditions": [],
+          "css": "color: rgb(240, 244, 246); border-color: rgb(150, 165, 174) rgb(150, 165, 174) rgb(24, 36, 45); background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px), linear-gradient(120deg, rgb(69, 81, 90), rgb(44, 55, 63) 75%); box-shadow: rgba(237, 246, 252, 0.25) 1px 1px 0px inset, rgba(13, 24, 32, 0.4) -1px -3px 0px inset, rgb(21, 33, 42) 3px 5px 0px, rgba(101, 119, 129, 0.376) 4px 6px 0px, rgba(8, 14, 20, 0.35) 0px 12px 22px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/visual-acceptance.css",
+          "selector": ".project-showroom .showroom-card.is-active .project-slice",
+          "conditions": [],
+          "css": "border-color: rgb(244, 154, 173) rgb(244, 154, 173) rgb(168, 61, 83); box-shadow: rgba(237, 246, 252, 0.28) 1px 1px 0px inset, rgba(93, 30, 49, 0.4) -1px -3px 0px inset, rgb(25, 32, 42) 3px 5px 0px, rgba(171, 82, 102, 0.376) 4px 6px 0px, rgba(8, 14, 20, 0.35) 0px 12px 22px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/visual-acceptance.css",
+          "selector": "body, .topbar, .mobile-panel, #main:has(> .hero--monument), #main #o-mnie, #main #kontakt, #main #uslugi, #main #ekosystem, #main #wydania, #o-mnie .collaboration, #brief, footer, .delivery-node, .delivery-channel, .delivery-roadmap, .project-showroom .showroom-card .project-slice, .project-showroom .project-slice__panel, .project-showroom .showroom-gate, .project-showroom .showroom-controls button, .project-showroom .showroom-all, .project-showroom .project-slice__close, .project-showroom .project-slice__actions a, .catalog-card, #brief .brief-grid textarea, #brief .brief-grid textarea:focus-visible",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "color: canvastext; background: canvas; border-color: canvastext; box-shadow: none; text-shadow: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".project-showroom .showroom-card .project-slice",
+          "conditions": [],
+          "css": "color: rgb(31, 31, 31); border-color: rgb(214, 214, 214); background: linear-gradient(124deg, rgba(255, 255, 255, 0.27), transparent 30%, rgba(0, 0, 0, 0.133) 72%), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, rgba(0, 0, 0, 0.047) 1px, rgba(0, 0, 0, 0.047) 2px, transparent 2px, transparent 4px), linear-gradient(135deg, rgb(214, 214, 214), rgb(172, 172, 172) 52%, rgb(133, 133, 133)); box-shadow: rgba(252, 252, 252, 0.7) 1px 1px 0px inset, rgba(88, 88, 88, 0.85) -1px -4px 0px inset, rgb(24, 24, 24) 3px 6px 0px, rgba(202, 202, 202, 0.7) 4px 7px 0px, rgba(0, 0, 0, 0.6) 0px 18px 26px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".project-showroom .showroom-card.is-active .project-slice",
+          "conditions": [],
+          "css": "border-top-color: rgb(255, 178, 188); border-left-color: rgb(215, 44, 72); background: linear-gradient(125deg, rgba(225, 55, 75, 0.208), transparent 44%), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.15) 0px, rgba(255, 255, 255, 0.15) 1px, rgba(0, 0, 0, 0.047) 1px, rgba(0, 0, 0, 0.047) 2px, transparent 2px, transparent 4px), linear-gradient(150deg, rgb(216, 216, 216), rgb(182, 182, 182) 55%, rgb(145, 145, 145)); box-shadow: rgb(201, 29, 58) 3px 0px 0px inset, rgba(255, 232, 227, 0.79) 0px 1px 0px inset, rgba(94, 94, 94, 0.85) 0px -4px 0px inset, rgb(15, 15, 15) 3px 6px 0px, rgba(184, 63, 82, 0.4) 4px 7px 0px, rgba(0, 0, 0, 0.6) 0px 18px 30px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".hero--monument::before, .project-showroom .showroom-frame__signal, .project-showroom .showroom-card::before, .project-showroom .showroom-card .project-slice, .project-showroom .showroom-card .project-slice::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": "#main:has(> .hero--monument), .topbar, #main #uslugi, #main #ekosystem, #main #wydania, #main #o-mnie, #main #kontakt, #o-mnie .collaboration, #brief, .delivery-channel, .delivery-case-studies, #uslugi .competency-list li, .project-showroom .showroom-card .project-slice, .project-showroom .project-slice__panel, .project-showroom .showroom-gate, .project-showroom .showroom-controls button",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "color: canvastext; background: canvas; border-color: canvastext; box-shadow: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": ".project-showroom .showroom-card .project-slice",
+          "conditions": [],
+          "css": "color: rgb(245, 241, 240); border-color: rgb(132, 147, 154); background: linear-gradient(112deg, rgba(255, 255, 255, 0.14), transparent 38%, rgba(3, 5, 8, 0.25) 74%), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.043) 0px, rgba(255, 255, 255, 0.043) 1px, rgba(0, 0, 0, 0.04) 1px, rgba(0, 0, 0, 0.04) 3px, transparent 3px, transparent 5px), linear-gradient(145deg, rgb(89, 101, 106), rgb(48, 57, 63) 48%, rgb(29, 37, 43) 82%); box-shadow: rgba(226, 237, 240, 0.533) 1px 1px 0px inset, rgb(14, 22, 28) -1px -4px 0px inset, rgb(7, 11, 14) 3px 6px 0px, rgba(142, 40, 56, 0.333) 4px 7px 0px, rgba(0, 0, 0, 0.667) 0px 16px 35px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": ".project-showroom .showroom-card.is-active .project-slice",
+          "conditions": [],
+          "css": "border-top-color: rgb(255, 158, 169); border-left-color: rgb(255, 91, 120); background: linear-gradient(115deg, rgba(217, 44, 69, 0.23), transparent 48%), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.043) 0px, rgba(255, 255, 255, 0.043) 1px, transparent 1px, transparent 4px), linear-gradient(140deg, rgb(94, 84, 89), rgb(49, 48, 56) 60%, rgb(34, 37, 43)); box-shadow: rgb(223, 52, 80) 3px 0px 0px inset, rgba(255, 177, 187, 0.46) 0px 1px 0px inset, rgb(22, 23, 27) 0px -4px 0px inset, rgb(7, 11, 14) 3px 6px 0px, rgba(181, 34, 64, 0.46) 4px 7px 0px, rgba(0, 0, 0, 0.8) 0px 16px 33px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": ".topbar, #main:has(> .hero--monument), .project-showroom .showroom-card .project-slice, .project-showroom .showroom-card.is-active .project-slice, .showroom-enhanced .showroom-frame, #ekosystem .ecosystem-system, #ekosystem .ecosystem-node, #ekosystem .ecosystem-node.is-selected, body > footer",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "background: canvas; color: canvastext; box-shadow: none; border-color: canvastext;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": "body, #main:has(> .hero--monument), .topbar, body > footer, .project-showroom .showroom-card .project-slice, .project-showroom .showroom-card.is-active .project-slice, #ekosystem .ecosystem-system, #ekosystem .ecosystem-node, #ekosystem .ecosystem-node.is-selected",
+          "conditions": [
+            "print"
+          ],
+          "css": "color: rgb(17, 17, 17); background: rgb(255, 255, 255); border-color: rgb(119, 119, 119); box-shadow: none;"
+        }
+      ]
+    },
+    {
+      "selector": ".showroom-frame",
+      "rect": {
+        "x": 620.796875,
+        "y": 119,
+        "width": 779.1875,
+        "height": 630,
+        "top": 119,
+        "right": 1399.984375,
+        "bottom": 749,
+        "left": 620.796875
+      },
+      "computed": {
+        "display": "block",
+        "position": "absolute",
+        "width": "779.188px",
+        "height": "630px",
+        "left": "16px",
+        "top": "22px",
+        "transform": "none",
+        "clipPath": "none",
+        "backgroundImage": "radial-gradient(at 45% 42%, rgba(231, 36, 66, 0.2), rgba(0, 0, 0, 0) 65%), linear-gradient(135deg, rgba(4, 6, 9, 0.48), rgba(6, 6, 9, 0.28) 50%, rgba(8, 3, 6, 0.75)), url(\"http://127.0.0.1:8130/assets/brand/red-aluminium-reconstruction.jpg\")",
+        "padding": "0px",
+        "perspective": "none"
+      },
+      "matched": [
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*",
+          "conditions": [],
+          "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "transition: none !important; animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-frame",
+          "conditions": [],
+          "css": "display: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-frame",
+          "conditions": [],
+          "css": "display: block; position: absolute; inset: 22px 16px 28px; pointer-events: none; border: 1px solid rgba(102, 119, 131, 0.4); border-radius: 6px; background: linear-gradient(115deg, rgba(81, 97, 110, 0.07), transparent 30%, rgba(16, 24, 28, 0.25)); box-shadow: rgba(168, 189, 202, 0.145) 0px 2px 0px inset, rgb(17, 25, 30) 0px -7px 0px inset, rgba(0, 0, 0, 0.2) 0px 14px 30px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-enhanced .showroom-frame",
+          "conditions": [
+            "screen and (max-width: 700px)"
+          ],
+          "css": "inset: 2px 0px 10px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-frame",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "display: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".showroom-frame",
+          "conditions": [
+            "print"
+          ],
+          "css": "display: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".showroom-enhanced .showroom-frame",
+          "conditions": [],
+          "css": "border-color: rgb(87, 87, 87); background: linear-gradient(110deg, rgba(23, 23, 23, 0.75), rgba(20, 20, 20, 0.6) 65%, rgba(42, 21, 21, 0.7)), url(\"brand/red-aluminium-reconstruction.jpg\") center center / cover no-repeat; box-shadow: rgba(222, 222, 222, 0.345) 0px 2px 0px inset, rgb(10, 10, 10) 0px -9px 0px inset, rgb(93, 93, 93) 0px 8px 0px, rgba(213, 213, 213, 0.4) 0px 10px 0px, rgba(0, 0, 0, 0.533) 0px 24px 42px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": ".showroom-enhanced .showroom-frame",
+          "conditions": [],
+          "css": "border: 1px solid rgb(161, 90, 98); background: radial-gradient(at 45% 42%, rgba(231, 36, 66, 0.2), transparent 65%), linear-gradient(135deg, rgba(4, 6, 9, 0.48), rgba(6, 6, 9, 0.28) 50%, rgba(8, 3, 6, 0.75)), url(\"brand/red-aluminium-reconstruction.jpg\") center center / cover no-repeat; box-shadow: rgba(255, 195, 195, 0.267) 0px 2px 0px inset, rgb(12, 11, 13) 0px -8px 0px inset, rgb(52, 14, 21) 0px 6px 0px, rgb(11, 10, 13) 0px 15px 0px, rgba(0, 0, 0, 0.733) 0px 22px 48px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/owner-finish.css",
+          "selector": ".topbar, #main:has(> .hero--monument), .project-showroom .showroom-card .project-slice, .project-showroom .showroom-card.is-active .project-slice, .showroom-enhanced .showroom-frame, #ekosystem .ecosystem-system, #ekosystem .ecosystem-node, #ekosystem .ecosystem-node.is-selected, body > footer",
+          "conditions": [
+            "(forced-colors: active)"
+          ],
+          "css": "background: canvas; color: canvastext; box-shadow: none; border-color: canvastext;"
+        }
+      ]
+    },
+    {
+      "selector": ".hero__stone-title",
+      "rect": {
+        "x": 0,
+        "y": 80,
+        "width": 604.796875,
+        "height": 583.296875,
+        "top": 80,
+        "right": 604.796875,
+        "bottom": 663.296875,
+        "left": 0
+      },
+      "computed": {
+        "display": "block",
+        "position": "relative",
+        "width": "604.797px",
+        "height": "583.297px",
+        "left": "0px",
+        "top": "0px",
+        "transform": "none",
+        "clipPath": "none",
+        "backgroundImage": "none",
+        "padding": "148.32px 0px 50px 64.8px",
+        "perspective": "none"
+      },
+      "matched": [
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*",
+          "conditions": [],
+          "css": "box-sizing: border-box; margin: 0px; padding: 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v4.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "transition: none !important; animation: auto ease 0s 1 normal none running none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": "*, ::before, ::after",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none !important; transition: none !important;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": ".hero--landscape .hero__stone-title",
+          "conditions": [],
+          "css": "position: absolute; z-index: 1; top: clamp(18px, 2vw, 32px); left: clamp(14px, 1.2vw, 24px); right: 16px; max-width: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": ".hero--landscape .hero__stone-title",
+          "conditions": [
+            "(max-width: 600px)"
+          ],
+          "css": "top: 28px; left: 16px; right: 16px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/site-v5.css",
+          "selector": ".hero--landscape .hero__stone-title, .hero--landscape .hero__motto",
+          "conditions": [
+            "print"
+          ],
+          "css": "position: static; max-width: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/hero-monument.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [],
+          "css": "inset: clamp(50px, 5vw, 82px) auto auto clamp(24px, 4.5vw, 88px); max-width: 78%; animation: auto ease 0s 1 normal none running none; transform: none; filter: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/hero-monument.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 1050px)"
+          ],
+          "css": "max-width: 90%;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/hero-monument.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 600px)"
+          ],
+          "css": "inset: 44px 16px auto; max-width: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/hero-monument.css",
+          "selector": ".hero--monument::before, .hero--monument .hero__stone-title, .hero--monument .hero__wall-relief",
+          "conditions": [
+            "(prefers-reduced-motion: reduce)"
+          ],
+          "css": "animation: auto ease 0s 1 normal none running none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/hero-monument.css",
+          "selector": ".hero--monument .hero__stone-title, .hero--monument .hero__motto",
+          "conditions": [
+            "print"
+          ],
+          "css": "position: static; width: auto; max-width: none;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [],
+          "css": "position: relative; inset: auto; max-width: none; padding: clamp(90px, 10vw, 150px) 0px 50px clamp(24px, 4.5vw, 88px);"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(min-width: 701px) and (max-height: 650px)"
+          ],
+          "css": "padding-top: 76px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 1050px) and (min-width: 701px)"
+          ],
+          "css": "padding-left: 24px; padding-top: 100px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "position: relative; inset: auto; max-width: none; padding: 34px 16px 0px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 360px)"
+          ],
+          "css": "padding-top: 28px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-slices.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "screen and (max-width: 700px)"
+          ],
+          "css": "padding-top: 22px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/project-mechanism.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(min-width: 701px) and (max-width: 1100px)"
+          ],
+          "css": "padding: 54px 32px 24px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [],
+          "css": "padding-top: clamp(108px, 10.3vw, 160px);"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(min-width: 701px) and (max-width: 1100px)"
+          ],
+          "css": "padding-top: 62px;"
+        },
+        {
+          "sheet": "http://127.0.0.1:8130/assets/interface-life.css",
+          "selector": ".hero--monument .hero__stone-title",
+          "conditions": [
+            "(max-width: 700px)"
+          ],
+          "css": "padding-top: 44px; padding-bottom: 26px;"
+        }
+      ]
+    }
+  ]
+}

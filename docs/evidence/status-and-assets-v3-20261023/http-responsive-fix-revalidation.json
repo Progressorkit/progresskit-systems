@@ -1,0 +1,32 @@
+{
+  "recordedUtc": "2026-10-23T14:42:49.128487+00:00",
+  "reason": "Root fixed 320px overflow in Mail source-list code and Glikemia header/nav. Source freeze restored; only independent HTTP evidence refreshed.",
+  "previousHttpReport": "http-check-before-responsive-fix.json",
+  "previousHttpLog": "http-check-before-responsive-fix.log",
+  "internalLinksRerun": false,
+  "unchangedLinkEvidence": "internal-links.json; 856 PASS / 0 FAIL retained",
+  "stylesheets": {
+    "assets/visual-acceptance.css": {
+      "beforeResponsiveFixSha256": "6840a09290f635edb2faf8225f86d156e7235bee6cda3fa7b9b2051918d4955b",
+      "currentSha256": "ef9ff424e8776d36569e3131599a8549a93e41f28bc5915e2b8a7a268247442a",
+      "bytes": 21059,
+      "httpServedSha256": "ef9ff424e8776d36569e3131599a8549a93e41f28bc5915e2b8a7a268247442a",
+      "sourceUnchangedDuringRevalidation": true
+    },
+    "assets/progresskit-product-shell.css": {
+      "beforeResponsiveFixSha256": "59d80d9294dd625bd685222c9cb5468b68959964bd05ac45bdb890efa50d48df",
+      "currentSha256": "d29b1c751ccdc85c58106c5e664d8682fccff3e5bf367c1a583eec418ae1b318",
+      "bytes": 11646,
+      "httpServedSha256": "d29b1c751ccdc85c58106c5e664d8682fccff3e5bf367c1a583eec418ae1b318",
+      "sourceUnchangedDuringRevalidation": true
+    }
+  },
+  "finishedUtc": "2026-10-23T14:42:58.376575+00:00",
+  "httpPass": 71,
+  "httpFail": 0,
+  "sourceUnchangedDuringChecks": true,
+  "downloadCounterBefore": 2,
+  "downloadCounterAfter": 3,
+  "finalHttpReportSha256": "76b8c26f19a23e97f1a312391b397acbeebbd849eae602bf54735f87df326fff",
+  "previousHttpReportSha256": "d66ef58b30c05239eb903b23da157e1e43807ecd899ab7ec6814bf55f8430b7b"
+}

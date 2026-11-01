@@ -39,19 +39,14 @@ const ProjectShowroom = {
     };
   },
   mechanism(offset, length) {
-    // Six staggered drawers share two straight guides. During a manual step
-    // they retract, change sockets while concealed, then slide out again.
-    // No module travels around a circle or crosses another readable face.
-    const phase = length > 0 ? ((offset % length) + length) % length : 0;
-    const nearest = Math.round(phase);
-    const slot = this.wrap(nearest, length);
-    const travel = phase - nearest;
-    const sockets = [[-1,-.95],[1,-.81],[-.94,-.12],[.94,.02],[-1,.71],[1,.85]];
-    const socket = sockets[slot] || [0,0];
-    const exposure = Math.max(0, 1 - 2 * Math.abs(travel));
-    return {x:socket[0] + travel * .08, y:socket[1], depth:1,
-      scale:1 - Math.abs(travel) * .08, angle:socket[0] * -1.5,
-      light:1, opacity:exposure, visible:length > 0 && slot < Math.min(6,length)};
+    // A six-socket rotor. At the rear handoff only one of the outgoing and
+    // incoming faces is visible; the half-open six-slot window never duplicates.
+    const slots = Math.min(6, Math.max(1, length));
+    const theta = offset * Math.PI * 2 / slots - Math.PI / 2;
+    const edge = length <= 6 ? 1 : Math.max(0, Math.min(1, (offset + .5) * 2, (5.5 - offset) * 2));
+    const x = Math.cos(theta), y = Math.sin(theta);
+    return { x, y, depth:(y + 1) / 2, scale:.97 + .03 * (y + 1) / 2,
+      angle:-x * 8, light:1, opacity:edge, visible:length > 0 && edge > 0 };
   },
   select(projects, category = '', id = '') {
     const normalized = projects.some(project => project.category === category) ? category : '';
@@ -121,6 +116,12 @@ if (typeof document !== 'undefined') {
     let sliceTimer;
     let sliceReturnTarget;
     let sliceHoverBlocked = false;
+    let sliceAnimations = [];
+    const stopSliceAnimations = () => { sliceAnimations.forEach(animation => animation.cancel()); sliceAnimations = []; };
+    const label = (element, value) => {
+      if (element.firstChild?.nodeType === 3 && element.childNodes?.length === 1) element.firstChild.nodeValue = value;
+      else if (element.textContent !== value) element.textContent = value;
+    };
     let state = ProjectShowroom.select(projects);
     let previewSnapshot;
     let openId = '';
@@ -136,6 +137,7 @@ if (typeof document !== 'undefined') {
     let layoutSignature = '';
     let energyPaused = false;
     let phaseFrame = 0;
+    let pendingKeyboardFocus = false;
     let displayPhase = 0;
     let targetPhase = 0;
     let phaseEnds = 0;
@@ -153,6 +155,7 @@ if (typeof document !== 'undefined') {
     function paintGeometry() {
       const indexes = new Map(state.items.map((project, index) => [project.id, index]));
       const visible = [];
+      root.style.setProperty('--mechanism-turn', `${(-displayPhase * 360 / Math.min(6, state.items.length)).toFixed(4)}deg`);
       for (const card of cards) {
         const index = indexes.get(card.dataset.projectId);
         const included = index !== undefined;
@@ -177,6 +180,13 @@ if (typeof document !== 'undefined') {
         card.querySelector('[data-showroom-open]').tabIndex = !locked && selected && shown && !sliceCard ? 0 : -1;
         if (shown) visible.push({id:card.dataset.projectId, point, selected});
         if (included) card.setAttribute('aria-label', `${byId.get(card.dataset.projectId).name} · ${index + 1} z ${state.items.length}`);
+      }
+      if (pendingKeyboardFocus && document.activeElement === viewport) {
+        const card = byCard.get(active()?.id);
+        if (card && !card.inert) {
+          pendingKeyboardFocus = false;
+          card.querySelector('[data-showroom-open]').focus({preventScroll:true});
+        }
       }
       orbitNodes.forEach((node, index) => {
         const item = state.items.length > 1 ? visible[index] : null;
@@ -238,7 +248,9 @@ if (typeof document !== 'undefined') {
       const delta = ProjectShowroom.offset(state.index, lastIndex, state.items.length);
       lastIndex = state.index;
       targetPhase += delta;
-      if (Math.abs(delta) > 2 || Math.abs(targetPhase - displayPhase) > 2) { finishPhase(); return; }
+      // Preserve the legacy five-node controller; the shipped six-node wheel
+      // keeps its continuous path, including Home/End and rapid repeated input.
+      if (!inlineSlices && (Math.abs(delta) > 2 || Math.abs(targetPhase - displayPhase) > 2)) { finishPhase(); return; }
       animatePhase();
     }
     const syncUrl = () => {
@@ -269,11 +281,11 @@ if (typeof document !== 'undefined') {
       if (energyToggle) {
         energyToggle.disabled = reducedMotion.matches;
         energyToggle.setAttribute('aria-pressed', String(energyPaused || reducedMotion.matches));
-        energyToggle.textContent = reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty mechanizmu' : 'Wstrzymaj efekty mechanizmu';
+        label(energyToggle, reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty mechanizmu' : 'Wstrzymaj efekty mechanizmu');
       }
       viewport.style.setProperty('--showroom-drag', '0px');
-      position.textContent = `${state.index + 1} / ${state.items.length}`;
-      if (announce && active()) status.textContent = `${previewSnapshot ? 'Podgląd: ' : ''}${active().name}. ${state.index + 1} z ${state.items.length}${state.category ? ` · ${active().categoryLabel || ''}` : ' · wszystkie projekty'}.`;
+      label(position, `${state.index + 1} / ${state.items.length}`);
+      if (announce && active()) label(status, `${previewSnapshot ? 'Podgląd: ' : ''}${active().name}. ${state.index + 1} z ${state.items.length}${state.category ? ` · ${active().categoryLabel || ''}` : ' · wszystkie projekty'}.`);
     }
     function placeSlice() {
       if (!sliceCard) return;
@@ -293,6 +305,7 @@ if (typeof document !== 'undefined') {
     }
     function closeSlice(restoreFocus = false, updateUrl = true) {
       clearTimeout(sliceTimer);
+      stopSliceAnimations();
       if (!sliceCard) return;
       const card = sliceCard;
       sliceCard = null;
@@ -319,10 +332,10 @@ if (typeof document !== 'undefined') {
       const panel = card?.querySelector('[data-slice-panel]');
       if (!panel || sliceCard === card) return;
       if (sliceCard) closeSlice(false, false);
+      stopSliceAnimations();
       cancelOpen();
       clearTimeout(sliceTimer);
-      // Freeze the current pose, including a partially completed manual turn.
-      // Enlarging the real module never chases the cursor during a drawer step.
+      // The selected face has reached the front socket before extrusion.
       if (phaseFrame) cancelAnimationFrame(phaseFrame);
       phaseFrame = 0;
       phaseEnds = 0;
@@ -346,11 +359,12 @@ if (typeof document !== 'undefined') {
         const after = card.getBoundingClientRect();
         const x = before.left - after.left, y = before.top - after.top;
         const sx = before.width / after.width, sy = before.height / after.height;
-        card.animate([
+        sliceAnimations.push(card.animate([
           {transform:`translate(${x}px,${y}px) scale(${sx},${sy})`,transformOrigin:'0 0',offset:0},
           {transform:`translate(${x}px,${y - 3}px) scale(${sx * 1.025},${sy * 1.025})`,transformOrigin:'0 0',offset:.17},
           {transform:'translate(0,0) scale(1)',transformOrigin:'0 0',offset:1},
-        ], {duration:300,easing:'cubic-bezier(.2,.8,.2,1)'});
+        ], {duration:520,easing:'cubic-bezier(.18,.75,.2,1)'}));
+        sliceAnimations.push(panel.animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,delay:220,fill:'backwards'}));
       }
       if (focus) panel.querySelector('[data-slice-close]').focus({preventScroll:true});
     }
@@ -366,13 +380,27 @@ if (typeof document !== 'undefined') {
       state.index = ProjectShowroom.wrap(state.index + delta, state.items.length);
       render();
       syncUrl();
-      if (focusedSlice || (focusedLink && root.contains(focusedLink))) byCard.get(active().id).querySelector('[data-showroom-open]').focus({preventScroll:true});
+      if (focusedSlice || pendingKeyboardFocus || (focusedLink && root.contains(focusedLink))) {
+        const card = byCard.get(active().id);
+        pendingKeyboardFocus = card.inert;
+        (pendingKeyboardFocus ? viewport : card.querySelector('[data-showroom-open]')).focus({preventScroll:true});
+      }
     }
     function requestOpen(id, trigger, fromHistory = false) {
       const project = byId.get(id);
       if (!project || (locked && !fromHistory)) return;
       if (inlineSlices) {
-        openSlice(id, trigger, true);
+        if (sliceCard?.dataset.projectId === id) return;
+        if (sliceCard) closeSlice(false, false);
+        endPreview(); cancelOpen();
+        if (!state.items.some(item => item.id === id)) state = ProjectShowroom.select(projects, '', id);
+        state.index = state.items.findIndex(item => item.id === id);
+        render(true, !fromHistory);
+        root.classList.add('is-projecting');
+        const dispatch = () => { finishPhase(); openSlice(id, trigger, true); };
+        const remaining = phaseFrame ? Math.max(0, phaseEnds - performance.now()) + 30 : 0;
+        if (!reducedMotion.matches && remaining > 0) openTimer = setTimeout(dispatch, remaining);
+        else dispatch();
         return;
       }
       endPreview();

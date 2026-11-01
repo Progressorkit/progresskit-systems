@@ -1,0 +1,87 @@
+{
+  "baseline": "pre-sprint dirty working tree",
+  "head": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "changedFiles": [
+    {
+      "path": "assets/project-showroom.js",
+      "before": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+      "after": "0073f8db6b7745652998e2a70a39d26b90d523a79304c5aaa0c1c815c652a843"
+    },
+    {
+      "path": "assets/owner-finish.css",
+      "before": "84b085f00e6656ec5c3618affae2ab516fd99ca9fb7a04a5686b16ac598ea436",
+      "after": "1a05663da7bf7d215ce9f83d28e995c7582ab30754aac8470652328b5efe0de9"
+    },
+    {
+      "path": "assets/hero-space.js",
+      "before": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+      "after": "09c0461f6e32a82bda5c731c2b8500d02714903a59529f5caf8ee343cdebd519"
+    },
+    {
+      "path": "assets/interface-life.css",
+      "before": "5d3180874a2d347b1d547c963503bacc96c209662d4f3df210b240d224853115",
+      "after": "474a61c9e91c4c623d92dfe6d940f002aa251d6b87c963df664620bbb9b6aca9"
+    },
+    {
+      "path": "assets/project-mechanism.css",
+      "before": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "after": "ae2392f10634021a1f46f92b1cd4fc218673cd0d45202e647e2ec9edac931354"
+    },
+    {
+      "path": "assets/ecosystem-system.js",
+      "before": "338ffd25d369447e3243de12bfeb103a87674fc62155d54806daa692e4909a0b",
+      "after": "8c4b5acd75c790784fa0d4b2c46e8446ee8459cb24a360dca902165a52b5d736"
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "before": "ef9ff424e8776d36569e3131599a8549a93e41f28bc5915e2b8a7a268247442a",
+      "after": "104d0362cba0a7449422df25ff6e18ec6e44229139e761749249566711acbb13"
+    },
+    {
+      "path": "scripts/showroom_markup.py",
+      "before": "b35c0377743c9a3683ee2e4d97f5e988f8c45f6c47ff6bf691ee39de49b352f5",
+      "after": "ae571abbf1eca9882f5e99432a78f45ed31cc23958f23d75cd1aec9212861af9"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "before": "53ad062c123120ea80e28737048dd6fecbb9349a00ea0bebb9ab445e00b830e0",
+      "after": "683a75bac352218cd1b94815a87bc8ead6131522399562217baf53823a3588fa"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "before": "2dc6af3e01202a8fd76bd2d35c72c75baf6c205cf32e74f78503b6b8474e0cb6",
+      "after": "bbbac42917d6cce71da053d4e69cb51ab15fe77fb48b4de51fd300181c35c3a3"
+    },
+    {
+      "path": "tests/project-showroom.test.cjs",
+      "before": "6604febbd74b3f1a3e96fbfe6e923c7fd18acdeff5968d478813220dd028255a",
+      "after": "7041266a55becb4af3f7ec8d14fcd68f9bd816581ddb7f8625abc2e0cfeea101"
+    },
+    {
+      "path": "index.html",
+      "before": "1fae561a0d4625f31ae3905980cb02a5845303767fc6a42c4e1be0b53a7c9c8a",
+      "after": "b2018f4c4d42312dadf0c5a9051ea49ea5b3378c2e65ab995a143d9eb4052229"
+    }
+  ],
+  "checks": {
+    "catalog/projects.json byte identical": true,
+    "catalog/brand.json byte identical": true,
+    "start markup identical": true,
+    "o-mnie markup identical": true,
+    "uslugi markup identical": true,
+    "wyzwania markup identical": true,
+    "technologie markup identical": true,
+    "kontakt markup identical": true,
+    "brief markup identical": true,
+    "ekosystem markup identical": true,
+    "wydania markup identical": true,
+    "footer markup identical": true,
+    "assets/brand/red-aluminium-reconstruction.jpg approved reconstruction unchanged": true,
+    "assets/brand/footer-forest-mountains-reconstruction.png approved reconstruction unchanged": true,
+    "HEAD unchanged no commit": true,
+    "index unchanged no staging": true,
+    "12 intended source files": true
+  },
+  "PASS": 17,
+  "FAIL": 0
+}

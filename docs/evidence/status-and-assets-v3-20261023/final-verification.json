@@ -1,0 +1,62 @@
+{
+  "atUtc": "2026-10-23T14:51:48.543156+00:00",
+  "head": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "indexEmpty": true,
+  "commit": false,
+  "push": false,
+  "deployment": false,
+  "preview": "http://127.0.0.1:8111/",
+  "uiSourceGuardFiles": 32,
+  "uiSourceGuard": "PASS: 32 before/after hashes match the current workspace",
+  "tests": {
+    "python": {
+      "PASS": 118,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "node": {
+      "PASS": 71,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "browser": {
+      "PASS": 92,
+      "FAIL": 1
+    },
+    "statusAndAssets": {
+      "PASS": 46,
+      "FAIL": 0
+    },
+    "http": {
+      "PASS": 71,
+      "FAIL": 0
+    },
+    "internalLinks": {
+      "PASS": 856,
+      "FAIL": 0
+    }
+  },
+  "functionalOverall": "PARTIAL: one strict browser DOM counter check failed; retained without weakening assertion",
+  "pngFiles": 80,
+  "mp4Files": 2,
+  "assetIdentity": "USER_APPROVED_RECONSTRUCTIONS",
+  "physicalDeviceQa": "NOT_RUN",
+  "newExternalProductTests": "NOT_RUN",
+  "ownerVisualApproval": "OPEN",
+  "memoryDiagnostic": {
+    "status": "UNRESOLVED_MEASUREMENT",
+    "originalFullBrowserFailureRetained": true,
+    "independentRuns": 3,
+    "blocks": 12,
+    "roleSelectionsPerBlock": 30,
+    "resizeCrossingsPerBlock": 2,
+    "warmNodes": 2018,
+    "observedNodes": [
+      2017,
+      2018
+    ],
+    "listeners": 172,
+    "documents": 1,
+    "originalPlusOneCause": "NOT_IDENTIFIED"
+  }
+}

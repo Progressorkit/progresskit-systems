@@ -1,0 +1,126 @@
+{
+  "finishedAt": "2026-10-23T18:37:02.533939+00:00",
+  "head": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "preview": "http://127.0.0.1:8130/",
+  "tests": {
+    "javascript": {
+      "PASS": 73,
+      "FAIL": 0
+    },
+    "python": {
+      "PASS": 118,
+      "FAIL": 0
+    },
+    "browser": {
+      "PASS": 94,
+      "FAIL": 0
+    },
+    "input": {
+      "PASS": 5,
+      "FAIL": 0
+    },
+    "breakpoints": {
+      "PASS": 8,
+      "FAIL": 0
+    },
+    "http": {
+      "PASS": 72,
+      "FAIL": 0
+    },
+    "links": {
+      "PASS": 856,
+      "FAIL": 0
+    },
+    "scope": {
+      "PASS": 17,
+      "FAIL": 0
+    }
+  },
+  "physicalAndroid": "BLOCKED: no connected device",
+  "acceptance": "Local geometry and functions PASS; complete hardware acceptance PARTIAL",
+  "historicalCDPNodeIdentity": "UNRESOLVED: original +1 lacked a saved node identity; current strict checks pass and allocation churn removed",
+  "historicalArtifactException": "historical-report-note.json",
+  "cycles": {
+    "name": "Desktop CDP sample, not physical phone/FPS",
+    "idleSampleSeconds": 1.0017470000020694,
+    "taskSeconds": 0.0006320000000000006,
+    "scriptSeconds": 0,
+    "domCold": {
+      "documents": 1,
+      "nodes": 2111,
+      "jsEventListeners": 146
+    },
+    "domBefore": {
+      "documents": 1,
+      "nodes": 2171,
+      "jsEventListeners": 159
+    },
+    "domAfter": {
+      "documents": 1,
+      "nodes": 2171,
+      "jsEventListeners": 159
+    },
+    "warmupCycles": 1,
+    "cycles": 100
+  },
+  "ecosystemMemory": {
+    "cold": {
+      "documents": 1,
+      "nodes": 2180,
+      "jsEventListeners": 172
+    },
+    "before": {
+      "documents": 1,
+      "nodes": 2225,
+      "jsEventListeners": 172
+    },
+    "after": {
+      "documents": 1,
+      "nodes": 2225,
+      "jsEventListeners": 172
+    },
+    "warmupRoleSelections": 6,
+    "warmupViewportCrossings": 2,
+    "roleSelections": 30,
+    "viewportCrossings": 2
+  },
+  "screenshots": 77,
+  "recordings": [
+    {
+      "path": "browser/desktop-mechanism.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900,
+          "r_frame_rate": "12/1",
+          "nb_frames": "162"
+        }
+      ],
+      "format": {
+        "duration": "13.500000"
+      }
+    },
+    {
+      "path": "browser/mobile-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844,
+          "r_frame_rate": "12/1",
+          "nb_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "11.083333"
+      }
+    }
+  ],
+  "uiSourceGuardFiles": 33,
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

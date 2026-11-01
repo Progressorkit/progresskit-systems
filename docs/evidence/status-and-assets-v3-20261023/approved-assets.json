@@ -1,0 +1,49 @@
+{
+  "archive": "/home/pawe/Pobrane/progresskit-dwa-obrazy-do-oceny.zip",
+  "archiveBytes": 815066,
+  "archiveSha256": "6c024686c775d73d9267e718d9ea7551e90d4c1d2d5542c0415a00fcb46ac0ab",
+  "crc": "PASS",
+  "safeEntries": "PASS",
+  "entries": [
+    {
+      "entry": "las-gory-stopka-REKONSTRUKCJA.png",
+      "bytes": 436532,
+      "sha256": "120b46801c5ba98bc777e9d9b0b7e700268815e64b7fffa0dfe327e55f52bdb0",
+      "destination": "assets/brand/footer-forest-mountains-reconstruction.png",
+      "exactBytes": true
+    },
+    {
+      "entry": "aluminium-czerwone-REKONSTRUKCJA.jpg",
+      "bytes": 377763,
+      "sha256": "7d02194a428b04daac24bc3a41f9c27528398f41221e741c99e78370b45024b1",
+      "destination": "assets/brand/red-aluminium-reconstruction.jpg",
+      "exactBytes": true
+    },
+    {
+      "entry": "CZYTAJ_MNIE.txt",
+      "bytes": 448,
+      "sha256": "b0aad1b5b5038421c3b200d0b1f10cd273c9205e92c5a1d278939137bb804168"
+    }
+  ],
+  "archiveReadme": "ProgressKit Systems - robocze assety graficzne (REKONSTRUKCJE, NIE ORYGINALY)\n\n- aluminium-czerwone-REKONSTRUKCJA.jpg - wygenerowane czerwone aluminium (1672x941).\n- las-gory-stopka-REKONSTRUKCJA.png - fragment krajobrazu wyciety z generowanej wizualizacji (1672x150).\n\nOBYDWA wymagaja akceptacji uzytkownika. To nie sa odzyskane wczesniej zatwierdzone grafiki.\nNie uzywaj tych plikow do zastapienia oryginalnych zasobow bez zatwierdzenia wygladu.\n",
+  "identity": "USER_APPROVED_RECONSTRUCTIONS",
+  "approval": {
+    "date": "2026-10-23",
+    "scope": "Use both supplied reconstructions on the current site, including the footer",
+    "verbatimReply": "Zatwierdzam użycie obu rekonstrukcji",
+    "approvalId": "call_0e04d3fd4ba441e1a30af91ef484d45c"
+  },
+  "originals": "NOT_IDENTIFIED; this approval permits these reconstructions, not a claim of recovered originals",
+  "newGeneration": false,
+  "bitmapEditing": false,
+  "cssUsage": {
+    "aluminium": [
+      "existing showroom mechanism",
+      "existing ecosystem map"
+    ],
+    "panorama": [
+      "standard page footer",
+      "existing Glikemia product footer"
+    ]
+  }
+}

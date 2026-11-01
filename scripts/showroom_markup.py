@@ -87,12 +87,46 @@ def orbital_field():
 
 
 def mechanical_field():
-    """Noninteractive straight guides; no circular decoration or animation loop."""
-    return ('<div class="showroom-frame" aria-hidden="true">'
-            '<i class="showroom-frame__brace"></i>'
-            '<i class="showroom-frame__brace"></i>'
-            '<i class="showroom-frame__brace"></i>'
-            '<i class="showroom-frame__signal"></i></div>')
+    """A real layered rotor shared by the six project sockets; original PK mark."""
+    arms = ''.join(
+        f'<g transform="rotate({i * 60} 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/>'
+        '<path d="M500 332V154" stroke="#070909" stroke-width="15"/>'
+        '<path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/>'
+        '<path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/>'
+        '<circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/>'
+        '<circle cx="500" cy="295" r="6" fill="#080909"/></g>' for i in range(6)
+    )
+    bolts = ''.join(
+        f'<g transform="rotate({i * 30} 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/>'
+        '<path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g>' for i in range(12)
+    )
+    return (
+        '<div class="showroom-frame" aria-hidden="true">'
+        '<svg class="mechanism-wheel" viewBox="0 0 1000 1000" focusable="false">'
+        '<defs><linearGradient id="mechanism-steel" x1="0" y1="0" x2="1" y2=".8">'
+        '<stop stop-color="#252a2b"/><stop offset=".16" stop-color="#c4c9c6"/>'
+        '<stop offset=".29" stop-color="#707674"/><stop offset=".48" stop-color="#eef0e9"/>'
+        '<stop offset=".54" stop-color="#757d7b"/><stop offset=".8" stop-color="#292e2e"/>'
+        '<stop offset="1" stop-color="#aab0ad"/></linearGradient>'
+        '<radialGradient id="mechanism-well"><stop stop-color="#191d1d"/><stop offset=".72" stop-color="#090c0d"/><stop offset="1" stop-color="#303534"/></radialGradient>'
+        '<pattern id="mechanism-ruby" width="1" height="1" patternContentUnits="objectBoundingBox">'
+        '<image href="assets/brand/red-aluminium-reconstruction.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern></defs>'
+        '<circle cx="500" cy="520" r="465" fill="#050707" stroke="#252b2c" stroke-width="20"/>'
+        '<circle cx="500" cy="500" r="464" fill="url(#mechanism-well)" stroke="url(#mechanism-steel)" stroke-width="12"/>'
+        '<circle cx="500" cy="500" r="442" fill="none" stroke="url(#mechanism-steel)" stroke-width="26"/>'
+        '<circle cx="500" cy="500" r="421" fill="none" stroke="#070909" stroke-width="8"/>'
+        '<circle cx="500" cy="500" r="413" fill="none" stroke="#a6afaa" stroke-width="3"/>'
+        '<circle cx="500" cy="500" r="400" fill="none" stroke="#9a2237" stroke-width="5" stroke-dasharray="72 137"/>'
+        '<circle cx="500" cy="500" r="369" fill="url(#mechanism-ruby)" stroke="#525b59" stroke-width="12"/>'
+        '<circle cx="500" cy="500" r="365" fill="#060809" fill-opacity=".76"/>'
+        '<g class="mechanism-rotor">'+arms+'</g>'+bolts+
+        '<circle cx="500" cy="500" r="180" fill="#070a0b" stroke="#4c5552" stroke-width="8"/>'
+        '<circle cx="500" cy="500" r="162" fill="#161a1a" stroke="url(#mechanism-steel)" stroke-width="26"/>'
+        '<circle class="mechanism-bearing" cx="500" cy="500" r="181" fill="none" stroke="#ed5262" stroke-width="4" stroke-dasharray="80 205"/>'
+        '<circle cx="500" cy="500" r="142" fill="none" stroke="#929b96" stroke-width="2"/></svg>'
+        '<div class="mechanism-hub"><img src="assets/brand/progressorkit-stamp.png" width="140" height="140" alt=""></div>'
+        '<div class="mechanism-plinth"></div></div>'
+    )
 
 
 def render_showroom(projects):
@@ -135,5 +169,5 @@ def render_showroom(projects):
         problem = f'<p>{e(project["problem"])}</p>' if project.get('problem') else ''
         technologies = ''.join(f'<li>{e(technology)}</li>' for technology in project.get('technologies', []))
         download = '<a class="cta cta--ghost" href="/download/glikemia-premium">Pobierz Glikemia Premium</a>' if identifier == 'glikemia-premium' else ''
-        cards.append(f'''<article class="showroom-card" data-project-id="{identifier}" data-category="{category}" role="group" aria-roledescription="slajd" aria-label="{e(project['name'])} · {index + 1} z {len(projects)}"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="{identifier}" href="projekty/{identifier}/" aria-label="Odkryj projekt: {e(project['name'])}" aria-expanded="false" aria-controls="slice-panel-{identifier}"><span class="showroom-card__category">{label}</span>{media}<div class="showroom-card__caption"><h3>{e(project['name'])}</h3><span class="showroom-card__stage">{e(stage)}</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-{identifier}" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body">{picture}<div class="project-slice__copy"><p>{e(project.get('summary', ''))}</p>{problem}<ul class="project-slice__technologies">{technologies}</ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/{identifier}/">Zobacz cały projekt <span aria-hidden="true">→</span></a>{download}<a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article>''')
+        cards.append(f'''<article class="showroom-card" data-project-id="{identifier}" data-category="{category}" role="group" aria-roledescription="slajd" aria-label="{e(project['name'])} · {index + 1} z {len(projects)}"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="{identifier}" href="projekty/{identifier}/" aria-label="Odkryj projekt: {e(project['name'])}" aria-expanded="false" aria-controls="slice-panel-{identifier}"><span class="showroom-card__category">{label}</span>{media}<div class="showroom-card__caption"><h3>{e(project['name'])}</h3><span class="showroom-card__stage">{e(stage)}</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-{identifier}" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body">{picture}<div class="project-slice__copy"><p>{e(project.get('summary', ''))}</p>{problem}<ul class="project-slice__technologies">{technologies}</ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/{identifier}/">Zobacz cały projekt <span aria-hidden="true">→</span></a>{download}<a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article>''')
     return f'''<section class="project-showroom section" id="projekty" data-showroom data-showroom-slices aria-labelledby="showroom-title"><div class="shell"><header class="showroom-heading"><div><span class="section-kicker">EKOSYSTEM PROGRESSKIT</span><h2 class="section-title" id="showroom-title">System połączonych światów.</h2></div><p>{len(projects)} projektów w jednym ekosystemie. Wybierz projekt, aby rozwinąć moduł.</p></header><div class="showroom-gates" data-showroom-enhancement hidden aria-label="Filtruj ekspozycję według kategorii">{''.join(gates)}</div><div class="showroom-filterbar" data-showroom-enhancement hidden><button type="button" class="showroom-all" data-showroom-category="" aria-pressed="true" aria-controls="showroom-track">Wszystkie projekty <span>{len(projects)}</span></button><p id="showroom-status" role="status" aria-live="polite" aria-atomic="true">Kolekcja: {len(projects)} projektów.</p></div><div class="showroom-viewport" data-showroom-viewport tabindex="0" role="region" aria-roledescription="karuzela" aria-label="Mechaniczna ekspozycja projektów" aria-describedby="showroom-instructions">{mechanical_field()}<div class="showroom-track" id="showroom-track">{''.join(cards)}</div></div><nav class="showroom-controls" data-showroom-enhancement hidden aria-label="Sterowanie ekspozycją"><button type="button" id="showroom-previous" data-showroom-step="-1" aria-controls="showroom-track" aria-label="Poprzedni projekt">←</button><span data-showroom-position aria-hidden="true">1 / {len(projects)}</span><button type="button" id="showroom-next" data-showroom-step="1" aria-controls="showroom-track" aria-label="Następny projekt">→</button><button class="showroom-motion-toggle" type="button" data-showroom-motion-toggle aria-pressed="false">Wstrzymaj efekty mechanizmu</button></nav><p class="showroom-instructions" id="showroom-instructions">Wybierz projekt, aby rozwinąć moduł. Szczegóły przewijają się razem ze stroną.</p><p class="showroom-catalog-link"><a href="projekty/">Wyszukaj projekt lub technologię w pełnym katalogu →</a></p></div></section>'''

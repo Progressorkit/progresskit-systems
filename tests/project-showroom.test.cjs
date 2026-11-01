@@ -462,6 +462,7 @@ test('Closing a desktop module after page scrolling restores visible focus and n
 test('Breakpoint changes and browser Back keep one disclosure and return focus outside closed content',()=>{
   const ui=mount(records,{slices:true}),card=ui.cards[1];
   ui.fire(ui.root,'click',{target:card.link});
+  ui.tick(650);
   ui.setNarrow(true);
   assert.equal(ui.active(),card);
   assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,1);
@@ -508,18 +509,18 @@ test('A module passing under a stationary pointer during page scrolling does not
   assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
 });
 
-test('Straight-guide sockets retain six unique readable faces for every actual collection size',()=>{
+test('Circular sockets retain six unique readable faces for every actual collection size',()=>{
   for(const length of [1,2,3,4,6,14])for(let active=0;active<length;active++){
     const points=Array.from({length},(_,i)=>showroom.mechanism(showroom.relative(i,active,length),length));
     const visible=points.filter(p=>p.visible);
     assert.equal(visible.length,Math.min(6,length));
     assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
     assert.deepEqual(points[active],showroom.mechanism(0,length));
-    for(const p of visible){assert.equal(p.opacity,1);assert.equal(p.scale,1);assert.ok(Math.abs(p.angle)<=1.5)}
+    for(const p of visible){assert.equal(p.opacity,1);assert.ok(p.scale>=.97&&p.scale<=1);assert.ok(Math.abs(p.angle)<=8);assert.ok(Math.abs(p.x*p.x+p.y*p.y-1)<1e-9)}
   }
 });
 
-test('A drawer changes sockets only while fully retracted, without a circular crossing path',()=>{
+test('Modules follow a continuous circular path with a six-face maximum through the rear handoff',()=>{
   for(let phase=0;phase<14;phase+=.125){
     const points=Array.from({length:14},(_,i)=>showroom.mechanism(showroom.relative(i,phase,14),14));
     const visible=points.filter(p=>p.visible&&p.opacity>0);
@@ -527,12 +528,14 @@ test('A drawer changes sockets only while fully retracted, without a circular cr
     assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
     for(const p of points)for(const k of ['x','y','scale','opacity','angle'])assert.ok(Number.isFinite(p[k]));
   }
-  assert.equal(showroom.mechanism(.5,14).opacity,0);
+  assert.equal(showroom.mechanism(-.5,14).opacity,0);
+  assert.equal(showroom.mechanism(5.5,14).opacity,0);
   const before=showroom.mechanism(.49,14),after=showroom.mechanism(.51,14);
-  assert.notEqual(before.y,after.y);assert.ok(before.opacity<.021&&after.opacity<.021);
+  assert.notEqual(before.y,after.y);assert.equal(before.opacity,1);assert.equal(after.opacity,1);
+  assert.ok(Math.hypot(after.x-before.x,after.y-before.y)<.022);
 });
 
-test('The shipped inline controller presents the first six projects on rails and reaches all fourteen',()=>{
+test('The shipped inline controller presents the first six projects around the hub and reaches all fourteen',()=>{
   const ui=mount(records,{slices:true});
   assert.deepEqual(ui.cards.filter(c=>!c.classes.has('is-orbit-hidden')).map(c=>c.dataset.projectId),records.slice(0,6).map(p=>p.id));
   for(let i=0;i<14;i++){
@@ -546,10 +549,12 @@ test('The shipped inline controller presents the first six projects on rails and
   assert.equal(ui.frames.size,0);
 });
 
-test('Selecting a visible neighboring drawer freezes the mechanism and reduced motion opens immediately',()=>{
+test('Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately',()=>{
   const ui=mount(records,{slices:true});
   ui.fire(ui.buttons[1],'click');ui.tick(155);
   const card=ui.cards[2];ui.fire(ui.root,'click',{target:card.link});
+  assert.equal(ui.frames.size,1);assert.equal(card.panel.hidden,true);
+  ui.tick(650);
   assert.equal(ui.frames.size,0);assert.equal(card.panel.hidden,false);
   const pose=ui.cards.map(c=>c.properties.get('--showroom-y'));ui.tick(1000);
   assert.deepEqual(ui.cards.map(c=>c.properties.get('--showroom-y')),pose);
@@ -558,4 +563,28 @@ test('Selecting a visible neighboring drawer freezes the mechanism and reduced m
   reduced.fire(reduced.buttons[1],'click');assert.equal(reduced.frames.size,0);
   reduced.fire(reduced.root,'click',{target:reduced.active().link});
   assert.equal(reduced.active().panel.hidden,false);
+});
+
+
+test('Rapid inline keyboard turns retain a reachable focus until the requested face arrives',()=>{
+  const ui=mount(records,{slices:true});ui.cards[0].link.focus();
+  for(let i=0;i<8;i++)ui.fire(ui.viewport,'keydown',{key:'ArrowRight'});
+  assert.equal(ui.frames.size,1);
+  assert.equal(ui.document.activeElement,ui.viewport);
+  assert.equal(ui.cards.filter(card=>!card.classes.has('is-orbit-hidden')).length,6);
+  ui.tick(650);
+  assert.equal(ui.document.activeElement,ui.active().link);
+  assert.equal(ui.active().dataset.projectId,'project-8');
+  assert.equal(ui.active().inert,false);
+  assert.equal(ui.frames.size,0);
+});
+
+test('Filtering a pending inline extrusion cancels it without leaking a hidden panel',()=>{
+  const ui=mount(records,{slices:true});
+  ui.fire(ui.root,'click',{target:ui.cards[4].link});
+  assert.equal(ui.frames.size,1);
+  ui.fire(ui.gate('mobile'),'click');ui.tick(1000);
+  assert.equal(ui.cards.some(card=>card.classes.has('is-slice-expanded')),false);
+  assert.equal(ui.cards.filter(card=>!card.classes.has('is-orbit-hidden')).length,3);
+  assert.equal(ui.frames.size,0);
 });

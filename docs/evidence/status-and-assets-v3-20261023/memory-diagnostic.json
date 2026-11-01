@@ -1,0 +1,1022 @@
+{
+  "startedAt": "2026-10-23T14:49:10.026Z",
+  "base": "http://127.0.0.1:8111/",
+  "scope": "Local synthetic preview; source and QA assertions remain unchanged.",
+  "sourceBefore": [
+    {
+      "path": "index.html",
+      "sha256": "0e44479f0c173ae694ebd817a1eb5ac3670ea78a79b6ddf2c893f1507fda30e9"
+    },
+    {
+      "path": "assets/ecosystem-system.js",
+      "sha256": "338ffd25d369447e3243de12bfeb103a87674fc62155d54806daa692e4909a0b"
+    },
+    {
+      "path": "assets/ecosystem-system.css",
+      "sha256": "07861cd4688f1a43af075794ad844a9e2a09b070beee42c5f8281b7d94ebac01"
+    },
+    {
+      "path": "assets/interface-life.js",
+      "sha256": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4"
+    },
+    {
+      "path": "assets/interface-life.css",
+      "sha256": "5d3180874a2d347b1d547c963503bacc96c209662d4f3df210b240d224853115"
+    },
+    {
+      "path": "assets/hero-space.js",
+      "sha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb"
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "sha256": "ef9ff424e8776d36569e3131599a8549a93e41f28bc5915e2b8a7a268247442a"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "sha256": "2dc6af3e01202a8fd76bd2d35c72c75baf6c205cf32e74f78503b6b8474e0cb6"
+    }
+  ],
+  "runs": [
+    {
+      "name": "exact-uninstrumented-1",
+      "instrumented": false,
+      "prefixMotion": true,
+      "samples": [
+        {
+          "label": "cold",
+          "counters": {
+            "documents": 1,
+            "nodes": 1972,
+            "jsEventListeners": 172
+          }
+        },
+        {
+          "label": "warm-before",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          }
+        },
+        {
+          "label": "block1-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block2-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block3-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block4-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        }
+      ],
+      "errors": [],
+      "strictPASS": true
+    },
+    {
+      "name": "exact-uninstrumented-2",
+      "instrumented": false,
+      "prefixMotion": true,
+      "samples": [
+        {
+          "label": "cold",
+          "counters": {
+            "documents": 1,
+            "nodes": 1972,
+            "jsEventListeners": 172
+          }
+        },
+        {
+          "label": "warm-before",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          }
+        },
+        {
+          "label": "block1-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block2-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block3-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        },
+        {
+          "label": "block4-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          }
+        }
+      ],
+      "errors": [],
+      "strictPASS": true
+    },
+    {
+      "name": "exact-snapshot",
+      "instrumented": true,
+      "prefixMotion": true,
+      "samples": [
+        {
+          "label": "cold",
+          "counters": {
+            "documents": 1,
+            "nodes": 1972,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1366
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 1972,
+            "jsEventListeners": 172
+          }
+        },
+        {
+          "label": "warm-before",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1392
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "addedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          },
+          "removedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          }
+        },
+        {
+          "label": "block1-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1392
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          },
+          "addedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          },
+          "removedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          }
+        },
+        {
+          "label": "block2-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1392
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          },
+          "addedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          },
+          "removedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          }
+        },
+        {
+          "label": "block3-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1392
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 2018,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          },
+          "addedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          },
+          "removedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          }
+        },
+        {
+          "label": "block4-30clicks-2resize",
+          "counters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "domSnapshot": [
+            {
+              "nodeCount": 1930,
+              "types": {
+                "1": 1174,
+                "3": 750,
+                "8": 4,
+                "9": 1,
+                "10": 1
+              },
+              "names": {
+                "#document": 1,
+                "html": 1,
+                "HTML": 1,
+                "HEAD": 1,
+                "#text": 750,
+                "META": 13,
+                "TITLE": 1,
+                "LINK": 18,
+                "SCRIPT": 7,
+                "BODY": 1,
+                "A": 141,
+                "HEADER": 9,
+                "DIV": 160,
+                "SPAN": 201,
+                "IMG": 8,
+                "NAV": 3,
+                "::after": 52,
+                "BUTTON": 38,
+                "NOSCRIPT": 1,
+                "MAIN": 1,
+                "SECTION": 20,
+                "::before": 61,
+                "svg": 22,
+                "title": 1,
+                "defs": 1,
+                "#comment": 4,
+                "filter": 1,
+                "feGaussianBlur": 1,
+                "feOffset": 3,
+                "feFlood": 3,
+                "feComposite": 6,
+                "feTurbulence": 1,
+                "feColorMatrix": 1,
+                "feComponentTransfer": 2,
+                "feFuncR": 1,
+                "feFuncG": 1,
+                "feFuncB": 1,
+                "feFuncA": 1,
+                "feMerge": 1,
+                "feMergeNode": 5,
+                "linearGradient": 1,
+                "stop": 3,
+                "image": 2,
+                "g": 4,
+                "ellipse": 4,
+                "path": 40,
+                "H1": 1,
+                "P": 56,
+                "H2": 10,
+                "rect": 16,
+                "circle": 25,
+                "I": 4,
+                "ARTICLE": 17,
+                "H3": 32,
+                "FIGURE": 7,
+                "FIGCAPTION": 7,
+                "UL": 17,
+                "LI": 112,
+                "DIALOG": 2,
+                "OL": 1,
+                "ASIDE": 2,
+                "H4": 2,
+                "SMALL": 3,
+                "STRONG": 4,
+                "LABEL": 6,
+                "TEXTAREA": 6,
+                "FOOTER": 1
+              },
+              "pseudos": {
+                "after": 52,
+                "before": 61
+              }
+            }
+          ],
+          "live": {
+            "elements": 1061,
+            "treeNodes": 1816,
+            "details": 6,
+            "links": 3,
+            "selected": "tax",
+            "scrollY": 1392
+          },
+          "afterSnapshotCounters": {
+            "documents": 1,
+            "nodes": 2017,
+            "jsEventListeners": 172
+          },
+          "exactGate": {
+            "documents": true,
+            "nodes": true,
+            "listeners": true
+          },
+          "addedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          },
+          "removedSnapshotNodesByType": {
+            "1:::after": 37,
+            "3:#text": 5,
+            "1:::before": 39,
+            "1:P": 2
+          }
+        }
+      ],
+      "errors": [],
+      "heapBefore": {
+        "path": "/tmp/progresskit-memory-20261023-exact-snapshot-before.heapsnapshot",
+        "bytes": 8574364,
+        "sha256": "b5932625f6942117f9a278583d7e800a528db36d080dd56c611454a0046de7f9",
+        "selectedNativeCounts": {
+          "Attr": 69,
+          "NamedNodeMap": 10,
+          "Text": 750,
+          "Comment": 4,
+          "HTMLDocument": 1,
+          "DocumentType": 1,
+          "SVGPathElement": 40,
+          "CSSStyleDeclaration": 16
+        },
+        "retainedOutsideRepository": true
+      },
+      "heapAfter": {
+        "path": "/tmp/progresskit-memory-20261023-exact-snapshot-after.heapsnapshot",
+        "bytes": 8694785,
+        "sha256": "d01b9489f0f2e22bc7b23dee68e11d50746281d23b1b4086b53882c74f436a68",
+        "selectedNativeCounts": {
+          "Attr": 69,
+          "NamedNodeMap": 10,
+          "Text": 750,
+          "Comment": 4,
+          "HTMLDocument": 1,
+          "DocumentType": 1,
+          "SVGPathElement": 40,
+          "CSSStyleDeclaration": 16
+        },
+        "retainedOutsideRepository": true
+      },
+      "strictPASS": true
+    }
+  ],
+  "browser": "155.0.8059.39",
+  "sourceAfter": [
+    {
+      "path": "index.html",
+      "sha256": "0e44479f0c173ae694ebd817a1eb5ac3670ea78a79b6ddf2c893f1507fda30e9"
+    },
+    {
+      "path": "assets/ecosystem-system.js",
+      "sha256": "338ffd25d369447e3243de12bfeb103a87674fc62155d54806daa692e4909a0b"
+    },
+    {
+      "path": "assets/ecosystem-system.css",
+      "sha256": "07861cd4688f1a43af075794ad844a9e2a09b070beee42c5f8281b7d94ebac01"
+    },
+    {
+      "path": "assets/interface-life.js",
+      "sha256": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4"
+    },
+    {
+      "path": "assets/interface-life.css",
+      "sha256": "5d3180874a2d347b1d547c963503bacc96c209662d4f3df210b240d224853115"
+    },
+    {
+      "path": "assets/hero-space.js",
+      "sha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb"
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "sha256": "ef9ff424e8776d36569e3131599a8549a93e41f28bc5915e2b8a7a268247442a"
+    },
+    {
+      "path": "scripts/qa-final-website.cjs",
+      "sha256": "2dc6af3e01202a8fd76bd2d35c72c75baf6c205cf32e74f78503b6b8474e0cb6"
+    }
+  ],
+  "sourcesUnchanged": true,
+  "finishedAt": "2026-10-23T14:50:33.240Z",
+  "finding": {
+    "status": "UNRESOLVED_MEASUREMENT",
+    "originalFullGUI": {
+      "report": "browser/report.json",
+      "pass": 92,
+      "fail": 1,
+      "before": {
+        "documents": 1,
+        "nodes": 2025,
+        "jsEventListeners": 172
+      },
+      "after": {
+        "documents": 1,
+        "nodes": 2026,
+        "jsEventListeners": 172
+      },
+      "unchanged": "The original full-GUI FAIL remains unchanged."
+    },
+    "conclusion": "The isolated interaction sequence did not reproduce growth above its warmed baseline. Counts oscillate by one node downward and back. Live DOM, snapshot types and pseudo-element totals remain constant. The original +1 cannot be assigned conclusively to a pseudo-element, font, background or detached node.",
+    "assertion": "All 12 block measurements retain exact documents/nodes/listeners <= warm-before, without tolerance.",
+    "limitations": [
+      "Prefix reproduces motion/scroll/media interactions and waits; read-only assertions and sampled computed-style reads from the full GUI are omitted. Absolute counters can consequently differ.",
+      "DOMSnapshot and exploratory heap collection are separated into the third run; the first two runs do not add DOM introspection between counter samples.",
+      "This is bounded local Chrome evidence, not proof against every possible memory leak or production behavior."
+    ]
+  },
+  "method": {
+    "browser": "/usr/bin/google-chrome",
+    "command": "node docs/evidence/status-and-assets-v3-20261023/memory-diagnostic.cjs",
+    "sequence": "Motion pause/resume and pointer interactions; graph Tax and planned-path phase; offscreen; reduced-motion reduce then no-preference; Tax click+200ms+GC cold; six roles+1440→600→1440+200ms+GC warm; four blocks of 30 role clicks + the same 2 resizes + 200ms + GC.",
+    "cleanup": "Each browser context and standalone browser closed in finally. No product files, source assertions, production/private endpoints or existing browser profile modified."
+  },
+  "probeScriptSha256": "7c44e38c98689a7f5f37e402a363f7a8a8481e5c2b6d7d022ff57eebffe92820"
+}

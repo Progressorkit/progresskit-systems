@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23T13:10:45.436399+00:00",
+  "reviewer": "/root/tax_instructions",
+  "repository": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems",
+  "baselineCommit": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "scope": "Read-only source countercheck; writes limited to preservation-review.json and preservation-review.md. No browser, Node or Python test suite rerun is attributed to this report.",
+  "parser": {
+    "name": "tinycss2",
+    "version": "1.2.1"
+  },
+  "materialPropertiesExcluded": [
+    "-webkit-text-fill-color",
+    "background",
+    "background-color",
+    "background-image",
+    "border-bottom-color",
+    "border-color",
+    "border-left-color",
+    "border-right-color",
+    "border-top-color",
+    "box-shadow",
+    "color",
+    "fill",
+    "outline-color",
+    "stroke",
+    "text-shadow"
+  ],
+  "borderOutlineMethod": "Only hex color tokens are normalized in border*/outline shorthand values. Width, style, importance and selector/context stay in the comparison.",
+  "sourceChanges": [
+    "assets/ecosystem-system.css",
+    "assets/interface-life.css"
+  ],
+  "css": [
+    {
+      "path": "assets/interface-life.css",
+      "baselineSha256": "ce22d47b5a278c4e4f6c1a13d22876ef2ad88cd0fea0c95f0fd844b8003600fb",
+      "candidateSha256": "ccb45eedeb0de25fb6573a6b9fb3afc09d2d6ef3ea2e06295a0a634e3059e242",
+      "nonMaterialDifferenceCount": 0,
+      "nonMaterialDifferences": [],
+      "nonMaterialDeclarationKeysBefore": 115,
+      "nonMaterialDeclarationKeysAfter": 115,
+      "customPropertyDeclarationsBefore": 0,
+      "customPropertyDeclarationsAfter": 0,
+      "keyframesBefore": [
+        "@keyframes interface-light",
+        "@keyframes interface-settle",
+        "@keyframes interface-sheen",
+        "@keyframes interface-rail",
+        "@keyframes interface-rail-mobile"
+      ],
+      "keyframesAfter": [
+        "@keyframes interface-light",
+        "@keyframes interface-settle",
+        "@keyframes interface-sheen",
+        "@keyframes interface-rail",
+        "@keyframes interface-rail-mobile"
+      ],
+      "parseErrors": []
+    },
+    {
+      "path": "assets/ecosystem-system.css",
+      "baselineSha256": "54bcccabb9f3aa55d48fb0483bac73501870e826ba5ddf87e9eb837c73c2d1c9",
+      "candidateSha256": "29491f3adec06e037b53169634ecd0ecbe3c2b42bdaeea2b1154870acfdcb1cb",
+      "nonMaterialDifferenceCount": 0,
+      "nonMaterialDifferences": [],
+      "nonMaterialDeclarationKeysBefore": 202,
+      "nonMaterialDeclarationKeysAfter": 202,
+      "customPropertyDeclarationsBefore": 0,
+      "customPropertyDeclarationsAfter": 0,
+      "keyframesBefore": [
+        "@keyframes ecosystem-planned-signal"
+      ],
+      "keyframesAfter": [
+        "@keyframes ecosystem-planned-signal"
+      ],
+      "parseErrors": []
+    }
+  ],
+  "preservedGroups": {
+    "javascript": {
+      "fileCount": 8,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "assets/ecosystem-system.js",
+        "assets/engineering-exhibit.js",
+        "assets/hero-space.js",
+        "assets/interface-life.js",
+        "assets/project-hologram.js",
+        "assets/project-showroom.js",
+        "assets/site-v5.js",
+        "glikemia-premium/product.js"
+      ]
+    },
+    "html": {
+      "fileCount": 24,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "404.html",
+        "glikemia-premium/index.html",
+        "index.html",
+        "progresskit-mail/index.html",
+        "projekty/adivara/index.html",
+        "projekty/glikemia-premium/index.html",
+        "projekty/gotrans360/index.html",
+        "projekty/ignira/index.html",
+        "projekty/index.html",
+        "projekty/kan-system/index.html",
+        "projekty/obserwator/index.html",
+        "projekty/progresskit-analytics/index.html",
+        "projekty/progresskit-community/index.html",
+        "projekty/progresskit-infrastructure/index.html",
+        "projekty/progresskit-mail/index.html",
+        "projekty/progresskit-systems/index.html",
+        "projekty/progresskit-tax/index.html",
+        "projekty/progresskit-translator/index.html",
+        "projekty/vaeloria/index.html",
+        "prywatnosc/index.html",
+        "templates/about-contact.html",
+        "templates/glikemia-distribution.html",
+        "templates/project-hologram.html",
+        "templates/site.html"
+      ]
+    },
+    "catalogue": {
+      "fileCount": 2,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "catalog/brand.json",
+        "catalog/projects.json"
+      ]
+    },
+    "backend": {
+      "fileCount": 9,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "analytics/Dockerfile",
+        "analytics/app.py",
+        "analytics/deploy/Caddyfile.snippet",
+        "analytics/deploy/compose.override.yaml",
+        "analytics/owner.py",
+        "analytics/preview.py",
+        "analytics/product.py",
+        "analytics/requirements.txt",
+        "analytics/security_headers.py"
+      ]
+    },
+    "unchangedCss": {
+      "fileCount": 17,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "assets/brand-atmosphere.css",
+        "assets/category-worlds.css",
+        "assets/delivery.css",
+        "assets/engineering-exhibit.css",
+        "assets/hero-monument.css",
+        "assets/hero.css",
+        "assets/home-atmosphere.css",
+        "assets/progresskit-product-shell.css",
+        "assets/project-hologram.css",
+        "assets/project-mechanism.css",
+        "assets/project-showroom.css",
+        "assets/project-slices.css",
+        "assets/site-v4.css",
+        "assets/site-v5.css",
+        "assets/visual-acceptance.css",
+        "glikemia-premium/product.css",
+        "progresskit-mail/mail.css"
+      ]
+    },
+    "footerDependencies": {
+      "fileCount": 6,
+      "changedFiles": [],
+      "status": "PASS",
+      "paths": [
+        "templates/site.html",
+        "assets/site-v4.css",
+        "assets/site-v5.css",
+        "assets/visual-acceptance.css",
+        "assets/home-atmosphere.css",
+        "assets/brand-atmosphere.css"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "assets/interface-life.css nonmaterial geometry/motion preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "assets/ecosystem-system.css nonmaterial geometry/motion preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "javascript byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "html byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "catalogue byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "backend byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "unchangedCss byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "footerDependencies byte preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS custom properties unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Footer markup and new selector boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "Candidate inputs unchanged during this evidence write",
+      "status": "PASS"
+    }
+  ],
+  "immutableFiles": [
+    {
+      "path": "assets/ecosystem-system.js",
+      "baselineSha256": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+      "candidateSha256": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+      "unchanged": true
+    },
+    {
+      "path": "assets/engineering-exhibit.js",
+      "baselineSha256": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+      "candidateSha256": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+      "unchanged": true
+    },
+    {
+      "path": "assets/hero-space.js",
+      "baselineSha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+      "candidateSha256": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+      "unchanged": true
+    },
+    {
+      "path": "assets/interface-life.js",
+      "baselineSha256": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+      "candidateSha256": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-hologram.js",
+      "baselineSha256": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+      "candidateSha256": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-showroom.js",
+      "baselineSha256": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+      "candidateSha256": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+      "unchanged": true
+    },
+    {
+      "path": "assets/site-v5.js",
+      "baselineSha256": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+      "candidateSha256": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+      "unchanged": true
+    },
+    {
+      "path": "glikemia-premium/product.js",
+      "baselineSha256": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+      "candidateSha256": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+      "unchanged": true
+    },
+    {
+      "path": "404.html",
+      "baselineSha256": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6",
+      "candidateSha256": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6",
+      "unchanged": true
+    },
+    {
+      "path": "glikemia-premium/index.html",
+      "baselineSha256": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9",
+      "candidateSha256": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9",
+      "unchanged": true
+    },
+    {
+      "path": "index.html",
+      "baselineSha256": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419",
+      "candidateSha256": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419",
+      "unchanged": true
+    },
+    {
+      "path": "progresskit-mail/index.html",
+      "baselineSha256": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d",
+      "candidateSha256": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/adivara/index.html",
+      "baselineSha256": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d",
+      "candidateSha256": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/glikemia-premium/index.html",
+      "baselineSha256": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c",
+      "candidateSha256": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/gotrans360/index.html",
+      "baselineSha256": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d",
+      "candidateSha256": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/ignira/index.html",
+      "baselineSha256": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82",
+      "candidateSha256": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/index.html",
+      "baselineSha256": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e",
+      "candidateSha256": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/kan-system/index.html",
+      "baselineSha256": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604",
+      "candidateSha256": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/obserwator/index.html",
+      "baselineSha256": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d",
+      "candidateSha256": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-analytics/index.html",
+      "baselineSha256": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce",
+      "candidateSha256": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-community/index.html",
+      "baselineSha256": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe",
+      "candidateSha256": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-infrastructure/index.html",
+      "baselineSha256": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c",
+      "candidateSha256": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-mail/index.html",
+      "baselineSha256": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c",
+      "candidateSha256": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-systems/index.html",
+      "baselineSha256": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6",
+      "candidateSha256": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-tax/index.html",
+      "baselineSha256": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509",
+      "candidateSha256": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/progresskit-translator/index.html",
+      "baselineSha256": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5",
+      "candidateSha256": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5",
+      "unchanged": true
+    },
+    {
+      "path": "projekty/vaeloria/index.html",
+      "baselineSha256": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18",
+      "candidateSha256": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18",
+      "unchanged": true
+    },
+    {
+      "path": "prywatnosc/index.html",
+      "baselineSha256": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c",
+      "candidateSha256": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c",
+      "unchanged": true
+    },
+    {
+      "path": "templates/about-contact.html",
+      "baselineSha256": "abfb40e191419ce53d70dc06d946958d0d08ea8552d61078a9b27c3d49dbc861",
+      "candidateSha256": "abfb40e191419ce53d70dc06d946958d0d08ea8552d61078a9b27c3d49dbc861",
+      "unchanged": true
+    },
+    {
+      "path": "templates/glikemia-distribution.html",
+      "baselineSha256": "5f654e7385f92eed5c20a83733788fce6e8888875990f105d30a6b96cd4ec215",
+      "candidateSha256": "5f654e7385f92eed5c20a83733788fce6e8888875990f105d30a6b96cd4ec215",
+      "unchanged": true
+    },
+    {
+      "path": "templates/project-hologram.html",
+      "baselineSha256": "673374646e489e3aa34c69a56cfdb08506e58e45d554d2125de945f69adb0f01",
+      "candidateSha256": "673374646e489e3aa34c69a56cfdb08506e58e45d554d2125de945f69adb0f01",
+      "unchanged": true
+    },
+    {
+      "path": "templates/site.html",
+      "baselineSha256": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314",
+      "candidateSha256": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/brand.json",
+      "baselineSha256": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+      "candidateSha256": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+      "unchanged": true
+    },
+    {
+      "path": "catalog/projects.json",
+      "baselineSha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+      "candidateSha256": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/Dockerfile",
+      "baselineSha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9",
+      "candidateSha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/app.py",
+      "baselineSha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8",
+      "candidateSha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/deploy/Caddyfile.snippet",
+      "baselineSha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68",
+      "candidateSha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/deploy/compose.override.yaml",
+      "baselineSha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4",
+      "candidateSha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/owner.py",
+      "baselineSha256": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5",
+      "candidateSha256": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/preview.py",
+      "baselineSha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243",
+      "candidateSha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/product.py",
+      "baselineSha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529",
+      "candidateSha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/requirements.txt",
+      "baselineSha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+      "candidateSha256": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+      "unchanged": true
+    },
+    {
+      "path": "analytics/security_headers.py",
+      "baselineSha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01",
+      "candidateSha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01",
+      "unchanged": true
+    },
+    {
+      "path": "assets/brand-atmosphere.css",
+      "baselineSha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+      "candidateSha256": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+      "unchanged": true
+    },
+    {
+      "path": "assets/category-worlds.css",
+      "baselineSha256": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+      "candidateSha256": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+      "unchanged": true
+    },
+    {
+      "path": "assets/delivery.css",
+      "baselineSha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+      "candidateSha256": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+      "unchanged": true
+    },
+    {
+      "path": "assets/engineering-exhibit.css",
+      "baselineSha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+      "candidateSha256": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+      "unchanged": true
+    },
+    {
+      "path": "assets/hero-monument.css",
+      "baselineSha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+      "candidateSha256": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+      "unchanged": true
+    },
+    {
+      "path": "assets/hero.css",
+      "baselineSha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+      "candidateSha256": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+      "unchanged": true
+    },
+    {
+      "path": "assets/home-atmosphere.css",
+      "baselineSha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+      "candidateSha256": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+      "unchanged": true
+    },
+    {
+      "path": "assets/progresskit-product-shell.css",
+      "baselineSha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+      "candidateSha256": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-hologram.css",
+      "baselineSha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+      "candidateSha256": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-mechanism.css",
+      "baselineSha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "candidateSha256": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-showroom.css",
+      "baselineSha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+      "candidateSha256": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+      "unchanged": true
+    },
+    {
+      "path": "assets/project-slices.css",
+      "baselineSha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+      "candidateSha256": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+      "unchanged": true
+    },
+    {
+      "path": "assets/site-v4.css",
+      "baselineSha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+      "candidateSha256": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+      "unchanged": true
+    },
+    {
+      "path": "assets/site-v5.css",
+      "baselineSha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+      "candidateSha256": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+      "unchanged": true
+    },
+    {
+      "path": "assets/visual-acceptance.css",
+      "baselineSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+      "candidateSha256": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+      "unchanged": true
+    },
+    {
+      "path": "glikemia-premium/product.css",
+      "baselineSha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+      "candidateSha256": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+      "unchanged": true
+    },
+    {
+      "path": "progresskit-mail/mail.css",
+      "baselineSha256": "4f32049e5d909b2ae8425d0b282ad08b9b9ee85636790ccf150036d2a0b8367e",
+      "candidateSha256": "4f32049e5d909b2ae8425d0b282ad08b9b9ee85636790ccf150036d2a0b8367e",
+      "unchanged": true
+    }
+  ],
+  "customProperties": {
+    "cssFileCount": 19,
+    "declarationCount": 172,
+    "changedFiles": [],
+    "files": [
+      {
+        "path": "assets/brand-atmosphere.css",
+        "declarations": 2,
+        "unchanged": true
+      },
+      {
+        "path": "assets/category-worlds.css",
+        "declarations": 45,
+        "unchanged": true
+      },
+      {
+        "path": "assets/delivery.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/ecosystem-system.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/engineering-exhibit.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/hero-monument.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/hero.css",
+        "declarations": 1,
+        "unchanged": true
+      },
+      {
+        "path": "assets/home-atmosphere.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/interface-life.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/progresskit-product-shell.css",
+        "declarations": 20,
+        "unchanged": true
+      },
+      {
+        "path": "assets/project-hologram.css",
+        "declarations": 0,
+        "unchanged": true
+      },
+      {
+        "path": "assets/project-mechanism.css",
+        "declarations": 6,
+        "unchanged": true
+      },
+      {
+        "path": "assets/project-showroom.css",
+        "declarations": 13,
+        "unchanged": true
+      },
+      {
+        "path": "assets/project-slices.css",
+        "declarations": 23,
+        "unchanged": true
+      },
+      {
+        "path": "assets/site-v4.css",
+        "declarations": 18,
+        "unchanged": true
+      },
+      {
+        "path": "assets/site-v5.css",
+        "declarations": 26,
+        "unchanged": true
+      },
+      {
+        "path": "assets/visual-acceptance.css",
+        "declarations": 14,
+        "unchanged": true
+      },
+      {
+        "path": "glikemia-premium/product.css",
+        "declarations": 2,
+        "unchanged": true
+      },
+      {
+        "path": "progresskit-mail/mail.css",
+        "declarations": 2,
+        "unchanged": true
+      }
+    ]
+  },
+  "footer": {
+    "markup": [
+      {
+        "path": "templates/site.html",
+        "unchanged": true,
+        "footerSha256": "d0c64c1e64d754fe8cd791014be28e0df8bce2590fba56ae1037a5e3cb325380"
+      },
+      {
+        "path": "index.html",
+        "unchanged": true,
+        "footerSha256": "3af9e86887c46754c8123c49007dd3588ebf7192a43ab425ae7b4f4c16b5a137"
+      }
+    ],
+    "newFooterSelectorsInEditedSheets": [],
+    "changeApplied": false,
+    "originalLandscapeStatus": "UNCONFIRMED_NOT_IDENTIFIED",
+    "visualAcceptanceOfRequestedFooter": "NOT_PERFORMED"
+  },
+  "specificityClosures": [
+    {
+      "finding": "Light showroom kicker on the new silver surface",
+      "status": "FOUND_FIXED",
+      "sourceRule": "#main .project-showroom .section-kicker { color:#721b2b; }"
+    },
+    {
+      "finding": "Dark-red Kontakt text on its red background under keyboard focus",
+      "status": "FOUND_FIXED",
+      "sourceRule": ".topbar .nav a[href=\"#kontakt\"]:hover,.topbar .nav a[href=\"#kontakt\"]:focus-visible { color:#fff; }"
+    }
+  ],
+  "forcedColorsAndPrint": {
+    "status": "SOURCE_REVIEWED",
+    "note": "Material-only forced-color additions reset foreground/background/border/outline colors. Print additions in the graph reset badge/console colors. They do not add layout or motion differences; this is not a fresh emulated-media/browser acceptance claim."
+  },
+  "boundedAssetHuntSupplement": {
+    "status": "REQUESTED_ORIGINALS_UNCONFIRMED",
+    "relatedArtifact": "docs/evidence/material-correction-v3-20261023/asset-provenance.json",
+    "earlierCoverage": "Earlier search covered referenced provenance documents/briefs, attachments, selected top-level Pobrane/Obrazy metadata and directly related portfolio copies. It did not inspect all local/ignored files or all generated images.",
+    "generatedImages": {
+      "scope": "Known ProgressKit generated-image folder/reference and exact known mockup filenames; descriptive material/reference filename inventory only. No arbitrary image-content scan of other products or all generic UUID images.",
+      "knownProjectImage": {
+        "path": "/home/pawe/.codex/generated_images/01a13ea4-42f0-7373-8dd2-2db61ad473e3/exec-90bdf079-d534-433d-b023-64c95cf6698c.png",
+        "sha256": "954bdff17d5ae0b0d8e54e59605c1ac6c27b70c7c15d3f0e3dfc8fc0517e4d86",
+        "width": 1983,
+        "height": 793,
+        "bytes": 2212542
+      },
+      "classification": "IDENTIFIED_PREVIOUS_HERO_EDIT_NOT_FOOTER_ORIGINAL",
+      "additionalConfirmedRequestedOriginals": 0,
+      "allGeneratedImagesVisuallyInspected": false
+    },
+    "ignoredRepositoryReferences": {
+      "root": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/.local",
+      "scope": "Name/metadata inventory includes ignored .local explicitly; product screenshot subtrees are excluded. Four existing public release directories contain the same five known brand/material assets. Archive contents were not expanded.",
+      "releaseDirectoryCount": 4,
+      "selectedImageCopies": 20,
+      "uniqueSelectedAssets": 5,
+      "groups": [
+        {
+          "name": "progressorkit-primary.png",
+          "sha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532",
+          "bytes": 1189068,
+          "width": 1254,
+          "height": 1254,
+          "copyCount": 4,
+          "paths": [
+            ".local/approved-copy-v2-20261023-release/public/assets/brand/progressorkit-primary.png",
+            ".local/final-website-20261022-release/public/assets/brand/progressorkit-primary.png",
+            ".local/visual-acceptance-v2-20261022-release/public/assets/brand/progressorkit-primary.png",
+            ".local/visual-correction-v3-20261023-release/public/assets/brand/progressorkit-primary.png"
+          ],
+          "classification": "Known existing ProgressKit logo.",
+          "confirmedRequestedOriginal": false,
+          "currentSiteSourcePath": "assets/brand/progressorkit-primary.png",
+          "matchesCurrentSiteSource": true
+        },
+        {
+          "name": "og-progresskit.jpg",
+          "sha256": "4a2bebfed7c8e177f1c5f119dce3f7121140b0d0f583cf180a941a91a68a34dd",
+          "bytes": 120634,
+          "width": 1200,
+          "height": 627,
+          "copyCount": 4,
+          "paths": [
+            ".local/approved-copy-v2-20261023-release/public/og-progresskit.jpg",
+            ".local/final-website-20261022-release/public/og-progresskit.jpg",
+            ".local/visual-acceptance-v2-20261022-release/public/og-progresskit.jpg",
+            ".local/visual-correction-v3-20261023-release/public/og-progresskit.jpg"
+          ],
+          "classification": "Existing social preview with blue-lit PK logo, visually inspected; not a forest/mountains image.",
+          "confirmedRequestedOriginal": false,
+          "currentSiteSourcePath": "og-progresskit.jpg",
+          "matchesCurrentSiteSource": true
+        },
+        {
+          "name": "hero-landscape-v5.webp",
+          "sha256": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad",
+          "bytes": 201050,
+          "width": 1983,
+          "height": 793,
+          "copyCount": 4,
+          "paths": [
+            ".local/approved-copy-v2-20261023-release/public/assets/brand/hero-landscape-v5.webp",
+            ".local/final-website-20261022-release/public/assets/brand/hero-landscape-v5.webp",
+            ".local/visual-acceptance-v2-20261022-release/public/assets/brand/hero-landscape-v5.webp",
+            ".local/visual-correction-v3-20261023-release/public/assets/brand/hero-landscape-v5.webp"
+          ],
+          "classification": "Known earlier HERO edit; mountains/moon/wall, no forest; not a footer original.",
+          "confirmedRequestedOriginal": false,
+          "currentSiteSourcePath": "assets/brand/hero-landscape-v5.webp",
+          "matchesCurrentSiteSource": true
+        },
+        {
+          "name": "progressorkit-stamp.png",
+          "sha256": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+          "bytes": 1202603,
+          "width": 1254,
+          "height": 1254,
+          "copyCount": 4,
+          "paths": [
+            ".local/approved-copy-v2-20261023-release/public/assets/brand/progressorkit-stamp.png",
+            ".local/final-website-20261022-release/public/assets/brand/progressorkit-stamp.png",
+            ".local/visual-acceptance-v2-20261022-release/public/assets/brand/progressorkit-stamp.png",
+            ".local/visual-correction-v3-20261023-release/public/assets/brand/progressorkit-stamp.png"
+          ],
+          "classification": "Known existing ProgressKit logo.",
+          "confirmedRequestedOriginal": false,
+          "currentSiteSourcePath": "assets/brand/progressorkit-stamp.png",
+          "matchesCurrentSiteSource": true
+        },
+        {
+          "name": "stone-material.svg",
+          "sha256": "f3d99545fc29a467f2f55decd89f71bfcc52dd33c1c156f33827103ce74ea938",
+          "bytes": 2692,
+          "viewBox": "0 0 1024 512",
+          "copyCount": 4,
+          "paths": [
+            ".local/approved-copy-v2-20261023-release/public/assets/brand/stone-material.svg",
+            ".local/final-website-20261022-release/public/assets/brand/stone-material.svg",
+            ".local/visual-acceptance-v2-20261022-release/public/assets/brand/stone-material.svg",
+            ".local/visual-correction-v3-20261023-release/public/assets/brand/stone-material.svg"
+          ],
+          "classification": "Existing SVG stone texture for text; not red aluminium or a footer landscape.",
+          "confirmedRequestedOriginal": false,
+          "currentSiteSourcePath": "assets/brand/stone-material.svg",
+          "matchesCurrentSiteSource": true
+        }
+      ],
+      "archiveContentsInspected": false
+    },
+    "otherIgnoredPaths": "Only bytecode-cache directories were listed alongside .local; no application cache/data search was performed.",
+    "attachmentsInventory": {
+      "fileCount": 149,
+      "txtCount": 148,
+      "jsonCount": 1,
+      "imageCount": 0,
+      "filesWithoutSuffix": 0
+    },
+    "mntDataExists": false,
+    "noExhaustiveAbsenceClaim": true,
+    "noReplacementGenerated": true,
+    "noCopyIntoAssets": true,
+    "footerDecision": "Keep the existing footer unchanged. The known954b... HERO edit is not evidence identifying the requested footer original."
+  },
+  "sourceFreeze": {
+    "fileCount": 62,
+    "before": {
+      "404.html": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6",
+      "analytics/Dockerfile": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9",
+      "analytics/app.py": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8",
+      "analytics/deploy/Caddyfile.snippet": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68",
+      "analytics/deploy/compose.override.yaml": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4",
+      "analytics/owner.py": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5",
+      "analytics/preview.py": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243",
+      "analytics/product.py": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529",
+      "analytics/requirements.txt": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+      "analytics/security_headers.py": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01",
+      "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+      "assets/category-worlds.css": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+      "assets/delivery.css": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+      "assets/ecosystem-system.css": "29491f3adec06e037b53169634ecd0ecbe3c2b42bdaeea2b1154870acfdcb1cb",
+      "assets/ecosystem-system.js": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+      "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+      "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+      "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+      "assets/hero-space.js": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+      "assets/hero.css": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+      "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+      "assets/interface-life.css": "ccb45eedeb0de25fb6573a6b9fb3afc09d2d6ef3ea2e06295a0a634e3059e242",
+      "assets/interface-life.js": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+      "assets/progresskit-product-shell.css": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+      "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+      "assets/project-hologram.js": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+      "assets/project-mechanism.css": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+      "assets/project-showroom.js": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+      "assets/project-slices.css": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+      "assets/site-v4.css": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+      "assets/site-v5.css": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+      "assets/site-v5.js": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+      "assets/visual-acceptance.css": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+      "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+      "catalog/projects.json": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+      "glikemia-premium/index.html": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9",
+      "glikemia-premium/product.css": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+      "glikemia-premium/product.js": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+      "index.html": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419",
+      "progresskit-mail/index.html": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d",
+      "progresskit-mail/mail.css": "4f32049e5d909b2ae8425d0b282ad08b9b9ee85636790ccf150036d2a0b8367e",
+      "projekty/adivara/index.html": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d",
+      "projekty/glikemia-premium/index.html": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c",
+      "projekty/gotrans360/index.html": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d",
+      "projekty/ignira/index.html": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82",
+      "projekty/index.html": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e",
+      "projekty/kan-system/index.html": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604",
+      "projekty/obserwator/index.html": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d",
+      "projekty/progresskit-analytics/index.html": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce",
+      "projekty/progresskit-community/index.html": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe",
+      "projekty/progresskit-infrastructure/index.html": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c",
+      "projekty/progresskit-mail/index.html": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c",
+      "projekty/progresskit-systems/index.html": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6",
+      "projekty/progresskit-tax/index.html": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509",
+      "projekty/progresskit-translator/index.html": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5",
+      "projekty/vaeloria/index.html": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18",
+      "prywatnosc/index.html": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c",
+      "templates/about-contact.html": "abfb40e191419ce53d70dc06d946958d0d08ea8552d61078a9b27c3d49dbc861",
+      "templates/glikemia-distribution.html": "5f654e7385f92eed5c20a83733788fce6e8888875990f105d30a6b96cd4ec215",
+      "templates/project-hologram.html": "673374646e489e3aa34c69a56cfdb08506e58e45d554d2125de945f69adb0f01",
+      "templates/site.html": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314"
+    },
+    "after": {
+      "404.html": "f8728e35d7db539e2243c82d753aa31c5ea34411c7ffa9eb3ff94b0a96b1f8b6",
+      "analytics/Dockerfile": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9",
+      "analytics/app.py": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8",
+      "analytics/deploy/Caddyfile.snippet": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68",
+      "analytics/deploy/compose.override.yaml": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4",
+      "analytics/owner.py": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5",
+      "analytics/preview.py": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243",
+      "analytics/product.py": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529",
+      "analytics/requirements.txt": "ed58f33ba0120a0986bdabd19a6be0c75ece9f7187abae199fadc122177a4879",
+      "analytics/security_headers.py": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01",
+      "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+      "assets/category-worlds.css": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+      "assets/delivery.css": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+      "assets/ecosystem-system.css": "29491f3adec06e037b53169634ecd0ecbe3c2b42bdaeea2b1154870acfdcb1cb",
+      "assets/ecosystem-system.js": "e32c2d8186d2ec7a58d8a9bfeb629be1e7860b4893eefc2d48446637766aad66",
+      "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+      "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+      "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+      "assets/hero-space.js": "216f76420735c34025f58463fe9878fea73df0cfb6d8251d6ef0378ae44952fb",
+      "assets/hero.css": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+      "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+      "assets/interface-life.css": "ccb45eedeb0de25fb6573a6b9fb3afc09d2d6ef3ea2e06295a0a634e3059e242",
+      "assets/interface-life.js": "829577f0a8e56186734a93efb0125239e2689e0ed208cb9c89e0bfd22ca550a4",
+      "assets/progresskit-product-shell.css": "9e8e9560ea6b8a36e062a29144ced477a0359a3fe66cded8d08b7f14cd486557",
+      "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+      "assets/project-hologram.js": "52b7c883bc0c2bcd54cc50c66870edd61014009f028901db97a4b547993d89ae",
+      "assets/project-mechanism.css": "8c0b3e4bb57b9fe33f05be094c6fbb8f4d6daca40fbb2af2fd2434c94a3f22c1",
+      "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+      "assets/project-showroom.js": "528ec0baad00a27310f0dd0ec8eec4317227b69b9b1e159415953a30855e474a",
+      "assets/project-slices.css": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+      "assets/site-v4.css": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+      "assets/site-v5.css": "dd01345f9506914e9d2b8a3859364ea827f6582c1fe76ef566745a1970cd7b83",
+      "assets/site-v5.js": "fdc081f07dff37e4148efc3e7346d072ccb85d383098f172f0100df168bf78ec",
+      "assets/visual-acceptance.css": "93bc2a1fd39791111d0c278c948f9d815454dd437b0a785ce04eac7c8a988a56",
+      "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+      "catalog/projects.json": "2d96a6b5fec190c2da32b28aa3a1ba2f3b491066664ce0620a9d7c70bf3da07d",
+      "glikemia-premium/index.html": "9d974aacf1d77bccc17228bcf2d2a68ee289427f46f1d576616e6b80fb2896e9",
+      "glikemia-premium/product.css": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+      "glikemia-premium/product.js": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+      "index.html": "89e98d1f4f4823128c2d41e4e5b5aacd4d690971aaae51e8c59bc9444b25a419",
+      "progresskit-mail/index.html": "a3d1b08ce59d59d3f3a62e133f10ef8f3940c45cad192853bb7dc7167840e98d",
+      "progresskit-mail/mail.css": "4f32049e5d909b2ae8425d0b282ad08b9b9ee85636790ccf150036d2a0b8367e",
+      "projekty/adivara/index.html": "0b7645bf25b5dc1aa6207419811ed258c34463c7ac4e40123f26345014a4514d",
+      "projekty/glikemia-premium/index.html": "e0a78aeaf3d3ade649757ecb9ff956cc378a1bce7e834ab0d2b8da9224feea1c",
+      "projekty/gotrans360/index.html": "42d219d697d554bd0c78f2615f2a94cdec384084c6ea1b1733a46f6406dbea7d",
+      "projekty/ignira/index.html": "17b060cad05bf18f894ff7fb1024e91159187ac88374e9b41d286aaf33ec9f82",
+      "projekty/index.html": "8993105c33592f057b9266935d3490a69ef853340aa58dff8075fbc0d760317e",
+      "projekty/kan-system/index.html": "fd80f1f1b83d041eab21483401c8335321827203d956d601f20d8ca3819a6604",
+      "projekty/obserwator/index.html": "5f41d06eced2ec6567fed16ecafae645728b504afdb1940e13d855c94272b69d",
+      "projekty/progresskit-analytics/index.html": "5a85c1cfdaccbcec36b3e1ef2139bbc275ecd038d7ae3cd1f5bbe220acc100ce",
+      "projekty/progresskit-community/index.html": "a3ed3974e20b67f7fcea5aa8e3c9ee31be6a02de3e3d2f216e3676ec11ae45fe",
+      "projekty/progresskit-infrastructure/index.html": "48c86d435d00983ffc2e9bff271299cd848eeb69e3c4d9f18d977b8b51e5ab8c",
+      "projekty/progresskit-mail/index.html": "1a64d51a1e1380a2d9cc7e639a98b5744ef6c82bdabce9d558d48413dfd3990c",
+      "projekty/progresskit-systems/index.html": "09705421c06a174891a69430656269151846f0fc5fbc1a5819a5bba076d356f6",
+      "projekty/progresskit-tax/index.html": "bc172d30b0b0f93a8219ff7aa5d7e981bb3d05e8650a139a36d902b06e3f2509",
+      "projekty/progresskit-translator/index.html": "01d52641b7b9733ea9217874f8ba93fbb565dc811c7efb0018b1af8fdeb2eee5",
+      "projekty/vaeloria/index.html": "2377e0707b42443be9e6af04b95cec5c93b0a8e21a334679ed9adce1b91e4d18",
+      "prywatnosc/index.html": "2f68d4468e6e1592cd44ccd966144be3f05eb87adfcbb5563966287b7ce4e57c",
+      "templates/about-contact.html": "abfb40e191419ce53d70dc06d946958d0d08ea8552d61078a9b27c3d49dbc861",
+      "templates/glikemia-distribution.html": "5f654e7385f92eed5c20a83733788fce6e8888875990f105d30a6b96cd4ec215",
+      "templates/project-hologram.html": "673374646e489e3aa34c69a56cfdb08506e58e45d554d2125de945f69adb0f01",
+      "templates/site.html": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314"
+    },
+    "unchangedDuringReview": true
+  },
+  "totals": {
+    "PASS": 11,
+    "FAIL": 0
+  },
+  "limitations": [
+    "AST checks do not prove pixel contrast, final appearance, interaction timing, physical-device performance or publication readiness.",
+    "No test suite or browser run is reported as newly executed here.",
+    "Asset search remains bounded and non-exhaustive; no original footer image is identified."
+  ],
+  "writeScope": [
+    "docs/evidence/material-correction-v3-20261023/preservation-review.json",
+    "docs/evidence/material-correction-v3-20261023/preservation-review.md"
+  ]
+}

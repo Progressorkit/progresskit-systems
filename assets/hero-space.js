@@ -32,7 +32,9 @@
     if (toggle) {
       toggle.disabled = reduced.matches;
       toggle.setAttribute('aria-pressed', String(userPaused));
-      toggle.textContent = reduced.matches ? 'Ruch sceny wyłączony' : userPaused ? 'Wznów ruch sceny' : 'Wstrzymaj ruch sceny';
+      const label = reduced.matches ? 'Ruch sceny wyłączony' : userPaused ? 'Wznów ruch sceny' : 'Wstrzymaj ruch sceny';
+      if (toggle.firstChild?.nodeType === 3) toggle.firstChild.nodeValue = label;
+      else if (toggle.textContent !== label) toggle.textContent = label;
       toggle.title = reduced.matches ? 'Ruch wyłączony przez ustawienie ograniczenia animacji w systemie.' : '';
     }
     if (!enabled || !inView || !fine.matches) reset();

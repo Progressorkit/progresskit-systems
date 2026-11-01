@@ -119,32 +119,7 @@ body {
 .project-showroom .showroom-filterbar p,
 .project-showroom .showroom-controls>span { color:#d1dce3; font-size:14px; }
 .project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }
-.project-showroom .showroom-card .project-slice {
-  color:#f0f4f6;
-  border-color:#96a5ae;
-  border-bottom-color:#18242d;
-  background:
-    repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 4px),
-    linear-gradient(120deg,#45515a,#2c373f 75%);
-  box-shadow:inset 1px 1px 0 #edf6fc40,inset -1px -3px 0 #0d182066,3px 5px 0 #15212a,4px 6px 0 #65778160,0 12px 22px #080e1459;
-}
-.project-showroom .showroom-card.is-active .project-slice {
-  border-color:#f49aad;
-  border-bottom-color:#a83d53;
-  box-shadow:inset 1px 1px 0 #edf6fc47,inset -1px -3px 0 #5d1e3166,3px 5px 0 #19202a,4px 6px 0 #ab526660,0 12px 22px #080e1459;
-}
-.project-showroom .showroom-card .project-slice h3 { color:#f5f7f8; font-size:clamp(20px,1.65vw,24px); line-height:1.25; text-shadow:0 1px 1px #0c161e; }
-.project-showroom .showroom-card .project-slice .showroom-card__category { color:#dce5eb; font-size:12px; }
-.project-showroom .showroom-card .project-slice .showroom-card__badge,
-.project-showroom .showroom-card .project-slice .showroom-card__badge>span { color:#cfdee7; border-color:#92a3af; }
-.project-showroom .showroom-card .project-slice .showroom-card__stage {
-  color:#f0e8ed;
-  border-color:#9d8a96;
-  background:#2c2932;
-  font-size:12px;
-  line-height:1.5;
-}
-.project-showroom .showroom-card .project-slice .showroom-card__action { color:#ffc6d2; font-size:14px; line-height:1.45; }
+/* Enhanced module faces are owned by project-mechanism.css. */
 .project-showroom .project-slice__panel { color:#eef3f6; border-color:#91a0aa; background:linear-gradient(120deg,#2a363f,#202c35); box-shadow:inset 0 1px 0 #e5f0f526; }
 .project-showroom .project-slice__copy p,
 .project-showroom .project-slice__copy p:first-child { color:#e0e8ed; font-size:16px; line-height:1.75; }
@@ -268,6 +243,7 @@ footer { color:#d3dfe7; border-top:1px solid #718795; background:linear-gradient
 .card-top p,.drawer-content p,.drawer-content li,.case-section p,.case-section ul,.privacy p { color:#d2dfe8; font-size:16px; }
 .card-stage,.status-chip { color:#eaf2f8; border-color:#94aabb; background:#293f50; font-size:13px; }
 .card-category,.tech-line,.updated,.source-list code { color:#c9dbe8; font-size:12px; }
+.source-list code { overflow-wrap:anywhere; }
 .project-drawer>summary { color:#ffd5e4; font-size:15px; }
 .project-drawer[open]>summary { background:#324957; }
 .case-index a,.case-content a,.privacy a,.breadcrumb a { color:#ffd5e3; }
@@ -343,3 +319,53 @@ footer { color:#d3dfe7; border-top:1px solid #718795; background:linear-gradient
     text-shadow:none;
   }
 }
+
+/* Approved reconstruction: decorative panorama above the existing page footer. */
+body>footer {
+  padding-top:0;
+  padding-inline:0;
+  padding-bottom:42px;
+  color:#d8d8d2;
+  border-top-color:#8b8b82;
+  background:
+    repeating-linear-gradient(0deg,#f0f0e706 0 1px,transparent 1px 4px),
+    linear-gradient(115deg,#343431,#20201e 65%,#2c2c29);
+}
+body>footer::before {
+  content:"";
+  display:block;
+  width:100%;
+  aspect-ratio:1672 / 150;
+  min-height:128px;
+  margin-bottom:32px;
+  border-bottom:1px solid #8b8b82;
+  background:#252820 url("brand/footer-forest-mountains-reconstruction.png") center / cover no-repeat;
+  pointer-events:none;
+}
+body>footer .footer-brand strong { color:#e8e8e1; }
+body>footer .footer__links { color:#d2d2ca; }
+body>footer .footer__links a,body>footer.pk-footer a { color:#e4e4dc; }
+body>footer a:hover,body>footer a:focus-visible { color:#ffd0c5; text-decoration:underline; }
+@media (max-width:700px) {
+  body>footer { padding-bottom:32px; }
+  body>footer::before { min-height:88px; margin-bottom:24px; }
+}
+@media (forced-colors:active) {
+  body>footer {
+    color:CanvasText;
+    background:Canvas;
+    border-color:CanvasText;
+    box-shadow:none;
+  }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links { color:CanvasText; }
+  body>footer .footer__links a,body>footer.pk-footer a,
+  body>footer a:hover,body>footer a:focus-visible { color:LinkText; }
+}
+@media print {
+  body>footer { color:#111; background:#fff; border-color:#777; }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links,
+  body>footer .footer__links a,body>footer.pk-footer a { color:#111; }
+}
+/* End shared reconstructed footer panorama. */

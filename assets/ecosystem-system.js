@@ -18,11 +18,19 @@
       const name = node.querySelector('.ecosystem-node__name');
       const status = node.querySelector('.delivery-state');
       if (!button || !detail || !name || !status || button.dataset.ecosystemSelect !== identifier || button.getAttribute('aria-controls') !== detail.id) return null;
-      const stages = new Map([['W rozwoju', 'development'], ['Prototyp', 'prototype'], ['Planowane', 'planned']]);
+      const stages = new Map([['W rozwoju', 'development'], ['Prototyp', 'prototype'], ['Wersja testowa', 'testing'], ['Planowane', 'planned']]);
       const stage = stages.get(status.textContent.trim()) || 'unconfirmed';
       return { identifier, node, button, detail, name, status, stage, next: detail.nextSibling };
     });
     if (records.some(record => !record)) return;
+
+    const consoleName = document.createElement('p');
+    consoleName.className = 'ecosystem-console__name';
+    const consoleStatus = document.createElement('p');
+    consoleStatus.className = 'ecosystem-console__state';
+    const nameText = document.createTextNode('');
+    const statusText = document.createTextNode('');
+    consoleName.append(nameText); consoleStatus.append(statusText);
 
     const byIdentifier = new Map(records.map(record => [record.identifier, record]));
     const edges = Array.from(wires.querySelectorAll('[data-ecosystem-edge]')).filter(edge =>
@@ -126,13 +134,9 @@
       panel.hidden = !active || mobile.matches;
       panel.dataset.ecosystemStage = active ? active.stage : '';
       if (active && !mobile.matches) {
-        const name = document.createElement('p');
-        name.className = 'ecosystem-console__name';
-        name.textContent = active.name.textContent;
-        const status = document.createElement('p');
-        status.className = 'ecosystem-console__state';
-        status.textContent = active.status.textContent;
-        panel.append(name, status, active.detail);
+        nameText.nodeValue = active.name.textContent;
+        statusText.nodeValue = active.status.textContent;
+        panel.append(consoleName, consoleStatus, active.detail);
       }
       map.dataset.selectedNode = selected || '';
       syncMotion();

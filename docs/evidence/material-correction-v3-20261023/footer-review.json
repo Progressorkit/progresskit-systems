@@ -1,0 +1,150 @@
+{
+  "base": "http://127.0.0.1:8111/",
+  "baseline": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "checks": [
+    {
+      "name": "1920: complete untouched footer fits real viewport",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 961.1875,
+          "width": 1920,
+          "height": 119,
+          "top": 961.1875,
+          "right": 1920,
+          "bottom": 1080.1875,
+          "left": 0
+        },
+        "height": 1080,
+        "width": 1920,
+        "headerBottom": 79,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920: footer markup and computed materials equal 9322e4e",
+      "status": "PASS",
+      "details": {
+        "elements": 14,
+        "htmlSha256": "3af9e86887c46754c8123c49007dd3588ebf7192a43ab425ae7b4f4c16b5a137",
+        "computedStylesSha256": "f78c82faa5120a87214278e571360577031a723f6e6085c2df9dec0c2421cd1b",
+        "baselineCssOnly": "git9322e4e",
+        "footerRestoration": "NOT_PERFORMED_ORIGINAL_UNCONFIRMED"
+      }
+    },
+    {
+      "name": "1440: complete untouched footer fits real viewport",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 781.03125,
+          "width": 1440,
+          "height": 119,
+          "top": 781.03125,
+          "right": 1440,
+          "bottom": 900.03125,
+          "left": 0
+        },
+        "height": 900,
+        "width": 1440,
+        "headerBottom": 79,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440: footer markup and computed materials equal 9322e4e",
+      "status": "PASS",
+      "details": {
+        "elements": 14,
+        "htmlSha256": "3af9e86887c46754c8123c49007dd3588ebf7192a43ab425ae7b4f4c16b5a137",
+        "computedStylesSha256": "f78c82faa5120a87214278e571360577031a723f6e6085c2df9dec0c2421cd1b",
+        "baselineCssOnly": "git9322e4e",
+        "footerRestoration": "NOT_PERFORMED_ORIGINAL_UNCONFIRMED"
+      }
+    },
+    {
+      "name": "390: complete untouched footer fits real viewport",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 593.859375,
+          "width": 390,
+          "height": 250.0625,
+          "top": 593.859375,
+          "right": 390,
+          "bottom": 843.921875,
+          "left": 0
+        },
+        "height": 844,
+        "width": 390,
+        "headerBottom": 65,
+        "overflow": false
+      }
+    },
+    {
+      "name": "390: footer markup and computed materials equal 9322e4e",
+      "status": "PASS",
+      "details": {
+        "elements": 14,
+        "htmlSha256": "3af9e86887c46754c8123c49007dd3588ebf7192a43ab425ae7b4f4c16b5a137",
+        "computedStylesSha256": "f78c82faa5120a87214278e571360577031a723f6e6085c2df9dec0c2421cd1b",
+        "baselineCssOnly": "git9322e4e",
+        "footerRestoration": "NOT_PERFORMED_ORIGINAL_UNCONFIRMED"
+      }
+    },
+    {
+      "name": "320: complete untouched footer fits real viewport",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 318.40625,
+          "width": 320,
+          "height": 250.0625,
+          "top": 318.40625,
+          "right": 320,
+          "bottom": 568.46875,
+          "left": 0
+        },
+        "height": 568,
+        "width": 320,
+        "headerBottom": 65,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320: footer markup and computed materials equal 9322e4e",
+      "status": "PASS",
+      "details": {
+        "elements": 14,
+        "htmlSha256": "3af9e86887c46754c8123c49007dd3588ebf7192a43ab425ae7b4f4c16b5a137",
+        "computedStylesSha256": "f78c82faa5120a87214278e571360577031a723f6e6085c2df9dec0c2421cd1b",
+        "baselineCssOnly": "git9322e4e",
+        "footerRestoration": "NOT_PERFORMED_ORIGINAL_UNCONFIRMED"
+      }
+    },
+    {
+      "name": "No runtime errors in current footer captures",
+      "status": "PASS",
+      "details": {
+        "errors": 0
+      }
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1920-footer.png",
+    "1440-footer.png",
+    "390-footer.png",
+    "320-footer.png"
+  ],
+  "method": "Current screenshots use real single viewports after natural scroll. Baseline footer computed styles use the same unchanged HTML/JS and only the two CSS responses from git9322e4e in a separate browser page; baseline does not produce acceptance screenshots.",
+  "browser": "155.0.8059.39",
+  "totals": {
+    "PASS": 9,
+    "FAIL": 0
+  }
+}

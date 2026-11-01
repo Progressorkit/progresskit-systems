@@ -14,8 +14,8 @@ import unicodedata
 from urllib.parse import quote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-AUDIT_DATE = date(2026, 10, 15)
-STAGES = {'Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny'}
+AUDIT_DATE = date(2026, 10, 23)
+STAGES = {'Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Wersja testowa', 'Finalizacja', 'Dostępny APK', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny'}
 CATEGORIES = {
     'mobile': ('Aplikacje', '▯'), 'saas': ('SaaS', '▦'),
     'platforms': ('Platformy', '◎'), 'games': ('Gry', '◇'),
@@ -411,11 +411,11 @@ def render(content, title, description, path, prefix):
     nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
     page_styles=''
     if not path and not prefix:
-        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery','project-mechanism'))
+        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
         page_styles+='\n  <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>'
     page_styles+=('\n  ' if page_styles else '')+f'<link rel="stylesheet" href="{prefix}assets/visual-acceptance.css">'
     if not path and not prefix:
-        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system'))
+        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish','project-mechanism'))
     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
     if not page_styles:
         template=template.replace('  @@PAGE_STYLES@@\n','')

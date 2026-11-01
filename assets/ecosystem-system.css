@@ -2,7 +2,7 @@
 #ekosystem[data-ecosystem-system] .delivery-map-intro {
   max-width:82ch;
   margin-bottom:30px;
-  color:#dbe5ec;
+  color:#dadada;
 }
 #ekosystem .ecosystem-system {
   position:relative;
@@ -10,23 +10,22 @@
   display:block;
   min-width:0;
   padding:28px 20px;
-  border:1px solid #718591;
-  border-top-color:#a0aeb7;
+  border:1px solid #7b7b7b;
+  border-top-color:#bdbdbd;
   border-radius:3px;
   background:
-    repeating-linear-gradient(0deg,#e4f2ff04 0 1px,transparent 1px 5px),
-    radial-gradient(ellipse at 47% 38%,#43525b60,transparent 63%),
-    linear-gradient(135deg,#23313a,#182630 62%,#283640);
-  box-shadow:inset 1px 1px 0 #edf5fa21,inset 0 -8px 16px #080f184d,0 7px 0 #13212b,0 8px 0 #66808c66;
+    linear-gradient(115deg,#201819e8,#141414de 60%,#4b141cbd),
+    url("brand/red-aluminium-reconstruction.jpg") center / cover no-repeat;
+  box-shadow:inset 1px 1px 0 #f0f0f02e,inset 0 -8px 16px #07070780,0 7px 0 #0d0d0d,0 8px 0 #89898980;
 }
 #ekosystem .ecosystem-system::before {
   content:"";
   position:absolute;
   z-index:-1;
   inset:12px;
-  border:1px solid #8399a51f;
-  border-left-color:#a8bec044;
-  border-right-color:#a8bec044;
+  border:1px solid #aaaaaa2e;
+  border-left-color:#c4c4c455;
+  border-right-color:#c4c4c455;
   pointer-events:none;
 }
 #ekosystem .ecosystem-system .delivery-flow,
@@ -49,14 +48,14 @@
   min-width:0;
   margin:0 0 30px;
   padding:0;
-  border:1px solid #8395a2;
-  border-bottom-color:#18252f;
+  border:1px solid #bdbdbd;
+  border-bottom-color:#5b5b5b;
   border-radius:2px;
-  color:#f1f5f7;
+  color:#181818;
   background:
-    repeating-linear-gradient(0deg,#ffffff06 0 1px,transparent 1px 4px),
-    linear-gradient(125deg,#47565f,#2a3b47 72%);
-  box-shadow:inset 1px 1px 0 #e8f1f942,inset -1px -3px 0 #0a18234d,4px 5px 0 #0e1d28,5px 6px 0 #8294a04d,0 12px 18px #060e1633;
+    repeating-linear-gradient(0deg,#ffffff4d 0 1px,#4848480d 1px 2px,transparent 2px 4px),
+    linear-gradient(118deg,#e2e2e2,#b6b6b6 31%,#f0f0f0 48%,#cbcbcb 72%,#bdbdbd);
+  box-shadow:inset 1px 1px 0 #ffffffb3,inset -1px -3px 0 #52525259,4px 5px 0 #0f0f0f,5px 6px 0 #b3b3b370,0 12px 18px #05050580;
   transition:border-color 180ms ease,box-shadow 180ms ease;
 }
 #ekosystem .ecosystem-node::before {
@@ -64,9 +63,11 @@
   position:absolute;
   z-index:-1;
   inset:-5px 10px 5px -5px;
-  border:1px solid #a0b2bc66;
-  border-top-color:#a5b8c2;
-  background:linear-gradient(125deg,#53646c66,#26384444);
+  border:1px solid #a3a3a3a6;
+  border-top-color:#dcdcdc;
+  background:
+    repeating-linear-gradient(0deg,#ffffff33 0 1px,#0000000c 1px 2px,transparent 2px 4px),
+    linear-gradient(118deg,#c4c4c4,#989898 30%,#dedede 50%,#a2a2a2 75%,#7e7e7e);
   clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,12px 100%,0 calc(100% - 12px));
   pointer-events:none;
 }
@@ -77,16 +78,16 @@
   right:-7px;
   width:12px;
   height:24px;
-  border:1px solid #a5b7c4;
-  background:linear-gradient(90deg,#1b2b36,#7d939f 45%,#203440);
-  box-shadow:2px 2px 0 #0d1924;
+  border:1px solid #bfbfbf;
+  background:linear-gradient(90deg,#5b5b5b,#e5e5e5 45%,#7b7b7b);
+  box-shadow:2px 2px 0 #0c0c0c;
   pointer-events:none;
 }
 #ekosystem .ecosystem-node__heading,
 #ekosystem .ecosystem-node .delivery-flow__heading {
   margin:0;
   padding:0;
-  color:#f2f6f8;
+  color:#181818;
   font-size:inherit;
 }
 #ekosystem .ecosystem-node__trigger {
@@ -107,32 +108,32 @@
 }
 #ekosystem .ecosystem-node__name {
   display:block;
-  color:#f2f6f8;
+  color:#181818;
   font-size:clamp(20px,1.65vw,24px);
   font-weight:650;
   line-height:1.35;
-  text-shadow:0 2px 1px #10202c;
+  text-shadow:0 1px 0 #ffffff99;
   overflow-wrap:anywhere;
 }
 #ekosystem .ecosystem-node .delivery-state {
   display:inline-block;
   margin:14px 0 0;
   padding:3px 8px;
-  border:1px solid #aa93a6;
-  color:#f7eaf0;
-  background:#392f3c;
+  border:1px solid #7a7a7a;
+  color:#f2f2f2;
+  background:#393939;
   font:500 12px/1.6 var(--mono,monospace);
 }
 #ekosystem .ecosystem-node__detail {
   min-width:0;
   padding:0 20px 20px;
-  color:#dce7ee;
+  color:#181818;
 }
 #ekosystem .ecosystem-node__detail[hidden],
 #ekosystem .ecosystem-console[hidden] { display:none; }
 #ekosystem .ecosystem-node__detail .delivery-flow__description {
   margin:0;
-  color:#dce7ee;
+  color:#181818;
   font-size:16px;
   line-height:1.8;
   overflow-wrap:anywhere;
@@ -142,7 +143,7 @@
   min-height:44px;
   margin-top:10px;
   padding-top:6px;
-  color:#ffd1df;
+  color:#181818;
   font-size:14px;
   line-height:1.6;
   overflow-wrap:anywhere;
@@ -152,28 +153,36 @@
   display:block;
   margin:0;
   padding:0 20px 16px;
-  color:#f5c1d0;
+  color:#181818;
   font:500 12px/1.7 var(--mono,monospace);
 }
 #ekosystem .ecosystem-system .delivery-independent>h3 {
   margin:36px 0 26px;
-  color:#e4edf3;
+  color:#dedede;
   font-size:19px;
   line-height:1.5;
 }
 #ekosystem .ecosystem-node.is-selected {
-  border-color:#e8a3b7;
-  border-left-color:#ffbbc9;
-  box-shadow:inset 3px 0 0 #c34f70,inset 0 1px 0 #eaf4fa47,4px 5px 0 #241c2a,5px 6px 0 #bd7a925e,0 12px 22px #080d174d;
+  background:
+    repeating-linear-gradient(0deg,#f5f5f538 0 1px,#6e17200a 1px 2px,transparent 2px 4px),
+    linear-gradient(118deg,#d39496,#e7d4ce 15%,#c5c5c5 32%,#e9e9e9 48%,#d3a5a2 80%,#bf777e);
+  border-color:#c2444b;
+  border-left-color:#f3aaa0;
+  box-shadow:inset 3px 0 0 #a12c38,inset 0 1px 0 #ffe0d2a6,4px 5px 0 #2c1012,5px 6px 0 #b9575680,0 12px 22px #04040480;
 }
-#ekosystem .ecosystem-node.is-selected::before { border-top-color:#f6aabd; }
-#ekosystem .ecosystem-node.is-selected::after { border-color:#f8c4d2; background:linear-gradient(90deg,#392732,#cf788e,#412d3c); }
-#ekosystem .ecosystem-node__trigger[aria-expanded="true"] .ecosystem-node__name { color:#fff3f7; }
+#ekosystem .ecosystem-node.is-selected::before {
+  border-top-color:#f3c1b4;
+  background:
+    repeating-linear-gradient(0deg,#ffffff33 0 1px,#6e17200c 1px 2px,transparent 2px 4px),
+    linear-gradient(118deg,#d7a6ac,#bfbfbf 22%,#dfdfdf 48%,#d0a6aa 80%,#ab5965);
+}
+#ekosystem .ecosystem-node.is-selected::after { border-color:#f0b9ad; background:linear-gradient(90deg,#65242c,#df9e98,#8f3740); }
+#ekosystem .ecosystem-node__trigger[aria-expanded="true"] .ecosystem-node__name { color:#181818; }
 #ekosystem .ecosystem-node__trigger:focus-visible {
   z-index:3;
-  outline:3px solid #ffd6e3;
+  outline:3px solid #f4d7bd;
   outline-offset:6px;
-  background:#6b435926;
+  background:#ffffff14;
 }
 #ekosystem .ecosystem-wires { display:none; }
 #ekosystem .ecosystem-system.is-enhanced .ecosystem-wires {
@@ -188,7 +197,7 @@
 }
 #ekosystem .ecosystem-wires [data-ecosystem-edge] {
   fill:none;
-  stroke:#9fb0bd;
+  stroke:#c5c5c5;
   stroke-width:1.6;
   stroke-linecap:square;
   stroke-linejoin:bevel;
@@ -197,7 +206,7 @@
   opacity:.68;
 }
 #ekosystem .ecosystem-wires [data-ecosystem-edge].is-flowing {
-  stroke:#f6a1b9;
+  stroke:#de7376;
   stroke-width:2;
   stroke-dasharray:4 20;
   opacity:.95;
@@ -211,17 +220,18 @@
   z-index:3;
   min-width:0;
   padding:26px 24px 24px;
-  border:1px solid #9bafbc;
-  border-top:3px solid #dd8aa5;
-  color:#eef5fa;
+  border:1px solid #a3a3a3;
+  border-top:3px solid #bb4850;
+  color:#ebebeb;
   background:
-    repeating-linear-gradient(0deg,#e8f5ff03 0 1px,transparent 1px 4px),
-    linear-gradient(130deg,#263a49,#172a38 76%);
-  box-shadow:inset 1px 1px 0 #d4e9f02e,inset 0 -3px 0 #0b1c27,6px 7px 0 #111f2b,7px 8px 0 #8196a660,0 18px 28px #080f1952;
+    repeating-linear-gradient(0deg,#f2f2f20a 0 1px,transparent 1px 4px),
+    radial-gradient(ellipse at 92% 0,#a42e3438,transparent 62%),
+    linear-gradient(130deg,#3b3b3b,#232323 76%);
+  box-shadow:inset 1px 1px 0 #ebebeb3d,inset 0 -3px 0 #141414,6px 7px 0 #141414,7px 8px 0 #9b9b9b80,0 18px 28px #05050599;
 }
 #ekosystem .ecosystem-console__name {
   margin:0 0 12px;
-  color:#f1f7fa;
+  color:#f0f0f0;
   font-size:clamp(21px,1.9vw,27px);
   font-weight:650;
   line-height:1.3;
@@ -231,42 +241,46 @@
   display:inline-block;
   margin:0 0 18px;
   padding:3px 8px;
-  border:1px solid #a58b9c;
-  color:#f5e7ef;
-  background:#362e3d;
+  border:1px solid #808080;
+  color:#f1f1f1;
+  background:#3b3b3b;
   font:500 12px/1.6 var(--mono,monospace);
 }
 #ekosystem [data-ecosystem-stage="development"] .delivery-state,
 #ekosystem .ecosystem-console[data-ecosystem-stage="development"] .ecosystem-console__state {
-  border-color:#d39baa;
-  color:#ffe9ef;
-  background:#4b3040;
+  border-color:#b46965;
+  color:#f2f2f2;
+  background:#6d2830;
 }
 #ekosystem [data-ecosystem-stage="prototype"] .delivery-state,
-#ekosystem .ecosystem-console[data-ecosystem-stage="prototype"] .ecosystem-console__state {
-  border-color:#a7b5df;
-  color:#edf1ff;
-  background:#303a53;
+#ekosystem .ecosystem-console[data-ecosystem-stage="prototype"] .ecosystem-console__state,
+#ekosystem [data-ecosystem-stage="testing"] .delivery-state,
+#ekosystem .ecosystem-console[data-ecosystem-stage="testing"] .ecosystem-console__state {
+  border-color:#b49965;
+  color:#f3f3f3;
+  background:#66522c;
 }
 #ekosystem [data-ecosystem-stage="planned"] .delivery-state,
 #ekosystem .ecosystem-console[data-ecosystem-stage="planned"] .ecosystem-console__state {
   border-style:dashed;
-  border-color:#a4bac9;
-  color:#e0ebf2;
-  background:#283b49;
+  border-color:#989898;
+  color:#efefef;
+  background:#434343;
 }
-#ekosystem .ecosystem-console .ecosystem-node__detail { padding:0; }
-#ekosystem .ecosystem-console .delivery-flow__description { color:#e0eaf1; }
+#ekosystem .ecosystem-console .ecosystem-node__detail { padding:0; color:#dedede; }
+#ekosystem .ecosystem-console .delivery-project-link { color:#f2bdb3; }
+#ekosystem .ecosystem-console .delivery-flow__description { color:#dedede; }
 #ekosystem[data-ecosystem-system] .delivery-roadmap {
   position:relative;
   margin-top:38px;
-  border-left:3px solid #cb829c;
-  background:linear-gradient(105deg,#2b3e4c,#1b2d3b);
+  border-left:3px solid #b34348;
+  color:#dedede;
+  background:linear-gradient(105deg,#3b3b3b,#292929);
 }
 @keyframes ecosystem-planned-signal { to { stroke-dashoffset:-48; } }
 @media (hover:hover) {
-  #ekosystem .ecosystem-node:hover { border-color:#c8d8e3; box-shadow:inset 1px 1px 0 #f0f6fb66,4px 5px 0 #0e1d28,5px 6px 0 #a1b0ba80,0 12px 20px #080f1940; }
-  #ekosystem .ecosystem-node:hover .ecosystem-node__name { color:#fff0f5; }
+  #ekosystem .ecosystem-node:hover { border-color:#f0f0f0; box-shadow:inset 1px 1px 0 #ffffffa6,4px 5px 0 #0f0f0f,5px 6px 0 #b5b5b599,0 12px 20px #06060680; }
+  #ekosystem .ecosystem-node:hover .ecosystem-node__name { color:#181818; }
 }
 @media (min-width:901px) {
   #ekosystem .ecosystem-system.is-enhanced { min-height:720px; padding:0; }
@@ -314,11 +328,16 @@
 @media (forced-colors:active) {
   #ekosystem .ecosystem-system,#ekosystem .ecosystem-node,#ekosystem .ecosystem-node::before,
   #ekosystem .ecosystem-node::after,#ekosystem .ecosystem-console,
+  #ekosystem .ecosystem-node:is(.is-selected,:hover),
+  #ekosystem .ecosystem-node:is(.is-selected,:hover)::before,
+  #ekosystem .ecosystem-node:is(.is-selected,:hover)::after,
+  #ekosystem :is(.ecosystem-node,.ecosystem-console)[data-ecosystem-stage] :is(.delivery-state,.ecosystem-console__state),
   #ekosystem .ecosystem-node .delivery-state,#ekosystem .ecosystem-console__state,
   #ekosystem[data-ecosystem-system] .delivery-roadmap {
     color:CanvasText; background:Canvas; border-color:CanvasText; box-shadow:none;
   }
   #ekosystem .ecosystem-node__name,#ekosystem .ecosystem-node__trigger[aria-expanded="true"] .ecosystem-node__name,
+  #ekosystem .ecosystem-node:hover .ecosystem-node__name,
   #ekosystem .ecosystem-console__name,#ekosystem .ecosystem-node__detail .delivery-flow__description,
   #ekosystem .ecosystem-node .delivery-flow__relationship { color:CanvasText; text-shadow:none; }
   #ekosystem .ecosystem-node__detail .delivery-project-link { color:LinkText; }
@@ -333,4 +352,7 @@
   #ekosystem .ecosystem-system.is-enhanced .ecosystem-wires,#ekosystem .ecosystem-node::before,#ekosystem .ecosystem-node::after { display:none; }
   #ekosystem .ecosystem-system.is-enhanced .ecosystem-console { position:static; width:auto; margin:20px 0; color:#111; background:none; box-shadow:none; }
   #ekosystem .ecosystem-system .ecosystem-node__detail[hidden] { display:block; }
+  #ekosystem :is(.ecosystem-node,.ecosystem-console)[data-ecosystem-stage] :is(.delivery-state,.ecosystem-console__state) { color:#111; background:none; border-color:#777; }
+  #ekosystem .ecosystem-console__name,#ekosystem .ecosystem-console .delivery-flow__description,
+  #ekosystem .ecosystem-console .delivery-project-link { color:#111; }
 }

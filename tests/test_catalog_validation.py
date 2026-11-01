@@ -1,5 +1,6 @@
 """Offline catalog boundary tests using synthetic records and temporary assets."""
 import copy
+from datetime import timedelta
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -71,9 +72,15 @@ class CatalogValidationTests(unittest.TestCase):
 
     def test_review_date_cannot_exceed_explicit_audit_date(self):
         data = catalog()
-        data['asOf'] = '2026-10-16'
+        data['asOf'] = (BUILDER.AUDIT_DATE + timedelta(days=1)).isoformat()
         self.assertRejected(data)
-        self.assertEqual('2026-10-15', BUILDER.AUDIT_DATE.isoformat())
+        self.assertEqual('2026-10-23', BUILDER.AUDIT_DATE.isoformat())
+
+    def test_review_and_evidence_dates_accept_the_explicit_audit_boundary(self):
+        data = catalog()
+        data['asOf'] = BUILDER.AUDIT_DATE.isoformat()
+        data['projects'][0]['updatedAt'] = BUILDER.AUDIT_DATE.isoformat()
+        self.assertEqual([], BUILDER.validate_catalog(data))
 
     def test_evidence_date_requires_strict_calendar_date(self):
         for value in ('20261014', '2026-W42-3', '2026-10-14T00:00:00', '2026-02-30',
@@ -85,7 +92,8 @@ class CatalogValidationTests(unittest.TestCase):
 
     def test_evidence_cannot_be_later_than_review(self):
         data = catalog()
-        data['projects'][0]['updatedAt'] = '2026-10-16'
+        data['asOf'] = BUILDER.AUDIT_DATE.isoformat()
+        data['projects'][0]['updatedAt'] = (BUILDER.AUDIT_DATE + timedelta(days=1)).isoformat()
         self.assertRejected(data)
 
     def test_projects_require_nonempty_array(self):
@@ -141,7 +149,9 @@ class CatalogValidationTests(unittest.TestCase):
                 self.assertRejected(data)
 
     def test_stage_types_and_unknown_values_do_not_raise(self):
-        for value in ([], {}, True, 2, 'Released'):
+        for value in ([], {}, True, 2, 'Released', 'Stable', 'Commercial',
+                      'wersja testowa', 'WERSJA TESTOWA', 'Wersja testowa ',
+                      'Dostepny APK', '<img src=x onerror=alert(1)>'):
             with self.subTest(value=value):
                 data = catalog()
                 data['projects'][0]['stage'] = value
@@ -149,6 +159,13 @@ class CatalogValidationTests(unittest.TestCase):
         data = catalog()
         data['projects'][0].update(stage=None, coverage='verified')
         self.assertRejected(data)
+
+    def test_approved_factual_stages_are_accepted_exactly(self):
+        for stage in ('Wersja testowa', 'Finalizacja', 'Dostępny APK'):
+            with self.subTest(stage=stage):
+                data = catalog()
+                data['projects'][0]['stage'] = stage
+                self.assertEqual([], BUILDER.validate_catalog(data))
 
     def test_text_arrays_require_array_of_nonempty_strings(self):
         for key in BUILDER.LISTS:

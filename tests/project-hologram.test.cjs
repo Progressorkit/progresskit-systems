@@ -164,6 +164,27 @@ test('normalization handles wrappers, duplicates and invalid media without inven
   assert.deepEqual(rows[0].gallery, []);
 });
 
+test('approved factual stages survive normalization and render unchanged as text', () => {
+  for (const stage of ['Wersja testowa', 'Finalizacja', 'Dostępny APK']) {
+    const rows = normalizeProjects([project('alpha', {stage})], base);
+    assert.equal(rows[0].stage, stage);
+    const h = harness({rows, reduced:true});
+    h.open();
+    assert.equal(h.nodes.stage.textContent, stage);
+  }
+});
+
+test('unknown, case-altered and executable stages keep the unconfirmed fallback', () => {
+  for (const stage of ['Stable', 'Commercial', 'wersja testowa', 'WERSJA TESTOWA',
+    'Wersja testowa ', 'Dostepny APK', '<img src=x onerror=alert(1)>']) {
+    const rows = normalizeProjects([project('alpha', {stage})], base);
+    assert.equal(rows[0].stage, null);
+    const h = harness({rows, reduced:true});
+    h.open();
+    assert.equal(h.nodes.stage.textContent, 'Etap do potwierdzenia');
+  }
+});
+
 test('unknown IDs never populate or open a dialog; safe real anchors remain a fallback', () => {
   const h = harness();
   h.open('unknown', null);

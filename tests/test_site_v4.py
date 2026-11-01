@@ -138,7 +138,9 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         captions = ' '.join(image['caption'] for image in project['gallery']).lower()
         self.assertIn('rzeczywisty ekran', captions)
         self.assertIn('zamazane', captions)
-        self.assertIn('nie potwierdza bieżącego działania skrzynki', self.mail)
+        self.assertIn('Wersja testowa', self.mail)
+        self.assertIn('bez ponowienia w audycie z 23.10.2026', self.mail)
+        self.assertIn('publicznego linku pobrania Mail nie potwierdzono', self.mail)
 
     def test_product_pages_share_brand_navigation_and_contact(self):
         shell = (ROOT / 'assets/progresskit-product-shell.css').read_text()

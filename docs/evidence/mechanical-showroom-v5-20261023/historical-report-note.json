@@ -1,0 +1,10 @@
+{
+  "affectedFile": "docs/evidence/status-and-assets-v3-20261023/internal-links.json",
+  "action": "The copied checker initially retained its old hardcoded output path and overwrote this historical link-only report during the current sprint.",
+  "originalSha256FromUnchangedHistoricalManifest": "537e9514bab89a2c3fdec955af11fa57f366906d26d491ccb2a6d398d9d61071",
+  "overwrittenSha256": "eae6ebbc67757d96376210d5c72895b598eae626287870aed03ce7bbe708dbf0",
+  "originalBytes": 131015,
+  "recovery": "No exact pre-sprint copy of this untracked report was available. It was not reconstructed or represented as original. Its former manifest checksum no longer matches.",
+  "correctCurrentReport": "docs/evidence/mechanical-showroom-v5-20261023/internal-links.json",
+  "scope": "One generated link-check artifact only. Historical browser/report.json with the +1 DOM failure and source/catalog data were not modified by this checker."
+}

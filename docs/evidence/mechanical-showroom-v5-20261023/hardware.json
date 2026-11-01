@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-23T18:25:35.460212+00:00",
+  "host": {
+    "productName": "20L8S57601",
+    "productVersion": "ThinkPad T480s"
+  },
+  "desktop": "Local real Chrome headless on this ThinkPad; not a manual visual sign-off or GPU/FPS benchmark",
+  "androidPhysical": {
+    "status": "BLOCKED",
+    "observation": "adb devices -l returned an empty device list",
+    "actions": "No install, uninstall, data clear or device mutation"
+  },
+  "mobileEvidence": "Chrome touch/mobile emulation at 390x844 and 320x568"
+}

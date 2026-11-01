@@ -1,0 +1,452 @@
+
+> test
+> node --test tests/*.test.cjs
+
+TAP version 13
+# Subtest: Polish search ignores accents, letter case and redundant whitespace
+ok 1 - Polish search ignores accents, letter case and redundant whitespace
+  ---
+  duration_ms: 3.914102
+  type: 'test'
+  ...
+# Subtest: Every search word must match; unknown query returns an empty result
+ok 2 - Every search word must match; unknown query returns an empty result
+  ---
+  duration_ms: 0.775263
+  type: 'test'
+  ...
+# Subtest: Category, technology and stage combine, and technology matching is exact
+ok 3 - Category, technology and stage combine, and technology matching is exact
+  ---
+  duration_ms: 0.629368
+  type: 'test'
+  ...
+# Subtest: Unknown stage is distinct from implemented maturity levels
+ok 4 - Unknown stage is distinct from implemented maturity levels
+  ---
+  duration_ms: 0.35749
+  type: 'test'
+  ...
+# Subtest: Share links preserve deployment subpath, campaign and anchor while roundtripping filters
+ok 5 - Share links preserve deployment subpath, campaign and anchor while roundtripping filters
+  ---
+  duration_ms: 2.732572
+  type: 'test'
+  ...
+# Subtest: Reset removes filter parameters without losing campaign context
+ok 6 - Reset removes filter parameters without losing campaign context
+  ---
+  duration_ms: 0.724328
+  type: 'test'
+  ...
+# Subtest: Search treats markup as text and limits restored query length
+ok 7 - Search treats markup as text and limits restored query length
+  ---
+  duration_ms: 0.43297
+  type: 'test'
+  ...
+# Subtest: Opening another drawer and then closing it leaves a restorable single project state
+ok 8 - Opening another drawer and then closing it leaves a restorable single project state
+  ---
+  duration_ms: 0.464378
+  type: 'test'
+  ...
+# Subtest: Filtering a project closes its drawer and clearing filters does not resurrect an unlinked drawer
+ok 9 - Filtering a project closes its drawer and clearing filters does not resurrect an unlinked drawer
+  ---
+  duration_ms: 0.761977
+  type: 'test'
+  ...
+# Subtest: Hover cannot switch category while crossing another row or tapping a touchscreen
+ok 10 - Hover cannot switch category while crossing another row or tapping a touchscreen
+  ---
+  duration_ms: 1.356381
+  type: 'test'
+  ...
+# Subtest: Keyboard activation retains native disclosure behavior after a mouse hover
+ok 11 - Keyboard activation retains native disclosure behavior after a mouse hover
+  ---
+  duration_ms: 0.598531
+  type: 'test'
+  ...
+# Subtest: A touch pointer leaving on a hybrid laptop cannot trigger the mouse close timer
+ok 12 - A touch pointer leaving on a hybrid laptop cannot trigger the mouse close timer
+  ---
+  duration_ms: 0.276546
+  type: 'test'
+  ...
+# Subtest: Local pause clears queued parallax and blocks later pointer updates
+ok 13 - Local pause clears queued parallax and blocks later pointer updates
+  ---
+  duration_ms: 6.355466
+  type: 'test'
+  ...
+# Subtest: Resume enables fresh pointer work while touch remains native
+ok 14 - Resume enables fresh pointer work while touch remains native
+  ---
+  duration_ms: 3.002783
+  type: 'test'
+  ...
+# Subtest: Reduced motion cannot be overridden by the scene button
+ok 15 - Reduced motion cannot be overridden by the scene button
+  ---
+  duration_ms: 4.392109
+  type: 'test'
+  ...
+# Subtest: Visibility, intersection and page restoration preserve an explicit pause
+ok 16 - Visibility, intersection and page restoration preserve an explicit pause
+  ---
+  duration_ms: 2.017905
+  type: 'test'
+  ...
+# Subtest: Offscreen, hidden and coarse-pointer transitions cancel queued work
+ok 17 - Offscreen, hidden and coarse-pointer transitions cancel queued work
+  ---
+  duration_ms: 2.368281
+  type: 'test'
+  ...
+# Subtest: Shared mechanism pause cancels queued hero light and blocks pointer updates until resumed
+ok 18 - Shared mechanism pause cancels queued hero light and blocks pointer updates until resumed
+  ---
+  duration_ms: 1.798834
+  type: 'test'
+  ...
+# Subtest: Desktop hero stops behind later chapters while mobile hero has its own visibility
+ok 19 - Desktop hero stops behind later chapters while mobile hero has its own visibility
+  ---
+  duration_ms: 2.986711
+  type: 'test'
+  ...
+# Subtest: decorative quality respects narrow viewport, data saving and small device budgets
+ok 20 - decorative quality respects narrow viewport, data saving and small device budgets
+  ---
+  duration_ms: 3.316908
+  type: 'test'
+  ...
+# Subtest: user controls, accessibility and page lifecycle each stop decorative motion
+ok 21 - user controls, accessibility and page lifecycle each stop decorative motion
+  ---
+  duration_ms: 0.709973
+  type: 'test'
+  ...
+# Subtest: only same-origin catalogue routes and local raster media become URLs
+ok 22 - only same-origin catalogue routes and local raster media become URLs
+  ---
+  duration_ms: 6.229031
+  type: 'test'
+  ...
+# Subtest: projection starts from the triggering module with bounded fallback coordinates
+ok 23 - projection starts from the triggering module with bounded fallback coordinates
+  ---
+  duration_ms: 4.836194
+  type: 'test'
+  ...
+# Subtest: normalization handles wrappers, duplicates and invalid media without invented stages
+ok 24 - normalization handles wrappers, duplicates and invalid media without invented stages
+  ---
+  duration_ms: 2.039949
+  type: 'test'
+  ...
+# Subtest: approved factual stages survive normalization and render unchanged as text
+ok 25 - approved factual stages survive normalization and render unchanged as text
+  ---
+  duration_ms: 2.074192
+  type: 'test'
+  ...
+# Subtest: unknown, case-altered and executable stages keep the unconfirmed fallback
+ok 26 - unknown, case-altered and executable stages keep the unconfirmed fallback
+  ---
+  duration_ms: 6.608991
+  type: 'test'
+  ...
+# Subtest: unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+ok 27 - unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+  ---
+  duration_ms: 0.864141
+  type: 'test'
+  ...
+# Subtest: data is rendered as text, with a safe case-study CTA and neutral presentation without media
+ok 28 - data is rendered as text, with a safe case-study CTA and neutral presentation without media
+  ---
+  duration_ms: 0.851443
+  type: 'test'
+  ...
+# Subtest: native cancel handler prevents immediate close, reverses presentation and returns focus
+ok 29 - native cancel handler prevents immediate close, reverses presentation and returns focus
+  ---
+  duration_ms: 1.451631
+  type: 'test'
+  ...
+# Subtest: reopen invalidates a closing timer and stale close event, preserving the new project
+ok 30 - reopen invalidates a closing timer and stale close event, preserving the new project
+  ---
+  duration_ms: 2.02888
+  type: 'test'
+  ...
+# Subtest: reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+ok 31 - reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+  ---
+  duration_ms: 2.00038
+  type: 'test'
+  ...
+# Subtest: changing to reduced motion completes a pending close immediately
+ok 32 - changing to reduced motion completes a pending close immediately
+  ---
+  duration_ms: 3.937136
+  type: 'test'
+  ...
+# Subtest: backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+ok 33 - backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+  ---
+  duration_ms: 0.824446
+  type: 'test'
+  ...
+# Subtest: missing native modal support uses normal catalogue navigation
+ok 34 - missing native modal support uses normal catalogue navigation
+  ---
+  duration_ms: 0.414923
+  type: 'test'
+  ...
+# Subtest: external close request targets the active project and destroy releases handlers
+ok 35 - external close request targets the active project and destroy releases handlers
+  ---
+  duration_ms: 0.742671
+  type: 'test'
+  ...
+# Subtest: an obsolete image error cannot hide the next project image
+ok 36 - an obsolete image error cannot hide the next project image
+  ---
+  duration_ms: 1.063889
+  type: 'test'
+  ...
+# Subtest: a close listener may open another project without focus returning behind the modal
+ok 37 - a close listener may open another project without focus returning behind the modal
+  ---
+  duration_ms: 0.607946
+  type: 'test'
+  ...
+# Subtest: reopening and switching projects reset the shared scroller before focus enters the presentation
+ok 38 - reopening and switching projects reset the shared scroller before focus enters the presentation
+  ---
+  duration_ms: 1.18057
+  type: 'test'
+  ...
+# Subtest: Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+ok 39 - Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+  ---
+  duration_ms: 3.471032
+  type: 'test'
+  ...
+# Subtest: Every circular project has a unique signed offset and the selected one is centered
+ok 40 - Every circular project has a unique signed offset and the selected one is centered
+  ---
+  duration_ms: 0.994844
+  type: 'test'
+  ...
+# Subtest: Orbital positions remain distinct on the perspective projection for every real filter size
+ok 41 - Orbital positions remain distinct on the perspective projection for every real filter size
+  ---
+  duration_ms: 8.825069
+  type: 'test'
+  ...
+# Subtest: Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+ok 42 - Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+  ---
+  duration_ms: 94.846682
+  type: 'test'
+  ...
+# Subtest: Energy pause survives category changes and reduced motion cannot be overridden
+ok 43 - Energy pause survives category changes and reduced motion cannot be overridden
+  ---
+  duration_ms: 6.951162
+  type: 'test'
+  ...
+# Subtest: Fractional phases preserve a unique five-node window across both wrap directions
+ok 44 - Fractional phases preserve a unique five-node window across both wrap directions
+  ---
+  duration_ms: 2.529286
+  type: 'test'
+  ...
+# Subtest: Actual animation frames follow a curved trajectory and wire the same live positions
+ok 45 - Actual animation frames follow a curved trajectory and wire the same live positions
+  ---
+  duration_ms: 8.88483
+  type: 'test'
+  ...
+# Subtest: Interrupted rotation continues from its current phase without a snap or duplicated seam
+ok 46 - Interrupted rotation continues from its current phase without a snap or duplicated seam
+  ---
+  duration_ms: 13.76977
+  type: 'test'
+  ...
+# Subtest: Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+ok 47 - Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+  ---
+  duration_ms: 14.689614
+  type: 'test'
+  ...
+# Subtest: Leaving the viewport cancels a pending neighbor projection and releases its motion work
+ok 48 - Leaving the viewport cancels a pending neighbor projection and releases its motion work
+  ---
+  duration_ms: 3.928106
+  type: 'test'
+  ...
+# Subtest: A delayed projection commits the final module pose before emitting even with dropped frames
+ok 49 - A delayed projection commits the final module pose before emitting even with dropped frames
+  ---
+  duration_ms: 6.196098
+  type: 'test'
+  ...
+# Subtest: Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+ok 50 - Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+  ---
+  duration_ms: 5.283448
+  type: 'test'
+  ...
+# Subtest: Rapid keyboard steps keep focus on a visible, interactive selected module
+ok 51 - Rapid keyboard steps keep focus on a visible, interactive selected module
+  ---
+  duration_ms: 5.561511
+  type: 'test'
+  ...
+# Subtest: Moving state spans the settle interval and repeated steps do not restore wires early
+ok 52 - Moving state spans the settle interval and repeated steps do not restore wires early
+  ---
+  duration_ms: 12.036583
+  type: 'test'
+  ...
+# Subtest: Ring neighbors center fully before opening, with immediate reduced-motion opening
+ok 53 - Ring neighbors center fully before opening, with immediate reduced-motion opening
+  ---
+  duration_ms: 17.92714
+  type: 'test'
+  ...
+# Subtest: Category filter is persistent data selection without clones or source mutation
+ok 54 - Category filter is persistent data selection without clones or source mutation
+  ---
+  duration_ms: 8.881547
+  type: 'test'
+  ...
+# Subtest: All and invalid-category recovery restore all 14 real identities
+ok 55 - All and invalid-category recovery restore all 14 real identities
+  ---
+  duration_ms: 0.259683
+  type: 'test'
+  ...
+# Subtest: A one-project category stays valid and missing selected identity falls back safely
+ok 56 - A one-project category stays valid and missing selected identity falls back safely
+  ---
+  duration_ms: 6.246146
+  type: 'test'
+  ...
+# Subtest: Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+ok 57 - Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+  ---
+  duration_ms: 10.954492
+  type: 'test'
+  ...
+# Subtest: Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+ok 58 - Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+  ---
+  duration_ms: 0.278168
+  type: 'test'
+  ...
+# Subtest: Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+ok 59 - Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+  ---
+  duration_ms: 11.391298
+  type: 'test'
+  ...
+# Subtest: Deep links roundtrip category/project without rewriting search, UTM or deployment path
+ok 60 - Deep links roundtrip category/project without rewriting search, UTM or deployment path
+  ---
+  duration_ms: 8.164739
+  type: 'test'
+  ...
+# Subtest: Six-slice wheel keeps six distinct usable modules and all real filter sizes
+ok 61 - Six-slice wheel keeps six distinct usable modules and all real filter sizes
+  ---
+  duration_ms: 5.076466
+  type: 'test'
+  ...
+# Subtest: A child losing implicit touch capture does not cancel the viewport swipe
+ok 62 - A child losing implicit touch capture does not cancel the viewport swipe
+  ---
+  duration_ms: 5.652257
+  type: 'test'
+  ...
+# Subtest: An expanded desktop drawer uses the reading stage and leaves vertical wheel scrolling to the page
+ok 63 - An expanded desktop drawer uses the reading stage and leaves vertical wheel scrolling to the page
+  ---
+  duration_ms: 5.395049
+  type: 'test'
+  ...
+# Subtest: Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+ok 64 - Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+  ---
+  duration_ms: 8.132342
+  type: 'test'
+  ...
+# Subtest: Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+ok 65 - Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+  ---
+  duration_ms: 7.787156
+  type: 'test'
+  ...
+# Subtest: Manual rotation cannot open a moving neighbor through hover before a settled module is chosen
+ok 66 - Manual rotation cannot open a moving neighbor through hover before a settled module is chosen
+  ---
+  duration_ms: 4.758575
+  type: 'test'
+  ...
+# Subtest: A module passing under a stationary pointer during page scrolling does not open until the pointer moves
+ok 67 - A module passing under a stationary pointer during page scrolling does not open until the pointer moves
+  ---
+  duration_ms: 3.978439
+  type: 'test'
+  ...
+# Subtest: Circular sockets retain six unique readable faces for every actual collection size
+ok 68 - Circular sockets retain six unique readable faces for every actual collection size
+  ---
+  duration_ms: 1.787355
+  type: 'test'
+  ...
+# Subtest: Modules follow a continuous circular path with a six-face maximum through the rear handoff
+ok 69 - Modules follow a continuous circular path with a six-face maximum through the rear handoff
+  ---
+  duration_ms: 4.810547
+  type: 'test'
+  ...
+# Subtest: The shipped inline controller presents the first six projects around the hub and reaches all fourteen
+ok 70 - The shipped inline controller presents the first six projects around the hub and reaches all fourteen
+  ---
+  duration_ms: 25.668472
+  type: 'test'
+  ...
+# Subtest: Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately
+ok 71 - Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately
+  ---
+  duration_ms: 14.477108
+  type: 'test'
+  ...
+# Subtest: Rapid inline keyboard turns retain a reachable focus until the requested face arrives
+ok 72 - Rapid inline keyboard turns retain a reachable focus until the requested face arrives
+  ---
+  duration_ms: 12.8783
+  type: 'test'
+  ...
+# Subtest: Filtering a pending inline extrusion cancels it without leaking a hidden panel
+ok 73 - Filtering a pending inline extrusion cancels it without leaking a hidden panel
+  ---
+  duration_ms: 5.862783
+  type: 'test'
+  ...
+1..73
+# tests 73
+# suites 0
+# pass 73
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 552.483977

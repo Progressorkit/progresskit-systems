@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-23",
   "projects": [
     {
       "id": "glikemia-premium",
       "slug": "glikemia-premium",
       "name": "Glikemia Premium",
       "category": "mobile",
-      "summary": "Osobisty dziennik glikemii na Androida z lokalną historią, wykresem i raportem PDF.",
+      "summary": "Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.",
       "problem": "Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.",
       "audiences": [
         "Osoby prowadzące własny dziennik glikemii"
@@ -31,9 +31,9 @@
         "SkiaSharp",
         "Microcharts"
       ],
-      "stage": "W rozwoju",
-      "availability": "APK Android 1.0 jest dostępny bezpośrednio od ProgressKit. Publikacja w Google Play i końcowy odbiór wydania pozostają niepotwierdzone.",
-      "updatedAt": "2026-10-15",
+      "stage": "Dostępny APK",
+      "availability": "APK Android 1.0 jest udostępniony bezpośrednio przez ProgressKit. Publikacja w Google Play stanowi osobny etap i nie jest potwierdzona.",
+      "updatedAt": "2026-10-23",
       "architecture": [
         "Interfejs .NET MAUI i wspólny formularz tworzenia oraz edycji pomiaru",
         "Asynchroniczna baza SQLite z walidacją przed zapisem i stabilnym sortowaniem historii",
@@ -60,8 +60,9 @@
       "links": [],
       "repository": null,
       "results": [
-        "Raport QA z 9 września 2026 dokumentuje 62 testy automatyczne PASS, 0 FAIL i 0 SKIPPED; nie uruchamiano ich ponownie w audycie portfolio.",
-        "Kod potwierdza lokalne przechowywanie, walidację jednostek i eksport PDF. Nie potwierdza synchronizacji z chmurą ani publikacji sklepowej."
+        "Raport QA z 9.09.2026 dokumentuje 62 testy automatyczne PASS, 0 FAIL i 0 SKIPPED; nie uruchamiano ich ponownie w audycie z 23.10.2026.",
+        "Udostępniony APK ma wersję 1.0. Zapis kontroli lokalnego pliku z 22.10.2026 potwierdza zgodność rozmiaru i SHA-256 z metadanymi, integralność ZIP oraz podpis APK.",
+        "Odczyt publiczny z 15.10.2026 potwierdził dostępność strony i odpowiedź APK Range 206. Nie obejmował pełnego pobrania ani instalacji; kod potwierdza lokalne przechowywanie, walidację jednostek i eksport PDF."
       ],
       "cases": [
         {
@@ -84,21 +85,21 @@
         }
       ],
       "planned": [
-        "Dokończenie końcowego ręcznego odbioru dostępności i lokalizacji",
-        "Zamknięcie formalnych bramek wydania i ścieżki Google Play"
+        "Końcowy ręczny odbiór dostępności i lokalizacji obecnego kandydata",
+        "Osobne przygotowanie publikacji i testów instalacji z Google Play"
       ],
       "remaining": [
-        "TalkBack, większa czcionka i czytelność wymagają końcowego potwierdzenia na urządzeniu.",
-        "Finalny Release Gate oraz instalacja z Google Play pozostają niepotwierdzone.",
-        "Nie publikujemy historii ani raportów z pomiarami bez jednoznacznego potwierdzenia ich syntetycznego pochodzenia."
+        "Według zapisanej checklisty pozostaje końcowy odbiór TalkBack, większej czcionki i lokalizacji na fizycznym urządzeniu.",
+        "Ścieżka Google Play wymaga osobnego domknięcia listingu, deklaracji oraz instalacji i testów ze sklepu.",
+        "Udostępnienie APK 1.0 nie zamyka automatycznie wszystkich formalnych bramek prywatności i odbioru finalnego kandydata."
       ],
       "sources": [
         {
           "id": "glikemia-code",
           "label": "Glikemia Premium: przegląd kodu i konfiguracji",
           "kind": "code",
-          "revision": "3042927",
-          "scope": "MAUI, SQLite, jednostki, PDF i manifest; audyt źródeł, bez uruchomienia aplikacji."
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "scope": "MAUI, SQLite, jednostki, PDF i manifest; odczyt źródeł oraz zapisanych checklist 23.10.2026, bez uruchomienia aplikacji."
         },
         {
           "id": "glikemia-time",
@@ -113,6 +114,13 @@
           "kind": "http",
           "revision": "2026-10-15",
           "scope": "Odczyt HTTPS. Dla APK tylko Range 32 B; bez pełnego pobrania, instalacji i weryfikacji sumy publicznego pliku."
+        },
+        {
+          "id": "glikemia-status-20261023",
+          "label": "Glikemia: audyt dostępności APK i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod 304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "scope": "Udostępniony APK Android 1.0; metadane dystrybucji, zapis lokalnej integralności i podpisu 22.10.2026 oraz historyczny odczyt publiczny 15.10.2026. Google Play i końcowy odbiór są osobnymi bramkami."
         }
       ],
       "coverage": "partial"
@@ -122,7 +130,7 @@
       "slug": "progresskit-mail",
       "name": "ProgressKit Mail",
       "category": "mobile",
-      "summary": "Klient poczty na Androida z przypisaniem urządzenia, bezpieczną tożsamością i własną warstwą usług.",
+      "summary": "Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.",
       "problem": "Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.",
       "audiences": [
         "Użytkownicy prywatnej, samodzielnie hostowanej poczty",
@@ -154,9 +162,9 @@
         "ASP.NET Core",
         "PostgreSQL"
       ],
-      "stage": "W rozwoju",
-      "availability": "Prywatny kandydat Android. Publiczne wydanie Release oraz pełne zamknięcie wdrożenia usług pozostają niepotwierdzone.",
-      "updatedAt": "2026-10-10",
+      "stage": "Wersja testowa",
+      "availability": "Wersja testowa Androida z lokalnym podpisanym APK. Udokumentowano IMAP/SMTP i Debug FCM na Xiaomi; publicznego linku pobrania Mail nie potwierdzono.",
+      "updatedAt": "2026-10-23",
       "architecture": [
         "Android: warstwy interfejsu, domeny, danych i bezpieczeństwa",
         "Room przechowuje pamięć podręczną poczty, Keystore chroni tożsamość i klucz szyfrujący dane dostępowe",
@@ -183,9 +191,9 @@
       "links": [],
       "repository": null,
       "results": [
-        "Raport z 10 października 2026 dokumentuje 219 testów Android i 166 testów serwera PASS; to zapis historyczny, bez ponowienia w audycie portfolio.",
-        "Raport opisuje fizyczny odczyt kontrolowanego HTML, zapis Wysłanych oraz jeden pełny przepływ powiadomienia w trybie Debug online.",
-        "Odbiór jednej kontrolowanej wiadomości w Gmailu potwierdził właściciel. Pełna macierz dostarczalności i niezależne potwierdzenie wyników uwierzytelnienia pozostają otwarte."
+        "Raport z 10.10.2026 dokumentuje 219 testów Android i 166 testów serwera PASS; są to wyniki historyczne, bez ponowienia w audycie z 23.10.2026.",
+        "Ten checkpoint dokumentuje odczyt IMAP na Xiaomi, kontrolowaną wysyłkę SMTP przyjętą przez Gmail MX oraz jedną kopię w serwerowym folderze Wysłane. Odbiór i SPF/DKIM/DMARC potwierdził właściciel.",
+        "Udokumentowano rzeczywisty przepływ online Debug na Xiaomi: LMTP → FCM → synchronizacja → jedno prywatne powiadomienie, a także lokalny podpisany testowy APK. Nie jest to potwierdzenie pełnej macierzy cyklu życia ani produkcyjnego Release."
       ],
       "cases": [
         {
@@ -208,22 +216,22 @@
         }
       ],
       "planned": [
-        "Pełna fizyczna macierz powiadomień po utracie sieci i zakończeniu procesu",
-        "Domknięcie wdrożenia procesu odzyskiwania oraz niezależnego cofania urządzeń",
-        "Weryfikacja konfiguracji rzeczywistego wydania Release"
+        "Domknięcie fizycznej macierzy FCM po utracie sieci i zakończeniu procesu",
+        "Odbiór aktualnego procesu odzyskiwania i niezależnego cofania dostępu urządzeń",
+        "Przygotowanie i weryfikacja produkcyjnej konfiguracji wydania Android Release"
       ],
       "remaining": [
-        "Pełny cykl życia FCM, odbiór nowej wiadomości z zewnątrz i niezależne potwierdzenie uwierzytelnienia wiadomości wymagają dalszych dowodów.",
-        "Lokalne testy procesu odzyskiwania nie są dowodem wdrożenia tej wersji usług.",
-        "Galeria zawiera dwa zanonimizowane materiały z V4; nie potwierdza bieżącego działania skrzynki ani dostarczalności."
+        "Do potwierdzenia pozostają FCM offline i po zakończeniu procesu oraz niezależne cofnięcie dostępu urządzenia.",
+        "Produkcyjna konfiguracja Release i wdrożenie aktualnego procesu odzyskiwania wymagają osobnego odbioru.",
+        "Otwarta pozostaje szersza macierz dostarczalności, świeży odbiór od zewnętrznego nadawcy i niezależna weryfikacja uwierzytelnienia wiadomości."
       ],
       "sources": [
         {
           "id": "mail-code",
           "label": "ProgressKit Mail: aktualny kod klienta i usług",
           "kind": "code",
-          "revision": "c9b669ce",
-          "scope": "Warstwy Android, TLS, Keystore, MIME, SMTP i kopia Sent; przegląd źródeł."
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "scope": "Android IMAP/SMTP, TLS, Keystore, MIME i kopia Sent; ponowny odczyt źródeł i raportów 23.10.2026, bez nowych testów produktu."
         },
         {
           "id": "mail-mime",
@@ -238,6 +246,13 @@
           "kind": "report",
           "revision": "c9b669ce + raport roboczy 2026-10-10",
           "scope": "Historyczne testy lokalne i jedna kontrolowana wysyłka; odbiór i wyniki uwierzytelnienia zgłoszone przez właściciela."
+        },
+        {
+          "id": "mail-status-20261023",
+          "label": "Mail: audyt stanu Androida i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "scope": "Wersja testowa Androida: zapis IMAP/SMTP do Gmail MX, online Debug FCM na Xiaomi i lokalnego podpisanego APK z 10.10.2026. Odbiór i wyniki uwierzytelnienia zgłosił właściciel; brak potwierdzonego publicznego URL APK Mail."
         }
       ],
       "coverage": "partial"
@@ -469,7 +484,7 @@
       "slug": "progresskit-community",
       "name": "Lud&Pra / ProgressKit Community",
       "category": "platforms",
-      "summary": "Platforma społecznościowa rozwijana wokół społeczności tematycznych, rozmów i przejrzystej moderacji.",
+      "summary": "Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.",
       "problem": "Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.",
       "audiences": [
         "Uczestnicy społeczności tematycznych",
@@ -498,9 +513,9 @@
         "TypeScript",
         "Docker"
       ],
-      "stage": "W rozwoju",
-      "availability": "Potwierdzono lokalny kod i zapisane testy. Aktualnej gotowości publicznej bety i stanu wdrożenia nie zweryfikowano w tym audycie.",
-      "updatedAt": "2026-10-15",
+      "stage": "Finalizacja",
+      "availability": "Główne funkcje są zaimplementowane i lokalnie przetestowane. Trwa finalizacja przed publiczną betą oraz odbiór bramek publikacji najnowszej wersji.",
+      "updatedAt": "2026-10-23",
       "architecture": [
         "Next.js odpowiada za interfejs i renderowanie stron.",
         "ASP.NET Core jest modułowym monolitem z obszarami tożsamości, społeczności, treści, mediów, moderacji i powiadomień.",
@@ -526,9 +541,9 @@
       "links": [],
       "repository": null,
       "results": [
-        "Raport walidacji z 14.10.2026 zapisuje 286 testów backendu i 154 testy frontendu zakończone PASS; nie uruchamiano ich ponownie podczas audytu portfolio.",
+        "Raport walidacji z 14.10.2026 zapisuje 286 testów backendu i 154 testy frontendu zakończone PASS; nie uruchamiano ich ponownie podczas audytu z 23.10.2026.",
         "Ten sam checkpoint dokumentuje 170 kontroli przeglądarkowych na izolowanych danych oraz osobny lokalny smoke: 24 PASS i 5 SKIP.",
-        "Weryfikacja lokalna obejmuje moderację i granice dostępu; nie stanowi potwierdzenia aktywnej społeczności ani aktualnego wdrożenia produkcyjnego."
+        "Kod obejmuje konta, społeczności, publikacje, komentarze, media i moderację. Dokumentacja z 14.10.2026 potwierdza inicjalizację wcześniejszej publicznej instancji przez API; nie dowodzi wdrożenia najnowszego lokalnego kandydata."
       ],
       "cases": [
         {
@@ -551,13 +566,13 @@
         }
       ],
       "planned": [
-        "Dalszy rozwój społeczności prawdziwych użytkowników",
-        "Kontrolowana publikacja kolejnych etapów po aktualnej weryfikacji wymagań organizacyjnych i wdrożenia"
+        "Zamknięcie bramek publikacji i kontrolowane otwarcie publicznej bety",
+        "Dalszy rozwój społeczności prawdziwych użytkowników po odbiorze wersji"
       ],
       "remaining": [
-        "Potwierdzenie aktualnej gotowości publicznej bety i wdrożenia",
-        "Aktualny odbiór operacyjny i procesu moderacji",
-        "Galeria przedstawia lokalne QA z danymi syntetycznymi; nie potwierdza publicznej bety."
+        "Przed publiczną betą pozostaje zatwierdzenie i publikacja dokumentów oraz domknięcie wymagań prywatności i dostawców.",
+        "Pozostaje potwierdzenie obsady i procesu moderacji zgodnie z bramką co najmniej dwóch zatwierdzonych moderatorów platformy.",
+        "Najnowszy kandydat wymaga końcowego odbioru wydania i wdrożenia. Wcześniejsza publiczna instancja oraz lokalne QA nie zamykają tej bramki."
       ],
       "sources": [
         {
@@ -565,7 +580,7 @@
           "label": "Bieżący kod platformy",
           "kind": "code",
           "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
-          "scope": "Moduły API, kontrakty i manifesty technologii; odczyt 15.10.2026"
+          "scope": "Moduły API, kontrakty i manifesty technologii; ponowny odczyt właściwego checkoutu 23.10.2026, bez nowych testów produktu."
         },
         {
           "id": "community-discovery",
@@ -580,6 +595,13 @@
           "kind": "report",
           "revision": "aad44687c87e6b1243fe22db8facec260eb00913",
           "scope": "Lokalny feed, sesje i agregacja rozmów; bez dowodu produkcji"
+        },
+        {
+          "id": "community-status-20261023",
+          "label": "Lud&Pra: audyt dojrzałości i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Finalizacja według aktualnej deklaracji właściciela i odczytu kodu. Historyczne testy 14.10.2026; zapis inicjalizacji wcześniejszej publicznej instancji. Osobno pozostają legal, obsada moderacji i odbiór najnowszego wydania."
         }
       ],
       "coverage": "partial"

@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-23",
+  "repository": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems",
+  "baseHead": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "footerStatus": "BLOCKED_ORIGINAL_NOT_IDENTIFIED",
+  "footerVisualAcceptance": "NOT_PERFORMED",
+  "requestedOriginals": [
+    {
+      "asset": "red-aluminium-original",
+      "status": "NOT_IDENTIFIED",
+      "exactPath": null,
+      "sha256": null
+    },
+    {
+      "asset": "forest-and-mountains-footer-original",
+      "status": "NOT_IDENTIFIED",
+      "exactPath": null,
+      "sha256": null
+    }
+  ],
+  "search": {
+    "scope": "Bounded read-only search of available Git refs/objects, known image paths, repository provenance documents and referenced briefs; selected local-file metadata verification.",
+    "directlyVerified": {
+      "reachableCommitCount": 187,
+      "historicalImagePathCountExcludingEvidence": 77,
+      "unreachableBlobCount": 46,
+      "unreachableImageBlobCount": 2,
+      "unreachableImagesClassification": "Glikemia product screenshots, not footer materials",
+      "docsReferencePresentInTree": false,
+      "docsReferenceHistoryEntries": 0
+    },
+    "relayedByCoordinatorFromOtherAgent": {
+      "attachmentsPath": "/home/pawe/.codex/attachments",
+      "txtCount": 148,
+      "jsonCount": 1,
+      "imageCount": 0,
+      "mntDataPresent": false,
+      "independentlyRecountedDuringDocumentation": false
+    },
+    "noExhaustiveAbsenceClaim": true,
+    "noFurtherBroadScanDuringDocumentation": true
+  },
+  "localMockups": [
+    {
+      "path": "/home/pawe/Pobrane/exec-40370cb3-2236-475d-a781-26110ab6c815.png",
+      "sha256": "49e12c3a7d45beec5907faa71daf86db1491257cfe2c41577e75981978c89906",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2155696,
+      "metadataDirectlyVerified": true,
+      "visualReviewBy": "coordinator",
+      "visualReview": "Silver aluminium, red reflections and a mechanism; no footer.",
+      "status": "VISUAL_REFERENCE_ONLY",
+      "confirmedRequestedOriginal": false
+    },
+    {
+      "path": "/home/pawe/Pobrane/exec-83313dab-3881-4601-81c1-27b25191c6b7.png",
+      "sha256": "c0e478b3dc7d92f59246185684094388c1bb548c22d06d9757bdba7364a85d22",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2303149,
+      "metadataDirectlyVerified": true,
+      "visualReviewBy": "coordinator",
+      "visualReview": "Silver aluminium, red reflections and a mechanism; no footer.",
+      "status": "VISUAL_REFERENCE_ONLY",
+      "confirmedRequestedOriginal": false
+    }
+  ],
+  "heroProvenance": {
+    "status": "GENERATIVE_EDIT_FOR_HERO_NOT_FOOTER_ORIGINAL",
+    "document": "docs/PROGRESSKIT_V5_HERO_ASSET.md",
+    "corroboratingDocument": "docs/PROGRESSKIT_V5_MEDIA.md:72-91",
+    "documentedSource": {
+      "path": "/home/pawe/Pobrane/a_dark_cinematic_high_end_ux_ui_website_landing.png",
+      "existsAtRecordedPath": false,
+      "documentedSha256": "d0bdf4566efcce79dd43d6ab7f5c156be66047ea2fd023cf310d283989478a5a",
+      "documentedWidth": 1024,
+      "documentedHeight": 1536,
+      "documentedBytes": 2062911,
+      "currentBytesVerified": false
+    },
+    "generatedEdit": {
+      "path": "/home/pawe/.codex/generated_images/01a13ea4-42f0-7373-8dd2-2db61ad473e3/exec-90bdf079-d534-433d-b023-64c95cf6698c.png",
+      "exists": true,
+      "sha256": "954bdff17d5ae0b0d8e54e59605c1ac6c27b70c7c15d3f0e3dfc8fc0517e4d86",
+      "width": 1983,
+      "height": 793,
+      "bytes": 2212542,
+      "currentHashDirectlyVerified": true,
+      "footerOriginal": false
+    },
+    "publicWebP": {
+      "path": "assets/brand/hero-landscape-v5.webp",
+      "gitBlob": "9b92ef7123a3cc0b480bba54eac13f4cb9901dbf",
+      "sha256": "78842ff512a72cf732bdbe74a989c1a992bea11f49e90a6e0a11f9e85dd9b0ad",
+      "width": 1983,
+      "height": 793,
+      "bytes": 201050,
+      "currentHashDirectlyVerified": true,
+      "footerOriginal": false
+    },
+    "firstAdditionInAvailableRefs": {
+      "commit": "cca27e0da61bec239ea95d216377ea3b54cfe77b",
+      "date": "2026-10-15T11:10:59+02:00"
+    },
+    "additionToCurrentMainLine": {
+      "commit": "6a52e83a7fd12699190ccf0b25974486030cb162",
+      "date": "2026-10-20T14:53:40+02:00"
+    },
+    "distinction": "Documented prompt extracts the HERO area with mountains, moon and wall and excludes the footer. Obscured pixels were generatively reconstructed; result is not a pixel-identical crop."
+  },
+  "excludedHistoricalCandidates": [
+    {
+      "path": "bg1.jpg",
+      "sha256": "ffcb47869ffea3a71a06d94db7f43653d9dcaec1df1c33f16edf523703e95968",
+      "classification": "green Matrix/tech background",
+      "firstPathAddition": "90e0d43a885e131b00840ec486d1ed806e344043"
+    },
+    {
+      "path": "bg2.jpg",
+      "sha256": "77eeef84f8cb91b002b2e5ad24d8a2b2bbd6947271815d9dfab4d3a7165a65c3",
+      "classification": "green Matrix/tech background",
+      "firstPathAddition": "eb5fa360957b9a4277a6c235a8789e9a4980c4d5"
+    },
+    {
+      "path": "bg4.jpg",
+      "sha256": "77eeef84f8cb91b002b2e5ad24d8a2b2bbd6947271815d9dfab4d3a7165a65c3",
+      "classification": "byte-identical to bg2.jpg",
+      "firstPathAddition": "da5d24079ebfa95f0541d07dccdb2c67a5395ee0"
+    },
+    {
+      "path": "bg3.jpg",
+      "sha256": "689b744dbb4bc1d4033d8cc6b224ffb0e57769e126613e0ce304767f4748fda7",
+      "classification": "green Matrix/tech background",
+      "firstPathAddition": "b1fff60a5fce8fb50cfe51b5fff8f89d2debe8d1"
+    },
+    {
+      "path": "zdjtlo.png",
+      "sha256": "0e47f9c63af667cd14e3e7352abd5d3979884d46553ba97667c0ec2ac54cdc56",
+      "classification": "person at computer",
+      "firstPathAddition": "46d0e1a88a23f84e5e37cf4c323ba42242088c3e"
+    }
+  ],
+  "briefsReviewed": [
+    {
+      "path": "/home/pawe/.codex/attachments/b21f1fcf-8ba4-4301-878e-aad9198154e3/Wklejony tekst.txt",
+      "finding": "Specifies HERO mountains/moon/wall; footer appears only in section ordering, without a footer landscape filename."
+    },
+    {
+      "path": "/home/pawe/.codex/attachments/9af5415e-ff1d-4412-9d8f-4ae031d12779/Wklejony tekst.txt",
+      "finding": "Specifies darker graphite/brushed aluminium; no identified footer original path."
+    }
+  ],
+  "method": [
+    "git show-ref",
+    "git rev-list --all --count",
+    "git log --all --format= --name-only --diff-filter=AM, image paths deduplicated outside docs/evidence",
+    "git log --all --follow -- path; git show commit:path; git rev-parse commit:path",
+    "git fsck --full --no-reflogs --unreachable; image-header detection; git ls-tree -r for blob path attribution",
+    "Read referenced provenance documents and two exact brief TXT files",
+    "Local view_image inspection for excluded historical candidates; metadata/hash verification for the two exact mockups"
+  ],
+  "limitations": [
+    "No assertion that the requested originals do not exist elsewhere.",
+    "Available Git refs and reachable/unreachable objects do not establish the identity of a file held only in another local directory, archive or earlier inaccessible message.",
+    "Local mockups are visual references and do not establish original footer-asset identity or approval.",
+    "The missing HERO source hash is historical documentation, not current file verification.",
+    "Reported attachment and /mnt/data inventory is attributed to the separate local search relayed by the coordinator."
+  ],
+  "followUp": {
+    "optionalOriginalPathQuestionSentBy": "coordinator",
+    "replyStatusAtDocumentation": "PENDING",
+    "nonResponseIsApproval": false,
+    "footerAction": "Keep existing footer unchanged until originals are identified"
+  },
+  "writeScope": [
+    "docs/evidence/material-correction-v3-20261023/asset-provenance.md",
+    "docs/evidence/material-correction-v3-20261023/asset-provenance.json"
+  ],
+  "productEdited": false,
+  "replacementImagesGenerated": false,
+  "heroRepurposedAsFooter": false,
+  "commitPerformed": false,
+  "pushPerformed": false,
+  "deploymentPerformed": false
+}

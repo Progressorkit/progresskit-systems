@@ -1,0 +1,501 @@
+{
+  "base": "http://127.0.0.1:8111/",
+  "checks": [
+    {
+      "name": "1440: all three actual statuses survive homepage rendering and hydration",
+      "status": "PASS",
+      "details": {
+        "glikemia-premium": "Dostępny APK",
+        "progresskit-mail": "Wersja testowa",
+        "progresskit-community": "Finalizacja"
+      }
+    },
+    {
+      "name": "1440: approved red aluminium is loaded on the existing mechanism",
+      "status": "PASS",
+      "details": {
+        "background": "linear-gradient(110deg, rgba(23, 23, 23, 0.75), rgba(20, 20, 20, 0.6) 65%, rgba(42, 21, 21, 0.7)), url(\"http://127.0.0.1:8111/assets/brand/red-aluminium-reconstruction.jpg\")"
+      }
+    },
+    {
+      "name": "1440: Mail testing status and all five planned connections remain truthful",
+      "status": "PASS",
+      "details": {
+        "mail": "Wersja testowa",
+        "connections": "5 planned"
+      }
+    },
+    {
+      "name": "1440: actual stage filter Dostępny APK",
+      "status": "PASS",
+      "details": {
+        "id": "glikemia-premium",
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "1440: case study status glikemia-premium",
+      "status": "PASS",
+      "details": {
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "1440: actual stage filter Wersja testowa",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-mail",
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "1440: case study status progresskit-mail",
+      "status": "PASS",
+      "details": {
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "1440: actual stage filter Finalizacja",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-community",
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "1440: case study status progresskit-community",
+      "status": "PASS",
+      "details": {
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "1440: legacy Mail route uses the same current stage",
+      "status": "PASS"
+    },
+    {
+      "name": "1440: approved panorama and preserved footer destinations on home",
+      "status": "PASS",
+      "details": {
+        "image": "url(\"http://127.0.0.1:8111/assets/brand/footer-forest-mountains-reconstruction.png\")",
+        "width": 1440,
+        "height": 129.172,
+        "footer": {
+          "x": 0,
+          "y": 653.03125,
+          "width": 1440,
+          "height": 247.171875,
+          "top": 653.03125,
+          "right": 1440,
+          "bottom": 900.203125,
+          "left": 0
+        },
+        "viewport": 1440,
+        "viewportHeight": 900,
+        "links": [
+          "mailto:pawel@progresskit.pl",
+          "https://www.tiktok.com/@progresskit",
+          "glikemia-premium/",
+          "progresskit-mail/",
+          "prywatnosc/",
+          "#main"
+        ]
+      }
+    },
+    {
+      "name": "1440: approved panorama and preserved footer destinations on mail",
+      "status": "PASS",
+      "details": {
+        "image": "url(\"http://127.0.0.1:8111/assets/brand/footer-forest-mountains-reconstruction.png\")",
+        "width": 1440,
+        "height": 129.172,
+        "footer": {
+          "x": 0,
+          "y": 652.625,
+          "width": 1440,
+          "height": 247.171875,
+          "top": 652.625,
+          "right": 1440,
+          "bottom": 899.796875,
+          "left": 0
+        },
+        "viewport": 1440,
+        "viewportHeight": 900,
+        "links": [
+          "mailto:pawel@progresskit.pl",
+          "https://www.tiktok.com/@progresskit",
+          "../../glikemia-premium/",
+          "../../progresskit-mail/",
+          "../../prywatnosc/",
+          "#main"
+        ]
+      }
+    },
+    {
+      "name": "1440: approved panorama and preserved footer destinations on glikemia",
+      "status": "FAIL",
+      "details": "APK product route stale"
+    },
+    {
+      "name": "1440: footer high contrast preserves system colors without the panorama",
+      "status": "PASS",
+      "details": {
+        "display": "none",
+        "background": "none"
+      }
+    },
+    {
+      "name": "1440: print hides the decorative panorama",
+      "status": "PASS"
+    },
+    {
+      "name": "390: all three actual statuses survive homepage rendering and hydration",
+      "status": "PASS",
+      "details": {
+        "glikemia-premium": "Dostępny APK",
+        "progresskit-mail": "Wersja testowa",
+        "progresskit-community": "Finalizacja"
+      }
+    },
+    {
+      "name": "390: approved red aluminium is loaded on the existing mechanism",
+      "status": "PASS",
+      "details": {
+        "background": "linear-gradient(110deg, rgba(23, 23, 23, 0.75), rgba(20, 20, 20, 0.6) 65%, rgba(42, 21, 21, 0.7)), url(\"http://127.0.0.1:8111/assets/brand/red-aluminium-reconstruction.jpg\")"
+      }
+    },
+    {
+      "name": "390: Mail testing status and all five planned connections remain truthful",
+      "status": "PASS",
+      "details": {
+        "mail": "Wersja testowa",
+        "connections": "5 planned"
+      }
+    },
+    {
+      "name": "390: actual stage filter Dostępny APK",
+      "status": "PASS",
+      "details": {
+        "id": "glikemia-premium",
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "390: case study status glikemia-premium",
+      "status": "PASS",
+      "details": {
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "390: actual stage filter Wersja testowa",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-mail",
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "390: case study status progresskit-mail",
+      "status": "PASS",
+      "details": {
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "390: actual stage filter Finalizacja",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-community",
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "390: case study status progresskit-community",
+      "status": "PASS",
+      "details": {
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "390: legacy Mail route uses the same current stage",
+      "status": "PASS"
+    },
+    {
+      "name": "390: approved panorama and preserved footer destinations on home",
+      "status": "PASS",
+      "details": {
+        "image": "url(\"http://127.0.0.1:8111/assets/brand/footer-forest-mountains-reconstruction.png\")",
+        "width": 390,
+        "height": 88,
+        "footer": {
+          "x": 0,
+          "y": 524.859375,
+          "width": 390,
+          "height": 319.0625,
+          "top": 524.859375,
+          "right": 390,
+          "bottom": 843.921875,
+          "left": 0
+        },
+        "viewport": 390,
+        "viewportHeight": 844,
+        "links": [
+          "mailto:pawel@progresskit.pl",
+          "https://www.tiktok.com/@progresskit",
+          "glikemia-premium/",
+          "progresskit-mail/",
+          "prywatnosc/",
+          "#main"
+        ]
+      }
+    },
+    {
+      "name": "390: approved panorama and preserved footer destinations on mail",
+      "status": "PASS",
+      "details": {
+        "image": "url(\"http://127.0.0.1:8111/assets/brand/footer-forest-mountains-reconstruction.png\")",
+        "width": 390,
+        "height": 88,
+        "footer": {
+          "x": 0,
+          "y": 525.171875,
+          "width": 390,
+          "height": 319.0625,
+          "top": 525.171875,
+          "right": 390,
+          "bottom": 844.234375,
+          "left": 0
+        },
+        "viewport": 390,
+        "viewportHeight": 844,
+        "links": [
+          "mailto:pawel@progresskit.pl",
+          "https://www.tiktok.com/@progresskit",
+          "../../glikemia-premium/",
+          "../../progresskit-mail/",
+          "../../prywatnosc/",
+          "#main"
+        ]
+      }
+    },
+    {
+      "name": "390: approved panorama and preserved footer destinations on glikemia",
+      "status": "FAIL",
+      "details": "APK product route stale"
+    },
+    {
+      "name": "390: footer high contrast preserves system colors without the panorama",
+      "status": "PASS",
+      "details": {
+        "display": "none",
+        "background": "none"
+      }
+    },
+    {
+      "name": "390: print hides the decorative panorama",
+      "status": "PASS"
+    },
+    {
+      "name": "320: all three actual statuses survive homepage rendering and hydration",
+      "status": "PASS",
+      "details": {
+        "glikemia-premium": "Dostępny APK",
+        "progresskit-mail": "Wersja testowa",
+        "progresskit-community": "Finalizacja"
+      }
+    },
+    {
+      "name": "320: approved red aluminium is loaded on the existing mechanism",
+      "status": "PASS",
+      "details": {
+        "background": "linear-gradient(110deg, rgba(23, 23, 23, 0.75), rgba(20, 20, 20, 0.6) 65%, rgba(42, 21, 21, 0.7)), url(\"http://127.0.0.1:8111/assets/brand/red-aluminium-reconstruction.jpg\")"
+      }
+    },
+    {
+      "name": "320: Mail testing status and all five planned connections remain truthful",
+      "status": "PASS",
+      "details": {
+        "mail": "Wersja testowa",
+        "connections": "5 planned"
+      }
+    },
+    {
+      "name": "320: actual stage filter Dostępny APK",
+      "status": "PASS",
+      "details": {
+        "id": "glikemia-premium",
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "320: case study status glikemia-premium",
+      "status": "PASS",
+      "details": {
+        "stage": "Dostępny APK"
+      }
+    },
+    {
+      "name": "320: actual stage filter Wersja testowa",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-mail",
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "320: case study status progresskit-mail",
+      "status": "PASS",
+      "details": {
+        "stage": "Wersja testowa"
+      }
+    },
+    {
+      "name": "320: actual stage filter Finalizacja",
+      "status": "PASS",
+      "details": {
+        "id": "progresskit-community",
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "320: case study status progresskit-community",
+      "status": "PASS",
+      "details": {
+        "stage": "Finalizacja"
+      }
+    },
+    {
+      "name": "320: legacy Mail route uses the same current stage",
+      "status": "PASS"
+    },
+    {
+      "name": "320: approved panorama and preserved footer destinations on home",
+      "status": "PASS",
+      "details": {
+        "image": "url(\"http://127.0.0.1:8111/assets/brand/footer-forest-mountains-reconstruction.png\")",
+        "width": 320,
+        "height": 88,
+        "footer": {
+          "x": 0,
+          "y": 249.40625,
+          "width": 320,
+          "height": 319.0625,
+          "top": 249.40625,
+          "right": 320,
+          "bottom": 568.46875,
+          "left": 0
+        },
+        "viewport": 320,
+        "viewportHeight": 568,
+        "links": [
+          "mailto:pawel@progresskit.pl",
+          "https://www.tiktok.com/@progresskit",
+          "glikemia-premium/",
+          "progresskit-mail/",
+          "prywatnosc/",
+          "#main"
+        ]
+      }
+    },
+    {
+      "name": "320: approved panorama and preserved footer destinations on mail",
+      "status": "FAIL",
+      "details": "Entire footer not visible"
+    },
+    {
+      "name": "320: approved panorama and preserved footer destinations on glikemia",
+      "status": "FAIL",
+      "details": "Entire footer not visible"
+    },
+    {
+      "name": "320: footer high contrast preserves system colors without the panorama",
+      "status": "PASS",
+      "details": {
+        "display": "none",
+        "background": "none"
+      }
+    },
+    {
+      "name": "320: print hides the decorative panorama",
+      "status": "PASS"
+    },
+    {
+      "name": "No runtime or resource errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1440-mail-ecosystem.png",
+    "1440-home-footer.png",
+    "1440-mail-footer.png",
+    "1440-glikemia-footer.png",
+    "390-mail-ecosystem.png",
+    "390-home-footer.png",
+    "390-mail-footer.png",
+    "390-glikemia-footer.png",
+    "320-mail-ecosystem.png",
+    "320-home-footer.png",
+    "320-mail-footer.png",
+    "320-glikemia-footer.png"
+  ],
+  "startedAt": "2026-10-23T14:35:32.311Z",
+  "browser": "155.0.8059.39",
+  "finishedAt": "2026-10-23T14:36:16.007Z",
+  "totals": {
+    "PASS": 42,
+    "FAIL": 4
+  },
+  "screenshotHashes": [
+    {
+      "path": "1440-mail-ecosystem.png",
+      "sha256": "9437cb3e7c56d4f998e824e93869643f196836ac31e21d87aae265beee286031"
+    },
+    {
+      "path": "1440-home-footer.png",
+      "sha256": "0dd60552cb8c78b99a6fde25ed4824c5e82fa4514541bd07dbdad06610969d14"
+    },
+    {
+      "path": "1440-mail-footer.png",
+      "sha256": "7a28fa256e349c7067f54778ebe67f25f8b76df110d504e83e36891d7d77b6ea"
+    },
+    {
+      "path": "1440-glikemia-footer.png",
+      "sha256": "50fee7a8a78168167681ccb28fe1ee479959bb7bc0791a3b1f8a7100f8f02018"
+    },
+    {
+      "path": "390-mail-ecosystem.png",
+      "sha256": "1e61d6b345fc543c82be6c045e6496ca936f1ed27ef092d69ebe90d09ed4dd46"
+    },
+    {
+      "path": "390-home-footer.png",
+      "sha256": "c0180524eaca5b752abeaf9b90af1c20048de877bfb428e83426b5d3d01ba687"
+    },
+    {
+      "path": "390-mail-footer.png",
+      "sha256": "bcffe3ecda55e2b251e570fcf022a1ec6dabfe56f4fea2dd3267dd10ebd1a6bc"
+    },
+    {
+      "path": "390-glikemia-footer.png",
+      "sha256": "a09da89d6e21090e75ecd826e1306adcab57d7aff8952b8c3d1123612d2c0521"
+    },
+    {
+      "path": "320-mail-ecosystem.png",
+      "sha256": "50219b2dd8716c3d107c80bde8f48a00a27708dfb943fb2552ddb4f9491effe7"
+    },
+    {
+      "path": "320-home-footer.png",
+      "sha256": "d26fa14055998d05054b0d907515d9b89f7d3fbd423db1228d9411d0726b7b26"
+    },
+    {
+      "path": "320-mail-footer.png",
+      "sha256": "1858915ebc4fdec537272fe33727f0ad841a6c9cd50a6d398f0f15fa88d066db"
+    },
+    {
+      "path": "320-glikemia-footer.png",
+      "sha256": "c07cef6db5b3da416b070a3019c7ec28142467208c3618d1aea4050128386ef9"
+    }
+  ]
+}

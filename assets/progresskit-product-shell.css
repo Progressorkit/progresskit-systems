@@ -57,6 +57,89 @@ h1{font-size:clamp(44px,6.6vw,78px);line-height:.98;letter-spacing:-.055em;margi
 .notice{padding:18px 20px;border-left:3px solid var(--product-accent);background:#101316;color:#c8ced2}.checksum{overflow-wrap:anywhere;font:12px/1.55 var(--mono);display:block;padding:14px;background:#07090a;border:1px solid var(--pk-line);border-radius:7px;user-select:all}.download-grid{display:grid;grid-template-columns:1fr 210px;gap:44px}.qr{background:#fff;border-radius:10px;width:170px;height:170px;padding:8px}.steps{padding-left:23px}.steps li{margin-bottom:10px}
 .reviews-layout{display:grid;grid-template-columns:1fr 1fr;gap:36px}label{display:block;margin-bottom:6px}input,textarea,select{width:100%;padding:12px;border:1px solid #485159;border-radius:7px;background:#080b0e;color:var(--pk-text)}textarea{resize:vertical;min-height:140px}.field{margin-bottom:18px}.trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.review-comment{white-space:pre-wrap;overflow-wrap:anywhere}.review-name{overflow-wrap:anywhere}.review-list{display:grid;gap:16px}.status{min-height:28px;color:var(--product-accent)}button:disabled{opacity:.6;cursor:wait}
 .pk-footer{border-top:1px solid var(--pk-line);padding:30px 0 38px;background:#040506;color:var(--pk-muted);font-size:13px}.pk-footer__inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.pk-footer a{color:#9aa2a8}
+
 @media(max-width:920px){.hero{grid-template-columns:1fr;gap:34px;padding:52px 0}.hero-art{min-height:0}.hero-art img{max-height:520px}.grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}.arch{grid-template-columns:repeat(3,1fr)}.arch-node:nth-child(3)::after{display:none}.download-grid{gap:24px}.reviews-layout{grid-template-columns:1fr}}
 @media(max-width:680px){.wrap{width:calc(100% - 30px)}.pk-header__inner{min-height:68px}.pk-brand img{width:38px;height:38px}.pk-brand__copy strong{font-size:12px}.pk-brand__copy span{display:none}.pk-nav{gap:12px}.pk-nav a{font-size:8px}.pk-nav a:nth-child(n+4){display:none}.hero{padding:34px 0}.hero-art{display:none}h1{font-size:44px}.actions{display:grid}.actions .cta{width:100%}.section{padding:44px 0}.grid{grid-template-columns:1fr}.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:76%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px}.gallery figure{scroll-snap-align:start}.arch{grid-template-columns:1fr 1fr}.arch-node::after{display:none!important}.download-grid{grid-template-columns:1fr}.qr-block{display:none}.card{padding:20px}.quote{padding:22px;font-size:24px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media(max-width:380px){.pk-header__inner{flex-wrap:wrap;justify-content:center;gap:10px;padding-block:12px}.pk-nav{flex-wrap:wrap;justify-content:center;max-width:100%}}
+/* Approved reconstruction: decorative panorama above the existing page footer. */
+body>footer {
+  padding-top:0;
+  padding-inline:0;
+  padding-bottom:42px;
+  color:#d8d8d2;
+  border-top-color:#8b8b82;
+  background:
+    repeating-linear-gradient(0deg,#f0f0e706 0 1px,transparent 1px 4px),
+    linear-gradient(115deg,#343431,#20201e 65%,#2c2c29);
+}
+body>footer::before {
+  content:"";
+  display:block;
+  width:100%;
+  aspect-ratio:1672 / 150;
+  min-height:128px;
+  margin-bottom:32px;
+  border-bottom:1px solid #8b8b82;
+  background:#252820 url("brand/footer-forest-mountains-reconstruction.png") center / cover no-repeat;
+  pointer-events:none;
+}
+body>footer .footer-brand strong { color:#e8e8e1; }
+body>footer .footer__links { color:#d2d2ca; }
+body>footer .footer__links a,body>footer.pk-footer a { color:#e4e4dc; }
+body>footer a:hover,body>footer a:focus-visible { color:#ffd0c5; text-decoration:underline; }
+@media (max-width:700px) {
+  body>footer { padding-bottom:32px; }
+  body>footer::before { min-height:88px; margin-bottom:24px; }
+}
+@media (forced-colors:active) {
+  body>footer {
+    color:CanvasText;
+    background:Canvas;
+    border-color:CanvasText;
+    box-shadow:none;
+  }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links { color:CanvasText; }
+  body>footer .footer__links a,body>footer.pk-footer a,
+  body>footer a:hover,body>footer a:focus-visible { color:LinkText; }
+}
+@media print {
+  body>footer { color:#111; background:#fff; border-color:#777; }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links,
+  body>footer .footer__links a,body>footer.pk-footer a { color:#111; }
+}
+/* End shared reconstructed footer panorama. */
+
+/* Footer continuity with the main ProgressKit site.
+   Uses the existing working forest/mountain reconstruction, not an original. */
+body>footer.pk-footer {
+  border-top-color:#a2505b;
+  background:linear-gradient(180deg,#11161a,#090e11 78%);
+}
+body>footer.pk-footer::before {
+  min-height:0;
+  height:clamp(170px,17vw,260px);
+  aspect-ratio:auto;
+  margin-bottom:0;
+  background-image:
+    linear-gradient(180deg,#0f141a 0%,rgba(13,16,19,.36) 22%,rgba(11,13,15,.03) 53%,rgba(9,13,14,.24) 87%,#090e11 100%),
+    url("brand/footer-forest-mountains-reconstruction.png");
+  background-size:100% 100%,cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+body>footer.pk-footer .pk-footer__inner { padding-top:28px; }
+@media(max-width:700px) {
+  body>footer.pk-footer::before { height:132px; min-height:0; background-size:100% 100%,auto 100%; }
+  body>footer.pk-footer .pk-footer__inner { padding-top:24px; }
+}
+@media (forced-colors:active) {
+  body>footer.pk-footer { color:CanvasText; background:Canvas; border-color:CanvasText; }
+  body>footer.pk-footer::before { display:none; }
+}
+@media print {
+  body>footer.pk-footer { color:#111; background:#fff; border-color:#777; }
+  body>footer.pk-footer::before { display:none; }
+}

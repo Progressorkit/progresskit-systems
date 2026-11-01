@@ -1,0 +1,1077 @@
+--- pre-sprint/assets/project-showroom.js
++++ current/assets/project-showroom.js
+@@ -39,19 +39,14 @@
+     };
+   },
+   mechanism(offset, length) {
+-    // Six staggered drawers share two straight guides. During a manual step
+-    // they retract, change sockets while concealed, then slide out again.
+-    // No module travels around a circle or crosses another readable face.
+-    const phase = length > 0 ? ((offset % length) + length) % length : 0;
+-    const nearest = Math.round(phase);
+-    const slot = this.wrap(nearest, length);
+-    const travel = phase - nearest;
+-    const sockets = [[-1,-.95],[1,-.81],[-.94,-.12],[.94,.02],[-1,.71],[1,.85]];
+-    const socket = sockets[slot] || [0,0];
+-    const exposure = Math.max(0, 1 - 2 * Math.abs(travel));
+-    return {x:socket[0] + travel * .08, y:socket[1], depth:1,
+-      scale:1 - Math.abs(travel) * .08, angle:socket[0] * -1.5,
+-      light:1, opacity:exposure, visible:length > 0 && slot < Math.min(6,length)};
++    // A six-socket rotor. At the rear handoff only one of the outgoing and
++    // incoming faces is visible; the half-open six-slot window never duplicates.
++    const slots = Math.min(6, Math.max(1, length));
++    const theta = offset * Math.PI * 2 / slots - Math.PI / 2;
++    const edge = length <= 6 ? 1 : Math.max(0, Math.min(1, (offset + .5) * 2, (5.5 - offset) * 2));
++    const x = Math.cos(theta), y = Math.sin(theta);
++    return { x, y, depth:(y + 1) / 2, scale:.97 + .03 * (y + 1) / 2,
++      angle:-x * 8, light:1, opacity:edge, visible:length > 0 && edge > 0 };
+   },
+   select(projects, category = '', id = '') {
+     const normalized = projects.some(project => project.category === category) ? category : '';
+@@ -121,6 +116,12 @@
+     let sliceTimer;
+     let sliceReturnTarget;
+     let sliceHoverBlocked = false;
++    let sliceAnimations = [];
++    const stopSliceAnimations = () => { sliceAnimations.forEach(animation => animation.cancel()); sliceAnimations = []; };
++    const label = (element, value) => {
++      if (element.firstChild?.nodeType === 3 && element.childNodes?.length === 1) element.firstChild.nodeValue = value;
++      else if (element.textContent !== value) element.textContent = value;
++    };
+     let state = ProjectShowroom.select(projects);
+     let previewSnapshot;
+     let openId = '';
+@@ -136,6 +137,7 @@
+     let layoutSignature = '';
+     let energyPaused = false;
+     let phaseFrame = 0;
++    let pendingKeyboardFocus = false;
+     let displayPhase = 0;
+     let targetPhase = 0;
+     let phaseEnds = 0;
+@@ -153,6 +155,7 @@
+     function paintGeometry() {
+       const indexes = new Map(state.items.map((project, index) => [project.id, index]));
+       const visible = [];
++      root.style.setProperty('--mechanism-turn', `${(-displayPhase * 360 / Math.min(6, state.items.length)).toFixed(4)}deg`);
+       for (const card of cards) {
+         const index = indexes.get(card.dataset.projectId);
+         const included = index !== undefined;
+@@ -178,6 +181,13 @@
+         if (shown) visible.push({id:card.dataset.projectId, point, selected});
+         if (included) card.setAttribute('aria-label', `${byId.get(card.dataset.projectId).name} · ${index + 1} z ${state.items.length}`);
+       }
++      if (pendingKeyboardFocus && document.activeElement === viewport) {
++        const card = byCard.get(active()?.id);
++        if (card && !card.inert) {
++          pendingKeyboardFocus = false;
++          card.querySelector('[data-showroom-open]').focus({preventScroll:true});
++        }
++      }
+       orbitNodes.forEach((node, index) => {
+         const item = state.items.length > 1 ? visible[index] : null;
+         node.style.display = item ? '' : 'none';
+@@ -238,7 +248,9 @@
+       const delta = ProjectShowroom.offset(state.index, lastIndex, state.items.length);
+       lastIndex = state.index;
+       targetPhase += delta;
+-      if (Math.abs(delta) > 2 || Math.abs(targetPhase - displayPhase) > 2) { finishPhase(); return; }
++      // Preserve the legacy five-node controller; the shipped six-node wheel
++      // keeps its continuous path, including Home/End and rapid repeated input.
++      if (!inlineSlices && (Math.abs(delta) > 2 || Math.abs(targetPhase - displayPhase) > 2)) { finishPhase(); return; }
+       animatePhase();
+     }
+     const syncUrl = () => {
+@@ -269,11 +281,11 @@
+       if (energyToggle) {
+         energyToggle.disabled = reducedMotion.matches;
+         energyToggle.setAttribute('aria-pressed', String(energyPaused || reducedMotion.matches));
+-        energyToggle.textContent = reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty mechanizmu' : 'Wstrzymaj efekty mechanizmu';
++        label(energyToggle, reducedMotion.matches ? 'Ruch ograniczony' : energyPaused ? 'Wznów efekty mechanizmu' : 'Wstrzymaj efekty mechanizmu');
+       }
+       viewport.style.setProperty('--showroom-drag', '0px');
+-      position.textContent = `${state.index + 1} / ${state.items.length}`;
+-      if (announce && active()) status.textContent = `${previewSnapshot ? 'Podgląd: ' : ''}${active().name}. ${state.index + 1} z ${state.items.length}${state.category ? ` · ${active().categoryLabel || ''}` : ' · wszystkie projekty'}.`;
++      label(position, `${state.index + 1} / ${state.items.length}`);
++      if (announce && active()) label(status, `${previewSnapshot ? 'Podgląd: ' : ''}${active().name}. ${state.index + 1} z ${state.items.length}${state.category ? ` · ${active().categoryLabel || ''}` : ' · wszystkie projekty'}.`);
+     }
+     function placeSlice() {
+       if (!sliceCard) return;
+@@ -293,6 +305,7 @@
+     }
+     function closeSlice(restoreFocus = false, updateUrl = true) {
+       clearTimeout(sliceTimer);
++      stopSliceAnimations();
+       if (!sliceCard) return;
+       const card = sliceCard;
+       sliceCard = null;
+@@ -319,10 +332,10 @@
+       const panel = card?.querySelector('[data-slice-panel]');
+       if (!panel || sliceCard === card) return;
+       if (sliceCard) closeSlice(false, false);
++      stopSliceAnimations();
+       cancelOpen();
+       clearTimeout(sliceTimer);
+-      // Freeze the current pose, including a partially completed manual turn.
+-      // Enlarging the real module never chases the cursor during a drawer step.
++      // The selected face has reached the front socket before extrusion.
+       if (phaseFrame) cancelAnimationFrame(phaseFrame);
+       phaseFrame = 0;
+       phaseEnds = 0;
+@@ -346,11 +359,12 @@
+         const after = card.getBoundingClientRect();
+         const x = before.left - after.left, y = before.top - after.top;
+         const sx = before.width / after.width, sy = before.height / after.height;
+-        card.animate([
++        sliceAnimations.push(card.animate([
+           {transform:`translate(${x}px,${y}px) scale(${sx},${sy})`,transformOrigin:'0 0',offset:0},
+           {transform:`translate(${x}px,${y - 3}px) scale(${sx * 1.025},${sy * 1.025})`,transformOrigin:'0 0',offset:.17},
+           {transform:'translate(0,0) scale(1)',transformOrigin:'0 0',offset:1},
+-        ], {duration:300,easing:'cubic-bezier(.2,.8,.2,1)'});
++        ], {duration:520,easing:'cubic-bezier(.18,.75,.2,1)'}));
++        sliceAnimations.push(panel.animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,delay:220,fill:'backwards'}));
+       }
+       if (focus) panel.querySelector('[data-slice-close]').focus({preventScroll:true});
+     }
+@@ -366,13 +380,27 @@
+       state.index = ProjectShowroom.wrap(state.index + delta, state.items.length);
+       render();
+       syncUrl();
+-      if (focusedSlice || (focusedLink && root.contains(focusedLink))) byCard.get(active().id).querySelector('[data-showroom-open]').focus({preventScroll:true});
++      if (focusedSlice || pendingKeyboardFocus || (focusedLink && root.contains(focusedLink))) {
++        const card = byCard.get(active().id);
++        pendingKeyboardFocus = card.inert;
++        (pendingKeyboardFocus ? viewport : card.querySelector('[data-showroom-open]')).focus({preventScroll:true});
++      }
+     }
+     function requestOpen(id, trigger, fromHistory = false) {
+       const project = byId.get(id);
+       if (!project || (locked && !fromHistory)) return;
+       if (inlineSlices) {
+-        openSlice(id, trigger, true);
++        if (sliceCard?.dataset.projectId === id) return;
++        if (sliceCard) closeSlice(false, false);
++        endPreview(); cancelOpen();
++        if (!state.items.some(item => item.id === id)) state = ProjectShowroom.select(projects, '', id);
++        state.index = state.items.findIndex(item => item.id === id);
++        render(true, !fromHistory);
++        root.classList.add('is-projecting');
++        const dispatch = () => { finishPhase(); openSlice(id, trigger, true); };
++        const remaining = phaseFrame ? Math.max(0, phaseEnds - performance.now()) + 30 : 0;
++        if (!reducedMotion.matches && remaining > 0) openTimer = setTimeout(dispatch, remaining);
++        else dispatch();
+         return;
+       }
+       endPreview();
+--- pre-sprint/assets/owner-finish.css
++++ current/assets/owner-finish.css
+@@ -90,38 +90,7 @@
+ .project-showroom .showroom-controls>span { color:#d3d0d2; }
+ .project-showroom .showroom-catalog-link a,
+ #main .project-showroom .section-kicker { color:#ffabb9; }
+-.showroom-enhanced .showroom-frame {
+-  border:1px solid #a15a62;
+-  background:
+-    radial-gradient(ellipse at 45% 42%,rgba(231,36,66,.2),transparent 65%),
+-    linear-gradient(135deg,rgba(4,6,9,.48),rgba(6,6,9,.28) 50%,rgba(8,3,6,.75)),
+-    url("brand/red-aluminium-reconstruction.jpg") center / cover no-repeat;
+-  box-shadow:inset 0 2px 0 #ffc3c344,inset 0 -8px 0 #0c0b0d,0 6px 0 #340e15,0 15px 0 #0b0a0d,0 22px 48px #000b;
+-}
+-.project-showroom .showroom-card .project-slice {
+-  color:#f5f1f0;
+-  border-color:#84939a;
+-  background:
+-    linear-gradient(112deg,rgba(255,255,255,.14),transparent 38%,rgba(3,5,8,.25) 74%),
+-    repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,rgba(0,0,0,.04) 1px 3px,transparent 3px 5px),
+-    linear-gradient(145deg,#59656a,#30393f 48%,#1d252b 82%);
+-  box-shadow:inset 1px 1px 0 #e2edf088,inset -1px -4px 0 #0e161c,3px 6px 0 #070b0e,4px 7px 0 #8e283855,0 16px 35px #000a;
+-}
+-.project-showroom .showroom-card.is-active .project-slice {
+-  border-top-color:#ff9ea9;
+-  border-left-color:#ff5b78;
+-  background:
+-    linear-gradient(115deg,rgba(217,44,69,.23),transparent 48%),
+-    repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,transparent 1px 4px),
+-    linear-gradient(140deg,#5e5459,#313038 60%,#22252b);
+-  box-shadow:inset 3px 0 0 #df3450,inset 0 1px 0 #ffb1bb75,inset 0 -4px 0 #16171b,3px 6px 0 #070b0e,4px 7px 0 #b5224075,0 16px 33px #000c;
+-}
+-.project-showroom .showroom-card .project-slice h3 { color:#fff; text-shadow:0 2px 6px #0009; }
+-.project-showroom .showroom-card .project-slice .showroom-card__category { color:#e9cdd0; }
+-.project-showroom .showroom-card .project-slice .showroom-card__badge,
+-.project-showroom .showroom-card .project-slice .showroom-card__badge>span { color:#e4eaee; border-color:#9daab3; }
+-.project-showroom .showroom-card .project-slice .showroom-card__stage { color:#fff; border-color:#ca8793; background:#4a2832; }
+-.project-showroom .showroom-card .project-slice .showroom-card__action { color:#ffc3cb; }
++/* Module geometry and metal faces are owned by project-mechanism.css. */
+ .project-showroom .showroom-controls button { color:#f4f5f6; border-color:#8597a2; background:linear-gradient(#44515b,#263039); }
+ .project-showroom .showroom-gate { border-color:#8c99a3; background:linear-gradient(140deg,#35414a,#1e2830); }
+ .project-showroom .showroom-gate__label,
+--- pre-sprint/assets/hero-space.js
++++ current/assets/hero-space.js
+@@ -32,7 +32,9 @@
+     if (toggle) {
+       toggle.disabled = reduced.matches;
+       toggle.setAttribute('aria-pressed', String(userPaused));
+-      toggle.textContent = reduced.matches ? 'Ruch sceny wyłączony' : userPaused ? 'Wznów ruch sceny' : 'Wstrzymaj ruch sceny';
++      const label = reduced.matches ? 'Ruch sceny wyłączony' : userPaused ? 'Wznów ruch sceny' : 'Wstrzymaj ruch sceny';
++      if (toggle.firstChild?.nodeType === 3) toggle.firstChild.nodeValue = label;
++      else if (toggle.textContent !== label) toggle.textContent = label;
+       toggle.title = reduced.matches ? 'Ruch wyłączony przez ustawienie ograniczenia animacji w systemie.' : '';
+     }
+     if (!enabled || !inView || !fine.matches) reset();
+--- pre-sprint/assets/interface-life.css
++++ current/assets/interface-life.css
+@@ -83,76 +83,7 @@
+ #main .hero__commercial-actions .cta:focus-visible,.project-showroom :focus-visible { outline-color:#790d20; }
+ .project-showroom .project-slice__panel :focus-visible { outline-color:#ffd4df; }
+ .project-showroom { position:relative; }
+-.showroom-enhanced .showroom-frame {
+-  border-color:#575757;
+-  background:
+-    linear-gradient(110deg,#171717bf,#14141499 65%,#2a1515b3),
+-    url("brand/red-aluminium-reconstruction.jpg") center / cover no-repeat;
+-  box-shadow:inset 0 2px 0 #dedede58,inset 0 -9px 0 #0a0a0a,0 8px 0 #5d5d5d,0 10px 0 #d5d5d566,0 24px 42px #0008;
+-}
+-.showroom-frame::before,.showroom-frame::after {
+-  border-color:#aaaaaa;
+-  border-right-color:#161616;
+-  background:linear-gradient(90deg,#181818,#dcdcdc 28%,#7b7b7b 52%,#212121);
+-  box-shadow:3px 2px 0 #090909,7px 0 14px #0009;
+-}
+-.showroom-frame__brace {
+-  background:linear-gradient(#8f8f8f,#242424 48%,#5c5c5c);
+-  border-color:#bebebe80;
+-  box-shadow:0 5px 0 #0b0b0b,0 8px 14px #0007;
+-}
+-.showroom-frame__signal {
+-  height:34px;
+-  background:linear-gradient(#ffb1bc,#e52d4e 70%,#a31935);
+-  box-shadow:0 0 11px #fa325a77;
+-  animation:interface-rail 10s linear infinite;
+-  animation-play-state:paused;
+-}
+-.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-frame__signal { animation-play-state:running; }
+-.project-showroom .showroom-card .project-slice {
+-  color:#1f1f1f;
+-  border-color:#d6d6d6;
+-  background:
+-    linear-gradient(124deg,#ffffff45,transparent 30%,#00000022 72%),
+-    repeating-linear-gradient(0deg,#ffffff26 0 1px,#0000000c 1px 2px,transparent 2px 4px),
+-    linear-gradient(135deg,#d6d6d6,#acacac 52%,#858585);
+-  box-shadow:inset 1px 1px 0 #fcfcfcb3,inset -1px -4px 0 #585858d9,3px 6px 0 #181818,4px 7px 0 #cacacab3,0 18px 26px #0009;
+-}
+-.project-showroom .showroom-card.is-active .project-slice {
+-  border-top-color:#ffb2bc;
+-  border-left-color:#d72c48;
+-  background:
+-    linear-gradient(125deg,#e1374b35,transparent 44%),
+-    repeating-linear-gradient(0deg,#ffffff26 0 1px,#0000000c 1px 2px,transparent 2px 4px),
+-    linear-gradient(150deg,#d8d8d8,#b6b6b6 55%,#919191);
+-  box-shadow:inset 3px 0 0 #c91d3a,inset 0 1px 0 #ffe8e3c9,inset 0 -4px 0 #5e5e5ed9,3px 6px 0 #0f0f0f,4px 7px 0 #b83f5266,0 18px 30px #0009;
+-}
+-.project-showroom .showroom-card .project-slice h3 { color:#1e1e1e; text-shadow:0 1px 0 #ffffff63; }
+-.project-showroom .showroom-card .project-slice .showroom-card__category { color:#3c3c3c; }
+-.project-showroom .showroom-card .project-slice .showroom-card__badge,
+-.project-showroom .showroom-card .project-slice .showroom-card__badge>span { color:#303030; border-color:#646464; }
+-.project-showroom .showroom-card .project-slice .showroom-card__stage { color:#f5f5f5; border-color:#797979; background:#3a3a3a; }
+-.project-showroom .showroom-card .project-slice .showroom-card__action { color:#730d20; }
+-.showroom-card:not(.is-slice-expanded) .project-slice::after {
+-  content:"";
+-  position:absolute;
+-  inset:0;
+-  pointer-events:none;
+-  background:linear-gradient(115deg,transparent 30%,#fff6 46%,#fff1 50%,transparent 66%);
+-  opacity:0;
+-  transform:translateX(-24%);
+-  animation:interface-sheen 11s ease-in-out infinite;
+-  animation-play-state:paused;
+-}
+-.showroom-card:not(.is-slice-expanded):not(.is-orbit-hidden)::before {
+-  animation:interface-settle 8s ease-in-out infinite alternate;
+-  animation-play-state:paused;
+-}
+-.showroom-card:nth-child(3n+1)::before { animation-delay:-2s; }
+-.showroom-card:nth-child(3n+2)::before { animation-delay:-5s; }
+-.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-card:not(.is-orbit-hidden)::before,
+-.showroom-in-view:not(.is-page-hidden):not(.is-slice-open):not(.is-energy-paused):not(.showroom-reduced-motion) .showroom-card.is-active .project-slice::after { animation-play-state:running; }
+-.showroom-card.is-slice-expanded .project-slice { transform:none; }
++/* Rotor, modules and their motion are owned by project-mechanism.css. */
+ .project-showroom .project-slice__panel {
+   border-color:#999999;
+   background:radial-gradient(ellipse at top right,#b51d3424,transparent 65%),linear-gradient(125deg,#363636,#222222);
+--- pre-sprint/assets/project-mechanism.css
++++ current/assets/project-mechanism.css
+@@ -1,120 +1,248 @@
+-/* Existing real project modules, now mounted on straight mechanical guides.
+-   Geometry only: visual-acceptance.css supplies the shared metal materials. */
+-.showroom-frame { display:none; }
+-.showroom-enhanced .showroom-viewport {
+-  --showroom-base-height:680px;
+-  --rack-card-width:min(350px,calc((100% - 70px) / 2));
+-  --showroom-origin-y:340px;
+-  --showroom-radius-x:calc((100% - var(--rack-card-width)) / 2 - 22px);
+-  --showroom-radius-y:250px;
+-  max-width:900px;
+-  width:100%;
+-  margin-inline:auto;
+-  perspective:1200px;
+-}
+-.showroom-enhanced .showroom-card {
+-  width:var(--rack-card-width); height:196px; will-change:auto;
+-  /* Percentages in left resolve against the guide, rather than the module's
+-     transform box. Keep the two readable faces on their separate sockets. */
+-  left:calc(50% + var(--showroom-x) * var(--showroom-radius-x));
+-  transform:translate(-50%,-50%) translateX(var(--showroom-drag,0px))
+-    translateY(calc(var(--showroom-y) * var(--showroom-radius-y)))
++/* Mechanical showroom V5. This existing sheet owns the enhanced geometry and
++   module material, after owner-finish's site palette. No duplicate scene. */
++#projekty {
++  --module-metal:repeating-linear-gradient(0deg,#ffffff24 0 1px,#1114140c 1px 2px,transparent 2px 4px),linear-gradient(115deg,#b6bcb9,#e0e3dd 29%,#a0a8a4 56%,#d4d9d4 77%,#7a8580);
++  --hexagon:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
++  --mechanism-turn:0deg;
++  overflow:clip;
++  container-type:inline-size;
++}
++#projekty.showroom-enhanced .showroom-viewport {
++  container-type:inline-size;
++  --showroom-base-height:calc(94cqw + 22px);
++  --showroom-origin-y:46cqw;
++  --showroom-radius-x:32cqw;
++  --showroom-radius-y:32cqw;
++  width:100%; max-width:900px; margin-inline:auto;
++  height:var(--showroom-base-height); min-height:0; padding:0;
++  perspective:1500px; overflow:visible; isolation:isolate;
++  touch-action:pan-y pinch-zoom;
++}
++/* cqw here resolves against the viewport, rather than a transformed module. */
++#projekty.showroom-enhanced .showroom-track { position:relative; width:100%; height:calc(94cqw + 22px); padding:0; transform:none; }
++#projekty.showroom-enhanced .showroom-card {
++  display:block; position:absolute; left:50%; top:46cqw;
++  width:29cqw; height:25.1cqw; max-width:none; min-width:0; margin:0;
++  opacity:var(--showroom-opacity); filter:drop-shadow(0 12px 10px #0009);
++  transform:translate(-50%,-50%) translate3d(calc(var(--showroom-x) * 32cqw),calc(var(--showroom-y) * 32cqw),0)
+     rotateY(var(--showroom-angle)) scale(var(--showroom-scale));
+-}
+-.showroom-enhanced.is-orbit-moving .showroom-card { will-change:transform,opacity; }
+-.showroom-enhanced .showroom-card:not(.is-orbit-hidden) { opacity:var(--showroom-opacity); }
+-.showroom-card:not(.is-slice-expanded) .project-slice {
+-  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));
+-}
+-.showroom-card:not(.is-slice-expanded) .project-slice .showroom-card__open {
+-  grid-template-columns:30px minmax(0,1fr);
+-  grid-template-rows:20px minmax(0,1fr);
+-  padding:16px 20px;
+-  gap:10px 14px;
+-}
+-.showroom-card:not(.is-slice-expanded) .showroom-card__caption { justify-content:start; }
+-.showroom-card:not(.is-slice-expanded) .showroom-card__action { align-items:center; min-height:32px; }
+-.showroom-card:not(.is-slice-expanded)::before {
+-  content:""; position:absolute; z-index:-1; top:44%; left:-10px; right:-10px;
+-  height:20px; border:1px solid #82919b; border-bottom:5px solid #10191f;
+-  background:linear-gradient(#64737e,#2b3943 48%,#4c5b65);
+-  box-shadow:0 5px 10px #0008;
+-}
+-.showroom-enhanced .showroom-frame {
+-  display:block; position:absolute; inset:22px 16px 28px; pointer-events:none;
+-  border:1px solid #66778366; border-radius:6px;
+-  background:linear-gradient(115deg,#51616e12,transparent 30%,#10181c40);
+-  box-shadow:inset 0 2px 0 #a8bdca25,inset 0 -7px 0 #11191e,0 14px 30px #0003;
+-}
+-.showroom-frame::before,.showroom-frame::after {
+-  content:""; position:absolute; top:14px; bottom:14px; width:9px;
+-  border:1px solid #85939b; border-right-color:#111b22;
+-  background:linear-gradient(90deg,#172129,#7d8b94 30%,#35434c 65%,#111b22);
+-  box-shadow:3px 2px 0 #10181c,7px 0 14px #0006;
+-}
+-.showroom-frame::before { left:calc(50% - 16px); }
+-.showroom-frame::after { right:calc(50% - 16px); }
+-.showroom-frame__brace {
+-  position:absolute; left:3%; right:3%; height:12px; border:1px solid #76838b77;
+-  background:linear-gradient(#4e5e69,#17232a); box-shadow:0 4px 0 #0f181d;
+-}
+-.showroom-frame__brace:nth-child(1) { top:15%; }
+-.showroom-frame__brace:nth-child(2) { top:48%; }
+-.showroom-frame__brace:nth-child(3) { top:81%; }
+-.showroom-frame__signal {
+-  position:absolute; z-index:1; top:18px; left:calc(50% - 3px); width:6px; height:28px;
+-  background:#e24b61; box-shadow:0 0 8px #e02d4859;
+-}
+-.is-orbit-moving:not(.is-energy-paused):not(.is-slice-open) .showroom-frame__signal {
+-  animation:mechanism-engage 650ms ease-out;
+-}
+-@keyframes mechanism-engage { 0% { transform:translateY(0); } 55% { transform:translateY(32px); } 100% { transform:translateY(0); } }
+-.is-slice-open .showroom-card:not(.is-slice-expanded) { visibility:hidden; opacity:0; }
+-.showroom-enhanced .showroom-card.is-slice-expanded { max-width:none; }
+-.showroom-card.is-slice-expanded .showroom-card__open {
+-  grid-template-columns:36px minmax(0,1fr); grid-template-rows:auto auto;
+-}
+-.showroom-card.is-slice-expanded .project-slice__body { gap:24px; }
+-.showroom-card.is-slice-expanded .project-slice__media img { height:340px; }
+-.showroom-card.is-slice-expanded .project-slice { animation:none; }
+-@media screen and (min-width:701px) {
+-  .showroom-enhanced.is-slice-open .showroom-viewport { --showroom-origin-y:340px; }
+-  .showroom-enhanced.is-slice-open .showroom-track { min-height:var(--showroom-base-height); }
+-  .showroom-gates { display:flex; flex-wrap:wrap; gap:8px; }
+-  .showroom-gate { display:flex; align-items:center; gap:10px; min-height:48px; padding:10px 12px; flex:1 1 auto; }
+-  .showroom-gate__icon { width:22px; height:22px; flex-shrink:0; }
+-  .showroom-gate__label { font-size:13px; }
+-  .showroom-gate__count { margin:0; }
+-  .showroom-heading { margin-top:30px; }
+-}
++  transform-origin:center; transition:none; will-change:auto;
++}
++#projekty.showroom-enhanced .showroom-card.is-orbit-hidden { visibility:hidden; opacity:0; pointer-events:none; }
++#projekty.showroom-enhanced.is-orbit-moving .showroom-card:not(.is-orbit-hidden) { will-change:transform; }
++#projekty .showroom-card::before,#projekty .showroom-card::after { content:none; animation:none; }
++#projekty .showroom-card .project-slice {
++  position:relative; isolation:isolate; display:block; width:100%; height:100%;
++  padding:0; border:0; border-radius:0; overflow:visible;
++  clip-path:var(--hexagon); color:#111716;
++  background:linear-gradient(125deg,#fafbf4,#76807a 19%,#1c2520 48%,#e6ece5 72%,#626b65);
++  box-shadow:none; transform:none; animation:none;
++}
++#projekty .project-slice::before {
++  content:""; position:absolute; z-index:-2; inset:3px; width:auto; height:auto;
++  clip-path:var(--hexagon); border:0; border-radius:0;
++  background:linear-gradient(135deg,#303835,#111714 45%,#5b6660 70%,#171d1a);
++  box-shadow:none; transform:none;
++}
++#projekty .project-slice::after {
++  content:""; position:absolute; z-index:-1; inset:7px; width:auto; height:auto;
++  clip-path:var(--hexagon); border:0; border-radius:0; opacity:1;
++  background:var(--module-metal); transform:none; animation:none; box-shadow:none;
++}
++#projekty .showroom-card.is-active .project-slice {
++  background:linear-gradient(130deg,#ffd0c8,#a22c3c 26%,#4d131f 48%,#ed8490 76%,#f5aaa8);
++  box-shadow:none;
++}
++#projekty .showroom-card.is-active .project-slice::before { background:linear-gradient(145deg,#c34856,#32151c 50%,#a33245); }
++#projekty .showroom-card.is-active .project-slice::after {
++  background:linear-gradient(120deg,#eaa2a42b,transparent 42%),var(--module-metal);
++}
++#projekty .showroom-card .showroom-card__open {
++  display:flex; flex-direction:column; justify-content:center; align-items:center;
++  gap:5px; padding:22px 21%; width:100%; height:100%; min-height:0;
++  border:0; border-radius:0; color:#141916; background:none; box-shadow:none;
++  text-decoration:none; text-align:center;
++}
++#projekty .showroom-card__open::before,#projekty .showroom-card__open::after { content:none; }
++#projekty .showroom-card .showroom-card__category { display:none; }
++#projekty .showroom-card .showroom-card__badge { display:flex; justify-content:center; align-items:center; width:auto; min-width:0; height:auto; border:0; margin:0; padding:0; color:#252d29; }
++#projekty .showroom-card__badge svg { width:24px; height:24px; }
++#projekty .showroom-card__badge>span { display:none; }
++#projekty .showroom-card .showroom-card__caption { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; width:100%; }
++#projekty .showroom-card .project-slice h3 {
++  margin:0; color:#111915; font:750 clamp(14px,1.9cqw,19px)/1.12 var(--sans);
++  letter-spacing:-.025em; text-shadow:0 1px 0 #ffffff80; overflow-wrap:anywhere;
++}
++#projekty .showroom-card .showroom-card__stage {
++  display:inline-block; align-self:center; max-width:100%; min-height:0;
++  padding:3px 5px; border:1px solid #4b5650; border-radius:2px;
++  color:#eff1eb; background:#28352e; font:600 clamp(10px,1.3cqw,12px)/1.25 var(--mono);
++  letter-spacing:0; white-space:normal; text-transform:none;
++}
++#projekty .showroom-card .showroom-card__action {
++  display:flex; justify-content:center; align-items:center; gap:3px;
++  padding:0; min-height:20px; color:#791c2d; font:700 clamp(10px,1.3cqw,12px)/1.2 var(--sans);
++}
++#projekty .showroom-card .module-hardware { position:absolute; inset:0; z-index:4; pointer-events:none; }
++#projekty .module-hardware i { position:absolute; width:6px; height:6px; margin:-3px; border-radius:50%; border:1px solid #202824; background:linear-gradient(35deg,transparent 42%,#111914 44% 57%,transparent 60%),radial-gradient(circle at 35% 30%,#f0f3e9,#849189 48%,#28372e 60%,#bbc2b7 78%); box-shadow:0 1px 1px #fff8; }
++#projekty .module-hardware i:nth-child(1) { left:29%; top:9%; }
++#projekty .module-hardware i:nth-child(2) { left:71%; top:9%; }
++#projekty .module-hardware i:nth-child(3) { left:91%; top:50%; }
++#projekty .module-hardware i:nth-child(4) { left:71%; top:91%; }
++#projekty .module-hardware i:nth-child(5) { left:29%; top:91%; }
++#projekty .module-hardware i:nth-child(6) { left:9%; top:50%; }
++/* Structural parts belong to one assembly; the approved ruby material is a
++   bounded circular insert inside its casing, never a rectangular backdrop. */
++#projekty .showroom-frame { display:none; }
++#projekty.showroom-enhanced .showroom-frame {
++  display:block; position:absolute; z-index:1; inset:auto;
++  left:50%; top:46cqw; width:94cqw; height:94cqw;
++  border:0; border-radius:50%; background:none; box-shadow:none; pointer-events:none;
++  transform:translate(-50%,-50%) rotateY(-7deg) rotateX(4deg);
++}
++#projekty .showroom-frame::before,#projekty .showroom-frame::after { content:none; }
++#projekty .mechanism-wheel { display:block; width:100%; height:100%; overflow:visible; filter:drop-shadow(0 16px 10px #0009); }
++#projekty .mechanism-rotor { transform-box:view-box; transform-origin:500px 500px; transform:rotate(var(--mechanism-turn)); }
++#projekty .mechanism-bearing { transform-box:view-box; transform-origin:500px 500px; animation:mechanism-bearing 28s linear infinite; animation-play-state:paused; }
++#projekty.showroom-in-view:not(.is-energy-paused):not(.showroom-reduced-motion):not(.is-slice-open):not(.is-projecting):not(.is-page-hidden) .mechanism-bearing { animation-play-state:running; }
++@keyframes mechanism-bearing { to { transform:rotate(360deg); } }
++#projekty .mechanism-hub {
++  position:absolute; left:50%; top:50%; width:26%; height:26%;
++  display:grid; place-items:center; transform:translate(-50%,-50%); border-radius:50%;
++  border:2px solid #969f98; background:repeating-linear-gradient(0deg,#edf0df16 0 1px,transparent 1px 3px),radial-gradient(ellipse at 32% 25%,#6d7871,#25302a 55%,#0c1410 76%);
++  box-shadow:inset 0 0 0 5px #0c1411,inset 0 0 0 7px #66756b,inset 0 5px 8px #edf0df66,0 7px 0 #050b08,0 10px 18px #000b;
++}
++#projekty .mechanism-hub img { display:block; width:69%; height:69%; object-fit:contain; filter:drop-shadow(0 4px 3px #000b); }
++#projekty .mechanism-plinth {
++  position:absolute; left:-3%; right:-3%; bottom:-1%; height:10%; border-radius:50%;
++  border:3px solid #86968d; border-bottom:7px solid #141f19;
++  background:radial-gradient(ellipse at center,#090e0b 55%,#86978c 56%,#d2d9cb 58%,#18271d 62%,#8f9e91 67%,#343f35 72%,#0c150f 80%);
++  box-shadow:inset 0 -3px #c4cec0,0 9px 0 #080d09,0 15px 23px #000a;
++}
++#projekty .mechanism-plinth::after { content:""; position:absolute; left:25%; right:25%; bottom:1px; height:2px; background:#b32b40; box-shadow:0 0 6px #b92e4c88; }
++/* A selected face becomes the same larger six-sided object. Its real panel
++   participates in normal document flow and is never placed in a new modal. */
++#projekty.showroom-enhanced.is-slice-open .showroom-viewport { height:auto; min-height:calc(94cqw + 22px); }
++#projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; min-height:calc(94cqw + 22px); padding:16px 0 32px; }
++#projekty.is-slice-open .showroom-card:not(.is-slice-expanded) { opacity:.12; pointer-events:none; visibility:visible; }
++#projekty.is-slice-open .showroom-card.is-orbit-hidden { visibility:hidden; }
++#projekty.showroom-enhanced .showroom-card.is-slice-expanded {
++  display:block; position:relative; left:2%; top:auto; width:96%; height:auto; max-width:none;
++  margin:0; z-index:30!important; opacity:1!important; transform:none; filter:drop-shadow(0 18px 14px #000b)!important;
++}
++#projekty .showroom-card.is-slice-expanded .project-slice {
++  display:block; height:auto; min-height:620px; padding:56px 21% 60px; container-type:normal; border-radius:0;
++}
++#projekty .showroom-card.is-slice-expanded .showroom-card__open {
++  height:auto; min-height:0; padding:0 0 12px; gap:8px;
++}
++#projekty .showroom-card.is-slice-expanded .showroom-card__badge { display:none; }
++#projekty .showroom-card.is-slice-expanded h3 { font-size:clamp(20px,2.6cqw,28px); line-height:1.15; }
++#projekty .showroom-card.is-slice-expanded .showroom-card__stage { font-size:12px; }
++#projekty .showroom-card.is-slice-expanded .showroom-card__action { display:none; }
++#projekty .project-slice__panel {
++  display:grid; grid-template-rows:auto auto auto; gap:12px; min-height:0; height:auto;
++  margin:0; padding:12px; border:1px solid #65716b; border-radius:3px;
++  color:#e3e8df; background:linear-gradient(125deg,#27302c,#141c17); box-shadow:inset 0 2px 5px #0007;
++}
++#projekty .project-slice__body { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:14px; padding:0; height:auto; max-height:none; overflow:visible; }
++#projekty .project-slice__body:not(:has(.project-slice__media)) { grid-template-columns:1fr; }
++#projekty .project-slice__media { order:0; }
++#projekty .project-slice__copy { order:1; }
++#projekty .project-slice__media img { height:210px; max-height:none; width:100%; object-fit:contain; background:#101712; border-color:#67756c; }
++#projekty .project-slice__media figcaption { font-size:11px; line-height:1.5; color:#c0ccbf; }
++#projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child { margin:0 0 12px; font-size:14px; line-height:1.55; color:#e1e8dd; }
++#projekty .project-slice__technologies { gap:5px; }
++#projekty .project-slice__technologies li { font-size:10px; line-height:1.3; padding:4px; color:#dce4d8; background:#27342b; border-color:#768573; }
++#projekty .project-slice__close { min-width:80px; min-height:44px; font-size:12px; color:#edf1e9; background:linear-gradient(#48564b,#28382b); border-color:#9ba994; }
++#projekty .project-slice__actions { gap:8px; padding-top:12px; }
++#projekty .project-slice__actions a { min-height:44px; padding:10px 8px; font-size:12px; line-height:1.3; color:#f1f2eb; background:linear-gradient(#48564c,#2b3b2e); border-color:#9baa96; }
++#projekty .project-slice__actions a:first-child { flex-basis:100%; }
++#projekty .project-slice__actions a[href*="/download/"] { color:#fff; background:#a41e34; border-color:#d58b96; font-size:12px; }
++#projekty .project-slice__actions a[href$="#kontakt"] { color:#f1f2eb; background:#314034; border-color:#9baa96; min-width:0; }
++#projekty .project-slice :focus-visible { outline:3px solid #9e2035; outline-offset:-4px; }
++#projekty .project-slice__panel :focus-visible { outline-color:#ffd7be; }
++#projekty .showroom-controls { gap:12px; margin-top:8px; }
++#projekty .showroom-controls button[data-showroom-step] { border-radius:50%; width:48px; height:48px; min-width:48px; padding:0; }
++#projekty .showroom-heading { margin-top:32px; }
++#projekty .showroom-gates { display:flex; flex-wrap:wrap; gap:8px; }
++#projekty .showroom-gate { display:flex; align-items:center; gap:8px; min-height:48px; padding:10px 12px; flex:1 1 auto; }
++#projekty .showroom-gate__icon { width:22px; height:22px; flex-shrink:0; }
++#projekty .showroom-gate__label { font-size:13px; }
++#projekty .showroom-gate__count { margin:0; }
+ @media (min-width:701px) and (max-width:1100px) {
+   #main:has(>.hero--monument) { display:block; }
+   .hero.hero--monument { height:auto; min-height:0; padding-bottom:24px; }
+-  .hero--monument .hero__stone-title { padding:54px 32px 24px; }
++  .hero--monument .hero__stone-title { padding:40px 32px 24px; }
+   .hero__explore { position:relative; inset:auto; margin:0 32px; }
+-  .project-showroom { padding:0 24px 40px; }
+-}
+-@media screen and (max-width:700px) {
+-  .showroom-enhanced .showroom-viewport { perspective:none; }
+-  .showroom-enhanced .showroom-frame { inset:2px 0 10px; }
+-  .showroom-frame::before { left:9px; }
+-  .showroom-frame::after { right:9px; }
+-  .showroom-frame__brace { left:0; right:0; }
+-  .showroom-frame__signal { left:10px; top:14px; }
+-  .showroom-narrow.showroom-enhanced .showroom-card.is-active { height:auto; }
+-  .showroom-card:not(.is-slice-expanded)::before { left:-6px; right:-6px; }
+-  .showroom-narrow .showroom-card .showroom-card__open { min-height:210px; }
+-  .showroom-card.is-slice-expanded .project-slice__media img { height:260px; }
+-  .showroom-gates { display:flex; flex-wrap:wrap; gap:8px; }
+-  .showroom-gate { display:flex; align-items:center; gap:8px; flex:1 1 130px; min-height:48px; padding:10px; }
+-  .showroom-gate__icon { width:22px; height:22px; flex-shrink:0; }
+-  .showroom-gate__label { font-size:13px; }
+-  .showroom-gate__count { margin:0; }
+-}
+-@media (prefers-reduced-motion:reduce) {
+-  .showroom-frame__signal { animation:none!important; }
+-}
+-.showroom-reduced-motion .showroom-frame__signal,.is-energy-paused .showroom-frame__signal,
+-.is-page-hidden .showroom-frame__signal { animation:none!important; }
+-@media (forced-colors:active) { .showroom-frame { display:none!important; } }
+-@media print { .showroom-frame { display:none!important; } }
++  #projekty { padding:0 24px 40px; }
++  #projekty.showroom-enhanced .showroom-viewport { max-width:780px; }
++}
++@media (min-width:701px) and (max-width:1280px) {
++  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__open { padding-block:10px; gap:4px; }
++  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__caption { gap:4px; }
++  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__badge svg { width:20px; height:20px; }
++  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__stage { flex-shrink:0; }
++}
++@media (max-width:700px) {
++  .hero--monument .hero__stone-title { padding-top:18px; }
++  .hero--monument h1.stone-word { font-size:34px; }
++  .hero--monument .hero__motto { font-size:15px; line-height:1.45; }
++  #projekty.showroom-enhanced .showroom-viewport { --showroom-base-height:calc(296px + min(40.7cqw,163px)); max-width:400px; height:var(--showroom-base-height); padding:0; perspective:none; }
++  #projekty.showroom-enhanced .showroom-track { height:calc(296px + min(40.7cqw,163px)); }
++  #projekty.showroom-enhanced .showroom-frame { top:117px; width:94cqw; height:94cqw; transform:translate(-50%,-50%); }
++  #projekty .mechanism-plinth { display:none; }
++  #projekty .mechanism-hub { width:25%; height:25%; }
++  #projekty.showroom-enhanced .showroom-card { display:none; }
++  #projekty.showroom-enhanced .showroom-card.is-active {
++    display:block; position:absolute; left:50%; top:278px; width:94%; height:81.4cqw;
++    transform:translate(-50%,-50%); opacity:1; filter:drop-shadow(0 10px 8px #0009); scroll-margin-top:84px;
++  }
++  #projekty .showroom-card .showroom-card__open { padding:32px 22%; }
++  #projekty .showroom-card .project-slice h3 { font-size:19px; line-height:1.15; }
++  #projekty .showroom-card__badge svg { width:30px; height:30px; }
++  #projekty .showroom-card .showroom-card__stage { font-size:11px; }
++  #projekty .showroom-card .showroom-card__action { min-height:28px; font-size:12px; }
++  #projekty.showroom-enhanced.is-slice-open .showroom-viewport { height:auto; min-height:420px; }
++  #projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; min-height:420px; padding-top:180px; padding-bottom:12px; }
++  #projekty.showroom-enhanced .showroom-card.is-slice-expanded { position:relative; top:auto; left:0; width:100%; height:auto; transform:none; }
++  #projekty .showroom-card.is-slice-expanded .project-slice { min-height:0; padding:60px 21% 66px; --hexagon:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
++  /* Long phone content stays inside a wide six-sided housing. Each reading
++     row uses the safe central strip; no inner scrollbar or clipped copy. */
++  #projekty .showroom-card.is-slice-expanded .showroom-card__open { width:100%; margin:auto; padding:0 0 14px; }
++  #projekty .project-slice__panel { padding:10px; }
++  #projekty .project-slice__body { grid-template-columns:minmax(0,1fr); gap:14px; }
++  #projekty .project-slice__copy { order:0; }
++  #projekty .project-slice__media { order:1; }
++  #projekty .project-slice__media img { height:250px; }
++  #projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child { font-size:14px; line-height:1.55; }
++  #projekty .project-slice__actions a { flex-basis:100%; }
++  #projekty .showroom-controls { gap:10px; margin-top:10px; }
++  #projekty .showroom-gate { flex:1 1 130px; }
++}
++@media (max-width:360px) {
++  #projekty.showroom-enhanced .showroom-viewport,#projekty.showroom-enhanced .showroom-track { height:385px; }
++  #projekty.showroom-enhanced .showroom-card.is-active { top:248px; }
++  #projekty.showroom-enhanced.is-slice-open .showroom-viewport,#projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; }
++  #projekty.showroom-enhanced .showroom-card.is-slice-expanded { top:auto; }
++  #projekty .showroom-card .project-slice h3 { font-size:17px; }
++}
++html[data-interface-motion="paused"] #projekty .mechanism-bearing,
++html[data-interface-quality="compact"] #projekty .mechanism-bearing { animation:none; }
++@media(prefers-reduced-motion:reduce) { #projekty .mechanism-bearing { animation:none!important; } }
++@media(forced-colors:active) {
++  #projekty .showroom-frame,#projekty .module-hardware { display:none!important; }
++  #projekty .project-slice,#projekty .project-slice::after { color:CanvasText; background:Canvas; }
++  #projekty .project-slice::before { background:CanvasText; }
++  #projekty .showroom-card .project-slice h3,#projekty .showroom-card .showroom-card__badge,#projekty .showroom-card .showroom-card__action { color:CanvasText; text-shadow:none; }
++  #projekty .showroom-card .showroom-card__stage,#projekty .project-slice__panel,#projekty .project-slice__close,#projekty .project-slice__technologies li,#projekty .project-slice__actions a { color:CanvasText; background:Canvas; border-color:CanvasText; box-shadow:none; }
++  #projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child,#projekty .project-slice__media figcaption { color:CanvasText; }
++  #projekty .project-slice :focus-visible { outline-color:Highlight; }
++}
++@media print {
++  #projekty .showroom-frame,#projekty .module-hardware { display:none!important; }
++  #projekty.showroom-enhanced .showroom-viewport,#projekty.showroom-enhanced .showroom-track { height:auto; }
++  #projekty.showroom-enhanced .showroom-card { display:block; position:static; width:100%; height:auto; transform:none; opacity:1; visibility:visible; filter:none; }
++  #projekty .project-slice { clip-path:none; color:#111; background:#fff; }
++  #projekty .project-slice::before,#projekty .project-slice::after { content:none; }
++}
+--- pre-sprint/assets/ecosystem-system.js
++++ current/assets/ecosystem-system.js
+@@ -23,6 +23,14 @@
+       return { identifier, node, button, detail, name, status, stage, next: detail.nextSibling };
+     });
+     if (records.some(record => !record)) return;
++
++    const consoleName = document.createElement('p');
++    consoleName.className = 'ecosystem-console__name';
++    const consoleStatus = document.createElement('p');
++    consoleStatus.className = 'ecosystem-console__state';
++    const nameText = document.createTextNode('');
++    const statusText = document.createTextNode('');
++    consoleName.append(nameText); consoleStatus.append(statusText);
+ 
+     const byIdentifier = new Map(records.map(record => [record.identifier, record]));
+     const edges = Array.from(wires.querySelectorAll('[data-ecosystem-edge]')).filter(edge =>
+@@ -126,13 +134,9 @@
+       panel.hidden = !active || mobile.matches;
+       panel.dataset.ecosystemStage = active ? active.stage : '';
+       if (active && !mobile.matches) {
+-        const name = document.createElement('p');
+-        name.className = 'ecosystem-console__name';
+-        name.textContent = active.name.textContent;
+-        const status = document.createElement('p');
+-        status.className = 'ecosystem-console__state';
+-        status.textContent = active.status.textContent;
+-        panel.append(name, status, active.detail);
++        nameText.nodeValue = active.name.textContent;
++        statusText.nodeValue = active.status.textContent;
++        panel.append(consoleName, consoleStatus, active.detail);
+       }
+       map.dataset.selectedNode = selected || '';
+       syncMotion();
+--- pre-sprint/assets/visual-acceptance.css
++++ current/assets/visual-acceptance.css
+@@ -119,32 +119,7 @@
+ .project-showroom .showroom-filterbar p,
+ .project-showroom .showroom-controls>span { color:#d1dce3; font-size:14px; }
+ .project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }
+-.project-showroom .showroom-card .project-slice {
+-  color:#f0f4f6;
+-  border-color:#96a5ae;
+-  border-bottom-color:#18242d;
+-  background:
+-    repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 4px),
+-    linear-gradient(120deg,#45515a,#2c373f 75%);
+-  box-shadow:inset 1px 1px 0 #edf6fc40,inset -1px -3px 0 #0d182066,3px 5px 0 #15212a,4px 6px 0 #65778160,0 12px 22px #080e1459;
+-}
+-.project-showroom .showroom-card.is-active .project-slice {
+-  border-color:#f49aad;
+-  border-bottom-color:#a83d53;
+-  box-shadow:inset 1px 1px 0 #edf6fc47,inset -1px -3px 0 #5d1e3166,3px 5px 0 #19202a,4px 6px 0 #ab526660,0 12px 22px #080e1459;
+-}
+-.project-showroom .showroom-card .project-slice h3 { color:#f5f7f8; font-size:clamp(20px,1.65vw,24px); line-height:1.25; text-shadow:0 1px 1px #0c161e; }
+-.project-showroom .showroom-card .project-slice .showroom-card__category { color:#dce5eb; font-size:12px; }
+-.project-showroom .showroom-card .project-slice .showroom-card__badge,
+-.project-showroom .showroom-card .project-slice .showroom-card__badge>span { color:#cfdee7; border-color:#92a3af; }
+-.project-showroom .showroom-card .project-slice .showroom-card__stage {
+-  color:#f0e8ed;
+-  border-color:#9d8a96;
+-  background:#2c2932;
+-  font-size:12px;
+-  line-height:1.5;
+-}
+-.project-showroom .showroom-card .project-slice .showroom-card__action { color:#ffc6d2; font-size:14px; line-height:1.45; }
++/* Enhanced module faces are owned by project-mechanism.css. */
+ .project-showroom .project-slice__panel { color:#eef3f6; border-color:#91a0aa; background:linear-gradient(120deg,#2a363f,#202c35); box-shadow:inset 0 1px 0 #e5f0f526; }
+ .project-showroom .project-slice__copy p,
+ .project-showroom .project-slice__copy p:first-child { color:#e0e8ed; font-size:16px; line-height:1.75; }
+--- pre-sprint/scripts/showroom_markup.py
++++ current/scripts/showroom_markup.py
+@@ -87,12 +87,46 @@
+ 
+ 
+ def mechanical_field():
+-    """Noninteractive straight guides; no circular decoration or animation loop."""
+-    return ('<div class="showroom-frame" aria-hidden="true">'
+-            '<i class="showroom-frame__brace"></i>'
+-            '<i class="showroom-frame__brace"></i>'
+-            '<i class="showroom-frame__brace"></i>'
+-            '<i class="showroom-frame__signal"></i></div>')
++    """A real layered rotor shared by the six project sockets; original PK mark."""
++    arms = ''.join(
++        f'<g transform="rotate({i * 60} 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/>'
++        '<path d="M500 332V154" stroke="#070909" stroke-width="15"/>'
++        '<path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/>'
++        '<path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/>'
++        '<circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/>'
++        '<circle cx="500" cy="295" r="6" fill="#080909"/></g>' for i in range(6)
++    )
++    bolts = ''.join(
++        f'<g transform="rotate({i * 30} 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/>'
++        '<path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g>' for i in range(12)
++    )
++    return (
++        '<div class="showroom-frame" aria-hidden="true">'
++        '<svg class="mechanism-wheel" viewBox="0 0 1000 1000" focusable="false">'
++        '<defs><linearGradient id="mechanism-steel" x1="0" y1="0" x2="1" y2=".8">'
++        '<stop stop-color="#252a2b"/><stop offset=".16" stop-color="#c4c9c6"/>'
++        '<stop offset=".29" stop-color="#707674"/><stop offset=".48" stop-color="#eef0e9"/>'
++        '<stop offset=".54" stop-color="#757d7b"/><stop offset=".8" stop-color="#292e2e"/>'
++        '<stop offset="1" stop-color="#aab0ad"/></linearGradient>'
++        '<radialGradient id="mechanism-well"><stop stop-color="#191d1d"/><stop offset=".72" stop-color="#090c0d"/><stop offset="1" stop-color="#303534"/></radialGradient>'
++        '<pattern id="mechanism-ruby" width="1" height="1" patternContentUnits="objectBoundingBox">'
++        '<image href="assets/brand/red-aluminium-reconstruction.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern></defs>'
++        '<circle cx="500" cy="520" r="465" fill="#050707" stroke="#252b2c" stroke-width="20"/>'
++        '<circle cx="500" cy="500" r="464" fill="url(#mechanism-well)" stroke="url(#mechanism-steel)" stroke-width="12"/>'
++        '<circle cx="500" cy="500" r="442" fill="none" stroke="url(#mechanism-steel)" stroke-width="26"/>'
++        '<circle cx="500" cy="500" r="421" fill="none" stroke="#070909" stroke-width="8"/>'
++        '<circle cx="500" cy="500" r="413" fill="none" stroke="#a6afaa" stroke-width="3"/>'
++        '<circle cx="500" cy="500" r="400" fill="none" stroke="#9a2237" stroke-width="5" stroke-dasharray="72 137"/>'
++        '<circle cx="500" cy="500" r="369" fill="url(#mechanism-ruby)" stroke="#525b59" stroke-width="12"/>'
++        '<circle cx="500" cy="500" r="365" fill="#060809" fill-opacity=".76"/>'
++        '<g class="mechanism-rotor">'+arms+'</g>'+bolts+
++        '<circle cx="500" cy="500" r="180" fill="#070a0b" stroke="#4c5552" stroke-width="8"/>'
++        '<circle cx="500" cy="500" r="162" fill="#161a1a" stroke="url(#mechanism-steel)" stroke-width="26"/>'
++        '<circle class="mechanism-bearing" cx="500" cy="500" r="181" fill="none" stroke="#ed5262" stroke-width="4" stroke-dasharray="80 205"/>'
++        '<circle cx="500" cy="500" r="142" fill="none" stroke="#929b96" stroke-width="2"/></svg>'
++        '<div class="mechanism-hub"><img src="assets/brand/progressorkit-stamp.png" width="140" height="140" alt=""></div>'
++        '<div class="mechanism-plinth"></div></div>'
++    )
+ 
+ 
+ def render_showroom(projects):
+@@ -135,5 +169,5 @@
+         problem = f'<p>{e(project["problem"])}</p>' if project.get('problem') else ''
+         technologies = ''.join(f'<li>{e(technology)}</li>' for technology in project.get('technologies', []))
+         download = '<a class="cta cta--ghost" href="/download/glikemia-premium">Pobierz Glikemia Premium</a>' if identifier == 'glikemia-premium' else ''
+-        cards.append(f'''<article class="showroom-card" data-project-id="{identifier}" data-category="{category}" role="group" aria-roledescription="slajd" aria-label="{e(project['name'])} · {index + 1} z {len(projects)}"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="{identifier}" href="projekty/{identifier}/" aria-label="Odkryj projekt: {e(project['name'])}" aria-expanded="false" aria-controls="slice-panel-{identifier}"><span class="showroom-card__category">{label}</span>{media}<div class="showroom-card__caption"><h3>{e(project['name'])}</h3><span class="showroom-card__stage">{e(stage)}</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-{identifier}" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body">{picture}<div class="project-slice__copy"><p>{e(project.get('summary', ''))}</p>{problem}<ul class="project-slice__technologies">{technologies}</ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/{identifier}/">Zobacz cały projekt <span aria-hidden="true">→</span></a>{download}<a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article>''')
++        cards.append(f'''<article class="showroom-card" data-project-id="{identifier}" data-category="{category}" role="group" aria-roledescription="slajd" aria-label="{e(project['name'])} · {index + 1} z {len(projects)}"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="{identifier}" href="projekty/{identifier}/" aria-label="Odkryj projekt: {e(project['name'])}" aria-expanded="false" aria-controls="slice-panel-{identifier}"><span class="showroom-card__category">{label}</span>{media}<div class="showroom-card__caption"><h3>{e(project['name'])}</h3><span class="showroom-card__stage">{e(stage)}</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-{identifier}" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body">{picture}<div class="project-slice__copy"><p>{e(project.get('summary', ''))}</p>{problem}<ul class="project-slice__technologies">{technologies}</ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/{identifier}/">Zobacz cały projekt <span aria-hidden="true">→</span></a>{download}<a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article>''')
+     return f'''<section class="project-showroom section" id="projekty" data-showroom data-showroom-slices aria-labelledby="showroom-title"><div class="shell"><header class="showroom-heading"><div><span class="section-kicker">EKOSYSTEM PROGRESSKIT</span><h2 class="section-title" id="showroom-title">System połączonych światów.</h2></div><p>{len(projects)} projektów w jednym ekosystemie. Wybierz projekt, aby rozwinąć moduł.</p></header><div class="showroom-gates" data-showroom-enhancement hidden aria-label="Filtruj ekspozycję według kategorii">{''.join(gates)}</div><div class="showroom-filterbar" data-showroom-enhancement hidden><button type="button" class="showroom-all" data-showroom-category="" aria-pressed="true" aria-controls="showroom-track">Wszystkie projekty <span>{len(projects)}</span></button><p id="showroom-status" role="status" aria-live="polite" aria-atomic="true">Kolekcja: {len(projects)} projektów.</p></div><div class="showroom-viewport" data-showroom-viewport tabindex="0" role="region" aria-roledescription="karuzela" aria-label="Mechaniczna ekspozycja projektów" aria-describedby="showroom-instructions">{mechanical_field()}<div class="showroom-track" id="showroom-track">{''.join(cards)}</div></div><nav class="showroom-controls" data-showroom-enhancement hidden aria-label="Sterowanie ekspozycją"><button type="button" id="showroom-previous" data-showroom-step="-1" aria-controls="showroom-track" aria-label="Poprzedni projekt">←</button><span data-showroom-position aria-hidden="true">1 / {len(projects)}</span><button type="button" id="showroom-next" data-showroom-step="1" aria-controls="showroom-track" aria-label="Następny projekt">→</button><button class="showroom-motion-toggle" type="button" data-showroom-motion-toggle aria-pressed="false">Wstrzymaj efekty mechanizmu</button></nav><p class="showroom-instructions" id="showroom-instructions">Wybierz projekt, aby rozwinąć moduł. Szczegóły przewijają się razem ze stroną.</p><p class="showroom-catalog-link"><a href="projekty/">Wyszukaj projekt lub technologię w pełnym katalogu →</a></p></div></section>'''
+--- pre-sprint/scripts/build-site.py
++++ current/scripts/build-site.py
+@@ -411,11 +411,11 @@
+     nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
+     page_styles=''
+     if not path and not prefix:
+-        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery','project-mechanism'))
++        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
+         page_styles+='\n  <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>'
+     page_styles+=('\n  ' if page_styles else '')+f'<link rel="stylesheet" href="{prefix}assets/visual-acceptance.css">'
+     if not path and not prefix:
+-        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish'))
++        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish','project-mechanism'))
+     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
+     if not page_styles:
+         template=template.replace('  @@PAGE_STYLES@@\n','')
+--- pre-sprint/scripts/qa-final-website.cjs
++++ current/scripts/qa-final-website.cjs
+@@ -83,33 +83,50 @@
+         assert(await page.locator('h1').count() === 1, 'Exactly one H1');
+         for (const id of ['uslugi', 'kontakt', 'ekosystem', 'wydania']) assert(await page.locator(`#${id}`).count() === 1, `Missing ${id}`);
+       });
+-      await check(`${width}: readable rail modules without overlap or circular decoration`, async () => {
+-        const layout=await page.evaluate(()=>({rings:document.querySelectorAll('.showroom-orbit,.showroom-orbit-front').length,
++      await check(`${width}: six genuine hexagonal modules around the original PK hub without overlap`, async () => {
++        const layout=await page.evaluate(()=>({hub:document.querySelector('.mechanism-hub img')?.getAttribute('src'), wheel:document.querySelectorAll('.mechanism-wheel').length,
+           modules:[...document.querySelectorAll('.showroom-card:not(.is-orbit-hidden)')].map(card=>{
+             const title=card.querySelector('h3'),stage=card.querySelector('.showroom-card__stage'),action=card.querySelector('.showroom-card__action');
+-            return {id:card.dataset.projectId,rect:card.getBoundingClientRect().toJSON(),title:title.getBoundingClientRect().toJSON(),
++            return {id:card.dataset.projectId,clip:getComputedStyle(card.querySelector('.project-slice')).clipPath,rect:card.getBoundingClientRect().toJSON(),title:title.getBoundingClientRect().toJSON(),
+               stage:stage.getBoundingClientRect().toJSON(),action:action.getBoundingClientRect().toJSON(),
+               fonts:[title,stage,action].map(e=>parseFloat(getComputedStyle(e).fontSize))};
+           })}));
+-        assert(layout.rings===0,'Circular decoration remains in rendered markup');
++        assert(layout.wheel===1&&layout.hub==='assets/brand/progressorkit-stamp.png','Missing integrated wheel or original logo');
+         assert(layout.modules.length===(width<600?1:6),'Incorrect number of readable modules');
+         for(const m of layout.modules){
+-          assert(m.fonts[0]>=20&&m.fonts[1]>=12&&m.fonts[2]>=14,JSON.stringify(m));
++          assert(m.fonts[0]>=(width<600?17:14)&&m.fonts[1]>=10&&m.fonts[2]>=10,JSON.stringify(m));
++          assert(m.clip==='polygon(25% 0px, 75% 0px, 100% 50%, 75% 100%, 25% 100%, 0px 50%)','Not a genuine six-sided face: '+m.id);
+           assert(m.title.left>=m.rect.left-1&&m.title.right<=m.rect.right+1&&m.action.bottom<=m.rect.bottom+1,JSON.stringify(m));
+           assert(m.title.bottom<=m.stage.top+1&&m.stage.bottom<=m.action.top+1,'Name, stage or action overlap: '+m.id);
+         }
+         for(let i=0;i<layout.modules.length;i++)for(let j=i+1;j<layout.modules.length;j++){
+-          const a=layout.modules[i].rect,b=layout.modules[j].rect;
+-          assert(Math.min(a.right,b.right)-Math.max(a.left,b.left)<=1||Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)<=1,'Module faces overlap');
++          // A hexagon's empty bounding-box corners may intersect its neighbor.
++          // SAT tests the six painted face vertices, not an obsolete rectangle.
++          const polygon=r=>[[.25,0],[.75,0],[1,.5],[.75,1],[.25,1],[0,.5]].map(([x,y])=>[r.left+x*r.width,r.top+y*r.height]);
++          const a=polygon(layout.modules[i].rect),b=polygon(layout.modules[j].rect);
++          const separated=[a,b].some(poly=>poly.some((v,k)=>{
++            const next=poly[(k+1)%poly.length],axis=[-(next[1]-v[1]),next[0]-v[0]];
++            const projected=points=>points.map(p=>p[0]*axis[0]+p[1]*axis[1]);
++            const pa=projected(a),pb=projected(b);
++            return Math.max(...pa)<=Math.min(...pb)||Math.max(...pb)<=Math.min(...pa);
++          }));
++          assert(separated,'Hexagonal faces overlap: '+layout.modules[i].id+' / '+layout.modules[j].id);
+         }
+         return layout;
+       });
++      if(width===1440){
++        await page.locator('[data-showroom-step="1"]').click();
++        await page.waitForTimeout(200);
++        await page.screenshot({path:path.join(out,'1440-rotation.png')});report.screenshots.push('1440-rotation.png');
++        await page.waitForTimeout(550);
++      }
+       // Every real catalog item must remain reachable through the existing mechanism.
+       for (const id of ids) {
+         await check(`${width}: expand ${id} with natural page scroll`, async () => {
+           await open(page, id);
+           const b = await bounds(page);
+           assert(b.count === 1 && !b.overflow, JSON.stringify(b));
++          assert(await page.locator('.is-slice-expanded .project-slice').evaluate(el=>getComputedStyle(el).clipPath)==='polygon(25% 0px, 75% 0px, 100% 50%, 75% 100%, 25% 100%, 0px 50%)','Expanded housing lost its hexagonal silhouette');
+           assert(b.left >= -1 && b.right <= b.width + 1, JSON.stringify(b));
+           assert(!['auto','scroll'].includes(b.bodyOverflow) && !['auto','scroll'].includes(b.panelOverflow) && b.naturalBody, JSON.stringify(b));
+           const action = page.locator('.is-slice-expanded .project-slice__actions a').first();
+@@ -202,6 +219,9 @@
+         assert(await page.locator('.showroom-card.is-active').getAttribute('data-project-id') === 'progresskit-tax', 'Selected project lost');
+         await page.keyboard.press('Escape');
+       });
++      await page.locator('footer').scrollIntoViewIfNeeded();
++      await shot(page,`${width}-footer.png`,page.locator('footer'));
++      await page.locator('footer').screenshot({path:path.join(out,`${width}-footer-full.png`)});report.screenshots.push(`${width}-footer-full.png`);
+       const metrics = await page.evaluate(() => ({ navigation: performance.getEntriesByType('navigation').map(n => ({ duration: n.duration, domContentLoaded: n.domContentLoadedEventEnd, transferSize: n.transferSize })),
+         resources: performance.getEntriesByType('resource').length, domNodes: document.querySelectorAll('*').length,
+         heap: performance.memory ? { used: performance.memory.usedJSHeapSize, limit: performance.memory.jsHeapSizeLimit } : null }));
+@@ -252,6 +272,38 @@
+       assert(await work.locator('img[src="x"]').count()===0,'Search injected markup');
+     });
+     await work.goto(base,{waitUntil:'networkidle'});
++    await check('V5 actual circular motion, six-face limit, filtering during rotation and extrusion',async()=>{
++      await work.evaluate(()=>scrollTo(0,0));
++      const trajectory=await work.evaluate(async()=>{
++        const root=document.querySelector('[data-showroom]'),track=document.querySelector('.showroom-viewport');
++        const first=document.querySelector('.showroom-card.is-active'),points=[];
++        root.querySelector('[data-showroom-step="1"]').click();
++        const start=performance.now();
++        while(performance.now()-start<750){
++          await new Promise(requestAnimationFrame);
++          const style=getComputedStyle(first),r=first.getBoundingClientRect();
++          const visible=[...root.querySelectorAll('.showroom-card')].filter(el=>!el.classList.contains('is-orbit-hidden')&&Number(getComputedStyle(el).opacity)>0);
++          points.push({x:Number(style.getPropertyValue('--showroom-x')),y:Number(style.getPropertyValue('--showroom-y')),visible:visible.length,left:r.left,top:r.top});
++        }
++        return points;
++      });
++      assert(trajectory.length>5,'Too few motion samples');
++      assert(trajectory.every(p=>p.visible<=6),'More than six visible faces');
++      assert(trajectory.every(p=>Math.abs(p.x*p.x+p.y*p.y-1)<.00001),'Trajectory left circular path');
++      assert(Math.abs(trajectory[0].x-trajectory.at(-1).x)>.3,'No real rotation');
++      await work.locator('[data-showroom-step="1"]').click();
++      await work.locator('[data-showroom-category="mobile"]').click();await work.waitForTimeout(700);
++      assert(await work.locator('.is-slice-expanded').count()===0,'Filter left a stale panel');
++      assert(await work.locator('.showroom-card:not(.is-orbit-hidden):not([data-category="mobile"])').count()===0,'Filter leaked other categories');
++      await work.locator('[data-showroom-category=""]').click();await work.waitForTimeout(700);
++      const neighboring=work.locator('.showroom-card:not(.is-orbit-hidden):not(.is-active) [data-showroom-open]').first();
++      await neighboring.click();
++      await work.locator('.is-slice-expanded').waitFor();
++      const extrusion=await work.locator('.is-slice-expanded').evaluate(el=>el.getAnimations().map(a=>({duration:a.effect.getTiming().duration,frames:a.effect.getKeyframes().map(k=>k.transform)})));
++      assert(extrusion.some(a=>a.duration===520&&a.frames.some(t=>t.includes('scale('))),'No physical face extrusion animation');
++      await work.keyboard.press('Escape');
++      return {samples:trajectory.length,first:trajectory[0],last:trajectory.at(-1),maxVisible:Math.max(...trajectory.map(p=>p.visible)),extrusion};
++    });
+     const infinite=()=>work.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running'&&a.effect?.getTiming().iterations===Infinity).map(a=>({name:a.animationName,target:a.effect?.target?.className?.baseVal??a.effect?.target?.className})));
+     await check('V3 hero has bounded visible motion and the shared pause stops pointer light too',async()=>{
+       await work.waitForTimeout(300);
+@@ -263,9 +315,9 @@
+       await work.mouse.move(box.x+box.width*.65,box.y+200);await work.waitForTimeout(100);
+       const lightAfter=await work.locator('.hero--monument').evaluate(el=>el.style.getPropertyValue('--light-x'));
+       assert(lightBefore!==''&&lightAfter!==''&&lightBefore!==lightAfter,'Hero pointer light is static');
+-      const signal=()=>work.locator('.showroom-frame__signal').evaluate(el=>getComputedStyle(el).transform);
++      const signal=()=>work.locator('.mechanism-bearing').evaluate(el=>getComputedStyle(el).transform);
+       const before=await signal();await work.waitForTimeout(450);const after=await signal();
+-      assert(before!==after,'Visible rail signal is static');
++      assert(before!==after,'Visible bearing is static');
+       const toggle=work.locator('[data-showroom-motion-toggle]');await toggle.click();await work.waitForTimeout(100);
+       assert((await infinite()).length===0,'Pause left running infinite motion');
+       await work.mouse.move(100,200);await work.mouse.move(300,350);await work.waitForTimeout(100);
+@@ -326,7 +378,7 @@
+     await open(work,'progresskit-tax');await work.keyboard.press('Escape');
+     await work.waitForTimeout(800);await perf.send('HeapProfiler.collectGarbage');
+     const domBefore=await perf.send('Memory.getDOMCounters');
+-    for(let i=0;i<10;i++){await open(work,'progresskit-tax');await work.keyboard.press('Escape');}
++    for(let i=0;i<100;i++){await open(work,'progresskit-tax');await work.keyboard.press('Escape');}
+     await work.waitForTimeout(800);
+     await perf.send('HeapProfiler.collectGarbage');
+     const domAfter=await perf.send('Memory.getDOMCounters');
+@@ -334,8 +386,8 @@
+     const a=values(idleBefore),b=values(idleAfter);
+     report.measurements.push({name:'Desktop CDP sample, not physical phone/FPS',idleSampleSeconds:b.Timestamp-a.Timestamp,
+       taskSeconds:b.TaskDuration-a.TaskDuration,scriptSeconds:b.ScriptDuration-a.ScriptDuration,
+-      domCold,domBefore,domAfter,warmupCycles:1,cycles:10});
+-    await check('Repeated expansion retains bounded DOM and listeners',async()=>{
++      domCold,domBefore,domAfter,warmupCycles:1,cycles:100});
++    await check('100 repeated expansions retain bounded DOM and listeners',async()=>{
+       assert(domAfter.documents<=domBefore.documents && domAfter.nodes<=domBefore.nodes && domAfter.jsEventListeners<=domBefore.jsEventListeners,JSON.stringify({domBefore,domAfter}));
+     });
+     await workContext.close();
+--- pre-sprint/tests/project-showroom.test.cjs
++++ current/tests/project-showroom.test.cjs
+@@ -462,6 +462,7 @@
+ test('Breakpoint changes and browser Back keep one disclosure and return focus outside closed content',()=>{
+   const ui=mount(records,{slices:true}),card=ui.cards[1];
+   ui.fire(ui.root,'click',{target:card.link});
++  ui.tick(650);
+   ui.setNarrow(true);
+   assert.equal(ui.active(),card);
+   assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,1);
+@@ -508,18 +509,18 @@
+   assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
+ });
+ 
+-test('Straight-guide sockets retain six unique readable faces for every actual collection size',()=>{
++test('Circular sockets retain six unique readable faces for every actual collection size',()=>{
+   for(const length of [1,2,3,4,6,14])for(let active=0;active<length;active++){
+     const points=Array.from({length},(_,i)=>showroom.mechanism(showroom.relative(i,active,length),length));
+     const visible=points.filter(p=>p.visible);
+     assert.equal(visible.length,Math.min(6,length));
+     assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
+     assert.deepEqual(points[active],showroom.mechanism(0,length));
+-    for(const p of visible){assert.equal(p.opacity,1);assert.equal(p.scale,1);assert.ok(Math.abs(p.angle)<=1.5)}
+-  }
+-});
+-
+-test('A drawer changes sockets only while fully retracted, without a circular crossing path',()=>{
++    for(const p of visible){assert.equal(p.opacity,1);assert.ok(p.scale>=.97&&p.scale<=1);assert.ok(Math.abs(p.angle)<=8);assert.ok(Math.abs(p.x*p.x+p.y*p.y-1)<1e-9)}
++  }
++});
++
++test('Modules follow a continuous circular path with a six-face maximum through the rear handoff',()=>{
+   for(let phase=0;phase<14;phase+=.125){
+     const points=Array.from({length:14},(_,i)=>showroom.mechanism(showroom.relative(i,phase,14),14));
+     const visible=points.filter(p=>p.visible&&p.opacity>0);
+@@ -527,12 +528,14 @@
+     assert.equal(new Set(visible.map(p=>`${p.x}:${p.y}`)).size,visible.length);
+     for(const p of points)for(const k of ['x','y','scale','opacity','angle'])assert.ok(Number.isFinite(p[k]));
+   }
+-  assert.equal(showroom.mechanism(.5,14).opacity,0);
++  assert.equal(showroom.mechanism(-.5,14).opacity,0);
++  assert.equal(showroom.mechanism(5.5,14).opacity,0);
+   const before=showroom.mechanism(.49,14),after=showroom.mechanism(.51,14);
+-  assert.notEqual(before.y,after.y);assert.ok(before.opacity<.021&&after.opacity<.021);
+-});
+-
+-test('The shipped inline controller presents the first six projects on rails and reaches all fourteen',()=>{
++  assert.notEqual(before.y,after.y);assert.equal(before.opacity,1);assert.equal(after.opacity,1);
++  assert.ok(Math.hypot(after.x-before.x,after.y-before.y)<.022);
++});
++
++test('The shipped inline controller presents the first six projects around the hub and reaches all fourteen',()=>{
+   const ui=mount(records,{slices:true});
+   assert.deepEqual(ui.cards.filter(c=>!c.classes.has('is-orbit-hidden')).map(c=>c.dataset.projectId),records.slice(0,6).map(p=>p.id));
+   for(let i=0;i<14;i++){
+@@ -546,10 +549,12 @@
+   assert.equal(ui.frames.size,0);
+ });
+ 
+-test('Selecting a visible neighboring drawer freezes the mechanism and reduced motion opens immediately',()=>{
++test('Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately',()=>{
+   const ui=mount(records,{slices:true});
+   ui.fire(ui.buttons[1],'click');ui.tick(155);
+   const card=ui.cards[2];ui.fire(ui.root,'click',{target:card.link});
++  assert.equal(ui.frames.size,1);assert.equal(card.panel.hidden,true);
++  ui.tick(650);
+   assert.equal(ui.frames.size,0);assert.equal(card.panel.hidden,false);
+   const pose=ui.cards.map(c=>c.properties.get('--showroom-y'));ui.tick(1000);
+   assert.deepEqual(ui.cards.map(c=>c.properties.get('--showroom-y')),pose);
+@@ -559,3 +564,27 @@
+   reduced.fire(reduced.root,'click',{target:reduced.active().link});
+   assert.equal(reduced.active().panel.hidden,false);
+ });
++
++
++test('Rapid inline keyboard turns retain a reachable focus until the requested face arrives',()=>{
++  const ui=mount(records,{slices:true});ui.cards[0].link.focus();
++  for(let i=0;i<8;i++)ui.fire(ui.viewport,'keydown',{key:'ArrowRight'});
++  assert.equal(ui.frames.size,1);
++  assert.equal(ui.document.activeElement,ui.viewport);
++  assert.equal(ui.cards.filter(card=>!card.classes.has('is-orbit-hidden')).length,6);
++  ui.tick(650);
++  assert.equal(ui.document.activeElement,ui.active().link);
++  assert.equal(ui.active().dataset.projectId,'project-8');
++  assert.equal(ui.active().inert,false);
++  assert.equal(ui.frames.size,0);
++});
++
++test('Filtering a pending inline extrusion cancels it without leaking a hidden panel',()=>{
++  const ui=mount(records,{slices:true});
++  ui.fire(ui.root,'click',{target:ui.cards[4].link});
++  assert.equal(ui.frames.size,1);
++  ui.fire(ui.gate('mobile'),'click');ui.tick(1000);
++  assert.equal(ui.cards.some(card=>card.classes.has('is-slice-expanded')),false);
++  assert.equal(ui.cards.filter(card=>!card.classes.has('is-orbit-hidden')).length,3);
++  assert.equal(ui.frames.size,0);
++});
+--- pre-sprint/index.html
++++ current/index.html
+@@ -28,12 +28,12 @@
+   <link rel="stylesheet" href="assets/brand-atmosphere.css">
+   <link rel="stylesheet" href="assets/project-slices.css">
+   <link rel="stylesheet" href="assets/delivery.css">
+-  <link rel="stylesheet" href="assets/project-mechanism.css">
+   <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>
+   <link rel="stylesheet" href="assets/visual-acceptance.css">
+   <link rel="stylesheet" href="assets/interface-life.css">
+   <link rel="stylesheet" href="assets/ecosystem-system.css">
+   <link rel="stylesheet" href="assets/owner-finish.css">
++  <link rel="stylesheet" href="assets/project-mechanism.css">
+   <script src="assets/site-v5.js" defer></script>
+   <script src="assets/hero-space.js" defer></script>
+   <script src="assets/project-hologram.js" defer></script>
+@@ -109,7 +109,7 @@
+   </g>
+   <path d="M0 0H1983V793H0Z" fill="url(#hero-scene-shade)"/>
+ </svg>
+-<div class="hero__stone-title"><h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1><p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p><div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div></div><a class="hero__explore" href="#projekty"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a><button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button></section><section class="project-showroom section" id="projekty" data-showroom data-showroom-slices aria-labelledby="showroom-title"><div class="shell"><header class="showroom-heading"><div><span class="section-kicker">EKOSYSTEM PROGRESSKIT</span><h2 class="section-title" id="showroom-title">System połączonych światów.</h2></div><p>14 projektów w jednym ekosystemie. Wybierz projekt, aby rozwinąć moduł.</p></header><div class="showroom-gates" data-showroom-enhancement hidden aria-label="Filtruj ekspozycję według kategorii"><button class="showroom-gate" type="button" data-showroom-category="mobile" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg></span><span class="showroom-gate__label">Aplikacje</span><span class="showroom-gate__count" aria-label="Liczba projektów: 3">03</span></button><button class="showroom-gate" type="button" data-showroom-category="saas" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg></span><span class="showroom-gate__label">SaaS</span><span class="showroom-gate__count" aria-label="Liczba projektów: 4">04</span></button><button class="showroom-gate" type="button" data-showroom-category="platforms" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="25" cy="12" r="2.5"/><path d="M10 26v-3a6 6 0 0 1 12 0v3M3 25v-3a4 4 0 0 1 5-3.9M29 25v-3a4 4 0 0 0-5-3.9"/></svg></span><span class="showroom-gate__label">Platformy</span><span class="showroom-gate__count" aria-label="Liczba projektów: 1">01</span></button><button class="showroom-gate" type="button" data-showroom-category="games" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 10h12a4 4 0 0 1 3.9 3.1l2.5 10a3.1 3.1 0 0 1-5.2 2.9L20 23h-8l-3.2 3a3.1 3.1 0 0 1-5.2-2.9l2.5-10A4 4 0 0 1 10 10Z"/><path d="M10 14v6m-3-3h6"/><circle cx="21" cy="16" r=".8"/><circle cx="24" cy="19" r=".8"/></svg></span><span class="showroom-gate__label">Gry</span><span class="showroom-gate__count" aria-label="Liczba projektów: 1">01</span></button><button class="showroom-gate" type="button" data-showroom-category="web" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg></span><span class="showroom-gate__label">Realizacje WWW</span><span class="showroom-gate__count" aria-label="Liczba projektów: 2">02</span></button><button class="showroom-gate" type="button" data-showroom-category="technology" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg></span><span class="showroom-gate__label">Infrastruktura</span><span class="showroom-gate__count" aria-label="Liczba projektów: 3">03</span></button></div><div class="showroom-filterbar" data-showroom-enhancement hidden><button type="button" class="showroom-all" data-showroom-category="" aria-pressed="true" aria-controls="showroom-track">Wszystkie projekty <span>14</span></button><p id="showroom-status" role="status" aria-live="polite" aria-atomic="true">Kolekcja: 14 projektów.</p></div><div class="showroom-viewport" data-showroom-viewport tabindex="0" role="region" aria-roledescription="karuzela" aria-label="Mechaniczna ekspozycja projektów" aria-describedby="showroom-instructions"><div class="showroom-frame" aria-hidden="true"><i class="showroom-frame__brace"></i><i class="showroom-frame__brace"></i><i class="showroom-frame__brace"></i><i class="showroom-frame__signal"></i></div><div class="showroom-track" id="showroom-track"><article class="showroom-card" data-project-id="glikemia-premium" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="Glikemia Premium · 1 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="glikemia-premium" href="projekty/glikemia-premium/" aria-label="Odkryj projekt: Glikemia Premium" aria-expanded="false" aria-controls="slice-panel-glikemia-premium"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>01</span></div><div class="showroom-card__caption"><h3>Glikemia Premium</h3><span class="showroom-card__stage">Dostępny APK</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-glikemia-premium" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/glikemia/product-measurement.webp" width="648" height="1440" alt="Pusty formularz pomiaru Glikemia Premium z polami glikemii, WW, WBT i kontekstu" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran formularza. Bez danych pomiarowych użytkownika.</figcaption></figure><div class="project-slice__copy"><p>Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.</p><p>Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET 10</li><li>.NET MAUI</li><li>Android</li><li>SQLite</li><li>SkiaSharp</li><li>Microcharts</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/glikemia-premium/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="/download/glikemia-premium">Pobierz Glikemia Premium</a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-mail" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="ProgressKit Mail · 2 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-mail" href="projekty/progresskit-mail/" aria-label="Odkryj projekt: ProgressKit Mail" aria-expanded="false" aria-controls="slice-panel-progresskit-mail"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>02</span></div><div class="showroom-card__caption"><h3>ProgressKit Mail</h3><span class="showroom-card__stage">Wersja testowa</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-mail" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/mail/mail-splash.webp" width="688" height="1536" alt="Ekran startowy rzeczywistej aplikacji ProgressKit Mail" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran startowy klienta Android z materiałów V4; bez danych skrzynki.</figcaption></figure><div class="project-slice__copy"><p>Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.</p><p>Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.</p><ul class="project-slice__technologies"><li>Kotlin</li><li>Android</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Android Keystore</li><li>Firebase Cloud Messaging</li><li>Eclipse Angus Mail</li><li>jsoup</li><li>C#</li><li>.NET 10</li><li>ASP.NET Core</li><li>PostgreSQL</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-mail/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-translator" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="ProgressKit Translator · 3 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-translator" href="projekty/progresskit-translator/" aria-label="Odkryj projekt: ProgressKit Translator" aria-expanded="false" aria-controls="slice-panel-progresskit-translator"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>03</span></div><div class="showroom-card__caption"><h3>ProgressKit Translator</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-translator" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/progresskit-translator/translator-start.webp" width="1080" height="2400" alt="Historyczny ekran startowy tłumacza PL–DE z wyborem trybu rozmowy" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran wersji 0.2.0 na Redmi. Sam widok przełącznika stereo nie potwierdza działania TWS ani bieżącej jakości audio.</figcaption></figure><div class="project-slice__copy"><p>Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.</p><p>Krótka rozmowa w dwóch językach wymaga połączenia rozpoznawania, tłumaczenia i odsłuchu w jeden kontrolowany cykl.</p><ul class="project-slice__technologies"><li>Kotlin</li><li>Android</li><li>Jetpack Compose</li><li>ML Kit Translation</li><li>SpeechRecognizer</li><li>TextToSpeech</li><li>AudioTrack</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-translator/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="vaeloria" data-category="games" role="group" aria-roledescription="slajd" aria-label="Vaeloria · 4 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="vaeloria" href="projekty/vaeloria/" aria-label="Odkryj projekt: Vaeloria" aria-expanded="false" aria-controls="slice-panel-vaeloria"><span class="showroom-card__category">Gry</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 10h12a4 4 0 0 1 3.9 3.1l2.5 10a3.1 3.1 0 0 1-5.2 2.9L20 23h-8l-3.2 3a3.1 3.1 0 0 1-5.2-2.9l2.5-10A4 4 0 0 1 10 10Z"/><path d="M10 14v6m-3-3h6"/><circle cx="21" cy="16" r=".8"/><circle cx="24" cy="19" r=".8"/></svg><span>04</span></div><div class="showroom-card__caption"><h3>Vaeloria</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-vaeloria" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/vaeloria/earth-exploration.webp" width="1080" height="2400" alt="Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie" loading="lazy" decoding="async"><figcaption>Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.</figcaption></figure><div class="project-slice__copy"><p>Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.</p><p>Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.</p><ul class="project-slice__technologies"><li>C#</li><li>Godot 4.6</li><li>.NET</li><li>OpenGL Compatibility</li><li>JSON</li><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/vaeloria/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-community" data-category="platforms" role="group" aria-roledescription="slajd" aria-label="Lud&amp;Pra / ProgressKit Community · 5 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-community" href="projekty/progresskit-community/" aria-label="Odkryj projekt: Lud&amp;Pra / ProgressKit Community" aria-expanded="false" aria-controls="slice-panel-progresskit-community"><span class="showroom-card__category">Platformy</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="25" cy="12" r="2.5"/><path d="M10 26v-3a6 6 0 0 1 12 0v3M3 25v-3a4 4 0 0 1 5-3.9M29 25v-3a4 4 0 0 0-5-3.9"/></svg><span>05</span></div><div class="showroom-card__caption"><h3>Lud&amp;Pra / ProgressKit Community</h3><span class="showroom-card__stage">Finalizacja</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-community" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/progresskit-community/community-desktop.webp" width="1440" height="1000" alt="Lokalny widok odkrywania społeczności na desktopie" loading="lazy" decoding="async"><figcaption>Lokalne QA na danych syntetycznych, 14.10.2026. Widok nie potwierdza wdrożenia produkcyjnego.</figcaption></figure><div class="project-slice__copy"><p>Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.</p><p>Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>Next.js</li><li>React</li><li>TypeScript</li><li>Docker</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-community/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-tax" data-category="saas" role="group" aria-roledescription="slajd" aria-label="ProgressKit Tax · 6 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-tax" href="projekty/progresskit-tax/" aria-label="Odkryj projekt: ProgressKit Tax" aria-expanded="false" aria-controls="slice-panel-progresskit-tax"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>06</span></div><div class="showroom-card__caption"><h3>ProgressKit Tax</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-tax" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.</p><p>Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>Next.js</li><li>React</li><li>TypeScript</li><li>Kotlin</li><li>Jetpack Compose</li><li>Android</li><li>ClamAV</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-tax/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="adivara" data-category="saas" role="group" aria-roledescription="slajd" aria-label="Adivara · 7 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="adivara" href="projekty/adivara/" aria-label="Odkryj projekt: Adivara" aria-expanded="false" aria-controls="slice-panel-adivara"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>07</span></div><div class="showroom-card__caption"><h3>Adivara</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-adivara" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.</p><p>Firmy opiekuńcze potrzebują uporządkowania relacji między personelem, koordynatorami, podopiecznymi i rodziną przy zachowaniu odrębności danych organizacji.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>ASP.NET Core Identity</li><li>JWT</li><li>xUnit</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/adivara/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="gotrans360" data-category="saas" role="group" aria-roledescription="slajd" aria-label="GoTrans360 · 8 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="gotrans360" href="projekty/gotrans360/" aria-label="Odkryj projekt: GoTrans360" aria-expanded="false" aria-controls="slice-panel-gotrans360"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>08</span></div><div class="showroom-card__caption"><h3>GoTrans360</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-gotrans360" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.</p><p>Ręczne planowanie przewozów i rozproszone dane o trasach, pojazdach i zapotrzebowaniu utrudniają wykorzystanie dostępnych miejsc i ograniczanie pustych przebiegów.</p><ul class="project-slice__technologies"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Node.js</li><li>Prisma</li><li>PostgreSQL</li><li>PostGIS</li><li>Leaflet</li><li>Turborepo</li><li>pnpm</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/gotrans360/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="ignira" data-category="web" role="group" aria-roledescription="slajd" aria-label="Ignira / Maria-Salon · 9 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="ignira" href="projekty/ignira/" aria-label="Odkryj projekt: Ignira / Maria-Salon" aria-expanded="false" aria-controls="slice-panel-ignira"><span class="showroom-card__category">Realizacje WWW</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg><span>09</span></div><div class="showroom-card__caption"><h3>Ignira / Maria-Salon</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-ignira" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.</p><p>Osoba zainteresowana stylizacją potrzebuje zobaczyć wykonane prace i przekazać pomysł oraz preferowany termin w jednym miejscu.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>WebP</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/ignira/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="obserwator" data-category="web" role="group" aria-roledescription="slajd" aria-label="Obserwator / Marek Zaworski · 10 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="obserwator" href="projekty/obserwator/" aria-label="Odkryj projekt: Obserwator / Marek Zaworski" aria-expanded="false" aria-controls="slice-panel-obserwator"><span class="showroom-card__category">Realizacje WWW</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg><span>10</span></div><div class="showroom-card__caption"><h3>Obserwator / Marek Zaworski</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-obserwator" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.</p><p>Czytelnik potrzebuje uporządkowanego miejsca, w którym znajdzie twórczość autora i materiały do pobrania.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/obserwator/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="kan-system" data-category="saas" role="group" aria-roledescription="slajd" aria-label="KAN SYSTEM · 11 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="kan-system" href="projekty/kan-system/" aria-label="Odkryj projekt: KAN SYSTEM" aria-expanded="false" aria-controls="slice-panel-kan-system"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>11</span></div><div class="showroom-card__caption"><h3>KAN SYSTEM</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-kan-system" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.</p><p>Praca kontrolerów wymaga uporządkowanego zbierania informacji i przygotowania raportów.</p><ul class="project-slice__technologies"></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/kan-system/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-systems" data-category="technology" role="group" aria-roledescription="slajd" aria-label="ProgressKit Systems · 12 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-systems" href="projekty/progresskit-systems/" aria-label="Odkryj projekt: ProgressKit Systems" aria-expanded="false" aria-controls="slice-panel-progresskit-systems"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>12</span></div><div class="showroom-card__caption"><h3>ProgressKit Systems</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-systems" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.</p><p>Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>GitHub Actions</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-systems/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-analytics" data-category="technology" role="group" aria-roledescription="slajd" aria-label="ProgressKit Analytics · 13 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-analytics" href="projekty/progresskit-analytics/" aria-label="Odkryj projekt: ProgressKit Analytics" aria-expanded="false" aria-controls="slice-panel-progresskit-analytics"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>13</span></div><div class="showroom-card__caption"><h3>ProgressKit Analytics</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-analytics" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.</p><p>Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.</p><ul class="project-slice__technologies"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>Docker</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-analytics/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-infrastructure" data-category="technology" role="group" aria-roledescription="slajd" aria-label="Zaplecze ProgressKit · 14 z 14"><div class="project-slice"><a class="showroom-card__open" data-showroom-open="progresskit-infrastructure" href="projekty/progresskit-infrastructure/" aria-label="Odkryj projekt: Zaplecze ProgressKit" aria-expanded="false" aria-controls="slice-panel-progresskit-infrastructure"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>14</span></div><div class="showroom-card__caption"><h3>Zaplecze ProgressKit</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-infrastructure" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.</p><p>Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.</p><ul class="project-slice__technologies"><li>Docker</li><li>Caddy</li><li>Linux</li><li>GitHub Actions</li><li>Python</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-infrastructure/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article></div></div><nav class="showroom-controls" data-showroom-enhancement hidden aria-label="Sterowanie ekspozycją"><button type="button" id="showroom-previous" data-showroom-step="-1" aria-controls="showroom-track" aria-label="Poprzedni projekt">←</button><span data-showroom-position aria-hidden="true">1 / 14</span><button type="button" id="showroom-next" data-showroom-step="1" aria-controls="showroom-track" aria-label="Następny projekt">→</button><button class="showroom-motion-toggle" type="button" data-showroom-motion-toggle aria-pressed="false">Wstrzymaj efekty mechanizmu</button></nav><p class="showroom-instructions" id="showroom-instructions">Wybierz projekt, aby rozwinąć moduł. Szczegóły przewijają się razem ze stroną.</p><p class="showroom-catalog-link"><a href="projekty/">Wyszukaj projekt lub technologię w pełnym katalogu →</a></p></div></section><script type="application/json" id="showroom-data">[{"id":"glikemia-premium","name":"Glikemia Premium","category":"mobile","categoryLabel":"Aplikacje","summary":"Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.","problem":"Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.","stage":"Dostępny APK","technologies":["C#",".NET 10",".NET MAUI","Android","SQLite","SkiaSharp","Microcharts"],"gallery":[{"src":"assets/projects/glikemia/product-measurement.webp","alt":"Pusty formularz pomiaru Glikemia Premium z polami glikemii, WW, WBT i kontekstu","caption":"Rzeczywisty ekran formularza. Bez danych pomiarowych użytkownika.","width":648,"height":1440},{"src":"assets/projects/glikemia/product-language.webp","alt":"Ekran wyboru jednego z siedmiu języków aplikacji Glikemia Premium","caption":"Rzeczywisty ekran wyboru języka interfejsu.","width":648,"height":1440}],"url":"projekty/glikemia-premium/"},{"id":"progresskit-mail","name":"ProgressKit Mail","category":"mobile","categoryLabel":"Aplikacje","summary":"Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.","problem":"Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.","stage":"Wersja testowa","technologies":["Kotlin","Android","Jetpack Compose","Room","WorkManager","Android Keystore","Firebase Cloud Messaging","Eclipse Angus Mail","jsoup","C#",".NET 10","ASP.NET Core","PostgreSQL"],"gallery":[{"src":"assets/projects/mail/mail-splash.webp","alt":"Ekran startowy rzeczywistej aplikacji ProgressKit Mail","caption":"Rzeczywisty ekran startowy klienta Android z materiałów V4; bez danych skrzynki.","width":688,"height":1536},{"src":"assets/projects/mail/mail-delete-redacted.webp","alt":"Potwierdzenie trwałego usunięcia wiadomości w ProgressKit Mail","caption":"Rzeczywisty ekran klienta Android. Tło korespondencji zostało zamazane w źródłowym materiale V4.","width":688,"height":1536}],"url":"projekty/progresskit-mail/"},{"id":"progresskit-translator","name":"ProgressKit Translator","category":"mobile","categoryLabel":"Aplikacje","summary":"Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.","problem":"Krótka rozmowa w dwóch językach wymaga połączenia rozpoznawania, tłumaczenia i odsłuchu w jeden kontrolowany cykl.","stage":"Prototyp","technologies":["Kotlin","Android","Jetpack Compose","ML Kit Translation","SpeechRecognizer","TextToSpeech","AudioTrack"],"gallery":[{"src":"assets/projects/progresskit-translator/translator-start.webp","alt":"Historyczny ekran startowy tłumacza PL–DE z wyborem trybu rozmowy","caption":"Rzeczywisty ekran wersji 0.2.0 na Redmi. Sam widok przełącznika stereo nie potwierdza działania TWS ani bieżącej jakości audio.","width":1080,"height":2400}],"url":"projekty/progresskit-translator/"},{"id":"vaeloria","name":"Vaeloria","category":"games","categoryLabel":"Gry","summary":"Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.","problem":"Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.","stage":"W rozwoju","technologies":["C#","Godot 4.6",".NET","OpenGL Compatibility","JSON","ASP.NET Core","PostgreSQL","SignalR"],"gallery":[{"src":"assets/projects/vaeloria/earth-exploration.webp","alt":"Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie","caption":"Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.","width":1080,"height":2400},{"src":"assets/projects/vaeloria/tactical-battle.webp","alt":"Vaeloria: walka taktyczna samouczka z przeciwnikiem Iria BOT","caption":"Rzeczywisty ekran areny tutorialu na Redmi z publicznego preview; przeciwnik oznaczony jako BOT. To nie jest rozgrywka PvP.","width":1080,"height":2400}],"url":"projekty/vaeloria/"},{"id":"progresskit-community","name":"Lud\u0026Pra / ProgressKit Community","category":"platforms","categoryLabel":"Platformy","summary":"Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.","problem":"Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.","stage":"Finalizacja","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","Next.js","React","TypeScript","Docker"],"gallery":[{"src":"assets/projects/progresskit-community/community-desktop.webp","alt":"Lokalny widok odkrywania społeczności na desktopie","caption":"Lokalne QA na danych syntetycznych, 14.10.2026. Widok nie potwierdza wdrożenia produkcyjnego.","width":1440,"height":1000},{"src":"assets/projects/progresskit-community/community-mobile.webp","alt":"Mobilny widok listy społeczności z kategoriami","caption":"Lokalne QA na danych syntetycznych, 14.10.2026. Widok mobilny w przeglądarce testowej.","width":390,"height":844}],"url":"projekty/progresskit-community/"},{"id":"progresskit-tax","name":"ProgressKit Tax","category":"saas","categoryLabel":"SaaS","summary":"Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.","problem":"Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.","stage":"W rozwoju","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","Next.js","React","TypeScript","Kotlin","Jetpack Compose","Android","ClamAV"],"gallery":[],"url":"projekty/progresskit-tax/"},{"id":"adivara","name":"Adivara","category":"saas","categoryLabel":"SaaS","summary":"Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.","problem":"Firmy opiekuńcze potrzebują uporządkowania relacji między personelem, koordynatorami, podopiecznymi i rodziną przy zachowaniu odrębności danych organizacji.","stage":"Prototyp","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","ASP.NET Core Identity","JWT","xUnit"],"gallery":[],"url":"projekty/adivara/"},{"id":"gotrans360","name":"GoTrans360","category":"saas","categoryLabel":"SaaS","summary":"Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.","problem":"Ręczne planowanie przewozów i rozproszone dane o trasach, pojazdach i zapotrzebowaniu utrudniają wykorzystanie dostępnych miejsc i ograniczanie pustych przebiegów.","stage":"Prototyp","technologies":["TypeScript","Next.js","React","Node.js","Prisma","PostgreSQL","PostGIS","Leaflet","Turborepo","pnpm"],"gallery":[],"url":"projekty/gotrans360/"},{"id":"ignira","name":"Ignira / Maria-Salon","category":"web","categoryLabel":"Realizacje WWW","summary":"Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.","problem":"Osoba zainteresowana stylizacją potrzebuje zobaczyć wykonane prace i przekazać pomysł oraz preferowany termin w jednym miejscu.","stage":"Etap do potwierdzenia","technologies":["HTML","CSS","JavaScript","WebP"],"gallery":[],"url":"projekty/ignira/"},{"id":"obserwator","name":"Obserwator / Marek Zaworski","category":"web","categoryLabel":"Realizacje WWW","summary":"Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.","problem":"Czytelnik potrzebuje uporządkowanego miejsca, w którym znajdzie twórczość autora i materiały do pobrania.","stage":"Etap do potwierdzenia","technologies":["HTML","CSS","JavaScript"],"gallery":[],"url":"projekty/obserwator/"},{"id":"kan-system","name":"KAN SYSTEM","category":"saas","categoryLabel":"SaaS","summary":"Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.","problem":"Praca kontrolerów wymaga uporządkowanego zbierania informacji i przygotowania raportów.","stage":"Etap do potwierdzenia","technologies":[],"gallery":[],"url":"projekty/kan-system/"},{"id":"progresskit-systems","name":"ProgressKit Systems","category":"technology","categoryLabel":"Infrastruktura","summary":"Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.","problem":"Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.","stage":"W rozwoju","technologies":["HTML","CSS","JavaScript","Python","GitHub Actions"],"gallery":[],"url":"projekty/progresskit-systems/"},{"id":"progresskit-analytics","name":"ProgressKit Analytics","category":"technology","categoryLabel":"Infrastruktura","summary":"Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.","problem":"Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.","stage":"W rozwoju","technologies":["Python","FastAPI","SQLite","Docker"],"gallery":[],"url":"projekty/progresskit-analytics/"},{"id":"progresskit-infrastructure","name":"Zaplecze ProgressKit","category":"technology","categoryLabel":"Infrastruktura","summary":"Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.","problem":"Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.","stage":"W rozwoju","technologies":["Docker","Caddy","Linux","GitHub Actions","Python"],"gallery":[],"url":"projekty/progresskit-infrastructure/"}]</script><dialog class="project-hologram" id="project-hologram" aria-labelledby="hologram-title" aria-describedby="hologram-summary">
++<div class="hero__stone-title"><h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1><p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p><div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div></div><a class="hero__explore" href="#projekty"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a><button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button></section><section class="project-showroom section" id="projekty" data-showroom data-showroom-slices aria-labelledby="showroom-title"><div class="shell"><header class="showroom-heading"><div><span class="section-kicker">EKOSYSTEM PROGRESSKIT</span><h2 class="section-title" id="showroom-title">System połączonych światów.</h2></div><p>14 projektów w jednym ekosystemie. Wybierz projekt, aby rozwinąć moduł.</p></header><div class="showroom-gates" data-showroom-enhancement hidden aria-label="Filtruj ekspozycję według kategorii"><button class="showroom-gate" type="button" data-showroom-category="mobile" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg></span><span class="showroom-gate__label">Aplikacje</span><span class="showroom-gate__count" aria-label="Liczba projektów: 3">03</span></button><button class="showroom-gate" type="button" data-showroom-category="saas" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg></span><span class="showroom-gate__label">SaaS</span><span class="showroom-gate__count" aria-label="Liczba projektów: 4">04</span></button><button class="showroom-gate" type="button" data-showroom-category="platforms" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="25" cy="12" r="2.5"/><path d="M10 26v-3a6 6 0 0 1 12 0v3M3 25v-3a4 4 0 0 1 5-3.9M29 25v-3a4 4 0 0 0-5-3.9"/></svg></span><span class="showroom-gate__label">Platformy</span><span class="showroom-gate__count" aria-label="Liczba projektów: 1">01</span></button><button class="showroom-gate" type="button" data-showroom-category="games" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 10h12a4 4 0 0 1 3.9 3.1l2.5 10a3.1 3.1 0 0 1-5.2 2.9L20 23h-8l-3.2 3a3.1 3.1 0 0 1-5.2-2.9l2.5-10A4 4 0 0 1 10 10Z"/><path d="M10 14v6m-3-3h6"/><circle cx="21" cy="16" r=".8"/><circle cx="24" cy="19" r=".8"/></svg></span><span class="showroom-gate__label">Gry</span><span class="showroom-gate__count" aria-label="Liczba projektów: 1">01</span></button><button class="showroom-gate" type="button" data-showroom-category="web" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg></span><span class="showroom-gate__label">Realizacje WWW</span><span class="showroom-gate__count" aria-label="Liczba projektów: 2">02</span></button><button class="showroom-gate" type="button" data-showroom-category="technology" aria-pressed="false" aria-controls="showroom-track"><span class="showroom-gate__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg></span><span class="showroom-gate__label">Infrastruktura</span><span class="showroom-gate__count" aria-label="Liczba projektów: 3">03</span></button></div><div class="showroom-filterbar" data-showroom-enhancement hidden><button type="button" class="showroom-all" data-showroom-category="" aria-pressed="true" aria-controls="showroom-track">Wszystkie projekty <span>14</span></button><p id="showroom-status" role="status" aria-live="polite" aria-atomic="true">Kolekcja: 14 projektów.</p></div><div class="showroom-viewport" data-showroom-viewport tabindex="0" role="region" aria-roledescription="karuzela" aria-label="Mechaniczna ekspozycja projektów" aria-describedby="showroom-instructions"><div class="showroom-frame" aria-hidden="true"><svg class="mechanism-wheel" viewBox="0 0 1000 1000" focusable="false"><defs><linearGradient id="mechanism-steel" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#252a2b"/><stop offset=".16" stop-color="#c4c9c6"/><stop offset=".29" stop-color="#707674"/><stop offset=".48" stop-color="#eef0e9"/><stop offset=".54" stop-color="#757d7b"/><stop offset=".8" stop-color="#292e2e"/><stop offset="1" stop-color="#aab0ad"/></linearGradient><radialGradient id="mechanism-well"><stop stop-color="#191d1d"/><stop offset=".72" stop-color="#090c0d"/><stop offset="1" stop-color="#303534"/></radialGradient><pattern id="mechanism-ruby" width="1" height="1" patternContentUnits="objectBoundingBox"><image href="assets/brand/red-aluminium-reconstruction.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice"/></pattern></defs><circle cx="500" cy="520" r="465" fill="#050707" stroke="#252b2c" stroke-width="20"/><circle cx="500" cy="500" r="464" fill="url(#mechanism-well)" stroke="url(#mechanism-steel)" stroke-width="12"/><circle cx="500" cy="500" r="442" fill="none" stroke="url(#mechanism-steel)" stroke-width="26"/><circle cx="500" cy="500" r="421" fill="none" stroke="#070909" stroke-width="8"/><circle cx="500" cy="500" r="413" fill="none" stroke="#a6afaa" stroke-width="3"/><circle cx="500" cy="500" r="400" fill="none" stroke="#9a2237" stroke-width="5" stroke-dasharray="72 137"/><circle cx="500" cy="500" r="369" fill="url(#mechanism-ruby)" stroke="#525b59" stroke-width="12"/><circle cx="500" cy="500" r="365" fill="#060809" fill-opacity=".76"/><g class="mechanism-rotor"><g transform="rotate(0 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g><g transform="rotate(60 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g><g transform="rotate(120 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g><g transform="rotate(180 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g><g transform="rotate(240 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g><g transform="rotate(300 500 500)"><path d="M500 340V142" stroke="url(#mechanism-steel)" stroke-width="32"/><path d="M500 332V154" stroke="#070909" stroke-width="15"/><path d="M500 318V188" stroke="#adb2b0" stroke-width="5"/><path d="M488 250V168M512 250V168" stroke="#6c1824" stroke-width="4"/><circle cx="500" cy="295" r="16" fill="#212525" stroke="#a9adab" stroke-width="3"/><circle cx="500" cy="295" r="6" fill="#080909"/></g></g><g transform="rotate(0 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(30 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(60 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(90 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(120 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(150 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(180 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(210 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(240 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(270 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(300 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><g transform="rotate(330 500 500)"><circle cx="500" cy="62" r="6" fill="#111515" stroke="#c4c8c6" stroke-width="2"/><path d="M496 62h8" stroke="#7d8380" stroke-width="2"/></g><circle cx="500" cy="500" r="180" fill="#070a0b" stroke="#4c5552" stroke-width="8"/><circle cx="500" cy="500" r="162" fill="#161a1a" stroke="url(#mechanism-steel)" stroke-width="26"/><circle class="mechanism-bearing" cx="500" cy="500" r="181" fill="none" stroke="#ed5262" stroke-width="4" stroke-dasharray="80 205"/><circle cx="500" cy="500" r="142" fill="none" stroke="#929b96" stroke-width="2"/></svg><div class="mechanism-hub"><img src="assets/brand/progressorkit-stamp.png" width="140" height="140" alt=""></div><div class="mechanism-plinth"></div></div><div class="showroom-track" id="showroom-track"><article class="showroom-card" data-project-id="glikemia-premium" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="Glikemia Premium · 1 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="glikemia-premium" href="projekty/glikemia-premium/" aria-label="Odkryj projekt: Glikemia Premium" aria-expanded="false" aria-controls="slice-panel-glikemia-premium"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>01</span></div><div class="showroom-card__caption"><h3>Glikemia Premium</h3><span class="showroom-card__stage">Dostępny APK</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-glikemia-premium" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/glikemia/product-measurement.webp" width="648" height="1440" alt="Pusty formularz pomiaru Glikemia Premium z polami glikemii, WW, WBT i kontekstu" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran formularza. Bez danych pomiarowych użytkownika.</figcaption></figure><div class="project-slice__copy"><p>Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.</p><p>Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET 10</li><li>.NET MAUI</li><li>Android</li><li>SQLite</li><li>SkiaSharp</li><li>Microcharts</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/glikemia-premium/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="/download/glikemia-premium">Pobierz Glikemia Premium</a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-mail" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="ProgressKit Mail · 2 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-mail" href="projekty/progresskit-mail/" aria-label="Odkryj projekt: ProgressKit Mail" aria-expanded="false" aria-controls="slice-panel-progresskit-mail"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>02</span></div><div class="showroom-card__caption"><h3>ProgressKit Mail</h3><span class="showroom-card__stage">Wersja testowa</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-mail" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/mail/mail-splash.webp" width="688" height="1536" alt="Ekran startowy rzeczywistej aplikacji ProgressKit Mail" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran startowy klienta Android z materiałów V4; bez danych skrzynki.</figcaption></figure><div class="project-slice__copy"><p>Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.</p><p>Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.</p><ul class="project-slice__technologies"><li>Kotlin</li><li>Android</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Android Keystore</li><li>Firebase Cloud Messaging</li><li>Eclipse Angus Mail</li><li>jsoup</li><li>C#</li><li>.NET 10</li><li>ASP.NET Core</li><li>PostgreSQL</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-mail/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-translator" data-category="mobile" role="group" aria-roledescription="slajd" aria-label="ProgressKit Translator · 3 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-translator" href="projekty/progresskit-translator/" aria-label="Odkryj projekt: ProgressKit Translator" aria-expanded="false" aria-controls="slice-panel-progresskit-translator"><span class="showroom-card__category">Aplikacje</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M13 7h6m-4 18h2"/></svg><span>03</span></div><div class="showroom-card__caption"><h3>ProgressKit Translator</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-translator" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/progresskit-translator/translator-start.webp" width="1080" height="2400" alt="Historyczny ekran startowy tłumacza PL–DE z wyborem trybu rozmowy" loading="lazy" decoding="async"><figcaption>Rzeczywisty ekran wersji 0.2.0 na Redmi. Sam widok przełącznika stereo nie potwierdza działania TWS ani bieżącej jakości audio.</figcaption></figure><div class="project-slice__copy"><p>Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.</p><p>Krótka rozmowa w dwóch językach wymaga połączenia rozpoznawania, tłumaczenia i odsłuchu w jeden kontrolowany cykl.</p><ul class="project-slice__technologies"><li>Kotlin</li><li>Android</li><li>Jetpack Compose</li><li>ML Kit Translation</li><li>SpeechRecognizer</li><li>TextToSpeech</li><li>AudioTrack</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-translator/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="vaeloria" data-category="games" role="group" aria-roledescription="slajd" aria-label="Vaeloria · 4 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="vaeloria" href="projekty/vaeloria/" aria-label="Odkryj projekt: Vaeloria" aria-expanded="false" aria-controls="slice-panel-vaeloria"><span class="showroom-card__category">Gry</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 10h12a4 4 0 0 1 3.9 3.1l2.5 10a3.1 3.1 0 0 1-5.2 2.9L20 23h-8l-3.2 3a3.1 3.1 0 0 1-5.2-2.9l2.5-10A4 4 0 0 1 10 10Z"/><path d="M10 14v6m-3-3h6"/><circle cx="21" cy="16" r=".8"/><circle cx="24" cy="19" r=".8"/></svg><span>04</span></div><div class="showroom-card__caption"><h3>Vaeloria</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-vaeloria" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/vaeloria/earth-exploration.webp" width="1080" height="2400" alt="Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie" loading="lazy" decoding="async"><figcaption>Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.</figcaption></figure><div class="project-slice__copy"><p>Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.</p><p>Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.</p><ul class="project-slice__technologies"><li>C#</li><li>Godot 4.6</li><li>.NET</li><li>OpenGL Compatibility</li><li>JSON</li><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/vaeloria/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-community" data-category="platforms" role="group" aria-roledescription="slajd" aria-label="Lud&amp;Pra / ProgressKit Community · 5 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-community" href="projekty/progresskit-community/" aria-label="Odkryj projekt: Lud&amp;Pra / ProgressKit Community" aria-expanded="false" aria-controls="slice-panel-progresskit-community"><span class="showroom-card__category">Platformy</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="2.5"/><circle cx="25" cy="12" r="2.5"/><path d="M10 26v-3a6 6 0 0 1 12 0v3M3 25v-3a4 4 0 0 1 5-3.9M29 25v-3a4 4 0 0 0-5-3.9"/></svg><span>05</span></div><div class="showroom-card__caption"><h3>Lud&amp;Pra / ProgressKit Community</h3><span class="showroom-card__stage">Finalizacja</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-community" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><figure class="project-slice__media"><img src="assets/projects/progresskit-community/community-desktop.webp" width="1440" height="1000" alt="Lokalny widok odkrywania społeczności na desktopie" loading="lazy" decoding="async"><figcaption>Lokalne QA na danych syntetycznych, 14.10.2026. Widok nie potwierdza wdrożenia produkcyjnego.</figcaption></figure><div class="project-slice__copy"><p>Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.</p><p>Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>Next.js</li><li>React</li><li>TypeScript</li><li>Docker</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-community/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-tax" data-category="saas" role="group" aria-roledescription="slajd" aria-label="ProgressKit Tax · 6 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-tax" href="projekty/progresskit-tax/" aria-label="Odkryj projekt: ProgressKit Tax" aria-expanded="false" aria-controls="slice-panel-progresskit-tax"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>06</span></div><div class="showroom-card__caption"><h3>ProgressKit Tax</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-tax" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.</p><p>Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>Next.js</li><li>React</li><li>TypeScript</li><li>Kotlin</li><li>Jetpack Compose</li><li>Android</li><li>ClamAV</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-tax/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="adivara" data-category="saas" role="group" aria-roledescription="slajd" aria-label="Adivara · 7 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="adivara" href="projekty/adivara/" aria-label="Odkryj projekt: Adivara" aria-expanded="false" aria-controls="slice-panel-adivara"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>07</span></div><div class="showroom-card__caption"><h3>Adivara</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-adivara" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.</p><p>Firmy opiekuńcze potrzebują uporządkowania relacji między personelem, koordynatorami, podopiecznymi i rodziną przy zachowaniu odrębności danych organizacji.</p><ul class="project-slice__technologies"><li>C#</li><li>.NET</li><li>ASP.NET Core</li><li>Entity Framework Core</li><li>PostgreSQL</li><li>ASP.NET Core Identity</li><li>JWT</li><li>xUnit</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/adivara/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="gotrans360" data-category="saas" role="group" aria-roledescription="slajd" aria-label="GoTrans360 · 8 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="gotrans360" href="projekty/gotrans360/" aria-label="Odkryj projekt: GoTrans360" aria-expanded="false" aria-controls="slice-panel-gotrans360"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>08</span></div><div class="showroom-card__caption"><h3>GoTrans360</h3><span class="showroom-card__stage">Prototyp</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-gotrans360" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.</p><p>Ręczne planowanie przewozów i rozproszone dane o trasach, pojazdach i zapotrzebowaniu utrudniają wykorzystanie dostępnych miejsc i ograniczanie pustych przebiegów.</p><ul class="project-slice__technologies"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Node.js</li><li>Prisma</li><li>PostgreSQL</li><li>PostGIS</li><li>Leaflet</li><li>Turborepo</li><li>pnpm</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/gotrans360/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="ignira" data-category="web" role="group" aria-roledescription="slajd" aria-label="Ignira / Maria-Salon · 9 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="ignira" href="projekty/ignira/" aria-label="Odkryj projekt: Ignira / Maria-Salon" aria-expanded="false" aria-controls="slice-panel-ignira"><span class="showroom-card__category">Realizacje WWW</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg><span>09</span></div><div class="showroom-card__caption"><h3>Ignira / Maria-Salon</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-ignira" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.</p><p>Osoba zainteresowana stylizacją potrzebuje zobaczyć wykonane prace i przekazać pomysł oraz preferowany termin w jednym miejscu.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>WebP</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/ignira/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="obserwator" data-category="web" role="group" aria-roledescription="slajd" aria-label="Obserwator / Marek Zaworski · 10 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="obserwator" href="projekty/obserwator/" aria-label="Odkryj projekt: Obserwator / Marek Zaworski" aria-expanded="false" aria-controls="slice-panel-obserwator"><span class="showroom-card__category">Realizacje WWW</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="12"/><ellipse cx="16" cy="16" rx="5" ry="12"/><path d="M4 16h24M6.5 9h19m-19 14h19"/></svg><span>10</span></div><div class="showroom-card__caption"><h3>Obserwator / Marek Zaworski</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-obserwator" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.</p><p>Czytelnik potrzebuje uporządkowanego miejsca, w którym znajdzie twórczość autora i materiały do pobrania.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/obserwator/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="kan-system" data-category="saas" role="group" aria-roledescription="slajd" aria-label="KAN SYSTEM · 11 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="kan-system" href="projekty/kan-system/" aria-label="Odkryj projekt: KAN SYSTEM" aria-expanded="false" aria-controls="slice-panel-kan-system"><span class="showroom-card__category">SaaS</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 24h14a6 6 0 0 0 .6-12 8 8 0 0 0-15.2-1.2A6.7 6.7 0 0 0 9 24Z"/><path d="M12 18h8m-6-4h4"/></svg><span>11</span></div><div class="showroom-card__caption"><h3>KAN SYSTEM</h3><span class="showroom-card__stage">Etap do potwierdzenia</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-kan-system" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.</p><p>Praca kontrolerów wymaga uporządkowanego zbierania informacji i przygotowania raportów.</p><ul class="project-slice__technologies"></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/kan-system/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-systems" data-category="technology" role="group" aria-roledescription="slajd" aria-label="ProgressKit Systems · 12 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-systems" href="projekty/progresskit-systems/" aria-label="Odkryj projekt: ProgressKit Systems" aria-expanded="false" aria-controls="slice-panel-progresskit-systems"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>12</span></div><div class="showroom-card__caption"><h3>ProgressKit Systems</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-systems" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.</p><p>Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.</p><ul class="project-slice__technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>GitHub Actions</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-systems/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-analytics" data-category="technology" role="group" aria-roledescription="slajd" aria-label="ProgressKit Analytics · 13 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-analytics" href="projekty/progresskit-analytics/" aria-label="Odkryj projekt: ProgressKit Analytics" aria-expanded="false" aria-controls="slice-panel-progresskit-analytics"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>13</span></div><div class="showroom-card__caption"><h3>ProgressKit Analytics</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-analytics" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.</p><p>Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.</p><ul class="project-slice__technologies"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>Docker</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-analytics/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article><article class="showroom-card" data-project-id="progresskit-infrastructure" data-category="technology" role="group" aria-roledescription="slajd" aria-label="Zaplecze ProgressKit · 14 z 14"><div class="project-slice"><span class="module-hardware" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><a class="showroom-card__open" data-showroom-open="progresskit-infrastructure" href="projekty/progresskit-infrastructure/" aria-label="Odkryj projekt: Zaplecze ProgressKit" aria-expanded="false" aria-controls="slice-panel-progresskit-infrastructure"><span class="showroom-card__category">Infrastruktura</span><div class="showroom-card__badge" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="22" height="7" rx="1.5"/><rect x="5" y="12.5" width="22" height="7" rx="1.5"/><rect x="5" y="22" width="22" height="7" rx="1.5"/><circle cx="9" cy="6.5" r=".7"/><circle cx="9" cy="16" r=".7"/><circle cx="9" cy="25.5" r=".7"/><path d="M14 6.5h9M14 16h9m-9 9.5h9"/></svg><span>14</span></div><div class="showroom-card__caption"><h3>Zaplecze ProgressKit</h3><span class="showroom-card__stage">W rozwoju</span><span class="showroom-card__action">Odkryj projekt <span aria-hidden="true">↗</span></span></div></a><div class="project-slice__panel" id="slice-panel-progresskit-infrastructure" data-slice-panel hidden><button class="project-slice__close" type="button" data-slice-close>Zamknij ×</button><div class="project-slice__body"><div class="project-slice__copy"><p>Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.</p><p>Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.</p><ul class="project-slice__technologies"><li>Docker</li><li>Caddy</li><li>Linux</li><li>GitHub Actions</li><li>Python</li></ul></div></div><div class="project-slice__actions"><a class="cta cta--primary" href="projekty/progresskit-infrastructure/">Zobacz cały projekt <span aria-hidden="true">→</span></a><a class="cta cta--ghost" href="#kontakt">Kontakt</a></div></div></div></article></div></div><nav class="showroom-controls" data-showroom-enhancement hidden aria-label="Sterowanie ekspozycją"><button type="button" id="showroom-previous" data-showroom-step="-1" aria-controls="showroom-track" aria-label="Poprzedni projekt">←</button><span data-showroom-position aria-hidden="true">1 / 14</span><button type="button" id="showroom-next" data-showroom-step="1" aria-controls="showroom-track" aria-label="Następny projekt">→</button><button class="showroom-motion-toggle" type="button" data-showroom-motion-toggle aria-pressed="false">Wstrzymaj efekty mechanizmu</button></nav><p class="showroom-instructions" id="showroom-instructions">Wybierz projekt, aby rozwinąć moduł. Szczegóły przewijają się razem ze stroną.</p><p class="showroom-catalog-link"><a href="projekty/">Wyszukaj projekt lub technologię w pełnym katalogu →</a></p></div></section><script type="application/json" id="showroom-data">[{"id":"glikemia-premium","name":"Glikemia Premium","category":"mobile","categoryLabel":"Aplikacje","summary":"Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.","problem":"Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.","stage":"Dostępny APK","technologies":["C#",".NET 10",".NET MAUI","Android","SQLite","SkiaSharp","Microcharts"],"gallery":[{"src":"assets/projects/glikemia/product-measurement.webp","alt":"Pusty formularz pomiaru Glikemia Premium z polami glikemii, WW, WBT i kontekstu","caption":"Rzeczywisty ekran formularza. Bez danych pomiarowych użytkownika.","width":648,"height":1440},{"src":"assets/projects/glikemia/product-language.webp","alt":"Ekran wyboru jednego z siedmiu języków aplikacji Glikemia Premium","caption":"Rzeczywisty ekran wyboru języka interfejsu.","width":648,"height":1440}],"url":"projekty/glikemia-premium/"},{"id":"progresskit-mail","name":"ProgressKit Mail","category":"mobile","categoryLabel":"Aplikacje","summary":"Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.","problem":"Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.","stage":"Wersja testowa","technologies":["Kotlin","Android","Jetpack Compose","Room","WorkManager","Android Keystore","Firebase Cloud Messaging","Eclipse Angus Mail","jsoup","C#",".NET 10","ASP.NET Core","PostgreSQL"],"gallery":[{"src":"assets/projects/mail/mail-splash.webp","alt":"Ekran startowy rzeczywistej aplikacji ProgressKit Mail","caption":"Rzeczywisty ekran startowy klienta Android z materiałów V4; bez danych skrzynki.","width":688,"height":1536},{"src":"assets/projects/mail/mail-delete-redacted.webp","alt":"Potwierdzenie trwałego usunięcia wiadomości w ProgressKit Mail","caption":"Rzeczywisty ekran klienta Android. Tło korespondencji zostało zamazane w źródłowym materiale V4.","width":688,"height":1536}],"url":"projekty/progresskit-mail/"},{"id":"progresskit-translator","name":"ProgressKit Translator","category":"mobile","categoryLabel":"Aplikacje","summary":"Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.","problem":"Krótka rozmowa w dwóch językach wymaga połączenia rozpoznawania, tłumaczenia i odsłuchu w jeden kontrolowany cykl.","stage":"Prototyp","technologies":["Kotlin","Android","Jetpack Compose","ML Kit Translation","SpeechRecognizer","TextToSpeech","AudioTrack"],"gallery":[{"src":"assets/projects/progresskit-translator/translator-start.webp","alt":"Historyczny ekran startowy tłumacza PL–DE z wyborem trybu rozmowy","caption":"Rzeczywisty ekran wersji 0.2.0 na Redmi. Sam widok przełącznika stereo nie potwierdza działania TWS ani bieżącej jakości audio.","width":1080,"height":2400}],"url":"projekty/progresskit-translator/"},{"id":"vaeloria","name":"Vaeloria","category":"games","categoryLabel":"Gry","summary":"Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.","problem":"Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.","stage":"W rozwoju","technologies":["C#","Godot 4.6",".NET","OpenGL Compatibility","JSON","ASP.NET Core","PostgreSQL","SignalR"],"gallery":[{"src":"assets/projects/vaeloria/earth-exploration.webp","alt":"Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie","caption":"Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.","width":1080,"height":2400},{"src":"assets/projects/vaeloria/tactical-battle.webp","alt":"Vaeloria: walka taktyczna samouczka z przeciwnikiem Iria BOT","caption":"Rzeczywisty ekran areny tutorialu na Redmi z publicznego preview; przeciwnik oznaczony jako BOT. To nie jest rozgrywka PvP.","width":1080,"height":2400}],"url":"projekty/vaeloria/"},{"id":"progresskit-community","name":"Lud\u0026Pra / ProgressKit Community","category":"platforms","categoryLabel":"Platformy","summary":"Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.","problem":"Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.","stage":"Finalizacja","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","Next.js","React","TypeScript","Docker"],"gallery":[{"src":"assets/projects/progresskit-community/community-desktop.webp","alt":"Lokalny widok odkrywania społeczności na desktopie","caption":"Lokalne QA na danych syntetycznych, 14.10.2026. Widok nie potwierdza wdrożenia produkcyjnego.","width":1440,"height":1000},{"src":"assets/projects/progresskit-community/community-mobile.webp","alt":"Mobilny widok listy społeczności z kategoriami","caption":"Lokalne QA na danych syntetycznych, 14.10.2026. Widok mobilny w przeglądarce testowej.","width":390,"height":844}],"url":"projekty/progresskit-community/"},{"id":"progresskit-tax","name":"ProgressKit Tax","category":"saas","categoryLabel":"SaaS","summary":"Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.","problem":"Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.","stage":"W rozwoju","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","Next.js","React","TypeScript","Kotlin","Jetpack Compose","Android","ClamAV"],"gallery":[],"url":"projekty/progresskit-tax/"},{"id":"adivara","name":"Adivara","category":"saas","categoryLabel":"SaaS","summary":"Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.","problem":"Firmy opiekuńcze potrzebują uporządkowania relacji między personelem, koordynatorami, podopiecznymi i rodziną przy zachowaniu odrębności danych organizacji.","stage":"Prototyp","technologies":["C#",".NET","ASP.NET Core","Entity Framework Core","PostgreSQL","ASP.NET Core Identity","JWT","xUnit"],"gallery":[],"url":"projekty/adivara/"},{"id":"gotrans360","name":"GoTrans360","category":"saas","categoryLabel":"SaaS","summary":"Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.","problem":"Ręczne planowanie przewozów i rozproszone dane o trasach, pojazdach i zapotrzebowaniu utrudniają wykorzystanie dostępnych miejsc i ograniczanie pustych przebiegów.","stage":"Prototyp","technologies":["TypeScript","Next.js","React","Node.js","Prisma","PostgreSQL","PostGIS","Leaflet","Turborepo","pnpm"],"gallery":[],"url":"projekty/gotrans360/"},{"id":"ignira","name":"Ignira / Maria-Salon","category":"web","categoryLabel":"Realizacje WWW","summary":"Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.","problem":"Osoba zainteresowana stylizacją potrzebuje zobaczyć wykonane prace i przekazać pomysł oraz preferowany termin w jednym miejscu.","stage":"Etap do potwierdzenia","technologies":["HTML","CSS","JavaScript","WebP"],"gallery":[],"url":"projekty/ignira/"},{"id":"obserwator","name":"Obserwator / Marek Zaworski","category":"web","categoryLabel":"Realizacje WWW","summary":"Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.","problem":"Czytelnik potrzebuje uporządkowanego miejsca, w którym znajdzie twórczość autora i materiały do pobrania.","stage":"Etap do potwierdzenia","technologies":["HTML","CSS","JavaScript"],"gallery":[],"url":"projekty/obserwator/"},{"id":"kan-system","name":"KAN SYSTEM","category":"saas","categoryLabel":"SaaS","summary":"Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.","problem":"Praca kontrolerów wymaga uporządkowanego zbierania informacji i przygotowania raportów.","stage":"Etap do potwierdzenia","technologies":[],"gallery":[],"url":"projekty/kan-system/"},{"id":"progresskit-systems","name":"ProgressKit Systems","category":"technology","categoryLabel":"Infrastruktura","summary":"Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.","problem":"Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.","stage":"W rozwoju","technologies":["HTML","CSS","JavaScript","Python","GitHub Actions"],"gallery":[],"url":"projekty/progresskit-systems/"},{"id":"progresskit-analytics","name":"ProgressKit Analytics","category":"technology","categoryLabel":"Infrastruktura","summary":"Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.","problem":"Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.","stage":"W rozwoju","technologies":["Python","FastAPI","SQLite","Docker"],"gallery":[],"url":"projekty/progresskit-analytics/"},{"id":"progresskit-infrastructure","name":"Zaplecze ProgressKit","category":"technology","categoryLabel":"Infrastruktura","summary":"Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.","problem":"Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.","stage":"W rozwoju","technologies":["Docker","Caddy","Linux","GitHub Actions","Python"],"gallery":[],"url":"projekty/progresskit-infrastructure/"}]</script><dialog class="project-hologram" id="project-hologram" aria-labelledby="hologram-title" aria-describedby="hologram-summary">
+   <div class="project-hologram__surface" data-hologram-surface>
+     <header class="project-hologram__toolbar">
+       <span class="project-hologram__category" data-hologram-category></span>

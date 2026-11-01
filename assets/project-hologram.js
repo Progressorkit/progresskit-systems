@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const STAGES = new Set(['Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny']);
+  const STAGES = new Set(['Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Wersja testowa', 'Finalizacja', 'Dostępny APK', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny']);
   const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const CLOSE_DELAY = 280;
   const text = (value, max = 1200) => typeof value === 'string' ? value.trim().slice(0, max) : '';

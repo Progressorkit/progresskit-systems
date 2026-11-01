@@ -1,0 +1,229 @@
+/* ProgressKit Systems | visual finishing pass, 2026-10-23.
+   Pure presentation. No DOM, data, motion controller, network or routing changes.
+   The two existing images are WORKING RECONSTRUCTIONS, not recovered originals. */
+
+/* Material palette: dark gunmetal, deep ruby aluminium, warm chrome. */
+:root {
+  --pk-finish-ink:#0b0e11;
+  --pk-finish-steel:#bfc8cf;
+  --pk-finish-ruby:#e02a46;
+  --pk-finish-highlight:#ffb0ba;
+}
+body { background:#0b1014; }
+.topbar {
+  border-bottom:1px solid #bb5c67;
+  color:#e7eaf0;
+  background:
+    linear-gradient(90deg,rgba(226,35,65,.17),transparent 28%,transparent 72%,rgba(231,37,61,.12)),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.038) 0 1px,transparent 1px 3px),
+    linear-gradient(115deg,#394249,#1b242c 39%,#0e151b 64%,#3d242a);
+  box-shadow:inset 0 1px rgba(255,255,255,.19),inset 0 -2px #06090b,0 8px 24px #0008;
+}
+.topbar .brand__title { color:#f4f5f6; text-shadow:0 2px 5px #000b; letter-spacing:.18em; }
+.topbar .nav a { color:#d9dfe3; }
+.topbar .nav a:hover,.topbar .nav a:focus-visible { color:#ffd0d6; }
+.topbar .nav a[href="#kontakt"] { color:#fff; }
+.topbar .menu-btn { color:#fff; border-color:#788994; background:linear-gradient(#34434d,#1c2831); }
+.topbar .menu-btn span { background:#f2f4f6; }
+.topbar .menu-btn span:last-child { background:#ff6c85; }
+.mobile-panel { background:#141b22; border-color:#6e4850; }
+
+/* Existing hero left panel and project mechanism right panel share one stage. */
+#main:has(>.hero--monument) {
+  background:
+    radial-gradient(ellipse 53% 420px at 75% 310px,rgba(224,36,64,.19),transparent 70%),
+    linear-gradient(110deg,rgba(7,10,13,.94) 0%,rgba(16,19,23,.93) 39%,rgba(18,12,16,.80) 77%,rgba(8,10,13,.90) 100%),
+    url("brand/red-aluminium-reconstruction.jpg") center top / 1700px auto repeat-y,
+    #101217;
+}
+.hero.hero--monument { background:transparent; }
+.hero.hero--monument::before {
+  opacity:.58;
+  background:
+    radial-gradient(ellipse at var(--light-x,64%) var(--light-y,38%),rgba(255,148,157,.14),transparent 54%),
+    linear-gradient(90deg,rgba(8,11,15,.16),rgba(163,25,46,.15) 70%,transparent);
+}
+.hero.hero--monument::after {
+  border-left-color:#dc485b55;
+  background:
+    linear-gradient(90deg,#f05c73,#721324 34%,transparent 72%) 0 0 / 68% 2px no-repeat,
+    repeating-linear-gradient(90deg,#a8a8a828 0 1px,transparent 1px 18px) 0 0 / 100% 8px no-repeat,
+    linear-gradient(145deg,#a7253230,transparent 65%);
+  opacity:.65;
+}
+.hero--monument .stone-line {
+  color:#e1e4e6;
+  background:linear-gradient(175deg,#f0f1ed 2%,#a7b0b6 26%,#dae0e3 43%,#79848c 63%,#b4bfc4 84%,#dee1e2 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 4px 1px #0004,0 9px 16px #0009;
+}
+.hero--monument .stone-line--systems {
+  background:linear-gradient(170deg,#ffa4aa 5%,#f14e6b 30%,#af213a 60%,#f98291 83%,#74172b 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero--monument .hero__motto { color:#e7e6e3; text-shadow:0 2px 8px #000b; }
+.hero__commercial-actions .cta:nth-child(2),#main .cta--ghost {
+  color:#e6ebef;
+  border-color:#9bafb9;
+  background:linear-gradient(145deg,#3f4d55,#222c34);
+  box-shadow:inset 0 1px #ffffff33,0 3px 0 #10171d,0 8px 20px #0005;
+}
+.hero__commercial-actions .cta:nth-child(n+3) { color:#ffb7c6; }
+.hero__explore { color:#e5e6e7; text-shadow:0 2px 6px #0009; }
+.hero__explore span:last-child {
+  border-color:#a04453;
+  color:#f4edf1;
+  background:linear-gradient(130deg,#633540,#251e26);
+  box-shadow:inset 0 1px #ffffff30,0 3px 0 #07090b,0 6px 15px #0009;
+}
+
+/* Keep every moving card, position and reveal behavior — change material only. */
+.project-showroom .showroom-heading { border-top-color:#d5a1a130; }
+.project-showroom .showroom-heading .section-title { color:#f2f1f1; text-shadow:0 2px 9px #0008; }
+.project-showroom .showroom-heading>p,
+.project-showroom .showroom-instructions,
+.project-showroom #showroom-status,
+.project-showroom .showroom-controls>span { color:#d3d0d2; }
+.project-showroom .showroom-catalog-link a,
+#main .project-showroom .section-kicker { color:#ffabb9; }
+/* Module geometry and metal faces are owned by project-mechanism.css. */
+.project-showroom .showroom-controls button { color:#f4f5f6; border-color:#8597a2; background:linear-gradient(#44515b,#263039); }
+.project-showroom .showroom-gate { border-color:#8c99a3; background:linear-gradient(140deg,#35414a,#1e2830); }
+.project-showroom .showroom-gate__label,
+.project-showroom .showroom-gate__count,
+.project-showroom .showroom-gate__icon { color:#e5ebef; }
+.project-showroom .showroom-gate[aria-pressed="true"] { border-color:#e16a82; background:linear-gradient(140deg,#663a45,#29232b); }
+.project-showroom .project-slice__panel { background:linear-gradient(145deg,#2e353d,#131b22); border-color:#73858f; }
+
+/* Roadmap map: six selectable modules, restrained hardware styling.
+   Preserve placement, edge semantics and distinction between planned/real. */
+#ekosystem .ecosystem-system {
+  border-color:#995866;
+  border-top-color:#d1858d;
+  background:
+    radial-gradient(ellipse at center,rgba(202,24,58,.22),transparent 60%),
+    linear-gradient(118deg,rgba(9,12,17,.86),rgba(8,12,17,.90) 58%,rgba(44,9,18,.83)),
+    url("brand/red-aluminium-reconstruction.jpg") center / cover no-repeat;
+  box-shadow:inset 1px 1px 0 #ffd0d033,inset 0 -8px 16px #0009,0 7px 0 #090b0f,0 8px 0 #a62a4255,0 18px 45px #0007;
+}
+#ekosystem .ecosystem-node {
+  color:#f0f2f3;
+  border-color:#8998a2;
+  border-bottom-color:#333d46;
+  background:
+    linear-gradient(125deg,rgba(255,255,255,.17),transparent 46%,rgba(0,0,0,.30)),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,transparent 1px 4px),
+    linear-gradient(135deg,#48565f,#29343d 52%,#1c262e);
+  box-shadow:inset 1px 1px 0 #e6ebed6b,inset 0 -3px 0 #10161c,4px 5px 0 #080c11,5px 6px 0 #ae34445a,0 13px 27px #000a;
+}
+#ekosystem .ecosystem-node::before {
+  border-color:#889ba766;
+  border-top-color:#b5c9d3;
+  background:linear-gradient(120deg,#4a5760,#232d35 50%,#576269);
+}
+#ekosystem .ecosystem-node::after {
+  border-color:#adb9be;
+  background:linear-gradient(90deg,#222f38,#a0b0b8 50%,#27343e);
+}
+#ekosystem .ecosystem-node__name,
+#ekosystem .ecosystem-node__trigger[aria-expanded="true"] .ecosystem-node__name,
+#ekosystem .ecosystem-node:hover .ecosystem-node__name { color:#fff; text-shadow:0 2px 5px #000a; }
+#ekosystem .ecosystem-node__detail .delivery-flow__description,
+#ekosystem .ecosystem-node .delivery-flow__relationship { color:#dbe2e6; }
+#ekosystem .ecosystem-node__detail .delivery-project-link { color:#ffcad2; }
+#ekosystem .ecosystem-node.is-selected {
+  border-color:#fa8393;
+  border-left-color:#fa4d6c;
+  background:
+    linear-gradient(120deg,rgba(221,38,65,.26),transparent 54%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.046) 0 1px,transparent 1px 4px),
+    linear-gradient(135deg,#67404b,#38313a 55%,#25262d);
+  box-shadow:inset 3px 0 0 #ed4866,inset 0 1px 0 #ffd0d07e,4px 5px 0 #080b0f,5px 6px 0 #e3305059,0 15px 29px #000b;
+}
+#ekosystem .ecosystem-node.is-selected::before {
+  border-color:#a9697a;
+  background:linear-gradient(118deg,#633943,#333039 52%,#682e3f);
+}
+#ekosystem .ecosystem-node.is-selected::after { border-color:#ff9ba9; background:linear-gradient(90deg,#6d1d33,#e48d9d,#8e3248); }
+#ekosystem .ecosystem-wires [data-ecosystem-edge] { stroke:#9caebb; opacity:.68; }
+#ekosystem .ecosystem-wires [data-ecosystem-edge].is-flowing { stroke:#ff7e99; }
+#ekosystem .ecosystem-console {
+  border-color:#87939c;
+  border-top-color:#ed5572;
+  background:
+    radial-gradient(ellipse at 90% 2%,rgba(217,43,68,.17),transparent 65%),
+    linear-gradient(135deg,#2a333b,#111a23 72%);
+}
+#ekosystem .ecosystem-console__name { color:#f8f8f8; }
+#ekosystem .ecosystem-system .delivery-independent>h3 { color:#f3e5e7; }
+@media(hover:hover) {
+  #ekosystem .ecosystem-node:hover { border-color:#f2b3bc; box-shadow:inset 1px 1px 0 #ffffff55,4px 5px 0 #080c11,5px 6px 0 #a62c4359,0 16px 24px #0009; }
+}
+
+/* Seamless footer landscape: more visual presence, soft metallic-to-forest transition. */
+body>footer {
+  position:relative;
+  border-top:1px solid #a2505b;
+  background:linear-gradient(180deg,#11161a,#090e11 78%);
+  box-shadow:inset 0 1px 0 #f7b9c826;
+}
+body>footer::before {
+  height:clamp(170px,17vw,260px);
+  min-height:0;
+  aspect-ratio:auto;
+  margin-bottom:0;
+  background-color:#121a18;
+  background-image:
+    linear-gradient(180deg,#0f141a 0%,rgba(13,16,19,.36) 22%,rgba(11,13,15,.03) 53%,rgba(9,13,14,.24) 87%,#090e11 100%),
+    url("brand/footer-forest-mountains-reconstruction.png");
+  background-position:center,center;
+  background-size:100% 100%,cover;
+  background-repeat:no-repeat;
+  border-bottom:1px solid #a2505b44;
+}
+body>footer .footer__inner { padding-top:28px; }
+body>footer .footer-brand strong { color:#f0efee; }
+body>footer .footer__links,body>footer .footer__links a { color:#d2d5d5; }
+@media(max-width:700px) {
+  .topbar .brand__title { letter-spacing:.10em; }
+  body>footer::before { height:132px; min-height:0; background-size:100% 100%,auto 100%; }
+  body>footer .footer__inner { padding-top:24px; }
+}
+@media (forced-colors:active) {
+  .topbar,#main:has(>.hero--monument),.project-showroom .showroom-card .project-slice,
+  .project-showroom .showroom-card.is-active .project-slice,.showroom-enhanced .showroom-frame,
+  #ekosystem .ecosystem-system,#ekosystem .ecosystem-node,#ekosystem .ecosystem-node.is-selected,
+  body>footer { background:Canvas; color:CanvasText; box-shadow:none; border-color:CanvasText; }
+  .topbar .brand__title,.topbar .nav a,.hero--monument .hero__motto,.hero__explore,
+  .project-showroom .showroom-heading .section-title,
+  .project-showroom .showroom-card .project-slice h3,
+  .project-showroom .showroom-card .project-slice .showroom-card__category,
+  .project-showroom .showroom-card .project-slice .showroom-card__action,
+  #ekosystem .ecosystem-node__name,#ekosystem .ecosystem-node__detail .delivery-flow__description,
+  #ekosystem .ecosystem-node .delivery-flow__relationship { color:CanvasText; text-shadow:none; }
+  .hero--monument .stone-line,.hero--monument .stone-line--systems { background:none; color:CanvasText; -webkit-text-fill-color:CanvasText; text-shadow:none; }
+  #ekosystem .ecosystem-node::before,#ekosystem .ecosystem-node::after { display:none; }
+  body>footer::before { display:none; }
+}
+@media print {
+  body,#main:has(>.hero--monument),.topbar,body>footer,
+  .project-showroom .showroom-card .project-slice,.project-showroom .showroom-card.is-active .project-slice,
+  #ekosystem .ecosystem-system,#ekosystem .ecosystem-node,#ekosystem .ecosystem-node.is-selected {
+    color:#111; background:#fff; border-color:#777; box-shadow:none;
+  }
+  .hero--monument .stone-line,.hero--monument .stone-line--systems { background:none; color:#111; -webkit-text-fill-color:#111; text-shadow:none; }
+  .project-showroom .showroom-card .project-slice h3,
+  .project-showroom .showroom-card .project-slice .showroom-card__category,
+  .project-showroom .showroom-card .project-slice .showroom-card__badge,
+  .project-showroom .showroom-card .project-slice .showroom-card__badge>span,
+  .project-showroom .showroom-card .project-slice .showroom-card__action,
+  #ekosystem .ecosystem-node__name,
+  #ekosystem .ecosystem-node__detail .delivery-flow__description,
+  #ekosystem .ecosystem-node .delivery-flow__relationship { color:#111; text-shadow:none; }
+  #ekosystem .ecosystem-node::before,#ekosystem .ecosystem-node::after { display:none; }
+  body>footer::before { display:none; }
+}

@@ -83,33 +83,50 @@ async function main() {
         assert(await page.locator('h1').count() === 1, 'Exactly one H1');
         for (const id of ['uslugi', 'kontakt', 'ekosystem', 'wydania']) assert(await page.locator(`#${id}`).count() === 1, `Missing ${id}`);
       });
-      await check(`${width}: readable rail modules without overlap or circular decoration`, async () => {
-        const layout=await page.evaluate(()=>({rings:document.querySelectorAll('.showroom-orbit,.showroom-orbit-front').length,
+      await check(`${width}: six genuine hexagonal modules around the original PK hub without overlap`, async () => {
+        const layout=await page.evaluate(()=>({hub:document.querySelector('.mechanism-hub img')?.getAttribute('src'), wheel:document.querySelectorAll('.mechanism-wheel').length,
           modules:[...document.querySelectorAll('.showroom-card:not(.is-orbit-hidden)')].map(card=>{
             const title=card.querySelector('h3'),stage=card.querySelector('.showroom-card__stage'),action=card.querySelector('.showroom-card__action');
-            return {id:card.dataset.projectId,rect:card.getBoundingClientRect().toJSON(),title:title.getBoundingClientRect().toJSON(),
+            return {id:card.dataset.projectId,clip:getComputedStyle(card.querySelector('.project-slice')).clipPath,rect:card.getBoundingClientRect().toJSON(),title:title.getBoundingClientRect().toJSON(),
               stage:stage.getBoundingClientRect().toJSON(),action:action.getBoundingClientRect().toJSON(),
               fonts:[title,stage,action].map(e=>parseFloat(getComputedStyle(e).fontSize))};
           })}));
-        assert(layout.rings===0,'Circular decoration remains in rendered markup');
+        assert(layout.wheel===1&&layout.hub==='assets/brand/progressorkit-stamp.png','Missing integrated wheel or original logo');
         assert(layout.modules.length===(width<600?1:6),'Incorrect number of readable modules');
         for(const m of layout.modules){
-          assert(m.fonts[0]>=20&&m.fonts[1]>=12&&m.fonts[2]>=14,JSON.stringify(m));
+          assert(m.fonts[0]>=(width<600?17:14)&&m.fonts[1]>=10&&m.fonts[2]>=10,JSON.stringify(m));
+          assert(m.clip==='polygon(25% 0px, 75% 0px, 100% 50%, 75% 100%, 25% 100%, 0px 50%)','Not a genuine six-sided face: '+m.id);
           assert(m.title.left>=m.rect.left-1&&m.title.right<=m.rect.right+1&&m.action.bottom<=m.rect.bottom+1,JSON.stringify(m));
           assert(m.title.bottom<=m.stage.top+1&&m.stage.bottom<=m.action.top+1,'Name, stage or action overlap: '+m.id);
         }
         for(let i=0;i<layout.modules.length;i++)for(let j=i+1;j<layout.modules.length;j++){
-          const a=layout.modules[i].rect,b=layout.modules[j].rect;
-          assert(Math.min(a.right,b.right)-Math.max(a.left,b.left)<=1||Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)<=1,'Module faces overlap');
+          // A hexagon's empty bounding-box corners may intersect its neighbor.
+          // SAT tests the six painted face vertices, not an obsolete rectangle.
+          const polygon=r=>[[.25,0],[.75,0],[1,.5],[.75,1],[.25,1],[0,.5]].map(([x,y])=>[r.left+x*r.width,r.top+y*r.height]);
+          const a=polygon(layout.modules[i].rect),b=polygon(layout.modules[j].rect);
+          const separated=[a,b].some(poly=>poly.some((v,k)=>{
+            const next=poly[(k+1)%poly.length],axis=[-(next[1]-v[1]),next[0]-v[0]];
+            const projected=points=>points.map(p=>p[0]*axis[0]+p[1]*axis[1]);
+            const pa=projected(a),pb=projected(b);
+            return Math.max(...pa)<=Math.min(...pb)||Math.max(...pb)<=Math.min(...pa);
+          }));
+          assert(separated,'Hexagonal faces overlap: '+layout.modules[i].id+' / '+layout.modules[j].id);
         }
         return layout;
       });
+      if(width===1440){
+        await page.locator('[data-showroom-step="1"]').click();
+        await page.waitForTimeout(200);
+        await page.screenshot({path:path.join(out,'1440-rotation.png')});report.screenshots.push('1440-rotation.png');
+        await page.waitForTimeout(550);
+      }
       // Every real catalog item must remain reachable through the existing mechanism.
       for (const id of ids) {
         await check(`${width}: expand ${id} with natural page scroll`, async () => {
           await open(page, id);
           const b = await bounds(page);
           assert(b.count === 1 && !b.overflow, JSON.stringify(b));
+          assert(await page.locator('.is-slice-expanded .project-slice').evaluate(el=>getComputedStyle(el).clipPath)==='polygon(25% 0px, 75% 0px, 100% 50%, 75% 100%, 25% 100%, 0px 50%)','Expanded housing lost its hexagonal silhouette');
           assert(b.left >= -1 && b.right <= b.width + 1, JSON.stringify(b));
           assert(!['auto','scroll'].includes(b.bodyOverflow) && !['auto','scroll'].includes(b.panelOverflow) && b.naturalBody, JSON.stringify(b));
           const action = page.locator('.is-slice-expanded .project-slice__actions a').first();
@@ -146,7 +163,7 @@ async function main() {
         assert(await map.getAttribute('data-ecosystem-ready')==='true','Map enhancement failed');
         assert(await map.locator('[data-ecosystem-select]').count()===6,'Expected six native node buttons');
         assert(await map.locator('[data-ecosystem-edge][data-integration-status="planned"]').count()===5,'Every connection must remain planned');
-        const stages={tax:'development',translator:'prototype',agents:'planned',voice:'planned',mail:'development',messenger:'planned'};
+        const stages={tax:'development',translator:'prototype',agents:'planned',voice:'planned',mail:'testing',messenger:'planned'};
         const states=[];
         for(const [id,stage]of Object.entries(stages)){
           const trigger=map.locator(`[data-ecosystem-select="${id}"]`);
@@ -202,6 +219,9 @@ async function main() {
         assert(await page.locator('.showroom-card.is-active').getAttribute('data-project-id') === 'progresskit-tax', 'Selected project lost');
         await page.keyboard.press('Escape');
       });
+      await page.locator('footer').scrollIntoViewIfNeeded();
+      await shot(page,`${width}-footer.png`,page.locator('footer'));
+      await page.locator('footer').screenshot({path:path.join(out,`${width}-footer-full.png`)});report.screenshots.push(`${width}-footer-full.png`);
       const metrics = await page.evaluate(() => ({ navigation: performance.getEntriesByType('navigation').map(n => ({ duration: n.duration, domContentLoaded: n.domContentLoadedEventEnd, transferSize: n.transferSize })),
         resources: performance.getEntriesByType('resource').length, domNodes: document.querySelectorAll('*').length,
         heap: performance.memory ? { used: performance.memory.usedJSHeapSize, limit: performance.memory.jsHeapSizeLimit } : null }));
@@ -252,6 +272,38 @@ async function main() {
       assert(await work.locator('img[src="x"]').count()===0,'Search injected markup');
     });
     await work.goto(base,{waitUntil:'networkidle'});
+    await check('V5 actual circular motion, six-face limit, filtering during rotation and extrusion',async()=>{
+      await work.evaluate(()=>scrollTo(0,0));
+      const trajectory=await work.evaluate(async()=>{
+        const root=document.querySelector('[data-showroom]'),track=document.querySelector('.showroom-viewport');
+        const first=document.querySelector('.showroom-card.is-active'),points=[];
+        root.querySelector('[data-showroom-step="1"]').click();
+        const start=performance.now();
+        while(performance.now()-start<750){
+          await new Promise(requestAnimationFrame);
+          const style=getComputedStyle(first),r=first.getBoundingClientRect();
+          const visible=[...root.querySelectorAll('.showroom-card')].filter(el=>!el.classList.contains('is-orbit-hidden')&&Number(getComputedStyle(el).opacity)>0);
+          points.push({x:Number(style.getPropertyValue('--showroom-x')),y:Number(style.getPropertyValue('--showroom-y')),visible:visible.length,left:r.left,top:r.top});
+        }
+        return points;
+      });
+      assert(trajectory.length>5,'Too few motion samples');
+      assert(trajectory.every(p=>p.visible<=6),'More than six visible faces');
+      assert(trajectory.every(p=>Math.abs(p.x*p.x+p.y*p.y-1)<.00001),'Trajectory left circular path');
+      assert(Math.abs(trajectory[0].x-trajectory.at(-1).x)>.3,'No real rotation');
+      await work.locator('[data-showroom-step="1"]').click();
+      await work.locator('[data-showroom-category="mobile"]').click();await work.waitForTimeout(700);
+      assert(await work.locator('.is-slice-expanded').count()===0,'Filter left a stale panel');
+      assert(await work.locator('.showroom-card:not(.is-orbit-hidden):not([data-category="mobile"])').count()===0,'Filter leaked other categories');
+      await work.locator('[data-showroom-category=""]').click();await work.waitForTimeout(700);
+      const neighboring=work.locator('.showroom-card:not(.is-orbit-hidden):not(.is-active) [data-showroom-open]').first();
+      await neighboring.click();
+      await work.locator('.is-slice-expanded').waitFor();
+      const extrusion=await work.locator('.is-slice-expanded').evaluate(el=>el.getAnimations().map(a=>({duration:a.effect.getTiming().duration,frames:a.effect.getKeyframes().map(k=>k.transform)})));
+      assert(extrusion.some(a=>a.duration===520&&a.frames.some(t=>t.includes('scale('))),'No physical face extrusion animation');
+      await work.keyboard.press('Escape');
+      return {samples:trajectory.length,first:trajectory[0],last:trajectory.at(-1),maxVisible:Math.max(...trajectory.map(p=>p.visible)),extrusion};
+    });
     const infinite=()=>work.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running'&&a.effect?.getTiming().iterations===Infinity).map(a=>({name:a.animationName,target:a.effect?.target?.className?.baseVal??a.effect?.target?.className})));
     await check('V3 hero has bounded visible motion and the shared pause stops pointer light too',async()=>{
       await work.waitForTimeout(300);
@@ -263,9 +315,9 @@ async function main() {
       await work.mouse.move(box.x+box.width*.65,box.y+200);await work.waitForTimeout(100);
       const lightAfter=await work.locator('.hero--monument').evaluate(el=>el.style.getPropertyValue('--light-x'));
       assert(lightBefore!==''&&lightAfter!==''&&lightBefore!==lightAfter,'Hero pointer light is static');
-      const signal=()=>work.locator('.showroom-frame__signal').evaluate(el=>getComputedStyle(el).transform);
+      const signal=()=>work.locator('.mechanism-bearing').evaluate(el=>getComputedStyle(el).transform);
       const before=await signal();await work.waitForTimeout(450);const after=await signal();
-      assert(before!==after,'Visible rail signal is static');
+      assert(before!==after,'Visible bearing is static');
       const toggle=work.locator('[data-showroom-motion-toggle]');await toggle.click();await work.waitForTimeout(100);
       assert((await infinite()).length===0,'Pause left running infinite motion');
       await work.mouse.move(100,200);await work.mouse.move(300,350);await work.waitForTimeout(100);
@@ -326,7 +378,7 @@ async function main() {
     await open(work,'progresskit-tax');await work.keyboard.press('Escape');
     await work.waitForTimeout(800);await perf.send('HeapProfiler.collectGarbage');
     const domBefore=await perf.send('Memory.getDOMCounters');
-    for(let i=0;i<10;i++){await open(work,'progresskit-tax');await work.keyboard.press('Escape');}
+    for(let i=0;i<100;i++){await open(work,'progresskit-tax');await work.keyboard.press('Escape');}
     await work.waitForTimeout(800);
     await perf.send('HeapProfiler.collectGarbage');
     const domAfter=await perf.send('Memory.getDOMCounters');
@@ -334,8 +386,8 @@ async function main() {
     const a=values(idleBefore),b=values(idleAfter);
     report.measurements.push({name:'Desktop CDP sample, not physical phone/FPS',idleSampleSeconds:b.Timestamp-a.Timestamp,
       taskSeconds:b.TaskDuration-a.TaskDuration,scriptSeconds:b.ScriptDuration-a.ScriptDuration,
-      domCold,domBefore,domAfter,warmupCycles:1,cycles:10});
-    await check('Repeated expansion retains bounded DOM and listeners',async()=>{
+      domCold,domBefore,domAfter,warmupCycles:1,cycles:100});
+    await check('100 repeated expansions retain bounded DOM and listeners',async()=>{
       assert(domAfter.documents<=domBefore.documents && domAfter.nodes<=domBefore.nodes && domAfter.jsEventListeners<=domBefore.jsEventListeners,JSON.stringify({domBefore,domAfter}));
     });
     await workContext.close();

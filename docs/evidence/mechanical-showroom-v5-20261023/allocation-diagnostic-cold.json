@@ -1,0 +1,52 @@
+{
+  "base": "http://127.0.0.1:8130/",
+  "startedAt": "2026-10-23T18:22:36.744Z",
+  "method": "Same markup/CSS, reduced motion, pre-sprint versus current JS. WeakSet tracks genuinely new connected DOM nodes without retaining removed nodes. No tolerance for current added nodes. This does not identify the single historical CDP node.",
+  "runs": [
+    {
+      "version": "baseline",
+      "roleSelections": 30,
+      "openCloseCycles": 20,
+      "before": {
+        "documents": 1,
+        "nodes": 2165,
+        "jsEventListeners": 152
+      },
+      "after": {
+        "documents": 1,
+        "nodes": 2173,
+        "jsEventListeners": 152
+      },
+      "allocation": {
+        "created": {
+          "1:P": 60,
+          "3:#text": 150
+        },
+        "added": 210,
+        "removed": 210
+      }
+    },
+    {
+      "version": "current",
+      "roleSelections": 30,
+      "openCloseCycles": 20,
+      "before": {
+        "documents": 1,
+        "nodes": 2165,
+        "jsEventListeners": 152
+      },
+      "after": {
+        "documents": 1,
+        "nodes": 2173,
+        "jsEventListeners": 152
+      },
+      "allocation": {
+        "created": {},
+        "added": 120,
+        "removed": 120
+      }
+    }
+  ],
+  "currentStable": false,
+  "finishedAt": "2026-10-23T18:22:57.135Z"
+}

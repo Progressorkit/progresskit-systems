@@ -68,7 +68,8 @@ class DeliverySectionsTests(unittest.TestCase):
                 'Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.',
                 'Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.'):
             self.assertIn(label, text)
-        self.assertEqual(2, self.page.text.count('W rozwoju'))
+        self.assertEqual(1, self.page.text.count('W rozwoju'))
+        self.assertEqual(1, self.page.text.count('Wersja testowa'))
         self.assertEqual(1, self.page.text.count('Prototyp'))
         self.assertEqual(3, self.page.text.count('Planowane'))
         self.assertEqual(3, self.page.text.count('Planowane połączenie'))
@@ -170,8 +171,10 @@ class DeliverySectionsTests(unittest.TestCase):
         stages = {attrs['data-ecosystem-node']: attrs['data-ecosystem-stage']
                   for _, attrs in self.page.elements if 'data-ecosystem-node' in attrs}
         self.assertEqual({'tax': 'development', 'translator': 'prototype', 'agents': 'planned',
-                          'voice': 'planned', 'mail': 'development', 'messenger': 'planned'}, stages)
-        for stage in ('W ROZWOJU', 'w rozwoju', 'Niepotwierdzony etap', '<img src=x onerror=alert(1)>'):
+                          'voice': 'planned', 'mail': 'testing', 'messenger': 'planned'}, stages)
+        for stage in ('W ROZWOJU', 'w rozwoju', 'WERSJA TESTOWA', 'wersja testowa',
+                      'Wersja testowa ', 'Stable', 'Commercial', 'Niepotwierdzony etap',
+                      '<img src=x onerror=alert(1)>'):
             with self.subTest(stage=stage):
                 projects = copy.deepcopy(self.projects)
                 next(p for p in projects if p['id'] == 'progresskit-tax')['stage'] = stage
@@ -180,6 +183,19 @@ class DeliverySectionsTests(unittest.TestCase):
                 self.assertEqual('unconfirmed', node['data-ecosystem-stage'])
                 self.assertIn(stage, page.text)
                 self.assertFalse(any(tag == 'img' for tag, _ in page.elements))
+
+    def test_testing_product_stage_preserves_all_planned_connections_and_release_boundaries(self):
+        projects = copy.deepcopy(self.projects)
+        next(p for p in projects if p['id'] == 'progresskit-tax')['stage'] = 'Wersja testowa'
+        page = Page(DELIVERY.render_delivery(projects))
+        node = next(attrs for _, attrs in page.elements if attrs.get('data-ecosystem-node') == 'tax')
+        self.assertEqual('testing', node['data-ecosystem-stage'])
+        self.assertIn('Wersja testowa', page.text)
+        edges = [attrs for _, attrs in page.elements if 'data-ecosystem-edge' in attrs]
+        self.assertEqual(5, len(edges))
+        self.assertEqual({'planned'}, {attrs['data-integration-status'] for attrs in edges})
+        self.assertIn('W tym katalogu nie potwierdzono wydań Stable ani dostępności komercyjnej.',
+                      ''.join(page.text))
 
     def test_release_explanation_does_not_assign_stable_or_commercial_to_products(self):
         text = ''.join(self.page.text)

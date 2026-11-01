@@ -1,0 +1,101 @@
+{
+  "baselineAndHead": "9322e4e4b35be58517fbf7073c8015673770ef43",
+  "preview": "http://127.0.0.1:8111/",
+  "visual": {
+    "overall": "PARTIAL_ORIGINAL_ASSETS_UNCONFIRMED",
+    "materials": "IMPLEMENTED_AND_REVIEWED_LOCAL",
+    "redAluminiumOriginal": "NOT_IDENTIFIED",
+    "forestMountainsFooterOriginal": "NOT_IDENTIFIED",
+    "footer": "UNCHANGED_VERIFIED_COMPUTED_STYLES",
+    "ownerVisualApproval": "OPEN"
+  },
+  "functional": {
+    "python": {
+      "PASS": 115,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "javascript": {
+      "PASS": 69,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "browser": {
+      "PASS": 93,
+      "FAIL": 0
+    },
+    "footer": {
+      "PASS": 9,
+      "FAIL": 0
+    },
+    "http": {
+      "PASS": 69,
+      "FAIL": 0
+    }
+  },
+  "changedProductFiles": [
+    {
+      "path": "assets/ecosystem-system.css",
+      "sha256": "29491f3adec06e037b53169634ecd0ecbe3c2b42bdaeea2b1154870acfdcb1cb"
+    },
+    {
+      "path": "assets/interface-life.css",
+      "sha256": "ccb45eedeb0de25fb6573a6b9fb3afc09d2d6ef3ea2e06295a0a634e3059e242"
+    }
+  ],
+  "uiInputsVerified": 32,
+  "projectCount": 14,
+  "browserErrors": [],
+  "failedResources": [],
+  "pngCount": 72,
+  "videoCount": 2,
+  "requiredScreenshotsVisuallyInspected": [
+    {
+      "path": "browser/1440-first.png",
+      "bytes": 753972,
+      "sha256": "0d946a2868f6c4d5a14128d840bc070a4f33def7b09b2e2930e52caa022a137b"
+    },
+    {
+      "path": "browser/1440-ecosystem-map.png",
+      "bytes": 540585,
+      "sha256": "5579f10cbe77bf5de2440cdadceccc8e66c5e9b376f894fd9f06b259dd51be6f"
+    },
+    {
+      "path": "browser/1440-progresskit-tax-expanded.png",
+      "bytes": 724867,
+      "sha256": "34ccdc4a80889b83fe245ba3f65972a52e6afd14b23405e3b9d0f75d8bf927f4"
+    },
+    {
+      "path": "1440-footer.png",
+      "bytes": 337642,
+      "sha256": "cca55cdd042c926ff98655963a239eee5c0b2e13137d5852dca3c33a7c40876c"
+    },
+    {
+      "path": "browser/390-first.png",
+      "bytes": 223490,
+      "sha256": "7be3047edeaf03b1904e7f1536f307228b1e35e832c448c9c21244bbefcd95b3"
+    },
+    {
+      "path": "browser/390-ecosystem-map.png",
+      "bytes": 177193,
+      "sha256": "87e2c9a29d2032f8adea8a6b02c89c8ef45182592840630108aa4f96e8cc6189"
+    },
+    {
+      "path": "390-footer.png",
+      "bytes": 150649,
+      "sha256": "47d0215121cb6bc3a035af22b75823697e34bfe409047a3ac035bb13a14ecf22"
+    }
+  ],
+  "git": {
+    "newCommit": false,
+    "stage": "EMPTY",
+    "push": false,
+    "deployment": false,
+    "workingTree": "2 modified CSS plus new report/evidence"
+  },
+  "limitations": [
+    "Local Chromium viewport emulation, no physical-device claim.",
+    "Original asset search bounded to available sources; reference mockups are not confirmed replacement originals.",
+    "No new security/SCA audit for CSS-only correction."
+  ]
+}
