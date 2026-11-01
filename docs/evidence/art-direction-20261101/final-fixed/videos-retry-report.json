@@ -1,0 +1,89 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "final-videos-retry",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "Both interaction recordings are H.264 at their requested sizes",
+      "status": "PASS",
+      "details": [
+        {
+          "path": "final-fixed/desktop-interaction.mp4",
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 1440,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "21.120000"
+          }
+        },
+        {
+          "path": "final-fixed/mobile-interaction.mp4",
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 390,
+              "height": 844
+            }
+          ],
+          "format": {
+            "duration": "16.760000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [
+    {
+      "path": "final-fixed/desktop-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900
+        }
+      ],
+      "format": {
+        "duration": "21.120000"
+      }
+    },
+    {
+      "path": "final-fixed/mobile-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "format": {
+        "duration": "16.760000"
+      }
+    }
+  ],
+  "totals": {
+    "PASS": 3,
+    "FAIL": 0,
+    "BLOCKED": 0
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "matrix-1366x768",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "1366x768 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "1366x768 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "1366x768 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      }
+    },
+    {
+      "name": "1366x768: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      }
+    },
+    {
+      "name": "1366x768: ecosystem selection",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "1366x768: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "matrix-1366x768/1366x768-first.png",
+    "matrix-1366x768/1366x768-projects.png",
+    "matrix-1366x768/1366x768-showroom-stage.png",
+    "matrix-1366x768/1366x768-project-expanded.png",
+    "matrix-1366x768/1366x768-services.png",
+    "matrix-1366x768/1366x768-ecosystem.png",
+    "matrix-1366x768/1366x768-process.png",
+    "matrix-1366x768/1366x768-about.png",
+    "matrix-1366x768/1366x768-contact.png",
+    "matrix-1366x768/1366x768-brief.png",
+    "matrix-1366x768/1366x768-footer.png"
+  ],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": []
+}

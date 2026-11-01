@@ -1,0 +1,172 @@
+{
+  "scope": "Local Chrome motion/reveal smoke checks; desktop and mobile viewport emulation",
+  "checks": [
+    {
+      "name": "1440 #kontakt: content opacity 1",
+      "status": "PASS",
+      "details": [
+        {
+          "class": "section contact-section home-chapter",
+          "opacity": 1
+        },
+        {
+          "class": "contact__invitation is-revealed",
+          "opacity": 1
+        },
+        {
+          "class": "contact__meta is-revealed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "name": "1440 #brief: content opacity 1",
+      "status": "PASS",
+      "details": [
+        {
+          "class": "brief world-surface is-revealed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "name": "Scroll process progress is monotonic and six stages stay ordered",
+      "status": "PASS",
+      "details": [
+        {
+          "progress": 0,
+          "states": [
+            "pending",
+            "pending",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.2502,
+          "states": [
+            "complete",
+            "active",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.4989,
+          "states": [
+            "complete",
+            "complete",
+            "active",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.8005,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "active",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.9989,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "active"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Desktop visible surface pointer response respects quality budget",
+      "status": "PASS",
+      "details": {
+        "quality": "full",
+        "visible": "true",
+        "x": "25.00%",
+        "y": "65.00%",
+        "tx": "-0.36deg",
+        "ty": "-0.60deg"
+      }
+    },
+    {
+      "name": "Existing user pause stops shared motion",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Reduced motion renders all process stages complete statically",
+      "status": "PASS",
+      "details": {
+        "progress": 1,
+        "states": [
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "Reduced motion has no running infinite animation",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390 #kontakt: content opacity 1",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "390 #brief: content opacity 1",
+      "status": "PASS",
+      "details": [
+        1
+      ]
+    },
+    {
+      "name": "Compact mobile has at most one flowing connection",
+      "status": "PASS",
+      "details": {
+        "quality": "compact",
+        "flowing": 1
+      }
+    },
+    {
+      "name": "No browser runtime/console errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "runtimeErrors": [],
+  "screenshots": [
+    "1440x900-kontakt.png",
+    "1440x900-brief.png",
+    "1440x900-process-active.png",
+    "390x844-kontakt.png",
+    "390x844-brief.png",
+    "320x568-hero.png",
+    "320x568-footer.png"
+  ],
+  "PASS": 11,
+  "FAIL": 0
+}

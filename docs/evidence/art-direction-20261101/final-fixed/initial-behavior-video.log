@@ -1,0 +1,74 @@
+FAIL: Scroll activates engineering stations in order [
+  {
+    progress: NaN,
+    states: [
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined
+    ]
+  },
+  {
+    progress: 0.2502,
+    states: [
+      'complete',
+      'active',
+      'pending',
+      'pending',
+      'pending',
+      'pending'
+    ]
+  },
+  {
+    progress: 0.2502,
+    states: [
+      'complete',
+      'active',
+      'pending',
+      'pending',
+      'pending',
+      'pending'
+    ]
+  },
+  {
+    progress: 0.8005,
+    states: [
+      'complete',
+      'complete',
+      'complete',
+      'complete',
+      'active',
+      'pending'
+    ]
+  },
+  {
+    progress: 0.9989,
+    states: [
+      'complete',
+      'complete',
+      'complete',
+      'complete',
+      'complete',
+      'active'
+    ]
+  }
+]
+browserContext.newPage: Executable doesn't exist at /home/pawe/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux
+╔═════════════════════════════════════════════════════════════════╗
+║ Video rendering requires ffmpeg binary.                         ║
+║ Downloading it will not affect any of the system-wide settings. ║
+║ Please run the following command:                               ║
+║                                                                 ║
+║     npx playwright install ffmpeg                               ║
+║                                                                 ║
+║ <3 Playwright Team                                              ║
+╚═════════════════════════════════════════════════════════════════╝
+    at startPage (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:11:140)
+    at async video (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:132:23)
+    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:158:27 {
+  log: [],
+  name: 'Error'
+}
+{"mode":"final-fixed","PASS":155,"FAIL":1,"BLOCKED":1,"screenshots":63,"videos":0,"fatal":"browserContext.newPage: Executable doesn't exist at /home/pawe/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux\n╔═════════════════════════════════════════════════════════════════╗\n║ Video rendering requires ffmpeg binary.                         ║\n║ Downloading it will not affect any of the system-wide settings. ║\n║ Please run the following command:                               ║\n║                                                                 ║\n║     npx playwright install ffmpeg                               ║\n║                                                                 ║\n║ <3 Playwright Team                                              ║\n╚═════════════════════════════════════════════════════════════════╝"}

@@ -1,0 +1,36 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "video-mobile",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [
+    {
+      "path": "video-mobile/mobile-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "format": {
+        "duration": "13.720000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "phase2",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "1440x900: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "1440x900 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "390x844: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      }
+    },
+    {
+      "name": "390x844: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "390x844 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      }
+    },
+    {
+      "name": "390x844: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "phase2/1440x900-first.png",
+    "phase2/1440x900-projects.png",
+    "phase2/1440x900-project-expanded.png",
+    "phase2/390x844-first.png",
+    "phase2/390x844-projects.png",
+    "phase2/390x844-project-expanded.png"
+  ],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [],
+  "totals": {
+    "PASS": 10,
+    "FAIL": 0,
+    "BLOCKED": 0
+  }
+}

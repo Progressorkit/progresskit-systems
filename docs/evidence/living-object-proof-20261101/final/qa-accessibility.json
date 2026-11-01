@@ -1,0 +1,67 @@
+{
+  "mode": "accessibility",
+  "checks": [
+    {
+      "name": "skip link receives first keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "name": "skip link moves to project",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard activation focuses real product link",
+      "status": "PASS"
+    },
+    {
+      "name": "next keyboard target is download",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape closes and restores ignition focus",
+      "status": "PASS"
+    },
+    {
+      "name": "forced colors retains product controls",
+      "status": "PASS"
+    },
+    {
+      "name": "print shows image and details",
+      "status": "PASS"
+    },
+    {
+      "name": "no JS keeps genuine screen and product links",
+      "status": "PASS"
+    },
+    {
+      "name": "no JS has no inert controls or doors",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion starts paused",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion still opens product",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "no external requests",
+      "status": "PASS",
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "screenshots": [
+    "forced-colors.png",
+    "no-javascript.png"
+  ],
+  "PASS": 13,
+  "FAIL": 0
+}

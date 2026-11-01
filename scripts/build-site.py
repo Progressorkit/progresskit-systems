@@ -336,10 +336,14 @@ def category_windows(projects):
 
 
 def brief_section():
-    brief='<div class="shell"><section class="brief" id="brief" data-reveal><header class="brief__heading"><div><span class="section-kicker">PIERWSZY KROK</span><h3>Opisz swój projekt</h3></div><p>Wypełnij brief, zapisz go do pliku lub wydrukuj do PDF i prześlij e-mailem. Pola działają lokalnie w tej karcie przeglądarki.</p></header><div class="brief-grid">'
+    brief='<div class="shell"><section class="brief world-surface" id="brief" data-reveal><header class="brief__heading"><div><span class="section-kicker">PIERWSZY KROK</span><h3>Opisz swój projekt</h3></div><p>Wypełnij brief, zapisz go do pliku lub wydrukuj do PDF i prześlij e-mailem. Pola działają lokalnie w tej karcie przeglądarki.</p></header><div class="brief-grid">'
     for id_,label in [('problem','Jaki problem ma rozwiązać system?'),('users','Kto będzie z niego korzystać?'),('processes','Jakie procesy lub funkcje powinien obsługiwać?'),('integrations','Czy wymaga integracji z istniejącymi usługami?'),('budget','Orientacyjny budżet'),('deadline','Oczekiwany termin')]:
         brief+=f'<label for="brief-{id_}">{label}<textarea id="brief-{id_}" rows="4" maxlength="6000"></textarea></label>'
-    return brief+'</div><div class="hero__actions brief__actions"><button class="cta cta--ghost" type="button" data-download-brief>Pobierz brief .txt ↓</button><button class="cta cta--ghost" type="button" data-print>Drukuj / zapisz PDF</button><a class="cta cta--primary" href="mailto:pawel@progresskit.pl?subject=Nowy%20projekt%20ProgressKit">Napisz e-mail ↗</a></div><p data-brief-status role="status"></p></section></div>'
+    return brief+'</div><div class="hero__actions brief__actions"><button class="cta cta--ghost" type="button" data-download-brief>Pobierz brief .txt ↓</button><button class="cta cta--ghost" type="button" data-print>Drukuj / zapisz PDF</button><a class="cta cta--primary" href="mailto:pawel@progresskit.pl?subject=Nowy%20projekt%20ProgressKit">WYŚLIJ PROJEKT</a></div><p data-brief-status role="status"></p></section></div>'
+
+
+def production_section():
+    return (ROOT/'templates/production-line.html').read_text()
 
 
 def technology_section(projects):
@@ -374,7 +378,7 @@ def homepage(data):
     brand=json.loads((ROOT/'catalog/brand.json').read_text())
     art='present' if brand['heroBackground'] else 'missing'
     scene=(ROOT/'templates/hero-scene.svg').read_text().replace('@@LANDSCAPE@@',e(brand['heroBackground'] or '')) if brand['heroBackground'] else ''
-    out=f'''<section id="start" class="hero hero--landscape hero--monument" data-hero-art="{art}">{scene}<div class="hero__stone-title"><h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1><p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p><div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div></div><a class="hero__explore" href="#projekty"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a><button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button></section>'''
+    out=f'''<section id="start" class="hero hero--landscape hero--monument hero--world" data-hero-layout="world" data-hero-art="{art}">{scene}<div class="hero__insignia" aria-hidden="true"><img src="assets/brand/progressorkit-stamp.png" width="440" height="440" alt=""></div><div class="hero__stone-title"><p class="hero__discipline">Aplikacje · systemy · gry</p><h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1><p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p><div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div></div><a class="hero__explore" href="#projekty"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a><button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button></section>'''
     spec=importlib.util.spec_from_file_location('showroom_markup',ROOT/'scripts/showroom_markup.py')
     showroom=importlib.util.module_from_spec(spec);spec.loader.exec_module(showroom)
     out+=showroom.render_showroom(projects)
@@ -389,8 +393,11 @@ def homepage(data):
     out+=(ROOT/'templates/project-hologram.html').read_text()
     spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
     delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
-    about,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
+    about_services,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
+    about,services=about_services.split('<!-- SERVICES -->')
+    out+=services
     out+=delivery.render_delivery(projects)
+    out+=production_section()
     out+=about
     out+=delivery.render_case_studies()
     out+=technology_section(projects)
@@ -408,7 +415,7 @@ PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRES
 
 def render(content, title, description, path, prefix):
     template=(ROOT/'templates/site.html').read_text()
-    nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
+    nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
     page_styles=''
     if not path and not prefix:
         page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
@@ -416,6 +423,9 @@ def render(content, title, description, path, prefix):
     page_styles+=('\n  ' if page_styles else '')+f'<link rel="stylesheet" href="{prefix}assets/visual-acceptance.css">'
     if not path and not prefix:
         page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish','project-mechanism'))
+    page_styles+='\n  '+f'<link rel="stylesheet" href="{prefix}assets/world-atmosphere.css">'
+    if not path and not prefix:
+        page_styles+='\n  <link rel="stylesheet" href="assets/world-sections.css">'
     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
     if not page_styles:
         template=template.replace('  @@PAGE_STYLES@@\n','')

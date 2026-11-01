@@ -1,0 +1,294 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "final-behavior-retry",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "Keyboard End reaches last project",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Enter/Escape restore triggering project focus",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Scroll activates engineering stations in order",
+      "status": "PASS",
+      "details": [
+        {
+          "progress": 0,
+          "states": [
+            "pending",
+            "pending",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.2502,
+          "states": [
+            "complete",
+            "active",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.4989,
+          "states": [
+            "complete",
+            "complete",
+            "active",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.8005,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "active",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.9989,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "active"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surface reflection follows desktop pointer within its motion budget",
+      "status": "PASS",
+      "details": {
+        "quality": "full",
+        "x": "25.00%",
+        "y": "75.00%",
+        "tiltX": "-0.60deg",
+        "tiltY": "-0.60deg"
+      }
+    },
+    {
+      "name": "User motion pause is shared",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Local brief export retains entered text and public contact",
+      "status": "PASS",
+      "details": {
+        "suggestedFilename": "progresskit-brief.txt"
+      }
+    },
+    {
+      "name": "Contact primary action keeps public email and requested label",
+      "status": "PASS",
+      "details": {
+        "label": "WYŚLIJ PROJEKT",
+        "href": "mailto:pawel@progresskit.pl?subject=Nowy%20projekt%20ProgressKit"
+      }
+    },
+    {
+      "name": "Brief field focus remains clearly styled",
+      "status": "PASS",
+      "details": {
+        "focused": true,
+        "outline": "solid",
+        "width": 2
+      }
+    },
+    {
+      "name": "1440x900 brief-focused: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Reduced motion pauses shared effects",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Reduced motion presents all six process stages statically",
+      "status": "PASS",
+      "details": {
+        "progress": 1,
+        "states": [
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "Reduced motion has no running infinite decorative animations",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440x900 reduced-motion: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440x900 forced-colors-hero: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Forced colors keeps hero inscription readable",
+      "status": "PASS",
+      "details": {
+        "fill": "rgb(0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)"
+      }
+    },
+    {
+      "name": "1440x900 forced-colors-brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Forced colors keeps brief fields visible and contrasting",
+      "status": "PASS",
+      "details": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900 print-brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Print layout retains the complete readable local brief",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "opacity": "1",
+        "fields": 6,
+        "visibleFields": 6
+      }
+    },
+    {
+      "name": "Mobile orientation with project expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 844,
+        "documentWidth": 844,
+        "bodyWidth": 844
+      }
+    },
+    {
+      "name": "844x390 orientation-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390x844 orientation-return: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Mobile menu opens",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Mobile menu Escape closes",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "390x844 mobile-navigation: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Mobile horizontal touch changes selection without opening a panel",
+      "status": "PASS",
+      "details": {
+        "before": "glikemia-premium",
+        "after": "progresskit-mail"
+      }
+    },
+    {
+      "name": "Mobile vertical touch scroll preserves selected project",
+      "status": "PASS",
+      "details": {
+        "scrollBefore": 1164,
+        "scrollAfter": 1289,
+        "selection": "progresskit-mail"
+      }
+    },
+    {
+      "name": "No-JavaScript catalogue retains all real product routes",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "No-JavaScript ecosystem descriptions remain available",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Browser execution completed",
+      "status": "BLOCKED",
+      "details": "locator.scrollIntoViewIfNeeded: Timeout 29977.842000000004ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    46 × waiting for element to be stable\u001b[22m\n\u001b[2m       - element is not stable\u001b[22m\n\u001b[2m     - retrying scroll into view action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "final-fixed/1440x900-brief-focused.png",
+    "final-fixed/1440x900-reduced-motion.png",
+    "final-fixed/1440x900-forced-colors-hero.png",
+    "final-fixed/1440x900-forced-colors-brief.png",
+    "final-fixed/1440x900-print-brief.png",
+    "final-fixed/844x390-orientation-expanded.png",
+    "final-fixed/390x844-orientation-return.png",
+    "final-fixed/390x844-mobile-navigation.png"
+  ],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [],
+  "fatal": {
+    "message": "locator.scrollIntoViewIfNeeded: Timeout 29977.842000000004ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    46 × waiting for element to be stable\u001b[22m\n\u001b[2m       - element is not stable\u001b[22m\n\u001b[2m     - retrying scroll into view action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "stack": "locator.scrollIntoViewIfNeeded: Timeout 29977.842000000004ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    46 × waiting for element to be stable\u001b[22m\n\u001b[2m       - element is not stable\u001b[22m\n\u001b[2m     - retrying scroll into view action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at clickMoving (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:36:56)\n    at video (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:147:37)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/art-direction-20261101/visual-review.cjs:164:27"
+  },
+  "totals": {
+    "PASS": 31,
+    "FAIL": 0,
+    "BLOCKED": 1
+  }
+}

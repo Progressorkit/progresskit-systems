@@ -1,0 +1,19 @@
+{
+  "acceptedEvidence": "Only completed matrix-*, behavior-only, video-* and actions-final runs are aggregated.",
+  "excludedAttempts": [
+    {
+      "path": "browser-sandbox-attempt.json",
+      "reason": "Chrome process blocked by sandbox socket permissions; permitted retry succeeded."
+    },
+    {
+      "path": "final/report.json",
+      "reason": "Preview had received SIGTERM (exit 143); browser connection refused. Not accepted as product PASS."
+    },
+    {
+      "path": "final-reviewed/",
+      "reason": "Long runner exited 143 before final report. Contains intermediate screenshots and an unsynchronized hover attempt; never used as final evidence."
+    }
+  ],
+  "qaAdjustment": "The hover test now waits for data-world-visible=true and confirms elementFromPoint hits the intended surface before moving the actual mouse. Then waits for the observed --world-x change. Same motion bounds, no production JS changes.",
+  "productChangesAfterVisualReview": false
+}

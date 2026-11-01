@@ -1,0 +1,99 @@
+{
+  "isolation": [
+    {
+      "selector": "#ekosystem .ecosystem-system::before",
+      "documentWidth": 1366
+    },
+    {
+      "selector": "#main .home-chapter::before",
+      "documentWidth": 1772
+    },
+    {
+      "selector": "#main>.hero--monument::before",
+      "documentWidth": 1772
+    },
+    {
+      "selector": "body>footer::before",
+      "documentWidth": 1772
+    },
+    {
+      "selector": "body>footer::after",
+      "documentWidth": 1772
+    },
+    {
+      "selector": "#o-mnie::after",
+      "documentWidth": 1772
+    }
+  ],
+  "width": 1366,
+  "documentWidth": 1772,
+  "elements": [],
+  "pseudos": [
+    {
+      "id": "start",
+      "class": "hero hero--landscape hero--monument hero--world hero-has-motion-toggle hero-motion-enabled hero-in-view",
+      "pseudo": "::before",
+      "content": "\"\"",
+      "width": "1366px",
+      "left": "0px",
+      "right": "0px",
+      "position": "absolute",
+      "transform": "matrix(1.03005, 0, 0, 1.03005, 0.0156473, -0.00977955)"
+    },
+    {
+      "id": "",
+      "class": "delivery-map delivery-map--flow ecosystem-system is-enhanced",
+      "pseudo": "::before",
+      "content": "\"\"",
+      "width": "1186.22px",
+      "left": "65.8906px",
+      "right": "65.8906px",
+      "position": "absolute",
+      "transform": "matrix3d(1, 0, 0, 0, 0, 0.613799, 0.658218, -0.000940312, 0, -0.731354, 0.681998, -0.000974283, 0, 0, 0, 1)"
+    },
+    {
+      "id": "",
+      "class": "production-line",
+      "pseudo": "::before",
+      "content": "\"\"",
+      "width": "1098.34px",
+      "left": "109.828px",
+      "right": "109.828px",
+      "position": "absolute",
+      "transform": "none"
+    },
+    {
+      "id": "",
+      "class": "production-line",
+      "pseudo": "::after",
+      "content": "\"\"",
+      "width": "1098.34px",
+      "left": "109.828px",
+      "right": "109.828px",
+      "position": "absolute",
+      "transform": "matrix(0, 0, 0, 1, 0, 0)"
+    },
+    {
+      "id": "",
+      "class": "",
+      "pseudo": "::before",
+      "content": "\"\"",
+      "width": "1366px",
+      "left": "0px",
+      "right": "0px",
+      "position": "relative",
+      "transform": "none"
+    },
+    {
+      "id": "",
+      "class": "",
+      "pseudo": "::after",
+      "content": "\"\"",
+      "width": "901.562px",
+      "left": "232.219px",
+      "right": "232.219px",
+      "position": "absolute",
+      "transform": "none"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "name": "All gallery and comparison images load offline",
+      "status": "PASS",
+      "details": {
+        "count": 75
+      }
+    },
+    {
+      "name": "69 final screenshots are listed",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Both native recordings load offline",
+      "status": "PASS",
+      "details": [
+        {
+          "duration": 13.64,
+          "width": 1440,
+          "height": 900
+        },
+        {
+          "duration": 13.72,
+          "width": 390,
+          "height": 844
+        }
+      ]
+    },
+    {
+      "name": "Screenshot filter 320x568",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Screenshot filter 320",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Screenshot filter reset",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Gallery fits a 320px viewport",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "No gallery runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No external gallery requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "PASS": 9,
+  "FAIL": 0
+}

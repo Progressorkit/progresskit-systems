@@ -1,0 +1,53 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "final",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "Browser execution completed",
+      "status": "BLOCKED",
+      "details": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8191/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8191/\", waiting until \"networkidle\"\u001b[22m\n"
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "FAIL",
+      "details": [
+        {
+          "size": {
+            "width": 1366,
+            "height": 768
+          },
+          "url": "http://127.0.0.1:8191/",
+          "error": "net::ERR_CONNECTION_REFUSED"
+        }
+      ]
+    }
+  ],
+  "screenshots": [],
+  "runtimeErrors": [],
+  "networkFailures": [
+    {
+      "size": {
+        "width": 1366,
+        "height": 768
+      },
+      "url": "http://127.0.0.1:8191/",
+      "error": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "videos": [],
+  "fatal": {
+    "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8191/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8191/\", waiting until \"networkidle\"\u001b[22m\n",
+    "stack": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8191/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8191/\", waiting until \"networkidle\"\u001b[22m\n\n    at startPage (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/cinematic-cyber-nature-20261101/visual-review.cjs:22:13)\n    at async capture (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/cinematic-cyber-nature-20261101/visual-review.cjs:39:23)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/cinematic-cyber-nature-20261101/visual-review.cjs:163:283"
+  },
+  "totals": {
+    "PASS": 1,
+    "FAIL": 1,
+    "BLOCKED": 1
+  }
+}

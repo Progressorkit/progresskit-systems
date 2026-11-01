@@ -1,0 +1,7 @@
+{
+  "scope": "Desktop pointer/focus preview and mobile touch event handling; existing selected content retained",
+  "checks": [],
+  "fatal": "locator.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-ecosystem-select=\"translator\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-pressed=\"false\" aria-expanded=\"false\" class=\"ecosystem-node__trigger\" id=\"ecosystem-trigger-translator\" data-ecosystem-select=\"translator\" aria-controls=\"ecosystem-role-translator\" aria-labelledby=\"ecosystem-name-translator\" aria-describedby=\"ecosystem-status-translator\">…</button>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying hover action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    53 × waiting for element to be visible and stable\u001b[22m\n\u001b[2m       - element is not stable\u001b[22m\n\u001b[2m     - retrying hover action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "PASS": 0,
+  "FAIL": 0
+}

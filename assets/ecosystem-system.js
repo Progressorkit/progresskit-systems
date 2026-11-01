@@ -42,6 +42,7 @@
       (motionToggle && motionToggle.getAttribute('aria-pressed') === 'true');
     let globalPaused = Boolean(readGlobalPause());
     let selected = 'tax';
+    let previewed = null;
     let inView = typeof IntersectionObserver === 'undefined';
     let geometryDirty = true;
     let geometryFrame = 0;
@@ -53,11 +54,23 @@
     }
 
     function syncMotion() {
-      const running = Boolean(selected) && inView && !document.hidden && !reducedMotion.matches && !globalPaused;
+      const activeIdentifier = previewed || selected;
+      const running = Boolean(activeIdentifier) && inView && !document.hidden && !reducedMotion.matches && !globalPaused;
       map.dataset.motionState = running ? 'running' : 'paused';
+      map.classList.toggle('has-preview', Boolean(previewed));
+      const related = new Set([activeIdentifier]);
+      for (const edge of edges) {
+        if (edge.dataset.from === activeIdentifier) related.add(edge.dataset.to);
+        if (edge.dataset.to === activeIdentifier) related.add(edge.dataset.from);
+      }
+      records.forEach(record => {
+        record.node.classList.toggle('is-previewed', record.identifier === previewed);
+        record.node.classList.toggle('is-related', related.has(record.identifier));
+      });
       let animated = 0;
+      const flowLimit = mobile.matches || document.documentElement.dataset.interfaceQuality === 'compact' ? 1 : 2;
       edges.forEach(edge => {
-        const active = Boolean(selected) && (edge.dataset.from === selected || edge.dataset.to === selected) && animated < 2;
+        const active = Boolean(activeIdentifier) && (edge.dataset.from === activeIdentifier || edge.dataset.to === activeIdentifier) && animated < flowLimit;
         edge.classList.toggle('is-flowing', active);
         if (active) animated += 1;
       });
@@ -145,6 +158,12 @@
 
     records.forEach((record, index) => {
       record.node.dataset.ecosystemStage = record.stage;
+      const preview = () => { previewed = record.identifier; syncMotion(); };
+      const restore = () => { previewed = null; syncMotion(); };
+      record.button.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') preview(); });
+      record.button.addEventListener('pointerleave', restore);
+      record.button.addEventListener('focus', preview);
+      record.button.addEventListener('blur', restore);
       record.button.addEventListener('click', () => {
         selected = record.identifier;
         renderSelection();

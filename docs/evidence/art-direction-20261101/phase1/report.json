@@ -1,0 +1,139 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "phase1",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "1440x900: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "1440x900 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "390x844: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      }
+    },
+    {
+      "name": "390x844: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "390x844 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      }
+    },
+    {
+      "name": "390x844: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "FAIL",
+      "details": [
+        {
+          "size": {
+            "width": 1440,
+            "height": 900
+          },
+          "message": "Refused to apply style from 'http://127.0.0.1:8191/assets/world-atmosphere.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+          "kind": "console.error"
+        },
+        {
+          "size": {
+            "width": 390,
+            "height": 844
+          },
+          "message": "Refused to apply style from 'http://127.0.0.1:8191/assets/world-atmosphere.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+          "kind": "console.error"
+        }
+      ]
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "phase1/1440x900-first.png",
+    "phase1/1440x900-projects.png",
+    "phase1/1440x900-project-expanded.png",
+    "phase1/390x844-first.png",
+    "phase1/390x844-projects.png",
+    "phase1/390x844-project-expanded.png"
+  ],
+  "runtimeErrors": [
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "message": "Refused to apply style from 'http://127.0.0.1:8191/assets/world-atmosphere.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+      "kind": "console.error"
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "message": "Refused to apply style from 'http://127.0.0.1:8191/assets/world-atmosphere.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.",
+      "kind": "console.error"
+    }
+  ],
+  "networkFailures": [],
+  "videos": [],
+  "totals": {
+    "PASS": 9,
+    "FAIL": 1,
+    "BLOCKED": 0
+  }
+}

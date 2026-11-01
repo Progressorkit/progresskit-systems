@@ -24,7 +24,7 @@
   const sync = () => {
     // Sticky hero can intersect the viewport behind later opaque chapters.
     // The first-row section bounds the actual desktop presentation surface.
-    inView = heroInView && (!desktop.matches || !stage || stageInView);
+    inView = heroInView && (hero.dataset?.heroLayout === 'world' || !desktop.matches || !stage || stageInView);
     const enabled = !userPaused && !globallyPaused() && !reduced.matches && !document.hidden;
     hero.classList.toggle('hero-motion-paused', userPaused);
     hero.classList.toggle('hero-motion-enabled', enabled);

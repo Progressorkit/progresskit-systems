@@ -6,7 +6,7 @@ const vm=require('node:vm');
 
 // The actual asset runs against a small event adapter. This checks controller
 // state and queued work; it does not establish browser appearance or motion.
-function mount({reduced=false}={}) {
+function mount({reduced=false,world=false}={}) {
   const frames=new Map(),classes=new Set(),properties=new Map();
   let sequence=0,intersection;
   function events(node={}) {
@@ -17,6 +17,7 @@ function mount({reduced=false}={}) {
   }
   const button=events({hidden:true,attributes:{},setAttribute(name,value){this.attributes[name]=value;}});
   const hero=events({
+    dataset:world?{heroLayout:'world'}:{},
     querySelector:()=>button,
     classList:{add:name=>classes.add(name),remove:name=>classes.delete(name),toggle(name,on){on?classes.add(name):classes.delete(name);}},
     style:{setProperty:(name,value)=>properties.set(name,value),removeProperty:name=>properties.delete(name)},
@@ -113,4 +114,12 @@ test('Desktop hero stops behind later chapters while mobile hero has its own vis
   assert.equal(ui.classes.has('hero-in-view'),true);
   ui.pointer();ui.flush();assert.ok(ui.properties.has('--light-x'));
   ui.intersect(false);assert.equal(ui.classes.has('hero-in-view'),false);assert.equal(ui.properties.size,0);
+});
+
+test('Independent world hero remains responsive before the showroom enters view and stops offscreen',()=>{
+  const ui=mount({world:true});ui.intersect(false,ui.stage);
+  assert.ok(ui.classes.has('hero-in-view'));
+  ui.pointer();ui.flush();assert.ok(ui.properties.has('--light-x'));
+  ui.intersect(false);assert.equal(ui.classes.has('hero-in-view'),false);
+  assert.equal(ui.properties.size,0);ui.pointer();assert.equal(ui.frames.size,0);
 });

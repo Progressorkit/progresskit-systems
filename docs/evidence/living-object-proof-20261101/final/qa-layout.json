@@ -1,0 +1,225 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1366x768 genuine screenshot loaded",
+      "status": "PASS",
+      "evidence": {
+        "ready": true,
+        "src": "/assets/projects/glikemia/product-measurement.webp"
+      }
+    },
+    {
+      "name": "1366x768 closed content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1366x768 activation keeps device mounted",
+      "status": "PASS",
+      "evidence": {
+        "before": 970,
+        "after": 969.9319610595703
+      }
+    },
+    {
+      "name": "1366x768 real product content revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 open content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1366x768 roadmap remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x900 genuine screenshot loaded",
+      "status": "PASS",
+      "evidence": {
+        "ready": true,
+        "src": "/assets/projects/glikemia/product-measurement.webp"
+      }
+    },
+    {
+      "name": "1440x900 closed content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1440x900 activation keeps device mounted",
+      "status": "PASS",
+      "evidence": {
+        "before": 1050,
+        "after": 1049.9149627685547
+      }
+    },
+    {
+      "name": "1440x900 real product content revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x900 open content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1440x900 roadmap remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 genuine screenshot loaded",
+      "status": "PASS",
+      "evidence": {
+        "ready": true,
+        "src": "/assets/projects/glikemia/product-measurement.webp"
+      }
+    },
+    {
+      "name": "1920x1080 closed content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1920x1080 activation keeps device mounted",
+      "status": "PASS",
+      "evidence": {
+        "before": 1200,
+        "after": 1199.9251556396484
+      }
+    },
+    {
+      "name": "1920x1080 real product content revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 open content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "1920x1080 roadmap remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 genuine screenshot loaded",
+      "status": "PASS",
+      "evidence": {
+        "ready": true,
+        "src": "/assets/projects/glikemia/product-measurement.webp"
+      }
+    },
+    {
+      "name": "320x568 closed content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "320x568 activation keeps device mounted",
+      "status": "PASS",
+      "evidence": {
+        "before": 1258.609375,
+        "after": 1258.609375
+      }
+    },
+    {
+      "name": "320x568 real product content revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 open content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "320x568 roadmap remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 orientation content fits",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "390x844 genuine screenshot loaded",
+      "status": "PASS",
+      "evidence": {
+        "ready": true,
+        "src": "/assets/projects/glikemia/product-measurement.webp"
+      }
+    },
+    {
+      "name": "390x844 closed content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "390x844 activation keeps device mounted",
+      "status": "PASS",
+      "evidence": {
+        "before": 1345.90625,
+        "after": 1345.90625
+      }
+    },
+    {
+      "name": "390x844 real product content revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 open content within viewport",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "390x844 roadmap remains explicit",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 orientation content fits",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "no external requests",
+      "status": "PASS",
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "screenshots": [
+    "1366x768-hero.png",
+    "1366x768-module-closed.png",
+    "1366x768-module-open.png",
+    "1366x768-connection.png",
+    "1440x900-hero.png",
+    "1440x900-module-closed.png",
+    "1440x900-module-open.png",
+    "1440x900-device-open.png",
+    "1440x900-whole-module.png",
+    "1440x900-connection.png",
+    "1920x1080-hero.png",
+    "1920x1080-module-closed.png",
+    "1920x1080-module-open.png",
+    "1920x1080-connection.png",
+    "320x568-hero.png",
+    "320x568-module-closed.png",
+    "320x568-module-open.png",
+    "320x568-connection.png",
+    "390x844-hero.png",
+    "390x844-module-closed.png",
+    "390x844-module-open.png",
+    "390x844-device-open.png",
+    "390x844-whole-module.png",
+    "390x844-connection.png"
+  ],
+  "PASS": 34,
+  "FAIL": 0
+}

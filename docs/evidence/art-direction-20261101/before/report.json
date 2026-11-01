@@ -1,0 +1,104 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "before",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "1440x900: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "1440x900 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      }
+    },
+    {
+      "name": "1440x900: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "320x568: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      }
+    },
+    {
+      "name": "320x568: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "320x568 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      }
+    },
+    {
+      "name": "320x568: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "before/1440x900-first.png",
+    "before/1440x900-projects.png",
+    "before/1440x900-project-expanded.png",
+    "before/320x568-first.png",
+    "before/320x568-projects.png",
+    "before/320x568-project-expanded.png"
+  ],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [],
+  "totals": {
+    "PASS": 10,
+    "FAIL": 0
+  }
+}

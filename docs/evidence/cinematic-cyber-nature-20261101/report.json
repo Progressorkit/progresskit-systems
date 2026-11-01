@@ -1,0 +1,1444 @@
+{
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "totals": {
+    "PASS": 158,
+    "FAIL": 0
+  },
+  "checks": [
+    {
+      "name": "1366x768 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1366,
+        "documentWidth": 1366,
+        "bodyWidth": 1366
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      },
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: ecosystem selection",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1366x768: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1366x768/report.json"
+    },
+    {
+      "name": "1440x900 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      },
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: ecosystem selection",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1440x900: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1440x900/report.json"
+    },
+    {
+      "name": "1920x1080 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      },
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: ecosystem selection",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "1920x1080: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-1920x1080/report.json"
+    },
+    {
+      "name": "320x568 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      },
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: ecosystem selection",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "320x568: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-320x568/report.json"
+    },
+    {
+      "name": "390x844 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      },
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: ecosystem selection",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "390x844: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {},
+      "source": "matrix-390x844/report.json"
+    },
+    {
+      "name": "Keyboard End reaches last project",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Enter/Escape restore triggering project focus",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Scroll activates engineering stations in order",
+      "status": "PASS",
+      "details": [
+        {
+          "progress": 0.0011,
+          "states": [
+            "active",
+            "pending",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.2498,
+          "states": [
+            "complete",
+            "active",
+            "pending",
+            "pending",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.5011,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "active",
+            "pending",
+            "pending"
+          ]
+        },
+        {
+          "progress": 0.8001,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "active",
+            "pending"
+          ]
+        },
+        {
+          "progress": 1,
+          "states": [
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "complete",
+            "complete"
+          ]
+        }
+      ],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Hover coordinates hit the visible service surface",
+      "status": "PASS",
+      "details": {
+        "x": 236.796875,
+        "y": 468.2734375
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Surface reflection follows desktop pointer within its motion budget",
+      "status": "PASS",
+      "details": {
+        "quality": "full",
+        "x": "24.81%",
+        "y": "74.90%",
+        "tiltX": "-0.60deg",
+        "tiltY": "-0.60deg"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "User motion pause is shared",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Local brief export retains entered text and public contact",
+      "status": "PASS",
+      "details": {
+        "suggestedFilename": "progresskit-brief.txt"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Contact primary action keeps public email and requested label",
+      "status": "PASS",
+      "details": {
+        "label": "WYŚLIJ PROJEKT",
+        "href": "mailto:pawel@progresskit.pl?subject=Nowy%20projekt%20ProgressKit"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Brief field focus remains clearly styled",
+      "status": "PASS",
+      "details": {
+        "focused": true,
+        "outline": "solid",
+        "width": 2
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "1440x900 brief-focused: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Reduced motion pauses shared effects",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Reduced motion presents all six process stages statically",
+      "status": "PASS",
+      "details": {
+        "progress": 1,
+        "states": [
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete",
+          "complete"
+        ]
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Reduced motion has no running infinite decorative animations",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "1440x900 reduced-motion: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "1440x900 forced-colors-hero: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Forced colors keeps hero inscription readable",
+      "status": "PASS",
+      "details": {
+        "fill": "rgb(0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "1440x900 forced-colors-brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Forced colors keeps brief fields visible and contrasting",
+      "status": "PASS",
+      "details": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)",
+        "visible": true
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "1440x900 print-brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Print layout retains the complete readable local brief",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "opacity": "1",
+        "fields": 6,
+        "visibleFields": 6
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Mobile orientation with project expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 844,
+        "documentWidth": 844,
+        "bodyWidth": 844
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "844x390 orientation-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "390x844 orientation-return: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Mobile menu opens",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Mobile menu Escape closes",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "390x844 mobile-navigation: captured content is fully revealed",
+      "status": "PASS",
+      "details": [],
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Mobile horizontal touch changes selection without opening a panel",
+      "status": "PASS",
+      "details": {
+        "before": "glikemia-premium",
+        "after": "progresskit-mail"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "Mobile vertical touch scroll preserves selected project",
+      "status": "PASS",
+      "details": {
+        "scrollBefore": 1164,
+        "scrollAfter": 1289,
+        "selection": "progresskit-mail"
+      },
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "No-JavaScript catalogue retains all real product routes",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "No-JavaScript ecosystem descriptions remain available",
+      "status": "PASS",
+      "details": {},
+      "source": "behavior-only/report.json"
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Both recordings are H.264 at requested resolutions and longer than 5 seconds",
+      "status": "PASS",
+      "details": [
+        {
+          "path": "video-desktop/desktop-interaction.mp4",
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 1440,
+              "height": 900
+            }
+          ],
+          "format": {
+            "duration": "13.640000"
+          }
+        },
+        {
+          "path": "video-mobile/mobile-interaction.mp4",
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 390,
+              "height": 844
+            }
+          ],
+          "format": {
+            "duration": "13.720000"
+          }
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "matrix-1366x768/1366x768-first.png",
+    "matrix-1366x768/1366x768-projects.png",
+    "matrix-1366x768/1366x768-showroom-stage.png",
+    "matrix-1366x768/1366x768-project-expanded.png",
+    "matrix-1366x768/1366x768-services.png",
+    "matrix-1366x768/1366x768-ecosystem.png",
+    "matrix-1366x768/1366x768-process.png",
+    "matrix-1366x768/1366x768-about.png",
+    "matrix-1366x768/1366x768-contact.png",
+    "matrix-1366x768/1366x768-brief.png",
+    "matrix-1366x768/1366x768-footer.png",
+    "matrix-1440x900/1440x900-first.png",
+    "matrix-1440x900/1440x900-projects.png",
+    "matrix-1440x900/1440x900-showroom-stage.png",
+    "matrix-1440x900/1440x900-project-expanded.png",
+    "matrix-1440x900/1440x900-services.png",
+    "matrix-1440x900/1440x900-ecosystem.png",
+    "matrix-1440x900/1440x900-process.png",
+    "matrix-1440x900/1440x900-about.png",
+    "matrix-1440x900/1440x900-contact.png",
+    "matrix-1440x900/1440x900-brief.png",
+    "matrix-1440x900/1440x900-footer.png",
+    "matrix-1920x1080/1920x1080-first.png",
+    "matrix-1920x1080/1920x1080-projects.png",
+    "matrix-1920x1080/1920x1080-showroom-stage.png",
+    "matrix-1920x1080/1920x1080-project-expanded.png",
+    "matrix-1920x1080/1920x1080-services.png",
+    "matrix-1920x1080/1920x1080-ecosystem.png",
+    "matrix-1920x1080/1920x1080-process.png",
+    "matrix-1920x1080/1920x1080-about.png",
+    "matrix-1920x1080/1920x1080-contact.png",
+    "matrix-1920x1080/1920x1080-brief.png",
+    "matrix-1920x1080/1920x1080-footer.png",
+    "matrix-320x568/320x568-first.png",
+    "matrix-320x568/320x568-projects.png",
+    "matrix-320x568/320x568-showroom-stage.png",
+    "matrix-320x568/320x568-project-expanded.png",
+    "matrix-320x568/320x568-services.png",
+    "matrix-320x568/320x568-ecosystem.png",
+    "matrix-320x568/320x568-process.png",
+    "matrix-320x568/320x568-about.png",
+    "matrix-320x568/320x568-contact.png",
+    "matrix-320x568/320x568-brief.png",
+    "matrix-320x568/320x568-footer.png",
+    "matrix-390x844/390x844-first.png",
+    "matrix-390x844/390x844-projects.png",
+    "matrix-390x844/390x844-showroom-stage.png",
+    "matrix-390x844/390x844-project-expanded.png",
+    "matrix-390x844/390x844-services.png",
+    "matrix-390x844/390x844-ecosystem.png",
+    "matrix-390x844/390x844-process.png",
+    "matrix-390x844/390x844-about.png",
+    "matrix-390x844/390x844-contact.png",
+    "matrix-390x844/390x844-brief.png",
+    "matrix-390x844/390x844-footer.png",
+    "behavior-only/1440x900-brief-focused.png",
+    "behavior-only/1440x900-reduced-motion.png",
+    "behavior-only/1440x900-forced-colors-hero.png",
+    "behavior-only/1440x900-forced-colors-brief.png",
+    "behavior-only/1440x900-print-brief.png",
+    "behavior-only/844x390-orientation-expanded.png",
+    "behavior-only/390x844-orientation-return.png",
+    "behavior-only/390x844-mobile-navigation.png",
+    "actions-final/320-glikemia-premium-expanded-actions.png",
+    "actions-final/320-progresskit-community-expanded-actions.png",
+    "actions-final/320-progresskit-infrastructure-expanded-actions.png",
+    "actions-final/390-glikemia-premium-expanded-actions.png",
+    "actions-final/390-progresskit-community-expanded-actions.png",
+    "actions-final/390-progresskit-infrastructure-expanded-actions.png"
+  ],
+  "videos": [
+    {
+      "path": "video-desktop/desktop-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900
+        }
+      ],
+      "format": {
+        "duration": "13.640000"
+      }
+    },
+    {
+      "path": "video-mobile/mobile-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "format": {
+        "duration": "13.720000"
+      }
+    }
+  ],
+  "expandedMobileActions": {
+    "PASS": 30,
+    "FAIL": 0
+  },
+  "provenance": {
+    "reports": [
+      "matrix-1366x768/report.json",
+      "matrix-1440x900/report.json",
+      "matrix-1920x1080/report.json",
+      "matrix-320x568/report.json",
+      "matrix-390x844/report.json",
+      "behavior-only/report.json",
+      "video-desktop/report.json",
+      "video-mobile/report.json"
+    ],
+    "runtimeAndNetworkChecksAggregatedOnce": true,
+    "interruptedAttemptsExcluded": [
+      "final",
+      "final-reviewed",
+      "browser-sandbox-attempt.json"
+    ]
+  }
+}

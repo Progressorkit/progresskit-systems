@@ -1,0 +1,49 @@
+{
+  "scope": "Desktop pointer/focus preview and mobile touch event handling; existing selected content retained",
+  "checks": [
+    {
+      "name": "Desktop hover previews Translator and direct dependencies without changing selection",
+      "status": "PASS",
+      "details": {
+        "selected": "tax",
+        "hasPreview": true,
+        "previewed": [
+          "translator"
+        ],
+        "related": [
+          "tax",
+          "translator",
+          "agents"
+        ],
+        "flowing": 2
+      }
+    },
+    {
+      "name": "Pointer leave clears preview",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Keyboard focus previews Translator",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Explicit click changes selected detail to Translator",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Touch pointerenter does not create hover preview",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "Touch tap selects Translator",
+      "status": "PASS",
+      "details": {}
+    }
+  ],
+  "PASS": 6,
+  "FAIL": 0
+}

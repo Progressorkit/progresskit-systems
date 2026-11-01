@@ -1,0 +1,209 @@
+{
+  "base": "http://127.0.0.1:8191/",
+  "mode": "matrix-1920x1080",
+  "scope": "Local Chrome viewport emulation; no physical-device or production evidence",
+  "checks": [
+    {
+      "name": "1920x1080 first: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080: all catalogue projects retained",
+      "status": "PASS",
+      "details": {
+        "count": 14
+      }
+    },
+    {
+      "name": "1920x1080 projects: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 showroom-stage: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 project-expanded: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 expanded: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080: expanded real product media loaded",
+      "status": "PASS",
+      "details": [
+        {
+          "complete": true,
+          "naturalWidth": 648,
+          "src": "assets/projects/glikemia/product-measurement.webp"
+        }
+      ]
+    },
+    {
+      "name": "1920x1080 services: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 services: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 ecosystem: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 ecosystem: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 process: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 process: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 about: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 about: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 contact: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 contact: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 brief: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 brief: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080 footer: captured content is fully revealed",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 footer: no horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "width": 1920,
+        "documentWidth": 1920,
+        "bodyWidth": 1920
+      }
+    },
+    {
+      "name": "1920x1080: public contact address",
+      "status": "PASS",
+      "details": {
+        "email": "mailto:pawel@progresskit.pl"
+      }
+    },
+    {
+      "name": "1920x1080: ecosystem selection",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "1920x1080: ecosystem keyboard traversal",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "No failed local asset requests",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "screenshots": [
+    "matrix-1920x1080/1920x1080-first.png",
+    "matrix-1920x1080/1920x1080-projects.png",
+    "matrix-1920x1080/1920x1080-showroom-stage.png",
+    "matrix-1920x1080/1920x1080-project-expanded.png",
+    "matrix-1920x1080/1920x1080-services.png",
+    "matrix-1920x1080/1920x1080-ecosystem.png",
+    "matrix-1920x1080/1920x1080-process.png",
+    "matrix-1920x1080/1920x1080-about.png",
+    "matrix-1920x1080/1920x1080-contact.png",
+    "matrix-1920x1080/1920x1080-brief.png",
+    "matrix-1920x1080/1920x1080-footer.png"
+  ],
+  "runtimeErrors": [],
+  "networkFailures": [],
+  "videos": [],
+  "totals": {
+    "PASS": 27,
+    "FAIL": 0,
+    "BLOCKED": 0
+  }
+}

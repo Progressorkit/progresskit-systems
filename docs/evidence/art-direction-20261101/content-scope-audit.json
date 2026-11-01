@@ -1,0 +1,194 @@
+{
+  "base": "64e63f66231f494624feabd6ce2f38cc283d044a",
+  "scope": "Independent source/content/preservation review; no source edits, no Git mutations, no browser assertions.",
+  "PASS": 20,
+  "FAIL": 0,
+  "checks": [
+    {
+      "check": "unchanged:catalog/projects.json",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:catalog/brand.json",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/brand/progressorkit-stamp.png",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/brand/progressorkit-primary.png",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/brand/footer-forest-mountains-reconstruction.png",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/brand/red-aluminium-reconstruction.jpg",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/site-v5.js",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "unchanged:assets/project-showroom.js",
+      "status": "PASS",
+      "detail": "Byte comparison with base commit."
+    },
+    {
+      "check": "catalog_count",
+      "status": "PASS",
+      "detail": "14 reviewed catalog identities retained."
+    },
+    {
+      "check": "owner_approval_open",
+      "status": "PASS",
+      "detail": "No visual approval bypass."
+    },
+    {
+      "check": "template_copy_preservation",
+      "status": "PASS",
+      "detail": {
+        "removed": [],
+        "added": [
+          "01",
+          "Dla Ciebie /",
+          "małego biznesu",
+          "Strony · sklepy · aplikacje",
+          "02",
+          "Dla firmy /",
+          "systemu"
+        ]
+      }
+    },
+    {
+      "check": "template_link_preservation",
+      "status": "PASS",
+      "detail": {
+        "removed": []
+      }
+    },
+    {
+      "check": "homepage_copy_preservation",
+      "status": "PASS",
+      "detail": {
+        "removed": [
+          "Napisz e-mail ↗"
+        ],
+        "replacement": "WYŚLIJ PROJEKT",
+        "authorized": true
+      }
+    },
+    {
+      "check": "homepage_existing_links_preserved",
+      "status": "PASS",
+      "detail": {
+        "removed": [],
+        "added": [
+          "#proces",
+          "#proces",
+          "#proces"
+        ]
+      }
+    },
+    {
+      "check": "unreviewed_mail_media_excluded",
+      "status": "PASS",
+      "detail": {
+        "publicLeaks": [],
+        "references": []
+      }
+    },
+    {
+      "check": "public_contact",
+      "status": "PASS",
+      "detail": {
+        "gmailMailtoFiles": [],
+        "expectedContact": "pawel@progresskit.pl"
+      }
+    },
+    {
+      "check": "no_automatic_commit",
+      "status": "PASS",
+      "detail": {
+        "HEAD": "64e63f66231f494624feabd6ce2f38cc283d044a"
+      }
+    },
+    {
+      "check": "no_staged_changes",
+      "status": "PASS",
+      "detail": {
+        "staged": ""
+      }
+    },
+    {
+      "check": "diff_whitespace",
+      "status": "PASS",
+      "detail": {
+        "exitCode": 0,
+        "output": ""
+      }
+    },
+    {
+      "check": "source_fallback_review",
+      "status": "PASS",
+      "detail": "Source review only: phone columns/spacing, no service blur/zone animation on phones, reduced-motion stop, forced-colors and print overrides. No blocking cascade issue identified; rendered verification belongs to separate browser QA."
+    }
+  ],
+  "byteEvidence": [
+    {
+      "path": "catalog/projects.json",
+      "matchesBase": true,
+      "sha256": "256754522120d6780ac1f4a1ef0a3a83b21987478f3cace09a022bed11ef4622"
+    },
+    {
+      "path": "catalog/brand.json",
+      "matchesBase": true,
+      "sha256": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b"
+    },
+    {
+      "path": "assets/brand/progressorkit-stamp.png",
+      "matchesBase": true,
+      "sha256": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+    },
+    {
+      "path": "assets/brand/progressorkit-primary.png",
+      "matchesBase": true,
+      "sha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532"
+    },
+    {
+      "path": "assets/brand/footer-forest-mountains-reconstruction.png",
+      "matchesBase": true,
+      "sha256": "120b46801c5ba98bc777e9d9b0b7e700268815e64b7fffa0dfe327e55f52bdb0"
+    },
+    {
+      "path": "assets/brand/red-aluminium-reconstruction.jpg",
+      "matchesBase": true,
+      "sha256": "7d02194a428b04daac24bc3a41f9c27528398f41221e741c99e78370b45024b1"
+    },
+    {
+      "path": "assets/site-v5.js",
+      "matchesBase": true,
+      "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+    },
+    {
+      "path": "assets/project-showroom.js",
+      "matchesBase": true,
+      "sha256": "31639d931a88a83ca1747a38de587a359277eb56565a2a0c54866c7fabe439ce"
+    }
+  ],
+  "publicFiles": 70,
+  "limitations": [
+    "Rendered contrast, device behavior and visual acceptance were not independently re-executed by this reviewer.",
+    "Owner visual approval remains OPEN."
+  ]
+}

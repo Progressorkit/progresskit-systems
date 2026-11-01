@@ -1,0 +1,93 @@
+{
+  "status": "LOCAL VISUAL REVIEW CANDIDATE",
+  "browser": {
+    "PASS": 158,
+    "FAIL": 0
+  },
+  "mobileActions": {
+    "PASS": 30,
+    "FAIL": 0
+  },
+  "python": {
+    "run": 118,
+    "PASS": 118,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIP": 0,
+    "successful": true
+  },
+  "node": {
+    "PASS": 88,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "links": {
+    "PASS": 913,
+    "FAIL": 0
+  },
+  "build": {
+    "status": "PASS",
+    "projects": 14,
+    "generatedFiles": 23
+  },
+  "npmCheck": "PASS",
+  "npmTest": "PASS",
+  "whitespace": "PASS",
+  "staging": {
+    "files": 71,
+    "mismatches": []
+  },
+  "gallery": {
+    "PASS": 9,
+    "FAIL": 0
+  },
+  "screenshots": 69,
+  "videos": [
+    {
+      "path": "video-desktop/desktop-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900
+        }
+      ],
+      "format": {
+        "duration": "13.640000"
+      }
+    },
+    {
+      "path": "video-mobile/mobile-interaction.mp4",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "format": {
+        "duration": "13.720000"
+      }
+    }
+  ],
+  "sourceFreeze": {
+    "files": 189,
+    "changed": 0
+  },
+  "ownerVisualApproval": "OPEN",
+  "publication": {
+    "status": "BLOCKED",
+    "exitCode": 1,
+    "reason": "Owner visual approval is OPEN."
+  },
+  "git": {
+    "HEAD": "64e63f66231f494624feabd6ce2f38cc283d044a",
+    "stagedPaths": [],
+    "committed": false,
+    "pushed": false
+  },
+  "ownedPreviewStopped": true,
+  "physicalDeviceValidation": "NOT_RUN"
+}

@@ -1,0 +1,100 @@
+{
+  "scope": "Local Chrome viewport/touch emulation, not physical devices or production. Owner visual approval remains outside automated QA.",
+  "acceptedChecks": {
+    "mainBrowser": {
+      "PASS": 157,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "collapsedProjects": {
+      "PASS": 28,
+      "FAIL": 0
+    },
+    "expandedProjectActionsAndPausedSmoke": {
+      "PASS": 30,
+      "FAIL": 0
+    },
+    "ecosystemPointerFocusTouch": {
+      "PASS": 6,
+      "FAIL": 0
+    },
+    "fiveWidthPreflight": {
+      "PASS": 5,
+      "FAIL": 0
+    }
+  },
+  "mainBrowserProvenance": {
+    "desktopMatrix": {
+      "report": "../attempt-before-mobile-flow-fix/report.json",
+      "checksReused": 75,
+      "reason": "Last public change only narrows two max-width700/360 active-card selectors to exclude expanded mobile cards. These selectors do not match the three desktop sizes; their already successful checks and screenshots are unaffected."
+    },
+    "mobileBehaviorAndVideos": {
+      "report": "mobile-fix-retry-report.json",
+      "checksExecuted": 82,
+      "reason": "Fresh sequential execution after the actual mobile CTA overlap fix; process readiness awaits observable state and native recording uses system ffmpeg via task-local cache."
+    },
+    "expandedActions": {
+      "report": "expanded-actions-review.json",
+      "PASS": 30,
+      "FAIL": 0,
+      "reason": "All14projects at320/390 with exact CTA center hit-testing and controls below housing, plus paused-open smoke."
+    },
+    "preliminaryFailuresRetained": [
+      "../final-preliminary-overflow/preliminary-interrupted.json",
+      "../attempt-before-mobile-flow-fix/actions-review.json",
+      "report-initial-behavior-failed.json",
+      "behavior-retry-recording-blocked.json",
+      "environment-sigterm-20261101.json"
+    ]
+  },
+  "sourceFreeze": {
+    "files": 188,
+    "changedFiles": [],
+    "sourceUnchangedDuringMobileFixValidation": true,
+    "excluded": "docs/evidence and new documentation artifacts"
+  },
+  "mainScreenshots": 63,
+  "currentFinalScreenshotsIncludingSupplemental": 76,
+  "videos": [
+    {
+      "path": "desktop-interaction.mp4",
+      "bytes": 1183924,
+      "sha256": "5812f20226c589c9e0afc035b8e2f203571331e3dcfa905463630661b2d20eba",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 900,
+          "pix_fmt": "yuv420p",
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "427"
+        }
+      ],
+      "format": {
+        "duration": "17.080000"
+      }
+    },
+    {
+      "path": "mobile-interaction.mp4",
+      "bytes": 1058053,
+      "sha256": "2152fa5b48581c839cb70ef1cb46d6cc420357973976d361fc61f5068744d0f7",
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844,
+          "pix_fmt": "yuv420p",
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "367"
+        }
+      ],
+      "format": {
+        "duration": "14.680000"
+      }
+    }
+  ],
+  "preliminaryFailures": "Retained separately; corrected ecosystem-plane overflow and mobile CTA overlap, plus documented tooling interruptions/wait corrections. No preliminary failure is erased or counted as passing."
+}

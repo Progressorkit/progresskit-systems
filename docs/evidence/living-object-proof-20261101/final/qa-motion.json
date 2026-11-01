@@ -1,0 +1,160 @@
+{
+  "mode": "motion",
+  "checks": [
+    {
+      "name": "one pointer listener",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop uses full material response",
+      "status": "PASS"
+    },
+    {
+      "name": "light follows pointer and shadow opposes it",
+      "status": "PASS",
+      "evidence": {
+        "left": {
+          "light": 20,
+          "shadow": 30.67,
+          "rotation": -0.2
+        },
+        "right": {
+          "light": 79.5,
+          "shadow": -2.39,
+          "rotation": 0.197
+        }
+      }
+    },
+    {
+      "name": "mechanical tension stays below quarter degree",
+      "status": "PASS",
+      "evidence": {
+        "left": {
+          "light": 20,
+          "shadow": 30.67,
+          "rotation": -0.2
+        },
+        "right": {
+          "light": 79.5,
+          "shadow": -2.39,
+          "rotation": 0.197
+        }
+      }
+    },
+    {
+      "name": "render loop stops after material settles",
+      "status": "PASS",
+      "evidence": {
+        "a": {
+          "requested": 22,
+          "pending": 0
+        },
+        "b": {
+          "requested": 22,
+          "pending": 0
+        }
+      }
+    },
+    {
+      "name": "only visible scene lives",
+      "status": "PASS"
+    },
+    {
+      "name": "life follows visible module",
+      "status": "PASS"
+    },
+    {
+      "name": "offscreen idle is paused",
+      "status": "PASS"
+    },
+    {
+      "name": "physical shutters retract beyond screen",
+      "status": "PASS",
+      "evidence": [
+        {
+          "x": -168.268,
+          "w": 164.96875
+        },
+        {
+          "x": 168.268,
+          "w": 164.96875
+        }
+      ]
+    },
+    {
+      "name": "activation travels into connection",
+      "status": "PASS"
+    },
+    {
+      "name": "connection energy is one shot",
+      "status": "PASS"
+    },
+    {
+      "name": "pause stops all ambient motion",
+      "status": "PASS"
+    },
+    {
+      "name": "paused light remains neutral",
+      "status": "PASS"
+    },
+    {
+      "name": "resume restores just one visible scene",
+      "status": "PASS"
+    },
+    {
+      "name": "pause settles closing mechanism",
+      "status": "PASS"
+    },
+    {
+      "name": "reduce during opening settles mechanism",
+      "status": "PASS"
+    },
+    {
+      "name": "OS reduced motion cannot be overridden",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced close is immediate",
+      "status": "PASS"
+    },
+    {
+      "name": "rapid activation preserves final state",
+      "status": "PASS"
+    },
+    {
+      "name": "pagehide stops motion and frames",
+      "status": "PASS"
+    },
+    {
+      "name": "pageshow restores one active scene",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile selects compact effects",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile has no pointer lighting loop",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "name": "no external requests",
+      "status": "PASS",
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "screenshots": [
+    "light-left.png",
+    "light-right.png",
+    "device-half-open.png"
+  ],
+  "PASS": 25,
+  "FAIL": 0
+}
