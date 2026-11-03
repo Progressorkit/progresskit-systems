@@ -1,0 +1,166 @@
+{
+  "startedAt": "2026-11-02T15:57:21.894Z",
+  "mode": "baseline",
+  "checks": [
+    {
+      "scope": "baseline:360",
+      "name": "Approved normal-flow layout snapshot",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "document": {
+          "scrollWidth": 360,
+          "height": 19009
+        },
+        "contextCount": 3
+      }
+    },
+    {
+      "scope": "baseline:390",
+      "name": "Approved normal-flow layout snapshot",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "scrollWidth": 390,
+          "height": 18510
+        },
+        "contextCount": 3
+      }
+    },
+    {
+      "scope": "baseline:768",
+      "name": "Approved normal-flow layout snapshot",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "viewport": {
+          "width": 768,
+          "height": 1000
+        },
+        "document": {
+          "scrollWidth": 768,
+          "height": 13959
+        },
+        "contextCount": 3
+      }
+    },
+    {
+      "scope": "baseline:1440",
+      "name": "Approved normal-flow layout snapshot",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "document": {
+          "scrollWidth": 1440,
+          "height": 14888
+        },
+        "contextCount": 3
+      }
+    },
+    {
+      "scope": "baseline:1440",
+      "name": "Hardware showroom sample without recording",
+      "status": "PASS",
+      "details": {
+        "observedFPS": 46.43195239572938,
+        "seconds": 2.218300000011921,
+        "before": {
+          "time": 9386.59999999404,
+          "frames": 207,
+          "drawCalls": 53,
+          "triangles": 18232,
+          "quality": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "gpuFrameMs": 8.6905,
+          "cpuFrameMs": 3.300000011920929
+        },
+        "after": {
+          "time": 11604.90000000596,
+          "frames": 310,
+          "drawCalls": 53,
+          "triangles": 18232,
+          "quality": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "gpuFrameMs": 14.838416,
+          "cpuFrameMs": 2.5
+        }
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No browser console or missing-resource errors",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpErrors": 0
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [],
+  "performance": [
+    {
+      "observedFPS": 46.43195239572938,
+      "seconds": 2.218300000011921,
+      "before": {
+        "time": 9386.59999999404,
+        "frames": 207,
+        "drawCalls": 53,
+        "triangles": 18232,
+        "quality": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "gpuFrameMs": 8.6905,
+        "cpuFrameMs": 3.300000011920929
+      },
+      "after": {
+        "time": 11604.90000000596,
+        "frames": 310,
+        "drawCalls": 53,
+        "triangles": 18232,
+        "quality": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "gpuFrameMs": 14.838416,
+        "cpuFrameMs": 2.5
+      }
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "externalRequests": 0,
+  "formsSubmitted": false,
+  "PASS": 6,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN",
+  "finishedAt": "2026-11-02T15:57:51.215Z"
+}

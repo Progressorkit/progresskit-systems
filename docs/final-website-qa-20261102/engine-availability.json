@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-02",
+  "playwrightVersion": "1.62.1",
+  "systemFirefox": {
+    "binary": "/usr/bin/firefox",
+    "metadataVersion": "158.0",
+    "playwrightCompatibility": "NOT_VERIFIED; unpatched system browser is not automatically usable"
+  },
+  "preparedFirefox": {
+    "binary": "/tmp/progresskit-finalqa-browsers-20261102/firefox-1538/firefox/firefox",
+    "exists": true,
+    "sha256": "26e4198abe0dfb93c339239297008b1319711575d8cbae8e2d5122d2017b29a1",
+    "metadataVersion": "153.0",
+    "build": "playwright firefox v1538; Ubuntu24.04 fallback for unsupported Mint host",
+    "downloadScope": "Temporary /tmp only; no system package/profile reconfiguration",
+    "launchStatus": "PASS_LAUNCHED_OUTSIDE_SANDBOX_ACTUAL_QA",
+    "evidence": [
+      "matrix-final/firefox-360/report.json",
+      "matrix-final/firefox-390/report.json",
+      "matrix-final/firefox-768/report.json",
+      "matrix-final/firefox-1440/report.json"
+    ],
+    "actualRenderer": "three-webgl2; reduced-motion static3D verified"
+  },
+  "gpuMeasurements": "No new desktop benchmark; ChromeCPU4x/DPR3 iteration-cap/offscreen smoke is recorded separately.",
+  "initialSandboxFailure": "NS_ERROR_OUT_OF_MEMORY before DOM; retained in browser-final/attempt-environment-failure.json. Retry outside sandbox succeeded."
+}

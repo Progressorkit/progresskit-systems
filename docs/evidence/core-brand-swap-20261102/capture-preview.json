@@ -1,0 +1,85 @@
+{
+  "startedAt": "2026-11-02T22:07:46.281Z",
+  "mode": "preview",
+  "viewport": {
+    "width": 800,
+    "height": 800
+  },
+  "canvas": {
+    "width": 600,
+    "height": 600,
+    "x": 100,
+    "y": 100
+  },
+  "source": "ACTUAL createShowroomScene(canvas, [], undefined) default capsule; no projects, no scene/material edits.",
+  "errors": [],
+  "blocked": [],
+  "ownerVisualApproval": "OPEN",
+  "sourceBefore": {
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+  },
+  "metricsStart": {
+    "metrics": {
+      "revision": "187",
+      "frames": 106,
+      "quality": 0,
+      "fps": 54.10190832185715,
+      "cpuFrameMs": 2.399999976158142,
+      "gpuFrameMs": 5.396833,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 23,
+      "triangles": 16792,
+      "geometries": 14,
+      "textures": 9,
+      "rafPending": true,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 72,
+      "coronaRoots": 48,
+      "dpr": 0.85,
+      "transmissionResolutionScale": 0.65,
+      "buffer": {
+        "width": 510,
+        "height": 510
+      },
+      "samples": [
+        {
+          "t": 3102,
+          "fps": 1.0000500025001249,
+          "cpuFrameMs": 8,
+          "gpuFrameMs": 69.677895,
+          "drawCalls": 23,
+          "triangles": 16792,
+          "dpr": 0.85
+        },
+        {
+          "t": 4118.6,
+          "fps": 54.10190832185715,
+          "cpuFrameMs": 3.4000000059604645,
+          "gpuFrameMs": 4.6645,
+          "drawCalls": 23,
+          "triangles": 16792,
+          "dpr": 0.85
+        }
+      ],
+      "phases": [],
+      "camera": "PerspectiveCamera",
+      "depth": true,
+      "corePresentation": "capsule"
+    },
+    "location": {
+      "x": 300.40637370451566,
+      "y": 291.26216593722296,
+      "z": 0.9857120689871863
+    }
+  },
+  "sourceAfter": {
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+  },
+  "sourceStable": true,
+  "finishedAt": "2026-11-02T22:07:52.656Z"
+}

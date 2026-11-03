@@ -1,0 +1,32 @@
+{
+  "changedExistingFiles": [
+    "index.html",
+    "package.json",
+    "scripts/build-site.py",
+    "scripts/stage-public.py",
+    "templates/about-contact.html",
+    "templates/production-line.html"
+  ],
+  "newSourceFiles": [
+    "assets/spatial-chapters.css",
+    "assets/spatial-chapters.mjs"
+  ],
+  "unchangedOtherSections": {
+    "start": true,
+    "projekty": true,
+    "ekosystem": true,
+    "wydania": true,
+    "o-mnie": true,
+    "wyzwania": true,
+    "technologie": true,
+    "kontakt": true,
+    "brief": true
+  },
+  "serviceAndProcessTextIdentical": {
+    "uslugi": true,
+    "proces": true
+  },
+  "footerAndAfterMainByteIdentical": true,
+  "showroomRendererByteIdentical": true,
+  "onlyProcessMoved": "Services -> Process -> unchanged Ecosystem/Release sections"
+}

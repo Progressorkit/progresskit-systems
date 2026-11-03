@@ -1,0 +1,134 @@
+{
+  "startedAt": "2026-11-02T13:32:33.239Z",
+  "mode": "lifecycle",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:768",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 17,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 14
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "PASS": 3,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "finishedAt": "2026-11-02T13:32:43.863Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN"
+}

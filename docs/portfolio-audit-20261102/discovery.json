@@ -1,0 +1,1209 @@
+{
+  "auditDate": "2026-11-02",
+  "mode": "read-only-source-audit",
+  "projects": [
+    {
+      "id": "progresskit-notes",
+      "name": "ProgressKit Notes — Asystent Lekcji",
+      "classification": "product",
+      "summary": "Lokalna aplikacja desktopowa do nagrywania dźwięku lekcji, porządkowania sesji i tworzenia notatek TXT. Ma rozbudowany kod nagrywania, historii i lokalnego przetwarzania AI; odbiór całego przepływu na Windows pozostaje otwarty.",
+      "problem": "Po zajęciach odtwarzanych na komputerze trudno odnaleźć najważniejsze fragmenty i zachować uporządkowane notatki bez przekazywania nagrania do usługi chmurowej.",
+      "audiences": [
+        "Osoby uczące się z nagrań i zajęć online",
+        "Użytkownicy Windows potrzebujący lokalnego archiwum lekcji"
+      ],
+      "solution": "Jedna aplikacja łączy jawnie uruchamiane nagrywanie wybranego wyjścia audio, sesje SQLite, edycję metadanych i notatek oraz eksport TXT. Adaptery Whisper i llama.cpp przygotowują transkrypcję i notatkę po dostarczeniu lokalnych silników i modeli; rzeczywista inferencja nie została odebrana.",
+      "features": [
+        {
+          "text": "Wybór wyjścia WASAPI, nagrywanie audio systemowego, pauza, wznowienie i wskaźnik poziomu; ścieżka nie otwiera mikrofonu.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Audio/AudioCaptureService.cs:45-52,103-123,129-193,208-260"
+          ]
+        },
+        {
+          "text": "Segmenty WAV z manifestem sesji, checkpointami i kodem odzyskiwania po przerwaniu procesu.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Audio/AudioCaptureService.cs:164-193",
+            "src/ProgressKit.Notes.App/MainWindow.cs:94-136",
+            "src/ProgressKit.Notes.App/Audio/CaptureSessionFiles.cs:1-85"
+          ]
+        },
+        {
+          "text": "Historia SQLite z kursami i lekcjami, wyszukiwaniem, filtrem kursu oraz edycją tematu, nazwy, uwag i treści notatki.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Core/LessonStore.cs:36-100,200-254,330-373",
+            "src/ProgressKit.Notes.App/MainWindow.cs:247-289,314-318,709-735"
+          ]
+        },
+        {
+          "text": "Import lokalnego audio i ponowne generowanie notatki z zachowanych segmentów lub transkryptu.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/MainWindow.cs:582-660,787-810",
+            "src/ProgressKit.Notes.App/ImportedAudioConverter.cs:1-37"
+          ]
+        },
+        {
+          "text": "Eksport TXT z datą, godzinami, strefą czasową, kursem i tematem; dziennik operacji eksportu, kontrola kolizji oraz potwierdzane usuwanie plików sesji.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Core/TxtNoteFormatter.cs:10-57",
+            "src/ProgressKit.Notes.App/Core/LessonStore.cs:443-542,628-768,820-930"
+          ]
+        },
+        {
+          "text": "Adaptery lokalnego Whisper i llama.cpp: dzielenie długich WAV, transkrypt ze znacznikami czasu, checkpoint ukończonych fragmentów i anulowanie przetwarzania. To implementacja, nie dowód wykonanej inferencji.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Ai/LessonProcessor.cs:43-126,206-240"
+          ]
+        },
+        {
+          "text": "Walidacja cytowanych fragmentów względem transkryptu, ograniczanie powtórzeń i jawny wariant ekstrakcyjny, gdy odpowiedź modelu nie przechodzi kontroli.",
+          "evidence": [
+            "src/ProgressKit.Notes.App/Ai/GroundedNotes.cs:22-94,96-145",
+            "src/ProgressKit.Notes.App/Ai/LessonProcessor.cs:134-195"
+          ]
+        },
+        {
+          "text": "Przygotowane pakowanie Windows x64 i źródło instalatora NSIS; skrypt wymaga silników, sum SHA-256 i opisu pochodzenia zamiast tworzyć pozorną gotową paczkę.",
+          "evidence": [
+            "scripts/package-windows.sh:1-107",
+            "scripts/verify-tools.py:18-19,65-109",
+            "installer/ProgressKitNotes.nsi:1-59"
+          ]
+        }
+      ],
+      "architecture": "Avalonia na .NET 10, lokalna baza SQLite i pliki sesji/WAV/TXT. Windows-only NAudio/WASAPI dostarcza audio do segmentów PCM. Oddzielne procesy whisper-cli i llama-cli obsługują adaptery ASR i notatek. Kod model managera przygotowuje jednorazowe pobranie modeli; dalszy zamierzony przepływ jest lokalny. Brak potwierdzenia pełnego przebiegu offline na Windows.",
+      "modules": [
+        "Interfejs nagrywania i historii",
+        "AudioCaptureService i segmenty PCM WAV",
+        "LessonStore / dziennik eksportu",
+        "LessonProcessor / GroundedNotes / ModelManager",
+        "Weryfikacja silników i pakowanie Windows"
+      ],
+      "technologies": [
+        "C#",
+        ".NET 10",
+        "Avalonia 11.3.22",
+        "NAudio 3.3.0",
+        "WASAPI",
+        "Microsoft.Data.Sqlite 10.0.14",
+        "whisper.cpp — adapter",
+        "llama.cpp — adapter",
+        "Whisper small i Qwen3 1.7B — manifesty modeli",
+        "NSIS — źródło instalatora"
+      ],
+      "platforms": [
+        {
+          "name": "Windows 11 x64",
+          "implementation": "IMPLEMENTED: interfejs, przechwytywanie audio, historia, eksport i adaptery AI w źródłach.",
+          "verification": "Pełna kompilacja .NET na Linuxie historycznie PASS po naprawie NAudio; Windows GUI, WASAPI i inferencja NOT RUN/BLOCKED.",
+          "distribution": "Brak gotowej paczki ZIP lub instalatora w artifacts/.",
+          "limits": [
+            "Nie dostarczono natywnych silników i modeli.",
+            "Brak testów słuchawek/Bluetooth, skalowania, długich nagrań i instalacji Windows."
+          ]
+        },
+        {
+          "name": "Linux — środowisko deweloperskie",
+          "implementation": "Wspólne komponenty danych i AI można kompilować i testować; WASAPI odmawia działania poza Windows.",
+          "verification": "Historyczne testy Core/AI i Rebuild wykonano na Linuxie.",
+          "distribution": "Brak deklarowanego wydania Linux.",
+          "limits": [
+            "Build Linux nie dowodzi nagrywania Windows ani działania GUI użytkownika."
+          ]
+        }
+      ],
+      "functionalStatus": "Rozbudowana aplikacja desktopowa w źródłach, z historycznie potwierdzoną pełną kompilacją i testami lokalnych komponentów. Rzeczywisty przepływ nagranie → inferencja → notatka na Windows pozostaje nieodebrany.",
+      "distributionStatus": "Źródła i procedury pakowania są przygotowane; brak zweryfikowanego ZIP/EXE.",
+      "productionStatus": "Brak potwierdzonego wydania dla użytkownika końcowego.",
+      "results": [
+        "Pełny Rebuild z 30.10.2026 zakończył się kodem 0, bez błędów i z 22 ostrzeżeniami CA1416. Ten późniejszy dowód sesji zastępuje wcześniejsze BUILD BLOCKED w nieodświeżonym raporcie.",
+        "Późniejsze raporty agentów tej samej sesji opisują 25 PASS Core, 8 PASS AI i 8 PASS skryptów jako oddzielne zestawy. Nie są sumowane ze starszymi 32 testami i nie są nowym uruchomieniem z 02.11.",
+        "W aktualnym odczycie istnieją bin/Release aplikacji i testów; artifacts/ pozostaje pusty."
+      ],
+      "remaining": [
+        "Dostarczyć i niezależnie zweryfikować pochodzenie oraz licencje binariów CLI i modeli.",
+        "Wykonać prawdziwą inferencję na kontrolowanym polskim audio, ocenić zgodność notatki i zmierzyć RAM/czas.",
+        "Uruchomić Windows GUI i WASAPI, słuchawki/Bluetooth, odzyskiwanie, anulowanie oraz sesje 15/60/120 minut.",
+        "Wykonać Windows publish, ZIP/NSIS, instalację/odinstalowanie oraz odbiór bez SDK.",
+        "Zaktualizować źródłowy raport, który nadal opisuje wcześniejszy zablokowany build; nie wolno go bezkrytycznie traktować jako najnowszy stan."
+      ],
+      "tests": [
+        {
+          "name": "Wcześniejszy ograniczony zestaw Core/AI/skrypty",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "27 testów wybranych źródeł skompilowanych Roslynem i 5 Python; nie pełny build aplikacji.",
+          "source": "docs/wyniki-2026-10-30.md:30-37",
+          "historical": true,
+          "counts": {
+            "passed": 32,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Historyczne 32 nie obejmują późniejszych poprawek; nie sumować z nowszymi zestawami."
+        },
+        {
+          "name": "Późniejszy pełny Rebuild aplikacji",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "dotnet build -t:Rebuild -c Release --no-restore; kod0,22 CA1416,0błędów.",
+          "source": "session:01a18df7-dcc1-7d30-9938-fbcf5b8fe972:1718",
+          "historical": true,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Linux Mint/.NET SDK 10.0.112; lokalny cache po pełnym restore",
+          "limits": "Nie Windows publish/runtime, modele ani GUI."
+        },
+        {
+          "name": "Późniejszy zestaw Core",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "Raport agenta Core o standardowym dotnet run po restore.",
+          "source": "session:01a18df7-dcc1-7d30-9938-fbcf5b8fe972:1664",
+          "historical": true,
+          "counts": {
+            "passed": 25,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Źródłem liczby jest raport agenta w historycznej sesji; nie świeże uruchomienie audytowe."
+        },
+        {
+          "name": "Późniejszy zestaw AI",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "Testy walidatorów i lokalnych helperów AI; nie inferencja modelu.",
+          "source": "session:01a18df7-dcc1-7d30-9938-fbcf5b8fe972:1491",
+          "historical": true,
+          "counts": {
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Raport agenta historycznej sesji; nie dowód jakości rozpoznawania/notatki."
+        },
+        {
+          "name": "Weryfikacja skryptów narzędzi",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "Python unittest i osobne bash -n.",
+          "source": "session:01a18df7-dcc1-7d30-9938-fbcf5b8fe972:1499",
+          "historical": true,
+          "counts": {
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie uruchomienie instalatora."
+        },
+        {
+          "name": "Windows GUI/WASAPI/inferencja/instalator",
+          "date": "2026-11-02",
+          "status": "NOT RUN",
+          "scope": "Brak platformy Windows oraz dostarczonych silników/modeli.",
+          "source": "README.md:8-11,40-42",
+          "historical": false,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie wykonywano instalacji ani nagrywania w tym audycie."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repository": "ProgressKit Notes",
+          "path": "src/ProgressKit.Notes.App/ProgressKit.Notes.App.csproj",
+          "lines": "3-16",
+          "kind": "code",
+          "scope": "Technologie i zależności",
+          "sha256": "7bab0affbab9608e8d0647c67e42a50b35ffc4d2bb7380cd7c6f0f1add240e82",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Notes",
+          "path": "src/ProgressKit.Notes.App/Audio/AudioCaptureService.cs",
+          "lines": "45-260",
+          "kind": "code",
+          "scope": "Kod nagrywania Windows",
+          "sha256": "7924126c8648dec8fdb4fbcc2e94a75d99d52334e7c9527b82abe43d5b893e0a",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Notes",
+          "path": "src/ProgressKit.Notes.App/Core/LessonStore.cs",
+          "lines": "36-100,200-254,443-542,628-930",
+          "kind": "code",
+          "scope": "Historia i eksport",
+          "sha256": "a62909a52dc4df5cca6fe528423368bcd5e60229af222e356f18b544d111c4b0",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Notes",
+          "path": "src/ProgressKit.Notes.App/Ai/LessonProcessor.cs",
+          "lines": "43-195",
+          "kind": "code",
+          "scope": "Adaptery lokalnej AI",
+          "sha256": "8d5bf7ccf8186901ae86cf1a9a2b29567a9f9af818c184cb389eb9a85e490604",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Notes",
+          "path": "docs/wyniki-2026-10-30.md",
+          "lines": "26-64",
+          "kind": "report",
+          "scope": "Wcześniejszy raport i wciąż otwarte bramki",
+          "sha256": "2efe5c1ea1f7132e18d4d27e630c96b8c5a2246ca2c2b1e684d90ab209774ab9",
+          "readAt": "2026-11-02"
+        },
+        {
+          "kind": "historical-session",
+          "path": "/home/pawe/.codex/sessions/2026/10/30/rollout-2026-10-30T18-59-53-01a18df7-dcc1-7d30-9938-fbcf5b8fe972.jsonl",
+          "lines": "1491,1499,1664,1718",
+          "scope": "Późniejszy Rebuild i raporty testów zastępujące wcześniejszy wynik z docs/wyniki; prywatny zapis sesji, nie publikować pełnego logu."
+        }
+      ],
+      "git": {
+        "status": "BLOCKED",
+        "head": null,
+        "dirty": null,
+        "detail": "W dostarczonym widoku .git jest pusty; git rev-parse/status zwraca not a git repository. Nie inicjalizowano repozytorium ani nie wnioskowano czystości. Read-only escalation Git została odrzucona przez automatic approval review; nie obchodzono odmowy.",
+        "repository": "ProgressKit Notes"
+      },
+      "publicPresentation": "Można opublikować uczciwe case study implementacji i granic odbioru. Nie oznaczać jako gotowej aplikacji Windows ani udostępniać pozornej paczki."
+    },
+    {
+      "id": "progresskit-offgrid",
+      "name": "ProgressKit OffGrid",
+      "classification": "concept",
+      "summary": "Koncepcja komunikacji bez Internetu. W dostępnym audycie nie odnaleziono samodzielnego checkoutu, artefaktu build ani raportu działania; kanały radiowe i mechanizmy mesh pozostają założeniami.",
+      "problem": "Rozważane przesyłanie wiadomości w sytuacjach braku dostępu do Internetu.",
+      "audiences": [
+        "Odbiorcy przyszłego projektu badawczo-rozwojowego komunikacji lokalnej"
+      ],
+      "solution": "Etap koncepcji: zlecenie właściciela opisuje Bluetooth/Wi-Fi Direct, mesh/store-and-forward, szyfrowane wiadomości oraz przyszłe PTT/SOS. Audyt nie potwierdza implementacji tych funkcji.",
+      "features": [],
+      "researchGoals": [
+        "Wybór i prototyp kanału komunikacji lokalnej.",
+        "Badanie topologii mesh i przekazywania store-and-forward.",
+        "Projekt uwierzytelniania i szyfrowania wiadomości.",
+        "Osobna ocena wykonalności głosu/PTT/SOS."
+      ],
+      "architecture": "Założenia z briefu właściciela; brak odnalezionego kodu do potwierdzenia architektury.",
+      "technologies": [],
+      "platforms": [
+        {
+          "name": "Niepotwierdzone",
+          "implementation": "Brak odnalezionej implementacji.",
+          "verification": "NOT RUN — brak artefaktu.",
+          "distribution": "Brak potwierdzonej paczki.",
+          "limits": [
+            "Bluetooth/Wi-Fi Direct/mesh/crypto/PTT/SOS są planem, nie listą ukończonych funkcji."
+          ]
+        }
+      ],
+      "functionalStatus": "Koncepcja / R&D; brak potwierdzonego prototypu uruchomieniowego.",
+      "distributionStatus": "Brak potwierdzonej dystrybucji.",
+      "productionStatus": "Brak podstaw do deklaracji wdrożenia.",
+      "results": [
+        "Pozycję rozliczono jawnie jako koncepcję zamiast dopisywać gotowe funkcje. Ograniczony przegląd nazw katalogów i dokumentacji nie znalazł źródeł. Nie jest to dowód globalnego nieistnienia projektu."
+      ],
+      "remaining": [
+        "Odnaleźć kod lub wersjonowaną dokumentację techniczną, jeżeli istnieje w innym miejscu.",
+        "Przygotować minimalny build/prototyp i test dwóch rzeczywistych urządzeń przed opisaniem łączności jako działającej.",
+        "Zweryfikować model bezpieczeństwa i ograniczenia platform zanim pojawią się deklaracje szyfrowania/SOS."
+      ],
+      "tests": [
+        {
+          "name": "Implementacja i komunikacja na urządzeniach",
+          "date": "2026-11-02",
+          "status": "NOT RUN",
+          "scope": "Nie odnaleziono kodu/artefaktu w ograniczonym zakresie audytu.",
+          "source": "owner-task:missing_projects_to_investigate:progresskit-offgrid",
+          "historical": false,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Odczyt lokalnego inwentarza",
+          "limits": "Brak źródeł nie upoważnia do oznaczenia PASS/FAIL funkcji."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "kind": "owner-brief",
+          "path": "/home/pawe/.codex/attachments/2eef262f-aa81-49fc-bc29-6e6435cac4da/Wklejony tekst.txt",
+          "scope": "missing_projects_to_investigate:progresskit-offgrid; wyłącznie założenia produktu, nie dowód implementacji."
+        },
+        {
+          "kind": "discovery",
+          "scope": "2026-11-02: inwentarz katalogów w /home/pawe/Pulpit i /home/pawe/Dokumenty do4poziomów z pominięciem zależności/.git/bin/obj; wyszukiwanie offgrid/off-grid w nazwach; rg w docs/catalog Systems oraz docs Notes. Brak trafień kodu OffGrid. Bez skanowania sekretów/historii powłoki."
+        }
+      ],
+      "git": {
+        "status": "NOT FOUND",
+        "head": null,
+        "dirty": null,
+        "detail": "Nie odnaleziono właściwego checkoutu w ograniczonym zakresie audytu."
+      },
+      "publicPresentation": "Można pokazać wyłącznie jasno podpisaną koncepcję R&D, bez galerii udającej gotowy produkt."
+    },
+    {
+      "id": "reel-agent",
+      "name": "ProgressKit Reel Agent",
+      "classification": "internal_tool",
+      "aliases": [
+        "Reel Agent",
+        "Lokalny agent rolek",
+        "ProgressKit Reel Agent"
+      ],
+      "summary": "Lokalne narzędzie do produkcji pionowych filmów: panel i API prowadzą zadanie przez plan scen, syntezę polskiego głosu, napisy, render FFmpeg i kontrolę MP4. Rzeczywisty E2E z Qwen3 i Piper jest udokumentowany; publikacja użytego głosu ma otwartą bramkę praw.",
+      "problem": "Przygotowanie krótkiego filmu z własnych materiałów wymaga powtarzalnego łączenia scenariusza, lektora, napisów i eksportu.",
+      "audiences": [
+        "Wewnętrzna produkcja materiałów ProgressKit",
+        "Operator lokalnego pipeline wideo"
+      ],
+      "solution": "Panel FastAPI zapisuje zadania w SQLite i uruchamia jednego pracownika. Lokalna Ollama wybiera zatwierdzone frazy i plan scen, Piper tworzy WAV, a FFmpeg renderuje film z kontrolą metadanych i próbek scen. Narzędzie nie publikuje automatycznie materiałów.",
+      "features": [
+        {
+          "text": "Lokalny panel i REST: tworzenie zadań, historia, etapy, logi, anulowanie, retry oraz podgląd i pobieranie ukończonego eksportu.",
+          "evidence": [
+            "app/api/main.py:35-56,120-269",
+            "app/jobs/queue.py:25-105,218-275"
+          ]
+        },
+        {
+          "text": "Trwała kolejka SQLite WAL z historią zdarzeń i przywracaniem stanu po restarcie; retry tworzy nową kopię zadania.",
+          "evidence": [
+            "app/storage/db.py:20-80,145-189",
+            "app/jobs/queue.py:25-105"
+          ]
+        },
+        {
+          "text": "Import własnych obrazów i filmów oraz opcjonalnego podkładu; walidacja typów, rozmiarów, ścieżek i metadanych mediów.",
+          "evidence": [
+            "app/security/media.py:1-132",
+            "app/security/audio.py:1-58",
+            "app/media/selection.py:1-41"
+          ]
+        },
+        {
+          "text": "Planowanie przez lokalny model Ollama z walidacją dozwolonych faktów, mediów i czasu. Ograniczony planista Qwen3 wybiera gotowe zatwierdzone frazy; fallback do szablonu jest jawnie oznaczony.",
+          "evidence": [
+            "app/agent/planning.py:25-60,76-180,255-416"
+          ]
+        },
+        {
+          "text": "Polski lektor Piper z lokalnego modelu ONNX, zapis pochodzenia/licencji głosu i pomiar rzeczywistych okien audio; użyty głos ma nierozstrzygnięte prawa komercyjne.",
+          "evidence": [
+            "app/voice/tts.py:92-155,263-357",
+            "output/e2e-test-20261101/report.md:9-10,39-45"
+          ]
+        },
+        {
+          "text": "Renderer H.264/AAC z profilami preview/final, formatem 9:16, przejściami, napisami UTF-8 i opcjonalnym ściszaniem muzyki pod narracją.",
+          "evidence": [
+            "app/render/engine.py:131-324,358-499",
+            "docs/ARCHITECTURE.md:27-29"
+          ]
+        },
+        {
+          "text": "Kontrola FFprobe parametrów eksportu oraz dekodowanie próbki z każdej sceny; końcowy MP4 jest udostępniany po walidacji.",
+          "evidence": [
+            "app/quality/export.py:31-131",
+            "app/jobs/queue.py:174-215"
+          ]
+        },
+        {
+          "text": "Raport zadania rozdziela pochodzenie scenariusza, status głosu, fallback, wynik FFmpeg i walidację; wywołania narzędzi używają list argumentów.",
+          "evidence": [
+            "app/jobs/queue.py:192-215,249-275",
+            "app/render/engine.py:411-499",
+            "docs/ARCHITECTURE.md:44-48"
+          ]
+        }
+      ],
+      "architecture": "Jednoużytkownikowy lokalny panel FastAPI/Jinja2, SQLite WAL, pojedynczy worker i izolowane katalogi zadań. Planista używa lokalnego API Ollama, lektor lokalnego Piper, renderer i walidator oddzielnych procesów FFmpeg/FFprobe. Brak chmurowej publikacji, kont i systemu wielodostępnego.",
+      "modules": [
+        "Panel i API",
+        "JobRunner / SQLite jobs i events",
+        "Planista oparty na zatwierdzonych faktach",
+        "Piper i provenance głosu",
+        "Import i kontrola mediów",
+        "Renderer FFmpeg",
+        "Walidacja eksportu i raport zadania"
+      ],
+      "technologies": [
+        "Python 3.12",
+        "FastAPI",
+        "Pydantic",
+        "Jinja2",
+        "SQLite WAL",
+        "Ollama / Qwen3",
+        "Piper ONNX",
+        "FFmpeg / FFprobe"
+      ],
+      "platforms": [
+        {
+          "name": "Linux — lokalna stacja robocza",
+          "implementation": "IMPLEMENTED: pełny pipeline i panel.",
+          "verification": "Historyczny E2E 01.11.2026: Qwen3 bez fallbacku, Piper, FFmpeg i walidacja 15-sekundowego filmu 1080×1920. Aktualny audyt potwierdził SHA i metadane istniejącego MP4.",
+          "distribution": "Lokalne źródła/venv i artefakty, bez publicznego wydania komercyjnego.",
+          "limits": [
+            "Brak kont/izolacji wielu użytkowników.",
+            "Prawa użytego głosu niepotwierdzone.",
+            "Nie wykonano w tym audycie nowej produkcji ani odsłuchu człowieka."
+          ]
+        }
+      ],
+      "functionalStatus": "Działający lokalny pipeline wideo z udokumentowanym rzeczywistym E2E model → głos → render → walidacja.",
+      "distributionStatus": "Narzędzie wewnętrzne. Film i głos pozostają lokalnymi próbami technicznymi.",
+      "productionStatus": "Brak publicznej usługi komercyjnej; publikacja materiału z obecnym głosem zablokowana do wyjaśnienia praw.",
+      "results": [
+        "Raport 01.11.2026: pełne zadanie 192,371s; inferencja Qwen3 122,675s, status validated bez fallbacku; Piper wygenerował trzy polskie wypowiedzi; FFmpeg kod0.",
+        "Gotowy artefakt 15,000s,1080×1920,30FPS,450klatek,H.264/AAC. SHA-256 i parametry odczytano ponownie 02.11.2026 bez publikowania filmu.",
+        "Scenariusz opiera się na wąskiej liście zatwierdzonych twierdzeń, a nie na swobodnym dopisywaniu funkcji produktu."
+      ],
+      "remaining": [
+        "Ustalić prawa do komercyjnej publikacji modelu głosu/wynikowych nagrań albo zastąpić głos jednoznacznie dopuszczonym.",
+        "Po bieżących poprawkach uruchomić pełne regresje; zestaw117 jest historyczny, 01.11 uruchomiono tylko testy celowane.",
+        "Ponowić wizualny odbiór obecnego panelu; nie przenosić dawnych prób przeglądarki na nowszy kod.",
+        "Zachować zatwierdzany katalog faktów produktu i kontrolę praw do importowanych materiałów."
+      ],
+      "tests": [
+        {
+          "name": "Pełny pytest Sprint 02B",
+          "date": "2026-10-26",
+          "status": "PASS",
+          "scope": "Historyczny pełny zestaw, 117 passed/1 skipped; real-model test miał brak gniazda Ollama w sandboxie.",
+          "source": "docs/SPRINT_02B_REPORT.md:47-57",
+          "historical": true,
+          "counts": {
+            "passed": 117,
+            "failed": 0,
+            "skipped": 1
+          },
+          "revision": null,
+          "environment": "Python3.12.3/.venv-1,Linux; osobne E2E na hoście",
+          "limits": "SKIP nie jest PASS; nie przenosić pełnej regresji na późniejsze zmiany."
+        },
+        {
+          "name": "Testy celowane planowania",
+          "date": "2026-11-01",
+          "status": "PASS",
+          "scope": "Historyczne testy planowania po aktualizacji zatwierdzonych faktów i promptu.",
+          "source": "output/e2e-test-20261101/report.md:45",
+          "historical": true,
+          "counts": {
+            "passed": 22,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": ""
+        },
+        {
+          "name": "Testy celowane głosu",
+          "date": "2026-11-01",
+          "status": "PASS",
+          "scope": "Historyczne testy głosu po poprawce dopełniania WAV.",
+          "source": "output/e2e-test-20261101/report.md:45",
+          "historical": true,
+          "counts": {
+            "passed": 9,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": ""
+        },
+        {
+          "name": "Rzeczywisty E2E Qwen3+Piper+FFmpeg",
+          "date": "2026-11-01",
+          "status": "PASS",
+          "scope": "Zadanie API z demo_mode=false, planning_origin=ollama, validated, bez fallbacku;3sceny/15s/1080×1920.",
+          "source": "output/e2e-test-20261101/report.md:3-11,25-41",
+          "historical": true,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Lokalny host Linux,Python/Ollama qwen3:14b,Piper Gosia,FFmpeg",
+          "limits": "Nie publikacja, prawa komercyjne ani niezależny odsłuch człowieka."
+        },
+        {
+          "name": "Aktualny odczyt integralności istniejącego MP4",
+          "date": "2026-11-02",
+          "status": "PASS",
+          "scope": "SHA-256 zgodny z raportem;1 379 935B;b74af9ba08104a54e81d9d71c437aa2bd1405ae0cdce6f2a67b8222f6677c8e4.",
+          "source": "output/e2e-test-20261101/glikemia-premium-test.mp4",
+          "historical": false,
+          "counts": {
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Tylko kontrola istniejącego lokalnego artefaktu, nie nowy E2E."
+        },
+        {
+          "name": "Aktualny FFprobe istniejącego MP4",
+          "date": "2026-11-02",
+          "status": "PASS",
+          "scope": "Odczyt klatek i metadanych: H.264,1080×1920,30FPS,450klatek,AAC,15.000000s.",
+          "source": "output/e2e-test-20261101/glikemia-premium-test.mp4",
+          "historical": false,
+          "counts": {
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Bez publikowania MP4/audio; bez deklaracji oceny treści lub praw głosu."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "app/agent/planning.py",
+          "lines": "25-60,76-180,255-416",
+          "kind": "code",
+          "scope": "Rzeczywisty zakres planisty i jawny fallback",
+          "sha256": "3d68f36ae62fb445f110a8cde585cc9082236a1fb5d28621ad7272a3af0f5c3d",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "app/voice/tts.py",
+          "lines": "92-155,263-357",
+          "kind": "code",
+          "scope": "Synteza i pochodzenie głosu",
+          "sha256": "3e9dc35e3888a4c5e50a6cfac54cece89c19d137de8f8a91af0581e9b6ba8944",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "app/render/engine.py",
+          "lines": "131-324,358-499",
+          "kind": "code",
+          "scope": "Render i kontrola procesów",
+          "sha256": "341e8f4d7476ae590c17921773cc515ce16553689b508f63aea225d5fabc23cb",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "app/storage/db.py",
+          "lines": "20-80,145-189",
+          "kind": "code",
+          "scope": "Trwałe zadania",
+          "sha256": "47c6af43986e59d4705831fcbaebf87199b28315d7e57764448b6e26fd932088",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "docs/SPRINT_02B_REPORT.md",
+          "lines": "47-57",
+          "kind": "report",
+          "scope": "Historyczne testy",
+          "sha256": "335ce8fb53dba368fabf135c8ed115fb41e7924f394cc94f239c1a02b9450a6b",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "output/e2e-test-20261101/report.md",
+          "lines": "3-45",
+          "kind": "report",
+          "scope": "Nowszy E2E i ograniczenia publikacji",
+          "sha256": "fa949b7f44f9cb4a46e3ecc1f81fd77b2265174b0736e789a99536f08aeb7633",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "output/e2e-test-20261101/logs/final/voice-provenance.json",
+          "lines": "1-17",
+          "kind": "artifact-metadata",
+          "scope": "commercial_rights unresolved",
+          "sha256": "c41e1f13f7190480b4eaacdce15753ae344063f8cd6c86cd069aeeed626373a4",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "PROGRESSKIT REEL AGENT",
+          "path": "output/e2e-test-20261101/logs/final/quality.json",
+          "lines": "1-18",
+          "kind": "artifact-metadata",
+          "scope": "Parametry ukończonego eksportu",
+          "sha256": "c8f3dfcec6e726b51546a434a6ac0ca03ebf4dcbb803043b8e230fa2b34ea221",
+          "readAt": "2026-11-02"
+        }
+      ],
+      "git": {
+        "status": "BLOCKED",
+        "head": null,
+        "dirty": null,
+        "detail": "W dostarczonym widoku .git jest pusty; git rev-parse/status zwraca not a git repository. Nie inicjalizowano repozytorium ani nie wnioskowano czystości. Read-only escalation Git została odrzucona przez automatic approval review; nie obchodzono odmowy.",
+        "repository": "PROGRESSKIT REEL AGENT"
+      },
+      "publicPresentation": "Gotowe do tekstowego technicznego case study. Nie kopiować do publicznej galerii lokalnego MP4, narracji ani klatek objętych nieustalonymi prawami."
+    },
+    {
+      "id": "progresskit-remote",
+      "name": "ProgressKit Remote",
+      "classification": "infrastructure",
+      "aliases": [
+        "ProgressKit Remote Access",
+        "Aspia Router/Relay"
+      ],
+      "summary": "Wewnętrzny projekt zdalnej pomocy oparty na Aspia: pakiety próbne Linux/Windows, przygotowanie Routera i Relaya oraz źródłowa polityka ograniczonego Hosta. Stan usług był historycznie potwierdzony, ale pełna sesja Windows↔Linux i zabezpieczony Host nie zostały odebrane.",
+      "problem": "Zdalna pomoc wymaga powtarzalnego pakowania natywnego klienta i Hosta oraz jawnego odbioru lokalnej zgody, uprawnień i rozłączenia.",
+      "audiences": [
+        "Wewnętrzny operator pomocy technicznej ProgressKit"
+      ],
+      "solution": "Projekt integruje upstream Aspia i własne skrypty pakowania, kontroli integralności i publicznego profilu połączenia. Rozwijana poprawka źródłowa ogranicza kanały i import ustawień; testy przenośnej polityki nie zastępują kompilacji Windows ani sesji fizycznej.",
+      "features": [
+        {
+          "text": "Próbne pakiety Linux DEB z natywnym klientem i Windows NSIS z upstream Host MSI, z manifestami integralności i informacją o pochodzeniu.",
+          "evidence": [
+            "README.md:12-25",
+            "docs/test-report-2026-10-30.md:29-38,44-52,81-89,115-118",
+            "NOTICE.md:1-9"
+          ]
+        },
+        {
+          "text": "Generator bezsekretowego profilu Hosta z walidacją wyłącznie publicznych pól, wymuszoną zgodą/odrzuceniem bez użytkownika i odmową nadpisania.",
+          "evidence": [
+            "scripts/host-public-config.mjs:5-8,29-64",
+            "docs/test-report-2026-10-30.md:19-28"
+          ]
+        },
+        {
+          "text": "Przygotowane procedury instalacji, kontroli i wycofania Routera/Relaya. Późniejszy raport zawiera niezależny historyczny odczyt wersji oraz stanu obu usług; to nie dowód sesji pulpitu.",
+          "evidence": [
+            "docs/vps-01.md:79-111",
+            "docs/vps-01-postinstall-client-2026-10-31.md:3-21,96-107"
+          ]
+        },
+        {
+          "text": "Kumulatywna poprawka ograniczonego Hosta: allowlista kanałów Desktop, odmowa kanałów uprzywilejowanych i nieznanych typów sesji oraz wymóg lokalnego użytkownika i gotowego profilu. To kod przygotowany, bez wydanego binarium.",
+          "evidence": [
+            "patches/aspia-3.1.2-restricted-profile.patch:1-116",
+            "docs/test-report-2026-10-31.md:32-57"
+          ]
+        },
+        {
+          "text": "Źródłowy importer publicznego profilu używa transakcji SQLite, sprawdzeń zapisu i odczytu oraz bramki gotowości Hosta; nie został wykonany w docelowym Windows.",
+          "evidence": [
+            "docs/restricted-host-build.md:48-73",
+            "docs/test-report-2026-10-31.md:43-57,80-83"
+          ]
+        },
+        {
+          "text": "Przygotowana ścieżka Windows build weryfikuje źródła, testy i zgodność Hosta w MSI; nie wykorzystuje stock MSI jako zastępczego zabezpieczonego Hosta.",
+          "evidence": [
+            "docs/restricted-host-build.md:5-13",
+            "scripts/build-restricted-host.ps1:1-85"
+          ]
+        },
+        {
+          "text": "Diagnostyka logowania z lokalnymi syntetycznymi testami porównawczymi algorytmów; porównania produkcyjnego konta i poprawnego logowania nie potwierdzono.",
+          "evidence": [
+            "docs/login-02.md:10-11,46-57",
+            "tests/login-02/test_helper.py:1-40"
+          ]
+        }
+      ],
+      "architecture": "Silnik zdalnego pulpitu pochodzi z Aspia 3.1.2 (GPL-3.0-or-later); ProgressKit dostarcza integrację, skrypty pakowania i rozwijaną poprawkę Hosta. Natywny Linux Client, Windows Host oraz oddzielne role Router/Relay. Poprawka C++/Qt i importer SQLite mają osobną ścieżkę kompilacji Windows. Sam działający Router/Relay nie potwierdza uwierzytelnienia ani przekazania sesji.",
+      "modules": [
+        "Integracja i pochodzenie upstream Aspia",
+        "Próbne DEB/NSIS i weryfikacja integralności",
+        "Publiczny profil Hosta",
+        "Procedury Router/Relay",
+        "Restricted Host i atomowy importer",
+        "Testy polityki i diagnostyka logowania"
+      ],
+      "technologies": [
+        "Aspia 3.1.2 / GPL-3.0-or-later",
+        "C++17",
+        "Qt",
+        "SQLite",
+        "NSIS",
+        "Node.js",
+        "Bash",
+        "PowerShell — przygotowana ścieżka build"
+      ],
+      "platforms": [
+        {
+          "name": "Linux — klient natywny",
+          "implementation": "Pakiet próbny z niezmienionym klientem Aspia.",
+          "verification": "Historycznie potwierdzono integralność oraz Client --version. Uwierzytelnienie w aktualnym przebiegu i lista Relayów NOT RUN; wcześniejsza odmowa zgłoszona przez operatora.",
+          "distribution": "Lokalny próbny DEB, bez dowodu kompletnej usługi zdalnej pomocy.",
+          "limits": [
+            "Niepotwierdzona sesja do Windows."
+          ]
+        },
+        {
+          "name": "Windows x64 — Host",
+          "implementation": "Istnieje stock trial MSI/EXE i kod restricted profile. Poprawka nie jest skompilowanym Hostem.",
+          "verification": "Portable policy1280 PASS;7 docelowych gtest i pełny Windows build NOT RUN/BLOCKED.",
+          "distribution": "Brak nowego zabezpieczonego MSI/EXE. Stock trial nie spełnia docelowych wymagań odbioru.",
+          "limits": [
+            "Instalacja, import, UAC, lokalna zgoda, Disconnect i fizyczna kontrola pulpitu nieodebrane."
+          ]
+        },
+        {
+          "name": "Serwer — Router/Relay",
+          "implementation": "Historyczny raport potwierdza uruchomione upstream usługi Aspia.",
+          "verification": "Odczyt wersji i active/running z31.10.2026; nie ponawiano odczytu serwera w audycie02.11.",
+          "distribution": "Prywatna infrastruktura, bez publicznych parametrów dostępu.",
+          "limits": [
+            "Stan bieżący nie był odświeżany.",
+            "Logowanie/lista Relayów/sesja pulpitu nie wynikają ze stanu procesu."
+          ]
+        }
+      ],
+      "functionalStatus": "Zaawansowana integracja natywnego silnika i źródłowa polityka ograniczeń. Pełny zdalny pulpit end-to-end pozostaje NOT RUN.",
+      "distributionStatus": "Istnieją lokalne pakiety próbne; zabezpieczony Host i gotowy pakiet dla użytkownika końcowego BLOCKED.",
+      "productionStatus": "Historycznie potwierdzono uruchomienie infrastruktury Router/Relay. Nie potwierdzono kompletnej usługi zdalnego pulpitu ani gotowości dostępu bez obecności.",
+      "results": [
+        "Historyczny raport31.10 potwierdza wersję3.1.2.8504 i active/running obu usług; zakres publicznej prezentacji ograniczony do ogólnego wyniku, bez danych dostępu.",
+        "Przygotowano patch12plików i przeprowadzono1280 przenośnych przypadków polityki C++17. Wynik nie obejmuje transportu, pełnego Hosta, MSI ani Windows.",
+        "Zachowano wcześniejsze pakiety stock trial oraz wyniki integralności; nowszy zabezpieczony EXE nie powstał."
+      ],
+      "remaining": [
+        "Pierwsza pełna kompilacja zmodyfikowanego Hosta w autoryzowanym Windows i uruchomienie docelowych gtest.",
+        "Sprawdzenie importu i awarii instalacji, rollbacku oraz zachowania istniejącej instalacji.",
+        "Natywne uwierzytelnienie klienta, potwierdzenie Relaya i rzeczywiste połączenie Windows↔Linux.",
+        "Fizyczny odbiór obrazu, wejścia, lokalnej zgody/odmowy/timeoutu, Disconnect, UAC i odmowy niedozwolonych kanałów.",
+        "Pełny przegląd zależności/licencji/SBOM odpowiadających wydanym binariom przed publiczną dystrybucją."
+      ],
+      "tests": [
+        {
+          "name": "Wąskie kontrole pakietowania",
+          "date": "2026-10-26",
+          "status": "PASS",
+          "scope": "16 kontroli pobrania, struktury DEB/EXE, wersji klienta, przykładów konfiguracji i skryptów.",
+          "source": "docs/test-report-2026-10-26.md:16-27",
+          "historical": true,
+          "counts": {
+            "passed": 16,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux Mint22.3 amd64",
+          "limits": "Nie instalacja Windows ani sesja pulpitu."
+        },
+        {
+          "name": "Generator profilu publicznego",
+          "date": "2026-10-30",
+          "status": "PASS",
+          "scope": "Testy poprawnego i niebezpiecznego profilu na danych syntetycznych.",
+          "source": "docs/test-report-2026-10-30.md:19-28,81-89",
+          "historical": true,
+          "counts": {
+            "passed": 16,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie dowód serwera i runtime importu."
+        },
+        {
+          "name": "Przenośna polityka ograniczonego Hosta",
+          "date": "2026-10-31",
+          "status": "PASS",
+          "scope": "1024 kombinacje typu sesji/profilu/lokalnego użytkownika i256wartości kanału.",
+          "source": "docs/test-report-2026-10-31.md:59-83",
+          "historical": true,
+          "counts": {
+            "passed": 1280,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux,g++ C++17,-Wall -Wextra -Werror",
+          "limits": "Przypadki samodzielnego nagłówka polityki, nie1280testów pełnego Hosta."
+        },
+        {
+          "name": "Stan Router/Relay",
+          "date": "2026-10-31",
+          "status": "PASS",
+          "scope": "Historyczny niezależny odczyt wersji3.1.2.8504 i active/running obu usług.",
+          "source": "docs/vps-01-postinstall-client-2026-10-31.md:10-21,96-107",
+          "historical": true,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Prywatny serwer, historyczny odczyt tylko do kontroli stanu",
+          "limits": "Brak odświeżenia02.11;nie uwierzytelnienie/lista Relayów/sesja pulpitu."
+        },
+        {
+          "name": "Diagnostyka SRP na syntetycznych danych",
+          "date": null,
+          "status": "PASS",
+          "scope": "38asercji zgodności helpera z referencją algorytmów na danych syntetycznych.",
+          "source": "docs/login-02.md:46-57",
+          "historical": true,
+          "counts": {
+            "passed": 38,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie pełny build Routera ani test hasła/konta produkcyjnego. Dokument nie podaje samodzielnej daty uruchomienia; stan raportu odczytano02.11.2026."
+        },
+        {
+          "name": "Docelowe gtest/Windows build/runtime",
+          "date": "2026-11-02",
+          "status": "NOT RUN",
+          "scope": "7 gtest i fizyczny przepływ Windows↔Linux nieodebrane.",
+          "source": "docs/test-report-2026-10-31.md:65-78,89-110",
+          "historical": false,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie uruchamiano Windows, serwera ani urządzeń w tym audycie."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repository": "ProgressKit Remote",
+          "path": "NOTICE.md",
+          "lines": "1-9",
+          "kind": "license",
+          "scope": "Autorstwo i GPL Aspia",
+          "sha256": "0bb4feaa79eda54a0624bd7f3a28220dc2748c236f6d16fc2d6e80b6c9b8f88c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "scripts/host-public-config.mjs",
+          "lines": "5-8,29-64",
+          "kind": "code",
+          "scope": "Public-only profile",
+          "sha256": "9816f576455600ecbd46f3e6f4d17f9004f5d484a5937f66c9a68a44057bccbc",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "patches/aspia-3.1.2-restricted-profile.patch",
+          "lines": "1-116",
+          "kind": "code",
+          "scope": "Przygotowane ograniczenia Hosta",
+          "sha256": "fffedf30c5322026724869e504ab7017dd8dbb9e9176b55be3c46cf0af797b4d",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "docs/test-report-2026-10-31.md",
+          "lines": "30-110",
+          "kind": "report",
+          "scope": "Zakres przygotowania i testów",
+          "sha256": "3396454841970f6f7849effb510160dc9b7f3e0fc4e3597e988122e333fcebe3",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "docs/vps-01-postinstall-client-2026-10-31.md",
+          "lines": "10-21,96-107",
+          "kind": "report",
+          "scope": "Historyczny stan usług i brak E2E; nie publikować prywatnej treści dokumentu",
+          "sha256": "f6d5943fb6ac807ad0f11742154be7ad8aaf878efb484b0b39fc06eb319106f5",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "docs/login-02.md",
+          "lines": "10-11,46-57",
+          "kind": "report",
+          "scope": "Syntetyczne testy bez potwierdzenia logowania",
+          "sha256": "ffc1e7a92013c20ddb2db9853855c74d0201b0f4fd7d9887a649759db0402e6c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Remote",
+          "path": "build/restricted-final-2026-10-31/source-provenance.json",
+          "lines": "1-7",
+          "kind": "artifact-metadata",
+          "scope": "hostBuilt:false/windowsTests:NOT RUN",
+          "sha256": "aba53ca589e3dd317b6c4934f11bcd4603263f8c2192287f926283e2fce3031e",
+          "readAt": "2026-11-02"
+        }
+      ],
+      "git": {
+        "status": "BLOCKED",
+        "head": null,
+        "dirty": null,
+        "detail": "W dostarczonym widoku .git jest pusty; git rev-parse/status zwraca not a git repository. Nie inicjalizowano repozytorium ani nie wnioskowano czystości. Read-only escalation Git została odrzucona przez automatic approval review; nie obchodzono odmowy.",
+        "repository": "ProgressKit Remote"
+      },
+      "publicPresentation": "Można publikować ogólne techniczne case study integracji i jej otwartych bramek z przypisaniem Aspia. Nie publikować adresów, portów, identyfikatorów, kluczy ani instrukcji dostępu."
+    }
+  ],
+  "additionalDiscovery": [
+    {
+      "id": "progresskit-vault-key",
+      "name": "ProgressKit Vault Key",
+      "classification": "internal_tool",
+      "summary": "Demonstrator challenge-response między klientem Linux a aplikacją Android. Kod łączy BiometricPrompt, AndroidKeyStore i lokalną weryfikację podpisu; transport ADB jest wyłącznie developerski.",
+      "problem": "Sprawdzenie możliwości zatwierdzania kryptograficznego wyzwania na telefonie przed projektowaniem właściwego procesu zaufanego parowania.",
+      "audiences": [
+        "Wewnętrzne eksperymenty ProgressKit z uwierzytelnianiem urządzeń"
+      ],
+      "solution": "Klient Python generuje losowe wyzwanie, przekazuje je przez ADB, a aplikacja Android prosi o silną biometrię i podpisuje je kluczem EC z AndroidKeyStore. OpenSSL weryfikuje wynik; nie jest to gotowy magazyn ani system odblokowywania dokumentów.",
+      "features": [
+        {
+          "text": "Kod generowania EC P-256 w AndroidKeyStore z wymogiem silnej biometrii przy podpisie i unieważnianiem po zmianie zestawu biometrii.",
+          "evidence": [
+            "app/src/main/java/pl/progresskit/vaultkey/KeystoreSigner.kt:17-95"
+          ]
+        },
+        {
+          "text": "Systemowy BiometricPrompt z CryptoObject; ścieżka przyjęcia wyzwania jest blokowana poza buildem DEBUG.",
+          "evidence": [
+            "app/src/main/java/pl/progresskit/vaultkey/MainActivity.kt:34-44,67-141"
+          ]
+        },
+        {
+          "text": "Klient Python generuje challenge256-bit, pobiera publiczny wynik przez developerskie ADB/run-as i weryfikuje SHA256withECDSA za pomocą OpenSSL.",
+          "evidence": [
+            "linux-client/vault_key_client.py:37-101,148-169"
+          ]
+        },
+        {
+          "text": "Przygotowane negatywne próby innego/zmienionego wyzwania i zmienionego podpisu oraz scenariusz anulowania; brak odnalezionego raportu ich fizycznego wykonania.",
+          "evidence": [
+            "linux-client/vault_key_client.py:171-220"
+          ]
+        }
+      ],
+      "architecture": "Android Kotlin / AndroidKeyStore / androidx.biometric oraz Linux Python / OpenSSL. ADB i run-as służą demonstracji w debug APK. Brak zaufanej rejestracji/przypięcia klucza telefonu, transportu Bluetooth i kompletnego Vault.",
+      "modules": [
+        "Android KeystoreSigner",
+        "BiometricPrompt Activity",
+        "DebugResultStore",
+        "Linux challenge-response client"
+      ],
+      "technologies": [
+        "Kotlin",
+        "Android SDK36 / minSDK30",
+        "AndroidKeyStore",
+        "androidx.biometric1.1.0",
+        "EC P-256 / SHA256withECDSA",
+        "Python",
+        "OpenSSL",
+        "ADB — DEBUG ONLY"
+      ],
+      "platforms": [
+        {
+          "name": "Android",
+          "implementation": "Kod demonstratora i istniejący lokalny debugAPK0.1.0.",
+          "verification": "Sam artefakt potwierdzono w inwentarzu; brak odnalezionego raportu fizycznej biometrii/hardware-backed key.",
+          "distribution": "DebugAPK, brak publicznego wydania.",
+          "limits": [
+            "Nie przypisywać gwarancji hardware-backed bez dowodu konkretnego urządzenia."
+          ]
+        },
+        {
+          "name": "Linux",
+          "implementation": "Klient Python z ADB/OpenSSL i scenariuszami negatywnymi.",
+          "verification": "NOT RUN w tym audycie.",
+          "distribution": "Źródło narzędzia developerskiego.",
+          "limits": [
+            "Brak zaufanego parowania, ADB nie jest transportem docelowym."
+          ]
+        }
+      ],
+      "functionalStatus": "Zaimplementowany demonstrator techniczny z lokalnym debugAPK; brak potwierdzonego odbioru fizycznego w dostępnych raportach.",
+      "distributionStatus": "Wyłącznie developerskie źródła i debugAPK.",
+      "productionStatus": "Nie jest produkcyjnym Vault ani kompletnym uwierzytelnianiem urządzeń.",
+      "results": [
+        "Odnaleziono niezależny katalog kodu Android i klienta Linux oraz app/build/outputs/apk/debug/app-debug.apk(5 472 607B). Jest to dodatkowe przedsięwzięcie R&D, a nie kolejna wersja Notes/Mail/Remote."
+      ],
+      "remaining": [
+        "Odbiór biometrii i rzeczywistej weryfikacji podpisu na kontrolowanym telefonie.",
+        "Zaufane parowanie i przypięcie klucza publicznego.",
+        "Usunięcie developerskiego transportu i ocena protokołu przed użyciem produkcyjnym.",
+        "Szyfrowanie danych i właściwy Vault, Bluetooth oraz montowanie nie są obecnie implementacją tego milestone."
+      ],
+      "tests": [
+        {
+          "name": "Fizyczny challenge-response i anulowanie",
+          "date": "2026-11-02",
+          "status": "NOT RUN",
+          "scope": "Brak odnalezionego raportu wykonania; odczyt kodu i istniejącego debugAPK.",
+          "source": "README.md:31-43",
+          "historical": false,
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Linux, kontrola lokalna",
+          "limits": "Nie uruchamiano ADB ani nie ingerowano w urządzenie."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repository": "ProgressKit Vault Key",
+          "path": "README.md",
+          "lines": "3-22,31-43",
+          "kind": "report",
+          "scope": "Zakres milestone i ograniczenia",
+          "sha256": "feb23bdf67f1754ae7934b0b1af3940a2ac64e0d0260fd3441e06ce47ae460d9",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Vault Key",
+          "path": "app/src/main/java/pl/progresskit/vaultkey/KeystoreSigner.kt",
+          "lines": "17-95",
+          "kind": "code",
+          "scope": "Kod klucza i podpisu",
+          "sha256": "5a7f4149d0bd11f94ef75c7f19db24bc8a53764ab47aab188a28d270fefd04bf",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Vault Key",
+          "path": "app/src/main/java/pl/progresskit/vaultkey/MainActivity.kt",
+          "lines": "34-44,67-141",
+          "kind": "code",
+          "scope": "Debug gating i prompt biometryczny",
+          "sha256": "1cb6287f0bdff7b000614f1d8ce1e6018bbf1f03420623f69015de830f578607",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Vault Key",
+          "path": "linux-client/vault_key_client.py",
+          "lines": "37-101,148-220",
+          "kind": "code",
+          "scope": "Klient i przygotowane scenariusze",
+          "sha256": "d7f808f8d0279d37382c478f1a5d91e0bdb85cf8cd01951ce783bfa2a1cb1bdb",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "ProgressKit Vault Key",
+          "path": "app/build.gradle.kts",
+          "lines": "6-15,42-44",
+          "kind": "code",
+          "scope": "Platforma i zależność",
+          "sha256": "828092dfed461dbf65fd85fef2a4c700cd3a3e8f170e8f4c3ec0c56ebae9b2c0",
+          "readAt": "2026-11-02"
+        }
+      ],
+      "git": {
+        "status": "NOT FOUND",
+        "head": null,
+        "dirty": null,
+        "detail": "Brak .git w katalogu produktu; nie inicjalizowano repozytorium."
+      },
+      "publicPresentation": "Można opisać jako demonstrator R&D z jasnym DEBUG ONLY. Bez twierdzeń o gotowym Vault, produkcyjnym bezpieczeństwie i fizycznym odbiorze."
+    }
+  ],
+  "accounting": [
+    {
+      "candidate": "ProgressKit Notes",
+      "decision": "add_product",
+      "reason": "Samodzielny kod aplikacji desktopowej, model danych, historia i pakowanie; ograniczenia Windows/AI jawne."
+    },
+    {
+      "candidate": "ProgressKit OffGrid",
+      "decision": "account_as_concept",
+      "reason": "Brak odnalezionego checkoutu/artefaktu; wyłącznie założenia z briefu właściciela."
+    },
+    {
+      "candidate": "Reel Agent",
+      "decision": "add_internal_tool",
+      "reason": "Samodzielny lokalny pipeline z rzeczywistym E2E; nie publiczny komercyjny generator."
+    },
+    {
+      "candidate": "ProgressKit Remote",
+      "decision": "add_infrastructure_case",
+      "reason": "Integracja upstream Aspia i przygotowanie ograniczeń Hosta; nie autorski silnik ani odebrany zdalny pulpit."
+    },
+    {
+      "candidate": "ProgressKit Vault Key",
+      "decision": "additional_internal_research_candidate",
+      "reason": "Niezależny kod Android+Linux i debugAPK; tylko demonstrator challenge-response, bez fizycznego raportu."
+    },
+    {
+      "candidate": "P.A. Barczewska",
+      "decision": "still_unresolved",
+      "reason": "Brak trafień ograniczonego przeglądu nazw; istniejący dokument Systems PROGRESSKIT_V5_EVIDENCE_OTHER.md:11 pozostawia lukę źródeł. Nie dodawać wymyślonego produktu."
+    }
+  ],
+  "deduplication": [
+    {
+      "names": [
+        "PROGRESSKIT REEL AGENT",
+        "ProgressKit Reel Agent"
+      ],
+      "decision": "one_checkout",
+      "evidence": "Path.resolve obu nazw wskazuje ten sam katalog PROGRESSKIT REEL AGENT; nie dwa narzędzia."
+    },
+    {
+      "names": [
+        "ProgressKit Remote",
+        "progresskit remote"
+      ],
+      "decision": "two_distinct_checkouts_one_initiative",
+      "evidence": "Path.resolve wskazuje dwa różne katalogi. Lowercase zawiera historyczny trial26.10; uppercase nowsze raporty30/31.10,restricted patch12plików i diagnostykę. Nie łączyć stanu usług ani testów bez daty; jeden wpis portfolio."
+    }
+  ],
+  "newChecks": {
+    "passed": 2,
+    "failed": 0,
+    "blocked": 1,
+    "notRun": "Buildy i runtime projektów nie były wykonywane w read-only audycie.",
+    "details": [
+      "PASS SHA-256 istniejącego lokalnego Reel MP4 względem raportu01.11.",
+      "PASS ffprobe z odczytem klatek istniejącego Reel MP4.",
+      "BLOCKED Git HEAD/dirty czterech checkoutów: puste .git; escalation read-only odrzucona; nie obchodzono odmowy."
+    ]
+  },
+  "constraints": "Bez zmian w repozytoriach rodzeństwa, nowych buildów, kont, usług, urządzeń, produkcji, publikacji mediów, commitu i pushu. Nie uruchamiano inferencji ani nowego filmu. Zero ujawnionych adresów/portów/identyfikatorów/poświadczeń prywatnej infrastruktury.",
+  "memoryUsed": [
+    {
+      "path": "MEMORY.md",
+      "lines": "125-166",
+      "scope": "Wskazanie na późniejszą sesję Notes; zweryfikowano raw Rebuild i istniejące artefakty."
+    },
+    {
+      "path": "rollout_summaries/2026-10-30T17-59-53-XyT0-progresskit_notes_sprint03_and_thinkpad_keyboard_diagnostics.md",
+      "lines": "19-49",
+      "rolloutId": "01a18df7-dcc1-7d30-9938-fbcf5b8fe972",
+      "scope": "Odnalezienie historycznych poprawek/testów i granic Windows; później odczytano raw session1718."
+    }
+  ]
+}

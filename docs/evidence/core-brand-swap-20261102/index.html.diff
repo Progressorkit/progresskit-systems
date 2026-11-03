@@ -1,0 +1,18 @@
+--- before/index.html
++++ after/index.html
+@@ -45,6 +45,7 @@
+   <link rel="stylesheet" href="assets/continuity-chapters.css">
+   <link rel="stylesheet" href="assets/technology-field.css">
+   <link rel="stylesheet" href="assets/material-finish.css">
++  <link rel="stylesheet" href="assets/brand-core-mark.css">
+   <script src="assets/site-v5.js" defer></script>
+   <script src="assets/hero-space.js" defer></script>
+   <script src="assets/project-hologram.js" defer></script>
+@@ -56,6 +57,7 @@
+   <script type="module" src="assets/luxury-world.mjs"></script>
+   <script type="module" src="assets/continuity-chapters.mjs"></script>
+   <script type="module" src="assets/technology-field.mjs"></script>
++  <script type="module" src="assets/brand-core-mark.mjs"></script>
+ </head>
+ <body class="luxury-world">
+   <a class="skip-link" href="#main">Przejdź do treści</a>

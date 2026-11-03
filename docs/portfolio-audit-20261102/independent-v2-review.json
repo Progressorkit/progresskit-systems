@@ -1,0 +1,71 @@
+{
+  "timestampUTC": "2026-11-02T11:12:08.250425+00:00",
+  "mode": "READ_ONLY_PRODUCTION_SOURCE_REVIEW",
+  "browserLaunched": false,
+  "productionSourceEdits": false,
+  "typeBoundaryProbe": {
+    "mutations": 160,
+    "uncaughtExceptions": 0,
+    "scope": "Only new portfolio fields and verification primitive/container boundary values. Valid alternatives may be accepted; not a full security gate."
+  },
+  "findingsDocument": "independent-v2-review.md",
+  "snapshot": [
+    {
+      "path": "catalog/projects.json",
+      "sha256": "8150ee0bf5d84fc72a86d110bfa28f2b0bebf48db7c11cd5120880ffd5284d9f"
+    },
+    {
+      "path": "scripts/build-site.py",
+      "sha256": "418bf965a16441e51dd056baf14bf63ae8c9d24757d24db49ab5c19cc399cd8e"
+    },
+    {
+      "path": "assets/site-v5.js",
+      "sha256": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3"
+    },
+    {
+      "path": "tests/test_catalog_validation.py",
+      "sha256": "a3930d0b54eb867a1bff179028d326a093dbf6fccc97499efb60a1737577d133"
+    },
+    {
+      "path": "tests/catalog-filters.test.cjs",
+      "sha256": "4097948b2252e9ef08c7904b0143f72bc9ce776d5638edf64b29bbaa34259314"
+    },
+    {
+      "path": "scripts/stage-public.py",
+      "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+    }
+  ],
+  "resolution": {
+    "timestampUTC": "2026-11-02T11:31:18.902000+00:00",
+    "status": "ALL_THREE_FINDINGS_RESOLVED",
+    "method": "Read-only comparison of current catalog/generator/generated privacy. No source or UI edits by reviewer; no browser/test repetition.",
+    "checks": {
+      "P2-mail-working-tree-provenance": true,
+      "P2-tax-public-sanitization": true,
+      "P3-vaeloria-unknown-skip": true,
+      "minor-mg-dL": true,
+      "minor-sha-wording": true,
+      "operator-exact-three-field-local-copy": true,
+      "privacy-operator-rendered-and-date": true
+    },
+    "operatorBoundary": "Exact three fields match existing Lud&Pra legal source (published=false). Local owner-directed reuse confirmed; final publication/visual/formal approval remains OPEN. No address/name values duplicated in this review.",
+    "snapshot": [
+      {
+        "path": "catalog/projects.json",
+        "sha256": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f"
+      },
+      {
+        "path": "catalog/operator.json",
+        "sha256": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33"
+      },
+      {
+        "path": "scripts/build-site.py",
+        "sha256": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84"
+      },
+      {
+        "path": "prywatnosc/index.html",
+        "sha256": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8"
+      }
+    ]
+  }
+}

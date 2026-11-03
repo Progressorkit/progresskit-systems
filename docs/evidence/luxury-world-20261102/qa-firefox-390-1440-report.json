@@ -1,0 +1,2652 @@
+{
+  "startedAt": "2026-11-02T13:33:00.986Z",
+  "mode": "qa",
+  "browser": "firefox",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "firefox:390",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 24,
+            "right": 366,
+            "fontSize": 40.75
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 18,
+            "right": 372,
+            "fontSize": 36.65
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 16,
+            "right": 374,
+            "fontSize": 64
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 28,
+            "right": 312.26666259765625,
+            "fontSize": 38.2167
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 46.8
+          },
+          {
+            "text": "Pomysł",
+            "left": 187.51666259765625,
+            "right": 374,
+            "fontSize": 24
+          },
+          {
+            "text": "Projekt",
+            "left": 187.51666259765625,
+            "right": 374,
+            "fontSize": 24
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 16,
+            "right": 369,
+            "fontSize": 47
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 25,
+            "right": 339,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 51,
+            "right": 365,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 16,
+            "right": 374,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 16,
+            "right": 374,
+            "fontSize": 66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 45
+          },
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 16,
+            "right": 374,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 16,
+            "right": 374,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 52
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 39,
+            "right": 351,
+            "fontSize": 33
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": []
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 196,
+            "y": 334.8999938964844
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "touch"
+        },
+        "contact": {
+          "width": 232.48333740234375,
+          "height": 60.18333435058594,
+          "center": {
+            "x": 132.24166870117188,
+            "y": 477.34166717529297
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": true
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 137,
+            "quality": 0,
+            "fps": 30.020723983653262,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 11337.04,
+                "fps": 30.99132242971966,
+                "cpuFrameMs": 2,
+                "gpuFrameMs": null,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 12369.66,
+                "fps": 30.020723983653262,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 13,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 137,
+            "quality": 0,
+            "fps": 30.020723983653262,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 11337.04,
+                "fps": 30.99132242971966,
+                "cpuFrameMs": 2,
+                "gpuFrameMs": null,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 12369.66,
+                "fps": 30.020723983653262,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 13,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 145,
+            "quality": 0,
+            "fps": 30.020723983653262,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 22,
+            "triangles": 10532,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 11337.04,
+                "fps": 30.99132242971966,
+                "cpuFrameMs": 2,
+                "gpuFrameMs": null,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 12369.66,
+                "fps": 30.020723983653262,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "charge"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 33,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 26,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 145,
+            "quality": 0,
+            "fps": 30.020723983653262,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 22,
+            "triangles": 10532,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 11337.04,
+                "fps": 30.99132242971966,
+                "cpuFrameMs": 2,
+                "gpuFrameMs": null,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 12369.66,
+                "fps": 30.020723983653262,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "charge"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 33,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 26,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 234,
+          "height": 506
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 93,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 94,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 94,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 94,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 94,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 100,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 100,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 111,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 117,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 117,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:390",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 124,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 124,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 133,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 86.39999389648438,
+            "right": 921.6000061035156,
+            "fontSize": 92.8667
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 60,
+            "right": 840,
+            "fontSize": 72
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 126.717
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 148.8000030517578,
+            "right": 621.3000030517578,
+            "fontSize": 59
+          },
+          {
+            "text": "Dla firmy /\nsystemu",
+            "left": 795.5999755859375,
+            "right": 1268.0999755859375,
+            "fontSize": 59
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 103.667
+          },
+          {
+            "text": "Pomysł",
+            "left": 266.1499938964844,
+            "right": 365.6999969482422,
+            "fontSize": 31
+          },
+          {
+            "text": "Projekt",
+            "left": 671.7999877929688,
+            "right": 768.1666564941406,
+            "fontSize": 31
+          },
+          {
+            "text": "Budowa",
+            "left": 1067.7333984375,
+            "right": 1180.3833923339844,
+            "fontSize": 31
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 100,
+            "right": 1039,
+            "fontSize": 100
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 113.39999389648438,
+            "right": 471,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 993.7999877929688,
+            "right": 1326.5999755859375,
+            "fontSize": 16
+          },
+          {
+            "text": "Local AI Agents\nPlanowane",
+            "left": 101,
+            "right": 409,
+            "fontSize": 16
+          },
+          {
+            "text": "Voice Gateway\nPlanowane",
+            "left": 1031,
+            "right": 1339,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 100,
+            "right": 757.25,
+            "fontSize": 70
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 129,
+            "right": 485.33331298828125,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 542.3333129882812,
+            "right": 898.6666564941406,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 955.6666870117188,
+            "right": 1312,
+            "fontSize": 21
+          },
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 954.2000122070312,
+            "right": 1282.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 954.2000122070312,
+            "right": 1282.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 100,
+            "right": 1046.5,
+            "fontSize": 84
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 590.1666870117188,
+            "right": 940.0833435058594,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 990.0833129882812,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "DANE I BEZPIECZEŃSTWO",
+            "left": 590.1666870117188,
+            "right": 940.0833435058594,
+            "fontSize": 14
+          },
+          {
+            "text": "INFRASTRUKTURA I WDROŻENIA",
+            "left": 990.0833129882812,
+            "right": 1340,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 100,
+            "right": 503.76666259765625,
+            "fontSize": 100
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 590.1666870117188,
+            "right": 940.0833435058594,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 990.0833129882812,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "DANE I BEZPIECZEŃSTWO",
+            "left": 590.1666870117188,
+            "right": 940.0833435058594,
+            "fontSize": 14
+          },
+          {
+            "text": "INFRASTRUKTURA I WDROŻENIA",
+            "left": 990.0833129882812,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "JĘZYKI I NARZĘDZIA",
+            "left": 590.1666870117188,
+            "right": 940.0833435058594,
+            "fontSize": 14
+          },
+          {
+            "text": "INNE",
+            "left": 990.0833129882812,
+            "right": 1340,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 100,
+            "right": 831.11669921875,
+            "fontSize": 118
+          },
+          {
+            "text": "Opisz swój projekt",
+            "left": 181.39999389648438,
+            "right": 504,
+            "fontSize": 47
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 181.39999389648438,
+            "right": 504,
+            "fontSize": 47
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": []
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Desktop GPU iteration sample without recording",
+      "status": "PASS",
+      "details": {
+        "gpu": {
+          "renderer": "Intel(R) HD Graphics 400, or similar",
+          "vendor": "Intel"
+        },
+        "frames": 20,
+        "elapsedSeconds": 2.237,
+        "observedFPS": 8.940545373267769,
+        "before": {
+          "time": 13475,
+          "revision": "187",
+          "frames": 48,
+          "quality": 0,
+          "fps": 9.090578524417301,
+          "cpuFrameMs": 7,
+          "gpuFrameMs": null,
+          "gpuTiming": "unavailable",
+          "drawCalls": 53,
+          "triangles": 18232,
+          "geometries": 90,
+          "textures": 28,
+          "rafPending": true,
+          "renderer": "Intel(R) HD Graphics 400, or similar",
+          "vendor": "Intel",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "samples": [
+            {
+              "t": 11023.04,
+              "fps": 9.849922991511155,
+              "cpuFrameMs": 4,
+              "gpuFrameMs": null,
+              "drawCalls": 33,
+              "triangles": 17256,
+              "dpr": 0.85
+            },
+            {
+              "t": 12123.08,
+              "fps": 9.090578524417301,
+              "cpuFrameMs": 3,
+              "gpuFrameMs": null,
+              "drawCalls": 45,
+              "triangles": 18216,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true
+        },
+        "after": {
+          "time": 15712,
+          "revision": "187",
+          "frames": 68,
+          "quality": 0,
+          "fps": 9.682604233234581,
+          "cpuFrameMs": 3,
+          "gpuFrameMs": null,
+          "gpuTiming": "unavailable",
+          "drawCalls": 53,
+          "triangles": 18232,
+          "geometries": 90,
+          "textures": 28,
+          "rafPending": true,
+          "renderer": "Intel(R) HD Graphics 400, or similar",
+          "vendor": "Intel",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "samples": [
+            {
+              "t": 11023.04,
+              "fps": 9.849922991511155,
+              "cpuFrameMs": 4,
+              "gpuFrameMs": null,
+              "drawCalls": 33,
+              "triangles": 17256,
+              "dpr": 0.85
+            },
+            {
+              "t": 12123.08,
+              "fps": 9.090578524417301,
+              "cpuFrameMs": 3,
+              "gpuFrameMs": null,
+              "drawCalls": 45,
+              "triangles": 18216,
+              "dpr": 0.85
+            },
+            {
+              "t": 13973.02,
+              "fps": 9.850628649210156,
+              "cpuFrameMs": 5,
+              "gpuFrameMs": null,
+              "drawCalls": 53,
+              "triangles": 18232,
+              "dpr": 0.85
+            },
+            {
+              "t": 15005.8,
+              "fps": 9.682604233234581,
+              "cpuFrameMs": 7,
+              "gpuFrameMs": null,
+              "drawCalls": 53,
+              "triangles": 18232,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true
+        },
+        "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 721.5,
+            "y": 533.4500122070312
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "mouse"
+        },
+        "contact": {
+          "width": 419.4666748046875,
+          "height": 85.25,
+          "center": {
+            "x": 309.73333740234375,
+            "y": 659.3916625976562
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": false
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 86,
+            "quality": 1,
+            "fps": 8.571428571428571,
+            "cpuFrameMs": 3,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 56,
+            "triangles": 18608,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 54,
+            "coronaRoots": 48,
+            "dpr": 0.72,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 720,
+              "height": 648
+            },
+            "samples": [
+              {
+                "t": 11023.04,
+                "fps": 9.849922991511155,
+                "cpuFrameMs": 4,
+                "gpuFrameMs": null,
+                "drawCalls": 33,
+                "triangles": 17256,
+                "dpr": 0.85
+              },
+              {
+                "t": 12123.08,
+                "fps": 9.090578524417301,
+                "cpuFrameMs": 3,
+                "gpuFrameMs": null,
+                "drawCalls": 45,
+                "triangles": 18216,
+                "dpr": 0.85
+              },
+              {
+                "t": 13973.02,
+                "fps": 9.850628649210156,
+                "cpuFrameMs": 5,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15005.8,
+                "fps": 9.682604233234581,
+                "cpuFrameMs": 7,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 16055.8,
+                "fps": 8.571428571428571,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 7,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 4,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 86,
+            "quality": 1,
+            "fps": 8.571428571428571,
+            "cpuFrameMs": 3,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 56,
+            "triangles": 18608,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 54,
+            "coronaRoots": 48,
+            "dpr": 0.72,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 720,
+              "height": 648
+            },
+            "samples": [
+              {
+                "t": 11023.04,
+                "fps": 9.849922991511155,
+                "cpuFrameMs": 4,
+                "gpuFrameMs": null,
+                "drawCalls": 33,
+                "triangles": 17256,
+                "dpr": 0.85
+              },
+              {
+                "t": 12123.08,
+                "fps": 9.090578524417301,
+                "cpuFrameMs": 3,
+                "gpuFrameMs": null,
+                "drawCalls": 45,
+                "triangles": 18216,
+                "dpr": 0.85
+              },
+              {
+                "t": 13973.02,
+                "fps": 9.850628649210156,
+                "cpuFrameMs": 5,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15005.8,
+                "fps": 9.682604233234581,
+                "cpuFrameMs": 7,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 16055.8,
+                "fps": 8.571428571428571,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 7,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 4,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 94,
+            "quality": 1,
+            "fps": 8.571428571428571,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 32,
+            "triangles": 17168,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 54,
+            "coronaRoots": 48,
+            "dpr": 0.72,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 720,
+              "height": 648
+            },
+            "samples": [
+              {
+                "t": 11023.04,
+                "fps": 9.849922991511155,
+                "cpuFrameMs": 4,
+                "gpuFrameMs": null,
+                "drawCalls": 33,
+                "triangles": 17256,
+                "dpr": 0.85
+              },
+              {
+                "t": 12123.08,
+                "fps": 9.090578524417301,
+                "cpuFrameMs": 3,
+                "gpuFrameMs": null,
+                "drawCalls": 45,
+                "triangles": 18216,
+                "dpr": 0.85
+              },
+              {
+                "t": 13973.02,
+                "fps": 9.850628649210156,
+                "cpuFrameMs": 5,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15005.8,
+                "fps": 9.682604233234581,
+                "cpuFrameMs": 7,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 16055.8,
+                "fps": 8.571428571428571,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "highlight"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "highlight"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "charge"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "charge"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "charge"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "charge"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 13,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 94,
+            "quality": 1,
+            "fps": 8.571428571428571,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": null,
+            "gpuTiming": "unavailable",
+            "drawCalls": 32,
+            "triangles": 17168,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "Intel(R) HD Graphics 400, or similar",
+            "vendor": "Intel",
+            "filaments": 54,
+            "coronaRoots": 48,
+            "dpr": 0.72,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 720,
+              "height": 648
+            },
+            "samples": [
+              {
+                "t": 11023.04,
+                "fps": 9.849922991511155,
+                "cpuFrameMs": 4,
+                "gpuFrameMs": null,
+                "drawCalls": 33,
+                "triangles": 17256,
+                "dpr": 0.85
+              },
+              {
+                "t": 12123.08,
+                "fps": 9.090578524417301,
+                "cpuFrameMs": 3,
+                "gpuFrameMs": null,
+                "drawCalls": 45,
+                "triangles": 18216,
+                "dpr": 0.85
+              },
+              {
+                "t": 13973.02,
+                "fps": 9.850628649210156,
+                "cpuFrameMs": 5,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15005.8,
+                "fps": 9.682604233234581,
+                "cpuFrameMs": 7,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 16055.8,
+                "fps": 8.571428571428571,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": null,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "highlight"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "highlight"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "charge"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "charge"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "charge"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "charge"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 13,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "buffer": {
+          "width": 600,
+          "height": 417
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 54,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 56,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 56,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 56,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 56,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 61,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 61,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 68,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 72,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 72,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "firefox:1440",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 77,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 77,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 81,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "fallback",
+      "name": "No-WebGL content and project disclosure remain usable",
+      "status": "PASS",
+      "details": {
+        "renderer": "forced-no-webgl",
+        "atmosphere": {
+          "hidden": true,
+          "display": "none",
+          "renderer": "fallback"
+        },
+        "content": "usable",
+        "physicalDevice": "NOT_RUN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 14
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "fallback-390-services.png",
+      "sha256": "e1e92be0ab914d2c87c21b6a27f3bea2f45faa525b8da88e71179fc426f52224",
+      "kind": "actual-browser-screenshot"
+    }
+  ],
+  "performance": [
+    {
+      "gpu": {
+        "renderer": "Intel(R) HD Graphics 400, or similar",
+        "vendor": "Intel"
+      },
+      "frames": 20,
+      "elapsedSeconds": 2.237,
+      "observedFPS": 8.940545373267769,
+      "before": {
+        "time": 13475,
+        "revision": "187",
+        "frames": 48,
+        "quality": 0,
+        "fps": 9.090578524417301,
+        "cpuFrameMs": 7,
+        "gpuFrameMs": null,
+        "gpuTiming": "unavailable",
+        "drawCalls": 53,
+        "triangles": 18232,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": true,
+        "renderer": "Intel(R) HD Graphics 400, or similar",
+        "vendor": "Intel",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 11023.04,
+            "fps": 9.849922991511155,
+            "cpuFrameMs": 4,
+            "gpuFrameMs": null,
+            "drawCalls": 33,
+            "triangles": 17256,
+            "dpr": 0.85
+          },
+          {
+            "t": 12123.08,
+            "fps": 9.090578524417301,
+            "cpuFrameMs": 3,
+            "gpuFrameMs": null,
+            "drawCalls": 45,
+            "triangles": 18216,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      },
+      "after": {
+        "time": 15712,
+        "revision": "187",
+        "frames": 68,
+        "quality": 0,
+        "fps": 9.682604233234581,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": null,
+        "gpuTiming": "unavailable",
+        "drawCalls": 53,
+        "triangles": 18232,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": true,
+        "renderer": "Intel(R) HD Graphics 400, or similar",
+        "vendor": "Intel",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 11023.04,
+            "fps": 9.849922991511155,
+            "cpuFrameMs": 4,
+            "gpuFrameMs": null,
+            "drawCalls": 33,
+            "triangles": 17256,
+            "dpr": 0.85
+          },
+          {
+            "t": 12123.08,
+            "fps": 9.090578524417301,
+            "cpuFrameMs": 3,
+            "gpuFrameMs": null,
+            "drawCalls": 45,
+            "triangles": 18216,
+            "dpr": 0.85
+          },
+          {
+            "t": 13973.02,
+            "fps": 9.850628649210156,
+            "cpuFrameMs": 5,
+            "gpuFrameMs": null,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          },
+          {
+            "t": 15005.8,
+            "fps": 9.682604233234581,
+            "cpuFrameMs": 7,
+            "gpuFrameMs": null,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      },
+      "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "PASS": 48,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "browserVersion": "153.0",
+  "sourceAfter": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "finishedAt": "2026-11-02T13:34:16.144Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN"
+}

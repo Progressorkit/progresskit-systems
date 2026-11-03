@@ -1,0 +1,472 @@
+{
+  "startedAt": "2026-11-02T13:35:16.523Z",
+  "mode": "capture",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome",
+      "name": "Desktop actual proof capture",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome",
+      "name": "Mobile emulation actual proof capture",
+      "status": "PASS"
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 14
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "desktop-hero.png",
+      "sha256": "64c0218b31e58902fdeace6cb1d04fa2ebbe48bb4e6efeb34a5c7fff2ec92d0e",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-showroom-idle.png",
+      "sha256": "6c7bb3afae2222a15d52018c9fe634b3a5e3231151bd6bce8f58207480bb9469",
+      "kind": "actual-browser-screenshot",
+      "correctedFraming": "Actual viewport before any activation",
+      "state": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 625,
+          "y": 329.4375,
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 720,
+            "y": 529.4375
+          }
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "file": "desktop-services.png",
+      "sha256": "373518369c35f56b589edecec989da75c58799bc9620f886f92126459f03f51d",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-process.png",
+      "sha256": "448d3be284244e5af2267a1f3200e318eb57b84bf98db7dc005a32a2d3cfe226",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-ecosystem.png",
+      "sha256": "48c8e8704fd0b87dbce44c6fc000f1885cf7a0c7895ce460b63487a8181a6a51",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-releases.png",
+      "sha256": "010de6a0c2ce46df8480c40df5603eac18333608d17ca645fb0c9dcdd8e26f24",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-about.png",
+      "sha256": "e9af41cd76f4a90c541f5fd971e44afc460b4bc6c4c75a76f5970bcee48e70bc",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-challenges.png",
+      "sha256": "d5e3f086e2c3e1638200ef1efe993ff300c756474d90dee2383b3aaa77888dcf",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-technology.png",
+      "sha256": "d9c2e49bdf3bb3c1e8bfe3e186da6cec99fc4843ce5cdc44b866c26fcb39c7db",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-contact.png",
+      "sha256": "12bef3b4ede61b45a4a73df7796462831616610f0f224b6126d40830bd0dfadf",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-brief.png",
+      "sha256": "c6fec3adecab53cc12ab74a015aa10d702026de4a473cb348abf569b25a20ae6",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-footer.png",
+      "sha256": "213af0463e13946733083aa45843001e88e974f7c497d7ab9e2991298668eb17",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-showroom-active.png",
+      "sha256": "25d48c7ad4f91c8329f9688cdd30c7ae0f7c417d79f7ab307c5bcfa7797bee99",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-showroom-project-hover.png",
+      "sha256": "fa1596fb2ebe373687606b2a3e1e75044a985f6543a7b826a5f05145b0a0c1dd",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-full-page.png",
+      "sha256": "0675830cad6c6f9a3459e4ced50cceafee687a27942f28a7e2152ac5a2116796",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "desktop-full-scroll.mp4",
+      "kind": "actual-playwright-screen-recording",
+      "sha256": "372b5dc5e20a0c02e39209f7fc5c4048abd9cf61e46d3b9c364fc65867ee63bf",
+      "width": 1440,
+      "height": 1000,
+      "durationSeconds": 21.76,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 21.799,
+      "rawDurationSeconds": 61.84,
+      "trimStartSeconds": 40.041000000000004,
+      "recording": [
+        {
+          "name": "hero-idle",
+          "elapsedSeconds": 0,
+          "scroll": 0
+        },
+        {
+          "name": "showroom-idle",
+          "elapsedSeconds": 3.617,
+          "scroll": 1517
+        },
+        {
+          "name": "core-ready",
+          "elapsedSeconds": 6.931,
+          "scroll": 1517
+        },
+        {
+          "name": "services",
+          "elapsedSeconds": 9.434,
+          "scroll": 2690
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 11.576,
+          "scroll": 4047
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 13.526,
+          "scroll": 5490
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 16.247,
+          "scroll": 7614
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 18.336,
+          "scroll": 11406
+        },
+        {
+          "name": "footer",
+          "elapsedSeconds": 20.996,
+          "scroll": 12809
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 21.799,
+          "scroll": 12809
+        }
+      ],
+      "sourceFootage": "raw-video-desktop/page@8990f1bf550045199bbd2d4340a3d7c6.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "requestedDurationSeconds": 21.799,
+      "frames": 544,
+      "fps": 25,
+      "fullyDecoded": "PASS",
+      "firstLastFrameInspection": "PASS",
+      "footerPresent": "PASS"
+    },
+    {
+      "file": "mobile-hero.png",
+      "sha256": "987c63011e41dcf80e4eb241b772724fc8ae321db83da872e9ce92395712e90e",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-showroom-idle.png",
+      "sha256": "7295e4066fc5c0f5b059f86eab829a2186f43dfad8220d498a6450b06abd2f0f",
+      "kind": "actual-browser-screenshot",
+      "correctedFraming": "Actual viewport before any activation",
+      "state": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 120,
+          "y": 185.875,
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 195,
+            "y": 335.875
+          }
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "file": "mobile-services.png",
+      "sha256": "4b8ddb6b73fe3a959d28cbf2b82ccd9f79a4e97e5fcb2445e1626ce69ca74d9b",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-process.png",
+      "sha256": "7902e3e00b75d2a2217efb94e1b0d94dd2dbf3664d6368e0f7628b7489bffac5",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-ecosystem.png",
+      "sha256": "20339c037e1f3abf8465e389e4219bef2d78f768eed14a0d4678b7dd5764d6ba",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-releases.png",
+      "sha256": "803aa886a0b511b607a66f8faf637de62fa926768230c7bc071d660e1dd41115",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-about.png",
+      "sha256": "b7b9c1c1e721dcdc4415489446acacb28f3eb1df22208550844818c103dcd6ce",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-challenges.png",
+      "sha256": "864411796bb20f8197d9f5f8b21f7a9fc7487c7f76f0d3bbb0d3b1ab615cf186",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-technology.png",
+      "sha256": "789554810167e49468896151915da0addc6e2c77616580f17e8087de8c4d8630",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-contact.png",
+      "sha256": "b2050f417338d65a555dad407eb4135aed3cef87fd294a41e028726b8e863931",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-brief.png",
+      "sha256": "711b680e905fe539b0ba87ed0e046d2c6a4bb93464f0e007f932eaac8ae7a0d6",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-footer.png",
+      "sha256": "3aca30c51b199e7421ef33e931141a56c749dc3f6eaa0588ef173fce631c5132",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-showroom-active.png",
+      "sha256": "ceb7cf07d5e8f803eef970f72f5e0b605a98988d6624f1dc6c40b5ae9dd4843b",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-showroom-project-hover.png",
+      "sha256": "cc35e5251afd00723e8a8f86e9d46e72038de9a5e5aacb562f19b74c6ee44c53",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-full-page.png",
+      "sha256": "db63a5a9e340a79f39925250c61bb3fd577ee8a987c6d3c89dae91c280e459b1",
+      "kind": "actual-browser-screenshot"
+    },
+    {
+      "file": "mobile-full-scroll.mp4",
+      "kind": "actual-playwright-screen-recording",
+      "sha256": "5c72d12df13ea34812610c07c853842149cad588324315ca89e629a2cd50ba92",
+      "width": 390,
+      "height": 844,
+      "durationSeconds": 20.32,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 20.346,
+      "rawDurationSeconds": 41.32,
+      "trimStartSeconds": 20.974,
+      "recording": [
+        {
+          "name": "hero-idle",
+          "elapsedSeconds": 0,
+          "scroll": 0
+        },
+        {
+          "name": "showroom-idle",
+          "elapsedSeconds": 3.49,
+          "scroll": 1485
+        },
+        {
+          "name": "core-ready",
+          "elapsedSeconds": 6.329,
+          "scroll": 1485
+        },
+        {
+          "name": "services",
+          "elapsedSeconds": 8.061,
+          "scroll": 2540
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 10.198,
+          "scroll": 4093
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 12.129,
+          "scroll": 5806
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 14.847,
+          "scroll": 8369
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 16.927,
+          "scroll": 13200
+        },
+        {
+          "name": "footer",
+          "elapsedSeconds": 19.544,
+          "scroll": 15353
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 20.346,
+          "scroll": 15353
+        }
+      ],
+      "sourceFootage": "raw-video-mobile/page@cebaa0dd30d8dce45b63e2ea886729ca.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "requestedDurationSeconds": 20.346,
+      "frames": 508,
+      "fps": 25,
+      "fullyDecoded": "PASS",
+      "firstLastFrameInspection": "PASS",
+      "footerPresent": "PASS"
+    },
+    {
+      "file": "desktop-showroom-heading.png",
+      "sha256": "617409ad4eca334d6220994984272b0aeb6d6cb28ac27ae2dc0297e3cfc09d47",
+      "kind": "actual-browser-screenshot",
+      "note": "Original section-heading framing retained"
+    },
+    {
+      "file": "mobile-showroom-heading.png",
+      "sha256": "82374b73fdb3591e3841a53bff2fca7922a879bb507bc7da9e19bfc4f7d64d30",
+      "kind": "actual-browser-screenshot",
+      "note": "Original section-heading framing retained"
+    },
+    {
+      "file": "mobile-project-tap.png",
+      "sha256": "c0b9bc19dbfd6bbffd7863a03b58550337a6454023f9e1fe98078d20d379d54d",
+      "kind": "actual-browser-screenshot",
+      "input": "actual touchscreen.tap in mobile emulation",
+      "projectId": "glikemia-premium"
+    }
+  ],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "PASS": 4,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "finishedAt": "2026-11-02T13:37:17.220Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN",
+  "proofFramingCorrection": {
+    "report": "idle-proof-correction.json",
+    "at": "2026-11-02T13:39:40.420Z",
+    "note": "Original idle artifacts were section-heading views; preserved under showroom-heading and replaced by genuine centered idle core."
+  }
+}

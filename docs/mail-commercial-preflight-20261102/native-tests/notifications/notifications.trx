@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bd8db4e0-c4d7-4648-939c-ca82bb29fc8b" name="@pawe-ThinkPad-T480s 2026-11-02 11:55:41" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-02T11:55:42.0076061+01:00" queuing="2026-11-02T11:55:42.0076062+01:00" start="2026-11-02T11:55:37.7536563+01:00" finish="2026-11-02T11:55:46.0965627+01:00" />
+  <TestSettings name="default" id="c41c6ecf-05ec-4383-b397-9a4809e12fd0">
+    <Deployment runDeploymentRoot="_pawe-ThinkPad-T480s_2026-11-02_11_55_41" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4d9ff947-33f0-4181-812c-faeffbf51907" testId="5b8676ea-15f0-57db-1d8d-de133ab33aa4" testName="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.ServiceRejectionAndMissingServiceDoNotPreventMailboxUse" computerName="pawe-ThinkPad-T480s" duration="00:00:00.6308897" startTime="2026-11-02T11:55:39.6714610+01:00" endTime="2026-11-02T11:55:40.3308340+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d9ff947-33f0-4181-812c-faeffbf51907" />
+    <UnitTestResult executionId="2cd6c555-2a97-4c33-9111-47dcb70f594b" testId="4dfee161-ae4b-df4b-bb40-10dbd36fdd68" testName="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.UnresponsiveServiceHasBoundedWaitAndGdbusIsReaped" computerName="pawe-ThinkPad-T480s" duration="00:00:03.6667378" startTime="2026-11-02T11:55:42.1000965+01:00" endTime="2026-11-02T11:55:45.7674813+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2cd6c555-2a97-4c33-9111-47dcb70f594b" />
+    <UnitTestResult executionId="efcb7089-baf0-4c66-8374-715cf7b740dd" testId="91374907-c8b3-c3e2-4fd3-575916e536d5" testName="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.RealAdapterUsesCountOnlyPayloadAndSkipsNonPositiveCounts" computerName="pawe-ThinkPad-T480s" duration="00:00:00.5937699" startTime="2026-11-02T11:55:41.5150657+01:00" endTime="2026-11-02T11:55:42.0996715+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efcb7089-baf0-4c66-8374-715cf7b740dd" />
+    <UnitTestResult executionId="816c8f10-05e7-4e5a-b73e-1778e98ad037" testId="2e715b98-2f7e-9eb8-1eb2-dffdedf3b08b" testName="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.CallerCancellationStopsAndReapsNotificationProcess" computerName="pawe-ThinkPad-T480s" duration="00:00:01.1684672" startTime="2026-11-02T11:55:40.4700015+01:00" endTime="2026-11-02T11:55:41.5073087+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="816c8f10-05e7-4e5a-b73e-1778e98ad037" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.UnresponsiveServiceHasBoundedWaitAndGdbusIsReaped" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/progresskit.mail.linux.tests.dll" id="4dfee161-ae4b-df4b-bb40-10dbd36fdd68">
+      <Execution id="2cd6c555-2a97-4c33-9111-47dcb70f594b" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests" name="UnresponsiveServiceHasBoundedWaitAndGdbusIsReaped" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.CallerCancellationStopsAndReapsNotificationProcess" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/progresskit.mail.linux.tests.dll" id="2e715b98-2f7e-9eb8-1eb2-dffdedf3b08b">
+      <Execution id="816c8f10-05e7-4e5a-b73e-1778e98ad037" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests" name="CallerCancellationStopsAndReapsNotificationProcess" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.RealAdapterUsesCountOnlyPayloadAndSkipsNonPositiveCounts" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/progresskit.mail.linux.tests.dll" id="91374907-c8b3-c3e2-4fd3-575916e536d5">
+      <Execution id="efcb7089-baf0-4c66-8374-715cf7b740dd" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests" name="RealAdapterUsesCountOnlyPayloadAndSkipsNonPositiveCounts" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.ServiceRejectionAndMissingServiceDoNotPreventMailboxUse" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/progresskit.mail.linux.tests.dll" id="5b8676ea-15f0-57db-1d8d-de133ab33aa4">
+      <Execution id="4d9ff947-33f0-4181-812c-faeffbf51907" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests" name="ServiceRejectionAndMissingServiceDoNotPreventMailboxUse" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5b8676ea-15f0-57db-1d8d-de133ab33aa4" executionId="4d9ff947-33f0-4181-812c-faeffbf51907" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4dfee161-ae4b-df4b-bb40-10dbd36fdd68" executionId="2cd6c555-2a97-4c33-9111-47dcb70f594b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="91374907-c8b3-c3e2-4fd3-575916e536d5" executionId="efcb7089-baf0-4c66-8374-715cf7b740dd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e715b98-2f7e-9eb8-1eb2-dffdedf3b08b" executionId="816c8f10-05e7-4e5a-b73e-1778e98ad037" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.27]   Discovering: ProgressKit.Mail.Linux.Tests
+[xUnit.net 00:00:00.48]   Discovered:  ProgressKit.Mail.Linux.Tests
+[xUnit.net 00:00:00.55]   Starting:    ProgressKit.Mail.Linux.Tests
+[xUnit.net 00:00:06.75]   Finished:    ProgressKit.Mail.Linux.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

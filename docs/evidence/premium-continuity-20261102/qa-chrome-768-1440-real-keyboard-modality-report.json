@@ -1,0 +1,217 @@
+{
+  "startedAt": "2026-11-02T14:43:02.733Z",
+  "mode": "qa",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:768",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "PASS",
+      "details": [
+        {
+          "label": ".NET MAUI 1",
+          "width": 98.25570678710938,
+          "height": 48.1456298828125,
+          "left": 36.80386734008789,
+          "right": 135.05957412719727,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ASP.NET Core 3",
+          "width": 118.7161865234375,
+          "height": 50.68157958984375,
+          "left": 489.76251220703125,
+          "right": 608.4786987304688,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Android Keystore 2",
+          "width": 147.86273193359375,
+          "height": 49.77874755859375,
+          "left": 40.27824783325195,
+          "right": 188.1409797668457,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Caddy 1",
+          "width": 64.56832885742188,
+          "height": 47.90728759765625,
+          "left": 422.7024230957031,
+          "right": 487.270751953125,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": ".NET 1",
+          "width": 49.80278396606445,
+          "height": 45.5458984375,
+          "left": 39.02598190307617,
+          "right": 88.82876586914062,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ADB — DEBUG ONLY 1",
+          "width": 178.18072509765625,
+          "height": 53.861328125,
+          "left": 553.458251953125,
+          "right": 731.6389770507812,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      ]
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "PASS",
+      "details": [
+        {
+          "label": ".NET MAUI 1",
+          "width": 131.2994842529297,
+          "height": 57.69940185546875,
+          "left": 149.1089630126953,
+          "right": 280.408447265625,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ASP.NET Core 3",
+          "width": 159.73187255859375,
+          "height": 61.18310546875,
+          "left": 902.4710083007812,
+          "right": 1062.202880859375,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Android Keystore 2",
+          "width": 200.61439514160156,
+          "height": 60.0020751953125,
+          "left": 151.1722869873047,
+          "right": 351.78668212890625,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Caddy 1",
+          "width": 83.9609375,
+          "height": 57.21221923828125,
+          "left": 794.4735107421875,
+          "right": 878.4344482421875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": ".NET 1",
+          "width": 63.71806335449219,
+          "height": 54.136474609375,
+          "left": 151.93405151367188,
+          "right": 215.65211486816406,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ADB — DEBUG ONLY 1",
+          "width": 242.697509765625,
+          "height": 65.5809326171875,
+          "left": 1041.46142578125,
+          "right": 1284.158935546875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      ]
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 19
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "3d47aaeb8ab32aea1005681401048b2b31c691db46defc3b012c41171f189349",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "PASS": 4,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "3d47aaeb8ab32aea1005681401048b2b31c691db46defc3b012c41171f189349",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "finishedAt": "2026-11-02T14:43:17.717Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN"
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "videos": [
+    {
+      "movie": "desktop-full-scroll.mp4",
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1440,
+            "height": 1000,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "544"
+          }
+        ],
+        "format": {
+          "duration": "21.760000"
+        }
+      },
+      "fullDecode": "PASS",
+      "firstFrame": "video-check/desktop-first.png",
+      "lastFrame": "video-check/desktop-last.png",
+      "manualFooterReview": "PASS"
+    },
+    {
+      "movie": "mobile-full-scroll.mp4",
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 390,
+            "height": 844,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "508"
+          }
+        ],
+        "format": {
+          "duration": "20.320000"
+        }
+      },
+      "fullDecode": "PASS",
+      "firstFrame": "video-check/mobile-first.png",
+      "lastFrame": "video-check/mobile-last.png",
+      "manualFooterReview": "PASS"
+    }
+  ],
+  "manualInspection": "First frame contains real hero; last desktop and mobile frames contain complete footer and links. No trimming of footer. Frame duration quantization is at25FPS."
+}

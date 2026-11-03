@@ -1,0 +1,61 @@
+{
+  "ownerVisualApproval": "OPEN",
+  "commitOrPush": false,
+  "HEAD": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+  "scope": "showroom only plus static build integration and new showroom tests/evidence",
+  "files": [
+    ".gitignore",
+    "package.json",
+    "package-lock.json",
+    "scripts/vendor-three.cjs",
+    "scripts/build-site.py",
+    "scripts/showroom_markup.py",
+    "scripts/stage-public.py",
+    "index.html",
+    "assets/showroom-scene.mjs",
+    "assets/showroom-3d.mjs",
+    "assets/showroom-lifecycle.mjs",
+    "assets/showroom-3d.css",
+    "assets/vendor/three/three.module.js",
+    "assets/vendor/three/three.core.js",
+    "assets/vendor/three/LICENSE",
+    "tests/showroom-3d.test.cjs"
+  ],
+  "preexistingChangesPreserved": [
+    "assets/project-showroom.js",
+    "assets/world-atmosphere.css",
+    "tests/project-showroom.test.cjs",
+    "old showroom source/evidence"
+  ],
+  "architecture": {
+    "dependency": "Three.js 0.187.0; local ESM and MIT license; no CDN",
+    "camera": "PerspectiveCamera; WebGL2 depth; ACES tone mapping; sRGB output",
+    "materials": "MeshPhysicalMaterial transmission, thickness, IOR, clearcoat, attenuation, environment; anisotropic aluminium with directional normal texture",
+    "logo": "Original progressorkit-stamp.png inside 3D glass. Available symbol.svg is a different legacy logo, not a vector version of this mark.",
+    "energy": "Shaded 3D sphere and one batched XYZ ribbon geometry; 1080 branched filaments at desktop high quality; 360 at lowest desktop quality; 360/240 mobile. Directed deformation toward a raycast project.",
+    "interaction": "Original controller receives clicks, retains content/routing/events. HTML provides accessible keyboard controls; canvas raycast handles pointer/touch.",
+    "audio": "Only explicit Włącz hum click creates AudioContext. 54 Hz + 108.2/162 harmonics, spatial panner; mute/suspend offscreen/reading/reduced-motion; disposal closes context."
+  },
+  "verification": {
+    "unit": {
+      "PASS": 47,
+      "FAIL": 0
+    },
+    "browser": {
+      "PASS": 36,
+      "FAIL": 0
+    },
+    "catalogEntries": 14,
+    "generatedFiles": 23,
+    "stagedFiles": 78
+  },
+  "limitations": [
+    "Glass uses realtime raster transmission and baked studio reflections; not path-traced multi-bounce refraction/caustics. Transparent layers do not refract one another like full ray tracing.",
+    "Energy has a shaded sphere surface and spatial branching ribbons, not volumetric raymarching.",
+    "DPR is capped at 1 and can fall to 0.65 on desktop; smaller labels lose sharpness.",
+    "GPU measurements are latest available asynchronous EXT_disjoint_timer_query_webgl2 results; CPU timing is JS render submission only.",
+    "Mobile proof is Chrome touch/viewport emulation on Intel UHD 620, not a physical phone.",
+    "No owner aesthetic approval or production deployment is claimed."
+  ],
+  "proof": "6 PNG, desktop H264 18s, mobile H264 15s; native browser recordings, no generated imagery"
+}

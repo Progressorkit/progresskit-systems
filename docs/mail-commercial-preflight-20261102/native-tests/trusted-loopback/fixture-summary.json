@@ -1,0 +1,9 @@
+{
+  "scope": "actual loopback MailClientPolicy TLS transport; high ports; synthetic only",
+  "ephemeral_ca": true,
+  "global_trust_modified": false,
+  "certificate_validation_callback": false,
+  "revocation_disabled": false,
+  "signed_crl_loopback_requests": 1,
+  "exit_code": 0
+}

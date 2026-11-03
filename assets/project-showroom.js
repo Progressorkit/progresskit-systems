@@ -111,11 +111,11 @@ if (typeof document !== 'undefined') {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
     const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)');
     const inlineSlices = root.hasAttribute?.('data-showroom-slices') === true;
+    const capsule = root.querySelector('[data-capsule-toggle]');
+    let awake = true; // Progressive fallback until the capsule controller is ready.
     const narrowLayout = inlineSlices ? window.matchMedia('(max-width:700px)') : {matches:false};
     let sliceCard = null;
-    let sliceTimer;
     let sliceReturnTarget;
-    let sliceHoverBlocked = false;
     let sliceAnimations = [];
     const stopSliceAnimations = () => { sliceAnimations.forEach(animation => animation.cancel()); sliceAnimations = []; };
     const label = (element, value) => {
@@ -175,9 +175,9 @@ if (typeof document !== 'undefined') {
         card.style.setProperty('--showroom-light', point.light.toFixed(6));
         card.style.setProperty('--showroom-opacity', shown ? point.opacity.toFixed(6) : '0');
         card.style.zIndex = String(!shown ? 0 : point.depth >= 0 ? 10 + Math.round(point.depth * 6) : 2 + Math.round((point.depth + 1) * 3));
-        card.inert = locked || !shown || Boolean(sliceCard && card !== sliceCard);
-        card.setAttribute('aria-hidden', String(!included || !shown || (sliceCard ? card !== sliceCard : !selected)));
-        card.querySelector('[data-showroom-open]').tabIndex = !locked && selected && shown && !sliceCard ? 0 : -1;
+        card.inert = !awake || locked || !shown || Boolean(sliceCard && card !== sliceCard);
+        card.setAttribute('aria-hidden', String(!awake || !included || !shown || (sliceCard ? card !== sliceCard : !selected)));
+        card.querySelector('[data-showroom-open]').tabIndex = awake && !locked && selected && shown && !sliceCard ? 0 : -1;
         if (shown) visible.push({id:card.dataset.projectId, point, selected});
         if (included) card.setAttribute('aria-label', `${byId.get(card.dataset.projectId).name} · ${index + 1} z ${state.items.length}`);
       }
@@ -205,6 +205,9 @@ if (typeof document !== 'undefined') {
           spark.style.setProperty('--spark-y', `${(y - 250).toFixed(3)}px`);
         }
       });
+      if (capsule) document.dispatchEvent(new CustomEvent('progresskit:showroom-layout', {
+        detail:{items:visible, awake, open:Boolean(sliceCard), narrow:narrowLayout.matches}
+      }));
     }
     function finishPhase() {
       if (phaseFrame) cancelAnimationFrame(phaseFrame);
@@ -304,7 +307,6 @@ if (typeof document !== 'undefined') {
       }
     }
     function closeSlice(restoreFocus = false, updateUrl = true) {
-      clearTimeout(sliceTimer);
       stopSliceAnimations();
       if (!sliceCard) return;
       const card = sliceCard;
@@ -315,8 +317,6 @@ if (typeof document !== 'undefined') {
       root.classList.remove('is-slice-open');
       viewport.style.removeProperty('--slice-stage-top');
       openId = '';
-      // An explicit close must stay closed under a stationary mouse.
-      sliceHoverBlocked = finePointer.matches && viewport.matches(':hover');
       render(false);
       if (updateUrl) syncUrl();
       if (restoreFocus) {
@@ -334,7 +334,6 @@ if (typeof document !== 'undefined') {
       if (sliceCard) closeSlice(false, false);
       stopSliceAnimations();
       cancelOpen();
-      clearTimeout(sliceTimer);
       // The selected face has reached the front socket before extrusion.
       if (phaseFrame) cancelAnimationFrame(phaseFrame);
       phaseFrame = 0;
@@ -370,6 +369,7 @@ if (typeof document !== 'undefined') {
       document.dispatchEvent(new CustomEvent('progresskit:slice-open', {detail:{id}}));
     }
     function move(delta) {
+      awake = true;
       if (locked || state.items.length < 2) return;
       const focusedSlice = sliceCard?.contains(document.activeElement);
       closeSlice(false, false);
@@ -390,6 +390,7 @@ if (typeof document !== 'undefined') {
     function requestOpen(id, trigger, fromHistory = false) {
       const project = byId.get(id);
       if (!project || (locked && !fromHistory)) return;
+      awake = true;
       if (inlineSlices) {
         if (sliceCard?.dataset.projectId === id) return;
         if (sliceCard) closeSlice(false, false);
@@ -398,7 +399,16 @@ if (typeof document !== 'undefined') {
         state.index = state.items.findIndex(item => item.id === id);
         render(true, !fromHistory);
         root.classList.add('is-projecting');
-        const dispatch = () => { finishPhase(); openSlice(id, trigger, true); };
+        const dispatch = () => {
+          finishPhase();
+          // Presentation may spend at most 300 ms delivering power before disclosure.
+          // The existing openTimer keeps Escape, navigation and rapid taps cancellable.
+          const charge = {id, delay:0};
+          if (capsule && !fromHistory) document.dispatchEvent(new CustomEvent('progresskit:showroom-charge', {detail:charge}));
+          const delay = reducedMotion.matches ? 0 : Math.min(300, Math.max(0, Number(charge.delay) || 0));
+          if (delay) openTimer = setTimeout(() => openSlice(id, trigger, true), delay);
+          else openSlice(id, trigger, true);
+        };
         const remaining = phaseFrame ? Math.max(0, phaseEnds - performance.now()) + 30 : 0;
         if (!reducedMotion.matches && remaining > 0) openTimer = setTimeout(dispatch, remaining);
         else dispatch();
@@ -449,7 +459,6 @@ if (typeof document !== 'undefined') {
         orbitInView = inView;
         root.classList.toggle('showroom-in-view', inView);
         if (!inView) {
-          clearTimeout(sliceTimer);
           cancelOpen(); stopGesture(); finishPhase();
           clearTimeout(movementTimer);
           root.classList.remove('is-orbit-moving');
@@ -459,6 +468,11 @@ if (typeof document !== 'undefined') {
     }
     root.classList.toggle('is-page-hidden', document.hidden);
     restore(false);
+    if (capsule) document.addEventListener('progresskit:showroom-wake', event => {
+      if (event.detail?.awake === false && sliceCard) return;
+      awake = event.detail?.awake !== false;
+      paintGeometry();
+    });
     energyToggle?.addEventListener('click', () => {
       energyPaused = !energyPaused;
       root.classList.toggle('is-energy-paused', energyPaused);
@@ -468,6 +482,7 @@ if (typeof document !== 'undefined') {
     gates.forEach(gate => {
       gate.addEventListener('click', () => {
         if (locked) return;
+        awake = true;
         closeSlice(false, false);
         stopGesture();
         endPreview(false);
@@ -481,6 +496,7 @@ if (typeof document !== 'undefined') {
         // disappear. Clicking a gate still selects its category explicitly.
         const focusedProject = document.activeElement?.closest?.('[data-showroom-open]');
         if (focusedProject && root.contains(focusedProject)) return;
+        awake = true;
         stopGesture();
         if (!previewSnapshot) previewSnapshot = {category:state.category, id:active()?.id};
         cancelOpen();
@@ -604,35 +620,10 @@ if (typeof document !== 'undefined') {
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && sliceCard) { event.preventDefault(); closeSlice(true); }
       });
-      cards.forEach(card => {
-        card.addEventListener('pointerenter', () => clearTimeout(sliceTimer));
-        card.addEventListener('pointermove', event => {
-          clearTimeout(sliceTimer);
-          // Scrolling or a manual turn can carry a module under a stationary
-          // pointer. Hover needs an actual pointer move over a settled module.
-          if (sliceCard || sliceHoverBlocked || !finePointer.matches || event.pointerType === 'touch' || gesture || phaseFrame || locked || card.inert) return;
-          sliceTimer = setTimeout(() => {
-            if (performance.now() >= suppressClickUntil && !gesture && !phaseFrame && !sliceCard && !card.inert) openSlice(card.dataset.projectId, card.querySelector('[data-showroom-open]'));
-          }, 130);
-        });
-        card.addEventListener('pointerleave', () => {
-          clearTimeout(sliceTimer);
-          if (!sliceCard) sliceHoverBlocked = false;
-        });
-      });
-      viewport.addEventListener('pointerleave', event => {
-        clearTimeout(sliceTimer);
-        sliceHoverBlocked = false;
-        // Keyboard and touch disclosures remain open until dismissed explicitly.
-        if (narrowLayout.matches || !finePointer.matches || event.pointerType === 'touch' || !sliceCard || sliceCard.contains(document.activeElement)) return;
-        sliceTimer = setTimeout(() => {
-          if (sliceCard && !sliceCard.contains(document.activeElement)) closeSlice(false);
-        }, 280);
-      });
-      viewport.addEventListener('pointerenter', () => clearTimeout(sliceTimer));
+      // Hover/focus previews the material in CSS. Only explicit activation
+      // opens a panel, so exploring the rotor never changes its layout or URL.
       window.addEventListener('resize', placeSlice);
       narrowLayout.addEventListener('change', () => {
-        clearTimeout(sliceTimer);
         cancelOpen(); stopGesture();
         if (phaseFrame) cancelAnimationFrame(phaseFrame);
         phaseFrame = 0; phaseEnds = 0;
@@ -674,12 +665,10 @@ if (typeof document !== 'undefined') {
     document.addEventListener('visibilitychange', () => {
       root.classList.toggle('is-page-hidden', document.hidden);
       if (document.hidden) {
-        clearTimeout(sliceTimer);
         cancelOpen(); endPreview(); stopGesture(); finishPhase(); clearTimeout(movementTimer); root.classList.remove('is-orbit-moving'); render(false, false);
       }
     });
     window.addEventListener('pagehide', () => {
-      clearTimeout(sliceTimer);
       cancelOpen(); stopGesture(); finishPhase();
       clearTimeout(movementTimer);
       root.classList.remove('is-orbit-moving');

@@ -1,0 +1,11 @@
+--- before/scripts/stage-public.py
++++ after/scripts/stage-public.py
+@@ -23,6 +23,8 @@
+         'assets/luxury-world.css','assets/luxury-world.mjs','assets/luxury-chapters.css','assets/luxury-showroom.css','assets/black-finish.svg',
+         'assets/continuity-process.css','assets/continuity-chapters.css','assets/continuity-chapters.mjs','assets/technology-field.css','assets/technology-field.mjs',
+         'assets/material-finish.css',
++        'assets/brand-core-mark.css','assets/brand-core-mark.mjs',
++        'assets/brand/progresskit-core-mark.webm',
+         'assets/showroom-3d.css','assets/showroom-3d.mjs','assets/showroom-scene.mjs','assets/showroom-lifecycle.mjs',
+         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',
+         'assets/project-showroom.css','assets/project-showroom.js','assets/project-hologram.css','assets/project-hologram.js',

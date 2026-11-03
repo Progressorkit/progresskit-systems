@@ -1,0 +1,322 @@
+{
+  "startedAt": "2026-11-02T14:56:06.911Z",
+  "mode": "video",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome",
+      "name": "Desktop actual full-scroll video",
+      "status": "PASS"
+    },
+    {
+      "scope": "chrome",
+      "name": "Mobile emulation actual full-scroll video",
+      "status": "PASS"
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 19
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "desktop-full-scroll.mp4",
+      "kind": "actual-browser-recording",
+      "sha256": "750b9d41f7ed15c43dbefc037e21b39a57f9862bf2c2e19c95350d9b5d2b67b1",
+      "width": 1440,
+      "height": 1000,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 33.84,
+      "rawDurationSeconds": 38.76,
+      "trimStartSeconds": 4.919999999999995,
+      "recording": [
+        {
+          "name": "hero-idle",
+          "elapsedSeconds": 0.001,
+          "scroll": 0
+        },
+        {
+          "name": "showroom-idle",
+          "elapsedSeconds": 3.53,
+          "scroll": 1517
+        },
+        {
+          "name": "crystals-ready",
+          "elapsedSeconds": 6.693,
+          "scroll": 1517
+        },
+        {
+          "name": "services-preserved",
+          "elapsedSeconds": 9.424,
+          "scroll": 2690
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 11.825,
+          "scroll": 4047
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 14.247,
+          "scroll": 6006
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 17.839,
+          "scroll": 7824
+        },
+        {
+          "name": "technologies",
+          "elapsedSeconds": 20.338,
+          "scroll": 9289
+        },
+        {
+          "name": "technology-layer-1",
+          "elapsedSeconds": 20.889,
+          "scroll": 9674
+        },
+        {
+          "name": "technology-layer-2",
+          "elapsedSeconds": 21.772,
+          "scroll": 9828
+        },
+        {
+          "name": "technology-layer-3",
+          "elapsedSeconds": 22.69,
+          "scroll": 10296
+        },
+        {
+          "name": "technology-layer-4",
+          "elapsedSeconds": 23.577,
+          "scroll": 10391
+        },
+        {
+          "name": "technology-layer-5",
+          "elapsedSeconds": 24.507,
+          "scroll": 10764
+        },
+        {
+          "name": "technology-layer-6",
+          "elapsedSeconds": 25.483,
+          "scroll": 11156
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 28.55,
+          "scroll": 12362
+        },
+        {
+          "name": "brief-console",
+          "elapsedSeconds": 30.296,
+          "scroll": 13077
+        },
+        {
+          "name": "footer",
+          "elapsedSeconds": 32.833,
+          "scroll": 13888
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 33.838,
+          "scroll": 13888
+        }
+      ],
+      "sourceFootage": "raw-video-desktop/page@b7cf2d5508bb02ca4c7ecbefd0f41e49.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "durationSeconds": 33.84,
+      "frames": 846,
+      "fps": 25,
+      "codec": "h264",
+      "fullyDecoded": "PASS",
+      "technologyLayersRecorded": 6,
+      "firstLastFrameInspection": "PASS",
+      "footerPresent": "PASS"
+    },
+    {
+      "file": "mobile-full-scroll.mp4",
+      "kind": "actual-browser-recording",
+      "sha256": "0e5b4c02ac5063d028d56ab2f2a756fd87cd1e3557643e1b14b0d041f92a5219",
+      "width": 390,
+      "height": 844,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 31.282,
+      "rawDurationSeconds": 34.48,
+      "trimStartSeconds": 3.197999999999997,
+      "recording": [
+        {
+          "name": "hero-idle",
+          "elapsedSeconds": 0,
+          "scroll": 0
+        },
+        {
+          "name": "showroom-idle",
+          "elapsedSeconds": 3.425,
+          "scroll": 1485
+        },
+        {
+          "name": "crystals-ready",
+          "elapsedSeconds": 6.165,
+          "scroll": 1485
+        },
+        {
+          "name": "services-preserved",
+          "elapsedSeconds": 8.296,
+          "scroll": 2540
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 10.683,
+          "scroll": 4093
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 13.066,
+          "scroll": 6106
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 15.979,
+          "scroll": 8505
+        },
+        {
+          "name": "technologies",
+          "elapsedSeconds": 18.465,
+          "scroll": 10290
+        },
+        {
+          "name": "technology-layer-1",
+          "elapsedSeconds": 19.018,
+          "scroll": 10628
+        },
+        {
+          "name": "technology-layer-2",
+          "elapsedSeconds": 19.82,
+          "scroll": 11114
+        },
+        {
+          "name": "technology-layer-3",
+          "elapsedSeconds": 20.648,
+          "scroll": 11545
+        },
+        {
+          "name": "technology-layer-4",
+          "elapsedSeconds": 21.481,
+          "scroll": 11932
+        },
+        {
+          "name": "technology-layer-5",
+          "elapsedSeconds": 22.277,
+          "scroll": 12222
+        },
+        {
+          "name": "technology-layer-6",
+          "elapsedSeconds": 23.083,
+          "scroll": 12614
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 26.028,
+          "scroll": 15446
+        },
+        {
+          "name": "brief-console",
+          "elapsedSeconds": 27.745,
+          "scroll": 16163
+        },
+        {
+          "name": "footer",
+          "elapsedSeconds": 30.278,
+          "scroll": 17666
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 31.281,
+          "scroll": 17666
+        }
+      ],
+      "sourceFootage": "raw-video-mobile/page@ce4f099945cb1d9efda08452136eaae8.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "durationSeconds": 31.28,
+      "frames": 782,
+      "fps": 25,
+      "codec": "h264",
+      "fullyDecoded": "PASS",
+      "technologyLayersRecorded": 6,
+      "firstLastFrameInspection": "PASS",
+      "footerPresent": "PASS"
+    }
+  ],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "PASS": 4,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "finishedAt": "2026-11-02T14:57:48.382Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN"
+}

@@ -1,0 +1,636 @@
+{
+  "mode": "desktop",
+  "checks": [
+    {
+      "name": "Desktop uses the actual WebGL renderer",
+      "status": "PASS",
+      "details": {
+        "width": 400,
+        "height": 389,
+        "pixels": 155600,
+        "renderer": "webgl",
+        "rootRenderer": "webgl",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "One matter canvas replaces all lightning surfaces and paths",
+      "status": "PASS"
+    },
+    {
+      "name": "Idle keeps projects dormant",
+      "status": "PASS"
+    },
+    {
+      "name": "Hit-tested matter layer paints behind the core",
+      "status": "PASS",
+      "details": {
+        "back": 14,
+        "front": 0,
+        "outsideTrigger": true,
+        "layerZ": "1",
+        "triggerZ": "7",
+        "stack": [
+          "capsule-rib capsule-rib--front",
+          "capsule-caustic",
+          "capsule-glass-edge",
+          "capsule-mark",
+          "capsule-refraction",
+          "capsule-glass",
+          "capsule-rib capsule-rib--rear",
+          "capsule-energy",
+          "capsule-chamber",
+          "capsule-armor capsule-armor--rear",
+          "capsule-float",
+          "capsule-pose"
+        ]
+      }
+    },
+    {
+      "name": "Original metallic logo has no tint or blend overlay",
+      "status": "PASS",
+      "details": {
+        "src": "assets/brand/progressorkit-stamp.png",
+        "opacity": "1",
+        "ancestors": [
+          {
+            "filter": "brightness(1.23) saturate(0.85) drop-shadow(rgba(0, 0, 0, 0.6) 5px 10px 5px) drop-shadow(rgba(195, 247, 255, 0.333) -1px -1px 1px)",
+            "blend": "normal"
+          },
+          {
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "filter": "none",
+            "blend": "normal"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Matter continues drawing throughout at least five seconds of idle",
+      "status": "PASS",
+      "details": {
+        "elapsedMs": 5100,
+        "draws": 15
+      }
+    },
+    {
+      "name": "Spatial pattern changes across several idle samples",
+      "status": "PASS",
+      "details": {
+        "samples": [
+          {
+            "t": 8192.59999999404,
+            "hash": 4055565899,
+            "occupied": 881,
+            "red": 806,
+            "maxRed": 138,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 8685.800000011921,
+            "hash": 2342321124,
+            "occupied": 882,
+            "red": 811,
+            "maxRed": 142,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 9411.199999988079,
+            "hash": 4028826137,
+            "occupied": 883,
+            "red": 812,
+            "maxRed": 146,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 9878.59999999404,
+            "hash": 1141182235,
+            "occupied": 885,
+            "red": 814,
+            "maxRed": 151,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 11223,
+            "hash": 468673453,
+            "occupied": 885,
+            "red": 813,
+            "maxRed": 162,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 11738.699999988079,
+            "hash": 3636942773,
+            "occupied": 887,
+            "red": 814,
+            "maxRed": 170,
+            "width": 400,
+            "height": 389
+          },
+          {
+            "t": 12472.699999988079,
+            "hash": 1695234964,
+            "occupied": 885,
+            "red": 812,
+            "maxRed": 175,
+            "width": 400,
+            "height": 389
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rendered volume contains red chromatic matter",
+      "status": "PASS",
+      "details": [
+        {
+          "occupied": 881,
+          "red": 806,
+          "maxRed": 138
+        },
+        {
+          "occupied": 882,
+          "red": 811,
+          "maxRed": 142
+        },
+        {
+          "occupied": 883,
+          "red": 812,
+          "maxRed": 146
+        },
+        {
+          "occupied": 885,
+          "red": 814,
+          "maxRed": 151
+        },
+        {
+          "occupied": 885,
+          "red": 813,
+          "maxRed": 162
+        },
+        {
+          "occupied": 887,
+          "red": 814,
+          "maxRed": 170
+        },
+        {
+          "occupied": 885,
+          "red": 812,
+          "maxRed": 175
+        }
+      ]
+    },
+    {
+      "name": "WebGL sampling completed without errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Desktop pressure and release precede visible materialization",
+      "status": "PASS",
+      "details": {
+        "compression": {
+          "kind": "phase",
+          "state": "compressing",
+          "t": 826.2000000178814
+        },
+        "release": {
+          "kind": "phase",
+          "state": "releasing",
+          "t": 1794.2000000178814
+        },
+        "reveals": [
+          {
+            "kind": "project",
+            "id": "glikemia-premium",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1794.5999999940395
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-mail",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1794.9000000059605
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-translator",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1795.0999999940395
+          },
+          {
+            "kind": "project",
+            "id": "vaeloria",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1795.2000000178814
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-community",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1795.5999999940395
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-tax",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 1795.7000000178814
+          }
+        ]
+      }
+    },
+    {
+      "name": "Desktop every visible project progresses through waiting and materializing",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium",
+        "progresskit-mail",
+        "progresskit-translator",
+        "vaeloria",
+        "progresskit-community",
+        "progresskit-tax"
+      ]
+    },
+    {
+      "name": "Desktop collection preserves all fourteen real project entries",
+      "status": "PASS"
+    },
+    {
+      "name": "Hover activates one project without a connector",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard focus reaches a fully revealed selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "Enter opens original project content",
+      "status": "PASS"
+    },
+    {
+      "name": "Opening project details stops matter work",
+      "status": "PASS",
+      "details": {
+        "before": 92,
+        "after": 92
+      }
+    },
+    {
+      "name": "Escape sleeps collection and retains the core control",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion exposes the paused matter state",
+      "status": "FAIL"
+    },
+    {
+      "name": "Reduced motion freezes WebGL after its static frame",
+      "status": "PASS",
+      "details": {
+        "before": 101,
+        "after": 101
+      }
+    },
+    {
+      "name": "Reduced activation reveals content without waiting for a shader",
+      "status": "PASS"
+    },
+    {
+      "name": "Global pause stops WebGL",
+      "status": "PASS",
+      "details": {
+        "before": 106,
+        "after": 106
+      }
+    },
+    {
+      "name": "Offscreen matter does no WebGL work",
+      "status": "PASS",
+      "details": {
+        "before": 109,
+        "after": 109
+      }
+    },
+    {
+      "name": "Returning to the showroom resumes live matter",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-desktop-idle-start.png",
+    "matter-desktop-idle-after-5s.png",
+    "matter-desktop-core-pressure.png",
+    "matter-desktop-activated.png",
+    "matter-desktop-project-hover.png",
+    "matter-desktop-reduced-static.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 23,
+  "FAIL": 1,
+  "activationTimeline": [
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "adivara",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "gotrans360",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "ignira",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "obserwator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "kan-system",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-systems",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-analytics",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-infrastructure",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.30000001192092896
+    },
+    {
+      "kind": "phase",
+      "state": "compressing",
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 826.2000000178814
+    },
+    {
+      "kind": "phase",
+      "state": "releasing",
+      "t": 1794.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1794.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1794.9000000059605
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1795.0999999940395
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1795.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1795.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 1795.7000000178814
+    },
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 2287.800000011921
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.2000000178814
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.300000011921
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.300000011921
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.4000000059605
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.800000011921
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 2345.800000011921
+    }
+  ]
+}

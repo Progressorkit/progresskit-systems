@@ -1,0 +1,36 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "readyOffset": 2.003,
+  "idleProof": {
+    "draws": 210,
+    "frames": 105,
+    "renderer": "webgl",
+    "width": 600,
+    "height": 600,
+    "filaments": 432,
+    "coreDormant": true,
+    "seconds": 7.005
+  },
+  "timeline": [
+    {
+      "seconds": 0.005,
+      "label": "Idle: first seven seconds show evolving electric filaments without interaction"
+    },
+    {
+      "seconds": 7.005,
+      "label": "End of uninterrupted idle proof"
+    },
+    {
+      "seconds": 7.086,
+      "label": "Core activation: reflection, contour, refracting, ready"
+    },
+    {
+      "seconds": 10.583,
+      "label": "Tap opens genuine project"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,296 @@
+{
+  "mode": "fallback",
+  "checks": [
+    {
+      "name": "Denied WebGL selects the shipped CSS fallback",
+      "status": "PASS",
+      "details": {
+        "width": 300,
+        "height": 150,
+        "pixels": 45000,
+        "renderer": "fallback",
+        "filaments": 0,
+        "rootRenderer": "fallback",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "CSS fallback is visibly present and continues animating",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.86",
+        "before": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 516.6830000169424,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 516.6830000169424,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 516.6830000169424,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 1066.5830000169426,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 1066.5830000169426,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 1066.5830000169426,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "CSS fallback preserves project disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS fallback opens original project content",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion also freezes the CSS fallback",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.86",
+        "before": [],
+        "after": [],
+        "advances": false
+      }
+    },
+    {
+      "name": "Mobile fallback remains live instead of becoming a static image",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.86",
+        "before": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 683.3559999841732,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 683.3559999841732,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 1233.3339999841733,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 1233.3339999841733,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "Mobile fallback retains readable tap activation",
+      "status": "PASS"
+    },
+    {
+      "name": "Context-loss test starts with actual WebGL",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser provides a real WebGL context-loss mechanism",
+      "status": "PASS"
+    },
+    {
+      "name": "Context loss activates animated CSS matter",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.86",
+        "before": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 0,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 0,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 0,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-corona-orbit",
+            "time": 350.0699999835808,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 350.0699999835808,
+            "state": "running"
+          },
+          {
+            "name": "matter-corona-orbit",
+            "time": 350.0699999835808,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "Lost WebGL context stops drawing",
+      "status": "PASS",
+      "details": {
+        "before": 30,
+        "after": 30
+      }
+    },
+    {
+      "name": "Context loss does not block project disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "Restoring context resumes procedural matter",
+      "status": "PASS"
+    },
+    {
+      "name": "Restoring context during global pause paints static electric matter",
+      "status": "PASS",
+      "details": {
+        "before": 64,
+        "after": 66,
+        "last": {
+          "t": 8912.399999976158,
+          "hash": 2163067724,
+          "occupied": 1116,
+          "red": 1058,
+          "maxRed": 215,
+          "width": 900,
+          "height": 900
+        }
+      }
+    },
+    {
+      "name": "Restored paused context has no drawing loop",
+      "status": "PASS",
+      "details": {
+        "before": 66,
+        "after": 66
+      }
+    },
+    {
+      "name": "Initial reduced motion still renders visible static electric matter",
+      "status": "PASS",
+      "details": {
+        "surface": {
+          "width": 900,
+          "height": 900,
+          "pixels": 810000,
+          "renderer": "webgl",
+          "filaments": 1080,
+          "rootRenderer": "webgl",
+          "motion": "paused"
+        },
+        "samples": [
+          {
+            "t": 671.7000000178814,
+            "hash": 530461891,
+            "occupied": 1111,
+            "red": 1051,
+            "maxRed": 221,
+            "width": 900,
+            "height": 900
+          }
+        ]
+      }
+    },
+    {
+      "name": "Initially reduced matter has no background drawing loop",
+      "status": "PASS",
+      "details": {
+        "before": 2,
+        "after": 2
+      }
+    },
+    {
+      "name": "Resizing paused matter repaints a correctly sized static frame",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "width": 900,
+          "height": 900,
+          "pixels": 810000,
+          "renderer": "webgl",
+          "filaments": 1080,
+          "rootRenderer": "webgl",
+          "motion": "paused"
+        },
+        "after": {
+          "width": 711,
+          "height": 711,
+          "pixels": 505521,
+          "renderer": "webgl",
+          "filaments": 1080,
+          "rootRenderer": "webgl",
+          "motion": "paused"
+        },
+        "draws": 2
+      }
+    },
+    {
+      "name": "Paused resize does not start a drawing loop",
+      "status": "PASS",
+      "details": {
+        "before": 4,
+        "after": 4
+      }
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-css-fallback-idle.png",
+    "matter-mobile-css-fallback.png",
+    "matter-context-loss-fallback.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 20,
+  "FAIL": 0
+}

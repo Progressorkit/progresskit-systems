@@ -1,0 +1,1073 @@
+{
+  "startedAt": "2026-11-02T18:02:13.771Z",
+  "base": "http://127.0.0.1:8201/",
+  "widths": [
+    390,
+    1440
+  ],
+  "checks": [
+    {
+      "scope": "after:390",
+      "name": "Layout, fonts, six groups and every technology link label match the pre-fix source",
+      "status": "PASS",
+      "details": {
+        "elements": 232,
+        "labels": 110,
+        "groups": 6,
+        "documentWidth": 390,
+        "documentHeight": 18510,
+        "exactBaselineMatch": true
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Clear face and supported hollow double glass edges",
+      "status": "PASS",
+      "details": {
+        "computed": [
+          {
+            "title": "Klienci i interfejsy",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Backend i komunikacja",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 7% 0px, 90% 5%, 100% 21%, 93% 94%, 18% 100%, 0px 86%, 1% 11%, 7% 0px, calc(7% + 1px) 2px, calc(90% - 1px) calc(5% + 2px), calc(100% - 2px) 21%, calc(93% - 2px) calc(94% - 2px), 18% calc(100% - 2px), 2px calc(86% - 1px), calc(1% + 2px) calc(11% + 1px), calc(7% + 1px) 2px, 7% 0px)",
+            "innerClip": "polygon(evenodd, 7% 0px, 90% 5%, 100% 21%, 93% 94%, 18% 100%, 0px 86%, 1% 11%, 7% 0px, calc(7% + 1px) 2px, calc(90% - 1px) calc(5% + 2px), calc(100% - 2px) 21%, calc(93% - 2px) calc(94% - 2px), 18% calc(100% - 2px), 2px calc(86% - 1px), calc(1% + 2px) calc(11% + 1px), calc(7% + 1px) 2px, 7% 0px)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Dane i bezpieczeństwo",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 3% 8%, 83% 0px, 100% 19%, 95% 90%, 12% 100%, 0px 80%, 3% 8%, calc(3% + 2px) calc(8% + 2px), calc(83% - 1px) 2px, calc(100% - 2px) calc(19% + 1px), calc(95% - 2px) calc(90% - 1px), 12% calc(100% - 2px), 2px calc(80% - 1px), calc(3% + 2px) calc(8% + 2px), 3% 8%)",
+            "innerClip": "polygon(evenodd, 3% 8%, 83% 0px, 100% 19%, 95% 90%, 12% 100%, 0px 80%, 3% 8%, calc(3% + 2px) calc(8% + 2px), calc(83% - 1px) 2px, calc(100% - 2px) calc(19% + 1px), calc(95% - 2px) calc(90% - 1px), 12% calc(100% - 2px), 2px calc(80% - 1px), calc(3% + 2px) calc(8% + 2px), 3% 8%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Infrastruktura i wdrożenia",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Języki i narzędzia",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Inne",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 7%, 5% 0px, 93% 1%, 100% 9%, 98% 93%, 92% 100%, 2% 97%, 0px 7%, 2px calc(7% + 1px), calc(5% + 1px) 2px, calc(93% - 1px) calc(1% + 2px), calc(100% - 2px) calc(9% + 1px), calc(98% - 2px) calc(93% - 1px), calc(92% - 1px) calc(100% - 2px), calc(2% + 2px) calc(97% - 2px), 2px calc(7% + 1px), 0px 7%)",
+            "innerClip": "polygon(evenodd, 0px 7%, 5% 0px, 93% 1%, 100% 9%, 98% 93%, 92% 100%, 2% 97%, 0px 7%, 2px calc(7% + 1px), calc(5% + 1px) 2px, calc(93% - 1px) calc(1% + 2px), calc(100% - 2px) calc(9% + 1px), calc(98% - 2px) calc(93% - 1px), calc(92% - 1px) calc(100% - 2px), calc(2% + 2px) calc(97% - 2px), 2px calc(7% + 1px), 0px 7%)",
+            "rimSupported": true,
+            "innerSupported": true
+          }
+        ],
+        "rasterizedHollowRims": [],
+        "note": "CSS transparency and cut edges are verified; this does not claim physical optical refraction."
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Reduced motion has no queued timer or animation",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": true,
+          "reduced": true,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": true,
+          "reduced": true,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        }
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Real keyboard navigation keeps a visible technology focus and active group",
+      "status": "PASS",
+      "details": {
+        "text": "Android 2",
+        "link": true,
+        "focusVisible": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "2px",
+        "activeGroup": true
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Technology hover keeps haze alpha exactly zero over visible labels",
+      "status": "PASS",
+      "details": {
+        "points": [
+          {
+            "text": "Klienci i interfejsy",
+            "x": 190,
+            "y": 197.0859375,
+            "top": 171.640625,
+            "bottom": 222.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": ".NET MAUI 1",
+            "x": 102.671875,
+            "y": 269.03125,
+            "top": 245.53125,
+            "bottom": 292.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "Android 2",
+            "x": 207.9296875,
+            "y": 272.53125,
+            "top": 250.53125,
+            "bottom": 294.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "AudioTrack 1",
+            "x": 92.015625,
+            "y": 324.53125,
+            "top": 302.53125,
+            "bottom": 346.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "CSS 3",
+            "x": 176.34375,
+            "y": 321.03125,
+            "top": 297.53125,
+            "bottom": 344.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "HTML 3",
+            "x": 243.1875,
+            "y": 324.53125,
+            "top": 302.53125,
+            "bottom": 346.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "Jetpack Compose 3",
+            "x": 112.6328125,
+            "y": 376.53125,
+            "top": 354.53125,
+            "bottom": 398.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "Next.js 2",
+            "x": 231.265625,
+            "y": 373.03125,
+            "top": 349.53125,
+            "bottom": 396.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "React 3",
+            "x": 73.296875,
+            "y": 423.53125,
+            "top": 401.53125,
+            "bottom": 445.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "SkiaSharp 2",
+            "x": 155.6640625,
+            "y": 423.53125,
+            "top": 401.53125,
+            "bottom": 445.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "SpeechRecognizer 1",
+            "x": 136.75,
+            "y": 472.03125,
+            "top": 448.53125,
+            "bottom": 495.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "TextToSpeech 1",
+            "x": 100.5859375,
+            "y": 520.53125,
+            "top": 498.53125,
+            "bottom": 542.53125,
+            "alphaByte": 0
+          },
+          {
+            "text": "WorkManager 1",
+            "x": 225.1953125,
+            "y": 520.53125,
+            "top": 498.53125,
+            "bottom": 542.53125,
+            "alphaByte": 0
+          }
+        ],
+        "state": {
+          "frames": 19,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 5,
+          "masksReady": true,
+          "maskReads": 22,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0,
+            0.7904247045516968,
+            0.10383960604667664,
+            0.07179487496614456,
+            0.17966899275779724,
+            0.9025641083717346,
+            0.2873592972755432,
+            0.07179487496614456,
+            0.26721712946891785,
+            0.9025641083717346,
+            0.6665062308311462,
+            0.09743589907884598,
+            0.7553687691688538,
+            0.928205132484436,
+            0.8630591034889221,
+            0.09743589907884598,
+            0.8429169058799744,
+            0.928205132484436,
+            1
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        },
+        "pointerMode": "keyboard focus, mobile pointer model"
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Scroll creates no technology animation frames or gradient writes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "inlineStyles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Global pause cancels queued optical work",
+      "status": "PASS",
+      "details": {
+        "technology": {
+          "before": {
+            "frames": 0,
+            "rafPending": false,
+            "timerPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false,
+            "pointerFpsLimit": 24,
+            "gradientUpdates": 0,
+            "groups": 6,
+            "active": null
+          },
+          "after": {
+            "frames": 0,
+            "rafPending": false,
+            "timerPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false,
+            "pointerFpsLimit": 24,
+            "gradientUpdates": 0,
+            "groups": 6,
+            "active": null
+          }
+        },
+        "atmosphere": {
+          "frames": 31,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 5,
+          "masksReady": true,
+          "maskReads": 70,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.07179487496614456,
+            0.17966899275779724,
+            0.9025641083717346,
+            0.2873592972755432,
+            0.07179487496614456,
+            0.26721712946891785,
+            0.9025641083717346,
+            0.6665062308311462,
+            0.09743589907884598,
+            0.7553687691688538,
+            0.928205132484436,
+            0.8630591034889221,
+            0.09743589907884598,
+            0.8429169058799744,
+            0.928205132484436,
+            1,
+            0,
+            0,
+            0.7904247045516968,
+            0.10383960604667664
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Offscreen Workshop stops all queued technology work",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": false,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": false,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Layout, fonts, six groups and every technology link label match the pre-fix source",
+      "status": "FAIL",
+      "details": "Error: Workshop geometry/font changed: [{\"index\":4,\"before\":{\"tag\":\"A\",\"className\":\"technology-chip\",\"x\":307,\"y\":9934,\"width\":78,\"height\":44,\"fontFamily\":\"Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\\"Segoe UI\\\", sans-serif\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"25.2px\",\"letterSpacing\":\"-0.45px\"},\"after\":{\"tag\":\"A\",\"className\":\"technology-chip\",\"x\":308,\"y\":9934,\"width\":78,\"height\":44,\"fontFamily\":\"Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \\\"Segoe UI\\\", sans-serif\",\"fontSize\":\"18px\",\"fontWeight\":\"400\",\"lineHeight\":\"25.2px\",\"letterSpacing\":\"-0.45px\"}},{\"index\":5,\"before\":{\"tag\":\"SPAN\",\"className\":\"\",\"x\":379,\"y\":9953,\"width\":6,\"height\":14,\"fontFamily\":\"\\\"Courier New\\\", ui-monospace, SFMono-Regular, Consolas, monospace\",\"fontSize\":\"10px\",\"fontWeight\":\"400\",\"lineHeight\":\"14px\",\"letterSpacing\":\"-0.45px\"},\"after\":{\"tag\":\"SPAN\",\"className\":\"\",\"x\":380,\"y\":9953,\"width\":6,\"height\":14,\"fontFamily\":\"\\\"Courier New\\\", ui-monospace, SFMono-Regular, Consolas, monospace\",\"fontSize\":\"10px\",\"fontWeight\":\"400\",\"lineHeight\":\"14px\",\"letterSpacing\":\"-0.45px\"}},{\"index\":7,\"before\":{\"tag\":\"SPAN\",\"className\":\"\",\"x\":502,\"y\":9953,\"width\":6,\"height\":14,\"fontFamily\":\"\\\"Courier New\\\", ui-monospace, SFMono-Regular, Consolas, monospace\",\"fontSize\":\"10px\",\"fontWeight\":\"400\",\"lineHeight\":\"14px\",\"letterSpacing\":\"-0.45px\"},\"after\":{\"tag\":\"SPAN\",\"className\":\"\",\"x\":503,\"y\":9953,\"width\":6,\"height\":14,\"fontFamily\":\"\\\"Courier New\\\", ui-monospace, SFMono-Regular, Consolas, monospace\",\"fontSize\":\"10px\",\"fontWeight\":\"400\",\"lineHeight\":\"14px\",\"letterSpacing\":\"-0.45px\"}}]\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/glass-performance-fix-20261102/functional-qa.cjs:15:56)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/glass-performance-fix-20261102/functional-qa.cjs:148:7\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/glass-performance-fix-20261102/functional-qa.cjs:26:68)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/glass-performance-fix-20261102/functional-qa.cjs:145:5)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/glass-performance-fix-20261102/functional-qa.cjs:211:80)"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Clear face and supported hollow double glass edges",
+      "status": "PASS",
+      "details": {
+        "computed": [
+          {
+            "title": "Klienci i interfejsy",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Backend i komunikacja",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 7% 0px, 90% 5%, 100% 21%, 93% 94%, 18% 100%, 0px 86%, 1% 11%, 7% 0px, calc(7% + 1px) 2px, calc(90% - 1px) calc(5% + 2px), calc(100% - 2px) 21%, calc(93% - 2px) calc(94% - 2px), 18% calc(100% - 2px), 2px calc(86% - 1px), calc(1% + 2px) calc(11% + 1px), calc(7% + 1px) 2px, 7% 0px)",
+            "innerClip": "polygon(evenodd, 7% 0px, 90% 5%, 100% 21%, 93% 94%, 18% 100%, 0px 86%, 1% 11%, 7% 0px, calc(7% + 1px) 2px, calc(90% - 1px) calc(5% + 2px), calc(100% - 2px) 21%, calc(93% - 2px) calc(94% - 2px), 18% calc(100% - 2px), 2px calc(86% - 1px), calc(1% + 2px) calc(11% + 1px), calc(7% + 1px) 2px, 7% 0px)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Dane i bezpieczeństwo",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 3% 8%, 83% 0px, 100% 19%, 95% 90%, 12% 100%, 0px 80%, 3% 8%, calc(3% + 2px) calc(8% + 2px), calc(83% - 1px) 2px, calc(100% - 2px) calc(19% + 1px), calc(95% - 2px) calc(90% - 1px), 12% calc(100% - 2px), 2px calc(80% - 1px), calc(3% + 2px) calc(8% + 2px), 3% 8%)",
+            "innerClip": "polygon(evenodd, 3% 8%, 83% 0px, 100% 19%, 95% 90%, 12% 100%, 0px 80%, 3% 8%, calc(3% + 2px) calc(8% + 2px), calc(83% - 1px) 2px, calc(100% - 2px) calc(19% + 1px), calc(95% - 2px) calc(90% - 1px), 12% calc(100% - 2px), 2px calc(80% - 1px), calc(3% + 2px) calc(8% + 2px), 3% 8%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Infrastruktura i wdrożenia",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Języki i narzędzia",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "innerClip": "polygon(evenodd, 0px 15%, 8% 2%, 87% 0px, 100% 16%, 96% 83%, 86% 100%, 4% 95%, 0px 15%, 2px calc(15% + 1px), calc(8% + 1px) calc(2% + 2px), calc(87% - 1px) 2px, calc(100% - 2px) 16%, calc(96% - 2px) calc(83% - 1px), calc(86% - 1px) calc(100% - 2px), calc(4% + 2px) calc(95% - 2px), 2px calc(15% + 1px), 0px 15%)",
+            "rimSupported": true,
+            "innerSupported": true
+          },
+          {
+            "title": "Inne",
+            "faceBackground": "linear-gradient(118deg, rgba(0, 0, 0, 0) 10%, rgba(229, 238, 243, 0.14) 10.1%, rgba(188, 202, 214, 0.035) 12%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 77%, rgba(195, 210, 223, 0.086) 77.1%, rgba(0, 0, 0, 0) 78%), radial-gradient(38% 7% at 31% 8%, rgba(215, 230, 243, 0.106), rgba(0, 0, 0, 0) 87%), radial-gradient(68% 13% at 73% 97%, rgba(150, 55, 72, 0.125), rgba(0, 0, 0, 0) 84%), linear-gradient(142deg, rgba(181, 196, 212, 0.043), rgba(10, 10, 16, 0.016) 42%, rgba(9, 7, 11, 0.03) 73%, rgba(90, 35, 49, 0.05))",
+            "maximumFaceStopAlpha": 0.14,
+            "faceColor": "rgba(0, 0, 0, 0)",
+            "filter": "none",
+            "backdropFilter": "none",
+            "rimClip": "polygon(evenodd, 0px 7%, 5% 0px, 93% 1%, 100% 9%, 98% 93%, 92% 100%, 2% 97%, 0px 7%, 2px calc(7% + 1px), calc(5% + 1px) 2px, calc(93% - 1px) calc(1% + 2px), calc(100% - 2px) calc(9% + 1px), calc(98% - 2px) calc(93% - 1px), calc(92% - 1px) calc(100% - 2px), calc(2% + 2px) calc(97% - 2px), 2px calc(7% + 1px), 0px 7%)",
+            "innerClip": "polygon(evenodd, 0px 7%, 5% 0px, 93% 1%, 100% 9%, 98% 93%, 92% 100%, 2% 97%, 0px 7%, 2px calc(7% + 1px), calc(5% + 1px) 2px, calc(93% - 1px) calc(1% + 2px), calc(100% - 2px) calc(9% + 1px), calc(98% - 2px) calc(93% - 1px), calc(92% - 1px) calc(100% - 2px), calc(2% + 2px) calc(97% - 2px), 2px calc(7% + 1px), 0px 7%)",
+            "rimSupported": true,
+            "innerSupported": true
+          }
+        ],
+        "rasterizedHollowRims": [
+          {
+            "title": "Klienci i interfejsy",
+            "centerMax": 0,
+            "brightPixels": 1455,
+            "width": 300,
+            "height": 200
+          },
+          {
+            "title": "Backend i komunikacja",
+            "centerMax": 0,
+            "brightPixels": 1443,
+            "width": 300,
+            "height": 200
+          },
+          {
+            "title": "Dane i bezpieczeństwo",
+            "centerMax": 0,
+            "brightPixels": 1318,
+            "width": 300,
+            "height": 200
+          },
+          {
+            "title": "Infrastruktura i wdrożenia",
+            "centerMax": 0,
+            "brightPixels": 1455,
+            "width": 300,
+            "height": 200
+          },
+          {
+            "title": "Języki i narzędzia",
+            "centerMax": 0,
+            "brightPixels": 1455,
+            "width": 300,
+            "height": 200
+          },
+          {
+            "title": "Inne",
+            "centerMax": 0,
+            "brightPixels": 1518,
+            "width": 300,
+            "height": 200
+          }
+        ],
+        "note": "CSS transparency and cut edges are verified; this does not claim physical optical refraction."
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Reduced motion has no queued timer or animation",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": true,
+          "reduced": true,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 0,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": true,
+          "reduced": true,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Real keyboard navigation keeps a visible technology focus and active group",
+      "status": "PASS",
+      "details": {
+        "text": "Android 2",
+        "link": true,
+        "focusVisible": true,
+        "outlineStyle": "solid",
+        "outlineWidth": "2px",
+        "activeGroup": true
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Technology hover keeps haze alpha exactly zero over visible labels",
+      "status": "PASS",
+      "details": {
+        "points": [
+          {
+            "text": "Klienci i interfejsy",
+            "x": 320.56459045410156,
+            "y": 222.88939666748047,
+            "top": 186.89341735839844,
+            "bottom": 258.8853759765625,
+            "alphaByte": 0
+          },
+          {
+            "text": ".NET MAUI 1",
+            "x": 215.70417022705078,
+            "y": 312.06365966796875,
+            "top": 282.7674560546875,
+            "bottom": 341.35986328125,
+            "alphaByte": 0
+          },
+          {
+            "text": "Android 2",
+            "x": 339.8180389404297,
+            "y": 308.7398223876953,
+            "top": 284.5942077636719,
+            "bottom": 332.88543701171875,
+            "alphaByte": 0
+          },
+          {
+            "text": "AudioTrack 1",
+            "x": 451.7388610839844,
+            "y": 303.9367370605469,
+            "top": 279.224365234375,
+            "bottom": 328.64910888671875,
+            "alphaByte": 0
+          },
+          {
+            "text": "CSS 3",
+            "x": 551.0099182128906,
+            "y": 297.68284606933594,
+            "top": 269.93115234375,
+            "bottom": 325.4345397949219,
+            "alphaByte": 0
+          },
+          {
+            "text": "HTML 3",
+            "x": 629.2266845703125,
+            "y": 296.3268127441406,
+            "top": 272.4947509765625,
+            "bottom": 320.15887451171875,
+            "alphaByte": 0
+          },
+          {
+            "text": "Jetpack Compose 3",
+            "x": 230.47032165527344,
+            "y": 370.64642333984375,
+            "top": 344.9372253417969,
+            "bottom": 396.3556213378906,
+            "alphaByte": 0
+          },
+          {
+            "text": "Next.js 2",
+            "x": 370.96331787109375,
+            "y": 362.6881408691406,
+            "top": 334.285888671875,
+            "bottom": 391.09039306640625,
+            "alphaByte": 0
+          },
+          {
+            "text": "React 3",
+            "x": 463.96124267578125,
+            "y": 360.7388000488281,
+            "top": 337.0146179199219,
+            "bottom": 384.4629821777344,
+            "alphaByte": 0
+          },
+          {
+            "text": "SkiaSharp 2",
+            "x": 561.1611938476562,
+            "y": 356.60801696777344,
+            "top": 332.10009765625,
+            "bottom": 381.1159362792969,
+            "alphaByte": 0
+          },
+          {
+            "text": "SpeechRecognizer 1",
+            "x": 260.6916046142578,
+            "y": 424.5958709716797,
+            "top": 393.6201477050781,
+            "bottom": 455.57159423828125,
+            "alphaByte": 0
+          },
+          {
+            "text": "TextToSpeech 1",
+            "x": 449.05833435058594,
+            "y": 418.68243408203125,
+            "top": 393.57574462890625,
+            "bottom": 443.78912353515625,
+            "alphaByte": 0
+          },
+          {
+            "text": "WorkManager 1",
+            "x": 597.7795715332031,
+            "y": 412.4300231933594,
+            "top": 387.1675109863281,
+            "bottom": 437.6925354003906,
+            "alphaByte": 0
+          }
+        ],
+        "state": {
+          "frames": 23,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 9,
+          "masksReady": true,
+          "maskReads": 40,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0555555559694767,
+            0,
+            0.5634657144546509,
+            0.057859376072883606,
+            0.6045681238174438,
+            0,
+            0.8293619751930237,
+            0.04985937476158142,
+            0.09464472532272339,
+            0.1880723237991333,
+            0.35958659648895264,
+            0.2959895730018616,
+            0.09670703858137131,
+            0.26432666182518005,
+            0.5390358567237854,
+            0.4896683692932129,
+            0.6139541268348694,
+            0.33477693796157837,
+            0.8793955445289612,
+            0.4485757648944855,
+            0.605159342288971,
+            0.4197540879249573,
+            0.9045951962471008,
+            0.6923636198043823,
+            0.09922133386135101,
+            0.8015450835227966,
+            0.36416321992874146,
+            0.9094623327255249,
+            0.09472029656171799,
+            0.8865870237350464,
+            0.46363407373428345,
+            1,
+            0.5339905619621277,
+            0.9050175547599792,
+            0.7994320392608643,
+            1
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        },
+        "pointerMode": "real hover"
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Scroll creates no technology animation frames or gradient writes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": true,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "inlineStyles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Global pause cancels queued optical work",
+      "status": "PASS",
+      "details": {
+        "technology": {
+          "before": {
+            "frames": 1,
+            "rafPending": false,
+            "timerPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false,
+            "pointerFpsLimit": 24,
+            "gradientUpdates": 0,
+            "groups": 6,
+            "active": null
+          },
+          "after": {
+            "frames": 1,
+            "rafPending": false,
+            "timerPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false,
+            "pointerFpsLimit": 24,
+            "gradientUpdates": 0,
+            "groups": 6,
+            "active": null
+          }
+        },
+        "atmosphere": {
+          "frames": 35,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 9,
+          "masksReady": true,
+          "maskReads": 118,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0975477397441864,
+            0.17753125727176666,
+            0.3612738847732544,
+            0.273624986410141,
+            0.0975477397441864,
+            0.2626250088214874,
+            0.5361328125,
+            0.46742188930511475,
+            0.6103949546813965,
+            0.33253124356269836,
+            0.8741210699081421,
+            0.4286249876022339,
+            0.6103949546813965,
+            0.4176250100135803,
+            0.9024522304534912,
+            0.6706093549728394,
+            0.0975477397441864,
+            0.7979531288146973,
+            0.3612738847732544,
+            0.8940469026565552,
+            0.0975477397441864,
+            0.8830468654632568,
+            0.46286892890930176,
+            1,
+            0.5371310710906982,
+            0.8979531526565552,
+            0.8008571863174438,
+            0.9940468668937683,
+            0.0555555559694767,
+            0,
+            0.5634657144546509,
+            0.04585937410593033,
+            0.6045681238174438,
+            0,
+            0.8293619751930237,
+            0.03785937651991844
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Offscreen Workshop stops all queued technology work",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": false,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        },
+        "after": {
+          "frames": 1,
+          "rafPending": false,
+          "timerPending": false,
+          "visible": false,
+          "paused": false,
+          "reduced": false,
+          "forcedColors": false,
+          "disposed": false,
+          "pointerFpsLimit": 24,
+          "gradientUpdates": 0,
+          "groups": 6,
+          "active": null
+        }
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No page errors, missing local resources or external requests",
+      "status": "PASS",
+      "details": {
+        "pageErrors": 0,
+        "missingResources": 0,
+        "externalRequests": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Product source remained unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 6
+      }
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "browserMode": "standalone local Chrome",
+  "publication": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/technology-field.css": "9c884055d3347bce354eb3a19b0c171783a07c01a667241ac720d9a22b5e8555",
+    "assets/technology-field.mjs": "b8e70a2e3ef0720ea8cb404060ab23eb4a135b1980a392cfa4f98c2ce653f1b6",
+    "assets/material-finish.css": "ee09575014237780a6bca83de4f9d6bad32717b024427383437ed754c0185557",
+    "assets/luxury-world.mjs": "739ddd9d9a49985a13af5f018646b755dfeed97d3d9dedb552b734b9293bf07f",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f"
+  },
+  "PASS": 17,
+  "FAIL": 1,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/technology-field.css": "9c884055d3347bce354eb3a19b0c171783a07c01a667241ac720d9a22b5e8555",
+    "assets/technology-field.mjs": "b8e70a2e3ef0720ea8cb404060ab23eb4a135b1980a392cfa4f98c2ce653f1b6",
+    "assets/material-finish.css": "ee09575014237780a6bca83de4f9d6bad32717b024427383437ed754c0185557",
+    "assets/luxury-world.mjs": "739ddd9d9a49985a13af5f018646b755dfeed97d3d9dedb552b734b9293bf07f",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f"
+  },
+  "finishedAt": "2026-11-02T18:02:33.569Z",
+  "status": "FAIL"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "ABORTED_ENVIRONMENT_FAILURE",
+  "reason": "Firefox page.goto failed with NS_ERROR_OUT_OF_MEMORY before homepage DOM; dependent locator timeouts are not independent product findings. Manual SIGINT stopped repeated timeouts.",
+  "scope": "Sandboxed full matrix attempt; Chrome emitted no failures but no final JSON was flushed before interruption, so do not declare Chrome PASS from this attempt.",
+  "failure": {
+    "engine": "Playwright Firefox153.0/build1538",
+    "viewport": "360x844",
+    "url": "http://127.0.0.1:8201/",
+    "message": "page.goto: NS_ERROR_OUT_OF_MEMORY"
+  },
+  "screenshotsRetained": 1,
+  "freshProductIssueConfirmed": false,
+  "hostMemoryReadOnly": {
+    "memoryAvailableMiB": 14759,
+    "swapFreeMiB": 989,
+    "note": "Read-only sample, not proof of engine cause."
+  },
+  "retryPlan": "Retry unchanged website with permitted unsandboxed browser process; retain original failure evidence."
+}

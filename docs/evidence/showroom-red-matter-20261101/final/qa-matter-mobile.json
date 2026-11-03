@@ -1,0 +1,429 @@
+{
+  "mode": "mobile",
+  "checks": [
+    {
+      "name": "Mobile uses actual procedural matter",
+      "status": "PASS",
+      "details": {
+        "width": 220,
+        "height": 208,
+        "pixels": 45760,
+        "renderer": "webgl",
+        "rootRenderer": "webgl",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "Mobile uses a smaller render buffer than desktop",
+      "status": "PASS",
+      "details": {
+        "desktop": {
+          "width": 400,
+          "height": 389,
+          "pixels": 155600,
+          "renderer": "webgl",
+          "rootRenderer": "webgl",
+          "motion": "running"
+        },
+        "mobile": {
+          "width": 220,
+          "height": 208,
+          "pixels": 45760,
+          "renderer": "webgl",
+          "rootRenderer": "webgl",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "Mobile matter evolves across five seconds of idle",
+      "status": "PASS",
+      "details": {
+        "draws": 48,
+        "samples": [
+          {
+            "t": 2457.800000011921,
+            "hash": 2152320552,
+            "occupied": 484,
+            "red": 364,
+            "maxRed": 99,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 3012.4000000059605,
+            "hash": 2508292022,
+            "occupied": 479,
+            "red": 366,
+            "maxRed": 100,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 3565.5,
+            "hash": 2057142971,
+            "occupied": 481,
+            "red": 371,
+            "maxRed": 100,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 4120.800000011921,
+            "hash": 2325098560,
+            "occupied": 480,
+            "red": 374,
+            "maxRed": 99,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 4676.300000011921,
+            "hash": 580810538,
+            "occupied": 477,
+            "red": 380,
+            "maxRed": 98,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 5231.5,
+            "hash": 3778789722,
+            "occupied": 470,
+            "red": 383,
+            "maxRed": 104,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 5786.9000000059605,
+            "hash": 431833986,
+            "occupied": 467,
+            "red": 388,
+            "maxRed": 114,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 6342.200000017881,
+            "hash": 2452643096,
+            "occupied": 468,
+            "red": 392,
+            "maxRed": 118,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 6897.5,
+            "hash": 3102754152,
+            "occupied": 468,
+            "red": 397,
+            "maxRed": 120,
+            "width": 220,
+            "height": 208
+          },
+          {
+            "t": 7451.800000011921,
+            "hash": 2119401123,
+            "occupied": 469,
+            "red": 405,
+            "maxRed": 124,
+            "width": 220,
+            "height": 208
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mobile keeps the deep-red volume",
+      "status": "PASS",
+      "details": [
+        {
+          "occupied": 484,
+          "red": 364,
+          "maxRed": 99
+        },
+        {
+          "occupied": 479,
+          "red": 366,
+          "maxRed": 100
+        },
+        {
+          "occupied": 481,
+          "red": 371,
+          "maxRed": 100
+        },
+        {
+          "occupied": 480,
+          "red": 374,
+          "maxRed": 99
+        },
+        {
+          "occupied": 477,
+          "red": 380,
+          "maxRed": 98
+        },
+        {
+          "occupied": 470,
+          "red": 383,
+          "maxRed": 104
+        },
+        {
+          "occupied": 467,
+          "red": 388,
+          "maxRed": 114
+        },
+        {
+          "occupied": 468,
+          "red": 392,
+          "maxRed": 118
+        },
+        {
+          "occupied": 468,
+          "red": 397,
+          "maxRed": 120
+        },
+        {
+          "occupied": 469,
+          "red": 405,
+          "maxRed": 124
+        }
+      ]
+    },
+    {
+      "name": "Mobile page remains within viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile pressure and release precede visible materialization",
+      "status": "PASS",
+      "details": {
+        "compression": {
+          "kind": "phase",
+          "state": "compressing",
+          "t": 89.59999999403954
+        },
+        "release": {
+          "kind": "phase",
+          "state": "releasing",
+          "t": 359.69999998807907
+        },
+        "reveals": [
+          {
+            "kind": "project",
+            "id": "glikemia-premium",
+            "state": "materializing",
+            "energized": true,
+            "visible": true,
+            "t": 450
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mobile every visible project progresses through waiting and materializing",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium"
+      ]
+    },
+    {
+      "name": "Mobile collection preserves all fourteen real project entries",
+      "status": "PASS"
+    },
+    {
+      "name": "Core and active lens remain spatially separate on mobile",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile tap opens real project details",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile reading pauses procedural work",
+      "status": "PASS",
+      "details": {
+        "before": 71,
+        "after": 71
+      }
+    },
+    {
+      "name": "Mobile reduced motion retains a static volume",
+      "status": "PASS",
+      "details": {
+        "before": 75,
+        "after": 75
+      }
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-mobile-idle-start.png",
+    "matter-mobile-idle-after-5s.png",
+    "matter-mobile-core-pressure.png",
+    "matter-mobile-activated.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 13,
+  "FAIL": 0,
+  "activationTimeline": [
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "adivara",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "gotrans360",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "ignira",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "obserwator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "kan-system",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-systems",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-analytics",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-infrastructure",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "phase",
+      "state": "compressing",
+      "t": 89.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "t": 89.59999999403954
+    },
+    {
+      "kind": "phase",
+      "state": "releasing",
+      "t": 359.69999998807907
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "materializing",
+      "energized": true,
+      "visible": true,
+      "t": 450
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "t": 1000.5
+    }
+  ]
+}

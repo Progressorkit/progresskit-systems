@@ -1,0 +1,16 @@
+--- before/scripts/build-site.py
++++ after/scripts/build-site.py
+@@ -541,11 +541,13 @@
+         page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('luxury-world','luxury-chapters','luxury-showroom'))
+         page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('continuity-process','continuity-chapters','technology-field'))
+         page_styles+='\n  <link rel="stylesheet" href="assets/material-finish.css">'
++        page_styles+='\n  <link rel="stylesheet" href="assets/brand-core-mark.css">'
+     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
+     if not path and not prefix:
+         page_scripts+='\n  <script type="module" src="assets/showroom-3d.mjs"></script>\n  <script type="module" src="assets/spatial-chapters.mjs"></script>'
+         page_scripts+='\n  <script type="module" src="assets/luxury-world.mjs"></script>'
+         page_scripts+='\n  <script type="module" src="assets/continuity-chapters.mjs"></script>\n  <script type="module" src="assets/technology-field.mjs"></script>'
++        page_scripts+='\n  <script type="module" src="assets/brand-core-mark.mjs"></script>'
+     if not page_styles:
+         template=template.replace('  @@PAGE_STYLES@@\n','')
+     if not page_scripts:

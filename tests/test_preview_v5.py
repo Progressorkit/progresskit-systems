@@ -38,7 +38,7 @@ class PreviewV5Tests(unittest.TestCase):
                     self.assertEqual(directory,response.headers['location'])
 
     def test_private_sources_and_unreviewed_assets_are_not_exposed(self):
-        for path in ('/.git/config','/catalog/projects.json','/templates/site.html','/analytics/app.py',
+        for path in ('/.git/config','/catalog/operator.json','/marketing/brand-launch-2026-11-02/preview/brand-v1.mp4','/catalog/projects.json','/templates/site.html','/analytics/app.py',
                      '/docs/PROGRESSKIT_V5_EVIDENCE_SAAS.md','/tests/test_product.py',
                      '/scripts/build-site.py','/downloads/glikemia-premium.json','/summary','/health',
                      '/assets/projects/vaeloria/vaeloria-cover.png','/assets/projects/rwr/rwr-cover.webp',

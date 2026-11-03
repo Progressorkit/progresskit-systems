@@ -1,0 +1,158 @@
+{
+  "checkedAt": "2026-11-02T20:33:10.060Z",
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN",
+  "ownerVisualApproval": "OPEN",
+  "scope": "Warsztat only; material polish, input response and existing technology filter preservation",
+  "finalUniqueChecks": {
+    "PASS": 31,
+    "unresolvedFAIL": 0,
+    "total": 31
+  },
+  "executionHistory": {
+    "original": {
+      "report": "functional-qa.json",
+      "PASS": 29,
+      "FAIL": 2,
+      "preservedUnmodified": true
+    },
+    "diagnostic": {
+      "report": "print-probe.json",
+      "issue": "Active count spans retained screen color rgb(195,162,168) under print because the screen selector had one additional class."
+    },
+    "followup": {
+      "report": "print-followup.json",
+      "PASS": 2,
+      "FAIL": 0,
+      "scope": "Only the two failed print checks; the 29 passing checks were not repeated."
+    },
+    "totalExecuted": 33,
+    "historicalFailuresRetained": 2
+  },
+  "lastSourceChangeAfterBroadQAAndVisualProof": {
+    "files": [
+      "assets/technology-field.css"
+    ],
+    "description": "Only @media print selector for .technology-group.is-field-active .technology-chip span; screen rendering and normal interaction rules unchanged.",
+    "before": {
+      "assets/technology-field.css": "deb0f74c77fbe4e5c6a64d4bc25f6ba7ad44966b0c2d7f14cceed2d05597e09a"
+    },
+    "after": {
+      "assets/technology-field.css": "150d1528337f699ee1cef8573567fedffc7b58b87690749f7f69c04457d11999"
+    }
+  },
+  "verification": {
+    "viewports": [
+      390,
+      1440
+    ],
+    "geometry": [
+      {
+        "scope": "after:390",
+        "elements": 232,
+        "groups": 6,
+        "links": 110,
+        "documentWidth": 390,
+        "documentHeight": 18510,
+        "rectanglePrecision": "exact DOMRect doubles, no rounding/tolerance",
+        "webglContexts": [
+          {
+            "type": "webgl2",
+            "className": "",
+            "showroom": true
+          },
+          {
+            "type": "webgl2",
+            "className": "luxury-atmosphere",
+            "showroom": false
+          }
+        ]
+      },
+      {
+        "scope": "after:1440",
+        "elements": 232,
+        "groups": 6,
+        "links": 110,
+        "documentWidth": 1440,
+        "documentHeight": 14888,
+        "rectanglePrecision": "exact DOMRect doubles, no rounding/tolerance",
+        "webglContexts": [
+          {
+            "type": "webgl2",
+            "className": "",
+            "showroom": true
+          },
+          {
+            "type": "webgl2",
+            "className": "luxury-atmosphere",
+            "showroom": false
+          }
+        ]
+      }
+    ],
+    "bevel": [
+      {
+        "scope": "after:390",
+        "previousRim": {
+          "centerMax": 0,
+          "brightPixels": 1455,
+          "width": 300,
+          "height": 200
+        },
+        "bevel": {
+          "centerMax": 0,
+          "brightPixels": 9368,
+          "width": 300,
+          "height": 200
+        }
+      },
+      {
+        "scope": "after:1440",
+        "previousRim": {
+          "centerMax": 0,
+          "brightPixels": 1455,
+          "width": 300,
+          "height": 200
+        },
+        "bevel": {
+          "centerMax": 0,
+          "brightPixels": 9368,
+          "width": 300,
+          "height": 200
+        }
+      }
+    ],
+    "print": [
+      {
+        "width": 390,
+        "status": "PASS",
+        "links": 110,
+        "colors": [
+          "rgb(17, 17, 17)"
+        ],
+        "background": "rgb(255, 255, 255)",
+        "minimumContrast": 18.883060964594996
+      },
+      {
+        "width": 1440,
+        "status": "PASS",
+        "links": 110,
+        "colors": [
+          "rgb(17, 17, 17)"
+        ],
+        "background": "rgb(255, 255, 255)",
+        "minimumContrast": 18.883060964594996
+      }
+    ],
+    "sourceStableDuringBroadQA": true,
+    "sourceStableDuringPrintFollowup": true,
+    "pageErrors": 0,
+    "missingResources": 0
+  },
+  "limits": {
+    "browser": "Standalone local Chrome, not the app preview",
+    "physicalMobile": "NOT_RUN",
+    "publication": "NOT_RUN",
+    "formsSubmitted": false,
+    "ownerVisualApproval": "OPEN"
+  }
+}

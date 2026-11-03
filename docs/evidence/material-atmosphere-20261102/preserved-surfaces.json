@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-11-02T17:15:21.317115+00:00",
+  "checks": [
+    {
+      "name": "assets/continuity-chapters.css",
+      "status": "PASS",
+      "beforeSha256": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+      "afterSha256": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7"
+    },
+    {
+      "name": "assets/continuity-chapters.mjs",
+      "status": "PASS",
+      "beforeSha256": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+      "afterSha256": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e"
+    },
+    {
+      "name": "assets/continuity-process.css",
+      "status": "PASS",
+      "beforeSha256": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+      "afterSha256": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147"
+    },
+    {
+      "name": "assets/luxury-chapters.css",
+      "status": "PASS",
+      "beforeSha256": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+      "afterSha256": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea"
+    },
+    {
+      "name": "assets/luxury-world.css",
+      "status": "PASS",
+      "beforeSha256": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+      "afterSha256": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7"
+    },
+    {
+      "name": "assets/showroom-3d.mjs",
+      "status": "PASS",
+      "beforeSha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23",
+      "afterSha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23"
+    },
+    {
+      "name": "assets/showroom-lifecycle.mjs",
+      "status": "PASS",
+      "beforeSha256": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+      "afterSha256": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa"
+    },
+    {
+      "name": "assets/showroom-scene.mjs",
+      "status": "PASS",
+      "beforeSha256": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+      "afterSha256": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170"
+    },
+    {
+      "name": "assets/spatial-chapters.mjs",
+      "status": "PASS",
+      "beforeSha256": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+      "afterSha256": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336"
+    },
+    {
+      "name": "assets/technology-field.css",
+      "status": "PASS",
+      "beforeSha256": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+      "afterSha256": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0"
+    },
+    {
+      "name": "assets/technology-field.mjs",
+      "status": "PASS",
+      "beforeSha256": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1",
+      "afterSha256": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+    }
+  ],
+  "PASS": 11,
+  "FAIL": 0,
+  "scope": "Approved section architecture, scene geometry, materials/controllers and base styles remain byte-identical; allowed atmosphere and new finishing layer are separate.",
+  "ownerVisualApproval": "OPEN",
+  "status": "PASS"
+}

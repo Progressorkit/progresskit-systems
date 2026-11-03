@@ -1,0 +1,1234 @@
+{
+  "mode": "desktop",
+  "checks": [
+    {
+      "name": "Desktop uses the actual WebGL renderer",
+      "status": "PASS",
+      "details": {
+        "width": 900,
+        "height": 900,
+        "pixels": 810000,
+        "renderer": "webgl",
+        "filaments": 1080,
+        "rootRenderer": "webgl",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "Desktop renders hundreds of branching strands without hundreds of DOM nodes",
+      "status": "PASS",
+      "details": {
+        "width": 900,
+        "height": 900,
+        "pixels": 810000,
+        "renderer": "webgl",
+        "filaments": 1080,
+        "rootRenderer": "webgl",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "One WebGL layer, without DOM or SVG connectors",
+      "status": "PASS"
+    },
+    {
+      "name": "Idle keeps projects dormant",
+      "status": "PASS"
+    },
+    {
+      "name": "Hit-tested matter layer paints behind the core",
+      "status": "PASS",
+      "details": {
+        "back": 12,
+        "front": 0,
+        "outsideTrigger": true,
+        "layerZ": "1",
+        "triggerZ": "7",
+        "stack": [
+          "capsule-caustic",
+          "capsule-glass-edge",
+          "capsule-mark",
+          "capsule-refraction",
+          "capsule-glass",
+          "capsule-energy",
+          "capsule-chamber",
+          "capsule-armor capsule-armor--rear",
+          "capsule-float",
+          "capsule-pose",
+          "capsule-shadow",
+          "capsule-trigger"
+        ]
+      }
+    },
+    {
+      "name": "Original metallic logo has no tint or blend overlay",
+      "status": "PASS",
+      "details": {
+        "src": "assets/brand/progressorkit-stamp.png",
+        "opacity": "1",
+        "ancestors": [
+          {
+            "filter": "brightness(1.23) saturate(0.85) drop-shadow(rgba(0, 0, 0, 0.6) 5px 10px 5px) drop-shadow(rgba(195, 247, 255, 0.333) -1px -1px 1px)",
+            "blend": "normal"
+          },
+          {
+            "filter": "none",
+            "blend": "normal"
+          },
+          {
+            "filter": "none",
+            "blend": "normal"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Matter continues drawing throughout at least six seconds of idle",
+      "status": "PASS",
+      "details": {
+        "elapsedMs": 6200,
+        "draws": 208
+      }
+    },
+    {
+      "name": "Spatial pattern changes across several idle samples",
+      "status": "PASS",
+      "details": {
+        "samples": [
+          {
+            "t": 3372.800000011921,
+            "hash": 1570187356,
+            "occupied": 1118,
+            "red": 1057,
+            "maxRed": 213,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 3850.5999999940395,
+            "hash": 3571563763,
+            "occupied": 1120,
+            "red": 1064,
+            "maxRed": 213,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 4311.699999988079,
+            "hash": 2226410439,
+            "occupied": 1126,
+            "red": 1065,
+            "maxRed": 206,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 4782.5999999940395,
+            "hash": 1926526691,
+            "occupied": 1132,
+            "red": 1071,
+            "maxRed": 212,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 5288.9000000059605,
+            "hash": 2065578066,
+            "occupied": 1133,
+            "red": 1062,
+            "maxRed": 217,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 5785.5,
+            "hash": 3641536337,
+            "occupied": 1127,
+            "red": 1062,
+            "maxRed": 182,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 6251.0999999940395,
+            "hash": 432749978,
+            "occupied": 1125,
+            "red": 1061,
+            "maxRed": 236,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 6718.699999988079,
+            "hash": 2070053222,
+            "occupied": 1120,
+            "red": 1067,
+            "maxRed": 191,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 7216.800000011921,
+            "hash": 4065464127,
+            "occupied": 1114,
+            "red": 1065,
+            "maxRed": 194,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 7713.699999988079,
+            "hash": 2601390395,
+            "occupied": 1112,
+            "red": 1067,
+            "maxRed": 208,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 8185.800000011921,
+            "hash": 469460029,
+            "occupied": 1111,
+            "red": 1069,
+            "maxRed": 220,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 8687.699999988079,
+            "hash": 2453773185,
+            "occupied": 1107,
+            "red": 1067,
+            "maxRed": 233,
+            "width": 900,
+            "height": 900
+          },
+          {
+            "t": 9155.699999988079,
+            "hash": 2235240481,
+            "occupied": 1103,
+            "red": 1069,
+            "maxRed": 225,
+            "width": 900,
+            "height": 900
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rendered sphere contains red electric matter",
+      "status": "PASS",
+      "details": [
+        {
+          "occupied": 1118,
+          "red": 1057,
+          "maxRed": 213
+        },
+        {
+          "occupied": 1120,
+          "red": 1064,
+          "maxRed": 213
+        },
+        {
+          "occupied": 1126,
+          "red": 1065,
+          "maxRed": 206
+        },
+        {
+          "occupied": 1132,
+          "red": 1071,
+          "maxRed": 212
+        },
+        {
+          "occupied": 1133,
+          "red": 1062,
+          "maxRed": 217
+        },
+        {
+          "occupied": 1127,
+          "red": 1062,
+          "maxRed": 182
+        },
+        {
+          "occupied": 1125,
+          "red": 1061,
+          "maxRed": 236
+        },
+        {
+          "occupied": 1120,
+          "red": 1067,
+          "maxRed": 191
+        },
+        {
+          "occupied": 1114,
+          "red": 1065,
+          "maxRed": 194
+        },
+        {
+          "occupied": 1112,
+          "red": 1067,
+          "maxRed": 208
+        },
+        {
+          "occupied": 1111,
+          "red": 1069,
+          "maxRed": 220
+        },
+        {
+          "occupied": 1107,
+          "red": 1067,
+          "maxRed": 233
+        },
+        {
+          "occupied": 1103,
+          "red": 1069,
+          "maxRed": 225
+        }
+      ]
+    },
+    {
+      "name": "WebGL sampling completed without errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "Desktop pressure and release precede visible materialization",
+      "status": "PASS",
+      "details": {
+        "compression": {
+          "kind": "phase",
+          "state": "compressing",
+          "t": 226.59999999403954
+        },
+        "release": {
+          "kind": "phase",
+          "state": "releasing",
+          "t": 540.8999999761581
+        },
+        "reveals": [
+          {
+            "kind": "project",
+            "id": "glikemia-premium",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1078.2999999821186
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-mail",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1082.7999999821186
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-translator",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1171.0999999940395
+          },
+          {
+            "kind": "project",
+            "id": "vaeloria",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1263.8999999761581
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-community",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1360.8999999761581
+          },
+          {
+            "kind": "project",
+            "id": "progresskit-tax",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 1470.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "Desktop every visible crystal progresses reflection then contour then refraction and readable content",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium",
+        "progresskit-mail",
+        "progresskit-translator",
+        "vaeloria",
+        "progresskit-community",
+        "progresskit-tax"
+      ]
+    },
+    {
+      "name": "Desktop materialization changes reflection, edge and facet geometry before text appears",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium",
+        "progresskit-mail",
+        "progresskit-translator",
+        "vaeloria",
+        "progresskit-community",
+        "progresskit-tax"
+      ]
+    },
+    {
+      "name": "Desktop collection preserves all fourteen real project entries",
+      "status": "PASS"
+    },
+    {
+      "name": "Hover sends the actual project position to the filament field",
+      "status": "PASS",
+      "details": {
+        "state": {
+          "running": true,
+          "compact": false,
+          "reduced": false,
+          "x": 0.5517199707031251,
+          "y": -0.5394393537380624,
+          "active": true,
+          "target": {
+            "x": 0.5896340228141623,
+            "y": -0.34490255802235703
+          }
+        },
+        "expected": {
+          "x": 0.600198494119847,
+          "y": -0.34845915449426534
+        },
+        "uniforms": [
+          {
+            "name": "uTarget",
+            "x": 0.5896328548556972,
+            "y": -0.34490187483302553
+          },
+          {
+            "name": "uTarget",
+            "x": 0.5896331974599833,
+            "y": -0.34490207523706407
+          },
+          {
+            "name": "uTarget",
+            "x": 0.5896334292100605,
+            "y": -0.34490221079768973
+          },
+          {
+            "name": "uTarget",
+            "x": 0.5896336810186633,
+            "y": -0.34490235809141306
+          }
+        ]
+      }
+    },
+    {
+      "name": "GPU receives a noncentral group destination",
+      "status": "PASS",
+      "details": [
+        {
+          "name": "uTarget",
+          "x": 0.5896328548556972,
+          "y": -0.34490187483302553
+        },
+        {
+          "name": "uTarget",
+          "x": 0.5896331974599833,
+          "y": -0.34490207523706407
+        },
+        {
+          "name": "uTarget",
+          "x": 0.5896334292100605,
+          "y": -0.34490221079768973
+        },
+        {
+          "name": "uTarget",
+          "x": 0.5896336810186633,
+          "y": -0.34490235809141306
+        }
+      ]
+    },
+    {
+      "name": "Project-local cursor movement changes facet lighting",
+      "status": "PASS",
+      "details": {
+        "leftLight": {
+          "x": "35.62%",
+          "y": "40.16%"
+        },
+        "rightLight": {
+          "x": "63.43%",
+          "y": "58.91%"
+        }
+      }
+    },
+    {
+      "name": "Hover activates one project without a connector",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard focus reaches a fully revealed selected project",
+      "status": "PASS"
+    },
+    {
+      "name": "Enter opens original project content",
+      "status": "PASS"
+    },
+    {
+      "name": "Opening project details stops matter work",
+      "status": "PASS",
+      "details": {
+        "before": 496,
+        "after": 496
+      }
+    },
+    {
+      "name": "Escape sleeps collection and retains the core control",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion exposes the paused matter state",
+      "status": "PASS",
+      "details": {
+        "mediaReduced": true,
+        "matterMotion": "paused",
+        "interfaceMotion": "paused",
+        "renderer": "webgl",
+        "hidden": false,
+        "rootClasses": "project-showroom section showroom-enhanced capsule-ready showroom-in-view showroom-reduced-motion"
+      }
+    },
+    {
+      "name": "Reduced motion freezes WebGL after its static frame",
+      "status": "PASS",
+      "details": {
+        "before": 520,
+        "after": 520
+      }
+    },
+    {
+      "name": "Reduced activation reveals content without waiting for a shader",
+      "status": "PASS"
+    },
+    {
+      "name": "Global pause stops WebGL",
+      "status": "PASS",
+      "details": {
+        "before": 540,
+        "after": 540
+      }
+    },
+    {
+      "name": "Offscreen matter does no WebGL work",
+      "status": "PASS",
+      "details": {
+        "before": 544,
+        "after": 544
+      }
+    },
+    {
+      "name": "Returning to the showroom resumes live matter",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-desktop-idle-start.png",
+    "matter-desktop-idle-after-6s.png",
+    "matter-desktop-core-pressure.png",
+    "matter-desktop-activated.png",
+    "matter-desktop-project-hover.png",
+    "matter-desktop-reduced-static.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 29,
+  "FAIL": 0,
+  "activationTimeline": [
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "adivara",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "gotrans360",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "ignira",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "obserwator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "kan-system",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-systems",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-analytics",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-infrastructure",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "phase",
+      "state": "compressing",
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 226.59999999403954
+    },
+    {
+      "kind": "phase",
+      "state": "releasing",
+      "t": 540.8999999761581
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 563.0999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 724.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 726.5
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 746.5
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 929.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 931.2999999821186
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 935.3999999761581
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 936.7999999821186
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1078.2999999821186
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1080.199999988079
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1081.2999999821186
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1082.7999999821186
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1168.8999999761581
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1171.0999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1196.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1263.8999999761581
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1360.8999999761581
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 1470.5
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1506.0999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1575.199999988079
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1699.8999999761581
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1746.5999999940395
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1836.699999988079
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1988.699999988079
+    },
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 1990.699999988079
+    }
+  ]
+}

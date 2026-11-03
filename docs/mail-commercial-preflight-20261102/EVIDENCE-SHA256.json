@@ -1,0 +1,266 @@
+{
+  "timestampUTC": "2026-11-02T12:03:47.796200+00:00",
+  "scope": "Private local audit outputs only; not a product build/distribution manifest. Excludes this manifest itself.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 13044,
+      "sha256": "3db3907be371679a22c4c405dfd2234f797bcddf8685023abd39203d2646b4bc"
+    },
+    {
+      "path": "android-signatures.json",
+      "bytes": 1341,
+      "sha256": "51788db71893f07a45c84a18d864efa83171f26feea85e748adba5998d970a14"
+    },
+    {
+      "path": "artifact-inspection.json",
+      "bytes": 2053,
+      "sha256": "94fffe3f1bdc96d0be0c72e0613ea9827c609ad8120991447cc7667048bb05c0"
+    },
+    {
+      "path": "build-report.py",
+      "bytes": 27664,
+      "sha256": "eda2ca6b32fb7507ca1c5a9fbecb757a8e18d64098e2daf4114e76caa5ba846c"
+    },
+    {
+      "path": "dependency-inventory.json",
+      "bytes": 28838,
+      "sha256": "852aeeb23faa1a048bd05dbd2a7de76c032d23fcc5a9115a87efade53dd57c9e"
+    },
+    {
+      "path": "device-availability.json",
+      "bytes": 453,
+      "sha256": "93552b1d3018e4f347e6de3b57de3efa61b43c30673210b616dd3e25bad7158e"
+    },
+    {
+      "path": "fresh-advisory-query.json",
+      "bytes": 13003,
+      "sha256": "3d596afc8bfbe43050e5af4e59ab399de6f86cac65c2e99cc579a0b53925cfdf"
+    },
+    {
+      "path": "fresh-native-tests.json",
+      "bytes": 1297,
+      "sha256": "111bec92ef408ff2c3809be60cba82c5a2501dd383b899460e5ce528583fe5d0"
+    },
+    {
+      "path": "fresh-sast.json",
+      "bytes": 25787,
+      "sha256": "e0eba4ad21c6e27fb34a691929c2fe89dbe213a0acf6bab9204249fa027f935e"
+    },
+    {
+      "path": "fresh-tests.json",
+      "bytes": 3943,
+      "sha256": "efbbe678bcfbd50b081409c285a79e4e0beb5ee8b97f67859d24efde3b185791"
+    },
+    {
+      "path": "native-keyring-codes.json",
+      "bytes": 12,
+      "sha256": "a90d007c2fc57df6e0f2928df79a54a9677f79afcbd89399d8a7da5010264237"
+    },
+    {
+      "path": "native-keyring-runner.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-tests/keyring-locked/keyring-locked.trx",
+      "bytes": 3017,
+      "sha256": "b8bb1fde921debab372c888c805b656e074e34b14f86689dfed87a6d989f2a3c"
+    },
+    {
+      "path": "native-tests/keyring-locked/runner.log",
+      "bytes": 419,
+      "sha256": "80d4232dd4d7cdee3c2f9939548c04d8ac3f8663f110a9df65e10041c1c2fcc2"
+    },
+    {
+      "path": "native-tests/keyring-restart/keyring-restart.trx",
+      "bytes": 3017,
+      "sha256": "3d0bc56394e0a4353d6432c778a8e25e7dfbf21e39d490880af4cdfedd399078"
+    },
+    {
+      "path": "native-tests/keyring-restart/runner.log",
+      "bytes": 422,
+      "sha256": "a3948a168c1cda1443e68ee4f3ca85dd114d2ebd137b3cf4df261045a928d1f1"
+    },
+    {
+      "path": "native-tests/keyring-unavailable/keyring-unavailable.trx",
+      "bytes": 3017,
+      "sha256": "5259118f5483d00b1726ca289c62b2ef9bf3c6dce5da99d1c4632c5c819d0fac"
+    },
+    {
+      "path": "native-tests/keyring-unavailable/runner.log",
+      "bytes": 429,
+      "sha256": "becc6d30839deb60038fa52309a4c9842c72f5f48b42528f04050f899d2b38d8"
+    },
+    {
+      "path": "native-tests/keyring-unlocked/keyring-unlocked.trx",
+      "bytes": 3017,
+      "sha256": "471b055b356e78215b845bdaf2fb6ea327fb6ad39b312bb641e0b3359284f615"
+    },
+    {
+      "path": "native-tests/keyring-unlocked/runner.log",
+      "bytes": 424,
+      "sha256": "5d3079cf0dc91968d60c7a5f9c49d4e45d3b8a91bbce82983f26dccc8ec520c1"
+    },
+    {
+      "path": "native-tests/notifications/notifications.trx",
+      "bytes": 7397,
+      "sha256": "b1cc980ba5919ba33cabeb756e2d23c47b87a0de00ed03c0749dff0e8981a860"
+    },
+    {
+      "path": "native-tests/notifications/runner.log",
+      "bytes": 406,
+      "sha256": "606c4ce4c8b63abdaf763373978e0ecbc1077e93c7b23728f532e2a797797462"
+    },
+    {
+      "path": "native-tests/trusted-loopback/fixture-summary.json",
+      "bytes": 280,
+      "sha256": "67a2ed543b204faf1d57e5a548520112043833819fa815f77c6d6ba07901076c"
+    },
+    {
+      "path": "native-tests/trusted-loopback/runner.log",
+      "bytes": 411,
+      "sha256": "1debd56a5230fa4bef353bb22053667df43711d5d171af721d0e8efafa3c5fc2"
+    },
+    {
+      "path": "native-tests/trusted-loopback/trusted-loopback.trx",
+      "bytes": 22118,
+      "sha256": "680f6f36398b2cf81eb82b02c4e7102be56b14d738b4392a350a1b796ec27ab7"
+    },
+    {
+      "path": "operator-source-observation.json",
+      "bytes": 831,
+      "sha256": "753fbfad22e576ec7e5efafc8ca29edf1858f72b857c8530c96ec67579d4a49e"
+    },
+    {
+      "path": "pdb-source-freshness.json",
+      "bytes": 128123,
+      "sha256": "257e4e58484caf4307be26afb0f08adce111dc8474c4be5561ef6090b75b88ba"
+    },
+    {
+      "path": "readiness-matrix.json",
+      "bytes": 36421,
+      "sha256": "d91e50fe8a282a2596a7869afea937edf3e48fd621268bc47e8a6ebe89f72acf"
+    },
+    {
+      "path": "run-isolated-tests.py",
+      "bytes": 4683,
+      "sha256": "9b414262aa34bc0ec4883ccd292f4efa2941e9f2492e96a74b2d59f11e377e13"
+    },
+    {
+      "path": "run-native-isolated.py",
+      "bytes": 6872,
+      "sha256": "daa3cccb06fabcdd498bce03416e89f8dec05b7ce8aea7337a76aa1de59cbf7b"
+    },
+    {
+      "path": "sandbox-attempt/report.json",
+      "bytes": 4348,
+      "sha256": "180f47ae2b59faa7563569727c329889d64bfa27e7adcbe1f7a3432f9c3ca6cf"
+    },
+    {
+      "path": "sandbox-attempt/tests/core/core.trx",
+      "bytes": 2415,
+      "sha256": "577b42bffdaf52ad1e50d54db9354431d9d280b24143dc56eac6fd56a97c662f"
+    },
+    {
+      "path": "sandbox-attempt/tests/core/runner.log",
+      "bytes": 1433,
+      "sha256": "d1bfa96d96c4bec22b24ac5a7e73b878b9492dbc4a443273c594a6911988be97"
+    },
+    {
+      "path": "sandbox-attempt/tests/linux/linux.trx",
+      "bytes": 2415,
+      "sha256": "4c4a79d7281235055f9647811b3c3b2ad46f40e2841b1d848e06c2d0a81b0858"
+    },
+    {
+      "path": "sandbox-attempt/tests/linux/runner.log",
+      "bytes": 1435,
+      "sha256": "10aca2a5f82520e38a2d863733fc464abc6fb0fad4f64d7159e1f528bde759dd"
+    },
+    {
+      "path": "sandbox-attempt/tests/linux-security/linux-security.trx",
+      "bytes": 2415,
+      "sha256": "21dd9ed49d4c0701c2760bea17e855f74c927d1ada965ee7401201dc855688eb"
+    },
+    {
+      "path": "sandbox-attempt/tests/linux-security/runner.log",
+      "bytes": 1453,
+      "sha256": "d21947b595e693985e31df40d6d4ce7a1cd2cda8eeceb80214c1d3003400f799"
+    },
+    {
+      "path": "sandbox-attempt/tests/server-no-db/runner.log",
+      "bytes": 1449,
+      "sha256": "c8fceac96341c9f90e450f45366676597fda0fa78ef14b87cf11700454363c82"
+    },
+    {
+      "path": "sandbox-attempt/tests/server-no-db/server-no-db.trx",
+      "bytes": 2415,
+      "sha256": "4d975072ce1f6a9e9f6b77c2ae5d56b78d63cb11b5683aecb35f367b91f0f27e"
+    },
+    {
+      "path": "sast-availability.json",
+      "bytes": 719,
+      "sha256": "9d58035a01ea18687606891abcc27ebe045a2fe22fb2ee8d904b812eecbd0bf2"
+    },
+    {
+      "path": "sast-source-snapshot.json",
+      "bytes": 52804,
+      "sha256": "5c78c026ec90747f31429bd32c9d64f4ca044545fb0c5efc7db1437aba3ec7be"
+    },
+    {
+      "path": "sast-vendor-rules.json",
+      "bytes": 122418,
+      "sha256": "fd9b320e491a8921281914db62287c676c2513907e29be80b79dfe58f852f9c9"
+    },
+    {
+      "path": "secret-scan.json",
+      "bytes": 347,
+      "sha256": "9f7d5b33a72ea41a3c18efb1f78d76dc807c7fd506106fafb11840aec3778bac"
+    },
+    {
+      "path": "signer-tools.json",
+      "bytes": 259,
+      "sha256": "e5fb1a282d1deb2b1150d131662c2dd65f77b2e474f3ff7c1737cc78ea64b879"
+    },
+    {
+      "path": "tests/core/core.trx",
+      "bytes": 435875,
+      "sha256": "ba82f337d34d0442a0de419cec14be87f2c0bcb8ffcdcd036232914ad02fea9d"
+    },
+    {
+      "path": "tests/core/runner.log",
+      "bytes": 4987,
+      "sha256": "468740800559381cf6ce14eff64b4711e1cc68d70391d3eecb3d17d7b79d21df"
+    },
+    {
+      "path": "tests/linux/linux.trx",
+      "bytes": 162968,
+      "sha256": "933495af4d9e9cf9c90d1fe63373aab8b8c84088e0bc790698d845e1f7fd56bc"
+    },
+    {
+      "path": "tests/linux/runner.log",
+      "bytes": 1763,
+      "sha256": "7f672ced853b03ca80ab80a6b2d91df0b2e1e176a9a4e9268f011d4572979649"
+    },
+    {
+      "path": "tests/linux-security/linux-security.trx",
+      "bytes": 60635,
+      "sha256": "2781792573677b3c9791ad7918db9fbadd06905e2f8bfb39dbe29922820fd73d"
+    },
+    {
+      "path": "tests/linux-security/runner.log",
+      "bytes": 826,
+      "sha256": "e9082dde3ad581e7ad4aa4d55d65f935f6b2897f71a3d45e1ad266a3726bd83f"
+    },
+    {
+      "path": "tests/server-no-db/runner.log",
+      "bytes": 4416,
+      "sha256": "bdcfe16f5f3d9f3162dbec2519630626e15b15668b28f91a7cef47fac29fb448"
+    },
+    {
+      "path": "tests/server-no-db/server-no-db.trx",
+      "bytes": 323884,
+      "sha256": "25a21125000da5096f3081dbc798423f7f8257f611c38e32966dd295451f8504"
+    }
+  ]
+}

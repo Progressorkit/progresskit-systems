@@ -1,0 +1,76 @@
+{
+  "status": "TEMPLATE_PENDING_RESULTS_AND_OWNER_REVIEW",
+  "date": "2026-11-02",
+  "sourceFreeze": {
+    "catalogSchemaVersion": 2,
+    "catalogCount": null,
+    "catalogIds": [],
+    "catalogAsOf": null,
+    "sourceHashes": {},
+    "gitRevision": null,
+    "workingTreeDirty": null
+  },
+  "automatedResults": {
+    "buildAndTests": {
+      "status": "NOT_IMPORTED",
+      "artifact": null,
+      "PASS": null,
+      "FAIL": null,
+      "SKIP": null
+    },
+    "static": {
+      "status": "NOT_IMPORTED",
+      "artifact": "static-final/report.json",
+      "PASS": null,
+      "FAIL": null
+    },
+    "localLinks": {
+      "status": "NOT_IMPORTED",
+      "artifact": "local-links.json",
+      "PASS": null,
+      "FAIL": null,
+      "BLOCKED": null,
+      "externalLinks": "NOT_VERIFIED_BY_LOCAL_HELPER"
+    },
+    "browsers": {
+      "status": "NOT_IMPORTED",
+      "artifact": "matrix-summary.json",
+      "engines": [],
+      "widths": [
+        360,
+        390,
+        768,
+        1440
+      ],
+      "expectedCaseVisits": null,
+      "actualCaseVisits": null,
+      "PASS": null,
+      "FAIL": null,
+      "BLOCKED": null,
+      "sourceUnchanged": null,
+      "notes": [
+        "Historical product test results presented on case pages are not rerun totals.",
+        "Keep initial environment failure and retry results separate."
+      ]
+    }
+  },
+  "visualReview": {
+    "status": "OPEN",
+    "reviewer": null,
+    "reviewedAt": null,
+    "artifacts": [],
+    "observations": [],
+    "materialLightingAndMotion": null,
+    "allWidthsNoClippedCopyOrOverlap": null,
+    "mobilePhysicalProof": "NOT_RUN"
+  },
+  "gatesFile": "formal-gates.json",
+  "unresolved": [],
+  "ownerVisualApproval": "OPEN",
+  "publicDeploymentVerified": false,
+  "readyForAdvertising": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "interpretation": "Fill from actual artifacts only. Do not sum historical/product/local/browser results into one syntheticPASS total. Owner/legal/public/mail/physical gates remain explicit."
+}

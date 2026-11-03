@@ -1,0 +1,76 @@
+{
+  "mode": "videos",
+  "startedAt": "2026-11-02T20:27:57.171Z",
+  "hostPreview": "UNKNOWN: in-app browser unavailable, standalone hardware Chrome used for development proof.",
+  "physicalMobile": "NOT_RUN: 390x844 touch emulation.",
+  "ownerVisualApproval": "OPEN",
+  "errors": [],
+  "blocked": [],
+  "artifacts": [
+    {
+      "file": "workshop-crystal-desktop.mp4",
+      "sha256": "69e11584c13bcf7ea3a9650a96fc350c531378b3b4a14204733f18ef5a431edd",
+      "rawFile": "crystal-video-raw/page@fd19e5d21a00d84f45cd2010dfcf01df.webm",
+      "rawSha256": "6629f08f2d1d79f1efac788217dca83b72428bb8b79df03a182ce973e75379cf",
+      "kind": "actual local Chrome recording",
+      "seconds": 13.001,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "playbackRate": 1,
+      "recordingFps": 25,
+      "note": "Recordings are separate from performance benchmark; recording FPS is not rendering FPS."
+    },
+    {
+      "file": "workshop-crystal-mobile.mp4",
+      "sha256": "77e3a3875cdec2bb191cca66da68c31cb0eee3bff2ad0f698112b890ee242060",
+      "rawFile": "crystal-video-raw/page@ee8898ed279bbad31576b57a35b7e109.webm",
+      "rawSha256": "0559657ef84b380ff2557384ea408fafe93b792174e213407ad618c649f0549d",
+      "kind": "actual local Chrome recording",
+      "seconds": 13.001,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "playbackRate": 1,
+      "recordingFps": 25,
+      "note": "Recordings are separate from performance benchmark; recording FPS is not rendering FPS."
+    }
+  ],
+  "sourceBefore": {
+    "assets/technology-field.css": "deb0f74c77fbe4e5c6a64d4bc25f6ba7ad44966b0c2d7f14cceed2d05597e09a",
+    "assets/technology-field.mjs": "aa21b08c80b3d00b3535d64b10fe26c7f286b8f5bebbcf23d97071295a27efa2",
+    "assets/material-finish.css": "96d801fb84e9b0da8377ddd1b69d4497872e35e5405484e52c33395a9926cd1b"
+  },
+  "mobileTap": {
+    "active": true,
+    "rootActive": "true",
+    "metrics": {
+      "frames": 0,
+      "rafPending": false,
+      "timerPending": false,
+      "settlingTimerPending": false,
+      "busy": false,
+      "visible": true,
+      "paused": false,
+      "reduced": false,
+      "forcedColors": false,
+      "disposed": false,
+      "pointerFpsLimit": 24,
+      "gradientUpdates": 0,
+      "groups": 6,
+      "visibleGroups": 2,
+      "active": 0,
+      "tapped": 0
+    },
+    "horizontalOverflow": false
+  },
+  "sourceAfter": {
+    "assets/technology-field.css": "deb0f74c77fbe4e5c6a64d4bc25f6ba7ad44966b0c2d7f14cceed2d05597e09a",
+    "assets/technology-field.mjs": "aa21b08c80b3d00b3535d64b10fe26c7f286b8f5bebbcf23d97071295a27efa2",
+    "assets/material-finish.css": "96d801fb84e9b0da8377ddd1b69d4497872e35e5405484e52c33395a9926cd1b"
+  },
+  "sourceStable": true,
+  "finishedAt": "2026-11-02T20:28:41.353Z"
+}

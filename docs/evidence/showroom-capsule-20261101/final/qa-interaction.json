@@ -1,0 +1,102 @@
+{
+  "mode": "interaction",
+  "checks": [
+    {
+      "name": "focus wakes capsule and Tab reaches active project",
+      "status": "PASS"
+    },
+    {
+      "name": "Enter opens actual product",
+      "status": "PASS"
+    },
+    {
+      "name": "open panel pauses capsule",
+      "status": "PASS"
+    },
+    {
+      "name": "first Escape closes only the product",
+      "status": "PASS"
+    },
+    {
+      "name": "second Escape sleeps and restores core focus",
+      "status": "PASS"
+    },
+    {
+      "name": "cursor changes light and shadow direction",
+      "status": "PASS",
+      "details": {
+        "left": {
+          "x": -0.84,
+          "light": 19.8
+        },
+        "right": {
+          "x": 0,
+          "light": 45
+        },
+        "shadowL": "matrix(0.951057, -0.309017, 0.309017, 0.951057, 37.32, 36.43)",
+        "shadowR": "matrix(0.951057, -0.309017, 0.309017, 0.951057, 18, 31)"
+      }
+    },
+    {
+      "name": "RAF settles instead of running permanently",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "pending": 0,
+          "total": 22
+        },
+        "b": {
+          "pending": 0,
+          "total": 22
+        }
+      }
+    },
+    {
+      "name": "global pause stops capsule",
+      "status": "PASS"
+    },
+    {
+      "name": "offscreen capsule pauses",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion disables layer animation",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion retains activation",
+      "status": "PASS"
+    },
+    {
+      "name": "forced colors keeps readable core control",
+      "status": "PASS"
+    },
+    {
+      "name": "print exposes all project names",
+      "status": "PASS"
+    },
+    {
+      "name": "no JS preserves real project links",
+      "status": "PASS"
+    },
+    {
+      "name": "no JS does not expose inert core control",
+      "status": "PASS"
+    },
+    {
+      "name": "direct product URL bypasses dormancy",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "forced-colors.png"
+  ],
+  "PASS": 17,
+  "FAIL": 0
+}

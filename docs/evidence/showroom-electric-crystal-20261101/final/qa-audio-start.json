@@ -1,0 +1,191 @@
+{
+  "checks": [
+    {
+      "name": "Dormant core first explicit hum opt-in is running at 800 ms",
+      "status": "PASS",
+      "details": {
+        "untouched": true,
+        "beforeClick": {
+          "phase": "idle",
+          "awake": false
+        },
+        "after800ms": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03398215025663376,
+          "events": [
+            {
+              "t": 2415.0999999940395,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+          "motion": "running"
+        },
+        "readyWithinThreeSeconds": true,
+        "final": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03398358076810837,
+          "events": [
+            {
+              "t": 2415.0999999940395,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "During materialization first explicit hum opt-in is running at 800 ms",
+      "status": "PASS",
+      "details": {
+        "untouched": true,
+        "beforeClick": {
+          "phase": "releasing",
+          "awake": true
+        },
+        "after800ms": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03695685788989067,
+          "events": [
+            {
+              "t": 2642.100000023842,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        },
+        "readyWithinThreeSeconds": true,
+        "final": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03695685788989067,
+          "events": [
+            {
+              "t": 2642.100000023842,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "Original late-hover scenario first explicit hum opt-in is running at 800 ms",
+      "status": "PASS",
+      "details": {
+        "untouched": true,
+        "beforeClick": {
+          "phase": "idle",
+          "awake": true
+        },
+        "after800ms": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03395666554570198,
+          "events": [
+            {
+              "t": 5667.799999982119,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        },
+        "readyWithinThreeSeconds": true,
+        "final": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03396039456129074,
+          "events": [
+            {
+              "t": 5667.799999982119,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "Settled collection first explicit hum opt-in is running at 800 ms",
+      "status": "PASS",
+      "details": {
+        "untouched": true,
+        "beforeClick": {
+          "phase": "idle",
+          "awake": true
+        },
+        "after800ms": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03395666554570198,
+          "events": [
+            {
+              "t": 5956.199999988079,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        },
+        "readyWithinThreeSeconds": true,
+        "final": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03396039456129074,
+          "events": [
+            {
+              "t": 5956.199999988079,
+              "state": "running",
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "hidden": false
+            }
+          ],
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "Focused follow-up of an intermittent first opt-in suspension; each case uses a fresh page/audio context."
+  ],
+  "PASS": 5,
+  "FAIL": 0
+}

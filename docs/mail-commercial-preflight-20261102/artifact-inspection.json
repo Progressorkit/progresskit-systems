@@ -1,0 +1,55 @@
+{
+  "newReadOnlyInspection": true,
+  "notInstallOrRuntimeProof": true,
+  "items": [
+    {
+      "path": "artifacts/linux-release-20261027/ProgressKit-Mail-linux-x64.deb",
+      "exists": true,
+      "bytes": 37610456,
+      "sha256": "379a8d14cacb52e8894e740d39defe5f5f5581275c8b2cff40f8067d3c197782",
+      "debMetadata": "Version: 1.0.0-10\nArchitecture: amd64",
+      "debMetadataExit": 0
+    },
+    {
+      "path": "artifacts/linux-release-20261027/ProgressKit-Mail-linux-x64.tar.gz",
+      "exists": true,
+      "bytes": 49753727,
+      "sha256": "cb94189ce59ec8b4b1215b5cb20e1d2776fc152cb8a9f3be1c12bf45943c4a79"
+    },
+    {
+      "path": "artifacts/windows-wiola-password-20261027-final/windows/ProgressKitMail-Wiola-Win11-x64-Setup.exe",
+      "exists": true,
+      "bytes": 68298055,
+      "sha256": "57148b8ac1964abcfbf021abe8e90a9324d1500dc542a7de74bf64d477505f8c",
+      "PEOptionalMagic": "0x10b",
+      "certificateTableBytes": 0,
+      "authenticodePresent": false,
+      "verification": "PE certificate directory inspected; not a certificate-chain verification"
+    },
+    {
+      "path": "artifacts/windows-wiola-password-20261027-final/windows/ProgressKitMail-Windows-x64.zip",
+      "exists": true,
+      "bytes": 69048772,
+      "sha256": "e4cd1ea241a91cc1bcb65e24282e2d4c5cae4e000addb22081c096012355f2ec",
+      "mainExecutable": {
+        "path": "ProgressKitMail.exe",
+        "PEOptionalMagic": "0x20b",
+        "certificateTableBytes": 0,
+        "authenticodePresent": false,
+        "verification": "PE certificate directory inspected; not a certificate-chain verification"
+      }
+    },
+    {
+      "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "exists": true,
+      "bytes": 22465889,
+      "sha256": "e0ffb9738e2a03a53840ae96eee873f7b753fb915636765849d5d302111ba118"
+    },
+    {
+      "path": "android/app/build/outputs/apk/release/app-release-unsigned.apk",
+      "exists": true,
+      "bytes": 3587958,
+      "sha256": "ff064c98b696ff061065e984f2c0510a07773d6b8337f425c5cd4a1fbb2650e1"
+    }
+  ]
+}

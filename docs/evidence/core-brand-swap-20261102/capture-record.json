@@ -1,0 +1,244 @@
+{
+  "startedAt": "2026-11-02T22:09:32.098Z",
+  "mode": "record",
+  "viewport": {
+    "width": 800,
+    "height": 800
+  },
+  "canvas": {
+    "width": 600,
+    "height": 600,
+    "x": 100,
+    "y": 100
+  },
+  "source": "ACTUAL createShowroomScene(canvas, [], undefined) default capsule; no projects, no scene/material edits.",
+  "errors": [],
+  "blocked": [],
+  "ownerVisualApproval": "OPEN",
+  "sourceBefore": {
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+  },
+  "metricsStart": {
+    "metrics": {
+      "revision": "187",
+      "frames": 105,
+      "quality": 0,
+      "fps": 59,
+      "cpuFrameMs": 3.9000000059604645,
+      "gpuFrameMs": 2.610666,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 26,
+      "triangles": 17648,
+      "geometries": 14,
+      "textures": 9,
+      "rafPending": true,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 72,
+      "coronaRoots": 48,
+      "dpr": 0.85,
+      "transmissionResolutionScale": 0.65,
+      "buffer": {
+        "width": 510,
+        "height": 510
+      },
+      "samples": [
+        {
+          "t": 2950.2,
+          "fps": 1.0169836265636123,
+          "cpuFrameMs": 5,
+          "gpuFrameMs": 93.505817,
+          "drawCalls": 23,
+          "triangles": 16792,
+          "dpr": 0.85
+        },
+        {
+          "t": 3950.2,
+          "fps": 59,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 5.241082,
+          "drawCalls": 23,
+          "triangles": 16792,
+          "dpr": 0.85
+        }
+      ],
+      "phases": [],
+      "camera": "PerspectiveCamera",
+      "depth": true,
+      "corePresentation": "capsule"
+    },
+    "location": {
+      "x": 300.38684377588714,
+      "y": 291.2775311304663,
+      "z": 0.9857120826989862
+    }
+  },
+  "startWall": 1793657377908,
+  "elapsedSeconds": 12.002,
+  "metricsEnd": {
+    "revision": "187",
+    "frames": 837,
+    "quality": 0,
+    "fps": 60.00393468424157,
+    "cpuFrameMs": 2.100000023841858,
+    "gpuFrameMs": 4.414583,
+    "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+    "drawCalls": 23,
+    "triangles": 16792,
+    "geometries": 14,
+    "textures": 9,
+    "rafPending": true,
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "vendor": "Google Inc. (Intel)",
+    "filaments": 72,
+    "coronaRoots": 48,
+    "dpr": 0.85,
+    "transmissionResolutionScale": 0.65,
+    "buffer": {
+      "width": 510,
+      "height": 510
+    },
+    "samples": [
+      {
+        "t": 2950.2,
+        "fps": 1.0169836265636123,
+        "cpuFrameMs": 5,
+        "gpuFrameMs": 93.505817,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 3950.2,
+        "fps": 59,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 5.241082,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 4966.8,
+        "fps": 60.00393468424157,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 4.16875,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 5966.8,
+        "fps": 60,
+        "cpuFrameMs": 3.300000011920929,
+        "gpuFrameMs": 10.377916,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 6983.4,
+        "fps": 60.00393468424162,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 8.703666,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 8000,
+        "fps": 60.00393468424157,
+        "cpuFrameMs": 2.7999999821186066,
+        "gpuFrameMs": 2.581999,
+        "drawCalls": 26,
+        "triangles": 17648,
+        "dpr": 0.85
+      },
+      {
+        "t": 9016.7,
+        "fps": 59.01445854234283,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 4.593916,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 10033.2,
+        "fps": 60.00983767830792,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 5.437249,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 11033.2,
+        "fps": 60,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 4.379416,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 12033.2,
+        "fps": 60,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 4.564249,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 13033.2,
+        "fps": 60,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 8.165249,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 14049.8,
+        "fps": 59.02026362384427,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 3.980166,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 15066.4,
+        "fps": 60.00393468424157,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 2.569333,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      },
+      {
+        "t": 16083,
+        "fps": 60.00393468424157,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 4.649833,
+        "drawCalls": 23,
+        "triangles": 16792,
+        "dpr": 0.85
+      }
+    ],
+    "phases": [],
+    "camera": "PerspectiveCamera",
+    "depth": true,
+    "corePresentation": "capsule"
+  },
+  "rawFile": "raw/page@0fe0ef31796fa6c6d6ff497277fc2bcc.webm",
+  "sourceAfter": {
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3"
+  },
+  "sourceStable": true,
+  "finishedAt": "2026-11-02T22:09:50.798Z"
+}

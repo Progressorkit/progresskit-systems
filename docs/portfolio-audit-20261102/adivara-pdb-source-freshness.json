@@ -1,0 +1,512 @@
+{
+  "summary": {
+    "PDBs": 4,
+    "documents": 68,
+    "uniqueDocuments": 68,
+    "matchingDocuments": 67,
+    "matchingUniqueFiles": 67,
+    "mismatchedCurrentSourceFiles": [],
+    "missingDocuments": [
+      "src/Adivara.API/obj/Release/net10.0/Microsoft.AspNetCore.OpenApi.SourceGenerators/Microsoft.AspNetCore.OpenApi.SourceGenerators.XmlCommentGenerator/OpenApiXmlCommentSupport.generated.cs"
+    ],
+    "scope": "Current copied prebuilt API DLL portable PDB source hashes only; no fresh build, source modifications, DB/auth tests or production inference."
+  },
+  "PDBs": [
+    {
+      "pdb": "Adivara.API.pdb",
+      "documents": [
+        {
+          "path": "src/Adivara.API/Authentication/HttpContextCurrentUser.cs",
+          "exists": true,
+          "expected": "aa68a773357e03d70c7053b05d316224e4deb1eeaa3cc604812459b1fa7f185c",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/Controllers/AuthController.cs",
+          "exists": true,
+          "expected": "9e370410883560006f215f89dbfb77c23ed3c6f09a92df79782ba1cfb18884b9",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/Controllers/CompanyMembershipCaregiversController.cs",
+          "exists": true,
+          "expected": "d56670ab1f4e7848306331f65875da8edf2032a5a82050f1e64b91016e50e73e",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/Controllers/FamilyMemberAccessController.cs",
+          "exists": true,
+          "expected": "4793e2b5eeb3c246f8750199ac7ff9659dcc53966e71315cf787d325522f17af",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/Controllers/MeController.cs",
+          "exists": true,
+          "expected": "f30c75a1a28bd4e03f4cdb7af32a21f3829d116b233a504a302607b4c81e39d3",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/CurrentTenant.cs",
+          "exists": true,
+          "expected": "0f33babcf18658dd22caf988a04f220e5c240f4aa75b18cdffb3695ade5b326f",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/PatientAccessAuthorization.cs",
+          "exists": true,
+          "expected": "07dd37dcbea5b3f385541922edf26303c9c3470e00e8eae857f0b73654c71498",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/RequirePatientAccessAttribute.cs",
+          "exists": true,
+          "expected": "02476e34894f5c5dab521706f21cd5fcbdff3b9ce95d34b6262eddd0e618ba40",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/RequireTenantAttribute.cs",
+          "exists": true,
+          "expected": "ecc0a3f9148cec35876f1b020ca3ff73c8c88e580d976dc0c8ae5e7edae12b9d",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/RequireTenantRolesAttribute.cs",
+          "exists": true,
+          "expected": "c6dcddda1ab6fb22abff711663a86b8428218b9f69d5969fe0ad99755525294b",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/TenantAuthorization.cs",
+          "exists": true,
+          "expected": "2b73ff3f3c50ed287a481a9e4cb5071d79e831f6cda5fef77073c32283e23052",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/MultiTenancy/TenantResolutionMiddleware.cs",
+          "exists": true,
+          "expected": "46264d0e45fb365af044ba1b3c72f36131fbe02cdfe810cd8499b20eef0a2c46",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/Program.cs",
+          "exists": true,
+          "expected": "bf888adbc205d63838a8c06d7fbf16b52aad71f5beaa2a5435aa6d25ec4d1670",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/obj/Release/net10.0/Adivara.API.GlobalUsings.g.cs",
+          "exists": true,
+          "expected": "721da95e2f6f734b11a672ce509c68d617b641c6a979751ec6539e0a4c75a8cd",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/obj/Release/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+          "exists": true,
+          "expected": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/obj/Release/net10.0/Adivara.API.AssemblyInfo.cs",
+          "exists": true,
+          "expected": "632c4e203e970fff092a23183eff49751d84f5001ca6a3e018e5e4e4f439bc1d",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/obj/Release/net10.0/Adivara.API.MvcApplicationPartsAssemblyInfo.cs",
+          "exists": true,
+          "expected": "e92f67b86727d831e3eed8fe633e7f5230b98e23296fad16a5402ab6eda62c2a",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.API/obj/Release/net10.0/Microsoft.AspNetCore.OpenApi.SourceGenerators/Microsoft.AspNetCore.OpenApi.SourceGenerators.XmlCommentGenerator/OpenApiXmlCommentSupport.generated.cs",
+          "exists": false,
+          "expected": "3b34f8539a54a3a57df760cbad53295ae698a5d8",
+          "algorithm": "ff1816ec-aa5e-4d10-87f7-6f4963833460",
+          "match": false
+        }
+      ]
+    },
+    {
+      "pdb": "Adivara.Infrastructure.pdb",
+      "documents": [
+        {
+          "path": "src/Adivara.Infrastructure/Authentication/IdentityService.cs",
+          "exists": true,
+          "expected": "bedb91f5f0a9c5a099b37a81fb3025f67dcd16f39c2876cc64734ef53a9c35b3",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Authentication/JwtOptions.cs",
+          "exists": true,
+          "expected": "c716f616d3ab3cfa8e5d1867e16bb40aa6685e14fe7b5bdc7a6e455f6fbb7fa0",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Authentication/JwtTokenGenerator.cs",
+          "exists": true,
+          "expected": "fbfd50cfd6e154bd6575498d06ddbcf421cc06686ebe7188d2d497660e07a253",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/DependencyInjection.cs",
+          "exists": true,
+          "expected": "fb9c9de8eb5c07e3c4bc95e70f02822ceaab157b04fc180d914166d85ceae305",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/AdivaraDbContext.cs",
+          "exists": true,
+          "expected": "2f68cf7c1888efdca5ac02f3cf0a5414aba3f462e425737897a6dd63fed9442a",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260821162937_InitialAdivaraSchema.cs",
+          "exists": true,
+          "expected": "8f6801c34edec0b19aa243c9c14445eff08e12cf701d61fad311e6f0d5875137",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260821162937_InitialAdivaraSchema.Designer.cs",
+          "exists": true,
+          "expected": "95dd15613041a1e097d77197b94b665d395269410922f10e2bc91c334c8704f1",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260826173057_LinkCompanyMembershipToCaregiver.cs",
+          "exists": true,
+          "expected": "0b4d27e817a87e27ada2235d03ad6e257573f1c1d3017146e65365aedc7516bf",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260826173057_LinkCompanyMembershipToCaregiver.Designer.cs",
+          "exists": true,
+          "expected": "d8340646ff0357ea0e3daa7cded31ecb6fda6b81b429dd9be4472d831710e328",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260826180547_AddFamilyMemberPatientAccess.cs",
+          "exists": true,
+          "expected": "6e8530d6dd3b368fe4a17d661855baa30502ce0c7f96e86f63ecafab7646b938",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/20260826180547_AddFamilyMemberPatientAccess.Designer.cs",
+          "exists": true,
+          "expected": "baa446bf01335c77564482ec13ef5e8e75c9d234a892f6e9c47b59fabd71117c",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/Persistence/Migrations/AdivaraDbContextModelSnapshot.cs",
+          "exists": true,
+          "expected": "9f3806cacf03b202c36fb9f04ab56548d7c72b6f297c0df84c6cfd46bfcf32f8",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/obj/Release/net10.0/Adivara.Infrastructure.GlobalUsings.g.cs",
+          "exists": true,
+          "expected": "8f86a2cbf00ff3eee0bda2bc0eb5e1fc19c8544d5dc650c53d0132325956b592",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/obj/Release/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+          "exists": true,
+          "expected": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Infrastructure/obj/Release/net10.0/Adivara.Infrastructure.AssemblyInfo.cs",
+          "exists": true,
+          "expected": "6f59756349a61bd08742442e0629908cdb2bf7748b3375987ae2dafa0e17d961",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        }
+      ]
+    },
+    {
+      "pdb": "Adivara.Application.pdb",
+      "documents": [
+        {
+          "path": "src/Adivara.Application/Abstractions/Authentication/ICurrentUser.cs",
+          "exists": true,
+          "expected": "91372c54ac16d0d0e2c8198e25750991fe596077afeb8b61c4dada22d4e255b2",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Abstractions/Authentication/IIdentityService.cs",
+          "exists": true,
+          "expected": "97cf53d328e30c49366141e7b894aab0e4ed6e8e5d08b596a5bc5c4632da1055",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Abstractions/Authentication/LoginResult.cs",
+          "exists": true,
+          "expected": "d3663da3443d41b0aab91fa7952b534e72d4cc22d4df0cfc616a3ad35b743524",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Abstractions/MultiTenancy/ICurrentTenant.cs",
+          "exists": true,
+          "expected": "3dcbb42fc36c1f2a380941a2934308ac95fa9c512964e163812cd942571ee440",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Abstractions/MultiTenancy/TenantIsolationException.cs",
+          "exists": true,
+          "expected": "0f6de69df939aa82150baa5cc8d2f79c56e5f32dfad66a4c7e462e25e6f50d8d",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Abstractions/Persistence/IAdivaraDbContext.cs",
+          "exists": true,
+          "expected": "6f86eaebe9fb8ffae95c7dc656edeb5da06f99479afbdf0a2ab96266e492eaaf",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Companies/GetMyCompaniesQuery.cs",
+          "exists": true,
+          "expected": "9a2385849fd97a4d0f99707c0398877027c626ed89543de1b2e90009ce264937",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/CompanyMemberships/CaregiverMembershipService.cs",
+          "exists": true,
+          "expected": "f5035f63f647ac28e2d74ecaf6b1bc9cf6deea00052279e69677f68e071d85aa",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/FamilyMemberAccess/FamilyMemberPatientAccessService.cs",
+          "exists": true,
+          "expected": "8679c775c23cfe8080c4b8cb0b264dc9c368982887174fed8a8a2aadac372d80",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/FamilyMemberAccess/PatientAccessScope.cs",
+          "exists": true,
+          "expected": "7603e954a9b65666a79c8afebbe82cecb9c6a912e92d18635172a9437f260208",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Handover/HandoverContactAccessPolicy.cs",
+          "exists": true,
+          "expected": "2158de6bcab7102153374996fb98dd7fe0953e71f1c19fa2e26c24baf3802166",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Handover/HandoverContactOperation.cs",
+          "exists": true,
+          "expected": "900f1420446abd0af7585dc4302fbe265b5e516252f98c7a1e4a5fa8ccee6ee7",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/Handover/IApprovedHandoverScope.cs",
+          "exists": true,
+          "expected": "0772d8c1b859ba0d544f1215a28bc329fbd032a231b202115bb87aedec6bfb77",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/obj/Release/net10.0/Adivara.Application.GlobalUsings.g.cs",
+          "exists": true,
+          "expected": "8f86a2cbf00ff3eee0bda2bc0eb5e1fc19c8544d5dc650c53d0132325956b592",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/obj/Release/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+          "exists": true,
+          "expected": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Application/obj/Release/net10.0/Adivara.Application.AssemblyInfo.cs",
+          "exists": true,
+          "expected": "57f894c580f8f9c10689df6554a05266d7b56f1b46b4325c72ccadbab77ec607",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        }
+      ]
+    },
+    {
+      "pdb": "Adivara.Domain.pdb",
+      "documents": [
+        {
+          "path": "src/Adivara.Domain/Common/BaseEntity.cs",
+          "exists": true,
+          "expected": "d21f282cc94481a3c5396003370a4b0ee09760871a0f9248ee7ce05be25f54e3",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Common/ITenantScopedEntity.cs",
+          "exists": true,
+          "expected": "8de17dd1dbdbfc795d823503ae99ae48d5ed211646576dcdcbd8e159ce47addd",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/Assignment.cs",
+          "exists": true,
+          "expected": "dfdb0a8231ac3021677d3cabbdf2f34bad1f4d53851f2458868a58c3bfb22579",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/Caregiver.cs",
+          "exists": true,
+          "expected": "ac1f3f43da42c3ec58841b66c051b39116624d79509f9ed69e2576a9a4f6de48",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/CaregiverCompensationTerm.cs",
+          "exists": true,
+          "expected": "5152446a6ec583c49ac231615ea3c153af0a16fd3d77093e4254a8305a9e45e9",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/Company.cs",
+          "exists": true,
+          "expected": "093c865c33b9e04123ca1a6ef581120ab535032df5a784ac5133493f322b8b86",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/CompanyMembership.cs",
+          "exists": true,
+          "expected": "5c31a38a9b22f9740762062ed67dcefe0edaaa76a929ae1e9d940ba2ca4b1213",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/FamilyMemberPatientAccess.cs",
+          "exists": true,
+          "expected": "a66d5ec1a60e9d86544d9e44a3f8ecc415c5c922cdb90db06ce3882ff620971e",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Entities/Patient.cs",
+          "exists": true,
+          "expected": "0e3758d612ef42081a440861a1b62cddfa5fe8b363903af7661806be7b141618",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Enums/AssignmentStatus.cs",
+          "exists": true,
+          "expected": "29ca4ec89dc74bc7814cc1ad7d9a44c7fec5bb965bc38254ee8052fda12fdfef",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Enums/CaregiverCompensationType.cs",
+          "exists": true,
+          "expected": "3890aa22a150bad03f6aeb1d2fdfba26678a9bacd4492461fa26293032953ecc",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Enums/CompanyMembershipRole.cs",
+          "exists": true,
+          "expected": "76ab3452c74bcc2985beb78c6ed5ec71b72c2bc4d747c2f056750147d8d084a2",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Enums/CompanyMembershipStatus.cs",
+          "exists": true,
+          "expected": "6a05a5afe043f7334815dd095862591a208a8dbffec6afbe208a9be25a01eeff",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Handover/HandoverContactEvent.cs",
+          "exists": true,
+          "expected": "b95fa8ce9c131b1de2700762a1f21c0cd6b3bf7099e5308741cedf6785bad500",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Handover/HandoverContactRequest.cs",
+          "exists": true,
+          "expected": "d1918199a6cdbe9d98ef27788c76d0af4e8d1640b41ed1a3618abe8406911705",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/Handover/HandoverContactStatus.cs",
+          "exists": true,
+          "expected": "c939de25b51ebe982d208bfda26eefc3d7d01b180002af7ff689f61e8528b4ca",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/obj/Release/net10.0/Adivara.Domain.GlobalUsings.g.cs",
+          "exists": true,
+          "expected": "8f86a2cbf00ff3eee0bda2bc0eb5e1fc19c8544d5dc650c53d0132325956b592",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/obj/Release/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+          "exists": true,
+          "expected": "f79c1ad9a9fc76110b3655f5bfb5ff4e3168e9addceff05b937c0796f0ec34eb",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        },
+        {
+          "path": "src/Adivara.Domain/obj/Release/net10.0/Adivara.Domain.AssemblyInfo.cs",
+          "exists": true,
+          "expected": "c5a85efc50d0690e9311fb9a02be4bb3c89596f7fc24c37c942abe8663a4dcf8",
+          "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+          "match": true
+        }
+      ]
+    }
+  ]
+}

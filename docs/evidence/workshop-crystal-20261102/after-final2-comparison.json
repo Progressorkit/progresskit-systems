@@ -1,0 +1,290 @@
+{
+  "surface": "standalone local hardware Chrome, not embedded application preview",
+  "ownerVisualApproval": "OPEN",
+  "phases": [
+    {
+      "kind": "idle",
+      "groupIndex": 0,
+      "baseline": {
+        "p95Ms": [
+          16.7,
+          16.8
+        ],
+        "maxMs": [
+          16.8,
+          66.7
+        ],
+        "delaysOver50": [
+          0,
+          1
+        ],
+        "styleMs": [
+          0,
+          0
+        ],
+        "taskMs": [
+          552.987,
+          355.234
+        ]
+      },
+      "after-final2": {
+        "p95Ms": [
+          16.8,
+          16.7
+        ],
+        "maxMs": [
+          50.1,
+          66.7
+        ],
+        "delaysOver50": [
+          1,
+          1
+        ],
+        "styleMs": [
+          97.027,
+          96.495
+        ],
+        "taskMs": [
+          1138.628,
+          961.562
+        ]
+      }
+    },
+    {
+      "kind": "pointer",
+      "groupIndex": 0,
+      "baseline": {
+        "p95Ms": [
+          33.4,
+          33.3
+        ],
+        "maxMs": [
+          66.8,
+          66.7
+        ],
+        "delaysOver50": [
+          1,
+          2
+        ],
+        "styleMs": [
+          111.64,
+          95.338
+        ],
+        "taskMs": [
+          692.79,
+          573.378
+        ],
+        "eventToDOMMs": [
+          15,
+          19.1
+        ],
+        "handlerToDOMMs": [
+          0.9,
+          0.2
+        ]
+      },
+      "after-final2": {
+        "p95Ms": [
+          49.9,
+          33.2
+        ],
+        "maxMs": [
+          150.1,
+          150
+        ],
+        "delaysOver50": [
+          2,
+          1
+        ],
+        "styleMs": [
+          93.184,
+          96.212
+        ],
+        "taskMs": [
+          676.169,
+          474.594
+        ],
+        "eventToDOMMs": [
+          18.1,
+          16.2
+        ],
+        "handlerToDOMMs": [
+          1.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "kind": "pointer",
+      "groupIndex": 5,
+      "baseline": {
+        "p95Ms": [
+          33.4,
+          33.4
+        ],
+        "maxMs": [
+          66.6,
+          50
+        ],
+        "delaysOver50": [
+          1,
+          0
+        ],
+        "styleMs": [
+          128.146,
+          140.602
+        ],
+        "taskMs": [
+          820.121,
+          649.558
+        ],
+        "eventToDOMMs": [
+          52.3,
+          3.6
+        ],
+        "handlerToDOMMs": [
+          0.3,
+          0.1
+        ]
+      },
+      "after-final2": {
+        "p95Ms": [
+          66.6,
+          33.3
+        ],
+        "maxMs": [
+          200,
+          149.9
+        ],
+        "delaysOver50": [
+          4,
+          2
+        ],
+        "styleMs": [
+          67.732,
+          87.701
+        ],
+        "taskMs": [
+          503.135,
+          493.821
+        ],
+        "eventToDOMMs": [
+          244.5,
+          21
+        ],
+        "handlerToDOMMs": [
+          0.4,
+          0.2
+        ]
+      }
+    },
+    {
+      "kind": "wheel",
+      "groupIndex": 0,
+      "baseline": {
+        "p95Ms": [
+          16.7,
+          16.8
+        ],
+        "maxMs": [
+          16.8,
+          33.4
+        ],
+        "delaysOver50": [
+          0,
+          0
+        ],
+        "styleMs": [
+          8.607,
+          8.77
+        ],
+        "taskMs": [
+          433.573,
+          380.071
+        ]
+      },
+      "after-final2": {
+        "p95Ms": [
+          33.3,
+          16.8
+        ],
+        "maxMs": [
+          33.4,
+          66.7
+        ],
+        "delaysOver50": [
+          0,
+          1
+        ],
+        "styleMs": [
+          62.295,
+          56.413
+        ],
+        "taskMs": [
+          771.958,
+          732.968
+        ]
+      }
+    }
+  ],
+  "sourceStable": {
+    "baseline": true,
+    "after-final2": true
+  },
+  "errors": {
+    "baseline": {
+      "pageErrors": [],
+      "blockedRequests": []
+    },
+    "after-final2": {
+      "pageErrors": [],
+      "blockedRequests": []
+    }
+  },
+  "trace": {
+    "baseline": {
+      "Paint": {
+        "count": 448,
+        "totalMs": 455.853,
+        "maxMs": 11.247
+      },
+      "RasterTask": {
+        "count": 265,
+        "totalMs": 422.555,
+        "maxMs": 22.107
+      },
+      "UpdateLayoutTree": {
+        "count": 320,
+        "totalMs": 299.049,
+        "maxMs": 10.195
+      },
+      "PrePaint": {
+        "count": 763,
+        "totalMs": 95.689,
+        "maxMs": 3.559
+      }
+    },
+    "after-final2": {
+      "UpdateLayoutTree": {
+        "count": 692,
+        "totalMs": 383.246,
+        "maxMs": 16.441
+      },
+      "RasterTask": {
+        "count": 260,
+        "totalMs": 280.974,
+        "maxMs": 18.206
+      },
+      "PrePaint": {
+        "count": 698,
+        "totalMs": 273.218,
+        "maxMs": 2.838
+      },
+      "Paint": {
+        "count": 257,
+        "totalMs": 189.658,
+        "maxMs": 5.079
+      }
+    }
+  }
+}

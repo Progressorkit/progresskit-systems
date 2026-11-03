@@ -1,6 +1,6 @@
 """Offline catalog boundary tests using synthetic records and temporary assets."""
 import copy
-from datetime import timedelta
+from datetime import date, timedelta
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -74,7 +74,7 @@ class CatalogValidationTests(unittest.TestCase):
         data = catalog()
         data['asOf'] = (BUILDER.AUDIT_DATE + timedelta(days=1)).isoformat()
         self.assertRejected(data)
-        self.assertEqual('2026-10-23', BUILDER.AUDIT_DATE.isoformat())
+        self.assertEqual(date.today(), BUILDER.AUDIT_DATE)
 
     def test_review_and_evidence_dates_accept_the_explicit_audit_boundary(self):
         data = catalog()
@@ -332,6 +332,69 @@ class CatalogValidationTests(unittest.TestCase):
         data['projects'][0]['remaining'] = [object()]
         self.assertRejected(data)
 
+
+
+
+class PortfolioMetadataValidationTests(unittest.TestCase):
+    assertRejected = CatalogValidationTests.assertRejected
+    def v2(self):
+        data = catalog(); data['schemaVersion'] = 2
+        data['projects'][0]['portfolio'] = {
+            'classification':'product','aliases':['Synthetic alias'],
+            'functionalStatus':'Implemented local scope',
+            'distributionStatus':'No verified release.', 'productionStatus':'Not verified.',
+            'platforms':[{'name':'WWW','implementation':'Synthetic code.',
+                'verification':'Synthetic test only.','distribution':'Local fixture.',
+                'limits':'No production evidence.'}],
+            'featureSources':[['synthetic-source']],
+            'verification':[{'date':'2026-10-14','revision':'1234567',
+                'environment':'Synthetic unit fixture','scope':'Code review',
+                'status':'PASS','result':'Fixture only.', 'source':'synthetic-source',
+                'historical':False}],
+        }
+        return data
+
+    def test_v2_valid_and_legacy_compatibility(self):
+        self.assertEqual([], BUILDER.validate_catalog(self.v2()))
+        self.assertEqual([], BUILDER.validate_catalog(catalog()))
+
+    def test_feature_provenance_requires_exact_coverage_and_known_sources(self):
+        for refs in ([], [['unknown']], [[]], None, 'synthetic-source'):
+            data=self.v2(); data['projects'][0]['portfolio']['featureSources']=refs
+            self.assertRejected(data)
+
+    def test_metadata_requires_platform_scope_and_all_fields(self):
+        for key in BUILDER.PORTFOLIO_FIELDS:
+            data=self.v2(); del data['projects'][0]['portfolio'][key]
+            self.assertRejected(data)
+        for value in ([], [None], [{'name':'WWW'}]):
+            data=self.v2(); data['projects'][0]['portfolio']['platforms']=value
+            self.assertRejected(data)
+
+    def test_verification_date_status_and_scope_are_not_inferred(self):
+        for key,value in [('date','2026-10-15'),('date','2026-02-30'),('date',None),
+                          ('status','READY'),('historical','true'),('revision',''),
+                          ('environment',''),('source','unknown')]:
+            data=self.v2(); data['projects'][0]['portfolio']['verification'][0][key]=value
+            self.assertRejected(data)
+        data=self.v2(); proof=data['projects'][0]['portfolio']['verification'][0]
+        proof.update(date=None,historical=True)
+        self.assertEqual([],BUILDER.validate_catalog(data))
+
+    def test_concept_has_no_fabricated_features(self):
+        data=self.v2(); p=data['projects'][0]
+        p.update(stage='Koncepcja',features=[],technologies=[],architecture=[])
+        p['portfolio'].update(classification='concept',featureSources=[])
+        self.assertEqual([], BUILDER.validate_catalog(data))
+
+    def test_escaping_applies_to_new_public_metadata(self):
+        data=self.v2(); p=data['projects'][0]
+        p['portfolio']['distributionStatus']='<img src=x onerror=alert(1)>'
+        markup=BUILDER.full_case(p)
+        self.assertNotIn('<img src=x',markup)
+        self.assertIn('&lt;img src=x',markup)
+        self.assertIn('id="platformy"',markup)
+        self.assertIn('id="weryfikacja"',markup)
 
 if __name__ == '__main__':
     unittest.main()

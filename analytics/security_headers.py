@@ -42,7 +42,7 @@ class _TrustedInlineBlocks(HTMLParser):
             self.content = []
 
 
-def content_security_policy(trusted_markup=''):
+def content_security_policy(trusted_markup='', *, allow_media=False):
     """Hash only explicitly configured constant HTML, never response/request data."""
     inline = _TrustedInlineBlocks()
     inline.feed(trusted_markup)
@@ -55,7 +55,8 @@ def content_security_policy(trusted_markup=''):
         "default-src 'none'", f'script-src {script_sources}',
         "script-src-attr 'none'", f'style-src {style_sources}',
         f'style-src-attr {attribute_style}', "img-src 'self'", "font-src 'self'",
-        "connect-src 'self'", "manifest-src 'self'", "media-src 'none'",
+        "connect-src 'self'", "manifest-src 'self'",
+        "media-src 'self'" if allow_media else "media-src 'none'",
         "worker-src 'none'", "frame-src 'none'", "object-src 'none'",
         "base-uri 'none'", "frame-ancestors 'none'", "form-action 'self'",
     ))
@@ -64,13 +65,20 @@ def content_security_policy(trusted_markup=''):
 class SecurityHeadersMiddleware:
     ANALYTICS_BODY_LIMIT = 8192
 
-    def __init__(self, app, trusted_inline_pages=None):
+    def __init__(self, app, trusted_inline_pages=None, media_pages=()):
         self.app = app
         self.policy = content_security_policy().encode('ascii')
         self.page_policies = {
             path: content_security_policy(markup).encode('ascii')
             for path, markup in (trusted_inline_pages or {}).items()
         }
+        # Only explicitly configured document routes can play same-origin media.
+        # API/analytics responses keep the default media prohibition.
+        self.page_policies.update({
+            path: content_security_policy((trusted_inline_pages or {}).get(path, ''),
+                                          allow_media=True).encode('ascii')
+            for path in media_pages
+        })
         self.headers = (
             (b'x-content-type-options', b'nosniff'),
             (b'x-frame-options', b'DENY'),

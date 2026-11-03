@@ -1,0 +1,547 @@
+{
+  "checks": [
+    {
+      "name": "Dormant canvas does no rendering",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "draws": 2,
+          "lines": 0
+        },
+        "b": {
+          "draws": 2,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "name": "No SVG or dash connector remains",
+      "status": "PASS"
+    },
+    {
+      "name": "Six lenses receive staged power",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium",
+        "progresskit-mail",
+        "progresskit-translator",
+        "vaeloria",
+        "progresskit-community",
+        "progresskit-tax"
+      ]
+    },
+    {
+      "name": "For every lens: discharge then impact then materialization",
+      "status": "PASS",
+      "details": [
+        {
+          "id": "glikemia-premium",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "progresskit-mail",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "progresskit-translator",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "vaeloria",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "progresskit-community",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "progresskit-tax",
+          "state": "waiting",
+          "t": 473.20000000298023,
+          "visible": false
+        },
+        {
+          "id": "glikemia-premium",
+          "state": "charging",
+          "t": 518.6000000089407,
+          "visible": false
+        },
+        {
+          "id": "progresskit-mail",
+          "state": "charging",
+          "t": 588.6000000089407,
+          "visible": false
+        },
+        {
+          "id": "glikemia-premium",
+          "state": "impact",
+          "t": 644,
+          "visible": false
+        },
+        {
+          "id": "progresskit-translator",
+          "state": "charging",
+          "t": 704,
+          "visible": false
+        },
+        {
+          "id": "glikemia-premium",
+          "state": "materializing",
+          "t": 706.2000000029802,
+          "visible": true
+        },
+        {
+          "id": "progresskit-mail",
+          "state": "impact",
+          "t": 714.6000000089407,
+          "visible": false
+        },
+        {
+          "id": "progresskit-mail",
+          "state": "materializing",
+          "t": 774.9000000059605,
+          "visible": true
+        },
+        {
+          "id": "vaeloria",
+          "state": "charging",
+          "t": 821,
+          "visible": false
+        },
+        {
+          "id": "progresskit-translator",
+          "state": "impact",
+          "t": 831.7000000029802,
+          "visible": false
+        },
+        {
+          "id": "progresskit-translator",
+          "state": "materializing",
+          "t": 918,
+          "visible": true
+        },
+        {
+          "id": "glikemia-premium",
+          "state": "ready",
+          "t": 932.5,
+          "visible": true
+        },
+        {
+          "id": "progresskit-community",
+          "state": "charging",
+          "t": 948,
+          "visible": false
+        },
+        {
+          "id": "vaeloria",
+          "state": "impact",
+          "t": 952,
+          "visible": false
+        },
+        {
+          "id": "progresskit-mail",
+          "state": "ready",
+          "t": 999.2000000029802,
+          "visible": true
+        },
+        {
+          "id": "vaeloria",
+          "state": "materializing",
+          "t": 1006.5,
+          "visible": true
+        },
+        {
+          "id": "progresskit-tax",
+          "state": "charging",
+          "t": 1058.1000000089407,
+          "visible": false
+        },
+        {
+          "id": "progresskit-community",
+          "state": "impact",
+          "t": 1076.4000000059605,
+          "visible": false
+        },
+        {
+          "id": "progresskit-translator",
+          "state": "ready",
+          "t": 1115,
+          "visible": true
+        },
+        {
+          "id": "progresskit-community",
+          "state": "materializing",
+          "t": 1133.2000000029802,
+          "visible": true
+        },
+        {
+          "id": "progresskit-tax",
+          "state": "impact",
+          "t": 1183.5,
+          "visible": false
+        },
+        {
+          "id": "vaeloria",
+          "state": "ready",
+          "t": 1251.1000000089407,
+          "visible": true
+        },
+        {
+          "id": "progresskit-tax",
+          "state": "materializing",
+          "t": 1253.5,
+          "visible": true
+        },
+        {
+          "id": "progresskit-community",
+          "state": "ready",
+          "t": 1358.4000000059605,
+          "visible": true
+        },
+        {
+          "id": "progresskit-tax",
+          "state": "ready",
+          "t": 1468.300000011921,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "All visible content is revealed after delivery",
+      "status": "PASS"
+    },
+    {
+      "name": "Canvas fully clears after initial delivery",
+      "status": "PASS"
+    },
+    {
+      "name": "Awake idle has no canvas redraw loop",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "draws": 38,
+          "lines": 3622
+        },
+        "b": {
+          "draws": 38,
+          "lines": 3622
+        }
+      }
+    },
+    {
+      "name": "Hover renders a fine branched discharge",
+      "status": "PASS",
+      "details": {
+        "hoverPixels": 4417,
+        "hoverMetrics": {
+          "draws": 41,
+          "lines": 3754
+        }
+      }
+    },
+    {
+      "name": "Hover isolates one project and preserves its content",
+      "status": "PASS"
+    },
+    {
+      "name": "Hover discharge clears between re-strikes",
+      "status": "PASS"
+    },
+    {
+      "name": "Hover gap does no rendering",
+      "status": "FAIL",
+      "details": {
+        "a": {
+          "draws": 42,
+          "lines": 3754
+        },
+        "b": {
+          "draws": 44,
+          "lines": 3842
+        }
+      }
+    },
+    {
+      "name": "Sustained hover re-strikes without a permanent connector",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "draws": 42,
+          "lines": 3754
+        },
+        "b": {
+          "draws": 46,
+          "lines": 3886
+        }
+      }
+    },
+    {
+      "name": "Leaving the project cancels further re-strikes",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "draws": 46,
+          "lines": 3886
+        },
+        "b": {
+          "draws": 46,
+          "lines": 3886
+        }
+      }
+    },
+    {
+      "name": "Explicit activation waits for energy before disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape cancels charging without opening content",
+      "status": "PASS"
+    },
+    {
+      "name": "Later activation opens original content",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanded content stops plasma rendering",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion reveals lenses immediately",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion retains a static luminous impulse",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced impulse does not flicker or redraw",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "draws": 72,
+          "lines": 5114
+        },
+        "b": {
+          "draws": 72,
+          "lines": 5114
+        }
+      }
+    },
+    {
+      "name": "Offscreen canvas clears even in reduced motion",
+      "status": "PASS"
+    },
+    {
+      "name": "Offscreen canvas remains stopped",
+      "status": "PASS"
+    },
+    {
+      "name": "Unavailable canvas cannot block project disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "Unavailable canvas retains tap opening",
+      "status": "PASS"
+    },
+    {
+      "name": "No browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "activationTimeline": [
+    {
+      "id": "glikemia-premium",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "progresskit-mail",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "progresskit-translator",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "vaeloria",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "progresskit-community",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "progresskit-tax",
+      "state": "waiting",
+      "t": 473.20000000298023,
+      "visible": false
+    },
+    {
+      "id": "glikemia-premium",
+      "state": "charging",
+      "t": 518.6000000089407,
+      "visible": false
+    },
+    {
+      "id": "progresskit-mail",
+      "state": "charging",
+      "t": 588.6000000089407,
+      "visible": false
+    },
+    {
+      "id": "glikemia-premium",
+      "state": "impact",
+      "t": 644,
+      "visible": false
+    },
+    {
+      "id": "progresskit-translator",
+      "state": "charging",
+      "t": 704,
+      "visible": false
+    },
+    {
+      "id": "glikemia-premium",
+      "state": "materializing",
+      "t": 706.2000000029802,
+      "visible": true
+    },
+    {
+      "id": "progresskit-mail",
+      "state": "impact",
+      "t": 714.6000000089407,
+      "visible": false
+    },
+    {
+      "id": "progresskit-mail",
+      "state": "materializing",
+      "t": 774.9000000059605,
+      "visible": true
+    },
+    {
+      "id": "vaeloria",
+      "state": "charging",
+      "t": 821,
+      "visible": false
+    },
+    {
+      "id": "progresskit-translator",
+      "state": "impact",
+      "t": 831.7000000029802,
+      "visible": false
+    },
+    {
+      "id": "progresskit-translator",
+      "state": "materializing",
+      "t": 918,
+      "visible": true
+    },
+    {
+      "id": "glikemia-premium",
+      "state": "ready",
+      "t": 932.5,
+      "visible": true
+    },
+    {
+      "id": "progresskit-community",
+      "state": "charging",
+      "t": 948,
+      "visible": false
+    },
+    {
+      "id": "vaeloria",
+      "state": "impact",
+      "t": 952,
+      "visible": false
+    },
+    {
+      "id": "progresskit-mail",
+      "state": "ready",
+      "t": 999.2000000029802,
+      "visible": true
+    },
+    {
+      "id": "vaeloria",
+      "state": "materializing",
+      "t": 1006.5,
+      "visible": true
+    },
+    {
+      "id": "progresskit-tax",
+      "state": "charging",
+      "t": 1058.1000000089407,
+      "visible": false
+    },
+    {
+      "id": "progresskit-community",
+      "state": "impact",
+      "t": 1076.4000000059605,
+      "visible": false
+    },
+    {
+      "id": "progresskit-translator",
+      "state": "ready",
+      "t": 1115,
+      "visible": true
+    },
+    {
+      "id": "progresskit-community",
+      "state": "materializing",
+      "t": 1133.2000000029802,
+      "visible": true
+    },
+    {
+      "id": "progresskit-tax",
+      "state": "impact",
+      "t": 1183.5,
+      "visible": false
+    },
+    {
+      "id": "vaeloria",
+      "state": "ready",
+      "t": 1251.1000000089407,
+      "visible": true
+    },
+    {
+      "id": "progresskit-tax",
+      "state": "materializing",
+      "t": 1253.5,
+      "visible": true
+    },
+    {
+      "id": "progresskit-community",
+      "state": "ready",
+      "t": 1358.4000000059605,
+      "visible": true
+    },
+    {
+      "id": "progresskit-tax",
+      "state": "ready",
+      "t": 1468.300000011921,
+      "visible": true
+    }
+  ],
+  "PASS": 24,
+  "FAIL": 1
+}

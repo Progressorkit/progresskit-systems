@@ -1,0 +1,614 @@
+{
+  "startedAt": "2026-11-02T20:08:51.452Z",
+  "note": "Standalone local Chrome. Trusted event timestamp→DOM class state and handler→DOM; not optical input-to-display or embedded app preview. ABBA order, 20 samples/variant across first and largest groups; no trace/video.",
+  "samples": [
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 1,
+      "event": {
+        "handler": 8958.5,
+        "timestamp": 8941.40000000596,
+        "trusted": true
+      },
+      "state": 8958.90000000596,
+      "eventToDOMMs": 17.5,
+      "handlerToDOMMs": 0.4000000059604645
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 2,
+      "event": {
+        "handler": 9160.200000017881,
+        "timestamp": 9155.09999999404,
+        "trusted": true
+      },
+      "state": 9160.5,
+      "eventToDOMMs": 5.4000000059604645,
+      "handlerToDOMMs": 0.29999998211860657
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 3,
+      "event": {
+        "handler": 9314.40000000596,
+        "timestamp": 9300.700000017881,
+        "trusted": true
+      },
+      "state": 9314.700000017881,
+      "eventToDOMMs": 14,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 4,
+      "event": {
+        "handler": 9521.59999999404,
+        "timestamp": 9491.300000011921,
+        "trusted": true
+      },
+      "state": 9521.90000000596,
+      "eventToDOMMs": 30.599999994039536,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 5,
+      "event": {
+        "handler": 9677.59999999404,
+        "timestamp": 9660.5,
+        "trusted": true
+      },
+      "state": 9677.700000017881,
+      "eventToDOMMs": 17.200000017881393,
+      "handlerToDOMMs": 0.10000002384185791
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 1,
+      "event": {
+        "handler": 10410,
+        "timestamp": 10407.200000017881,
+        "trusted": true
+      },
+      "state": 10410.200000017881,
+      "eventToDOMMs": 3,
+      "handlerToDOMMs": 0.20000001788139343
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 2,
+      "event": {
+        "handler": 10609.59999999404,
+        "timestamp": 10568.90000000596,
+        "trusted": true
+      },
+      "state": 10609.90000000596,
+      "eventToDOMMs": 41,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 3,
+      "event": {
+        "handler": 10801.90000000596,
+        "timestamp": 10783,
+        "trusted": true
+      },
+      "state": 10802.300000011921,
+      "eventToDOMMs": 19.30000001192093,
+      "handlerToDOMMs": 0.4000000059604645
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 4,
+      "event": {
+        "handler": 10988.59999999404,
+        "timestamp": 10972.59999999404,
+        "trusted": true
+      },
+      "state": 10988.90000000596,
+      "eventToDOMMs": 16.30000001192093,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 1,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 5,
+      "event": {
+        "handler": 11161.800000011921,
+        "timestamp": 11152.300000011921,
+        "trusted": true
+      },
+      "state": 11162.09999999404,
+      "eventToDOMMs": 9.799999982118607,
+      "handlerToDOMMs": 0.29999998211860657
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 1,
+      "event": {
+        "handler": 7334.199999988079,
+        "timestamp": 7316,
+        "trusted": true
+      },
+      "state": 7335.0999999940395,
+      "eventToDOMMs": 19.099999994039536,
+      "handlerToDOMMs": 0.9000000059604645
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 2,
+      "event": {
+        "handler": 7519.699999988079,
+        "timestamp": 7508.9000000059605,
+        "trusted": true
+      },
+      "state": 7520,
+      "eventToDOMMs": 11.099999994039536,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 3,
+      "event": {
+        "handler": 7708,
+        "timestamp": 7702.300000011921,
+        "trusted": true
+      },
+      "state": 7708.300000011921,
+      "eventToDOMMs": 6,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 4,
+      "event": {
+        "handler": 7852.800000011921,
+        "timestamp": 7842.699999988079,
+        "trusted": true
+      },
+      "state": 7853,
+      "eventToDOMMs": 10.300000011920929,
+      "handlerToDOMMs": 0.19999998807907104
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 5,
+      "event": {
+        "handler": 8000.199999988079,
+        "timestamp": 7991.5999999940395,
+        "trusted": true
+      },
+      "state": 8000.5999999940395,
+      "eventToDOMMs": 9,
+      "handlerToDOMMs": 0.4000000059604645
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 1,
+      "event": {
+        "handler": 8734.699999988079,
+        "timestamp": 8718.09999999404,
+        "trusted": true
+      },
+      "state": 8735,
+      "eventToDOMMs": 16.900000005960464,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 2,
+      "event": {
+        "handler": 9019.5,
+        "timestamp": 9008,
+        "trusted": true
+      },
+      "state": 9019.699999988079,
+      "eventToDOMMs": 11.699999988079071,
+      "handlerToDOMMs": 0.19999998807907104
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 3,
+      "event": {
+        "handler": 9176.90000000596,
+        "timestamp": 9168.40000000596,
+        "trusted": true
+      },
+      "state": 9177.09999999404,
+      "eventToDOMMs": 8.699999988079071,
+      "handlerToDOMMs": 0.19999998807907104
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 4,
+      "event": {
+        "handler": 9328.09999999404,
+        "timestamp": 9324.5,
+        "trusted": true
+      },
+      "state": 9328.300000011921,
+      "eventToDOMMs": 3.800000011920929,
+      "handlerToDOMMs": 0.20000001788139343
+    },
+    {
+      "round": 2,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 5,
+      "event": {
+        "handler": 9531.699999988079,
+        "timestamp": 9473.699999988079,
+        "trusted": true
+      },
+      "state": 9532.09999999404,
+      "eventToDOMMs": 58.400000005960464,
+      "handlerToDOMMs": 0.4000000059604645
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 1,
+      "event": {
+        "handler": 7861,
+        "timestamp": 7853.0999999940395,
+        "trusted": true
+      },
+      "state": 7861.5,
+      "eventToDOMMs": 8.400000005960464,
+      "handlerToDOMMs": 0.5
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 2,
+      "event": {
+        "handler": 8041.699999988079,
+        "timestamp": 8019.5999999940395,
+        "trusted": true
+      },
+      "state": 8042.199999988079,
+      "eventToDOMMs": 22.599999994039536,
+      "handlerToDOMMs": 0.5
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 3,
+      "event": {
+        "handler": 8198.399999976158,
+        "timestamp": 8184.799999982119,
+        "trusted": true
+      },
+      "state": 8198.59999999404,
+      "eventToDOMMs": 13.800000011920929,
+      "handlerToDOMMs": 0.20000001788139343
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 4,
+      "event": {
+        "handler": 8401.199999988079,
+        "timestamp": 8379.299999982119,
+        "trusted": true
+      },
+      "state": 8401.5,
+      "eventToDOMMs": 22.200000017881393,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 0,
+      "sample": 5,
+      "event": {
+        "handler": 8545.299999982119,
+        "timestamp": 8530.59999999404,
+        "trusted": true
+      },
+      "state": 8545.5,
+      "eventToDOMMs": 14.900000005960464,
+      "handlerToDOMMs": 0.20000001788139343
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 1,
+      "event": {
+        "handler": 9297.399999976158,
+        "timestamp": 9277.299999982119,
+        "trusted": true
+      },
+      "state": 9297.5,
+      "eventToDOMMs": 20.200000017881393,
+      "handlerToDOMMs": 0.10000002384185791
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 2,
+      "event": {
+        "handler": 9468.09999999404,
+        "timestamp": 9460.399999976158,
+        "trusted": true
+      },
+      "state": 9468.299999982119,
+      "eventToDOMMs": 7.9000000059604645,
+      "handlerToDOMMs": 0.19999998807907104
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 3,
+      "event": {
+        "handler": 9662.699999988079,
+        "timestamp": 9643.799999982119,
+        "trusted": true
+      },
+      "state": 9663,
+      "eventToDOMMs": 19.200000017881393,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 4,
+      "event": {
+        "handler": 9900.199999988079,
+        "timestamp": 9868.59999999404,
+        "trusted": true
+      },
+      "state": 9901,
+      "eventToDOMMs": 32.400000005960464,
+      "handlerToDOMMs": 0.800000011920929
+    },
+    {
+      "round": 3,
+      "mode": "after-final",
+      "groupIndex": 5,
+      "sample": 5,
+      "event": {
+        "handler": 10232.399999976158,
+        "timestamp": 10214.5,
+        "trusted": true
+      },
+      "state": 10232.699999988079,
+      "eventToDOMMs": 18.19999998807907,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 1,
+      "event": {
+        "handler": 6830.199999988079,
+        "timestamp": 6826,
+        "trusted": true
+      },
+      "state": 6830.5,
+      "eventToDOMMs": 4.5,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 2,
+      "event": {
+        "handler": 6982.299999982119,
+        "timestamp": 6964.5,
+        "trusted": true
+      },
+      "state": 6982.4000000059605,
+      "eventToDOMMs": 17.900000005960464,
+      "handlerToDOMMs": 0.10000002384185791
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 3,
+      "event": {
+        "handler": 7131.5999999940395,
+        "timestamp": 7120.199999988079,
+        "trusted": true
+      },
+      "state": 7131.699999988079,
+      "eventToDOMMs": 11.5,
+      "handlerToDOMMs": 0.09999999403953552
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 4,
+      "event": {
+        "handler": 7264.799999982119,
+        "timestamp": 7261.199999988079,
+        "trusted": true
+      },
+      "state": 7264.9000000059605,
+      "eventToDOMMs": 3.7000000178813934,
+      "handlerToDOMMs": 0.10000002384185791
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 0,
+      "sample": 5,
+      "event": {
+        "handler": 7397.699999988079,
+        "timestamp": 7394.199999988079,
+        "trusted": true
+      },
+      "state": 7398,
+      "eventToDOMMs": 3.800000011920929,
+      "handlerToDOMMs": 0.30000001192092896
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 1,
+      "event": {
+        "handler": 8121,
+        "timestamp": 8115.699999988079,
+        "trusted": true
+      },
+      "state": 8121.0999999940395,
+      "eventToDOMMs": 5.4000000059604645,
+      "handlerToDOMMs": 0.09999999403953552
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 2,
+      "event": {
+        "handler": 8337.199999988079,
+        "timestamp": 8333.09999999404,
+        "trusted": true
+      },
+      "state": 8337.299999982119,
+      "eventToDOMMs": 4.199999988079071,
+      "handlerToDOMMs": 0.09999999403953552
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 3,
+      "event": {
+        "handler": 8526.699999988079,
+        "timestamp": 8497,
+        "trusted": true
+      },
+      "state": 8526.90000000596,
+      "eventToDOMMs": 29.900000005960464,
+      "handlerToDOMMs": 0.20000001788139343
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 4,
+      "event": {
+        "handler": 8781.40000000596,
+        "timestamp": 8723.90000000596,
+        "trusted": true
+      },
+      "state": 8781.40000000596,
+      "eventToDOMMs": 57.5,
+      "handlerToDOMMs": 0
+    },
+    {
+      "round": 4,
+      "mode": "baseline",
+      "groupIndex": 5,
+      "sample": 5,
+      "event": {
+        "handler": 8984.40000000596,
+        "timestamp": 8972,
+        "trusted": true
+      },
+      "state": 8984.59999999404,
+      "eventToDOMMs": 12.599999994039536,
+      "handlerToDOMMs": 0.19999998807907104
+    }
+  ],
+  "errors": [],
+  "blocked": [],
+  "summary": {
+    "baseline": {
+      "count": 20,
+      "eventToDOMMs": {
+        "min": 3,
+        "median": 13.299999997019768,
+        "p95": 41,
+        "max": 57.5
+      },
+      "handlerToDOMMs": {
+        "min": 0,
+        "median": 0.25,
+        "p95": 0.4000000059604645,
+        "max": 0.4000000059604645
+      },
+      "allTrusted": true
+    },
+    "after-final": {
+      "count": 20,
+      "eventToDOMMs": {
+        "min": 3.800000011920929,
+        "median": 14.350000008940697,
+        "p95": 32.400000005960464,
+        "max": 58.400000005960464
+      },
+      "handlerToDOMMs": {
+        "min": 0.10000002384185791,
+        "median": 0.30000001192092896,
+        "p95": 0.800000011920929,
+        "max": 0.9000000059604645
+      },
+      "allTrusted": true
+    }
+  },
+  "sourceBefore": {
+    "assets/technology-field.css": "f9e343b71b744c27755aecdae53861770641ab77e2febeeb5ecb20799f282f31",
+    "assets/technology-field.mjs": "24dafb9fe152b4293e7d73bbb0a61a6952b4197b60f1ae59f13688d10515d902",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "sourceAfter": {
+    "assets/technology-field.css": "f9e343b71b744c27755aecdae53861770641ab77e2febeeb5ecb20799f282f31",
+    "assets/technology-field.mjs": "24dafb9fe152b4293e7d73bbb0a61a6952b4197b60f1ae59f13688d10515d902",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "sourceStable": true,
+  "finishedAt": "2026-11-02T20:09:35.417Z"
+}

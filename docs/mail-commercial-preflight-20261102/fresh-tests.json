@@ -1,0 +1,94 @@
+{
+  "started": "2026-11-02T10:47:46.602099+00:00",
+  "sourceHEAD": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+  "stage": "/tmp/pkmail-commercial-20261102-bkh8hcrr",
+  "isolation": "Copies of already built Release assemblies; source checks read original source via symlinks. Private XDG/TMP/DOTNET_CLI_HOME; no personal D-Bus; production credential/config environment removed. HOME unchanged. No build, restore, installation, account, external mail, DB or migrations.",
+  "suites": [
+    {
+      "suite": "core",
+      "started": "2026-11-02T10:47:46.703039+00:00",
+      "assemblySource": "windows/tests/ProgressKit.Mail.Core.Tests/bin/Release/net10.0/ProgressKit.Mail.Core.Tests.dll",
+      "assemblySHA256": "16b0fe6c861f2249b2e818700b7b65b3ba577e9d14b4296f3b61ec872cf59795",
+      "command": [
+        "dotnet",
+        "vstest",
+        "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll",
+        "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/core",
+        "--Logger:trx;LogFileName=core.trx"
+      ],
+      "exitCode": 0,
+      "newRun": true,
+      "total": 285,
+      "executed": 271,
+      "passed": 271,
+      "failed": 0,
+      "notExecuted": 14,
+      "status": "PASS"
+    },
+    {
+      "suite": "linux",
+      "started": "2026-11-02T10:47:51.905659+00:00",
+      "assemblySource": "windows/tests/ProgressKit.Mail.Linux.Tests/bin/Release/net10.0/ProgressKit.Mail.Linux.Tests.dll",
+      "assemblySHA256": "2d9e73718ba157292bc077d2478a12ca3ef2e5e9fa4a950f700a38aa40d3a8d9",
+      "command": [
+        "dotnet",
+        "vstest",
+        "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll",
+        "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux",
+        "--Logger:trx;LogFileName=linux.trx"
+      ],
+      "exitCode": 0,
+      "newRun": true,
+      "total": 110,
+      "executed": 106,
+      "passed": 106,
+      "failed": 0,
+      "notExecuted": 4,
+      "status": "PASS"
+    },
+    {
+      "suite": "linux-security",
+      "started": "2026-11-02T10:47:54.527313+00:00",
+      "assemblySource": "windows/tests/ProgressKit.Mail.Linux.Security.Tests/bin/Release/net10.0/ProgressKit.Mail.Linux.Security.Tests.dll",
+      "assemblySHA256": "d7a8fc96d2b028907f68ff5fcd03f9e101208d674e46038431797d5a9cee2bfe",
+      "command": [
+        "dotnet",
+        "vstest",
+        "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux-security/ProgressKit.Mail.Linux.Security.Tests.dll",
+        "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux-security",
+        "--Logger:trx;LogFileName=linux-security.trx"
+      ],
+      "exitCode": 0,
+      "newRun": true,
+      "total": 41,
+      "executed": 40,
+      "passed": 40,
+      "failed": 0,
+      "notExecuted": 1,
+      "status": "PASS"
+    },
+    {
+      "suite": "server-no-db",
+      "started": "2026-11-02T10:47:57.548775+00:00",
+      "assemblySource": "server/tests/ProgressKit.Mail.UnitTests/bin/Release/net10.0/ProgressKit.Mail.UnitTests.dll",
+      "assemblySHA256": "e0f3350c270609d100fd4bf32d9df0db86d0ebb3bde882a7304fbdc68c027ebd",
+      "command": [
+        "dotnet",
+        "vstest",
+        "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/server-no-db/ProgressKit.Mail.UnitTests.dll",
+        "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/server-no-db",
+        "--Logger:trx;LogFileName=server-no-db.trx"
+      ],
+      "exitCode": 0,
+      "newRun": true,
+      "total": 201,
+      "executed": 190,
+      "passed": 190,
+      "failed": 0,
+      "notExecuted": 11,
+      "status": "PASS"
+    }
+  ],
+  "finished": "2026-11-02T10:48:03.567408+00:00",
+  "siblingGitStatusUnchanged": true
+}

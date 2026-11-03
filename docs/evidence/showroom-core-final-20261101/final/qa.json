@@ -1,0 +1,703 @@
+{
+  "checks": [
+    {
+      "name": "Real WebGL2 PerspectiveCamera and depth buffer",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 50,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 5,
+        "gpuFrameMs": 5.903082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 29,
+        "triangles": 16792,
+        "geometries": 70,
+        "textures": 22,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Local Intel GPU used for proof",
+      "status": "PASS",
+      "details": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)"
+    },
+    {
+      "name": "Fourteen original project controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Only one visual renderer; rejected CSS/energy scripts disconnected",
+      "status": "PASS"
+    },
+    {
+      "name": "Idle actually renders while projects remain dormant",
+      "status": "PASS"
+    },
+    {
+      "name": "Core raycast wakes actual collection",
+      "status": "PASS"
+    },
+    {
+      "name": "Geometry reveal passes highlight/forming/transmitting before ready",
+      "status": "PASS",
+      "details": [
+        "dormant",
+        "charge",
+        "highlight",
+        "forming",
+        "transmitting",
+        "ready"
+      ]
+    },
+    {
+      "name": "Raycast hover identifies Mail",
+      "status": "PASS"
+    },
+    {
+      "name": "Raycast click opens real content and preserves routing",
+      "status": "PASS"
+    },
+    {
+      "name": "Exactly one original open event",
+      "status": "PASS"
+    },
+    {
+      "name": "Reading pauses 3D work",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape restores core focus and sleeps",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard reaches selected real project link",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard Enter uses original disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion keeps 3D but stops RAF",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 386,
+        "quality": 0,
+        "fps": 55.09099852434825,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 9.762416,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 70,
+        "textures": 22,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 3508.3,
+            "fps": 58,
+            "cpuFrameMs": 5.4000000059604645,
+            "gpuFrameMs": 5.181833,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 4524.9,
+            "fps": 60.00393468424162,
+            "cpuFrameMs": 3.0999999940395355,
+            "gpuFrameMs": 5.190832,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 5541.5,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.7999999821186066,
+            "gpuFrameMs": 5.236,
+            "drawCalls": 31,
+            "triangles": 17020,
+            "dpr": 0.85
+          },
+          {
+            "t": 6541.5,
+            "fps": 60,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 6.383416,
+            "drawCalls": 41,
+            "triangles": 18208,
+            "dpr": 0.85
+          },
+          {
+            "t": 7558,
+            "fps": 55.09099852434825,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": 6.813083,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          },
+          {
+            "id": "adivara",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Paused resize renders a new static frame",
+      "status": "PASS"
+    },
+    {
+      "name": "Offscreen stops rendering",
+      "status": "PASS"
+    },
+    {
+      "name": "Returning resumes rendering",
+      "status": "PASS"
+    },
+    {
+      "name": "Simulated visibilitychange stops scheduler",
+      "status": "PASS"
+    },
+    {
+      "name": "DPR3 is capped instead of tripling render target",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 491,
+        "quality": 0,
+        "fps": 55.09099852434825,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 7.529583,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 39,
+        "triangles": 17972,
+        "geometries": 70,
+        "textures": 22,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 710,
+          "height": 596
+        },
+        "samples": [
+          {
+            "t": 3508.3,
+            "fps": 58,
+            "cpuFrameMs": 5.4000000059604645,
+            "gpuFrameMs": 5.181833,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 4524.9,
+            "fps": 60.00393468424162,
+            "cpuFrameMs": 3.0999999940395355,
+            "gpuFrameMs": 5.190832,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 5541.5,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.7999999821186066,
+            "gpuFrameMs": 5.236,
+            "drawCalls": 31,
+            "triangles": 17020,
+            "dpr": 0.85
+          },
+          {
+            "t": 6541.5,
+            "fps": 60,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 6.383416,
+            "drawCalls": 41,
+            "triangles": 18208,
+            "dpr": 0.85
+          },
+          {
+            "t": 7558,
+            "fps": 55.09099852434825,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": 6.813083,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "progresskit-mail",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "transmitting"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "transmitting"
+          },
+          {
+            "id": "adivara",
+            "phase": "forming"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Context loss activates static usable fallback",
+      "status": "PASS"
+    },
+    {
+      "name": "Context restoration while paused draws static scene without RAF",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 502,
+        "quality": 0,
+        "fps": 55.09099852434825,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 9.826998,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 44,
+        "triangles": 19064,
+        "geometries": 32,
+        "textures": 8,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 3508.3,
+            "fps": 58,
+            "cpuFrameMs": 5.4000000059604645,
+            "gpuFrameMs": 5.181833,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 4524.9,
+            "fps": 60.00393468424162,
+            "cpuFrameMs": 3.0999999940395355,
+            "gpuFrameMs": 5.190832,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 5541.5,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.7999999821186066,
+            "gpuFrameMs": 5.236,
+            "drawCalls": 31,
+            "triangles": 17020,
+            "dpr": 0.85
+          },
+          {
+            "t": 6541.5,
+            "fps": 60,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 6.383416,
+            "drawCalls": 41,
+            "triangles": 18208,
+            "dpr": 0.85
+          },
+          {
+            "t": 7558,
+            "fps": 55.09099852434825,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": 6.813083,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "progresskit-mail",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "transmitting"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "transmitting"
+          },
+          {
+            "id": "adivara",
+            "phase": "transmitting"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Explicit cleanup releases geometry/textures and cancels RAF",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 502,
+        "quality": 0,
+        "fps": 55.09099852434825,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 9.826998,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 44,
+        "triangles": 19064,
+        "geometries": 32,
+        "textures": 8,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "remainingGeometries": 0,
+        "remainingTextures": 0,
+        "disposed": true,
+        "samples": [
+          {
+            "t": 3508.3,
+            "fps": 58,
+            "cpuFrameMs": 5.4000000059604645,
+            "gpuFrameMs": 5.181833,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 4524.9,
+            "fps": 60.00393468424162,
+            "cpuFrameMs": 3.0999999940395355,
+            "gpuFrameMs": 5.190832,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 5541.5,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.7999999821186066,
+            "gpuFrameMs": 5.236,
+            "drawCalls": 31,
+            "triangles": 17020,
+            "dpr": 0.85
+          },
+          {
+            "t": 6541.5,
+            "fps": 60,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 6.383416,
+            "drawCalls": 41,
+            "triangles": 18208,
+            "dpr": 0.85
+          },
+          {
+            "t": 7558,
+            "fps": 55.09099852434825,
+            "cpuFrameMs": 2,
+            "gpuFrameMs": 6.813083,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "progresskit-mail",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "transmitting"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "transmitting"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "transmitting"
+          },
+          {
+            "id": "adivara",
+            "phase": "transmitting"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Mobile normal mode is real 3D with fewer strands",
+      "status": "PASS",
+      "details": {
+        "revision": "187",
+        "frames": 30,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 4.48275,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 19,
+        "triangles": 9676,
+        "geometries": 67,
+        "textures": 22,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 30,
+        "coronaRoots": 16,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.5,
+        "buffer": {
+          "width": 307,
+          "height": 612
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Mobile tap raycast opens project",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "Unavailable WebGL2 preserves original links",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual navigation away disposes resources or pauses BFCache page",
+      "status": "PASS",
+      "details": {
+        "persisted": false,
+        "revision": "187",
+        "frames": 50,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 5.24675,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 32,
+        "triangles": 17648,
+        "geometries": 70,
+        "textures": 22,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "remainingGeometries": 0,
+        "remainingTextures": 0,
+        "disposed": true,
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "name": "Audio is never created on entry",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit opt-in creates 54Hz hum with spatial panner",
+      "status": "PASS"
+    },
+    {
+      "name": "Mute suspends audio context",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion disables optional audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Cleanup closes audio context",
+      "status": "PASS"
+    },
+    {
+      "name": "720px breakpoint keeps desktop crystals apart",
+      "status": "PASS"
+    },
+    {
+      "name": "Forced colors keeps readable semantic controls and pauses 3D",
+      "status": "PASS"
+    },
+    {
+      "name": "No JS or shader errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "PASS": 36,
+  "FAIL": 0
+}

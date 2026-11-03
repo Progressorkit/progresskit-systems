@@ -1,0 +1,13 @@
+--- before/assets/showroom-3d.mjs
++++ after/assets/showroom-3d.mjs
+@@ -352,7 +352,9 @@
+     });
+   }
+   try {
+-    engine = await createShowroomScene(canvas, projects);
++    engine = await createShowroomScene(canvas, projects, undefined, {
++      corePresentation: "logo",
++    });
+     if (destroyed) {
+       engine.dispose();
+     } else {

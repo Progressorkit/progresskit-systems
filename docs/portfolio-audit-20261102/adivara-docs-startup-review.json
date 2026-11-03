@@ -1,0 +1,16 @@
+{
+  "mode": "read-only source and runtime PathHelper path resolution (no secrets read)",
+  "sourceInspection": {
+    "noMigrationSeedHostedServicesObserved": true,
+    "requiresDefaultConnection": true,
+    "requiresJwtSettings": true,
+    "swaggerDevelopmentOnly": true,
+    "UserSecretsIdPresent": true
+  },
+  "runtime": "Microsoft.AspNetCore.App 10.0.12",
+  "isolatedAppdataResolution": "/tmp/adivara-usersecrets-isolation-se6yc8ae/private-appdata/Microsoft/UserSecrets/synthetic-docs-only/secrets.json",
+  "resolverExit": 0,
+  "backendStarted": false,
+  "productionConfigurationRead": false,
+  "neededIsolation": "Copy built DLLs/deps/runtimeconfig only; do not copy appsettings; dedicated content root and APPDATA/XDG; clean env allowlist; synthetic non-listening loopback Npgsql target and ephemeral synthetic Jwt key; bind loopback. Swagger GET only; no Try it out/auth/controllers."
+}

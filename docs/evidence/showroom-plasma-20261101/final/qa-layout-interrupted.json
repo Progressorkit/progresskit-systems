@@ -1,0 +1,135 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1440x1050 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440x1050 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "hover relationship chooses one product",
+      "status": "PASS"
+    },
+    {
+      "name": "other lenses dim during relation",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390x844 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core does not overlap active lens",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 compact materials",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 tap opens actual content",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 touch close restores awake collection",
+      "status": "PASS"
+    },
+    {
+      "name": "script completed",
+      "status": "FAIL",
+      "details": "page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8191/\", waiting until \"networkidle\"\u001b[22m\n"
+    }
+  ],
+  "errors": [
+    "page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8191/\", waiting until \"networkidle\"\u001b[22m\n\n    at open (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/showroom-plasma-20261101/browser-qa.cjs:15:13)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/showroom-plasma-20261101/browser-qa.cjs:21:32"
+  ],
+  "screenshots": [
+    "1440x1050-idle.png",
+    "1440x1050-activated.png",
+    "1440x1050-project-hover.png",
+    "1920x1080-idle.png",
+    "1920x1080-activated.png",
+    "1366x768-idle.png",
+    "1366x768-activated.png",
+    "390x844-idle.png",
+    "390x844-activated.png",
+    "390x844-project-open.png"
+  ],
+  "PASS": 26,
+  "FAIL": 1
+}

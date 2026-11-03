@@ -1,0 +1,3483 @@
+{
+  "startedAt": "2026-11-02T11:31:42.557Z",
+  "processId": 3886118,
+  "signals": [],
+  "base": "http://127.0.0.1:8201/",
+  "catalogSchemaVersion": 2,
+  "catalogAsOf": "2026-11-02",
+  "catalogCount": 19,
+  "catalogIds": [
+    "glikemia-premium",
+    "progresskit-mail",
+    "progresskit-translator",
+    "vaeloria",
+    "progresskit-community",
+    "progresskit-tax",
+    "adivara",
+    "gotrans360",
+    "ignira",
+    "obserwator",
+    "kan-system",
+    "progresskit-systems",
+    "progresskit-analytics",
+    "progresskit-infrastructure",
+    "progresskit-notes",
+    "progresskit-offgrid",
+    "reel-agent",
+    "progresskit-remote",
+    "progresskit-vault-key"
+  ],
+  "caseMatrix": {
+    "engines": [
+      "firefox"
+    ],
+    "widths": [
+      768
+    ],
+    "expectedVisits": 19,
+    "visited": 19,
+    "passed": 19
+  },
+  "checks": [
+    {
+      "scope": "catalog",
+      "name": "Frozen V2 catalog and explicit expected-count gate",
+      "status": "PASS",
+      "details": {
+        "count": 19,
+        "asOf": "2026-11-02",
+        "schemaVersion": 2,
+        "caseVisits": 19
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Homepage, dynamic catalog count and first viewport",
+      "status": "PASS",
+      "details": {
+        "horizontalOverflow": false,
+        "visibleHeadingCount": 2,
+        "note": "Automated geometry only; screenshots require human visual review."
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Showroom keyboard, disclosure and reduced motion",
+      "status": "PASS",
+      "details": {
+        "id": "glikemia-premium",
+        "mode": "three-webgl2",
+        "static3D": true,
+        "frames": 58
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "services visible geometry",
+      "status": "PASS",
+      "details": {
+        "horizontalOverflow": false,
+        "visibleHeadingCount": 3,
+        "note": "Automated geometry only; screenshots require human visual review."
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "process visible geometry",
+      "status": "PASS",
+      "details": {
+        "horizontalOverflow": false,
+        "visibleHeadingCount": 4,
+        "note": "Automated geometry only; screenshots require human visual review."
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Contact and local brief, no send",
+      "status": "PASS",
+      "details": {
+        "mailtoSyntax": true,
+        "delivery": "NOT_VERIFIED",
+        "localBriefDownload": "progresskit-brief.txt",
+        "formSent": false
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Search, aliases, classification, technology, stage and URL state",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "ids": [
+          "glikemia-premium",
+          "progresskit-mail",
+          "progresskit-translator",
+          "vaeloria",
+          "progresskit-community",
+          "progresskit-tax",
+          "adivara",
+          "gotrans360",
+          "ignira",
+          "obserwator",
+          "kan-system",
+          "progresskit-systems",
+          "progresskit-analytics",
+          "progresskit-infrastructure",
+          "progresskit-notes",
+          "progresskit-offgrid",
+          "reel-agent",
+          "progresskit-remote",
+          "progresskit-vault-key"
+        ],
+        "search": "Glikemia Premium",
+        "classifications": [
+          {
+            "kind": "product",
+            "count": 10
+          },
+          {
+            "kind": "realization",
+            "count": 2
+          },
+          {
+            "kind": "historical",
+            "count": 1
+          },
+          {
+            "kind": "internal_tool",
+            "count": 3
+          },
+          {
+            "kind": "infrastructure",
+            "count": 2
+          },
+          {
+            "kind": "concept",
+            "count": 1
+          }
+        ],
+        "alias": "Lud&Pra",
+        "serviceTargets": [
+          {
+            "href": "projekty/?technologia=C%23",
+            "technology": "C#",
+            "count": 6
+          },
+          {
+            "href": "projekty/?technologia=.NET",
+            "technology": ".NET",
+            "count": 1
+          },
+          {
+            "href": "projekty/?technologia=ASP.NET%20Core",
+            "technology": "ASP.NET Core",
+            "count": 3
+          },
+          {
+            "href": "projekty/?technologia=PostgreSQL",
+            "technology": "PostgreSQL",
+            "count": 2
+          },
+          {
+            "href": "projekty/?technologia=Android",
+            "technology": "Android",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Catalog viewport",
+      "status": "PASS",
+      "details": {
+        "horizontalOverflow": false,
+        "visibleHeadingCount": 2,
+        "note": "Automated geometry only; screenshots require human visual review."
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case glikemia-premium",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/glikemia-premium/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 1,
+        "verificationRecords": 5,
+        "features": 9,
+        "images": {
+          "decoded": 4
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-mail",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-mail/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 5,
+        "verificationRecords": 15,
+        "features": 14,
+        "images": {
+          "decoded": 4
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-translator",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-translator/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 1,
+        "verificationRecords": 3,
+        "features": 8,
+        "images": {
+          "decoded": 3
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case vaeloria",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/vaeloria/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 4,
+        "verificationRecords": 12,
+        "features": 14,
+        "images": {
+          "decoded": 4
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-community",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-community/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 2,
+        "verificationRecords": 9,
+        "features": 12,
+        "images": {
+          "decoded": 4
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-tax",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-tax/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 3,
+        "verificationRecords": 9,
+        "features": 18,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case adivara",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/adivara/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 2,
+        "verificationRecords": 3,
+        "features": 9,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case gotrans360",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/gotrans360/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 1,
+        "verificationRecords": 3,
+        "features": 6,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case ignira",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/ignira/",
+        "sourceDate": "2026-11-02",
+        "classification": "realization",
+        "platforms": 1,
+        "verificationRecords": 2,
+        "features": 5,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case obserwator",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/obserwator/",
+        "sourceDate": "2026-11-02",
+        "classification": "realization",
+        "platforms": 1,
+        "verificationRecords": 2,
+        "features": 3,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case kan-system",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/kan-system/",
+        "sourceDate": "2026-11-02",
+        "classification": "historical",
+        "platforms": 1,
+        "verificationRecords": 2,
+        "features": 0,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-systems",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-systems/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 2,
+        "verificationRecords": 6,
+        "features": 15,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-analytics",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-analytics/",
+        "sourceDate": "2026-11-02",
+        "classification": "internal_tool",
+        "platforms": 2,
+        "verificationRecords": 3,
+        "features": 11,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-infrastructure",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-infrastructure/",
+        "sourceDate": "2026-11-02",
+        "classification": "infrastructure",
+        "platforms": 2,
+        "verificationRecords": 2,
+        "features": 8,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-notes",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-notes/",
+        "sourceDate": "2026-11-02",
+        "classification": "product",
+        "platforms": 2,
+        "verificationRecords": 7,
+        "features": 8,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-offgrid",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-offgrid/",
+        "sourceDate": "2026-11-02",
+        "classification": "concept",
+        "platforms": 1,
+        "verificationRecords": 2,
+        "features": 0,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case reel-agent",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/reel-agent/",
+        "sourceDate": "2026-11-02",
+        "classification": "internal_tool",
+        "platforms": 1,
+        "verificationRecords": 7,
+        "features": 8,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-remote",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-remote/",
+        "sourceDate": "2026-11-02",
+        "classification": "infrastructure",
+        "platforms": 3,
+        "verificationRecords": 7,
+        "features": 7,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "firefox:768",
+      "name": "Case progresskit-vault-key",
+      "status": "PASS",
+      "details": {
+        "url": "/projekty/progresskit-vault-key/",
+        "sourceDate": "2026-11-02",
+        "classification": "internal_tool",
+        "platforms": 2,
+        "verificationRecords": 2,
+        "features": 4,
+        "images": {
+          "decoded": 2
+        },
+        "visualReview": "OPEN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or HTTP resource failures",
+      "status": "PASS",
+      "details": {
+        "errors": 0,
+        "resourceErrors": 0
+      }
+    }
+  ],
+  "browsers": [
+    {
+      "name": "firefox",
+      "version": "153.0",
+      "status": "LAUNCHED"
+    }
+  ],
+  "resources": [],
+  "errors": [],
+  "screenshots": [
+    "firefox-768-hero.png",
+    "firefox-768-showroom.png",
+    "firefox-768-services.png",
+    "firefox-768-process.png",
+    "firefox-768-case-glikemia-premium.png",
+    "firefox-768-case-progresskit-mail.png",
+    "firefox-768-case-progresskit-translator.png",
+    "firefox-768-case-vaeloria.png",
+    "firefox-768-case-progresskit-community.png",
+    "firefox-768-case-progresskit-tax.png",
+    "firefox-768-case-adivara.png",
+    "firefox-768-case-gotrans360.png",
+    "firefox-768-case-ignira.png",
+    "firefox-768-case-obserwator.png",
+    "firefox-768-case-kan-system.png",
+    "firefox-768-case-progresskit-systems.png",
+    "firefox-768-case-progresskit-analytics.png",
+    "firefox-768-case-progresskit-infrastructure.png",
+    "firefox-768-case-progresskit-notes.png",
+    "firefox-768-case-progresskit-offgrid.png",
+    "firefox-768-case-reel-agent.png",
+    "firefox-768-case-progresskit-remote.png",
+    "firefox-768-case-progresskit-vault-key.png"
+  ],
+  "readability": [
+    {
+      "scope": "firefox:768:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "PROGRESSKIT\nSYSTEMS",
+          "left": 46.06666564941406,
+          "right": 583.6666412353516,
+          "width": 537.5999755859375,
+          "height": 110.51666259765625,
+          "fontSize": 62,
+          "clipPath": "none"
+        },
+        {
+          "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+          "left": 32,
+          "right": 399.8999938964844,
+          "width": 367.8999938964844,
+          "height": 113.39999389648438,
+          "fontSize": 36,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:services",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "USŁUGI",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 51.833343505859375,
+          "fontSize": 48,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla Ciebie /\nmałego biznesu",
+          "left": 39.31666564941406,
+          "right": 272.71665954589844,
+          "width": 233.39999389648438,
+          "height": 76.83332824707031,
+          "fontSize": 34,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla firmy /\nsystemu",
+          "left": 405.066650390625,
+          "right": 638.4666442871094,
+          "width": 233.39999389648438,
+          "height": 76.83332824707031,
+          "fontSize": 34,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:process",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Od pomysłu\ndo wdrożenia.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 103.66667175292969,
+          "fontSize": 48,
+          "clipPath": "none"
+        },
+        {
+          "text": "Pomysł",
+          "left": 101.03334045410156,
+          "right": 174.9499969482422,
+          "width": 73.91665649414062,
+          "height": 27.600006103515625,
+          "fontSize": 23,
+          "clipPath": "none"
+        },
+        {
+          "text": "Projekt",
+          "left": 348.2166748046875,
+          "right": 419.7833557128906,
+          "width": 71.56668090820312,
+          "height": 27.600006103515625,
+          "fontSize": 23,
+          "clipPath": "none"
+        },
+        {
+          "text": "Budowa",
+          "left": 588.1666870117188,
+          "right": 671.8166809082031,
+          "width": 83.64999389648438,
+          "height": 27.600006103515625,
+          "fontSize": 23,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:catalog",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Glikemia Premium",
+          "left": 72,
+          "right": 349,
+          "width": 277,
+          "height": 28.800003051757812,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "ProgressKit Mail",
+          "left": 419,
+          "right": 696,
+          "width": 277,
+          "height": 28.800003051757812,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:glikemia-premium:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Glikemia Premium",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:glikemia-premium:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Android",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:glikemia-premium:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Automatyczna regresja; Debug/Release rebuild · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Fizyczna regresja ADB wcześniejszego Debug/legacy application Id · Pierwszy przebieg fizyczny",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.79998779296875,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Fizyczna regresja ADB wcześniejszego Debug/legacy application Id · Późniejszy wynik opisany w raporc",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-mail:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Mail",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-mail:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Android",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-mail:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "API i logika serwera, w tym integracje bazy · server",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Wspólny Core Windows/Linux, uwierzytelnianie i poczta · core",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Logika klienta Linux · linux",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-translator:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Translator",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-translator:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Android",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-translator:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "123 JVM, 39 funkcjonalnych Android + 1 diagnostyka, lint 0 errors / 18 warnings; nie nowy run. · JVM",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.79998779296875,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "123 JVM, 39 funkcjonalnych Android + 1 diagnostyka, lint 0 errors / 18 warnings; nie nowy run. · And",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:vaeloria:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Vaeloria",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:vaeloria:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux desktop",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Android",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:vaeloria:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Domain 192/Application 269/API2;7APIintegracji pominięto bez testowej bazy. · AI arena — .NET",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Las→pojedynek→powrót→turniej,układy/kampania/prezentacja i część screenshot assertions. · AI arena —",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "270 meczów;156A/114B,bez remisu/limitu/nielegalnego ruchu,270 replay. · AI arena — symulator i repla",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-community:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Community / Lud&Pra",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-community:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Backend/API",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW desktop/mobile",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-community:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Discovery closure; jednorazowy PostgreSQL, frontend i disposable browser fixture · backend",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Discovery closure; jednorazowy PostgreSQL, frontend i disposable browser fixture · frontend",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.79998779296875,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Discovery closure; jednorazowy PostgreSQL, frontend i disposable browser fixture · disposable Browse",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-tax:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Tax",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-tax:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Backend API",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-tax:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dashboard 02, pełny backend Release na lokalnym syntetycznym środowisku; oddzielny pełny Vitest · ba",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dashboard 02, pełny backend Release na lokalnym syntetycznym środowisku; oddzielny pełny Vitest · fr",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Checkpoint 01B, lokalna wąska regresja bezpieczeństwa, Debug/JVM i tooling · backend Security",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:adivara:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Adivara",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:adivara:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Backend/API",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW / Android / i OS",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:adivara:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Historyczny końcowy working tree remediacji osobna bramka weryfikacji; build i API/domain/infrastruc",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Nowe testy domeny i polityki handover · Przygotowane przypadki",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:gotrans360:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "GoTrans360",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:gotrans360:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW / API",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:gotrans360:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "3 typechecki, 3 buildy, 2 testy Jest, Prisma · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Build zbiorczy i samodzielny typecheck biblioteki UI · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:ignira:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Ignira",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:ignira:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Wyniki i granice weryfikacji",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:ignira:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "node --check js/app.js · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:obserwator:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Obserwator",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:obserwator:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Wyniki i granice weryfikacji",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:obserwator:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Odczyt HEAD i plików HTML · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:kan-system:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "KAN SYSTEM",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:kan-system:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Zakres historyczny",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Wyniki i granice weryfikacji",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:kan-system:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Zmiana nazwy RWR na KAN SYSTEM · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-systems:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Systems",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-systems:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW desktop",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "WWW mobile",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-systems:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Regresje lokalne przed integracją nowego katalogu; Node i Python są odrębnymi reporterami · node",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Regresje lokalne przed integracją nowego katalogu; Node i Python są odrębnymi reporterami · python",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Osobne lifecycle i capture na lokalnej przeglądarce · lifecycle",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-analytics:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Analytics",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-analytics:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Backend HTTP",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Panel WWW operatora",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-analytics:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Historyczna szeroka regresja witryny, obejmująca także security/API/negative; nie same Analytics · p",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Odczyt definicji testów, bez wykonania · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-infrastructure:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Zaplecze ProgressKit",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-infrastructure:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Narzędzia lokalnego wydania",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Środowisko serwerowe",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-infrastructure:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Kod narzędzi i zachowane raporty lokalne; brak testu infrastruktury zdalnej · Weryfikacja",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-notes:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Notes",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-notes:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Windows 11 x64",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux — środowisko deweloperskie",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-notes:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "27 testów wybranych źródeł skompilowanych Roslynem i 5 Python; nie pełny build aplikacji. · Wcześnie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "dotnet build -t:Rebuild -c Release --no-restore; kod 0,22 CA1416,0 błędów. · Późniejszy pełny Rebuil",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Raport agenta Core o standardowym dotnet run po restore. · Późniejszy zestaw Core",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-offgrid:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit OffGrid",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-offgrid:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Niepotwierdzone",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Wyniki i granice weryfikacji",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-offgrid:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Nie odnaleziono kodu/artefaktu w ograniczonym zakresie audytu. · Implementacja i komunikacja na urzą",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:reel-agent:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Reel Agent",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:reel-agent:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux — lokalna stacja robocza",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:reel-agent:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Historyczny pełny zestaw, 117 passed/1 skipped; real-model test miał brak gniazda Ollama w sandboxie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Historyczne testy planowania po aktualizacji zatwierdzonych faktów i promptu. · Testy celowane plano",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Historyczne testy głosu po poprawce dopełniania WAV. · Testy celowane głosu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.899993896484375,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-remote:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Remote",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-remote:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux — klient natywny",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Windows x64 — Host",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-remote:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "16 kontroli pobrania, struktury DEB/EXE, wersji klienta, przykładów konfiguracji i skryptów. · Wąski",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Testy poprawnego i niebezpiecznego profilu na danych syntetycznych. · Generator profilu publicznego",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "1024 kombinacje typu sesji/profilu/lokalnego użytkownika i 256 wartości kanału. · Przenośna polityka",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.80000305175781,
+          "fontSize": 18,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-vault-key:hero",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "ProgressKit Vault Key",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 48.833343505859375,
+          "fontSize": 46.0667,
+          "clipPath": "none"
+        },
+        {
+          "text": "Od potrzeby do produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dla kogo",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Problem",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Dlaczego powstał",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Rozwiązanie",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-vault-key:platformy",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Stan produktu i platform",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Android",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Linux",
+          "left": 36,
+          "right": 732,
+          "width": 696,
+          "height": 31,
+          "fontSize": 20,
+          "clipPath": "none"
+        },
+        {
+          "text": "Potwierdzony zakres",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    },
+    {
+      "scope": "firefox:768:progresskit-vault-key:weryfikacja",
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": [
+        {
+          "text": "Dowody i testy",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        },
+        {
+          "text": "Brak odnalezionego raportu wykonania; odczyt kodu i istniejącego debug APK. · Fizyczny challenge-res",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 55.79998779296875,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Przegląd bieżącego zakresu implementacji i granic dostępności.",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 27.900009155273438,
+          "fontSize": 18,
+          "clipPath": "none"
+        },
+        {
+          "text": "Materiały z produktu",
+          "left": 15,
+          "right": 753,
+          "width": 738,
+          "height": 30,
+          "fontSize": 24,
+          "clipPath": "none"
+        }
+      ]
+    }
+  ],
+  "performance": [],
+  "safety": {
+    "formsSubmitted": false,
+    "externalRequestsAllowed": false,
+    "mailDeliveryVerified": false,
+    "physicalMobileVerified": false
+  },
+  "ownerVisualApproval": "OPEN",
+  "visualReviewRequired": true,
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+  "sourceBefore": {
+    "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+    "assets/category-worlds.css": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+    "assets/delivery.css": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+    "assets/ecosystem-system.css": "07861cd4688f1a43af075794ad844a9e2a09b070beee42c5f8281b7d94ebac01",
+    "assets/ecosystem-system.js": "11d0452c449f81fe762173f97ec3d0900b0682d6f4c71d9418594c28a0ec15fd",
+    "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+    "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+    "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+    "assets/hero-space.js": "270fadffe4ae3e706285f8b190fd7a8d99b983265d852715693c06229d527e09",
+    "assets/hero.css": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+    "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+    "assets/interface-life.css": "474a61c9e91c4c623d92dfe6d940f002aa251d6b87c963df664620bbb9b6aca9",
+    "assets/interface-life.js": "d89144bfc5436f4335db2bac2e4a8ca1585b73dc49eaf743c3f2490c2e7fe247",
+    "assets/owner-finish.css": "1a05663da7bf7d215ce9f83d28e995c7582ab30754aac8470652328b5efe0de9",
+    "assets/progresskit-product-shell.css": "a6952c2d3f34ee955be1be0cf469dd635120eb38ad52ec17dbdbd05021f5bdb9",
+    "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+    "assets/project-hologram.js": "b525f4f6b62b8e86b385836213146443369a70106b0581f18f1132a205cb544f",
+    "assets/project-mechanism.css": "ae2392f10634021a1f46f92b1cd4fc218673cd0d45202e647e2ec9edac931354",
+    "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+    "assets/project-showroom.js": "51907264a95a86de496c84c281bfdbd8d4eff30cfff06951fda840b916d49571",
+    "assets/project-slices.css": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+    "assets/showroom-3d.css": "04b02e9906bb5488a182d57c1de768153978455ba529b0f0b69fd1514beea169",
+    "assets/showroom-3d.mjs": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23",
+    "assets/showroom-capsule.css": "5b4b00ad9dde68524122f9025a43b698da0160253096e268ffc098389e20e1fa",
+    "assets/showroom-capsule.js": "422b542909be5fffdc8a273c0491a4ad1c8948125546bba0f0af00e957388917",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/showroom-matter.js": "d065e7311d23e0580809a7464dab34a40ea7adda81ca389fe70741bae4f706ef",
+    "assets/showroom-scene.mjs": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1",
+    "assets/site-v4.css": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+    "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6",
+    "assets/site-v5.js": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3",
+    "assets/spatial-chapters.css": "b2bebc4b6e444eefc421afdbd716b817d5243b244797d1db450e1129470d0810",
+    "assets/spatial-chapters.mjs": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b",
+    "assets/vendor/three/three.core.js": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578",
+    "assets/vendor/three/three.module.js": "104f56145899722094556490d787aae0617cc2fc3382f31df02d724ea1aee341",
+    "assets/visual-acceptance.css": "104d0362cba0a7449422df25ff6e18ec6e44229139e761749249566711acbb13",
+    "assets/world-atmosphere.css": "7b09fab498e26dc85f2c90fd484d89fc5a7c7540a7791b4a361280820554c0df",
+    "assets/world-sections.css": "1ffb459be7e3d298edf3b76f56a6a3dcd0d3039874ff2c3ed4fa4e1e13ece868",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "index.html": "1c0f34088befcc5e101eb436247ef837fe28ae167ef52d41a8cfcc32c29987bd",
+    "projekty/adivara/index.html": "58fe155589eb85420bdffaed09d7a6be26a29ef291b757eabf499a9c522845bd",
+    "projekty/glikemia-premium/index.html": "e702bcd74528b537c74a5acb477e2cbd0a687c632d79f88e2072d9d24c9b7aa7",
+    "projekty/gotrans360/index.html": "7e281af20bac9e1a0e48effd400dafcecd779737377194849ea9de7bc007e8b7",
+    "projekty/ignira/index.html": "8b6e24f925d36f90585618ca9da0622409cf7a4df9fc1282b2fd5ad19ea74737",
+    "projekty/kan-system/index.html": "e17cc55f83f9e47b028da6d3bd519ee46fd400e0349c396c481f55f55c2676ab",
+    "projekty/obserwator/index.html": "bc7babc86b4bf1e3804599794eb194a95a884bf25f39025cdc345713cc7fccb1",
+    "projekty/progresskit-analytics/index.html": "4ab0ed4880703642634574404e1ec131a3110f9bed3dd8fd4ca35ec813dd3076",
+    "projekty/progresskit-community/index.html": "92194601c7c8f5ffd810074a048c1da84aabda374fbcc85c9d6ff9e34e4da776",
+    "projekty/progresskit-infrastructure/index.html": "29d7ac90a757e549740ac9b1303ce22a3838edb1f66c453f9370042d39f95bdd",
+    "projekty/progresskit-mail/index.html": "f4f35a5ec2f1deb9db06bcc32c5adba5f9bdb8b3006158ec3b624e107dd23598",
+    "projekty/progresskit-notes/index.html": "3dabd34104a4441f41aa860a74e4521ba01e1a92c7bd45a5f629a278f6895bc8",
+    "projekty/progresskit-offgrid/index.html": "8c01ce5f02bad268df016024be640a0ad0825fb43051782fda477f9a78aa8e17",
+    "projekty/progresskit-remote/index.html": "1ccb310ff314f2cc23f6b8c06438e758a99c36121d287436fb3651bd4189334e",
+    "projekty/progresskit-systems/index.html": "6eda44c0c3d546fb35c887a90a45c5258f850c3c2540fa4f096b1eb4ca06714f",
+    "projekty/progresskit-tax/index.html": "fc854b256995d0bda6926af572ae12a06047b6e37e394f8e2de6bc01e0c21a09",
+    "projekty/progresskit-translator/index.html": "bc78153005fed30ff722ac2a685b8b7efe2367ac9ae01fde9c2c3a3f431d742f",
+    "projekty/progresskit-vault-key/index.html": "7b9d1c6c0043604343cd686567f465773073a04f6799d44a98b7534ab2b0389d",
+    "projekty/reel-agent/index.html": "8dee5b0d1a181137b0f4f7f3a0976a011ea1b21e1fea2a9e631bacb537db0a4f",
+    "projekty/vaeloria/index.html": "467ccfeb857336392aa727d2fd503239e37f758d2aac7cb5c855c6f219a82d0d",
+    "prywatnosc/index.html": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8",
+    "scripts/build-site.py": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84",
+    "scripts/showroom_markup.py": "5c2832dc472e51821d7d207ed3b6f7e85cabdd2a186db868aa186402100388b6",
+    "templates/site.html": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314"
+  },
+  "PASS": 28,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "sourceAfter": {
+    "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+    "assets/category-worlds.css": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+    "assets/delivery.css": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+    "assets/ecosystem-system.css": "07861cd4688f1a43af075794ad844a9e2a09b070beee42c5f8281b7d94ebac01",
+    "assets/ecosystem-system.js": "11d0452c449f81fe762173f97ec3d0900b0682d6f4c71d9418594c28a0ec15fd",
+    "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+    "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+    "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+    "assets/hero-space.js": "270fadffe4ae3e706285f8b190fd7a8d99b983265d852715693c06229d527e09",
+    "assets/hero.css": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+    "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+    "assets/interface-life.css": "474a61c9e91c4c623d92dfe6d940f002aa251d6b87c963df664620bbb9b6aca9",
+    "assets/interface-life.js": "d89144bfc5436f4335db2bac2e4a8ca1585b73dc49eaf743c3f2490c2e7fe247",
+    "assets/owner-finish.css": "1a05663da7bf7d215ce9f83d28e995c7582ab30754aac8470652328b5efe0de9",
+    "assets/progresskit-product-shell.css": "a6952c2d3f34ee955be1be0cf469dd635120eb38ad52ec17dbdbd05021f5bdb9",
+    "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+    "assets/project-hologram.js": "b525f4f6b62b8e86b385836213146443369a70106b0581f18f1132a205cb544f",
+    "assets/project-mechanism.css": "ae2392f10634021a1f46f92b1cd4fc218673cd0d45202e647e2ec9edac931354",
+    "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+    "assets/project-showroom.js": "51907264a95a86de496c84c281bfdbd8d4eff30cfff06951fda840b916d49571",
+    "assets/project-slices.css": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+    "assets/showroom-3d.css": "04b02e9906bb5488a182d57c1de768153978455ba529b0f0b69fd1514beea169",
+    "assets/showroom-3d.mjs": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23",
+    "assets/showroom-capsule.css": "5b4b00ad9dde68524122f9025a43b698da0160253096e268ffc098389e20e1fa",
+    "assets/showroom-capsule.js": "422b542909be5fffdc8a273c0491a4ad1c8948125546bba0f0af00e957388917",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/showroom-matter.js": "d065e7311d23e0580809a7464dab34a40ea7adda81ca389fe70741bae4f706ef",
+    "assets/showroom-scene.mjs": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1",
+    "assets/site-v4.css": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+    "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6",
+    "assets/site-v5.js": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3",
+    "assets/spatial-chapters.css": "b2bebc4b6e444eefc421afdbd716b817d5243b244797d1db450e1129470d0810",
+    "assets/spatial-chapters.mjs": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b",
+    "assets/vendor/three/three.core.js": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578",
+    "assets/vendor/three/three.module.js": "104f56145899722094556490d787aae0617cc2fc3382f31df02d724ea1aee341",
+    "assets/visual-acceptance.css": "104d0362cba0a7449422df25ff6e18ec6e44229139e761749249566711acbb13",
+    "assets/world-atmosphere.css": "7b09fab498e26dc85f2c90fd484d89fc5a7c7540a7791b4a361280820554c0df",
+    "assets/world-sections.css": "1ffb459be7e3d298edf3b76f56a6a3dcd0d3039874ff2c3ed4fa4e1e13ece868",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "index.html": "1c0f34088befcc5e101eb436247ef837fe28ae167ef52d41a8cfcc32c29987bd",
+    "projekty/adivara/index.html": "58fe155589eb85420bdffaed09d7a6be26a29ef291b757eabf499a9c522845bd",
+    "projekty/glikemia-premium/index.html": "e702bcd74528b537c74a5acb477e2cbd0a687c632d79f88e2072d9d24c9b7aa7",
+    "projekty/gotrans360/index.html": "7e281af20bac9e1a0e48effd400dafcecd779737377194849ea9de7bc007e8b7",
+    "projekty/ignira/index.html": "8b6e24f925d36f90585618ca9da0622409cf7a4df9fc1282b2fd5ad19ea74737",
+    "projekty/kan-system/index.html": "e17cc55f83f9e47b028da6d3bd519ee46fd400e0349c396c481f55f55c2676ab",
+    "projekty/obserwator/index.html": "bc7babc86b4bf1e3804599794eb194a95a884bf25f39025cdc345713cc7fccb1",
+    "projekty/progresskit-analytics/index.html": "4ab0ed4880703642634574404e1ec131a3110f9bed3dd8fd4ca35ec813dd3076",
+    "projekty/progresskit-community/index.html": "92194601c7c8f5ffd810074a048c1da84aabda374fbcc85c9d6ff9e34e4da776",
+    "projekty/progresskit-infrastructure/index.html": "29d7ac90a757e549740ac9b1303ce22a3838edb1f66c453f9370042d39f95bdd",
+    "projekty/progresskit-mail/index.html": "f4f35a5ec2f1deb9db06bcc32c5adba5f9bdb8b3006158ec3b624e107dd23598",
+    "projekty/progresskit-notes/index.html": "3dabd34104a4441f41aa860a74e4521ba01e1a92c7bd45a5f629a278f6895bc8",
+    "projekty/progresskit-offgrid/index.html": "8c01ce5f02bad268df016024be640a0ad0825fb43051782fda477f9a78aa8e17",
+    "projekty/progresskit-remote/index.html": "1ccb310ff314f2cc23f6b8c06438e758a99c36121d287436fb3651bd4189334e",
+    "projekty/progresskit-systems/index.html": "6eda44c0c3d546fb35c887a90a45c5258f850c3c2540fa4f096b1eb4ca06714f",
+    "projekty/progresskit-tax/index.html": "fc854b256995d0bda6926af572ae12a06047b6e37e394f8e2de6bc01e0c21a09",
+    "projekty/progresskit-translator/index.html": "bc78153005fed30ff722ac2a685b8b7efe2367ac9ae01fde9c2c3a3f431d742f",
+    "projekty/progresskit-vault-key/index.html": "7b9d1c6c0043604343cd686567f465773073a04f6799d44a98b7534ab2b0389d",
+    "projekty/reel-agent/index.html": "8dee5b0d1a181137b0f4f7f3a0976a011ea1b21e1fea2a9e631bacb537db0a4f",
+    "projekty/vaeloria/index.html": "467ccfeb857336392aa727d2fd503239e37f758d2aac7cb5c855c6f219a82d0d",
+    "prywatnosc/index.html": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8",
+    "scripts/build-site.py": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84",
+    "scripts/showroom_markup.py": "5c2832dc472e51821d7d207ed3b6f7e85cabdd2a186db868aa186402100388b6",
+    "templates/site.html": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314"
+  },
+  "finishedAt": "2026-11-02T11:33:07.097Z"
+}

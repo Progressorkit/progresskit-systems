@@ -1,0 +1,1311 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-23",
+  "projects": [
+    {
+      "id": "glikemia-premium",
+      "slug": "glikemia-premium",
+      "name": "Glikemia Premium",
+      "category": "mobile",
+      "summary": "Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.",
+      "problem": "Pomiary, kontekst posiłku i notatki potrzebują jednego uporządkowanego dziennika, który pozostaje dostępny na telefonie.",
+      "audiences": [
+        "Osoby prowadzące własny dziennik glikemii"
+      ],
+      "motivation": "Ułatwić codzienny zapis i przegląd własnych pomiarów oraz przygotowanie czytelnego zestawienia.",
+      "solution": "Aplikacja zapisuje dane w lokalnej bazie SQLite i pozwala je przeglądać, edytować oraz eksportować do PDF. Jest dziennikiem i nie zastępuje profesjonalnej porady medycznej.",
+      "features": [
+        "Dodawanie, edycja i usuwanie pomiarów z kontekstem posiłku, WW, WBT i notatką",
+        "Historia stronicowana po 50 rekordów, wykres i filtry czasu",
+        "Obsługa mg/dL i mmol/L z jedną kanoniczną postacią zapisu",
+        "Wielostronicowy eksport PDF generowany poza wątkiem interfejsu",
+        "Siedem wariantów języka interfejsu",
+        "Lokalne przypomnienie po pomiarze oznaczonym jako przed posiłkiem"
+      ],
+      "technologies": [
+        "C#",
+        ".NET 10",
+        ".NET MAUI",
+        "Android",
+        "SQLite",
+        "SkiaSharp",
+        "Microcharts"
+      ],
+      "stage": "Dostępny APK",
+      "availability": "APK Android 1.0 jest udostępniony bezpośrednio przez ProgressKit. Publikacja w Google Play stanowi osobny etap i nie jest potwierdzona.",
+      "updatedAt": "2026-10-23",
+      "architecture": [
+        "Interfejs .NET MAUI i wspólny formularz tworzenia oraz edycji pomiaru",
+        "Asynchroniczna baza SQLite z walidacją przed zapisem i stabilnym sortowaniem historii",
+        "SkiaSharp renderuje PDF; aplikacja przekazuje plik do systemowego podglądu",
+        "Źródłowy manifest nie żąda dostępu do Internetu; brak synchronizacji kont i własnego backendu"
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/glikemia/product-measurement.webp",
+          "alt": "Pusty formularz pomiaru Glikemia Premium z polami glikemii, WW, WBT i kontekstu",
+          "caption": "Rzeczywisty ekran formularza. Bez danych pomiarowych użytkownika.",
+          "width": 648,
+          "height": 1440
+        },
+        {
+          "src": "assets/projects/glikemia/product-language.webp",
+          "alt": "Ekran wyboru jednego z siedmiu języków aplikacji Glikemia Premium",
+          "caption": "Rzeczywisty ekran wyboru języka interfejsu.",
+          "width": 648,
+          "height": 1440
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport QA z 9.09.2026 dokumentuje 62 testy automatyczne PASS, 0 FAIL i 0 SKIPPED; nie uruchamiano ich ponownie w audycie z 23.10.2026.",
+        "Udostępniony APK ma wersję 1.0. Zapis kontroli lokalnego pliku z 22.10.2026 potwierdza zgodność rozmiaru i SHA-256 z metadanymi, integralność ZIP oraz podpis APK.",
+        "Odczyt publiczny z 15.10.2026 potwierdził dostępność strony i odpowiedź APK Range 206. Nie obejmował pełnego pobrania ani instalacji; kod potwierdza lokalne przechowywanie, walidację jednostek i eksport PDF."
+      ],
+      "cases": [
+        {
+          "problem": "Rekordy z identyczną datą i godziną mogły mieć niestabilną kolejność na kolejnych stronach historii.",
+          "diagnosis": "Audyt zapytania SQLite wykazał sortowanie wyłącznie po czasie pomiaru.",
+          "rootCause": "Brak drugiego klucza sortowania, gdy znaczniki czasu są identyczne.",
+          "solution": "Dodano sortowanie po dacie malejąco, następnie po identyfikatorze rekordu malejąco.",
+          "verification": "Historyczny raport z 31 sierpnia 2026 dokumentuje test remisu i pełny zestaw 62 PASS. Bieżący audyt potwierdził implementację; bez ponownego uruchomienia testów.",
+          "result": "Historia ma deterministyczny porządek również dla pomiarów zapisanych w tej samej chwili.",
+          "source": "glikemia-time"
+        },
+        {
+          "problem": "Granice filtra dnia mogły zostać wyliczone z dwóch różnych odczytów zegara w chwili przejścia przez północ.",
+          "diagnosis": "Analiza wyznaczania zakresu ujawniła wielokrotne pobranie daty dla jednego filtra.",
+          "rootCause": "Niezależne odczyty czasu dla początku i końca tego samego dnia.",
+          "solution": "Obie granice wynikają z jednego odczytu czasu, a koniec zakresu jest wyłączny.",
+          "verification": "Historyczny raport dokumentuje test przełomu dnia i roku. Kod obecnie korzysta z jednego odczytu daty i zakresu od początku dnia do początku następnego.",
+          "result": "Pomiar o północy należy do jednego dnia, bez nakładania się zakresów.",
+          "source": "glikemia-time"
+        }
+      ],
+      "planned": [
+        "Końcowy ręczny odbiór dostępności i lokalizacji obecnego kandydata",
+        "Osobne przygotowanie publikacji i testów instalacji z Google Play"
+      ],
+      "remaining": [
+        "Według zapisanej checklisty pozostaje końcowy odbiór TalkBack, większej czcionki i lokalizacji na fizycznym urządzeniu.",
+        "Ścieżka Google Play wymaga osobnego domknięcia listingu, deklaracji oraz instalacji i testów ze sklepu.",
+        "Udostępnienie APK 1.0 nie zamyka automatycznie wszystkich formalnych bramek prywatności i odbioru finalnego kandydata."
+      ],
+      "sources": [
+        {
+          "id": "glikemia-code",
+          "label": "Glikemia Premium: przegląd kodu i konfiguracji",
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "scope": "MAUI, SQLite, jednostki, PDF i manifest; odczyt źródeł oraz zapisanych checklist 23.10.2026, bez uruchomienia aplikacji."
+        },
+        {
+          "id": "glikemia-time",
+          "label": "Glikemia Premium: raport QA granic dat i integralności historii",
+          "kind": "report",
+          "revision": "3042927",
+          "scope": "Historyczne wyniki z 31 sierpnia i 9 września 2026; testy nie były ponawiane w audycie portfolio."
+        },
+        {
+          "id": "glikemia-premium-public",
+          "label": "Publiczny odczyt strony i dostępności, 15.10.2026",
+          "kind": "http",
+          "revision": "2026-10-15",
+          "scope": "Odczyt HTTPS. Dla APK tylko Range 32 B; bez pełnego pobrania, instalacji i weryfikacji sumy publicznego pliku."
+        },
+        {
+          "id": "glikemia-status-20261023",
+          "label": "Glikemia: audyt dostępności APK i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod 304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "scope": "Udostępniony APK Android 1.0; metadane dystrybucji, zapis lokalnej integralności i podpisu 22.10.2026 oraz historyczny odczyt publiczny 15.10.2026. Google Play i końcowy odbiór są osobnymi bramkami."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-mail",
+      "slug": "progresskit-mail",
+      "name": "ProgressKit Mail",
+      "category": "mobile",
+      "summary": "Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.",
+      "problem": "Prywatna poczta wymaga czytelnego interfejsu oraz kontroli nad urządzeniami, danymi dostępowymi i odłączaniem konta.",
+      "audiences": [
+        "Użytkownicy prywatnej, samodzielnie hostowanej poczty",
+        "Operatorzy kontrolujący dostęp urządzeń do skrzynek"
+      ],
+      "motivation": "Połączyć prostą obsługę skrzynki z osobną tożsamością i możliwością cofnięcia dostępu każdego urządzenia.",
+      "solution": "Androidowy klient korzysta z lokalnej pamięci podręcznej, szyfrowanego magazynu danych dostępowych i backendu przypisywania urządzeń. Transport IMAP/SMTP i sygnały push są rozdzielone od interfejsu.",
+      "features": [
+        "Skrzynka, ulubione, odłożone wiadomości, szkice, foldery i lokalne wyszukiwanie",
+        "Odczyt poczty IMAP oraz wysyłka SMTP z wymaganym szyfrowanym transportem",
+        "Czytelny tekst z MIME plain/HTML, z limitami wielkości i złożoności",
+        "Zapis wysłanej wiadomości lokalnie oraz próba kopii w serwerowym folderze Wysłane",
+        "Tożsamość EC P-256 i szyfrowanie danych dostępowych w Android Keystore",
+        "Sygnał Firebase Cloud Messaging uruchamiający synchronizację i prywatne powiadomienie",
+        "Backend przypisania, odzyskiwania i cofania dostępu urządzenia"
+      ],
+      "technologies": [
+        "Kotlin",
+        "Android",
+        "Jetpack Compose",
+        "Room",
+        "WorkManager",
+        "Android Keystore",
+        "Firebase Cloud Messaging",
+        "Eclipse Angus Mail",
+        "jsoup",
+        "C#",
+        ".NET 10",
+        "ASP.NET Core",
+        "PostgreSQL"
+      ],
+      "stage": "Wersja testowa",
+      "availability": "Wersja testowa Androida z lokalnym podpisanym APK. Udokumentowano IMAP/SMTP i Debug FCM na Xiaomi; publicznego linku pobrania Mail nie potwierdzono.",
+      "updatedAt": "2026-10-23",
+      "architecture": [
+        "Android: warstwy interfejsu, domeny, danych i bezpieczeństwa",
+        "Room przechowuje pamięć podręczną poczty, Keystore chroni tożsamość i klucz szyfrujący dane dostępowe",
+        "ASP.NET Core i PostgreSQL obsługują trwały proces przypisania urządzenia",
+        "FCM sygnalizuje zmianę, a WorkManager wykonuje synchronizację; IMAP/SMTP przenoszą wiadomości"
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/mail/mail-splash.webp",
+          "alt": "Ekran startowy rzeczywistej aplikacji ProgressKit Mail",
+          "caption": "Rzeczywisty ekran startowy klienta Android z materiałów V4; bez danych skrzynki.",
+          "width": 688,
+          "height": 1536
+        },
+        {
+          "src": "assets/projects/mail/mail-delete-redacted.webp",
+          "alt": "Potwierdzenie trwałego usunięcia wiadomości w ProgressKit Mail",
+          "caption": "Rzeczywisty ekran klienta Android. Tło korespondencji zostało zamazane w źródłowym materiale V4.",
+          "width": 688,
+          "height": 1536
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport z 10.10.2026 dokumentuje 219 testów Android i 166 testów serwera PASS; są to wyniki historyczne, bez ponowienia w audycie z 23.10.2026.",
+        "Ten checkpoint dokumentuje odczyt IMAP na Xiaomi, kontrolowaną wysyłkę SMTP przyjętą przez Gmail MX oraz jedną kopię w serwerowym folderze Wysłane. Odbiór i SPF/DKIM/DMARC potwierdził właściciel.",
+        "Udokumentowano rzeczywisty przepływ online Debug na Xiaomi: LMTP → FCM → synchronizacja → jedno prywatne powiadomienie, a także lokalny podpisany testowy APK. Nie jest to potwierdzenie pełnej macierzy cyklu życia ani produkcyjnego Release."
+      ],
+      "cases": [
+        {
+          "problem": "Wiadomość HTML lub nietypowa struktura MIME mogła nie dać czytelnej treści albo przerwać odświeżenie skrzynki.",
+          "diagnosis": "Syntetyczne wiadomości odtworzyły problemy wyboru części, kodowania znaków i nadmiernego odczytu. Struktura pierwotnej rzeczywistej wiadomości nie została ustalona.",
+          "rootCause": "Potwierdzone błędy parsera dotyczyły m.in. niewłaściwego wyboru części MIME i polegania na niepoprawnych deklaracjach charset. Nie przypisano ich automatycznie historycznemu incydentowi.",
+          "solution": "Wprowadzono kontrolowany wybór treści, ścisłą walidację kodowania, tekstowy odczyt HTML bez wykonywania skryptów oraz wspólne limity rozmiaru, liczby części i głębokości.",
+          "verification": "Raport dokumentuje reprodukcje przed poprawką, 39 lokalnych testów parsera/metadanych i osobny fizyczny test świeżego syntetycznego HTML. Bieżący audyt potwierdził kod; testów nie ponawiano.",
+          "result": "Obsługiwane warianty MIME mają czytelną reprezentację tekstową, a przekroczenia limitów widoczny komunikat. Pierwotna przyczyna historycznej wiadomości pozostaje nieudowodniona.",
+          "source": "mail-mime"
+        },
+        {
+          "problem": "Błąd zapisania kopii w Wysłanych po przyjęciu wiadomości przez SMTP mógł zachęcić do ponownej wysyłki.",
+          "diagnosis": "Proces rozróżnia zaakceptowanie treści przez SMTP od późniejszego lokalnego zapisu i IMAP APPEND.",
+          "rootCause": "Akceptacja wysyłki i zapis kopii to osobne operacje, które mogą zakończyć się różnymi wynikami.",
+          "solution": "Po pozytywnej akceptacji SMTP klient wykonuje zapis kopii, a jego awarię przedstawia jako ostrzeżenie z informacją, aby nie wysyłać ponownie.",
+          "verification": "Kod potwierdza osobne wyniki Completed i AcceptedWithWarning. Raport z 10 października opisuje jedną kontrolowaną wysyłkę oraz niezależny odczyt jednej kopii w serwerowym folderze Wysłane.",
+          "result": "Interfejs odróżnia przyjętą wiadomość od niepotwierdzonej kopii i nie przedstawia automatycznie problemu archiwizacji jako nieudanej wysyłki.",
+          "source": "mail-smtp"
+        }
+      ],
+      "planned": [
+        "Domknięcie fizycznej macierzy FCM po utracie sieci i zakończeniu procesu",
+        "Odbiór aktualnego procesu odzyskiwania i niezależnego cofania dostępu urządzeń",
+        "Przygotowanie i weryfikacja produkcyjnej konfiguracji wydania Android Release"
+      ],
+      "remaining": [
+        "Do potwierdzenia pozostają FCM offline i po zakończeniu procesu oraz niezależne cofnięcie dostępu urządzenia.",
+        "Produkcyjna konfiguracja Release i wdrożenie aktualnego procesu odzyskiwania wymagają osobnego odbioru.",
+        "Otwarta pozostaje szersza macierz dostarczalności, świeży odbiór od zewnętrznego nadawcy i niezależna weryfikacja uwierzytelnienia wiadomości."
+      ],
+      "sources": [
+        {
+          "id": "mail-code",
+          "label": "ProgressKit Mail: aktualny kod klienta i usług",
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "scope": "Android IMAP/SMTP, TLS, Keystore, MIME i kopia Sent; ponowny odczyt źródeł i raportów 23.10.2026, bez nowych testów produktu."
+        },
+        {
+          "id": "mail-mime",
+          "label": "ProgressKit Mail: raport odczytu MIME",
+          "kind": "report",
+          "revision": "c9b669ce + raport roboczy 2026-10-10",
+          "scope": "Historyczne reprodukcje syntetyczne i fizyczny kontrolowany HTML; bez surowej treści wiadomości."
+        },
+        {
+          "id": "mail-smtp",
+          "label": "ProgressKit Mail: raport wysyłki i zamknięcia technicznego",
+          "kind": "report",
+          "revision": "c9b669ce + raport roboczy 2026-10-10",
+          "scope": "Historyczne testy lokalne i jedna kontrolowana wysyłka; odbiór i wyniki uwierzytelnienia zgłoszone przez właściciela."
+        },
+        {
+          "id": "mail-status-20261023",
+          "label": "Mail: audyt stanu Androida i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "scope": "Wersja testowa Androida: zapis IMAP/SMTP do Gmail MX, online Debug FCM na Xiaomi i lokalnego podpisanego APK z 10.10.2026. Odbiór i wyniki uwierzytelnienia zgłosił właściciel; brak potwierdzonego publicznego URL APK Mail."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-translator",
+      "slug": "progresskit-translator",
+      "name": "ProgressKit Translator",
+      "category": "mobile",
+      "summary": "Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.",
+      "problem": "Krótka rozmowa w dwóch językach wymaga połączenia rozpoznawania, tłumaczenia i odsłuchu w jeden kontrolowany cykl.",
+      "audiences": [
+        "Osoby prowadzące naprzemienne rozmowy po polsku i niemiecku"
+      ],
+      "motivation": "Uprościć przekład pojedynczych wypowiedzi i zapewnić czytelne sterowanie nasłuchem oraz odtwarzaniem.",
+      "solution": "Aplikacja prowadzi kolejne sesje systemowego rozpoznawania mowy, tłumaczy przez ML Kit i odczytuje wynik TTS. Kierunek wybiera użytkownik, a rozpoznawanie czeka na końcowy wynik wypowiedzi.",
+      "features": [
+        "Jawny wybór DE → PL lub PL → DE",
+        "Cykl nasłuchu, tłumaczenia, odczytu i kontrolowanego wznowienia",
+        "Lokalna historia do 100 przekładów i zapisywane tempo TTS",
+        "Tłumaczenie wpisanego tekstu bez mikrofonu",
+        "Usługa mikrofonowa z widocznym powiadomieniem i akcją Stop",
+        "Wybór lokalnego ASR wyłącznie po potwierdzeniu zainstalowanego modelu",
+        "Preferowanie gotowego lokalnego głosu TTS i strumieniowe odtwarzanie PCM",
+        "Tryb mono oraz kod routingu stereo z testami L/R"
+      ],
+      "technologies": [
+        "Kotlin",
+        "Android",
+        "Jetpack Compose",
+        "ML Kit Translation",
+        "SpeechRecognizer",
+        "TextToSpeech",
+        "AudioTrack"
+      ],
+      "stage": "Prototyp",
+      "availability": "Lokalny debug 0.2.2, aktualizowany na fizycznym telefonie. Brak potwierdzonego publicznego wydania sklepowego.",
+      "updatedAt": "2026-10-13",
+      "architecture": [
+        "Jetpack Compose prezentuje Start, Historię i Ustawienia",
+        "Maszyna stanów serializuje nasłuch, tłumaczenie i odsłuch oraz odrzuca opóźnione callbacki po Stop",
+        "ML Kit tłumaczy lokalnie po pobraniu modeli; systemowe ASR i TTS mogą korzystać z usług online",
+        "Usługa foreground utrzymuje aktywną sesję; AudioTrack odtwarza fragmenty PCM z ograniczonej kolejki"
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/progresskit-translator/translator-start.webp",
+          "alt": "Historyczny ekran startowy tłumacza PL–DE z wyborem trybu rozmowy",
+          "caption": "Rzeczywisty ekran wersji 0.2.0 na Redmi. Sam widok przełącznika stereo nie potwierdza działania TWS ani bieżącej jakości audio.",
+          "width": 1080,
+          "height": 2400
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport wersji 0.2.2 z 13 października 2026 dokumentuje 123 testy JVM i 39 funkcjonalnych testów Android PASS; nie ponawiano ich w audycie portfolio.",
+        "Historyczna aktualizacja telefonu zachowała dane i zgodny hash APK. Użytkownik zgłosił jakościową poprawę wypowiedzi, bez pomiaru całkowitego opóźnienia."
+      ],
+      "cases": [
+        {
+          "problem": "Wybór usługi rozpoznawania i głosu TTS mógł zależeć od sieci mimo dostępności lokalnych komponentów.",
+          "diagnosis": "Rozdzielono informację o modelu możliwym do pobrania od dowodu jego instalacji. Wcześniejsze próby TTS zgłaszały timeout sieci.",
+          "rootCause": "Dostępność lokalnej usługi lub nazwa głosu nie potwierdza gotowego modelu ani syntezy bez sieci. Nie ustalono jednej przyczyny wszystkich opóźnień rozmowy.",
+          "solution": "ASR wybiera tryb lokalny tylko dla potwierdzonego zainstalowanego języka. Selektor TTS preferuje zgodny gotowy głos niewymagający sieci, z kontrolowanym trybem zastępczym.",
+          "verification": "Historyczny raport obejmuje 20 testów polityki ASR i 15 polityki głosu w zestawie 123 JVM PASS oraz testy syntetycznych modeli i TTS. Metadane telefonu nie są testem rozpoznawania mowy.",
+          "result": "Kod ma jawne reguły wyboru lokalnych komponentów. Pobranie modelu DE, lokalne rozpoznawanie na telefonie i całkowite opóźnienie wymagają osobnego potwierdzenia.",
+          "source": "translator-asr"
+        }
+      ],
+      "planned": [
+        "Pomiary czasu od końca wypowiedzi do pierwszego słyszalnego przekładu",
+        "Fizyczne testy lokalnego DE ASR oraz pełnego zestawu TWS",
+        "Dalsza analiza sygnałów rozpoczęcia i zakończenia rozpoznawania"
+      ],
+      "remaining": [
+        "Kliknięcia systemowej usługi nadal występowały w zgłoszeniu użytkownika.",
+        "Separacja stereo/TWS i pełne cykle odsłuchu przy wygaszonym ekranie nie są potwierdzone.",
+        "Nie jest to równoległy streaming ASR ani rozdzielanie dwóch rozmówców.",
+        "Galeria przedstawia historyczny ekran 0.2.0; bieżące zachowanie audio wymaga prób na urządzeniu."
+      ],
+      "sources": [
+        {
+          "id": "translator-code",
+          "label": "ProgressKit Translator: kod wersji 0.2.2",
+          "kind": "code",
+          "revision": "6932b069",
+          "scope": "Compose, maszyna sesji, ASR, wybór TTS, PCM i usługa foreground."
+        },
+        {
+          "id": "translator-asr",
+          "label": "ProgressKit Translator: raport 0.2.2 ASR/TTS",
+          "kind": "report",
+          "revision": "6932b069",
+          "scope": "Historyczna kompilacja i testy z 13 października 2026; odrębne ograniczenia fizycznego odsłuchu i metadanych ASR."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "vaeloria",
+      "slug": "vaeloria",
+      "name": "Vaeloria",
+      "category": "games",
+      "summary": "Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.",
+      "problem": "Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.",
+      "audiences": [
+        "Gracze zainteresowani eksploracją fantasy i taktycznymi pojedynkami",
+        "Uczestnicy prywatnych testów rozwijanej gry"
+      ],
+      "motivation": "Połączyć podróż bohatera EOS, odkrywanie świata i budowanie drużyny stworzeń w jednym doświadczeniu.",
+      "solution": "Istniejąca wersja integruje Las Ziemi 3D, kampanię, kolekcję, lokalne walki z AI i zapis postępu. Sześć pełnych krain i docelowa oprawa pozostają kierunkiem rozwoju.",
+      "features": [
+        "Tworzenie bohatera EOS i wprowadzenie do świata",
+        "Eksploracja Lasu Ziemi z mostami, sekretami, kryształami i minimapą",
+        "Kolekcja kart, skład drużyny i deterministyczny silnik taktycznej walki",
+        "Lokalne pojedynki, liga i turnieje z AI",
+        "Zapis i wczytywanie postępu, odkryć oraz kontekstu powrotu z walki",
+        "Profile Low, Medium, High oraz Reduced Motion",
+        "Ambient leśny, reakcja fauny na odległość i budżety aktywnych obiektów"
+      ],
+      "technologies": [
+        "C#",
+        "Godot 4.6",
+        ".NET",
+        "OpenGL Compatibility",
+        "JSON",
+        "ASP.NET Core",
+        "PostgreSQL",
+        "SignalR"
+      ],
+      "stage": "W rozwoju",
+      "availability": "Publiczna strona preview Android/Windows jest dostępna. Aktualny zakres rozgrywki jest offline; funkcje online i docelowa oprawa pozostają w rozwoju.",
+      "updatedAt": "2026-10-15",
+      "architecture": [
+        "Godot i C# obsługują sceny, eksplorację oraz prezentację areny",
+        "Domena walki i aplikacyjne reguły postępu są oddzielone od renderera",
+        "Lokalne magazyny JSON przechowują profil i rozgrywki; zapis poprzedza publikację nowego stanu",
+        "API kont i czatu korzysta z ASP.NET Core, PostgreSQL i SignalR; obecność kodu nie potwierdza aktualnego wdrożenia",
+        "MultiMesh, sektory roślinności i limity jakości kontrolują koszt prezentacji lasu"
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/vaeloria/earth-exploration.webp",
+          "alt": "Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie",
+          "caption": "Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.",
+          "width": 1080,
+          "height": 2400
+        },
+        {
+          "src": "assets/projects/vaeloria/tactical-battle.webp",
+          "alt": "Vaeloria: walka taktyczna samouczka z przeciwnikiem Iria BOT",
+          "caption": "Rzeczywisty ekran areny tutorialu na Redmi z publicznego preview; przeciwnik oznaczony jako BOT. To nie jest rozgrywka PvP.",
+          "width": 1080,
+          "height": 2400
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "label": "Publiczna strona grywalnego preview",
+          "url": "https://vaeloria.progresskit.pl/"
+        }
+      ],
+      "repository": null,
+      "results": [
+        "Raport Lasu Ziemi z 12 października 2026 opisuje fizyczne QA z zachowaniem postępu. Ten historyczny wynik nie obejmuje późniejszych zmian renderowania.",
+        "Raport wydajności z 13 października dokumentuje 265 kontroli regresji ambientu PASS oraz pomiary desktopowe. Nie dowodzi wzrostu FPS Androida ani pełnego braku regresji urządzeń.",
+        "Docelowa jakość artystyczna pozostaje częściowa; modele EOS, fauna i billboardy stworzeń są przejściowe."
+      ],
+      "cases": [
+        {
+          "problem": "Niższa jakość grafiki ukrywała część ambientu, ale kod nadal aktualizował jego transformacje.",
+          "diagnosis": "Audyt i mikropomiar oddzieliły koszt pętli ambientu od FPS całej gry i renderowania GPU.",
+          "rootCause": "Pętla przetwarzała także ptaki, motyle i warstwy mgły przekraczające aktywny budżet jakości.",
+          "solution": "Aktualizacje ograniczono do aktywnego budżetu, a zmianie jakości towarzyszy natychmiastowe ukrycie wyłączonych obiektów. Zachowano wspólny zegar animacji.",
+          "verification": "Historyczny raport z 13 października opisuje 265 kontroli PASS i desktopowy mikropomiar w pięciu partiach po 5000 callbacków. Bieżący audyt potwierdził pętle w kodzie, bez powtórzenia benchmarku.",
+          "result": "Low aktualizuje 8 zamiast 25 obiektów tej grupy. Mediana desktopowego callbacku spadła z 0,042918 do 0,033380 ms; jest to mała oszczędność CPU, bez deklaracji poprawy FPS telefonu.",
+          "source": "vaeloria-performance"
+        }
+      ],
+      "planned": [
+        "Dalsza rozbudowa krain po stabilizacji istniejącej eksploracji",
+        "Docelowe modele, rigging i animacje EOS oraz stworzeń",
+        "Długie, porównywalne próby wydajności i pamięci na urządzeniach",
+        "Rozwój funkcji online oddzielnie od lokalnej ligi i turniejów"
+      ],
+      "remaining": [
+        "Sześć pełnych światów, docelowa grafika i mecze online pozostają niezakończone.",
+        "Długie sesje Android/Windows, termika i potwierdzone minimalne wymagania sprzętowe wymagają dalszych prób.",
+        "Niewyjaśniona historyczna anomalia przemieszczenia EOS pozostaje otwarta; wykluczonej próby nie użyto jako dowodu wydajności.",
+        "Galeria zawiera dwa autentyczne ekrany z publicznego preview; docelowa oprawa pozostaje w rozwoju."
+      ],
+      "sources": [
+        {
+          "id": "vaeloria-code",
+          "label": "Vaeloria: przegląd bieżącej gry i mapy systemów",
+          "kind": "code",
+          "revision": "0716317a",
+          "scope": "Godot, silnik walki, eksploracja, zapis, profile jakości oraz kod kont i czatu."
+        },
+        {
+          "id": "vaeloria-forest",
+          "label": "Vaeloria: raport Lasu Ziemi 2.0",
+          "kind": "report",
+          "revision": "0716317a",
+          "scope": "Historyczne QA z 12 października 2026; osobne ograniczenia artystyczne i próby urządzenia."
+        },
+        {
+          "id": "vaeloria-performance",
+          "label": "Vaeloria: pomiary bazowe wydajności 13 października 2026",
+          "kind": "report",
+          "revision": "0716317a",
+          "scope": "Historyczne regresje i desktopowy mikropomiar ambientu; bez ponownego uruchomienia, bez ekstrapolacji na Android."
+        },
+        {
+          "id": "vaeloria-public",
+          "label": "Publiczny odczyt strony i dostępności, 15.10.2026",
+          "kind": "http",
+          "revision": "2026-10-15",
+          "scope": "Odczyt HTTPS. Dla APK tylko Range 32 B; bez pełnego pobrania, instalacji i weryfikacji sumy publicznego pliku."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-community",
+      "slug": "progresskit-community",
+      "name": "Lud&Pra / ProgressKit Community",
+      "category": "platforms",
+      "summary": "Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.",
+      "problem": "Dyskusje potrzebują czytelnych zasad, uzasadnionych decyzji moderacyjnych i możliwości odwołania, a uczestnicy chcą łatwo odnajdywać interesujące społeczności.",
+      "audiences": [
+        "Uczestnicy społeczności tematycznych",
+        "Twórcy i administratorzy społeczności",
+        "Moderatorzy"
+      ],
+      "motivation": "Połączyć rozmowy i zarządzanie społecznością z jawnym procesem moderacji oraz kontrolą dostępu do treści.",
+      "solution": "Modułowa platforma łączy konta, publikacje, komentarze, media i społeczności z obsługą zgłoszeń, uzasadnień i odwołań. Odkrywanie tematów korzysta z rzeczywistych treści dostępnych dla danego odbiorcy.",
+      "features": [
+        "Konta, profile i zarządzanie sesjami",
+        "Społeczności publiczne, prywatne i z ograniczonym dostępem",
+        "Publikacje, odpowiedzi, komentarze i obrazy",
+        "Zgłoszenia, decyzje moderacyjne i odwołania",
+        "Wyszukiwanie społeczności, tagów i fragmentów rozmów",
+        "Interfejs PL/EN/DE oraz responsywne karty i podglądy tematów",
+        "Oznaczanie kont botów i kontrolowane mechanizmy automatyzacji"
+      ],
+      "technologies": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "Entity Framework Core",
+        "PostgreSQL",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Docker"
+      ],
+      "stage": "Finalizacja",
+      "availability": "Główne funkcje są zaimplementowane i lokalnie przetestowane. Trwa finalizacja przed publiczną betą oraz odbiór bramek publikacji najnowszej wersji.",
+      "updatedAt": "2026-10-23",
+      "architecture": [
+        "Next.js odpowiada za interfejs i renderowanie stron.",
+        "ASP.NET Core jest modułowym monolitem z obszarami tożsamości, społeczności, treści, mediów, moderacji i powiadomień.",
+        "PostgreSQL i Entity Framework Core utrwalają dane; odczyty respektują widoczność społeczności i treści."
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/progresskit-community/community-desktop.webp",
+          "alt": "Lokalny widok odkrywania społeczności na desktopie",
+          "caption": "Lokalne QA na danych syntetycznych, 14.10.2026. Widok nie potwierdza wdrożenia produkcyjnego.",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "src": "assets/projects/progresskit-community/community-mobile.webp",
+          "alt": "Mobilny widok listy społeczności z kategoriami",
+          "caption": "Lokalne QA na danych syntetycznych, 14.10.2026. Widok mobilny w przeglądarce testowej.",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport walidacji z 14.10.2026 zapisuje 286 testów backendu i 154 testy frontendu zakończone PASS; nie uruchamiano ich ponownie podczas audytu z 23.10.2026.",
+        "Ten sam checkpoint dokumentuje 170 kontroli przeglądarkowych na izolowanych danych oraz osobny lokalny smoke: 24 PASS i 5 SKIP.",
+        "Kod obejmuje konta, społeczności, publikacje, komentarze, media i moderację. Dokumentacja z 14.10.2026 potwierdza inicjalizację wcześniejszej publicznej instancji przez API; nie dowodzi wdrożenia najnowszego lokalnego kandydata."
+      ],
+      "cases": [
+        {
+          "problem": "Rozbudowa odkrywania społeczności wymagała połączenia tematów, nazw i fragmentów rozmów bez osobnego pobierania każdego wpisu.",
+          "diagnosis": "Porównanie istniejących list i feedu wykazało brak jednego odczytu obejmującego ten kontekst. Testy kontrolowały liczbę zapytań i zachowanie widoczności.",
+          "rootCause": "Istniejące API obsługiwało osobne listy, a nowy sposób odkrywania potrzebował danych zbiorczych.",
+          "solution": "Rozszerzono dotychczasowy moduł treści o zbiorcze wyszukiwanie i podglądy. Interfejs pobiera fragmenty po otwarciu tematu oraz obsługuje klawiaturę i ograniczenie animacji.",
+          "verification": "Raport z 14.10.2026 dokumentuje testy API, stałą liczbę zapytań dla 1 i 20 społeczności oraz przeglądarkowe scenariusze desktop i dotyk.",
+          "result": "Lokalnie zweryfikowano odkrywanie tematów i rozmów z zachowaniem reguł dostępu. Aktualne wdrożenie pozostaje niepotwierdzone.",
+          "source": "community-discovery"
+        },
+        {
+          "problem": "Rozbudowany feed potrzebował wiarygodnych informacji o rozmowie bez kosztu osobnego zapytania dla każdej karty.",
+          "diagnosis": "Test regresyjny porównał treści widoczne i pominięte oraz liczbę zapytań dla strony stu publikacji.",
+          "rootCause": "Prezentacja rozmów wymagała agregatów, których dotychczasowy kontrakt feedu nie udostępniał.",
+          "solution": "Dodano zbiorcze liczenie odpowiedzi, uczestników, ostatniej aktywności i obrazów w istniejącym feedzie.",
+          "verification": "Raport V2 z 14.10.2026 zapisuje regresję trzech zapytań SQL dla stu postów i wykluczenie nieopublikowanych komentarzy z metryk.",
+          "result": "Informacje o rozmowie wynikają z rzeczywistej treści. Raport dotyczy lokalnego środowiska testowego.",
+          "source": "community-feed-v2"
+        }
+      ],
+      "planned": [
+        "Zamknięcie bramek publikacji i kontrolowane otwarcie publicznej bety",
+        "Dalszy rozwój społeczności prawdziwych użytkowników po odbiorze wersji"
+      ],
+      "remaining": [
+        "Przed publiczną betą pozostaje zatwierdzenie i publikacja dokumentów oraz domknięcie wymagań prywatności i dostawców.",
+        "Pozostaje potwierdzenie obsady i procesu moderacji zgodnie z bramką co najmniej dwóch zatwierdzonych moderatorów platformy.",
+        "Najnowszy kandydat wymaga końcowego odbioru wydania i wdrożenia. Wcześniejsza publiczna instancja oraz lokalne QA nie zamykają tej bramki."
+      ],
+      "sources": [
+        {
+          "id": "community-code",
+          "label": "Bieżący kod platformy",
+          "kind": "code",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Moduły API, kontrakty i manifesty technologii; ponowny odczyt właściwego checkoutu 23.10.2026, bez nowych testów produktu."
+        },
+        {
+          "id": "community-discovery",
+          "label": "Community Discovery: walidacja i podsumowanie, 14.10.2026",
+          "kind": "report",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Zapisane wyniki lokalne, izolowane dane i oddzielny smoke; bez ponownego uruchomienia"
+        },
+        {
+          "id": "community-feed-v2",
+          "label": "Lud&Pra V2: przegląd, 14.10.2026",
+          "kind": "report",
+          "revision": "aad44687c87e6b1243fe22db8facec260eb00913",
+          "scope": "Lokalny feed, sesje i agregacja rozmów; bez dowodu produkcji"
+        },
+        {
+          "id": "community-status-20261023",
+          "label": "Lud&Pra: audyt dojrzałości i potwierdzenie właściciela, 23.10.2026",
+          "kind": "report",
+          "revision": "2026-10-23; kod c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Finalizacja według aktualnej deklaracji właściciela i odczytu kodu. Historyczne testy 14.10.2026; zapis inicjalizacji wcześniejszej publicznej instancji. Osobno pozostają legal, obsada moderacji i odbiór najnowszego wydania."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-tax",
+      "slug": "progresskit-tax",
+      "name": "ProgressKit Tax",
+      "category": "saas",
+      "summary": "Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.",
+      "problem": "Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.",
+      "audiences": [
+        "Polskie biura rachunkowo-podatkowe",
+        "Klienci indywidualni ze sprawami PL/DE/NL",
+        "Przedsiębiorcy i reprezentanci spółek"
+      ],
+      "motivation": "Uporządkować pracę biura i wymianę dokumentów z klientem w jednym systemie, z jawną historią operacji i zakresem dostępu.",
+      "solution": "Wspólna kartoteka, sprawy i obieg dokumentów łączą się z silnikiem księgowym, raportami oraz natywnym portalem Android. Status testów technicznych jest oddzielony od akceptacji merytorycznej reguł.",
+      "features": [
+        "Tożsamość, organizacje, role i audyt operacji",
+        "Kartoteka osób prywatnych, JDG i spółek oraz sprawy PL/DE/NL",
+        "Prywatne dokumenty, skanowanie ClamAV i obieg zatwierdzania",
+        "Plan kont, lata i okresy, dziennik Wn/Ma oraz raporty księgowe",
+        "KPiR 19 kolumn i ewidencja przychodów 17 kolumn dla wersji 2026",
+        "Dokładne kwoty i atomowa korekta przez storno i zapis zastępczy",
+        "Raporty WWW, CSV i PDF z historią korekt",
+        "Natywny portal Android i szyfrowany backup konserwacyjny"
+      ],
+      "technologies": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "Entity Framework Core",
+        "PostgreSQL",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Kotlin",
+        "Jetpack Compose",
+        "Android",
+        "ClamAV"
+      ],
+      "stage": "W rozwoju",
+      "availability": "Lokalny checkpoint techniczny. Brak potwierdzonego wydania produkcyjnego, publicznego Android Release i aktywnych integracji KSeF/JPK.",
+      "updatedAt": "2026-10-11",
+      "architecture": [
+        "Modułowy backend ASP.NET Core z PostgreSQL i wspólnymi granicami organizacji.",
+        "WWW Next.js oraz natywny Android Kotlin/Compose korzystają z tego samego API.",
+        "Silnik księgowy zachowuje historię korekt; dokumenty przechodzą kontrolę i obieg zatwierdzania."
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport Sprintu 04B z 11.10.2026 zapisuje 896 unikalnych PASS, 0 FAIL i 0 SKIP; jest to historyczny checkpoint, bez ponownego uruchomienia w audycie portfolio.",
+        "Zapisany odbiór obejmuje 23 kontrole fizycznego Androida oraz przepływ dokumentów Android → API → PostgreSQL → WWW.",
+        "Techniczny odbiór ksiąg i raportów nie oznacza akceptacji prawnej ani księgowej. Generowanie i wysyłka KSeF/JPK pozostają niewdrożone."
+      ],
+      "cases": [
+        {
+          "problem": "Kwoty o nadmiernej precyzji mogły przejść walidację po wcześniejszym zaokrągleniu przez parser.",
+          "diagnosis": "Przegląd konwersji oraz zapisany test porównujący zachowanie przed i po poprawce wskazały utratę części zapisu wejściowego.",
+          "rootCause": "Walidacja opierała się na już sparsowanej wartości decimal zamiast na oryginalnym zapisie liczby.",
+          "solution": "Oryginalny token JSON jest sprawdzany przed parsowaniem; dozwolony jest zwykły zapis dziesiętny z najwyżej dwoma miejscami po przecinku.",
+          "verification": "Raport 04B dokumentuje test porównawczy i 14 ukierunkowanych testów obejmujących walidację, rollback i migracje.",
+          "result": "Nieprawidłowa precyzja jest odrzucana bez częściowego zapisu danych. Wynik dotyczy lokalnej implementacji technicznej.",
+          "source": "tax-04b"
+        },
+        {
+          "problem": "Korekta ewidencji musi zachować pełny ślad pierwotnego wpisu, storna i zastępującego zapisu.",
+          "diagnosis": "Przegląd kontroli integralności wykazał, że jedna z reguł nie porównywała opisu storna z wymaganym źródłem.",
+          "rootCause": "Kontrola nowego formatu nie obejmowała całego zestawu zachowywanych metadanych.",
+          "solution": "Dodano addytywną korektę kontroli bazy, zachowując zastosowaną historię migracji. Storno i zapis zastępczy powstają w jednej transakcji.",
+          "verification": "Raport 04B opisuje testy integralności i rollbacku, aktualizację schematu oraz niezależne sprawdzenie CSV/PDF.",
+          "result": "Lokalnie potwierdzono spójny łańcuch korekt, dokładne kwoty i zachowanie opisów. Merytoryczna akceptacja księgowa pozostaje osobnym etapem.",
+          "source": "tax-04b"
+        }
+      ],
+      "planned": [
+        "Recenzja księgowa i prawna reguł oraz procedur",
+        "Osobne wdrożenie i testy integracji KSeF/JPK",
+        "Przygotowanie kontrolowanego wydania produkcyjnego i Android Release"
+      ],
+      "remaining": [
+        "Niezależna akceptacja merytoryczna i prawna",
+        "Odbiór produkcyjny i operacyjny",
+        "Zewnętrzne integracje podatkowe",
+        "Publiczne materiały wizualne bez danych klientów"
+      ],
+      "sources": [
+        {
+          "id": "tax-code",
+          "label": "Bieżący kod backendu, WWW i Androida",
+          "kind": "code",
+          "revision": "d56da266d0d5237d4b8edf6254b08a93ca6ac4db",
+          "scope": "Kontrakty rejestrów, konwersja kwot, korekty i manifesty; odczyt 15.10.2026"
+        },
+        {
+          "id": "tax-04b",
+          "label": "Sprint 04B: raport, 11.10.2026",
+          "kind": "report",
+          "revision": "d56da266d0d5237d4b8edf6254b08a93ca6ac4db",
+          "scope": "Zapisane wyniki lokalne i fizycznego Androida; bez ponownego uruchomienia i bez produkcji"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "adivara",
+      "slug": "adivara",
+      "name": "Adivara",
+      "category": "saas",
+      "summary": "Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.",
+      "problem": "Firmy opiekuńcze potrzebują uporządkowania relacji między personelem, koordynatorami, podopiecznymi i rodziną przy zachowaniu odrębności danych organizacji.",
+      "audiences": [
+        "Firmy opiekuńcze",
+        "Koordynatorzy opieki",
+        "Opiekunowie i uprawnieni członkowie rodzin"
+      ],
+      "motivation": "Zbudować wspólną podstawę organizacyjną i uprawnienia przed rozwijaniem pełnych procesów operacyjnych.",
+      "solution": "Backend rozdziela organizacje i role, wiąże konta z personelem oraz udostępnia centralny model nadawania i odwoływania dostępu członkom rodzin.",
+      "features": [
+        "Logowanie i tożsamość użytkowników",
+        "Wybór organizacji i role członkostwa",
+        "Izolacja danych organizacji w warstwie aplikacji i modelu bazy",
+        "Powiązanie członkostwa z profilem opiekuna",
+        "Nadawanie i odwoływanie dostępu członka rodziny do podopiecznego",
+        "Centralny zakres autoryzowanych odczytów danych podopiecznych"
+      ],
+      "technologies": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "Entity Framework Core",
+        "PostgreSQL",
+        "ASP.NET Core Identity",
+        "JWT",
+        "xUnit"
+      ],
+      "stage": "Prototyp",
+      "availability": "Zweryfikowano lokalny fundament backendu. Brak potwierdzonej publicznej aplikacji, kompletnego interfejsu i odbioru produkcyjnego.",
+      "updatedAt": "2026-08-27",
+      "architecture": [
+        "Warstwy Domain, Application, Infrastructure i API w .NET.",
+        "ASP.NET Core Identity, role organizacji oraz centralny zakres dostępu do danych.",
+        "Entity Framework Core i PostgreSQL utrwalają organizacje, członkostwa oraz historię udzielonego dostępu."
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport poprawki z sierpnia 2026 zapisuje 203 testy zakończone PASS: 91 API, 67 domenowych i 45 infrastrukturalnych; testów nie uruchamiano ponownie w audycie portfolio.",
+        "Potwierdzone obszary obejmują izolację organizacji i cykl nadawania oraz odwoływania dostępu na danych testowych.",
+        "Raport poprawki nie zamyka całościowego odbioru bezpieczeństwa ani produkcji."
+      ],
+      "cases": [
+        {
+          "problem": "Rosnący zestaw operacji na danych podopiecznych potrzebował jednolitego sposobu egzekwowania uprawnień.",
+          "diagnosis": "Przegląd architektury i testy dostępu wskazały potrzebę wspólnego mechanizmu dla list oraz pojedynczych zasobów.",
+          "rootCause": "Rozproszone sprawdzanie uprawnień zwiększało zależność poprawności od każdej implementowanej operacji.",
+          "solution": "Wprowadzono centralny zakres autoryzowanych zapytań i deklaratywną politykę dla zasobów, powiązane z aktualnym stanem członkostwa.",
+          "verification": "Historyczny raport dokumentuje testy poprawnych uprawnień, cofnięcia dostępu i izolacji organizacji; pełny zapisany zestaw liczy 203 PASS.",
+          "result": "Lokalnie zweryfikowano wspólną granicę dostępu. Pełny odbiór bezpieczeństwa i gotowość produkcyjna pozostają otwarte.",
+          "source": "adivara-auth-review"
+        }
+      ],
+      "planned": [
+        "Rozwój operacyjnych procesów opieki na istniejącym modelu organizacji",
+        "Rozbudowa interfejsu produktu i dalsza walidacja uprawnień",
+        "Ponowny całościowy odbiór bezpieczeństwa"
+      ],
+      "remaining": [
+        "Pełny odbiór bezpieczeństwa",
+        "Kompletne procesy operacyjne i interfejs użytkownika",
+        "Wdrożenie oraz publiczne materiały demonstracyjne"
+      ],
+      "sources": [
+        {
+          "id": "adivara-code",
+          "label": "Bieżący kod fundamentu Adivara",
+          "kind": "code",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+          "scope": "Warstwy aplikacji, kontrolery dostępu, model i technologie; odczyt 15.10.2026"
+        },
+        {
+          "id": "adivara-auth-review",
+          "label": "Raport centralizacji dostępu, sierpień 2026",
+          "kind": "report",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+          "scope": "Zapisane testy i ograniczenia zakresu poprawki; bez ponownego uruchomienia"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "gotrans360",
+      "slug": "gotrans360",
+      "name": "GoTrans360",
+      "category": "saas",
+      "summary": "Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.",
+      "problem": "Ręczne planowanie przewozów i rozproszone dane o trasach, pojazdach i zapotrzebowaniu utrudniają wykorzystanie dostępnych miejsc i ograniczanie pustych przebiegów.",
+      "audiences": [
+        "Przewoźnicy",
+        "Dyspozytorzy",
+        "Docelowo pasażerowie i nadawcy przesyłek"
+      ],
+      "motivation": "Sprawdzić wspólny model tras i floty oraz dopasowanie zapotrzebowania do przejazdów przed uruchomieniem pełnej usługi przewozowej.",
+      "solution": "Monorepo zawiera panel WWW, osobny interfejs pasażera, API danych i model PostgreSQL. Smart Match oblicza propozycje dla scenariusza demonstracyjnego.",
+      "features": [
+        "Interfejs panelu dyspozytora i formularze kont",
+        "API operacji na trasach, pojazdach i przewoźnikach",
+        "Model danych PostgreSQL z Prisma",
+        "Demonstracyjne dopasowanie pasażerów do tras metodą Haversine",
+        "Widok mapy z przykładowymi znacznikami",
+        "Prototyp interfejsu pasażera bez aktywnej rezerwacji"
+      ],
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Node.js",
+        "Prisma",
+        "PostgreSQL",
+        "PostGIS",
+        "Leaflet",
+        "Turborepo",
+        "pnpm"
+      ],
+      "stage": "Prototyp",
+      "availability": "Prototyp lokalny. Brak potwierdzonej działającej usługi rezerwacji, płatności, przesyłek lub śledzenia GPS na żywo.",
+      "updatedAt": "2026-08-27",
+      "architecture": [
+        "Monorepo pnpm/Turborepo obejmuje panel dyspozytora, portal pasażera, API i współdzielone pakiety.",
+        "Next.js obsługuje interfejsy; Node.js i Prisma tworzą osobne API tras oraz floty.",
+        "Dopasowanie demonstracyjne używa odległości Haversine. Pełne połączenie frontendu z operacjami transportowymi pozostaje etapem rozwoju."
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Raport z sierpnia 2026 potwierdza odczyt 12 567 syntetycznych tras przez bazę i API w izolowanym teście. Wynik nie oznacza obsłużonych przewozów ani ruchu produkcyjnego.",
+        "Historyczny benchmark trzykrotnie potwierdził dwie propozycje Smart Match dla dokładnie dwóch demonstracyjnych tras i dwóch zgłoszeń.",
+        "Audyt kodu rozróżnia API danych, ekrany demonstracyjne i planowany proces rezerwacji. Nie uruchamiano ponownie produktu podczas audytu portfolio."
+      ],
+      "cases": [
+        {
+          "problem": "Liczby widoczne na ekranach prototypu wymagały sprawdzenia przed użyciem w opisie osiągnięć produktu.",
+          "diagnosis": "Porównano pola interfejsu z modelem bazy, API i logiką dopasowania, a dostępne operacje zbadano na izolowanych danych syntetycznych.",
+          "rootCause": "Część interfejsu używała stałych danych demonstracyjnych zamiast agregatów operacyjnych.",
+          "solution": "Przygotowano inwentarz twierdzeń i odtwarzalny benchmark, rozdzielając działające odczyty i obliczenia od planowanych procesów.",
+          "verification": "Historyczny raport dokumentuje odczyt 12 567 testowych tras oraz trzy zgodne uruchomienia demonstracyjnego Smart Match.",
+          "result": "Powstał potwierdzony zakres prototypu i uczciwe granice prezentacji. Benchmark nie zamknął procesu rezerwacji ani gotowości produkcyjnej.",
+          "source": "gotrans-benchmark"
+        }
+      ],
+      "planned": [
+        "Połączenie paneli WWW z pełnym API operacyjnym",
+        "Rzeczywiste wyszukiwanie i cykl rezerwacji",
+        "Docelowa obsługa przesyłek, płatności i telemetrii",
+        "Dalszy odbiór jakości oraz przygotowanie wdrożenia"
+      ],
+      "remaining": [
+        "Pełny proces przewozowy i integracja frontendu z API",
+        "Odbiór bezpieczeństwa oraz regresja produktu",
+        "Aktualna weryfikacja stagingu i wdrożenia",
+        "Materiały wizualne zgodne z obecnym zakresem prototypu"
+      ],
+      "sources": [
+        {
+          "id": "gotrans-code",
+          "label": "Bieżący kod monorepo GoTrans360",
+          "kind": "code",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "API, scenariusz Smart Match i manifesty; odczyt 15.10.2026"
+        },
+        {
+          "id": "gotrans-benchmark",
+          "label": "Weryfikacja twierdzeń portfolio, 23.08.2026",
+          "kind": "report",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "Historyczne izolowane dane i scenariusz demonstracyjny; bez ponownego uruchomienia"
+        },
+        {
+          "id": "gotrans-architecture",
+          "label": "Audyt architektury i QA, 27.08.2026",
+          "kind": "report",
+          "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
+          "scope": "Rozróżnienie funkcji połączonych, demonstracyjnych i planowanych"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "ignira",
+      "slug": "ignira",
+      "name": "Ignira / Maria-Salon",
+      "category": "web",
+      "summary": "Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.",
+      "problem": "Osoba zainteresowana stylizacją potrzebuje zobaczyć wykonane prace i przekazać pomysł oraz preferowany termin w jednym miejscu.",
+      "audiences": [
+        "Klientki stylistki paznokci",
+        "Lokalne marki usługowe"
+      ],
+      "motivation": "Połączenie portfolio prac i uporządkowanego kontaktu w prostej witrynie.",
+      "solution": "Statyczna strona z galerią i formularzem, który układa wiadomość, pokazuje jej treść i pomaga skopiować ją do rozmowy.",
+      "features": [
+        "Galeria prac z opisami i obrazami WebP",
+        "Formularz zbierający rodzaj stylizacji, termin i inspirację",
+        "Przygotowanie wiadomości z podglądem i kopiowaniem",
+        "Odnośniki do profili kontaktowych",
+        "Menu mobilne z obsługą klawisza Escape",
+        "Ograniczanie animacji zgodnie z ustawieniem systemu"
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "WebP"
+      ],
+      "stage": null,
+      "availability": "Publiczne źródła. Aktualna dostępność witryny wymaga potwierdzenia; bezpośredni adres Messengera pozostaje do uzupełnienia.",
+      "updatedAt": "2026-08-24",
+      "architecture": [
+        "Statyczny dokument HTML i osobne arkusze CSS",
+        "JavaScript obsługujący nawigację i przygotowanie wiadomości w przeglądarce",
+        "Kontakt przez zewnętrzne profile"
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [
+        {
+          "label": "Publiczny kod",
+          "url": "https://github.com/Progressorkit/Maria-Salon"
+        }
+      ],
+      "repository": "https://github.com/Progressorkit/Maria-Salon",
+      "results": [
+        "Kod potwierdza przygotowanie wiadomości bez własnego systemu rezerwacji.",
+        "Kontrola składni JavaScript przeszła podczas audytu."
+      ],
+      "cases": [
+        {
+          "problem": "Układ sekcji kontaktowej wymagał dopracowania na różnych szerokościach ekranu.",
+          "diagnosis": "Historia zmian pokazuje korektę siatki, szerokości pól, nagłówka i obszaru przycisku.",
+          "rootCause": "Pierwotnego błędu nie odtworzono niezależnie; dostępny jest zapis poprawki układu.",
+          "solution": "Wprowadzono jawne obszary siatki, ograniczenia szerokości pól i oddzielny blok akcji.",
+          "verification": "Porównanie zatwierdzonej zmiany z kodem oraz poprawna kontrola składni JavaScript; bez nowego testu przeglądarkowego.",
+          "result": "Poprawka znajduje się w źródłach. Bieżące działanie opublikowanej witryny pozostaje do potwierdzenia.",
+          "source": "ignira-layout"
+        }
+      ],
+      "planned": [],
+      "remaining": [
+        "Uzupełnienie bezpośredniego adresu Messengera",
+        "Potwierdzenie aktualnej publikacji i kontaktu na urządzeniu mobilnym",
+        "Dodanie zweryfikowanych materiałów do galerii ekosystemu"
+      ],
+      "sources": [
+        {
+          "id": "ignira-source",
+          "label": "Publiczne źródła witryny Ignira",
+          "kind": "code",
+          "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
+          "scope": "Tożsamość, galeria i przygotowanie wiadomości w przeglądarce"
+        },
+        {
+          "id": "ignira-layout",
+          "label": "Korekta układu kontaktu",
+          "kind": "commit",
+          "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
+          "scope": "Zmiana HTML/CSS; bieżące zachowanie w przeglądarce niezweryfikowane"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "obserwator",
+      "slug": "obserwator",
+      "name": "Obserwator / Marek Zaworski",
+      "category": "web",
+      "summary": "Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.",
+      "problem": "Czytelnik potrzebuje uporządkowanego miejsca, w którym znajdzie twórczość autora i materiały do pobrania.",
+      "audiences": [
+        "Czytelnicy",
+        "Autorzy i twórcy"
+      ],
+      "motivation": "Zebranie prezentacji autora i archiwum publikacji we wspólnej witrynie.",
+      "solution": "Kilka statycznych stron łączy opis autora, archiwum PDF i animowaną prezentację treści.",
+      "features": [
+        "Prezentacja autora i publikacji",
+        "Archiwum z odnośnikami do istniejących plików PDF",
+        "Animowane wyświetlanie tekstu",
+        "Zatrzymanie automatycznego przewijania po interakcji czytelnika",
+        "Formularz przekazujący plik do zewnętrznej usługi. Realizacja zgłoszenia pozostaje niezweryfikowana"
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "stage": null,
+      "availability": "Publiczne źródła. Aktualne działanie witryny i usług zewnętrznych wymaga potwierdzenia.",
+      "updatedAt": "2026-03-19",
+      "architecture": [
+        "Statyczne strony autora, archiwum i prezentacji",
+        "Lokalne pliki PDF udostępniane przez odnośniki",
+        "Interakcje JavaScript wykonywane w przeglądarce",
+        "Zewnętrzna usługa formularza"
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [
+        {
+          "label": "Publiczny kod",
+          "url": "https://github.com/Progressorkit/marekzaworski.github.io"
+        }
+      ],
+      "repository": "https://github.com/Progressorkit/marekzaworski.github.io",
+      "results": [
+        "Źródła potwierdzają powiązanie nazw Obserwator i Marek Zaworski.",
+        "Archiwum i obsługa prezentacji istnieją w kodzie; skuteczność sprzedaży i anonimowość nie zostały potwierdzone."
+      ],
+      "cases": [
+        {
+          "problem": "Animowana prezentacja tekstu wymaga zachowania kontroli nad przewijaniem podczas czytania.",
+          "diagnosis": "Kod zawiera pętlę wyświetlania tekstu i obsługę ręcznych interakcji z przewijaniem.",
+          "rootCause": "Brak udokumentowanego pierwotnego incydentu lub testu, który wykazywał błąd.",
+          "solution": "Istniejąca obsługa dotyku, kółka myszy i kliknięcia wyłącza automatyczne przewijanie.",
+          "verification": "Przegląd źródeł prezentacji; zachowanie nie zostało ponownie sprawdzone w przeglądarce.",
+          "result": "Mechanizm kontroli czytania jest zaimplementowany. Nie przypisano mu niezmierzonego wpływu na konwersję.",
+          "source": "obserwator-reading"
+        }
+      ],
+      "planned": [],
+      "remaining": [
+        "Potwierdzenie bieżącej publikacji",
+        "Weryfikacja obsługi zgłoszeń i usług zewnętrznych",
+        "Doprecyzowanie zakresu prywatności przed deklarowaniem anonimowości",
+        "Dodanie bezpiecznych, autentycznych materiałów do galerii"
+      ],
+      "sources": [
+        {
+          "id": "obserwator-source",
+          "label": "Publiczne źródła serwisu autora",
+          "kind": "code",
+          "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
+          "scope": "Tożsamość, archiwum, pliki i formularz; działanie zewnętrznych usług niezweryfikowane"
+        },
+        {
+          "id": "obserwator-reading",
+          "label": "Obsługa animacji tekstu i przewijania",
+          "kind": "code",
+          "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
+          "scope": "Istniejąca logika prezentacji w przeglądarce; brak nowego testu runtime"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "kan-system",
+      "slug": "kan-system",
+      "name": "KAN SYSTEM",
+      "category": "saas",
+      "summary": "Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.",
+      "problem": "Praca kontrolerów wymaga uporządkowanego zbierania informacji i przygotowania raportów.",
+      "audiences": [
+        "Zespoły kontrolerów biletów",
+        "Osoby rozliczające pracę zespołów"
+      ],
+      "motivation": "Ograniczenie ręcznej pracy i uporządkowanie raportowania opisane w materiałach portfolio.",
+      "solution": "Dotychczasowe materiały prezentują interfejs narzędzia operacyjnego. Kod aplikacji nie był dostępny podczas audytu.",
+      "features": [],
+      "technologies": [],
+      "stage": null,
+      "availability": "Dostępne materiały portfolio. Aktualny etap, zakres działających funkcji i dostęp do aplikacji wymagają potwierdzenia.",
+      "updatedAt": "2026-08-31",
+      "architecture": [],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Historia zmian potwierdza, że RWR i KAN SYSTEM odnoszą się do tej samej prezentowanej realizacji.",
+        "Brak niezależnych pomiarów oszczędności czasu; wcześniejsza liczba procentowa nie jest powielana."
+      ],
+      "cases": [
+        {
+          "problem": "Po zmianie nazwy produktu okładka realizacji wskazywała nieistniejącą lokalizację.",
+          "diagnosis": "Porównano zmianę nazwy z rzeczywistą strukturą plików i następną poprawką.",
+          "rootCause": "Zmieniono techniczną ścieżkę razem z nazwą publiczną, mimo że istniejący obraz zachował dawną lokalizację.",
+          "solution": "Przywrócono odwołanie do istniejącego obrazu przy zachowaniu publicznej nazwy KAN SYSTEM.",
+          "verification": "Zachowana historia zmian i obecność wskazanego pliku; sprawdzenie dotyczy prezentacji portfolio.",
+          "result": "Odwołanie do okładki zostało poprawione. Nie stanowi to testu działania systemu kontrolerów.",
+          "source": "kan-portfolio-history"
+        }
+      ],
+      "planned": [],
+      "remaining": [
+        "Pozyskanie źródeł aplikacji i potwierdzenie technologii",
+        "Weryfikacja funkcji, testów i bieżącej dostępności",
+        "Przygotowanie materiałów demonstracyjnych bez danych operacyjnych"
+      ],
+      "sources": [
+        {
+          "id": "kan-portfolio-identity",
+          "label": "Historia zmiany nazwy RWR na KAN SYSTEM",
+          "kind": "commit",
+          "revision": "961c50c9820544dd8c32139d82cf8621b328f79d",
+          "scope": "Tożsamość realizacji i opis domeny; brak źródeł aplikacji"
+        },
+        {
+          "id": "kan-portfolio-history",
+          "label": "Poprawa odwołania do okładki realizacji",
+          "kind": "commit",
+          "revision": "c9bb17c8c5d30973f94d72e731c480d3d13aedc5",
+          "scope": "Prezentacja w portfolio; brak dowodu wdrożenia produktu"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-systems",
+      "slug": "progresskit-systems",
+      "name": "ProgressKit Systems",
+      "category": "technology",
+      "summary": "Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.",
+      "problem": "Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.",
+      "audiences": [
+        "Użytkownicy i odbiorcy ekosystemu ProgressKit"
+      ],
+      "motivation": "Produkty zmieniają się szybciej niż ręcznie utrzymywane prezentacje. Opisy i statusy wymagają jednego punktu aktualizacji.",
+      "solution": "Jeden recenzowany katalog generuje eksplorator, case studies i powiązania technologii. Statyczne podstrony działają również bez JavaScript.",
+      "features": [
+        "Katalog produktów rozdzielony od prezentacji",
+        "Kategorie, wyszukiwanie i filtry technologii oraz etapu",
+        "Bezpośrednie adresy projektów i stan filtrów w URL",
+        "Brief projektu działający lokalnie w przeglądarce"
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "GitHub Actions"
+      ],
+      "stage": "W rozwoju",
+      "availability": "Kandydat V5 przygotowywany lokalnie. Publikacja i odbiór w przeglądarce wymagają oddzielnego potwierdzenia.",
+      "updatedAt": "2026-10-15",
+      "architecture": [
+        "Recenzowany katalog JSON → walidator → statyczne dokumenty HTML",
+        "Lekkie interakcje JavaScript bez bibliotek runtime",
+        "Publiczny artefakt z jawną listą plików"
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Treść projektów jest generowana podczas przygotowania wydania; nie wymaga backendu katalogowego."
+      ],
+      "cases": [
+        {
+          "problem": "Opisy i statusy projektów były powielane w statycznych sekcjach strony.",
+          "diagnosis": "Audyt V4 wykazał ręczne karty oraz brak indeksowalnych prezentacji większości produktów.",
+          "rootCause": "Treść produktu i warstwa prezentacji nie miały wspólnego modelu.",
+          "solution": "Katalog oddzielono od szablonów i dodano walidację przed generowaniem oraz publikacją.",
+          "verification": "Zakres weryfikacji tej wersji podano w raporcie sprintu; kod generatora i filtry mają osobne testy regresyjne.",
+          "result": "Aktualizacja jednego rekordu zasila kartę, case study, technologie i listę rozwoju. Wdrożenie pozostaje osobną bramką.",
+          "source": "progresskit-systems-source"
+        }
+      ],
+      "planned": [],
+      "remaining": [
+        "Rzeczywista kontrola w przeglądarce i pomiary Lighthouse przed publikacją.",
+        "Brak źródeł P.A. Barczewskiej; nie utworzono fikcyjnego produktu."
+      ],
+      "sources": [
+        {
+          "id": "progresskit-systems-source",
+          "label": "ProgressKit Systems: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-analytics",
+      "slug": "progresskit-analytics",
+      "name": "ProgressKit Analytics",
+      "category": "technology",
+      "summary": "Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.",
+      "problem": "Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.",
+      "audiences": [
+        "Użytkownicy i odbiorcy ekosystemu ProgressKit"
+      ],
+      "motivation": "Rozwój portfolio wymaga informacji o wykorzystaniu strony bez dokładania zewnętrznego trackera i identyfikatorów urządzeń.",
+      "solution": "Mały backend FastAPI zapisuje zdefiniowane typy zdarzeń w SQLite. Strona wysyła minimalne zdarzenia tylko na własnej domenie.",
+      "features": [
+        "Endpoint zbierania odsłon oraz zdarzeń kontaktu i projektów",
+        "SQLite z indeksami czasu i typu zdarzenia",
+        "Wewnętrzne podsumowanie dla operatora",
+        "Osobna baza licznika APK i moderowanych opinii"
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "Docker"
+      ],
+      "stage": "W rozwoju",
+      "availability": "Kod backendu i integracja strony dostępne w repozytorium. Pełne działanie produkcyjne, retencja i konfiguracja logów wymagają sprawdzenia.",
+      "updatedAt": "2026-10-15",
+      "architecture": [
+        "Witryna → endpoint zdarzeń → SQLite",
+        "Wewnętrzne podsumowanie dostępne wyłącznie w zapleczu",
+        "Router produktu z odrębną bazą danych"
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Kod nie definiuje pól IP, User-Agent ani identyfikatora urządzenia w bazie zdarzeń.",
+        "Sam endpoint health nie potwierdza integracji ani kompletności statystyk."
+      ],
+      "cases": [],
+      "planned": [],
+      "remaining": [
+        "Potwierdzić ruch od strony do bazy na właściwym środowisku.",
+        "Ustalić retencję i zweryfikować logi infrastruktury."
+      ],
+      "sources": [
+        {
+          "id": "progresskit-analytics-source",
+          "label": "ProgressKit Analytics: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "progresskit-infrastructure",
+      "slug": "progresskit-infrastructure",
+      "name": "Zaplecze ProgressKit",
+      "category": "technology",
+      "summary": "Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.",
+      "problem": "Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.",
+      "audiences": [
+        "Użytkownicy i odbiorcy ekosystemu ProgressKit"
+      ],
+      "motivation": "Aplikacje, API i dystrybucja plików muszą współpracować, zachowując dane i możliwość wycofania zmiany.",
+      "solution": "Konfiguracje Docker i Caddy opisują podział usług oraz trwałe wolumeny. Wydanie strony zawiera wyłącznie przejrzane pliki publiczne.",
+      "features": [
+        "Kontener backendu z trwałym przechowywaniem SQLite",
+        "Fragmenty konfiguracji reverse proxy dla jawnych endpointów",
+        "Automatyzacja publikacji GitHub Pages i skrypt przygotowania artefaktu",
+        "Procedura backupu SQLite oraz wycofania wydania"
+      ],
+      "technologies": [
+        "Docker",
+        "Caddy",
+        "Linux",
+        "GitHub Actions",
+        "Python"
+      ],
+      "stage": "W rozwoju",
+      "availability": "Zaplecze ekosystemu, nie osobny produkt komercyjny. Dostępne konfiguracje są fragmentami; pełna konfiguracja serwera wymaga operatora.",
+      "updatedAt": "2026-10-15",
+      "architecture": [
+        "Statyczny frontend i oddzielny backend API",
+        "Reverse proxy kierujące tylko wybrane endpointy",
+        "Dane usług poza katalogiem publicznej strony"
+      ],
+      "gallery": [],
+      "videos": [],
+      "links": [],
+      "repository": null,
+      "results": [
+        "Repozytorium zawiera Dockerfile, fragment Compose i Caddy oraz procedury wdrożenia.",
+        "Audyt lokalny nie potwierdza aktualnego stanu VPS, backupów, HTTPS ani monitoringu."
+      ],
+      "cases": [],
+      "planned": [],
+      "remaining": [
+        "Potwierdzić aktualne mounty i pełną konfigurację serwera.",
+        "Wykonać backup, sprawdzić odtwarzanie i zebrać smoke testy po dozwolonym wdrożeniu."
+      ],
+      "sources": [
+        {
+          "id": "progresskit-infrastructure-source",
+          "label": "Zaplecze ProgressKit: audyt kodu i konfiguracji",
+          "kind": "code",
+          "revision": "V5 / audyt 2026-10-15",
+          "scope": "Źródła portfolio i konfiguracja lokalna. Dostępność produkcyjna wymaga osobnej weryfikacji."
+        }
+      ],
+      "coverage": "partial"
+    }
+  ]
+}

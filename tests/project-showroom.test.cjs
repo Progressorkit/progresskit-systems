@@ -8,7 +8,7 @@ const records=Array.from({length:14},(_,i)=>({id:`project-${i}`,name:`Synthetic 
 
 // A deliberately small synthetic DOM exercises the actual shipped handlers.
 // It proves state transitions and event contracts, not browser layout or touch hardware.
-function mount(projects=records,{slices=false,narrow=false}={}){
+function mount(projects=records,{slices=false,narrow=false,capsule=false}={}){
   let focused=null,url=new URL('http://preview.local/?q=keep&utm_source=review#projekty'),clock=1000,sequence=0;
   const timers=new Map(),frames=new Map(),documentEvents={},windowEvents={},opened=[],openedPoses=[],intersections=[];
   function element(){return{events:{},dataset:{},properties:new Map(),classes:new Set(),hidden:false,inert:false,
@@ -35,13 +35,13 @@ function mount(projects=records,{slices=false,narrow=false}={}){
     node.querySelector=query=>query==='.showroom-orbit__spark'?spark:link;node.querySelectorAll=()=>[...circles,spark];node.link=link;node.circles=circles;node.spark=spark;return node;
   });
   const buttons=[-1,1].map(step=>Object.assign(element(),{dataset:{showroomStep:String(step)}}));
-  const root=element(),viewport=element(),status=element(),position=element(),energyToggle=element();
+  const root=element(),viewport=element(),status=element(),position=element(),energyToggle=element(),core=element();
   root.hasAttribute=name=>slices&&name==='data-showroom-slices';
   viewport.rectangle={left:0,top:80,width:1000,height:560,right:1000,bottom:640};
   viewport.getBoundingClientRect=()=>viewport.rectangle;viewport.matches=()=>false;
   viewport.clientWidth=1000;let captured=null;
   viewport.setPointerCapture=id=>{captured=id};viewport.hasPointerCapture=id=>captured===id;viewport.releasePointerCapture=()=>{captured=null};
-  root.querySelector=query=>({'[data-showroom-viewport]':viewport,'#showroom-status':status,'[data-showroom-position]':position,'[data-showroom-motion-toggle]':energyToggle}[query]||null);
+  root.querySelector=query=>({'[data-showroom-viewport]':viewport,'#showroom-status':status,'[data-showroom-position]':position,'[data-showroom-motion-toggle]':energyToggle,'[data-capsule-toggle]':capsule?core:null}[query]||null);
   root.querySelectorAll=query=>({'.showroom-card':cards,'[data-showroom-category]':gates,'[data-showroom-step]':buttons,'[data-showroom-enhancement]':[],'[data-orbit-node]':orbitNodes}[query]||[]);
   root.contains=node=>node===viewport||cards.some(card=>card.contains(node))||gates.includes(node)||buttons.includes(node);
   const reduced={matches:false,events:{},addEventListener(key,fn){(this.events[key]??=[]).push(fn)}};
@@ -70,17 +70,17 @@ function mount(projects=records,{slices=false,narrow=false}={}){
 }
 
 test('Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project',()=>{
-  for(const n of [14,4,3,2,1]) { assert.equal(showroom.wrap(n,n),0);assert.equal(showroom.wrap(-1,n),n-1);assert.equal(showroom.wrap(n*3+1,n),1%n); }
+  for(const n of [19,14,4,3,2,1]) { assert.equal(showroom.wrap(n,n),0);assert.equal(showroom.wrap(-1,n),n-1);assert.equal(showroom.wrap(n*3+1,n),1%n); }
   assert.equal(showroom.wrap(10,0),0);
 });
 test('Every circular project has a unique signed offset and the selected one is centered',()=>{
-  for(const n of [14,4,3,2,1]) for(let active=0;active<n;active++){
+  for(const n of [19,14,4,3,2,1]) for(let active=0;active<n;active++){
     const offsets=Array.from({length:n},(_,i)=>showroom.offset(i,active,n));
     assert.equal(new Set(offsets).size,n);assert.equal(offsets[active],0);
   }
 });
 test('Orbital positions remain distinct on the perspective projection for every real filter size',()=>{
-  for(const n of [1,2,3,4,14]) for(let active=0;active<n;active++){
+  for(const n of [1,2,3,4,14,19]) for(let active=0;active<n;active++){
     const points=Array.from({length:n},(_,index)=>showroom.orbit(showroom.offset(index,active,n),n));
     const visible=points.filter(point=>point.visible);
     assert.equal(visible.length,Math.min(n,5));
@@ -147,7 +147,7 @@ test('Energy pause survives category changes and reduced motion cannot be overri
   assert.equal(ui.energyToggle.disabled,false);assert.equal(ui.energyToggle['aria-pressed'],'false');
 });
 test('Fractional phases preserve a unique five-node window across both wrap directions',()=>{
-  for(const count of [1,2,3,4,14])for(const active of [0,count-1])for(const fraction of [0,.25,.5,.75,1,-.25,-.5,-.75,-1]){
+  for(const count of [1,2,3,4,14,19])for(const active of [0,count-1])for(const fraction of [0,.25,.5,.75,1,-.25,-.5,-.75,-1]){
     const phase=active+fraction;
     const visible=Array.from({length:count},(_,index)=>showroom.orbit(showroom.relative(index,phase,count),count)).filter(point=>point.visible);
     assert.ok(visible.length<=Math.min(5,count));
@@ -479,7 +479,7 @@ test('Breakpoint changes and browser Back keep one disclosure and return focus o
   assert.equal(ui.document.activeElement,ui.viewport);
 });
 
-test('Manual rotation cannot open a moving neighbor through hover before a settled module is chosen',()=>{
+test('Hover preserves a closed rotor during and after rotation; explicit activation opens it',()=>{
   const ui=mount(records,{slices:true});
   ui.fire(ui.buttons[1],'click');
   assert.equal(ui.frames.size,1);
@@ -492,19 +492,27 @@ test('Manual rotation cannot open a moving neighbor through hover before a settl
   assert.equal(ui.frames.size,0);
   ui.fire(card,'pointerenter',{pointerType:'mouse'});
   ui.fire(card,'pointermove',{pointerType:'mouse'});
-  ui.tick(130);
+  ui.tick(1000);
+  assert.equal(card.classes.has('is-slice-expanded'),false);
+  assert.equal(ui.url.searchParams.has('projekt'),false);
+  ui.fire(ui.root,'click',{target:card.link});
+  ui.tick(700);
   assert.equal(card.classes.has('is-slice-expanded'),true);
   assert.equal(ui.cards.filter(node=>node.classes.has('is-slice-expanded')).length,1);
 });
 
-test('A module passing under a stationary pointer during page scrolling does not open until the pointer moves',()=>{
+test('Pointer exploration does not open a project or change the URL; clicking still opens it',()=>{
   const ui=mount(records,{slices:true}),card=ui.active();
   ui.fire(card,'pointerenter',{pointerType:'mouse'});
   ui.tick(500);
   assert.equal(card.panel.hidden,true);
   assert.equal(ui.url.searchParams.has('projekt'),false);
   ui.fire(card,'pointermove',{pointerType:'mouse',clientX:450,clientY:220});
-  ui.tick(130);
+  ui.tick(1000);
+  assert.equal(card.panel.hidden,true);
+  assert.equal(ui.url.searchParams.has('projekt'),false);
+  ui.fire(ui.root,'click',{target:card.link});
+  ui.tick(700);
   assert.equal(card.panel.hidden,false);
   assert.equal(ui.url.searchParams.get('projekt'),card.dataset.projectId);
 });
@@ -601,4 +609,74 @@ test('Inline analytics event follows successful opening once and excludes cancel
   ui.fire(ui.gate('mobile'),'click');ui.tick(1000);
   assert.deepEqual(events,['project-0']);
   assert.equal(ui.cards[4].panel.hidden,true);
+});
+
+test('Capsule sleep removes project interaction without deleting content or changing the URL',()=>{
+  const ui=mount(records,{slices:true,capsule:true});
+  const before=ui.url.href;
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  assert.equal(ui.cards.length,14);
+  for(const card of ui.cards){assert.equal(card.inert,true);assert.equal(card['aria-hidden'],'true');assert.equal(card.link.tabIndex,-1);}
+  assert.equal(ui.url.href,before);
+  ui.notify('progresskit:showroom-wake',{awake:true});
+  assert.equal(ui.active().inert,false);
+  assert.equal(ui.active().link.tabIndex,0);
+  assert.equal(ui.cards.filter(card=>card.link.tabIndex===0).length,1);
+  assert.equal(ui.url.href,before);
+});
+
+test('Navigation and category selection wake a sleeping capsule through existing controls',()=>{
+  const ui=mount(records,{slices:true,capsule:true});
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  ui.fire(ui.buttons[1],'click');ui.tick(700);
+  assert.equal(ui.active().dataset.projectId,'project-1');assert.equal(ui.active().inert,false);
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  ui.fire(ui.gate('games'),'click');ui.tick(700);
+  assert.equal(ui.active().dataset.projectId,'project-3');assert.equal(ui.active().inert,false);
+});
+
+test('An open product cannot be hidden by capsule sleep and explicit opening wakes it',()=>{
+  const ui=mount(records,{slices:true,capsule:true});
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(700);
+  assert.equal(ui.cards[0].panel.hidden,false);
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  assert.equal(ui.cards[0].panel.hidden,false);assert.equal(ui.cards[0].inert,false);
+  assert.equal(ui.url.searchParams.get('projekt'),'project-0');
+});
+
+test('Power arrival precedes disclosure and the original content opens exactly once',()=>{
+  const ui=mount(records,{slices:true,capsule:true});let arrivals=0,opens=0;
+  ui.document.addEventListener('progresskit:showroom-charge',event=>{arrivals++;event.detail.delay=215;});
+  ui.document.addEventListener('progresskit:slice-open',()=>opens++);
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});
+  assert.equal(arrivals,1);assert.equal(ui.cards[0].panel.hidden,true);
+  ui.tick(214);assert.equal(ui.cards[0].panel.hidden,true);
+  ui.tick(1);assert.equal(ui.cards[0].panel.hidden,false);assert.equal(opens,1);
+  ui.tick(1000);assert.equal(opens,1);assert.equal(ui.url.searchParams.get('projekt'),'project-0');
+});
+
+test('Escape and navigation cancel pending power delivery without opening stale content',()=>{
+  for(const cancel of ['escape','next','filter']) {
+    const ui=mount(records,{slices:true,capsule:true});
+    ui.document.addEventListener('progresskit:showroom-charge',event=>{event.detail.delay=215;});
+    ui.fire(ui.root,'click',{target:ui.cards[0].link});
+    if(cancel==='escape')ui.fire(ui.viewport,'keydown',{key:'Escape'});
+    if(cancel==='next')ui.fire(ui.buttons[1],'click');
+    if(cancel==='filter')ui.fire(ui.gate('games'),'click');
+    ui.tick(1000);
+    assert.ok(ui.cards.every(card=>card.panel.hidden),cancel);
+    assert.equal(ui.url.searchParams.get('projekt'),null,cancel);
+  }
+});
+
+test('Power delivery cannot indefinitely hold content and reduced motion opens immediately',()=>{
+  const ui=mount(records,{slices:true,capsule:true});
+  ui.document.addEventListener('progresskit:showroom-charge',event=>{event.detail.delay=999999;});
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(299);
+  assert.equal(ui.cards[0].panel.hidden,true);ui.tick(1);assert.equal(ui.cards[0].panel.hidden,false);
+  const reduced=mount(records,{slices:true,capsule:true});reduced.reduced.matches=true;
+  reduced.document.addEventListener('progresskit:showroom-charge',event=>{event.detail.delay=215;});
+  reduced.fire(reduced.root,'click',{target:reduced.cards[0].link});
+  assert.equal(reduced.cards[0].panel.hidden,false);
 });

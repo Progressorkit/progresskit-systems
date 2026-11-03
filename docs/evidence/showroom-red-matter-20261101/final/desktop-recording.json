@@ -1,0 +1,38 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 1050
+  },
+  "readyOffset": 2.087,
+  "idleProof": {
+    "draws": 30,
+    "renderer": "webgl",
+    "width": 400,
+    "height": 389,
+    "coreDormant": true,
+    "seconds": 6.013
+  },
+  "timeline": [
+    {
+      "seconds": 0.208,
+      "label": "Idle: first six seconds show evolving volume without interaction"
+    },
+    {
+      "seconds": 6.013,
+      "label": "End of uninterrupted idle proof"
+    },
+    {
+      "seconds": 7.214,
+      "label": "Core pressure and materialization"
+    },
+    {
+      "seconds": 10.24,
+      "label": "Project reflection and local matter response"
+    },
+    {
+      "seconds": 12.272,
+      "label": "Layered material response"
+    }
+  ],
+  "errors": []
+}

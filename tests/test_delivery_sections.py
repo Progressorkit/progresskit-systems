@@ -68,9 +68,9 @@ class DeliverySectionsTests(unittest.TestCase):
                 'Plan współpracy modułów. Połączenia poniżej są roadmapą, nie potwierdzeniem działających integracji.',
                 'Nie potwierdzono działających integracji między tymi modułami. Planowane połączenia nie stanowią dostępnej oferty.'):
             self.assertIn(label, text)
-        self.assertEqual(1, self.page.text.count('W rozwoju'))
+        self.assertEqual(2, self.page.text.count('W rozwoju'))
         self.assertEqual(1, self.page.text.count('Wersja testowa'))
-        self.assertEqual(1, self.page.text.count('Prototyp'))
+        self.assertEqual(0, self.page.text.count('Prototyp'))
         self.assertEqual(3, self.page.text.count('Planowane'))
         self.assertEqual(3, self.page.text.count('Planowane połączenie'))
 
@@ -170,7 +170,7 @@ class DeliverySectionsTests(unittest.TestCase):
     def test_node_stage_attributes_use_exact_catalogue_states_without_implying_availability(self):
         stages = {attrs['data-ecosystem-node']: attrs['data-ecosystem-stage']
                   for _, attrs in self.page.elements if 'data-ecosystem-node' in attrs}
-        self.assertEqual({'tax': 'development', 'translator': 'prototype', 'agents': 'planned',
+        self.assertEqual({'tax': 'development', 'translator': 'development', 'agents': 'planned',
                           'voice': 'planned', 'mail': 'testing', 'messenger': 'planned'}, stages)
         for stage in ('W ROZWOJU', 'w rozwoju', 'WERSJA TESTOWA', 'wersja testowa',
                       'Wersja testowa ', 'Stable', 'Commercial', 'Niepotwierdzony etap',

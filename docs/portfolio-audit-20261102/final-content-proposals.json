@@ -1,0 +1,238 @@
+{
+  "date": "2026-11-02",
+  "reason": "Source-backed functional scope, separate platform/release gates, deduplicated identities.",
+  "projects": [
+    {
+      "id": "glikemia-premium",
+      "before": {
+        "summary": "Dziennik glikemii na Androida dostępny jako APK 1.0, z lokalną historią, wykresem i raportem PDF.",
+        "stage": "Dostępny APK"
+      },
+      "after": {
+        "summary": "Dziennik glikemii na Androida z lokalną historią, wykresem, filtrami i raportem PDF. Podpisany APK 1.0 jest dostępny bezpośrednio; publikacja sklepowa i końcowe bramki jakości pozostają odrębne.",
+        "stage": "Dostępny APK",
+        "functionalStatus": "Dziennik glikemii Android"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-mail",
+      "before": {
+        "summary": "Testowy klient poczty na Androida z obsługą IMAP/SMTP, prywatnymi powiadomieniami i bezpieczną tożsamością urządzenia.",
+        "stage": "Wersja testowa"
+      },
+      "after": {
+        "summary": "Wieloplatformowy klient pocztowy: Android, Linux i Windows oraz powiązany backend. Kod obejmuje IMAP/SMTP, MIME, foldery, szkice i ochronę danych; każda platforma ma własny zakres odbioru.",
+        "stage": "Wersja testowa",
+        "functionalStatus": "Poczta Android, Linux i Windows"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-translator",
+      "before": {
+        "summary": "Tłumacz wypowiedzi DE ↔ PL na Androida z rozpoznawaniem mowy, lokalnym przekładem i odczytem głosowym.",
+        "stage": "Prototyp"
+      },
+      "after": {
+        "summary": "Tłumacz wypowiedzi i tekstu PL–DE na Androida z rozpoznawaniem mowy, lokalnym przekładem, syntezą głosu i historią. Jakość całego przepływu audio wymaga dalszych prób fizycznych.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Tłumacz rozmów Android"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "vaeloria",
+      "before": {
+        "summary": "Rozwijana gra fantasy łącząca eksplorację 3D, więź ze stworzeniami i taktyczne pojedynki.",
+        "stage": "W rozwoju"
+      },
+      "after": {
+        "summary": "Działający prototyp gry fantasy: eksploracja 3D, kolekcja istot, turowa walka, dziesięciu rywali AI, sześć strategii i lokalny turniej. Rozgrywka ma konkretne raporty desktopowe i fizycznego Androida.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Grywalny prototyp 3D"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-community",
+      "before": {
+        "summary": "Platforma społecznościowa w finalizacji przed publiczną betą, z głównymi funkcjami społeczności, rozmów i przejrzystej moderacji.",
+        "stage": "Finalizacja"
+      },
+      "after": {
+        "summary": "Platforma społecznościowa z publikacjami, rozmowami, społecznościami, wyszukiwaniem i obiegiem moderacji. Rozbudowana implementacja lokalna ma historyczne testy; publiczna beta pozostaje osobną bramką.",
+        "stage": "Finalizacja",
+        "functionalStatus": "Platforma społecznościowa"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-tax",
+      "before": {
+        "summary": "Rozwijany system dla biur rachunkowo-podatkowych: kartoteka klientów, dokumenty, sprawy i księgowość z portalem Android.",
+        "stage": "W rozwoju"
+      },
+      "after": {
+        "summary": "Rozbudowany system biurowo-księgowy: kartoteki osób i firm, sprawy PL/DE/NL, dokumenty, workflow, księgi i ewidencje, raporty oraz portal Android. Wdrożenie produkcyjne i odbiór reguł księgowych są odrębne.",
+        "stage": "W rozwoju",
+        "functionalStatus": "System biurowo-księgowy"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "adivara",
+      "before": {
+        "summary": "Fundament wielofirmowego systemu dla branży opiekuńczej, skupiony na organizacjach, rolach i kontrolowanym dostępie do podopiecznych.",
+        "stage": "Prototyp"
+      },
+      "after": {
+        "summary": "Wielofirmowy backend dla organizacji opiekuńczych z członkostwem, rolami i kontrolowanym dostępem do podopiecznych. Zaimplementowana logika domenowa i API stanowią fundament produktu operacyjnego.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Backend wielu organizacji"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "gotrans360",
+      "before": {
+        "summary": "Prototyp systemu transportowo-logistycznego: panel dyspozytora, API tras i floty oraz demonstracyjny Smart Match.",
+        "stage": "Prototyp"
+      },
+      "after": {
+        "summary": "Zaplecze MVP transportowego: interfejs dyspozytora i pasażera, API przewozów oraz eksperymentalne dopasowanie tras. Dane demonstracyjne i niepołączone przepływy wymagają dalszej integracji.",
+        "stage": "Prototyp",
+        "functionalStatus": "Fundament MVP transportowego"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "ignira",
+      "before": {
+        "summary": "Strona stylistki paznokci: autentyczne prace, opis podejścia i przygotowanie wiadomości w sprawie terminu.",
+        "stage": null
+      },
+      "after": {
+        "summary": "Autorska witryna salonu stylizacji paznokci: rzeczywiste realizacje, opis usług i lokalny kreator wiadomości o terminie.",
+        "stage": null,
+        "functionalStatus": "Witryna usługowa"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "obserwator",
+      "before": {
+        "summary": "Witryna autora z archiwum tekstów, fragmentami PDF i interaktywną prezentacją literacką.",
+        "stage": null
+      },
+      "after": {
+        "summary": "Literacki serwis autorski łączący publikacje, archiwum i narracyjne podstrony. Zakres potwierdzono w aktualnym publicznym repozytorium.",
+        "stage": null,
+        "functionalStatus": "Serwis autorski"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "kan-system",
+      "before": {
+        "summary": "Projekt narzędzia do organizacji pracy kontrolerów biletów, raportów wyjazdów i rozliczeń, udokumentowany w dotychczasowym portfolio.",
+        "stage": null
+      },
+      "after": {
+        "summary": "Historyczna realizacja związana z organizacją pracy kontrolerów i raportowaniem przejazdów. Zachował się opis portfolio; brak kodu produktu do niezależnego audytu.",
+        "stage": null,
+        "functionalStatus": "Realizacja historyczna"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-systems",
+      "before": {
+        "summary": "Centralny katalog produktów i realizacji: od potrzeby do rozwiązania, z aktualnym zakresem i źródłami.",
+        "stage": "W rozwoju"
+      },
+      "after": {
+        "summary": "Katalog produktów i realizacji z pełnymi prezentacjami, wyszukiwaniem i showroomem Three.js. Wspólny model danych zasila karty, podstrony i technologie, a aktualne zmiany wizualne wymagają odbioru.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Portfolio i showroom 3D"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-analytics",
+      "before": {
+        "summary": "Własna analityka zdarzeń witryny, z osobną bazą produktu do licznika pobrań i moderowanych opinii.",
+        "stage": "W rozwoju"
+      },
+      "after": {
+        "summary": "Wewnętrzna analityka witryny, licznik ukończonych pobrań i moderowane opinie. Mały backend służy własnemu ekosystemowi ProgressKit i nie jest komercyjną platformą analityczną.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Własna analityka"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-infrastructure",
+      "before": {
+        "summary": "Wspólne zaplecze techniczne aplikacji: kontenery, reverse proxy i procedury utrzymania.",
+        "stage": "W rozwoju"
+      },
+      "after": {
+        "summary": "Narzędzia przygotowania publicznych wydań, lokalnego podglądu oraz konfiguracje współpracy witryny z backendem. Dokumentacja oddziela kontrolę artefaktów od potwierdzonego działania serwera.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Zaplecze wydania i usług"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-notes",
+      "before": null,
+      "after": {
+        "summary": "Lokalna aplikacja desktopowa do nagrywania lekcji, porządkowania sesji i eksportu TXT. Kod obejmuje historię SQLite, odzyskiwanie audio i adaptery AI; pełny przepływ Windows nie został odebrany.",
+        "stage": "Prototyp",
+        "functionalStatus": "Aplikacja desktopowa"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-offgrid",
+      "before": null,
+      "after": {
+        "summary": "Koncepcja komunikacji bez Internetu. Nie odnaleziono kodu, uruchamialnego prototypu ani testu urządzeń; Bluetooth, Wi-Fi Direct, mesh, głos i SOS pozostają założeniami badawczymi.",
+        "stage": "Koncepcja",
+        "functionalStatus": "Koncepcja komunikacji offline"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "reel-agent",
+      "before": null,
+      "after": {
+        "summary": "Wewnętrzne narzędzie do pionowych filmów: lokalny panel, planowanie scen, synteza głosu, napisy i render FFmpeg. Rzeczywisty lokalny E2E jest udokumentowany; użyty głos ma nierozstrzygnięte prawa komercyjne.",
+        "stage": "Wersja testowa",
+        "functionalStatus": "Lokalny pipeline wideo"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-remote",
+      "before": null,
+      "after": {
+        "summary": "Wewnętrzna integracja zdalnej pomocy oparta na Aspia: pakiety próbne, infrastruktura Router/Relay i przygotowanie ograniczonego Hosta. Pełna sesja Windows–Linux pozostaje nieodebrana.",
+        "stage": "W rozwoju",
+        "functionalStatus": "Integracja pomocy zdalnej"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    },
+    {
+      "id": "progresskit-vault-key",
+      "before": null,
+      "after": {
+        "summary": "Demonstrator challenge-response Android–Linux z biometrią i podpisem kluczem AndroidKeyStore. Transport ADB służy wyłącznie programowaniu; projekt nie jest jeszcze gotowym magazynem danych ani systemem parowania.",
+        "stage": "Prototyp",
+        "functionalStatus": "Demonstrator klucza Android"
+      },
+      "reason": "Zweryfikowany zakres kodu i dostępnych dowodów; niezależna informacja o dystrybucji i produkcji."
+    }
+  ]
+}

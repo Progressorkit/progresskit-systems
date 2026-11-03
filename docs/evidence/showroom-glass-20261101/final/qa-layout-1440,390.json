@@ -1,0 +1,87 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1440x1050 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440x1050 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "hover relationship chooses one product",
+      "status": "PASS"
+    },
+    {
+      "name": "other lenses dim during relation",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390x844 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core does not overlap active lens",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 compact materials",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 tap opens actual content",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 touch close restores awake collection",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1440x1050-idle.png",
+    "1440x1050-activated.png",
+    "1440x1050-project-hover.png",
+    "390x844-idle.png",
+    "390x844-activated.png",
+    "390x844-project-open.png"
+  ],
+  "PASS": 17,
+  "FAIL": 0
+}

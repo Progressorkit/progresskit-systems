@@ -1,0 +1,88 @@
+{
+  "PASS": 13,
+  "FAIL": 0,
+  "checks": [
+    {
+      "name": "Artifact SHA256 01-hero-material.png",
+      "status": "PASS"
+    },
+    {
+      "name": "Artifact SHA256 03-technology-gloss.png",
+      "status": "PASS"
+    },
+    {
+      "name": "Artifact SHA256 04-contact-depth.png",
+      "status": "PASS"
+    },
+    {
+      "name": "Artifact SHA256 02-core-atmosphere.png",
+      "status": "PASS"
+    },
+    {
+      "name": "Artifact SHA256 desktop-full-scroll.mp4",
+      "status": "PASS"
+    },
+    {
+      "name": "Full MP4 decode desktop-full-scroll.mp4",
+      "status": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 1000,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "877"
+          }
+        ],
+        "format": {
+          "duration": "35.080000"
+        }
+      }
+    },
+    {
+      "name": "Artifact SHA256 mobile-full-scroll.mp4",
+      "status": "PASS"
+    },
+    {
+      "name": "Full MP4 decode mobile-full-scroll.mp4",
+      "status": "PASS",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 390,
+            "height": 844,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "825"
+          }
+        ],
+        "format": {
+          "duration": "33.000000"
+        }
+      }
+    },
+    {
+      "name": "Root source-manifest SHA256 assets/material-finish.css",
+      "status": "PASS"
+    },
+    {
+      "name": "Root source-manifest SHA256 assets/luxury-world.mjs",
+      "status": "PASS"
+    },
+    {
+      "name": "Root source-manifest SHA256 scripts/build-site.py",
+      "status": "PASS"
+    },
+    {
+      "name": "Root source-manifest SHA256 scripts/stage-public.py",
+      "status": "PASS"
+    },
+    {
+      "name": "Root source-manifest SHA256 index.html",
+      "status": "PASS"
+    }
+  ]
+}

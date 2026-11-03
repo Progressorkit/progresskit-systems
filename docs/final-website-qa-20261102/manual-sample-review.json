@@ -1,0 +1,39 @@
+{
+  "status": "LIMITED_SAMPLE_REVIEW_NOT_FINAL_APPROVAL",
+  "reviewDate": "2026-11-02",
+  "scope": "Three actual PNGs from final coherent/split runs, visually inspected. Full matrix remains in progress; no owner approval inferred.",
+  "images": [
+    {
+      "path": "browser-final-coherent/chrome-360-services.png",
+      "viewport": "360x844",
+      "observations": [
+        "Pierwszy nagłówek grupy mieści się w dwóch czytelnych wierszach.",
+        "Opis i trzy pozycje są czytelne na czarnym tle; dekoracyjna soczewka pozostaje za treścią.",
+        "Zrzut kończy się początkiem drugiej soczewki; pokazuje viewport, nie pełną wysokość sekcji."
+      ],
+      "finding": "No copy clipping/overlap seen in this viewport; material direction remains for owner review."
+    },
+    {
+      "path": "browser-final-coherent/chrome-360-case-progresskit-mail.png",
+      "viewport": "360x844",
+      "observations": [
+        "Nazwa i pełny opis produktu są czytelne.",
+        "Etykieta funkcjonalna oraz aktualna data 2026-11-02 są w całości widoczne.",
+        "Nawigacja Platformy/Dowody zawija się do kolejnych wierszy bez obcięcia."
+      ],
+      "finding": "No copy clipping/overlap seen in this viewport."
+    },
+    {
+      "path": "matrix/chrome-768/chrome-768-showroom.png",
+      "viewport": "768x1000",
+      "observations": [
+        "Kapsuła, aktywny kryształ i sąsiednie projekty są widoczne.",
+        "Etykiety kategorii zawijają się bez obcięcia poziomego.",
+        "Po interakcji klawiaturą viewport jest przewinięty do aktywnego obiektu; zrzut nie przedstawia pełnego nagłówka sekcji."
+      ],
+      "finding": "No new horizontal copy clipping observed in this sample; final material/art approval remainsOPEN."
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "wholeSiteReadability": "NOT_ESTABLISHED_BY_THREE_SAMPLES"
+}

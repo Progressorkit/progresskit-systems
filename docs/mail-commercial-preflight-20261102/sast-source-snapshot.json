@@ -1,0 +1,1300 @@
+{
+  "timestampUTC": "2026-11-02T11:57:16.720473+00:00",
+  "sourceRepo": "ProgressKit Mail",
+  "stage": "/tmp/pkmail-sast-p8wj73ur",
+  "snapshotFiles": [
+    {
+      "path": "android/build.gradle.kts",
+      "bytes": 534,
+      "sha256": "eb03c216ca529aa52fdedb64cd3b9a9af4753f2ab44cc86df9c59f99f46d2da6"
+    },
+    {
+      "path": "android/settings.gradle.kts",
+      "bytes": 402,
+      "sha256": "40e971c471767a6f55c13799931b596b12c8018614ec21864f54549a1c124960"
+    },
+    {
+      "path": "android/data/build.gradle.kts",
+      "bytes": 1834,
+      "sha256": "cb0c513a47b95396a5fae96e1cb5b6e591463b97ee205ea9b1f646317d459d8e"
+    },
+    {
+      "path": "android/data/src/main/AndroidManifest.xml",
+      "bytes": 139,
+      "sha256": "003fa4fc0946380ec5fce7e1b0d72e7ec17b5fab0ccf57178cb9351b49708be1"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/session/AccountSessionServices.kt",
+      "bytes": 5307,
+      "sha256": "40fac0eabd7d592554cf4279b66a8dccddd5b3b76f41323b9cb6ca47c4ea330f"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/session/HttpDeviceRevocationService.kt",
+      "bytes": 3122,
+      "sha256": "fdb7cd7515c799fc439a855c0c50d9483a41659923cb9f2bdc45b7ebf40a0ec0"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/session/SharedPreferencesDeviceSessionMaterialStore.kt",
+      "bytes": 11514,
+      "sha256": "4f9fae8eae5e9f035fe45d44a3492a9bc0a0f811af8b9e0814788249cf09239e"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/session/DefaultAccountSessionRepository.kt",
+      "bytes": 9182,
+      "sha256": "f5e7c31d138f61fe4e0e769b1476ca7c61703f4b935306b4109264df3a7141a3"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/preferences/UserPreferencesStore.kt",
+      "bytes": 1380,
+      "sha256": "5282e5dfa551e545c79665aae3dc4a3a660dc5e1428f63876c7ab7b65b8b0052"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/push/FailClosedPushProvider.kt",
+      "bytes": 719,
+      "sha256": "d02ae51cdbb9c48874c0f8d357a0a19b87433e5b164f5a18d972d104f5c29352"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/push/MailPushProtocol.kt",
+      "bytes": 1744,
+      "sha256": "854e224683f69651e983262811cadebad40da79a41df2768703728dfd1c84736"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/push/MailSignalSync.kt",
+      "bytes": 5592,
+      "sha256": "30334c6e0e4b5cf9a43477b341f5c9f4b7368f42a291caa891b91e5d81d8c209"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/ProvisioningApiClient.kt",
+      "bytes": 17997,
+      "sha256": "1c82e0a70ab0d5875997e03f59a7794f2831717cb1037005de8338f6de957db0"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/HttpProvisioningRepository.kt",
+      "bytes": 25680,
+      "sha256": "58265e86040670158d3d4d94d44a390ca00189d34667c051fd02e71d1f8f9de2"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/FailClosedProvisioningRepository.kt",
+      "bytes": 1515,
+      "sha256": "22dca0517eae36180a3be59b5efccd91c766b1a4c2bf7e6f248d83639353c7ff"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/ProvisioningHttpTransport.kt",
+      "bytes": 5544,
+      "sha256": "1e072974fe2ef797ca4c68e18bb578280ae57b1cbd44c1c614bccfce6de44a20"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/EnrollmentCompletionRetryStore.kt",
+      "bytes": 1954,
+      "sha256": "5b1841ec385ae916d5ad1ecc81c0a89b358ab57a69d02c063e912febb96b29c2"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/provisioning/ProvisioningActivationCode.kt",
+      "bytes": 860,
+      "sha256": "70bb7fb973bcd98eb59f710544c21a84199ae49f658da756c68dc0d3315eb8c8"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/sync/CoalescingRefresh.kt",
+      "bytes": 702,
+      "sha256": "44e9bb9a00ffdca80b71d4adce35ec31376f04baf5f5879ddee64a5ef29bd60f"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/sync/WorkManagerSyncCoordinator.kt",
+      "bytes": 5786,
+      "sha256": "417272ed05470ac04d2686bbea18a579579dd97b0521c16a67dacd100e6a5e36"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/SentMessageAppend.kt",
+      "bytes": 1554,
+      "sha256": "b9d527459f9fd2005e4bca2bd20209a820550547860b5c0dcc2dc71fe20ae7b3"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/AngusMailDataSources.kt",
+      "bytes": 17171,
+      "sha256": "af3a26f0440305415a78f356bf31ae5bb4d311ded952fe7411e0a3f686f900d2"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/RemoteInboxIdentity.kt",
+      "bytes": 895,
+      "sha256": "77f3c430aba93b66643b1f005db7c97b28dce61b1ed668c8a18ad3f48a727892"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/MimeReadableContent.kt",
+      "bytes": 12361,
+      "sha256": "8d1b73571bd6f7e755e26217fd3815d792e186f05cb763dbb0d84073c9d27a21"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/MailTransportPolicy.kt",
+      "bytes": 2124,
+      "sha256": "a6fe45c312fd940912370be8738de888614957554d2bc10a76f8ee542e092fbe"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/SmtpSubmissionFailure.kt",
+      "bytes": 9329,
+      "sha256": "1f5341e85f7f6bffd5f4a83ef179395a801c760373cd0807d0cf7960975191d8"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/MailEntities.kt",
+      "bytes": 3361,
+      "sha256": "7cc4a842dc410f7c99edc5253357ed9a1f2824c7d6ef2f71957acb2955e5d655"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/MailDatabase.kt",
+      "bytes": 4875,
+      "sha256": "1599fc729e598df69b562c41717f674941c1c43f0b50079d786d095860db9da6"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/RoomMailRepository.kt",
+      "bytes": 23844,
+      "sha256": "582ba59019d67997cca4ce1aba61dd2b06a50629f811bfbd2a8cb477f65c3268"
+    },
+    {
+      "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/MailDao.kt",
+      "bytes": 8922,
+      "sha256": "12fe847fa85160b4d11c12d9452c1a6510fe75ebd3341da7f1a9f4240ee58317"
+    },
+    {
+      "path": "android/app/build.gradle.kts",
+      "bytes": 7323,
+      "sha256": "804f0e5df774a80637e6c95f90808dfb8b95fd8021b3182a2144663bf16b4aad"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 1443,
+      "sha256": "9e2e0f5c1b69a660d00151b45c5a3b054dd227359adfcd5e1c48f599614ef13b"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ProgressKitMailApplication.kt",
+      "bytes": 264,
+      "sha256": "d1a975a34da81394c00d8752ef109321b0a137b58c8ee9b6737477a837792fec"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/AndroidAccountNotificationController.kt",
+      "bytes": 667,
+      "sha256": "b9405593cc50bb9c2618c11ca73503199809c665541d96af6f0cfca0df772951"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/AppContainer.kt",
+      "bytes": 10553,
+      "sha256": "018c43810132b1b09007a08dfd80cff2ecb92a99d25336e037ac1bc999e32983"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/MainActivity.kt",
+      "bytes": 3089,
+      "sha256": "590c0ae8eab1295a39c3dbd1288d70c50476d186145646e7bbdacc04c08dd660"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/ProgressKitMailApp.kt",
+      "bytes": 24134,
+      "sha256": "94df158fb279e60e741cd43c52d564a5ac3b8108a541c32f9a93e28da139e316"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/MailViewModel.kt",
+      "bytes": 19853,
+      "sha256": "17c5edcc52cb6080bf364ba5fd9f46fe106d8c997f16efebf7fdb40002b0473b"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/MailUiState.kt",
+      "bytes": 1952,
+      "sha256": "a22209ec6111ea427027e7a7db6f2d7b67c2baf63153da13deaebabe2cf59f17"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/theme/Theme.kt",
+      "bytes": 1934,
+      "sha256": "27ff10f1fc4f78a6d1d18a1e7b68e03551de1fa05b7a7253798b2a27acd80841"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/components/ProgressKitVisuals.kt",
+      "bytes": 7760,
+      "sha256": "09a87e5530e97cb786ed063dd64ee49bb4f9bf18f11214db747a49b04bdeed26"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/components/ProgressKitBrandLockup.kt",
+      "bytes": 3278,
+      "sha256": "f9b5134fd28860b6ae53214e353449f0b296fa25343935a318d0217c0c32a592"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/AccountLifecycleScreens.kt",
+      "bytes": 7918,
+      "sha256": "c1287e86ebacbf4f9de2eb39713cda06dfe38bf5bef1ce969ff3b1002574b9ba"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/MailboxScreens.kt",
+      "bytes": 17423,
+      "sha256": "05d38c0669e95a326e529493946ed61cc7a1861655459d7332cccfbb04ac72f9"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/MessageDetailScreen.kt",
+      "bytes": 15290,
+      "sha256": "139fb5107e88e3ec8a7a36a6591f7c19f8e5df8c1e687509370aaf204c7db1f8"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/ComposeMessageScreen.kt",
+      "bytes": 8183,
+      "sha256": "ef7f972b403734faf5b5d76a3b62f34fe5d4b65813f52a9a9392f327224073f2"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/MailboxManagementScreens.kt",
+      "bytes": 11314,
+      "sha256": "f29449dd9f531831ce0445bff634cbc911b6d1218c6f25c2455e9c0314c03303"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/SettingsScreen.kt",
+      "bytes": 8362,
+      "sha256": "fd30e3e2ad31c9d51229793433617f6494b020f2d693f9208e26d9e3b1aed720"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/ui/screens/AttachmentsScreen.kt",
+      "bytes": 4775,
+      "sha256": "e8fc8bd048492afa317fc46a97c48bc4c2bf8258ff2f37b27876bbe1c944c037"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/PrivateMailNotifications.kt",
+      "bytes": 3062,
+      "sha256": "01bae8f92ed4da6c4e7688b4da9ae476825875a5b8ea9b42c305293f8eef80ce"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/MailSyncWork.kt",
+      "bytes": 4202,
+      "sha256": "f8675d55f43acea783d2893f74d38df3e7fd82c82a7b4dd546b6c51dc83fd651"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/MailPushState.kt",
+      "bytes": 1775,
+      "sha256": "05220019035592ad141849524c3d28e17c633978fcc1e6deef9c1e861107c7b5"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/MailMessagingService.kt",
+      "bytes": 1463,
+      "sha256": "bdebfc988cb586b17d7dbfd86a7845bc27731e55db0964fab10cef5ec8bfe397"
+    },
+    {
+      "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/FcmMailPushProvider.kt",
+      "bytes": 5593,
+      "sha256": "26fc39f19a01d19b5c7f40cd46cd0a78a4670e824d66e8da070ab051c5bbbe9c"
+    },
+    {
+      "path": "android/app/src/main/res/values-v31/styles.xml",
+      "bytes": 427,
+      "sha256": "15ed0e2bf4f08fe55a7ebd79a3090efe6401040165cabdbcbcb75373940e892b"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v33/ic_launcher_round.xml",
+      "bytes": 317,
+      "sha256": "b186ae762fba09ccd69772736581f8407dda23f59426362c3242be51bd93e53a"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml",
+      "bytes": 317,
+      "sha256": "b186ae762fba09ccd69772736581f8407dda23f59426362c3242be51bd93e53a"
+    },
+    {
+      "path": "android/app/src/main/res/values/colors.xml",
+      "bytes": 82,
+      "sha256": "f14e21531580b2b19b9b962d9974276bf089fbd2551233670cab12341003a7c8"
+    },
+    {
+      "path": "android/app/src/main/res/values/strings.xml",
+      "bytes": 333,
+      "sha256": "6cdf89a41907fee20fcfc940f74b391cbe5a2990505554eee43b69a9e50d1ecc"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 555,
+      "sha256": "1ccf1a76e68d2e94b1a4951ba62daa73333b40138d2c43c97b43c972579789a0"
+    },
+    {
+      "path": "android/app/src/main/res/xml/network_security_config.xml",
+      "bytes": 254,
+      "sha256": "dbc726438a7e99c69fdfc39146cd51ef8300dacb236843bbce3ecd2a1712a80f"
+    },
+    {
+      "path": "android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 536,
+      "sha256": "4fdf9a3b7c84c04b11fea277cfc777a4721d3591d1c7bc51eec102ab3cce472c"
+    },
+    {
+      "path": "android/app/src/main/res/xml/backup_rules.xml",
+      "bytes": 250,
+      "sha256": "582250f39c7bd32853d4688d0e938b016ed1544fddc5bf1621dce9d87fa82dea"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "bytes": 243,
+      "sha256": "074322b2f0ea7f5a07535bf669293d5b5c7d7af2890d9da3e23ae2b93f6907ea"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 243,
+      "sha256": "074322b2f0ea7f5a07535bf669293d5b5c7d7af2890d9da3e23ae2b93f6907ea"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/ic_progresskit_launcher_foreground.xml",
+      "bytes": 443,
+      "sha256": "76f9813f2fa95445538b14b18bd98c94f2b33b4bebadba2af94995db9d3ad558"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/progresskit_splash_screen.xml",
+      "bytes": 325,
+      "sha256": "642df5b2d650588ee3944efb700aa9046ee79bda28892dfc5f0a483b81f2f558"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/ic_progresskit_monochrome.xml",
+      "bytes": 491,
+      "sha256": "162f2daf8b61d202cea99254b03b3bd61e1fe43f67ecb08fc5a80b79568357a1"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/ic_progresskit_notification.xml",
+      "bytes": 487,
+      "sha256": "835874d237d6d0c7c1e044f4a0b027eb9b2cda1c50bc6a397e4425a626760a58"
+    },
+    {
+      "path": "android/security/build.gradle.kts",
+      "bytes": 582,
+      "sha256": "abff116f724254f57909626b14074fd3445692674b603c9fc06911b365ba0a4f"
+    },
+    {
+      "path": "android/security/src/main/AndroidManifest.xml",
+      "bytes": 13,
+      "sha256": "571f2735faf5e857752ee057ac8ef63425576a721616c60b86ee5d4c0a2d682f"
+    },
+    {
+      "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureMailCredentialStore.kt",
+      "bytes": 10620,
+      "sha256": "177dbd9aa34f574791020e4c2b3bc98b3f53180f9e4e1e4d7c0ce136a02cae4d"
+    },
+    {
+      "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureDeviceIdentity.kt",
+      "bytes": 3900,
+      "sha256": "3edbaf72b3096c57953ef5a99473f23f99f43da24bf826e8c2d547c52ff8dd09"
+    },
+    {
+      "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/ChallengePolicy.kt",
+      "bytes": 371,
+      "sha256": "b5396cd9497ce95f9595d69934bbeb0f2c3d1b9faf66066d28486edb44e24251"
+    },
+    {
+      "path": "android/domain/build.gradle.kts",
+      "bytes": 236,
+      "sha256": "00c614de28181bd3ca489fd70709405b395cbc89bfe1b1bf74ffe76aab7662ca"
+    },
+    {
+      "path": "android/domain/src/main/kotlin/pl/progresskit/mail/domain/MailModels.kt",
+      "bytes": 5077,
+      "sha256": "ab5ce6f929204946b383b55a23844f04053bccfc7d77b26f3fc129202dd30b3c"
+    },
+    {
+      "path": "android/domain/src/main/kotlin/pl/progresskit/mail/domain/AccountSessionModels.kt",
+      "bytes": 2116,
+      "sha256": "c6772df212bc971667dec159a5d12191d9546f68cbbf0b0b0e11e171e7398da4"
+    },
+    {
+      "path": "android/domain/src/main/kotlin/pl/progresskit/mail/domain/ProvisioningModels.kt",
+      "bytes": 4224,
+      "sha256": "e38302fa94fa7116c07b8672c2fd4de0ce5b2789892cb2ee8e220df0e7be5c48"
+    },
+    {
+      "path": "android/domain/src/main/kotlin/pl/progresskit/mail/domain/Ports.kt",
+      "bytes": 4939,
+      "sha256": "760dbd93e314cb492fd6b797e763914db171d968ed3a88c64264a34733d7f1bc"
+    },
+    {
+      "path": "windows/scripts/verify-linux-packages.py",
+      "bytes": 11271,
+      "sha256": "0f695ccdd21b841afd3a66a38b27070dd8c06e6ece9a5ffdf42525c807e31a7d"
+    },
+    {
+      "path": "windows/scripts/build-wiola.py",
+      "bytes": 6804,
+      "sha256": "0082e988fe885c0d4b0591b733185928f26ea3ea0f26c6047b2092374b9d4dc2"
+    },
+    {
+      "path": "windows/scripts/package-linux.py",
+      "bytes": 4065,
+      "sha256": "deefb39357461353f9588a09894f2b1b0774d7bf8648bfe548e811de07f54ba3"
+    },
+    {
+      "path": "windows/scripts/prepare-local-nsis.sh",
+      "bytes": 1291,
+      "sha256": "55fd9096df81e9e8b5076d18e935eefd28d22dffec9a19eb79b1de04374bf0de"
+    },
+    {
+      "path": "windows/scripts/Build-Linux.sh",
+      "bytes": 2944,
+      "sha256": "ee8d49bdbbf0af3d3907613baab909cd9d1d18a24874535da6613ee56504e244"
+    },
+    {
+      "path": "windows/scripts/verify-artifacts.py",
+      "bytes": 4388,
+      "sha256": "da577dd71f08212d7e31b9d0c977055330dd048f88cf039175039fbce49d36ee"
+    },
+    {
+      "path": "windows/scripts/verify-wiola-package.py",
+      "bytes": 14775,
+      "sha256": "f4e8e78e364afcc1a4913a0027aeb62022f5350634e93292096dc843178af589"
+    },
+    {
+      "path": "windows/linux/verify-release-gui.py",
+      "bytes": 6129,
+      "sha256": "2ba610f02b237944308141c2204b087f636ccc247ecf452bc7f46ec5af107c00"
+    },
+    {
+      "path": "windows/linux/package-linux.py",
+      "bytes": 9336,
+      "sha256": "46e4677b314b03848ed504f0102e2e30a178b4ede9f1b0919451adcf3d7af061"
+    },
+    {
+      "path": "windows/linux/launch.sh",
+      "bytes": 127,
+      "sha256": "71806e460d97e745548438ebf0df48a940c6b9b650d7ec87430a28d7e1743372"
+    },
+    {
+      "path": "windows/linux/gui-probe.py",
+      "bytes": 13281,
+      "sha256": "eaeed6f75dae48046ada93a12a1e8016b9a4bfb85fd23d664fbeeffbaf05197e"
+    },
+    {
+      "path": "windows/linux/local-transport-runner.py",
+      "bytes": 5118,
+      "sha256": "e3f70014cc5317d3732c881ed0d3c48754746c1de402a34dbd10629e8d5ed04f"
+    },
+    {
+      "path": "windows/linux/verify-isolated-upgrade.sh",
+      "bytes": 5589,
+      "sha256": "77bfbb25f21f5f198434b0f436fb57f90b25702590cc2da6a61f313df08d231a"
+    },
+    {
+      "path": "windows/linux/verify-installation.py",
+      "bytes": 5406,
+      "sha256": "f007154a88a2efa0b88eb6138ffdbfb90680ce00e678ad0f4693a4784e778e0c"
+    },
+    {
+      "path": "windows/linux/verify-local-transport.sh",
+      "bytes": 608,
+      "sha256": "e4470cc86f026ccb0e98e848d0eadba7211e726bacfa771cda71498f5882337e"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/App.axaml.cs",
+      "bytes": 1848,
+      "sha256": "48ab0d40c968749a1091e6a58c871921d64b9013a212c15172db2e3b71e524a9"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/App.axaml",
+      "bytes": 215,
+      "sha256": "e036dd19fe1f5d61c86732940f47571645b4182e14181d9b9094aa1cf27539b1"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Program.cs",
+      "bytes": 516,
+      "sha256": "23598c1e29c45f0d1a701d2d633b3b8ba51d733c1dbd328bb01bb3a935510e1a"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Views/ComposeView.axaml.cs",
+      "bytes": 315,
+      "sha256": "4c1662ffb91a4658e9685944c6538447f97344afbc482c26755870efee5f13c8"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Views/ComposeView.axaml",
+      "bytes": 2789,
+      "sha256": "6e9c4af364a9dd8a2693ee5540f89aabc4a508dfc2f6bb1f7ab6d0689f7d3f3e"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Views/MainWindow.axaml",
+      "bytes": 25630,
+      "sha256": "f3bdeda4b77473172d537a21fc9d79bd9148512a9b5702e5bdbf8b6e8fff40d7"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Views/MainWindow.axaml.cs",
+      "bytes": 12126,
+      "sha256": "0b1500d029d3fdc2009a8649f039d9caf507c9ddfc9ab21b8799b9feea748881"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Controls/MetalBackground.cs",
+      "bytes": 1848,
+      "sha256": "0bf1d0fdd3a2284d1186c0934c2e9b713d68925aa4d50c26acfa14bb9a3d6d1f"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Resources/BrandTypography.axaml",
+      "bytes": 441,
+      "sha256": "45bb483bd7fee490a8ba96be6435cd863d34fb2f7e0e5bf274917ff03413f470"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Resources/BrandColors.axaml",
+      "bytes": 1867,
+      "sha256": "3493c854e477715312d39287f523e2aeab90262b422ecb8dd78016b772b5d184"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Resources/BrandStyles.axaml",
+      "bytes": 16084,
+      "sha256": "192c4466fd3d862f1059d929bc991e7b48697ce7f6313896e4308980368fdfc3"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/DesktopNotificationService.cs",
+      "bytes": 1737,
+      "sha256": "3c98a32e7b937594f30b93b2dd533c38a86158154c2b900eba8a64068347e75a"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/EnrollmentAccountService.cs",
+      "bytes": 3571,
+      "sha256": "88560401e5e4c353f9e33f87f0c94e0b454ed415fc4da1705d61916af3948bfd"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/DesktopKeyringService.cs",
+      "bytes": 1181,
+      "sha256": "3d7913ffc96cb95b0aaebf8a59f274b49caecda9a50b5cdaa49e10efd09efadd"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/LinuxAccountProtectedStorage.cs",
+      "bytes": 3230,
+      "sha256": "af0b830874a1b28c4e8dac515de21dc8b4fdb2231f7d468c4f5c899342907638"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/ScopedEnrollmentAccountService.cs",
+      "bytes": 4352,
+      "sha256": "a431f7517482fbdf4f81fb1d6b271bfecf78b985e0b65d1e62a4b3a37fd493fa"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/AvaloniaDesktopInteraction.cs",
+      "bytes": 3426,
+      "sha256": "28513ab33e4d8a114c4e970723f8a366efe7be8c7a4ec77a19a91372d344edfb"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/LinuxAccountFactory.cs",
+      "bytes": 4273,
+      "sha256": "79b03943a049420cca2deae440b3f2e691bb6b8020336453d96105c2686af2ae"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/DesktopContracts.cs",
+      "bytes": 3997,
+      "sha256": "30c49d5bcb5898276a3eb726d0d2ac81521a134d0682ff2fa52f3612b9b2c781"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/ProtectedDraftStore.cs",
+      "bytes": 1759,
+      "sha256": "3e9a8d85461eb982bfd30e8e6736838a0c3ba31a7ec3d730288aa2863dbb39a1"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/AccountDesktopServices.cs",
+      "bytes": 6555,
+      "sha256": "ec945d916f59d5962f084c79bde3c1067541ce46e7fb5537af37f365852d727b"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Presentation/MotionTokens.cs",
+      "bytes": 391,
+      "sha256": "16edf97fe263ee9efb71c94e19a08a8242572cc057b4f324339b0ab8a48281e1"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Presentation/PaneVisibilityConverter.cs",
+      "bytes": 572,
+      "sha256": "dfe5f5f5cab25d644257ee9ef095c75b08b5cef0bf207c688b062bae61b17dd6"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Presentation/PresentationPreferences.cs",
+      "bytes": 6014,
+      "sha256": "a19b5ffb5ef7eaba85b3b64a7ad554eb16ef1d9c31688e068c4e93be84e853ad"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Presentation/CountVisibilityConverter.cs",
+      "bytes": 450,
+      "sha256": "afc2ca11d7025639803dc00fefbb9f75db73225527f6b7f861f835a7c148f2e9"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Presentation/BrandTheme.cs",
+      "bytes": 1608,
+      "sha256": "966e6f529f0fb873387996a7fc3864fb9c9d53fcb9f16f84aded438fdb5830ed"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/ComposeViewModel.cs",
+      "bytes": 8578,
+      "sha256": "3366d3e280deb17888355360fead593c4ee784d4b8651b5a94841b6cee9817de"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/AccountShellViewModel.cs",
+      "bytes": 18353,
+      "sha256": "0cc00b24e1816a77895f26bd78180621bc4767541373bce1f35df84b8d61e8f2"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+      "bytes": 26831,
+      "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/ObservableObject.cs",
+      "bytes": 1243,
+      "sha256": "9c0121777980c917882c9a09927bced6e6771b187a9f1cbd12d3df5a20af34ff"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/App.xaml",
+      "bytes": 426,
+      "sha256": "c0fd7e9b0f58b2a9716459cb0aa7b78e97d78bae16cbd9dc7414bb456b07b79d"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/App.xaml.cs",
+      "bytes": 1111,
+      "sha256": "e89846af95f83cafaa8af42f405c9dc3ba4af2c6c00f2529e50cd3b95d049551"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/MainWindow.xaml",
+      "bytes": 13374,
+      "sha256": "4c71ec75c323bb5a911eb5696b0bf167ae299a53310915642e8e59d4b87f0eb4"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/BluetoothWindow.xaml",
+      "bytes": 1576,
+      "sha256": "bbf53831ffc6eeac53c164f29d38834f6d4cc77a5a6d29fb3d59c058f4e3a5dc"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/BluetoothWindow.xaml.cs",
+      "bytes": 2902,
+      "sha256": "15057ee38b7663ed3286c2cf3b19967cd5630f898422d27805826e625b276b5c"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ChangePasswordWindow.xaml.cs",
+      "bytes": 1830,
+      "sha256": "2f83491cde8302012b99c512a9476697f393b9c9141a966dfcbb8b8eaaa823a3"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ComposeWindow.xaml",
+      "bytes": 3277,
+      "sha256": "e58fa83ee5cdad94ca1076be5a3e525c0d5a49a1c7b27f1f465107d0905c08ad"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/MainWindow.xaml.cs",
+      "bytes": 1907,
+      "sha256": "286d164d90bce8d14c5cdf8bc7e2f83a15a3f46a0c3241fdca885435746336bf"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ChangePasswordWindow.xaml",
+      "bytes": 1617,
+      "sha256": "ba7c40a11b83822672ed44b947bbf9625a9b204583a8522bea3534935a2b6777"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ComposeWindow.xaml.cs",
+      "bytes": 1262,
+      "sha256": "d50c093c41ea8a0e77c48d276076063a0c4f686bd70e3d9c70eaf2e545bc850f"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/UI/BrandMotion.cs",
+      "bytes": 1421,
+      "sha256": "b31e0b5b6946ada08872810697fe19308a5c70a1332ad51ac417589f8163a949"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Themes/Brand.xaml",
+      "bytes": 6581,
+      "sha256": "e67eb678e30baabb3f5f73368319e2e6ce09af2a71f9f50c24275f06bfe6fa3b"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Services/WindowsAccountHost.cs",
+      "bytes": 16088,
+      "sha256": "7a0ab90710da90cd0b98e49860e6fb197e3c0f1686cbfbe05b895090e83e6951"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/DpapiSessionVault.cs",
+      "bytes": 2315,
+      "sha256": "ed3b7c73c5d6c3f37f8c993bdcf4504b54a2fd46c59fd4b95295926b6ae42253"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsProtectedStore.cs",
+      "bytes": 5370,
+      "sha256": "a39f13af9207bb9e1b338e2abc14cb3d05ae7c8efe64d8242b514fa191a661d5"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsHelloAvailabilityProbe.cs",
+      "bytes": 5469,
+      "sha256": "6bb342334b1306ccf63620d8932ed05f5fa460e04fde13b2d7a43d6434a60acf"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsHelloService.cs",
+      "bytes": 5090,
+      "sha256": "4f5c88ecc6f73ea43997b776ed59c61c31deba0324a1b27178807c43df965007"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsAccountProtectedStorage.cs",
+      "bytes": 2699,
+      "sha256": "ab743b28adef53a579516cbfc8562bfb56d06cd9621bb3efcbfcbbf1fa8f97e7"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Security/CngDeviceIdentity.cs",
+      "bytes": 2883,
+      "sha256": "15eabfc5ed0172a6aa5120662943cbb4c555ebcf5301982587562854d086f0b5"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Bluetooth/WindowsBluetoothDiagnostics.cs",
+      "bytes": 12399,
+      "sha256": "f8578230c4a21a44761576af7195640b198c05e388611b1304e0e06bbdf2e832"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/Bluetooth/BluetoothDiagnosticPolicy.cs",
+      "bytes": 5489,
+      "sha256": "87789d5b5a5d73ae82258ff437f4f74d886f0cab8bd1dc5e853d3a73cf77445f"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ViewModels/ComposeViewModel.cs",
+      "bytes": 10278,
+      "sha256": "eec502eca829f1d6d881b49992ea0b952dc19227444479d59f8613545f36cc76"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ViewModels/MainViewModel.cs",
+      "bytes": 39571,
+      "sha256": "580846e5aafa34e1fa548a00e1b0b83ad0cb48277214704777639dfae81da458"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ViewModels/ObservableObject.cs",
+      "bytes": 1209,
+      "sha256": "a5b1dacd2808b8351c1d79cccdb6e62db5bf582c493c146e51869255c2e8df60"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/EnrollmentManager.cs",
+      "bytes": 6512,
+      "sha256": "4cc43ff9adbd4f131d49b7cbb1ea8117fd2353adc594ea54fe7bc7aecfe0456d"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/CompletionProof.cs",
+      "bytes": 1797,
+      "sha256": "836e0c3f755871eb2511071b21b2bdaa0d2b3609ba33a7ac5029cd2d819ce8b0"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/MailboxPasswordChangeClient.cs",
+      "bytes": 9374,
+      "sha256": "c806f2ac7df98dfc7a105e6d1f7ed97db66bc1aeaf4a76ebd25ee76f5f0559f1"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/HttpProvisioningClient.cs",
+      "bytes": 10284,
+      "sha256": "c4728d9a94f44cc99812ea5c2a0771d45f1f8265e09c7149710d6496ef8e3c59"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/ActivationCode.cs",
+      "bytes": 1592,
+      "sha256": "645ad92518e9c80c5c3ba4c5e3532410378827cefbc34774726e73e24ec6434b"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/AuthenticationModels.cs",
+      "bytes": 5526,
+      "sha256": "3aab38c6ca5f8cbcc4a81c584a9fd43a92a506e31682827b3ee04666e3a5dc95"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Properties/AssemblyInfo.cs",
+      "bytes": 102,
+      "sha256": "46ea8a502d45d50485991bd94e151ac017c7d88759f1ce42787f679e4e2dd946"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/SendLedger.cs",
+      "bytes": 6811,
+      "sha256": "3087bfee2361a784442348e8d9f7786c15a8dfb25dc22339699bc68198448532"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailClientPolicy.cs",
+      "bytes": 658,
+      "sha256": "1809691a3264caea79496af56ba855ba03172e31616e7f08647b1fb5a669d3c7"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MessageSafety.cs",
+      "bytes": 6234,
+      "sha256": "3fd486162cf5573fd1e5f711835c00107ed6a9f9c79f3c2a3589b06099872067"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/AcceptedSendCompletion.cs",
+      "bytes": 878,
+      "sha256": "e7c65b3fcb354fa6b28ac139c012e24441e1083d1f0cba3170effbef4d7feeea"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailErrors.cs",
+      "bytes": 2085,
+      "sha256": "696ffdf1d0d4910cf3b49798dc11bd89d0a4a7c6fa395d7c1a4d1f7c87cedde0"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailService.cs",
+      "bytes": 29636,
+      "sha256": "8c1297ee5013afd005846de64f2ecc2ddf2c0de2ac34b989b94ff832ae30a901"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailboxSnapshot.cs",
+      "bytes": 824,
+      "sha256": "a522527132d6fcc98da693a187ccd38eec512a6433d3f83ec2583cd3dfbfc5de"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailModels.cs",
+      "bytes": 3167,
+      "sha256": "3e27967d98577660dea84df70aa83950eb7239a890894b49b674e2cd16ba44cb"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/ProtectedAccountRepositories.cs",
+      "bytes": 11207,
+      "sha256": "db9540cc4d54110ad8d88faddcb7086896af787b22b99ce529548ab1229e8fe7"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountModels.cs",
+      "bytes": 5013,
+      "sha256": "f92a9d52e8fd9fbd788d8153be5d7852fa8627af578715cf4796c58ea7e7d2ab"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountWorkspace.cs",
+      "bytes": 9311,
+      "sha256": "86e7de6ac19b1e1d387eae14ad90152d90decb0b221bdee8a9e4786e815d7677"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountIsolation.cs",
+      "bytes": 5962,
+      "sha256": "a02d4e26ff5840d0e853c59ca0b470a8679d0c981ebdd964114d2e0031c38012"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthModels.cs",
+      "bytes": 5282,
+      "sha256": "08a0227c32085c279b31d8ecf9c5579f2d83f985587a9566696253aac077a6ca"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthService.cs",
+      "bytes": 9243,
+      "sha256": "e6983966e9aec8aff9f2f4083ae5ee9e2eec975993df0453c10923cff11926b6"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/LoopbackOAuthReceiver.cs",
+      "bytes": 8189,
+      "sha256": "ddc42798b374eeed72a0d5a54284340975b9847776e27bb5d0abd8b119d1c4c3"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/OAuthPkce.cs",
+      "bytes": 1302,
+      "sha256": "2d4893032b0ff8683a2c6f314692479d610f406c55b624f5f929eb32ad69a57e"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthHttpClient.cs",
+      "bytes": 9297,
+      "sha256": "7c7b0c52b0039e673f7df3cb85c690f27e51a84c13874458919e53d735e134ee"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LibSecretStore.cs",
+      "bytes": 13991,
+      "sha256": "d12dbe071311d5f12bb604f5c8cc2a6eee35502d0c12cd77cc5b8e2e86951b1d"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/SecretStoreKeyMaterial.cs",
+      "bytes": 1157,
+      "sha256": "ed40c2079c27769944284a4c95276811cf9792bc5821efac53ea81cca7c0b608"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxRevocationClient.cs",
+      "bytes": 5533,
+      "sha256": "66c0383bb143629ca55cfebd3e65a2c491acb291b71d98f6616de6f16e6cbbc3"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/ILinuxSecretStore.cs",
+      "bytes": 605,
+      "sha256": "e73c720050ae0ecbf935b548756404d461ec79f0a85dc7c33b8c5534ab8c91fe"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxSecurityErrors.cs",
+      "bytes": 1857,
+      "sha256": "23e5c0427e75cb6ec3268eddac29479ca092f312a963192b67757bd21185add5"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxSessionVault.cs",
+      "bytes": 2617,
+      "sha256": "4dbeeceaa6cc2d465b2ddcfa88f6798a74ffbc6d0e7c1844a4080b4ccaab3265"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/SecretServiceDeviceIdentity.cs",
+      "bytes": 3038,
+      "sha256": "9a66285c3568969d3bab8b65ba2b174a94340686d91160a70f6ee197bae846b6"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxFileSafety.cs",
+      "bytes": 2305,
+      "sha256": "7dfc564f92d18e5565aefe6e420b330cb1222f5c55c13708c968ce5542035529"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxProtectedStore.cs",
+      "bytes": 7843,
+      "sha256": "03d912072f916b518ca1efcb79df117db1e24660f6c95eb96e16d05e72b3f8d2"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/LibSecretNative.cs",
+      "bytes": 4663,
+      "sha256": "d8600ab4787ced7a3065b3ed04f16fa01de05e485eaa27c1d0e61474fdf47ae3"
+    },
+    {
+      "path": "server/tools/ProgressKit.Mail.PasswordOperator/Program.cs",
+      "bytes": 5214,
+      "sha256": "7c32dc3a15bf3ffa264d394cf970161f84a7dd9a74153ed2c1f07ba730385c6a"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Operator/Program.cs",
+      "bytes": 6634,
+      "sha256": "ffc13058a312fc310c52eaefa5afb0e375f006d8fbaaf8554e207f4dd3b98b3e"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Passwords/VerifiedPasswordChangeCoordinator.cs",
+      "bytes": 6821,
+      "sha256": "145329f6489a0fc7b894d0b5512ce27f0643a035979155b685dcc2e52a7e8ffd"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Passwords/PasswordChangeContracts.cs",
+      "bytes": 2489,
+      "sha256": "b4a19f16b6b012c2e8f280241275d7adaf4f15cac8acdfd01c7e85035c7ef037"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/EnrollmentCompletionProof.cs",
+      "bytes": 2836,
+      "sha256": "bf16944a9edc911120b22b01606c5f8fc66a906b1fae2a79263e6e28e2999c1d"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/DeviceRecoveryCompletionProof.cs",
+      "bytes": 3666,
+      "sha256": "23b407383060b5c96f54abaa2f5e12378a9b44b0bb3c68902254d757228a5720"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/DeviceRevocationProof.cs",
+      "bytes": 1042,
+      "sha256": "eda3e2df85c7bf03ddf04980031515af03f7a8f54b63fc489815da6774561f1f"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/DeviceCredentialIssuanceBinding.cs",
+      "bytes": 999,
+      "sha256": "d28e364a0db0ca012991070c11c7e00811f76fca54e0d07b6691cb133b479f79"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/ProvisioningContracts.cs",
+      "bytes": 7631,
+      "sha256": "5b37449f089867723cb79b8cc88cbc766893dc356a609a2e984fbcc2e84722c3"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/Provisioning/ProvisioningTokenAdministration.cs",
+      "bytes": 2780,
+      "sha256": "b0737310aa2df48ddfbe27caa6a5c91adbeab4d0204eca7ba95b38872f544a50"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/EnrollmentRateLimitOptions.cs",
+      "bytes": 935,
+      "sha256": "e9bb14e2cf03f5173fe612c7327ecd38666d5ff154a1522df898f8deda772956"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/SafeApiExceptionHandler.cs",
+      "bytes": 3487,
+      "sha256": "e263ef3284101ae462584df3f32c876046bf2e6f63005d6b8fafe00eefdb6de4"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Program.cs",
+      "bytes": 17156,
+      "sha256": "218cbb64c79eba7c3807d203dcd30ffe6c82c16b8883fd30710e4ffd6816e461"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Contracts/ProvisioningRequests.cs",
+      "bytes": 842,
+      "sha256": "c54b8d514ed81870daa54af9f933aca8a998994f21346ee2bc1643909aac939c"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Contracts/ChangeMailboxPasswordRequest.cs",
+      "bytes": 349,
+      "sha256": "f1dd9bd8d45fdcc232017db0d5e538c385446d7e7fdb8ea46e61cda7daee5637"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Contracts/PasswordChangeCapabilitiesResponse.cs",
+      "bytes": 214,
+      "sha256": "656f7b90124821481daaaf81e8943b99eead9f34ca17d9fc39adde998a69825a"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/PushRegistration.cs",
+      "bytes": 2826,
+      "sha256": "2afd679c020266eed21d69f852ac46d4a9500be73876bfca8e79fef4e693537b"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/PushStateStore.cs",
+      "bytes": 5436,
+      "sha256": "e6018fdf7d070c021efb74b6e41dc2ee749aca96a58c004dd9c467a52607bfe5"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/FcmSender.cs",
+      "bytes": 6806,
+      "sha256": "a2f39137f05ccd4eb151cf7c50ea2e07838519ff3846181eeeb7a30f09328ff0"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/PushServiceExtensions.cs",
+      "bytes": 3978,
+      "sha256": "a189d19878b0f490d2274b6c23c29e5f716549073473dc05702cb1579aed1bef"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/MailArrivalWorker.cs",
+      "bytes": 8280,
+      "sha256": "f01da1e78a9031822ae7722fe39ba9c717a1278026561adb5e6be1707f12fa0b"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Passwords/PasswordChangeEndpoints.cs",
+      "bytes": 11356,
+      "sha256": "0ae3708c79795ef9d04d0f1a655615bca01da7786546ec2e88770bfbc55e7eb1"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Passwords/UnavailablePasswordChangeServices.cs",
+      "bytes": 962,
+      "sha256": "59b6555df76ff6443f3fe261216e95a18709f67613865f6ea87c60e0d51e134f"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Passwords/CoreMailTransportAccessVerifier.cs",
+      "bytes": 1870,
+      "sha256": "46c2f99ced976ea212345aeea1f852c7f40c8f6b665aabe2172d24d112b0c0a9"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Passwords/DoveadmStdinSha512CryptHasher.cs",
+      "bytes": 4268,
+      "sha256": "0042b78b430180665960a9664d1e92f0cc819eb53be4f7bba39c566703b7d8f3"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Passwords/DmsFilePasswordSourceWriter.cs",
+      "bytes": 17419,
+      "sha256": "86d6b8c4d74825756b48cc088b445dce8055e1900eb8511b040156a49f6ae432"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Passwords/DmsFilePasswordSourceAdapter.cs",
+      "bytes": 1722,
+      "sha256": "db432f2d2996409a17149c4ed385eba2332b8e3bab1cbd16cd227c9ea79f177f"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneMapper.cs",
+      "bytes": 8533,
+      "sha256": "4044faa96c950537889a2dc2e1f37852e7dd6ee08e58cf5571d5e546f0e80c3b"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneDesignTimeDbContextFactory.cs",
+      "bytes": 767,
+      "sha256": "2dc679f9f6d14be94bee3730504a5de63600d3d457122c06b968a7ec6d7f4c67"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneRows.cs",
+      "bytes": 4076,
+      "sha256": "ffbbaad6fdd994a01f21dbf3f2de9e7f25b8d83f6e399ac620a18156e821275a"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneDbContext.cs",
+      "bytes": 1192,
+      "sha256": "5e863a1f19928d1e212265074ae1bcc46c8d76d235b8a5bbabcaf65da268b96c"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneEntityConfigurations.cs",
+      "bytes": 26113,
+      "sha256": "310d9555dcaab93465f59fcd305db5b9081e628832ffe871183e9ffb4828db16"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ActivePushDeviceStore.cs",
+      "bytes": 2224,
+      "sha256": "0cc2ce3293abf2257f9fb83373a5dfca03623685862b73f00a1b44bcb3894ec7"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneServiceCollectionExtensions.cs",
+      "bytes": 3060,
+      "sha256": "057ba6d5629690faf2bf0799dd8381c0647f3cdf828e108e670958219c27b58a"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneStores.cs",
+      "bytes": 34519,
+      "sha256": "3e6545238ca031e5150f363e5a0bde0fafd6edf4b818ec62207c1ece8dcc8d5d"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ProvisioningTokenAdministrationStore.cs",
+      "bytes": 4483,
+      "sha256": "b09c3f15daac9e14f72d4b507ad3bb254dfc1abee009dad476d80603dd0c4b82"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20261010151223_BindCredentialGenerationAndExpireRecovery.Designer.cs",
+      "bytes": 33973,
+      "sha256": "19fd9adacf85edcebe6a3d1e0a1a4513d1447d0458cff3b6b0d72570a28db207"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260905183222_AddDeviceRecoveryAttempts.cs",
+      "bytes": 6518,
+      "sha256": "6e38205fa4a09194778b141a68381c190d99a8857285210f0efea812358c7e43"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260902172834_InitialControlPlane.Designer.cs",
+      "bytes": 26702,
+      "sha256": "b17f73d857791763c1c32fe0c03f345bf6fdf4cca1f1f4f2a6aebacb991e05a8"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260903173226_AddEnrollmentCompletionProofDigest.cs",
+      "bytes": 1984,
+      "sha256": "c8b355b4be7a8fdfcda4b1613d2938ee963bea0d0ec000aec1581224a538010d"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20261010151223_BindCredentialGenerationAndExpireRecovery.cs",
+      "bytes": 4032,
+      "sha256": "bfd191f621a21a624d5d5011355e7af92537a4070863143eef0efd8d352c1289"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260902172834_InitialControlPlane.cs",
+      "bytes": 23158,
+      "sha256": "c0efb30270b48304f8eeb43292680fe4f79a3434b4511af0797bab72aefcdce3"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260905183222_AddDeviceRecoveryAttempts.Designer.cs",
+      "bytes": 33422,
+      "sha256": "2ea4c2822aa07b241c08d793fb4af9bbd19bf2f88c1a94d88a1b71df3fbcc236"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/20260903173226_AddEnrollmentCompletionProofDigest.Designer.cs",
+      "bytes": 27313,
+      "sha256": "c7fc9c5e2b15273b3ea07cdbba7a7e1742366043457abdd6c931c5e8faa98f24"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/Migrations/ControlPlaneDbContextModelSnapshot.cs",
+      "bytes": 33825,
+      "sha256": "2140a763504dafec078674f5899cfba3de054decc36497088030903ed018af86"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/P256EcdsaDeviceChallengeVerifier.cs",
+      "bytes": 3925,
+      "sha256": "e02565cb74bb4257bd0cf9463004a92ea73719e6d4f390142364eda249644cab"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/CryptographicEnrollmentChallengeGenerator.cs",
+      "bytes": 770,
+      "sha256": "3f84b48d227fe6393bd442623dcbe8e8f22cb68be9d54651062d00bfb5ff69bc"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/FailClosedProvisioningWorkflow.cs",
+      "bytes": 982,
+      "sha256": "ce147bfb76789873bba308243f0f744a3572babf104c57aaf53dc8ae0f3c431e"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DovecotDeviceCredentialIssuer.cs",
+      "bytes": 1934,
+      "sha256": "922645e4f565e38c445ff2833026cbc7fa977331eb94bff92288b99104573704"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/ProvisioningTokenOperator.cs",
+      "bytes": 3090,
+      "sha256": "2705f674e2443c4e63784c5203e49285385ef2187d54f687666cb9f70f44d060"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceCredentialIssuanceCoordinator.cs",
+      "bytes": 19261,
+      "sha256": "eab67186658eece89d2d82bf9313e7b72a3b3933f27aace63ed84453e4a21925"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DovecotDeviceCredentialFile.cs",
+      "bytes": 13377,
+      "sha256": "2e6a9d92af5b8bc2c42e0e49f33b52cea523f23944dc7173a717c7070db1eab9"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceEnrollmentWorkflow.cs",
+      "bytes": 43119,
+      "sha256": "b8bf927802740733ea477d7c10fd061eab35c4a31f8ea390b5306d5522593813"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DeviceCredentialOperationLock.cs",
+      "bytes": 2336,
+      "sha256": "2d5070800ef84cafc621a4630df6a3cf73c6966d8f8503f64645fab1b8ce66ba"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceRevocationCoordinator.cs",
+      "bytes": 5740,
+      "sha256": "f24944902f2ce3f07631a114f75b7c612cd55712fba68abc8548fdd2b1f9131e"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Provisioning/DeviceRecoveryAttempt.cs",
+      "bytes": 10422,
+      "sha256": "40085b5788adf54fe1814cd11d50779d9b90dc3283f8c28dd29c433b0aea9ab1"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Provisioning/DeviceCredential.cs",
+      "bytes": 10757,
+      "sha256": "d5625d2edb22d4671d682ee5bfd5c5e04c6d7459d1f68f70df3f50523d919d48"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Provisioning/ProvisioningIdentifiers.cs",
+      "bytes": 693,
+      "sha256": "a6f6fe37b79711687076412edf775fd8642f7e9b416ea390034fd5526e59aab8"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Provisioning/DeviceEnrollment.cs",
+      "bytes": 15564,
+      "sha256": "64f33f5888ec833206488a13de7090eb6e8ade642a2088d07f7375b5337474fb"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Provisioning/OneTimeProvisioningToken.cs",
+      "bytes": 4806,
+      "sha256": "05fa956e69bc58ae9512ee4b90a3dd7c1643ce7b5d2dab17dffb4363e9242fd7"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Identity/MailboxIdentity.cs",
+      "bytes": 3002,
+      "sha256": "3bcdd8a3fbfcbea69185d4b1c220e2e018ec8c41af40f23378c89f5805957bea"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Identity/Account.cs",
+      "bytes": 2472,
+      "sha256": "fc561fe75f8978dcbb9310ccc71bb70432713fd24b5e114e24d05126b0124a72"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Identity/IdentityIdentifiers.cs",
+      "bytes": 274,
+      "sha256": "91de6ffde9efb357e79a53a899b5ca2e7f651faaf7315127abbfcb68e16372f4"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Identity/MailboxAssignment.cs",
+      "bytes": 2380,
+      "sha256": "9ceee6e0f1f5a6728637d0736f7e98410da6b4fc8ef5bab8f1be02bcc3ccc8f3"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/Security/SecurityAuditEvent.cs",
+      "bytes": 3288,
+      "sha256": "e63e3b5d391dc7595ca02402b298d851ab732e08e3301c51f539340cd15b79db"
+    },
+    {
+      "path": "infra/scripts/check-branding.sh",
+      "bytes": 5985,
+      "sha256": "f41432e0a4a827c386645dc33f2deb8afd2f4def126676fb6b7b2a320ea7a5f4"
+    },
+    {
+      "path": "infra/scripts/test-mail-push-lua.py",
+      "bytes": 6534,
+      "sha256": "8c22fe9af403b4436ac0494507fed96ac6a6d2134a7e696333f08fdc498851d7"
+    },
+    {
+      "path": "infra/scripts/check-secrets.sh",
+      "bytes": 1316,
+      "sha256": "bf8d4545978039bf421d572199913abf7030cd08520105b65949f80750db3944"
+    },
+    {
+      "path": "infra/scripts/require-local-docker.sh",
+      "bytes": 953,
+      "sha256": "f9224ef63b0d47f1c4bab1a7a9a465c3076ddf7b2d8828b94b4da5d56755f5d0"
+    },
+    {
+      "path": "infra/scripts/test-local-docker-preflight.py",
+      "bytes": 2878,
+      "sha256": "f8e9a26ea60c5d1472f3d90725937199dd5fcf1c60bd75edbd30ee2f865f4e00"
+    },
+    {
+      "path": "infra/scripts/test-android-release-configuration.py",
+      "bytes": 5183,
+      "sha256": "9a70472ebc92f019315a8a235ae32caac1500e0fbab0fbf56f2d28d9ddf15452"
+    },
+    {
+      "path": "infra/scripts/verify-server-isolated.sh",
+      "bytes": 13474,
+      "sha256": "958438d7ae30aeb0d53ab948c457a8b3c5b9587cf5213c6bc25ce179e2be5597"
+    },
+    {
+      "path": "infra/scripts/test-fail2ban-dovecot.py",
+      "bytes": 4409,
+      "sha256": "60b299ac18b209c79699af071c58732073ac330a2028e953c5a2bf4791f1a0ae"
+    },
+    {
+      "path": "infra/scripts/owner-mail-diagnostics.py",
+      "bytes": 31439,
+      "sha256": "3be81793f94a731412c6307a6996e6beabbb3b1de6feb09609b0b6606f3e0784"
+    },
+    {
+      "path": "infra/scripts/verify-local.sh",
+      "bytes": 1312,
+      "sha256": "95de2a81d0addee0b9d251ea624c09fa3b502ddece4d86d35a8735817fd8030e"
+    },
+    {
+      "path": "infra/scripts/test-owner-mail-diagnostics.py",
+      "bytes": 23437,
+      "sha256": "c2a3e38ab7a3a4833bfcce4cd2f5dee6327af7ab03a141baffbf9b39343f3602"
+    }
+  ],
+  "fileCount": 258,
+  "excluded": "Only code/markup extensions from android/windows/server/infra/scripts. No .env, appsettings*.json, google-services.json, keys, databases, logs, artifacts, build/bin/obj or docs copied. Test data/directories excluded; QA/build helper source scripts remain included as code. No symlinks followed.",
+  "sourceUpload": "NONE; local staged files only, planned scan offline with metrics disabled."
+}

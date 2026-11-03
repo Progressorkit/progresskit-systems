@@ -1,0 +1,199 @@
+{
+  "date": "2026-11-02",
+  "status": "PASS_EXACT_CROPS_AND_SELECTED_OUTPUT_FRAMES",
+  "crops": [
+    {
+      "output": "stills/02-mail-android.png",
+      "outputSha256": "70b58f8bd34bdb23a9eba9b59a0309352c11550a2708198c14aa40a34e730ee0",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/mail/mail-splash.webp",
+      "sourceSha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1",
+      "cropPixels": {
+        "x": 0,
+        "y": 80,
+        "width": 688,
+        "height": 1375
+      },
+      "derivedDimensions": {
+        "width": 688,
+        "height": 1375
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Cropped system bars; no mailbox/accounts/messages present.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/02-mail-linux-header.png",
+      "outputSha256": "b5161144494b29f4f15ac6630e5c5b2331f99678a5bf939f2b559f9d4f1fd85f",
+      "sourceRepository": "ProgressKit Mail",
+      "sourcePath": "artifacts/multi-account/gui-final8/release-product-control-empty.png",
+      "sourceSha256": "e4ebe3041e05e621ab598058405fd3c566182e8b902177dc7ea944e581237958",
+      "cropPixels": {
+        "x": 547,
+        "y": 215,
+        "width": 475,
+        "height": 135
+      },
+      "derivedDimensions": {
+        "width": 475,
+        "height": 135
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only header and providerbuttons; excludes prefilledaddress and all accountrecords.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-approval-control.png",
+      "outputSha256": "da56c364ae64b233789d94355ae87594a25cf3023daa39fb5de4fda8a07498d8",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "sourceSha256": "6733a6c8288682df9361b48c063d1a502ae03fc96b164aa2d7047f5cbd464913",
+      "cropPixels": {
+        "x": 727,
+        "y": 588,
+        "width": 231,
+        "height": 62
+      },
+      "derivedDimensions": {
+        "width": 231,
+        "height": 62
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only existing fixed approvalbutton; no client/staffIDs,currentcasestatus,dates/history or sidebar/footer.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-workflow-controls-wide.png",
+      "outputSha256": "2e250daba440861db59fef355a611aa94965788816d3c9c1f9ee6a841ebdb8c7",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "sourceSha256": "6733a6c8288682df9361b48c063d1a502ae03fc96b164aa2d7047f5cbd464913",
+      "cropPixels": {
+        "x": 310,
+        "y": 589,
+        "width": 650,
+        "height": 58
+      },
+      "derivedDimensions": {
+        "width": 650,
+        "height": 58
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Three existing fixed workflowbuttons only; no testrecords. Alternative QA crop, not selected for the encoded shot.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/05-community-header-filters.png",
+      "outputSha256": "041eb0358d03ac45cabe8b587112ef76028c136ec5b80c0bb9ea19c7cdb55eb4",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-community/community-desktop.webp",
+      "sourceSha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c",
+      "cropPixels": {
+        "x": 330,
+        "y": 48,
+        "width": 710,
+        "height": 286
+      },
+      "derivedDimensions": {
+        "width": 710,
+        "height": 286
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Heading and empty searchcontrols only. No fixturecards,usercounts,authors,posts or conversations.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/07-glikemia-language.png",
+      "outputSha256": "95f250597bae75a176f366756ee374f4adcd2bf88f7a2e25b7d847252f2793e8",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/glikemia/product-language.webp",
+      "sourceSha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c",
+      "cropPixels": {
+        "x": 0,
+        "y": 80,
+        "width": 648,
+        "height": 1100
+      },
+      "derivedDimensions": {
+        "width": 648,
+        "height": 1100
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Languagecontrols only; no patientidentity,measurements/history/PDF. Systembars excluded.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/08-translator-neutral.png",
+      "outputSha256": "3d8da45cf60d9af2532ecb0340a1cb0a6b9166c975044e4436dfe385823a2db7",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-translator/translator-start.webp",
+      "sourceSha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78",
+      "cropPixels": {
+        "x": 0,
+        "y": 130,
+        "width": 1080,
+        "height": 2140
+      },
+      "derivedDimensions": {
+        "width": 1080,
+        "height": 2140
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Actual empty historicalstartscreen; no spokenphrase/history. Systembars excluded.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-sections-nav.png",
+      "outputSha256": "4914e9bf50cc533614e096942a9dbef6bef1a54e085e0457b3ddd29715bcd368",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "sourceSha256": "312fd0dabcf5c3d582f986677648d9739fa161f33e366dc304fe853ce73051a4",
+      "cropPixels": {
+        "x": 16,
+        "y": 176,
+        "width": 222,
+        "height": 514
+      },
+      "derivedDimensions": {
+        "width": 222,
+        "height": 514
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. External scene labels describe fragments and do not alter the productUI.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Static module navigation only; activeoffice selector above and account/footer below excluded. No clientrecords or identities.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; qa/frames/03-1.5-v2.png",
+      "selectedInShot": 3
+    },
+    {
+      "output": "stills/03-tax-country-filter.png",
+      "outputSha256": "483e0e5c2a3d9d4e6f4b2109d4b96f53636219e53ee97681a84b9171c0810508",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "sourceSha256": "312fd0dabcf5c3d582f986677648d9739fa161f33e366dc304fe853ce73051a4",
+      "cropPixels": {
+        "x": 1139,
+        "y": 341,
+        "width": 157,
+        "height": 52
+      },
+      "derivedDimensions": {
+        "width": 157,
+        "height": 52
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. External scene labels describe fragments and do not alter the productUI.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only default countryfilter control; no rowvalues,clientcountryrecords,counts or identifiers.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; qa/frames/03-1.5-v2.png",
+      "selectedInShot": 3
+    }
+  ],
+  "limits": "Applies to the reviewed derivedpixels only; not a new productruntime/securitytest or releaseapproval.",
+  "vaeloriaRights": "OWNER_AUTHORIZED02.11.2026; no new independent legal audit."
+}

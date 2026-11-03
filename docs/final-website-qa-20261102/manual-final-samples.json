@@ -1,0 +1,28 @@
+{
+  "status": "LIMITED_FINAL_SOURCE_SAMPLES_REVIEWED_OWNER_APPROVAL_OPEN",
+  "date": "2026-11-02",
+  "scope": "Actual retained PNGs from final source; observations are limited to these viewports. No whole-site or art-direction approval is inferred.",
+  "samples": [
+    {
+      "path": "matrix-final/firefox-360/firefox-360-showroom.png",
+      "viewport": "360x844",
+      "observed": [
+        "Core and selected materialized crystal render in real WebGL2.",
+        "Selected product title and controls are readable in the captured viewport.",
+        "Viewport is scrolled to the keyboard-active object; it is not a full-section screenshot."
+      ]
+    },
+    {
+      "path": "matrix-final/firefox-360/firefox-360-services.png",
+      "viewport": "360x844",
+      "observed": [
+        "First service heading wraps into two complete readable lines.",
+        "Three first-group items stay readable over the dark lens.",
+        "Second lens continues below viewport; section is not claimed fully visible."
+      ]
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "fullVisualAcceptance": "NOT_ESTABLISHED_BY_TWO_SAMPLES",
+  "physicalMobile": "NOT_RUN"
+}

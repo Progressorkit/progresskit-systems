@@ -78,3 +78,14 @@ test('A touch pointer leaving on a hybrid laptop cannot trigger the mouse close 
   assert.equal(filters.categoryPointerAllowed({finePointer:true,pointerType:'mouse'}),true);
   assert.equal(filters.categoryPointerAllowed({finePointer:false,pointerType:'mouse'}),false);
 });
+
+test('Product kind stays independent from maturity and restores through shared URLs', () => {
+  const product={...projects[0],classification:'product'};
+  const concept={...projects[0],classification:'concept',stage:'Koncepcja'};
+  assert.equal(filters.matches(product,{classification:'product'}),true);
+  assert.equal(filters.matches(concept,{classification:'product'}),false);
+  assert.equal(filters.matches(concept,{classification:'concept',stage:'Koncepcja'}),true);
+  const url=filters.url('https://example.org/?utm_source=test',{classification:'concept'});
+  assert.equal(filters.read(url.href).classification,'concept');
+  assert.equal(filters.url(url.href,{}).search,'?utm_source=test');
+});

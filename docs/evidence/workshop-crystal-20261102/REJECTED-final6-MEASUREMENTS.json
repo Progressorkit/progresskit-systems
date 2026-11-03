@@ -1,0 +1,187 @@
+{
+  "status": "FAIL_ACTIVATION_LATENCY_IN_LOCAL_SAMPLE_WITH_PARTIAL_MOTION_IMPROVEMENT",
+  "ownerVisualApproval": "OPEN",
+  "surface": "standalone local hardware Chrome; embedded preview latency UNKNOWN",
+  "sourceStable": {
+    "baselineFrame": true,
+    "finalFrame": true,
+    "pairedLatency": true
+  },
+  "finalSource": {
+    "assets/technology-field.css": "456e00ec08b36c0a23630cea5bab4a4456e4fe475ea6c8e27902c47cc5d7efac",
+    "assets/technology-field.mjs": "1d0e3729090b65ce296983bfc4ecdfbc6ad3f992ad5c3c7a74e0dcdd4504f52b",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "groups": 6,
+    "links": 110
+  },
+  "latencySummary": {
+    "baseline": {
+      "count": 12,
+      "eventToDOMMs": {
+        "min": 0.699999988079071,
+        "median": 5.699999988079071,
+        "p95": 17.799999982118607,
+        "max": 17.799999982118607
+      },
+      "handlerToDOMMs": {
+        "min": 0,
+        "median": 0.09999999403953552,
+        "p95": 0.30000001192092896,
+        "max": 0.30000001192092896
+      },
+      "allTrusted": true
+    },
+    "after-final": {
+      "count": 12,
+      "eventToDOMMs": {
+        "min": 4.5,
+        "median": 18.400000005960464,
+        "p95": 87.7000000178814,
+        "max": 87.7000000178814
+      },
+      "handlerToDOMMs": {
+        "min": 0.09999999403953552,
+        "median": 0.20000001788139343,
+        "p95": 0.7999999821186066,
+        "max": 0.7999999821186066
+      },
+      "allTrusted": true
+    }
+  },
+  "frames": {
+    "baselineNow": [
+      {
+        "kind": "idle",
+        "groupIndex": 0,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 16.800000000000182,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 0,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0,
+          "ScriptDuration": 0.011980999999999999,
+          "TaskDuration": 0.10525499999999999
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 0,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 16.80000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 104,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.039367,
+          "ScriptDuration": 0.011576,
+          "TaskDuration": 0.19936900000000002
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 5,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 33.29999999999927,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 106,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.049569,
+          "ScriptDuration": 0.009900000000000003,
+          "TaskDuration": 0.2641530000000001
+        }
+      },
+      {
+        "kind": "wheel",
+        "groupIndex": 0,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 16.80000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 100,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.005713999999999997,
+          "ScriptDuration": 0.012184,
+          "TaskDuration": 0.16350599999999993
+        }
+      }
+    ],
+    "final": [
+      {
+        "kind": "idle",
+        "groupIndex": 0,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 16.800000000000182,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 180,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.026661000000000004,
+          "ScriptDuration": 0.01031,
+          "TaskDuration": 0.208575
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 0,
+        "p95Ms": 16.800000000000182,
+        "maxMs": 49.899999999999636,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 59,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.017731000000000004,
+          "ScriptDuration": 0.019256,
+          "TaskDuration": 0.256584
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 5,
+        "p95Ms": 33.19999999999891,
+        "maxMs": 116.70000000000073,
+        "delaysOver50": 2,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 56,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.017240999999999992,
+          "ScriptDuration": 0.014311000000000004,
+          "TaskDuration": 0.30065699999999995
+        }
+      },
+      {
+        "kind": "wheel",
+        "groupIndex": 0,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 16.80000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 105,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.008330000000000004,
+          "ScriptDuration": 0.013030000000000007,
+          "TaskDuration": 0.1818249999999999
+        }
+      }
+    ]
+  },
+  "raw": [
+    "baseline-final6-crystal-profile.json",
+    "after-final6-crystal-profile.json",
+    "crystal-latency-settling-tilt.json"
+  ],
+  "note": "One paired current frame trial and 12 trusted events per variant, no trace or recording. First group motion matches baseline; largest group and activation latency still show regression. No final proof movie generated for this rejected performance state."
+}

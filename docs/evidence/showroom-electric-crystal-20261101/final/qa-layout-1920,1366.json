@@ -1,0 +1,61 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1920x1080 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 titles stay inside crystals",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 faceted silhouette and glass layers",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 titles stay inside crystals",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 faceted silhouette and glass layers",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1920x1080-idle.png",
+    "1920x1080-activated.png",
+    "1366x768-idle.png",
+    "1366x768-activated.png"
+  ],
+  "PASS": 11,
+  "FAIL": 0
+}

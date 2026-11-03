@@ -1,0 +1,62 @@
+{
+  "mode": "screens",
+  "startedAt": "2026-11-02T19:13:35.532Z",
+  "hostPreview": "UNKNOWN: in-app browser unavailable, standalone hardware Chrome used for development proof.",
+  "physicalMobile": "NOT_RUN: 390x844 touch emulation.",
+  "ownerVisualApproval": "OPEN",
+  "errors": [],
+  "blocked": [],
+  "artifacts": [
+    {
+      "file": "workshop-crystal-idle.png",
+      "sha256": "06a3f9d39f112286c4c3971f27b362d8011cfbd60da0f3524ed095ddc1c8f32b",
+      "kind": "actual local Chrome screenshot",
+      "state": "desktop idle thick dark crystal"
+    },
+    {
+      "file": "workshop-crystal-powered.png",
+      "sha256": "2961ae914847238021e5bba854779bfef535f3a65ecbb299dc21187f34a860fc",
+      "kind": "actual local Chrome screenshot",
+      "state": "desktop powered hover"
+    },
+    {
+      "file": "workshop-crystal-mobile-tap.png",
+      "sha256": "845c4505c848a4d6ab642216233caab03457e0e688a6882f329f0cbfbc2f69a4",
+      "kind": "actual local Chrome screenshot",
+      "state": "mobile emulation tap powered dark crystal"
+    }
+  ],
+  "sourceBefore": {
+    "assets/technology-field.css": "21b0788d85237463fd16be59026eea8c2032f69cfe22f95a2fb643160f0e3c86",
+    "assets/technology-field.mjs": "f8bce9800f2056608d85210bd3e78989a59cd46ff220e78e8f2e83748a8ec53e",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "mobileTap": {
+    "active": true,
+    "rootActive": "true",
+    "metrics": {
+      "frames": 0,
+      "rafPending": false,
+      "timerPending": false,
+      "visible": true,
+      "paused": false,
+      "reduced": false,
+      "forcedColors": false,
+      "disposed": false,
+      "pointerFpsLimit": 24,
+      "gradientUpdates": 0,
+      "groups": 6,
+      "visibleGroups": 2,
+      "active": 0,
+      "tapped": 0
+    },
+    "horizontalOverflow": false
+  },
+  "sourceAfter": {
+    "assets/technology-field.css": "21b0788d85237463fd16be59026eea8c2032f69cfe22f95a2fb643160f0e3c86",
+    "assets/technology-field.mjs": "f8bce9800f2056608d85210bd3e78989a59cd46ff220e78e8f2e83748a8ec53e",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "sourceStable": true,
+  "finishedAt": "2026-11-02T19:13:58.077Z"
+}

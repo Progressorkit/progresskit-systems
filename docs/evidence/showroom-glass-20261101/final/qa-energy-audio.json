@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "name": "No audio engine or autoplay on load",
+      "status": "PASS"
+    },
+    {
+      "name": "Idle shell continuously lives on a bounded local canvas",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 8,
+          "plasma": 2
+        },
+        "b": {
+          "corona": 18,
+          "plasma": 2
+        }
+      }
+    },
+    {
+      "name": "Idle energy does not redraw the full project field",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 8,
+          "plasma": 2
+        },
+        "b": {
+          "corona": 18,
+          "plasma": 2
+        }
+      }
+    },
+    {
+      "name": "Shell buffer stays below 600k pixels",
+      "status": "PASS",
+      "details": {
+        "width": 499,
+        "height": 562,
+        "pixels": 280438
+      }
+    },
+    {
+      "name": "Idle arcs change visibly over time",
+      "status": "PASS"
+    },
+    {
+      "name": "Core activation never opts into audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Project hover never opts into audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit hum button starts one audio context",
+      "status": "PASS",
+      "details": {
+        "contexts": 1,
+        "state": "running",
+        "level": 0.03395666554570198
+      }
+    },
+    {
+      "name": "Hum produces a quiet measurable audio signal",
+      "status": "PASS",
+      "details": {
+        "rms": 0.008980442109297387
+      }
+    },
+    {
+      "name": "Related project gently raises hum intensity",
+      "status": "PASS",
+      "details": {
+        "base": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03395666554570198
+        },
+        "stronger": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.04695596545934677
+        }
+      }
+    },
+    {
+      "name": "One click fades and suspends hum",
+      "status": "PASS",
+      "details": {
+        "contexts": 1,
+        "state": "suspended",
+        "level": 0.002669978654012084
+      }
+    },
+    {
+      "name": "Leaving showroom suspends opted-in sound",
+      "status": "PASS"
+    },
+    {
+      "name": "Offscreen stops both canvases completely",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 108,
+          "plasma": 46
+        },
+        "b": {
+          "corona": 108,
+          "plasma": 46
+        }
+      }
+    },
+    {
+      "name": "Returning resumes only previously opted-in sound",
+      "status": "PASS"
+    },
+    {
+      "name": "Global effect pause suspends hum",
+      "status": "PASS"
+    },
+    {
+      "name": "Global pause leaves static energy without redraws",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 119,
+          "plasma": 47
+        },
+        "b": {
+          "corona": 119,
+          "plasma": 47
+        }
+      }
+    },
+    {
+      "name": "Reduced motion disables and deselects optional audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion keeps frozen shell and transfer effects",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 126,
+          "plasma": 49
+        },
+        "b": {
+          "corona": 126,
+          "plasma": 49
+        }
+      }
+    },
+    {
+      "name": "Removing reduced motion does not restart audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Rapid audio toggles reuse one engine and finish muted",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile shell uses at most seven idle redraws per second",
+      "status": "PASS",
+      "details": {
+        "a": {
+          "corona": 6,
+          "plasma": 3
+        },
+        "b": {
+          "corona": 12,
+          "plasma": 3
+        }
+      }
+    },
+    {
+      "name": "Mobile audio control stays inside viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile hum requires and accepts explicit tap",
+      "status": "PASS"
+    },
+    {
+      "name": "Opening a product suspends ambient audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported Web Audio hides the optional control",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported audio keeps visual disclosure working",
+      "status": "PASS"
+    },
+    {
+      "name": "No browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "PASS": 27,
+  "FAIL": 0
+}

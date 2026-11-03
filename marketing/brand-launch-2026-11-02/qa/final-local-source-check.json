@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "status": "PASS",
+  "scope": "Exact crop sourcepixel equality and currentencodedcliphashes only; not productruntime or fullwebsiteQA.",
+  "sourcePixelEqualityPassed": 9,
+  "sourcePixelEqualityFailed": 0,
+  "cropSourceAndOutputHashPairsPassed": 9,
+  "currentClipHashesPassed": 7,
+  "cropPaths": [
+    "stills/02-mail-android.png",
+    "stills/02-mail-linux-header.png",
+    "stills/03-tax-approval-control.png",
+    "stills/03-tax-workflow-controls-wide.png",
+    "stills/05-community-header-filters.png",
+    "stills/07-glikemia-language.png",
+    "stills/08-translator-neutral.png",
+    "stills/03-tax-sections-nav.png",
+    "stills/03-tax-country-filter.png"
+  ],
+  "productionChanged": false,
+  "historical": true,
+  "supersededBy": [
+    "qa/all-clips-validation.json",
+    "qa/final-kit-integrity.json"
+  ],
+  "historicalScope": "Intermediate seven-clip stage before final 01/04/09 captures and final 30-second assembly. Existing counts and results preserved."
+}

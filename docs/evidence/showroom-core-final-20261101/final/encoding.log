@@ -1,0 +1,36 @@
+{
+  "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 1080,
+        "r_frame_rate": "25/1",
+        "nb_frames": "375"
+      }
+    ],
+    "format": {
+      "duration": "15.000000"
+    }
+  },
+  "videoTrimStartSeconds": 8.61,
+  "renderFpsActiveMean": 56.520172429967744,
+  "renderFpsOneSecondMin": 50,
+  "renderFpsOneSecondMax": 61,
+  "cpuSubmissionMedianMs": 2.100000023841858,
+  "gpuQueryLatestMedianMs": 8.045166,
+  "DPR": [
+    0.85
+  ],
+  "drawCallsRange": [
+    29,
+    56
+  ],
+  "trianglesRange": [
+    16792,
+    19088
+  ],
+  "errors": []
+}

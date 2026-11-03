@@ -1,0 +1,41 @@
+{
+  "ownerVisualApproval": "OPEN",
+  "rawGuardStatus": "FAIL",
+  "expectedProtectedCodeChanges": [
+    "analytics/preview.py",
+    "analytics/security_headers.py"
+  ],
+  "actualProtectedChanges": [
+    "analytics/preview.py",
+    "analytics/security_headers.py"
+  ],
+  "unexpectedProtectedChanges": [],
+  "homepageSemanticsUnchanged": true,
+  "headUnchanged": true,
+  "indexUnchanged": true,
+  "defaultSecurityPolicyByteIdentical": true,
+  "collectorMiddlewareCallAstIdentical": true,
+  "workshopSourcesUnchanged": {
+    "assets/technology-field.css": true,
+    "assets/technology-field.mjs": true,
+    "assets/material-finish.css": true
+  },
+  "actualSourceDelta": [
+    "analytics/preview.py",
+    "analytics/security_headers.py",
+    "assets/brand-core-mark.css",
+    "assets/brand-core-mark.mjs",
+    "assets/brand/progresskit-core-mark.webm",
+    "assets/showroom-3d.mjs",
+    "assets/showroom-scene.mjs",
+    "index.html",
+    "scripts/build-site.py",
+    "scripts/stage-public.py",
+    "tests/test_security_headers.py",
+    "tests/test_site_v5.py"
+  ],
+  "unexpectedSourceDelta": [],
+  "removedFiles": [],
+  "explanation": "Raw guard flags all analytics file changes. Exactly two required code changes are explained: homepage-only same-origin media opt-in for local preview; default API/analytics policy and collector code remain identical. No production/database/catalog changes.",
+  "status": "SCOPED_PASS"
+}

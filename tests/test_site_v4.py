@@ -138,9 +138,14 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         captions = ' '.join(image['caption'] for image in project['gallery']).lower()
         self.assertIn('rzeczywisty ekran', captions)
         self.assertIn('zamazane', captions)
-        self.assertIn('Wersja testowa', self.mail)
-        self.assertIn('bez ponowienia w audycie z 23.10.2026', self.mail)
-        self.assertIn('publicznego linku pobrania Mail nie potwierdzono', self.mail)
+        self.assertEqual('Wersja testowa', project['stage'])
+        self.assertIn(project['portfolio']['functionalStatus'], self.mail)
+        self.assertIn(project['portfolio']['distributionStatus'], self.mail)
+        self.assertIn(project['portfolio']['productionStatus'], self.mail)
+        self.assertIn('Wynik historyczny', self.mail)
+        self.assertTrue(any(v['historical'] for v in project['portfolio']['verification']))
+        self.assertTrue(any(not v['historical'] and v['date'] == project['updatedAt'] for v in project['portfolio']['verification']))
+        self.assertEqual([], project['links'])
 
     def test_product_pages_share_brand_navigation_and_contact(self):
         shell = (ROOT / 'assets/progresskit-product-shell.css').read_text()

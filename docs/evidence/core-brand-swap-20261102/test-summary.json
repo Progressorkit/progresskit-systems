@@ -1,0 +1,22 @@
+{
+  "node": {
+    "PASS": 100,
+    "FAIL": 0,
+    "report": "node-tests.json"
+  },
+  "python": {
+    "PASS": 125,
+    "FAIL": 0,
+    "report": "python-tests-final.log",
+    "includesOneNewHomepageMediaIsolationTest": true
+  },
+  "initialPythonAttempt": {
+    "PASS": 123,
+    "FAIL": 1,
+    "report": "python-tests-initial.log",
+    "cause": "New reviewed brand loop encountered pre-existing blanket video exclusion; only this exact path plus SHA256 was excepted, unreviewed media remains excluded"
+  },
+  "check": "PASS",
+  "whitespace": "PASS",
+  "ownerVisualApproval": "OPEN"
+}

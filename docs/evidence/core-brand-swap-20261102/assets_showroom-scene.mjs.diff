@@ -1,0 +1,80 @@
+--- before/assets/showroom-scene.mjs
++++ after/assets/showroom-scene.mjs
+@@ -1,7 +1,8 @@
+ import * as THREE from "./vendor/three/three.module.js";
+ import { frameLoop, qualityProfile } from "./showroom-lifecycle.mjs";
+ 
+-export async function createShowroomScene(canvas, projects, onProject) {
++export async function createShowroomScene(canvas, projects, onProject, options = {}) {
++  const logoOnly = options.corePresentation === "logo";
+   const gl = canvas.getContext("webgl2", {
+     alpha: false,
+     antialias: true,
+@@ -410,7 +411,14 @@
+     );
+     const logo = mesh(
+       new THREE.PlaneGeometry(1.65, 1.65, 10, 10),
+-      new THREE.MeshStandardMaterial({
++      logoOnly ? new THREE.MeshBasicMaterial({
++        map: logoTexture,
++        transparent: true,
++        depthWrite: false,
++        alphaTest: 0.03,
++        side: THREE.DoubleSide,
++        toneMapped: false,
++      }) : new THREE.MeshStandardMaterial({
+         map: logoTexture,
+         metalness: 0.64,
+         roughness: 0.2,
+@@ -436,6 +444,7 @@
+     logo.position.set(0, 0.04, -0.03);
+     logo.castShadow = true;
+     logo.renderOrder = 2;
++    logo.userData.id = "core";
+     // Recessed interior baffle: logo and its shadow sit in front of this deep,
+     // narrow chamber. There is no circular plate attached to the emblem.
+     const baffle = mesh(
+@@ -1056,7 +1065,8 @@
+         phase: "dormant",
+       };
+     });
+-    const pickable = [shell, ...crystals.map((c) => c.body)];
++    const coreHit = logoOnly ? logo : shell;
++    const pickable = [coreHit, ...crystals.map((c) => c.body)];
+     function setLayout(detail) {
+       awake = detail.awake;
+       open = detail.open;
+@@ -1108,7 +1118,7 @@
+           pickable.filter(
+             (o) =>
+               o.parent.visible &&
+-              (o === shell ||
++              (o === coreHit ||
+                 (awake &&
+                   crystals.find((c) => c.body === o).phase === "ready")),
+           ),
+@@ -1202,6 +1212,16 @@
+       innerEnergy.visible = !compact;
+       skin.visible = !compact;
+       dust.visible = !compact;
++      if (logoOnly) {
++        // The original emblem now owns the showroom centre. The capsule is
++        // presented in the header using a cached render of this same 3D model.
++        core.children.forEach(part => { part.visible = part === logo; });
++        core.position.set(0, baseY, 0.85);
++        core.rotation.set(0, 0, 0);
++        core.scale.setScalar(compact ? 1.45 : 1.7);
++        logo.position.set(0, 0, 0);
++        energy.visible = false;
++      }
+       if (reduced || dt === 0 || frames % 8 === 0)
+         renderer.shadowMap.needsUpdate = true;
+       filamentUniforms.uTime.value = elapsed;
+@@ -1395,6 +1415,7 @@
+             .map((c) => ({ id: c.id, phase: c.phase })),
+           camera: "PerspectiveCamera",
+           depth: depthBuffer,
++          corePresentation: logoOnly ? "logo" : "capsule",
+         };
+       },
+       contextLost() {

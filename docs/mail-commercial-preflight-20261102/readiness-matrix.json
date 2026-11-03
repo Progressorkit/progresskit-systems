@@ -1,0 +1,938 @@
+{
+  "auditDate": "2026-11-02",
+  "decision": "NOT COMMERCIAL RELEASE APPROVED",
+  "newTests": {
+    "started": "2026-11-02T10:47:46.602099+00:00",
+    "sourceHEAD": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+    "stage": "/tmp/pkmail-commercial-20261102-bkh8hcrr",
+    "isolation": "Copies of already built Release assemblies; source checks read original source via symlinks. Private XDG/TMP/DOTNET_CLI_HOME; no personal D-Bus; production credential/config environment removed. HOME unchanged. No build, restore, installation, account, external mail, DB or migrations.",
+    "suites": [
+      {
+        "suite": "core",
+        "started": "2026-11-02T10:47:46.703039+00:00",
+        "assemblySource": "windows/tests/ProgressKit.Mail.Core.Tests/bin/Release/net10.0/ProgressKit.Mail.Core.Tests.dll",
+        "assemblySHA256": "16b0fe6c861f2249b2e818700b7b65b3ba577e9d14b4296f3b61ec872cf59795",
+        "command": [
+          "dotnet",
+          "vstest",
+          "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll",
+          "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/core",
+          "--Logger:trx;LogFileName=core.trx"
+        ],
+        "exitCode": 0,
+        "newRun": true,
+        "total": 285,
+        "executed": 271,
+        "passed": 271,
+        "failed": 0,
+        "notExecuted": 14,
+        "status": "PASS"
+      },
+      {
+        "suite": "linux",
+        "started": "2026-11-02T10:47:51.905659+00:00",
+        "assemblySource": "windows/tests/ProgressKit.Mail.Linux.Tests/bin/Release/net10.0/ProgressKit.Mail.Linux.Tests.dll",
+        "assemblySHA256": "2d9e73718ba157292bc077d2478a12ca3ef2e5e9fa4a950f700a38aa40d3a8d9",
+        "command": [
+          "dotnet",
+          "vstest",
+          "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux/ProgressKit.Mail.Linux.Tests.dll",
+          "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux",
+          "--Logger:trx;LogFileName=linux.trx"
+        ],
+        "exitCode": 0,
+        "newRun": true,
+        "total": 110,
+        "executed": 106,
+        "passed": 106,
+        "failed": 0,
+        "notExecuted": 4,
+        "status": "PASS"
+      },
+      {
+        "suite": "linux-security",
+        "started": "2026-11-02T10:47:54.527313+00:00",
+        "assemblySource": "windows/tests/ProgressKit.Mail.Linux.Security.Tests/bin/Release/net10.0/ProgressKit.Mail.Linux.Security.Tests.dll",
+        "assemblySHA256": "d7a8fc96d2b028907f68ff5fcd03f9e101208d674e46038431797d5a9cee2bfe",
+        "command": [
+          "dotnet",
+          "vstest",
+          "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/linux-security/ProgressKit.Mail.Linux.Security.Tests.dll",
+          "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux-security",
+          "--Logger:trx;LogFileName=linux-security.trx"
+        ],
+        "exitCode": 0,
+        "newRun": true,
+        "total": 41,
+        "executed": 40,
+        "passed": 40,
+        "failed": 0,
+        "notExecuted": 1,
+        "status": "PASS"
+      },
+      {
+        "suite": "server-no-db",
+        "started": "2026-11-02T10:47:57.548775+00:00",
+        "assemblySource": "server/tests/ProgressKit.Mail.UnitTests/bin/Release/net10.0/ProgressKit.Mail.UnitTests.dll",
+        "assemblySHA256": "e0f3350c270609d100fd4bf32d9df0db86d0ebb3bde882a7304fbdc68c027ebd",
+        "command": [
+          "dotnet",
+          "vstest",
+          "/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/server-no-db/ProgressKit.Mail.UnitTests.dll",
+          "--ResultsDirectory:/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/server-no-db",
+          "--Logger:trx;LogFileName=server-no-db.trx"
+        ],
+        "exitCode": 0,
+        "newRun": true,
+        "total": 201,
+        "executed": 190,
+        "passed": 190,
+        "failed": 0,
+        "notExecuted": 11,
+        "status": "PASS"
+      }
+    ],
+    "finished": "2026-11-02T10:48:03.567408+00:00",
+    "siblingGitStatusUnchanged": true
+  },
+  "nativeFollowups": {
+    "newRun": true,
+    "stage": "/tmp/pkmail-native-preflight-shkejd1l",
+    "fixtureSourceSHA256": "e3f70014cc5317d3732c881ed0d3c48754746c1de402a34dbd10629e8d5ed04f",
+    "fixtureAdaptation": "Only test invocation changed to prebuilt Core DLL; original ephemeral CA/CRL generation and TLS verification unchanged. No private profiles or global trust used.",
+    "loopbackExitCode": 0,
+    "keyringExitCode": 0,
+    "notificationExitCode": 0,
+    "results": [
+      {
+        "path": "native-tests/keyring-locked/keyring-locked.trx",
+        "passed": 1,
+        "failed": 0,
+        "notExecuted": 0
+      },
+      {
+        "path": "native-tests/keyring-restart/keyring-restart.trx",
+        "passed": 1,
+        "failed": 0,
+        "notExecuted": 0
+      },
+      {
+        "path": "native-tests/keyring-unavailable/keyring-unavailable.trx",
+        "passed": 1,
+        "failed": 0,
+        "notExecuted": 0
+      },
+      {
+        "path": "native-tests/keyring-unlocked/keyring-unlocked.trx",
+        "passed": 1,
+        "failed": 0,
+        "notExecuted": 0
+      },
+      {
+        "path": "native-tests/notifications/notifications.trx",
+        "passed": 4,
+        "failed": 0,
+        "notExecuted": 0
+      },
+      {
+        "path": "native-tests/trusted-loopback/trusted-loopback.trx",
+        "passed": 14,
+        "failed": 0,
+        "notExecuted": 0
+      }
+    ]
+  },
+  "sourceFreshness": {
+    "pdbFiles": 19,
+    "documentRecords": 377,
+    "matchingDocumentRecords": 372,
+    "sourceMismatches": 0,
+    "uniqueExistingMatchingFiles": 233,
+    "unavailableGeneratedDocuments": [
+      "windows/src/ProgressKit.Mail.Linux/obj/Release/net10.0/linux-x64/Avalonia.Generators/Avalonia.Generators.NameGenerator.AvaloniaNameSourceGenerator/ProgressKit.Mail.Linux.Views.ComposeView.g.cs",
+      "windows/src/ProgressKit.Mail.Linux/obj/Release/net10.0/linux-x64/Avalonia.Generators/Avalonia.Generators.NameGenerator.AvaloniaNameSourceGenerator/ProgressKit.Mail.Linux.Views.MainWindow.g.cs",
+      "server/src/ProgressKit.Mail.Api/obj/Release/net10.0/Microsoft.Extensions.Logging.Generators/Microsoft.Extensions.Logging.Generators.LoggerMessageGenerator/LoggerMessage.g.cs",
+      "server/src/ProgressKit.Mail.Infrastructure/obj/Release/net10.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs",
+      "server/tests/ProgressKit.Mail.UnitTests/obj/Release/net10.0/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"
+    ],
+    "scope": "New tests executed prebuilt Release assemblies; not a fresh product rebuild. All available repo-source PDB document hashes match; absent generated documents are not a claimed source verification."
+  },
+  "matrix": [
+    {
+      "platform": "Android",
+      "implementation": "IMPLEMENTED; source audit confirms IMAP/SMTP, MIME, Room, Keystore and FCM.",
+      "freshChecks": [
+        "Existing Debug APK cryptographic verification PASS (v2).",
+        "Existing Release candidate signature FAIL / DOES NOT VERIFY: the file is explicitly unsigned.",
+        "No new Android JVM/build/device run."
+      ],
+      "historical": "219 JVM PASS on 2026-10-27; physical Xiaomi Debug IMAP/SMTP/Sent and online FCM evidence from2026-10-10.",
+      "notRun": [
+        "Final production Release/Firebase/API configuration",
+        "Physical update/install/runtime/FCM lifecycle acceptance"
+      ],
+      "commercialGate": "BLOCKED",
+      "needed": [
+        "Produce correct signed Release without bypassing configuration guards.",
+        "Acceptance of the concrete signed Android Release, installation/update/restart and FCM lifecycle; no further mail-account/delivery tests in this task."
+      ],
+      "mailServiceScope": "Service sending/receiving accepted as OWNER_REPORTED; no further delivery/account/IMAP/SMTP/mail-port testing in this task."
+    },
+    {
+      "platform": "Linux",
+      "implementation": "IMPLEMENTED Avalonia client, shared mail engine, protected storage, drafts/attachments and account isolation.",
+      "freshChecks": [
+        "Core: 271 PASS / 0 FAIL / 14 notExecuted.",
+        "Linux UI/MVVM: 106 PASS / 0 FAIL / 4 notExecuted.",
+        "Linux security: 40 PASS / 0 FAIL / 1 notExecuted.",
+        "DEB metadata 1.0.0-10 amd64; current artifact hashes inspected.",
+        "Separate isolated follow-ups: trusted loopback TLS 14 PASS, private-bus notifications 4 PASS, native keyring 4 mode executions PASS. GUI acceptance of a concrete installed client build was outside this run; current mail operation is accepted from the owner report."
+      ],
+      "historical": "2026-10-27 host upgrade 1.0.0-9 → 1.0.0-10 and launcher documented; not rerun today.",
+      "notRun": [
+        "Native GUI install/upgrade/start with isolated display (Xvfb unavailable; personal display/profile not used)",
+        "GUI and protected local-state restoration after restart for the exact client package/version"
+      ],
+      "commercialGate": "PARTIAL LOCAL EVIDENCE; NOT APPROVED FOR PAYING USERS",
+      "needed": [
+        "Accept the exact Linux client package/version for GUI, installation, upgrade, restart and protected local-state restoration; no generic SMTP repeat or new account.",
+        "Trusted distribution/update policy and explicit support scope."
+      ],
+      "mailServiceScope": "Service sending/receiving accepted as OWNER_REPORTED; no further delivery/account/IMAP/SMTP/mail-port testing in this task."
+    },
+    {
+      "platform": "Windows",
+      "implementation": "IMPLEMENTED WPF and DPAPI/CNG adapters; shared Core exercised on Linux.",
+      "freshChecks": [
+        "Shared Core: 271 PASS is cross-platform logic evidence, not WPF runtime.",
+        "Installer EXE and portable main EXE have no Authenticode certificate table."
+      ],
+      "historical": "WPF cross-build/publish and package audits documented; current source snapshot: 195 files matches manifest.",
+      "notRun": [
+        "Windows 11 installation/upgrade",
+        "WPF GUI, DPAPI/CNG adapters and protected local-state restoration for the exact client build",
+        "Physical Windows Hello acceptance"
+      ],
+      "commercialGate": "BLOCKED",
+      "needed": [
+        "Dedicated Windows 11 runtime and negative/security acceptance.",
+        "Distribution signing and update policy."
+      ],
+      "mailServiceScope": "Service sending/receiving accepted as OWNER_REPORTED; no further delivery/account/IMAP/SMTP/mail-port testing in this task."
+    },
+    {
+      "platform": "Backend/API",
+      "implementation": "IMPLEMENTED durable enrollment/recovery/revoke and fail-closed password-change capability/API.",
+      "freshChecks": [
+        "190 PASS / 0 FAIL / 11 notExecuted from existing Release assembly; in-memory/synthetic API and unit tests.",
+        "Targeted architecture/secret-boundary assertions included."
+      ],
+      "historical": "201 PASS including 11 isolated PostgreSQL tests and 11 post-restore tests documented on 2026-10-27.",
+      "notRun": [
+        "PostgreSQL/migrations/backup-restore (outside this bounded task)",
+        "Current production deployed revision/grants",
+        "Actual password-change provider propagation"
+      ],
+      "commercialGate": "BLOCKED FOR PRODUCTION ROLLOUT",
+      "needed": [
+        "Reconcile actual deployed configuration and migration/grant requirements.",
+        "Password-change defaults currently use Unavailable providers; validate real provider only after separate rollout approval."
+      ],
+      "mailServiceScope": "Service sending/receiving accepted as OWNER_REPORTED; no further delivery/account/IMAP/SMTP/mail-port testing in this task."
+    },
+    {
+      "platform": "Mail server / hosting",
+      "implementation": "Existing Postfix/Dovecot/DMS integration; distinct from the client product.",
+      "freshChecks": [
+        "Owner confirms current sending/receiving and unblocked ports on 2026-11-02 (OWNER_REPORTED); service state accepted for this task.",
+        "No further account, IMAP/SMTP, delivery or mail-port checks requested or performed after owner STOP."
+      ],
+      "historical": "Controlled 2026-10-10 SMTP/Gmail acceptance and owner-reported receipt/SPF/DKIM/DMARC; not current availability/SLA proof.",
+      "notRun": [
+        "Production backup/restore, monitoring and incident drills",
+        "Retention, incident/support responsibility and hosting SLA/offer scope",
+        "Current backend password-change provider readiness and deployed revision, separate from ordinary mail delivery"
+      ],
+      "commercialGate": "OWNER_REPORTED DELIVERY ACCEPTED; HOSTING OPERATIONS/SLA SCOPE OPEN",
+      "needed": [
+        "Respect explicit owner stop: no further account/IMAP/SMTP/port/delivery tests.",
+        "Keep independent operational/revision evidence separate from owner-confirmed current delivery; complete distribution/support/formal offer scope locally."
+      ],
+      "ownerReportedCurrentState": {
+        "date": "2026-11-02",
+        "provenance": "OWNER_REPORTED",
+        "statement": "Owner confirms sending/receiving works and required ports are unblocked.",
+        "independentPASS": false,
+        "sourceRevisionAndRuntimeNotIndependentlyCorrelated": true,
+        "furtherAccountMailAndPortTests": "STOP requested explicitly by owner; no more account, IMAP/SMTP or port probes."
+      },
+      "mailServiceScope": "Service sending/receiving accepted as OWNER_REPORTED; no further delivery/account/IMAP/SMTP/mail-port testing in this task."
+    }
+  ],
+  "securityScanning": {
+    "secretRegexScan": {
+      "newRun": true,
+      "tool": "existing infra/scripts/check-secrets.sh (regex/source scan)",
+      "exitCode": 0,
+      "status": "PASS",
+      "sanitizedOutput": [
+        "PASS: nie wykryto zakazanych plików ani typowych jawnych sekretów."
+      ],
+      "limits": "Not Gitleaks/Semgrep; rg respects repository ignore rules; no full SAST/SCA or history scan claim."
+    },
+    "SAST": "PARTIAL EXECUTED: fresh Semgrep CE1.183.0 OSS offline scan;548 actual vendor security rules on258 targets,14 findings (13ERROR/1INFO),26 PartialParsing warnings (25C#/1shell), exit1 retained. No full SAST PASS, suppression or source changes.",
+    "SCA": "PARTIAL FRESH OSV QUERY: 91 inventoried coordinates queried, 91 responses, zero advisory matches on 2026-11-02. 64 NuGet resolved/locked and 27 direct Maven. Not complete Android transitive graph, OS library assessment or full security clearance.",
+    "licenses": "NOTICES/licenses are present; no complete commercial-rights clearance claimed.",
+    "freshAdvisoryQuery": {
+      "date": "2026-11-02T11:00:53.160427+00:00",
+      "inventorySHA256": "852aeeb23faa1a048bd05dbd2a7de76c032d23fcc5a9115a87efade53dd57c9e",
+      "scope": "Only inventoried package names and versions sent to the public OSV API; no source, credentials or account data. Maven direct declarations are not a complete resolved transitive graph.",
+      "endpoint": "https://api.osv.dev/v1/querybatch",
+      "packages": 91,
+      "status": "NO_MATCHES_IN_QUERIED_INVENTORY",
+      "results": [
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.activity:activity-compose",
+          "version": "1.10.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.compose:compose-bom",
+          "version": "2025.08.00",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.core:core-ktx",
+          "version": "1.16.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.datastore:datastore-preferences",
+          "version": "1.1.7",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.fragment:fragment",
+          "version": "1.3.6",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.lifecycle:lifecycle-runtime-ktx",
+          "version": "2.9.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.lifecycle:lifecycle-viewmodel-compose",
+          "version": "2.9.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.navigation:navigation-compose",
+          "version": "2.9.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.room:room-compiler",
+          "version": "2.7.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.room:room-ktx",
+          "version": "2.7.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.room:room-runtime",
+          "version": "2.7.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.room:room-testing",
+          "version": "2.7.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.test.espresso:espresso-core",
+          "version": "3.6.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.test.ext:junit",
+          "version": "1.2.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.test:runner",
+          "version": "1.6.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "androidx.work:work-runtime-ktx",
+          "version": "2.10.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.google.code.gson:gson",
+          "version": "2.11.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "com.google.firebase:firebase-messaging",
+          "version": "25.1.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.activation:jakarta.activation-api",
+          "version": "2.1.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "jakarta.mail:jakarta.mail-api",
+          "version": "2.1.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "junit:junit",
+          "version": "4.13.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.eclipse.angus:angus-activation",
+          "version": "2.0.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.eclipse.angus:angus-mail",
+          "version": "2.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.jetbrains.kotlinx:kotlinx-coroutines-android",
+          "version": "1.10.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+          "version": "1.10.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.jetbrains.kotlinx:kotlinx-coroutines-test",
+          "version": "1.10.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "Maven",
+          "name": "org.jsoup:jsoup",
+          "version": "1.23.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Angle.Windows.Natives",
+          "version": "2.1.25547.20250602",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.BuildServices",
+          "version": "11.3.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Desktop",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.FreeDesktop",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Native",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Remote.Protocol",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Skia",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Themes.Fluent",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.Win32",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Avalonia.X11",
+          "version": "11.3.22",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "BouncyCastle.Cryptography",
+          "version": "2.6.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HarfBuzzSharp",
+          "version": "8.3.1.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HarfBuzzSharp.NativeAssets.Linux",
+          "version": "8.3.1.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HarfBuzzSharp.NativeAssets.WebAssembly",
+          "version": "8.3.1.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HarfBuzzSharp.NativeAssets.Win32",
+          "version": "8.3.1.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HarfBuzzSharp.NativeAssets.macOS",
+          "version": "8.3.1.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "HtmlAgilityPack",
+          "version": "1.13.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Humanizer.Core",
+          "version": "2.14.1",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "MailKit",
+          "version": "4.17.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "MicroCom.Runtime",
+          "version": "0.11.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Build.Framework",
+          "version": "18.0.2",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.Analyzers",
+          "version": "3.11.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.CSharp",
+          "version": "5.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.CSharp.Workspaces",
+          "version": "5.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.Common",
+          "version": "5.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.Workspaces.Common",
+          "version": "5.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.CodeAnalysis.Workspaces.MSBuild",
+          "version": "5.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.EntityFrameworkCore",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.EntityFrameworkCore.Abstractions",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.EntityFrameworkCore.Analyzers",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.EntityFrameworkCore.Design",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.EntityFrameworkCore.Relational",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Caching.Abstractions",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Caching.Memory",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Configuration.Abstractions",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.DependencyInjection",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.DependencyModel",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Logging",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Logging.Abstractions",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Options",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.Extensions.Primitives",
+          "version": "10.0.4",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Microsoft.VisualStudio.SolutionPersistence",
+          "version": "1.0.52",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "MimeKit",
+          "version": "4.17.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Mono.TextTemplating",
+          "version": "3.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Newtonsoft.Json",
+          "version": "13.0.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Npgsql",
+          "version": "10.0.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Npgsql.EntityFrameworkCore.PostgreSQL",
+          "version": "10.0.3",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "SkiaSharp",
+          "version": "2.88.9",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "SkiaSharp.NativeAssets.Linux",
+          "version": "2.88.9",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "SkiaSharp.NativeAssets.WebAssembly",
+          "version": "2.88.9",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "SkiaSharp.NativeAssets.Win32",
+          "version": "2.88.9",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "SkiaSharp.NativeAssets.macOS",
+          "version": "2.88.9",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.CodeDom",
+          "version": "6.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition.AttributedModel",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition.Convention",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition.Hosting",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition.Runtime",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Composition.TypedParts",
+          "version": "9.0.0",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Security.Cryptography.Pkcs",
+          "version": "10.0.13",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "System.Security.Cryptography.ProtectedData",
+          "version": "10.0.12",
+          "advisories": []
+        },
+        {
+          "ecosystem": "NuGet",
+          "name": "Tmds.DBus.Protocol",
+          "version": "0.21.3",
+          "advisories": []
+        }
+      ],
+      "queriesReturned": 91
+    },
+    "freshSAST": {
+      "status": "PARTIAL_EXECUTED_WITH_FINDINGS_AND_PARSER_LIMITS",
+      "scanner": "Semgrep Community Edition",
+      "version": "1.183.0",
+      "engine": "OSS",
+      "exitCode": 1,
+      "configuredVendorSecurityRules": 581,
+      "rulesActuallyRun": 548,
+      "targetsScanned": 258,
+      "findingsCount": 14,
+      "severityCounts": {
+        "INFO": 1,
+        "ERROR": 13
+      },
+      "parserWarnings": 26,
+      "sourceFilesUnchangedAfterScan": true,
+      "evidenceFile": "fresh-sast.json"
+    }
+  },
+  "formalReviewChecklist": [
+    {
+      "topic": "Operator identity and consumer information",
+      "status": "DATA_SOURCE_FOUND; owner-directed local reuse; final publication/current correctness pending",
+      "check": "Existing Lud&Pra legal source contains operator name, address and contact; published=false. Owner directed use of the same local data. Current correctness, applicable DE jurisdiction/offer scope and final publication still require review; do not infer registered legal identity or legal compliance.",
+      "sources": [
+        "https://prawakonsumenta.uokik.gov.pl/pytania-i-odpowiedzi/prawo-do-informacji/",
+        "https://biznes.gov.pl/pl/portal/00146"
+      ],
+      "privateSource": "progresskit-community/src/web/src/legal/legal-documents.json"
+    },
+    {
+      "topic": "Privacy and retention",
+      "status": "PARTIAL / review needed",
+      "check": "Existing technical privacy notice is not a complete formal release gate. Confirm controller identity, processing purposes/bases, retention period or criteria and relevant rights.",
+      "sources": [
+        "https://uodo.gov.pl/pl/676/4260",
+        "https://uodo.gov.pl/pl/493/2254"
+      ]
+    },
+    {
+      "topic": "Licenses, terms, support and billing",
+      "status": "UNKNOWN / review needed",
+      "check": "Bundled third-party notices exist; they do not grant a product license. Confirm product terms, rights/obligations, billing/support scope and client-versus-hosting offer.",
+      "sources": [
+        "ProgressKit Mail/windows/installer/THIRD-PARTY-NOTICES.txt",
+        "ProgressKit Mail/docs/LINUX_PACKAGING.md"
+      ]
+    }
+  ],
+  "safeOfferProposal": {
+    "currentDecision": "Owner-confirmed mail sending/receiving is accepted for this task. Unrestricted client release and hosting SLA still depend on exact client/platform, distribution, operational and formal scope.",
+    "conditionalFirstOffer": "Consider an invitation-only supported pilot of a named/versioned Linux client package after GUI, installation/upgrade/restart, protected local-state handling, safe distribution/update/support and formal gates are closed. Accept OWNER_REPORTED mail service delivery; do not repeat generic SMTP or create a new account in this task. Specify supported providers and exclude unverified Windows/Gmail OAuth and hosting SLA guarantees.",
+    "conditions": [
+      "Respect owner STOP: no further account, IMAP/SMTP, delivery or mail-port tests; no private correspondence or personal-profile access.",
+      "Do not describe unit/synthetic transport results as live deliverability.",
+      "Do not bypass Android Release, password-provider or Google OAuth guards.",
+      "Separate client software from operated mailbox hosting, backup and incident response."
+    ]
+  },
+  "productionActions": "NONE by this child audit",
+  "siblingSourcesModified": false,
+  "limits": [
+    "No product rebuild was performed.",
+    "Concrete Windows/Android native-client, GUI/install/upgrade/restart and backend DB/provider checks remain outside executed evidence. Mail service operation is accepted from OWNER_REPORTED confirmation; further delivery/account/port testing is excluded.",
+    "Formal links are a review checklist based on root official-source research, not legal certification.",
+    "Fresh SAST executed with retained findings and parser coverage limits; no full security clearance. No changes to product source or ignored findings."
+  ],
+  "userConfirmedMailDelivery20261102": {
+    "date": "2026-11-02",
+    "provenance": "OWNER_REPORTED",
+    "statement": "Owner confirms sending/receiving works and required ports are unblocked.",
+    "independentPASS": false,
+    "sourceRevisionAndRuntimeNotIndependentlyCorrelated": true,
+    "furtherAccountMailAndPortTests": "STOP requested explicitly by owner; no more account, IMAP/SMTP or port probes."
+  },
+  "mailServiceScopeDecision": "Owner-confirmed sending/receiving and unblocked ports are accepted as the service state for this task (OWNER_REPORTED). Earlier independent-audit limits do not imply service failure. Further account, IMAP/SMTP, delivery and mail-port testing is excluded.",
+  "scopeAfterOwnerSteering": "No further mail accounts, IMAP/SMTP, test deliveries or mail port probes; owner requested STOP. Continue website/video only.",
+  "operatorSourceObservation": {
+    "observedDate": "2026-11-02",
+    "sourceRepo": "progresskit-community",
+    "sourcePath": "src/web/src/legal/legal-documents.json",
+    "sourceSHA256": "9c391a821e82e738e5f53a3618258aea8f004d27ef71ce56449537e730ddb951",
+    "operatorFieldsPresent": {
+      "name": true,
+      "address": true,
+      "contact": true
+    },
+    "published": false,
+    "ownerDirection": "Use the same operator information as Lud&Pra, locally; final publication remains subject to owner approval.",
+    "gate": "DATA_SOURCE_FOUND; owner-directed local reuse, current correctness and final publication approval pending.",
+    "jurisdiction": "Existing operator source includes address information; root identifies it as Germany. Applicable jurisdiction and offer scope require separate formal review; no legal conclusion.",
+    "privateValuesCopiedIntoThisReport": false
+  },
+  "nativeInterpretation": "22 additional executions: 14 transport tests, 4 notification tests and one native keyring test exercised in four modes. Do not relabel original TRX skips or count keyring modes as four distinct test cases.",
+  "remainingNewTestGates": "11 PostgreSQL tests remain not executed in this bounded task; exact client GUI/install/upgrade/restart, Windows/Android runtime and backend provider/operations are separate gates. Mail operation is accepted as OWNER_REPORTED; no further account/delivery/port tests."
+}

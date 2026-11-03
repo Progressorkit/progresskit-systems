@@ -1,0 +1,4309 @@
+{
+  "startedAt": "2026-11-02T13:26:55.434Z",
+  "mode": "qa",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:360",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 20,
+            "right": 340,
+            "fontSize": 37.62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 18,
+            "right": 342,
+            "fontSize": 36
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 16,
+            "right": 344,
+            "fontSize": 64
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 28,
+            "right": 280.8125,
+            "fontSize": 34
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 45
+          },
+          {
+            "text": "Pomysł",
+            "left": 174.3125,
+            "right": 344,
+            "fontSize": 24
+          },
+          {
+            "text": "Projekt",
+            "left": 174.3125,
+            "right": 344,
+            "fontSize": 24
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 16,
+            "right": 344,
+            "fontSize": 47
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 25,
+            "right": 309,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 51,
+            "right": 335,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 16,
+            "right": 344,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 16,
+            "right": 344,
+            "fontSize": 66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 45
+          },
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 62
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 16,
+            "right": 344,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 16,
+            "right": 344,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 52
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 34,
+            "right": 326,
+            "fontSize": 33
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Core and contact hit targets remain operable",
+      "status": "FAIL",
+      "details": "Error: Target center is obscured [data-capsule-toggle]\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at targetGeometry (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:21:493)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:130\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 145,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 0.9000000059604645,
+            "gpuFrameMs": 2.364416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9226.6,
+                "fps": 31,
+                "cpuFrameMs": 3.199999988079071,
+                "gpuFrameMs": 1.779,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10226.6,
+                "fps": 30,
+                "cpuFrameMs": 3.5,
+                "gpuFrameMs": 5.086583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 15,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 145,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 0.9000000059604645,
+            "gpuFrameMs": 2.364416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9226.6,
+                "fps": 31,
+                "cpuFrameMs": 3.199999988079071,
+                "gpuFrameMs": 1.779,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10226.6,
+                "fps": 30,
+                "cpuFrameMs": 3.5,
+                "gpuFrameMs": 5.086583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 15,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 156,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 0.699999988079071,
+            "gpuFrameMs": 1.761416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9226.6,
+                "fps": 31,
+                "cpuFrameMs": 3.199999988079071,
+                "gpuFrameMs": 1.779,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10226.6,
+                "fps": 30,
+                "cpuFrameMs": 3.5,
+                "gpuFrameMs": 5.086583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 36,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 29,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 156,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 0.699999988079071,
+            "gpuFrameMs": 1.761416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9226.6,
+                "fps": 31,
+                "cpuFrameMs": 3.199999988079071,
+                "gpuFrameMs": 1.779,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10226.6,
+                "fps": 30,
+                "cpuFrameMs": 3.5,
+                "gpuFrameMs": 5.086583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 36,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 29,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 844
+        },
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "buffer": {
+          "width": 216,
+          "height": 506
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 82,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 82,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 82,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 82,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 82,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "FAIL",
+      "details": "Error: Global resume does not restart decorative material\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:680\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async luxuryChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:42:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 94,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 94,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 24,
+            "right": 366,
+            "fontSize": 40.755
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 18,
+            "right": 372,
+            "fontSize": 36.66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 16,
+            "right": 374,
+            "fontSize": 64
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 28,
+            "right": 312.1875,
+            "fontSize": 38.22
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 46.8
+          },
+          {
+            "text": "Pomysł",
+            "left": 187.515625,
+            "right": 374,
+            "fontSize": 24
+          },
+          {
+            "text": "Projekt",
+            "left": 187.515625,
+            "right": 374,
+            "fontSize": 24
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 16,
+            "right": 369.046875,
+            "fontSize": 47
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 25,
+            "right": 339,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 51,
+            "right": 365,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 16,
+            "right": 374,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 16,
+            "right": 374,
+            "fontSize": 66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 45
+          },
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 16,
+            "right": 374,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 16,
+            "right": 374,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 52
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 39,
+            "right": 351,
+            "fontSize": 33
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Core and contact hit targets remain operable",
+      "status": "FAIL",
+      "details": "Error: Target center is obscured [data-capsule-toggle]\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at targetGeometry (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:21:493)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:130\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 136,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 1,
+            "gpuFrameMs": 6.146166,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9145.6,
+                "fps": 30.968740927126674,
+                "cpuFrameMs": 2.5,
+                "gpuFrameMs": 5.230416,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10145.6,
+                "fps": 30,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 4.997583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 15,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 136,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 1,
+            "gpuFrameMs": 6.146166,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9145.6,
+                "fps": 30.968740927126674,
+                "cpuFrameMs": 2.5,
+                "gpuFrameMs": 5.230416,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10145.6,
+                "fps": 30,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 4.997583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 15,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 144,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 1.4000000059604645,
+            "gpuFrameMs": 1.988416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9145.6,
+                "fps": 30.968740927126674,
+                "cpuFrameMs": 2.5,
+                "gpuFrameMs": 5.230416,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10145.6,
+                "fps": 30,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 4.997583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 36,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 144,
+            "quality": 0,
+            "fps": 30,
+            "cpuFrameMs": 1.4000000059604645,
+            "gpuFrameMs": 1.988416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 26,
+            "triangles": 10756,
+            "geometries": 87,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 30,
+            "coronaRoots": 16,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.5,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            },
+            "samples": [
+              {
+                "t": 9145.6,
+                "fps": 30.968740927126674,
+                "cpuFrameMs": 2.5,
+                "gpuFrameMs": 5.230416,
+                "drawCalls": 19,
+                "triangles": 9676,
+                "dpr": 0.85
+              },
+              {
+                "t": 10145.6,
+                "fps": 30,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 4.997583,
+                "drawCalls": 21,
+                "triangles": 9896,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 36,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 234,
+          "height": 506
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 81,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 81,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 81,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 81,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 81,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "FAIL",
+      "details": "Error: Global resume does not restart decorative material\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:680\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async luxuryChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:42:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 92,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 92,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 46.078125,
+            "right": 552.953125,
+            "fontSize": 55.296
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 32,
+            "right": 418.140625,
+            "fontSize": 40
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 15,
+            "right": 753,
+            "fontSize": 67.584
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 39.3125,
+            "right": 351.609375,
+            "fontSize": 39
+          },
+          {
+            "text": "Dla firmy /\nsystemu",
+            "left": 405.0625,
+            "right": 717.359375,
+            "fontSize": 39
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 15,
+            "right": 753,
+            "fontSize": 56
+          },
+          {
+            "text": "Pomysł",
+            "left": 101.046875,
+            "right": 174.9375,
+            "fontSize": 23
+          },
+          {
+            "text": "Projekt",
+            "left": 348.234375,
+            "right": 419.765625,
+            "fontSize": 23
+          },
+          {
+            "text": "Budowa",
+            "left": 588.1875,
+            "right": 671.796875,
+            "fontSize": 23
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 15,
+            "right": 559.59375,
+            "fontSize": 58
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 36,
+            "right": 706,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 62,
+            "right": 732,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 15,
+            "right": 409.359375,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 44,
+            "right": 233,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 290,
+            "right": 479,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 536,
+            "right": 725,
+            "fontSize": 21
+          },
+          {
+            "text": "O mnie",
+            "left": 15,
+            "right": 448.125,
+            "fontSize": 66
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 529.125,
+            "right": 753,
+            "fontSize": 28
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 15,
+            "right": 448.125,
+            "fontSize": 66
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 529.125,
+            "right": 753,
+            "fontSize": 28
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 15,
+            "right": 544.5625,
+            "fontSize": 47
+          },
+          {
+            "text": "Warsztat.",
+            "left": 15,
+            "right": 597.15625,
+            "fontSize": 62
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 15,
+            "right": 359,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 409,
+            "right": 753,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 15,
+            "right": 597.15625,
+            "fontSize": 62
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 15,
+            "right": 359,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 409,
+            "right": 753,
+            "fontSize": 14
+          },
+          {
+            "text": "DANE I BEZPIECZEŃSTWO",
+            "left": 15,
+            "right": 359,
+            "fontSize": 14
+          },
+          {
+            "text": "INFRASTRUKTURA I WDROŻENIA",
+            "left": 409,
+            "right": 753,
+            "fontSize": 14
+          },
+          {
+            "text": "JĘZYKI I NARZĘDZIA",
+            "left": 15,
+            "right": 359,
+            "fontSize": 14
+          },
+          {
+            "text": "INNE",
+            "left": 409,
+            "right": 753,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 15,
+            "right": 454.75,
+            "fontSize": 63.744
+          },
+          {
+            "text": "Opisz swój projekt",
+            "left": 54.390625,
+            "right": 260.296875,
+            "fontSize": 30
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 54.390625,
+            "right": 260.296875,
+            "fontSize": 30
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Core and contact hit targets remain operable",
+      "status": "FAIL",
+      "details": "Error: Target center is obscured [data-capsule-toggle]\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at targetGeometry (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:21:493)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:130\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 275,
+            "quality": 0,
+            "fps": 60.00393468424168,
+            "cpuFrameMs": 1.5,
+            "gpuFrameMs": 9.331,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            },
+            "samples": [
+              {
+                "t": 10475.1,
+                "fps": 59.99400059993999,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 5.521249,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 11491.7,
+                "fps": 60.00393468424157,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 7.420583,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 12508.3,
+                "fps": 60.00393468424168,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.443832,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 16,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 275,
+            "quality": 0,
+            "fps": 60.00393468424168,
+            "cpuFrameMs": 1.5,
+            "gpuFrameMs": 9.331,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            },
+            "samples": [
+              {
+                "t": 10475.1,
+                "fps": 59.99400059993999,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 5.521249,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 11491.7,
+                "fps": 60.00393468424157,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 7.420583,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 12508.3,
+                "fps": 60.00393468424168,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.443832,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 16,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 286,
+            "quality": 0,
+            "fps": 60.00393468424168,
+            "cpuFrameMs": 4.699999988079071,
+            "gpuFrameMs": 4.829083,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            },
+            "samples": [
+              {
+                "t": 10475.1,
+                "fps": 59.99400059993999,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 5.521249,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 11491.7,
+                "fps": 60.00393468424157,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 7.420583,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 12508.3,
+                "fps": 60.00393468424168,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.443832,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 41,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 29,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 286,
+            "quality": 0,
+            "fps": 60.00393468424168,
+            "cpuFrameMs": 4.699999988079071,
+            "gpuFrameMs": 4.829083,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            },
+            "samples": [
+              {
+                "t": 10475.1,
+                "fps": 59.99400059993999,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 5.521249,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 11491.7,
+                "fps": 60.00393468424157,
+                "cpuFrameMs": 1,
+                "gpuFrameMs": 7.420583,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 12508.3,
+                "fps": 60.00393468424168,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.443832,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 41,
+            "drawCalls": 16,
+            "triangles": 11892,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 2,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 29,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1000
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1000
+        },
+        "buffer": {
+          "width": 323,
+          "height": 420
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 96,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 96,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 96,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 96,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 96,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "FAIL",
+      "details": "Error: Global resume does not restart decorative material\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:680\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async luxuryChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:30:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:42:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 97,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 97,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 86.390625,
+            "right": 921.59375,
+            "fontSize": 92.88
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 60,
+            "right": 840,
+            "fontSize": 72
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 126.72
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 148.8125,
+            "right": 621.28125,
+            "fontSize": 59
+          },
+          {
+            "text": "Dla firmy /\nsystemu",
+            "left": 795.59375,
+            "right": 1268.0625,
+            "fontSize": 59
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 103.68
+          },
+          {
+            "text": "Pomysł",
+            "left": 266.125,
+            "right": 365.703125,
+            "fontSize": 31
+          },
+          {
+            "text": "Projekt",
+            "left": 671.78125,
+            "right": 768.203125,
+            "fontSize": 31
+          },
+          {
+            "text": "Budowa",
+            "left": 1067.734375,
+            "right": 1180.421875,
+            "fontSize": 31
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 100,
+            "right": 1038.953125,
+            "fontSize": 100
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 113.390625,
+            "right": 470.984375,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 993.8125,
+            "right": 1326.609375,
+            "fontSize": 16
+          },
+          {
+            "text": "Local AI Agents\nPlanowane",
+            "left": 101,
+            "right": 409,
+            "fontSize": 16
+          },
+          {
+            "text": "Voice Gateway\nPlanowane",
+            "left": 1031,
+            "right": 1339,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 100,
+            "right": 757.265625,
+            "fontSize": 70
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 129,
+            "right": 485.328125,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 542.328125,
+            "right": 898.65625,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 955.65625,
+            "right": 1312,
+            "fontSize": 21
+          },
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 954.1875,
+            "right": 1282.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 954.1875,
+            "right": 1282.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 100,
+            "right": 1046.46875,
+            "fontSize": 84
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 590.140625,
+            "right": 940.0625,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 990.0625,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "DANE I BEZPIECZEŃSTWO",
+            "left": 590.140625,
+            "right": 940.0625,
+            "fontSize": 14
+          },
+          {
+            "text": "INFRASTRUKTURA I WDROŻENIA",
+            "left": 990.0625,
+            "right": 1340,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 100,
+            "right": 503.75,
+            "fontSize": 100
+          },
+          {
+            "text": "KLIENCI I INTERFEJSY",
+            "left": 590.140625,
+            "right": 940.0625,
+            "fontSize": 14
+          },
+          {
+            "text": "BACKEND I KOMUNIKACJA",
+            "left": 990.0625,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "DANE I BEZPIECZEŃSTWO",
+            "left": 590.140625,
+            "right": 940.0625,
+            "fontSize": 14
+          },
+          {
+            "text": "INFRASTRUKTURA I WDROŻENIA",
+            "left": 990.0625,
+            "right": 1340,
+            "fontSize": 14
+          },
+          {
+            "text": "JĘZYKI I NARZĘDZIA",
+            "left": 590.140625,
+            "right": 940.0625,
+            "fontSize": 14
+          },
+          {
+            "text": "INNE",
+            "left": 990.0625,
+            "right": 1340,
+            "fontSize": 14
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 100,
+            "right": 831.125,
+            "fontSize": 118
+          },
+          {
+            "text": "Opisz swój projekt",
+            "left": 181.40625,
+            "right": 504,
+            "fontSize": 47
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 181.40625,
+            "right": 504,
+            "fontSize": 47
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Desktop GPU iteration sample without recording",
+      "status": "PASS",
+      "details": {
+        "gpu": {
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)"
+        },
+        "frames": 118,
+        "elapsedSeconds": 2.2221999999880793,
+        "observedFPS": 53.1005310055949,
+        "before": {
+          "time": 14238.59999999404,
+          "revision": "187",
+          "frames": 232,
+          "quality": 0,
+          "fps": 51.155927201180525,
+          "cpuFrameMs": 2.800000011920929,
+          "gpuFrameMs": 9.504832,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 53,
+          "triangles": 18232,
+          "geometries": 90,
+          "textures": 28,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "samples": [
+            {
+              "t": 11073.7,
+              "fps": 51.15250529231684,
+              "cpuFrameMs": 2.4000000059604645,
+              "gpuFrameMs": 5.874499,
+              "drawCalls": 29,
+              "triangles": 16792,
+              "dpr": 0.85
+            },
+            {
+              "t": 12073.7,
+              "fps": 49,
+              "cpuFrameMs": 2.800000011920929,
+              "gpuFrameMs": 6.168166,
+              "drawCalls": 36,
+              "triangles": 17610,
+              "dpr": 0.85
+            },
+            {
+              "t": 13090.2,
+              "fps": 51.155927201180525,
+              "cpuFrameMs": 7.800000011920929,
+              "gpuFrameMs": 9.621166,
+              "drawCalls": 53,
+              "triangles": 18232,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true
+        },
+        "after": {
+          "time": 16460.79999998212,
+          "revision": "187",
+          "frames": 350,
+          "quality": 0,
+          "fps": 51.150895140665035,
+          "cpuFrameMs": 3,
+          "gpuFrameMs": 7.338583,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 53,
+          "triangles": 18232,
+          "geometries": 90,
+          "textures": 28,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "samples": [
+            {
+              "t": 11073.7,
+              "fps": 51.15250529231684,
+              "cpuFrameMs": 2.4000000059604645,
+              "gpuFrameMs": 5.874499,
+              "drawCalls": 29,
+              "triangles": 16792,
+              "dpr": 0.85
+            },
+            {
+              "t": 12073.7,
+              "fps": 49,
+              "cpuFrameMs": 2.800000011920929,
+              "gpuFrameMs": 6.168166,
+              "drawCalls": 36,
+              "triangles": 17610,
+              "dpr": 0.85
+            },
+            {
+              "t": 13090.2,
+              "fps": 51.155927201180525,
+              "cpuFrameMs": 7.800000011920929,
+              "gpuFrameMs": 9.621166,
+              "drawCalls": 53,
+              "triangles": 18232,
+              "dpr": 0.85
+            },
+            {
+              "t": 14590.2,
+              "fps": 49.18345625918497,
+              "cpuFrameMs": 4.0999999940395355,
+              "gpuFrameMs": 7.759333,
+              "drawCalls": 53,
+              "triangles": 18232,
+              "dpr": 0.85
+            },
+            {
+              "t": 15606.8,
+              "fps": 51.150895140665035,
+              "cpuFrameMs": 4.0999999940395355,
+              "gpuFrameMs": 7.2355,
+              "drawCalls": 56,
+              "triangles": 19088,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true
+        },
+        "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Core and contact hit targets remain operable",
+      "status": "FAIL",
+      "details": "Error: Target center is obscured [data-capsule-toggle]\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:10:34)\n    at targetGeometry (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:21:493)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:130\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:14:55)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:39:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:57:107)"
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 389,
+            "quality": 0,
+            "fps": 53,
+            "cpuFrameMs": 1.7000000178813934,
+            "gpuFrameMs": 7.17025,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            },
+            "samples": [
+              {
+                "t": 11073.7,
+                "fps": 51.15250529231684,
+                "cpuFrameMs": 2.4000000059604645,
+                "gpuFrameMs": 5.874499,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 12073.7,
+                "fps": 49,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 6.168166,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 13090.2,
+                "fps": 51.155927201180525,
+                "cpuFrameMs": 7.800000011920929,
+                "gpuFrameMs": 9.621166,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 14590.2,
+                "fps": 49.18345625918497,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.759333,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15606.8,
+                "fps": 51.150895140665035,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.2355,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              },
+              {
+                "t": 16606.8,
+                "fps": 53,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.084666,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 16,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 389,
+            "quality": 0,
+            "fps": 53,
+            "cpuFrameMs": 1.7000000178813934,
+            "gpuFrameMs": 7.17025,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            },
+            "samples": [
+              {
+                "t": 11073.7,
+                "fps": 51.15250529231684,
+                "cpuFrameMs": 2.4000000059604645,
+                "gpuFrameMs": 5.874499,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 12073.7,
+                "fps": 49,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 6.168166,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 13090.2,
+                "fps": 51.155927201180525,
+                "cpuFrameMs": 7.800000011920929,
+                "gpuFrameMs": 9.621166,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 14590.2,
+                "fps": 49.18345625918497,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.759333,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15606.8,
+                "fps": 51.150895140665035,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.2355,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              },
+              {
+                "t": 16606.8,
+                "fps": 53,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.084666,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 16,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "revision": "187",
+            "frames": 401,
+            "quality": 0,
+            "fps": 53,
+            "cpuFrameMs": 1.5,
+            "gpuFrameMs": 10.566416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            },
+            "samples": [
+              {
+                "t": 11073.7,
+                "fps": 51.15250529231684,
+                "cpuFrameMs": 2.4000000059604645,
+                "gpuFrameMs": 5.874499,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 12073.7,
+                "fps": 49,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 6.168166,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 13090.2,
+                "fps": 51.155927201180525,
+                "cpuFrameMs": 7.800000011920929,
+                "gpuFrameMs": 9.621166,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 14590.2,
+                "fps": 49.18345625918497,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.759333,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15606.8,
+                "fps": 51.150895140665035,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.2355,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              },
+              {
+                "t": 16606.8,
+                "fps": 53,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.084666,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 41,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        },
+        "after": {
+          "showroom": {
+            "revision": "187",
+            "frames": 401,
+            "quality": 0,
+            "fps": 53,
+            "cpuFrameMs": 1.5,
+            "gpuFrameMs": 10.566416,
+            "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+            "drawCalls": 56,
+            "triangles": 19088,
+            "geometries": 90,
+            "textures": 28,
+            "rafPending": false,
+            "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+            "vendor": "Google Inc. (Intel)",
+            "filaments": 72,
+            "coronaRoots": 48,
+            "dpr": 0.85,
+            "transmissionResolutionScale": 0.65,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            },
+            "samples": [
+              {
+                "t": 11073.7,
+                "fps": 51.15250529231684,
+                "cpuFrameMs": 2.4000000059604645,
+                "gpuFrameMs": 5.874499,
+                "drawCalls": 29,
+                "triangles": 16792,
+                "dpr": 0.85
+              },
+              {
+                "t": 12073.7,
+                "fps": 49,
+                "cpuFrameMs": 2.800000011920929,
+                "gpuFrameMs": 6.168166,
+                "drawCalls": 36,
+                "triangles": 17610,
+                "dpr": 0.85
+              },
+              {
+                "t": 13090.2,
+                "fps": 51.155927201180525,
+                "cpuFrameMs": 7.800000011920929,
+                "gpuFrameMs": 9.621166,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 14590.2,
+                "fps": 49.18345625918497,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.759333,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              },
+              {
+                "t": 15606.8,
+                "fps": 51.150895140665035,
+                "cpuFrameMs": 4.0999999940395355,
+                "gpuFrameMs": 7.2355,
+                "drawCalls": 56,
+                "triangles": 19088,
+                "dpr": 0.85
+              },
+              {
+                "t": 16606.8,
+                "fps": 53,
+                "cpuFrameMs": 4.5,
+                "gpuFrameMs": 7.084666,
+                "drawCalls": 53,
+                "triangles": 18232,
+                "dpr": 0.85
+              }
+            ],
+            "phases": [
+              {
+                "id": "glikemia-premium",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-mail",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-translator",
+                "phase": "ready"
+              },
+              {
+                "id": "vaeloria",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-community",
+                "phase": "ready"
+              },
+              {
+                "id": "progresskit-tax",
+                "phase": "ready"
+              }
+            ],
+            "camera": "PerspectiveCamera",
+            "depth": true
+          },
+          "services": {
+            "frames": 41,
+            "drawCalls": 1,
+            "triangles": 2,
+            "disposed": false,
+            "geometries": 11,
+            "textures": 5,
+            "rafPending": false,
+            "objects": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "progress": 1,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            },
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "buffer": {
+          "width": 600,
+          "height": 417
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 119,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 119,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 119,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 119,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 119,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 126,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 126,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 134,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 142,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 142,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Actual WebGL context loss hides atmosphere and restores safely",
+      "status": "PASS",
+      "details": {
+        "lost": {
+          "hidden": true,
+          "display": "none",
+          "metrics": {
+            "frames": 152,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": true,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "context-lost"
+          }
+        },
+        "restored": {
+          "hidden": false,
+          "display": "block",
+          "metrics": {
+            "frames": 160,
+            "rafPending": true,
+            "timerPending": true,
+            "present": true,
+            "suspendedHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      }
+    },
+    {
+      "scope": "fallback",
+      "name": "No-WebGL content and project disclosure remain usable",
+      "status": "PASS",
+      "details": {
+        "renderer": "forced-no-webgl",
+        "atmosphere": {
+          "hidden": true,
+          "display": "none",
+          "renderer": "fallback"
+        },
+        "content": "usable",
+        "physicalDevice": "NOT_RUN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "fallback-390-services.png",
+      "sha256": "f99c6744495588944ea1b3332dac6119068d3e3117ba2303c464f659cf0d2513",
+      "kind": "actual-browser-screenshot"
+    }
+  ],
+  "performance": [
+    {
+      "gpu": {
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)"
+      },
+      "frames": 118,
+      "elapsedSeconds": 2.2221999999880793,
+      "observedFPS": 53.1005310055949,
+      "before": {
+        "time": 14238.59999999404,
+        "revision": "187",
+        "frames": 232,
+        "quality": 0,
+        "fps": 51.155927201180525,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 9.504832,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 53,
+        "triangles": 18232,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 11073.7,
+            "fps": 51.15250529231684,
+            "cpuFrameMs": 2.4000000059604645,
+            "gpuFrameMs": 5.874499,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 12073.7,
+            "fps": 49,
+            "cpuFrameMs": 2.800000011920929,
+            "gpuFrameMs": 6.168166,
+            "drawCalls": 36,
+            "triangles": 17610,
+            "dpr": 0.85
+          },
+          {
+            "t": 13090.2,
+            "fps": 51.155927201180525,
+            "cpuFrameMs": 7.800000011920929,
+            "gpuFrameMs": 9.621166,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      },
+      "after": {
+        "time": 16460.79999998212,
+        "revision": "187",
+        "frames": 350,
+        "quality": 0,
+        "fps": 51.150895140665035,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 7.338583,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 53,
+        "triangles": 18232,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 11073.7,
+            "fps": 51.15250529231684,
+            "cpuFrameMs": 2.4000000059604645,
+            "gpuFrameMs": 5.874499,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 12073.7,
+            "fps": 49,
+            "cpuFrameMs": 2.800000011920929,
+            "gpuFrameMs": 6.168166,
+            "drawCalls": 36,
+            "triangles": 17610,
+            "dpr": 0.85
+          },
+          {
+            "t": 13090.2,
+            "fps": 51.155927201180525,
+            "cpuFrameMs": 7.800000011920929,
+            "gpuFrameMs": 9.621166,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          },
+          {
+            "t": 14590.2,
+            "fps": 49.18345625918497,
+            "cpuFrameMs": 4.0999999940395355,
+            "gpuFrameMs": 7.759333,
+            "drawCalls": 53,
+            "triangles": 18232,
+            "dpr": 0.85
+          },
+          {
+            "t": 15606.8,
+            "fps": 51.150895140665035,
+            "cpuFrameMs": 4.0999999940395355,
+            "gpuFrameMs": 7.2355,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      },
+      "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "PASS": 81,
+  "FAIL": 7,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "finishedAt": "2026-11-02T13:28:45.187Z",
+  "status": "FAIL",
+  "evidenceClassification": "PRE_FINAL_READ_ONLY_QA_WITH_HARNESS_FAILURES_RETAINED",
+  "annotations": [
+    {
+      "checks": "Core and contact hit targets remain operable; Chrome360/390/768/1440",
+      "originalStatus": "FAIL",
+      "cause": "The keyboard-only core proxy intentionally has pointer-events:none; production pointer input uses a Canvas raycast. The harness incorrectly required the proxy itself to win elementFromPoint.",
+      "resolutionEvidence": "lifecycle-chrome-360-390-768-1440-report.json: Core raycast and contact hit targets remain operable; actual mouse/touch activation verified."
+    },
+    {
+      "checks": "Existing global motion control pauses and resumes luxury renderer; Chrome360/390/768",
+      "originalStatus": "FAIL",
+      "cause": "Clicking the hero control can scroll part of Showroom into view. The atmosphere correctly suspends beneath the heavy scene; the harness incorrectly expected frames during that suspension.",
+      "resolutionEvidence": "lifecycle-chrome-360-390-768-1440-report.json; the remaining768 setup is verified separately in lifecycle-chrome-768-global-resume-report.json."
+    },
+    {
+      "scope": "freeze",
+      "note": "Root changed decorative shader portability and forced-colors lifecycle during this pre-final run. Only unaffected content/geometry/keyboard/renderer checks are reused; all decorative lifecycle checks have current-source evidence."
+    }
+  ]
+}

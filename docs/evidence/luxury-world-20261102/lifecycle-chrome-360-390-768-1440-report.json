@@ -1,0 +1,1423 @@
+{
+  "startedAt": "2026-11-02T13:30:20.388Z",
+  "mode": "lifecycle",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:360",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 180,
+            "y": 335.296875
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "touch"
+        },
+        "contact": {
+          "width": 205.046875,
+          "height": 56.5,
+          "center": {
+            "x": 118.5234375,
+            "y": 475.140625
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": true
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 844
+        },
+        "viewport": {
+          "width": 360,
+          "height": 844
+        },
+        "buffer": {
+          "width": 216,
+          "height": 506
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 18,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 19,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 19,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 19,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 19,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 216,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 25,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 25,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 35,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 41,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 41,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 48,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 48,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 58,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 216,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 195,
+            "y": 335.875
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "touch"
+        },
+        "contact": {
+          "width": 232.5625,
+          "height": 60.1875,
+          "center": {
+            "x": 132.28125,
+            "y": 477.09375
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": true
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 844
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 234,
+          "height": 506
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 17,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 17,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 17,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 17,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 17,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 234,
+              "height": 506
+            },
+            "fpsLimit": 12,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 22,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 22,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 31,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 37,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 37,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 44,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 44,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 54,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 234,
+            "height": 506
+          },
+          "fpsLimit": 12,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 384,
+            "y": 431.359375
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "mouse"
+        },
+        "contact": {
+          "width": 236.046875,
+          "height": 60.671875,
+          "center": {
+            "x": 133.0234375,
+            "y": 533.8671875
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": false
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1000
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1000
+        },
+        "buffer": {
+          "width": 323,
+          "height": 420
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 7,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 7,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 7,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 7,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 7,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 323,
+              "height": 420
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "FAIL",
+      "details": "Error: Global resume does not restart decorative material\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:31:704\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:15:55)\n    at async luxuryChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:31:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:38:61)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/luxury-world-20261102/browser-proof.cjs:61:161)"
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 8,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 8,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 9,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 9,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 10,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 323,
+            "height": 420
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 720,
+            "y": 528.9375
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "mouse"
+        },
+        "contact": {
+          "width": 419.40625,
+          "height": 85.25,
+          "center": {
+            "x": 309.703125,
+            "y": 659.109375
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": false
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury atmosphere covers viewport with bounded render buffer",
+      "status": "PASS",
+      "details": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "buffer": {
+          "width": 600,
+          "height": 417
+        },
+        "ariaHidden": "true",
+        "pointerEvents": "none",
+        "metrics": {
+          "frames": 23,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury atmosphere suspends under both heavy product scenes",
+      "status": "PASS",
+      "details": [
+        {
+          "selector": "[data-showroom-viewport]",
+          "before": {
+            "frames": 24,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 24,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        },
+        {
+          "selector": "#uslugi",
+          "before": {
+            "frames": 24,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          },
+          "after": {
+            "frames": 24,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": true,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Existing global motion control pauses and resumes luxury renderer",
+      "status": "PASS",
+      "details": {
+        "pausedBefore": {
+          "frames": 32,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "pausedAfter": {
+          "frames": 32,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 45,
+          "rafPending": true,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Luxury reduced motion is still with no queued RAF or timer",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 53,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 53,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": true,
+          "forcedColors": false,
+          "paused": true,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Forced colors hides luxury canvas and stops RAF/timer, then resumes",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 62,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "after": {
+          "frames": 62,
+          "rafPending": false,
+          "timerPending": false,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": true,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        },
+        "resumed": {
+          "frames": 77,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 600,
+            "height": 417
+          },
+          "fpsLimit": 18,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Actual WebGL context loss hides atmosphere and restores safely",
+      "status": "PASS",
+      "details": {
+        "lost": {
+          "hidden": true,
+          "display": "none",
+          "metrics": {
+            "frames": 85,
+            "rafPending": false,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": true,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "context-lost"
+          }
+        },
+        "restored": {
+          "hidden": false,
+          "display": "block",
+          "metrics": {
+            "frames": 93,
+            "rafPending": true,
+            "timerPending": true,
+            "present": true,
+            "suspendedHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 600,
+              "height": 417
+            },
+            "fpsLimit": 18,
+            "renderer": "webgl2"
+          }
+        }
+      }
+    },
+    {
+      "scope": "fallback",
+      "name": "No-WebGL content and project disclosure remain usable",
+      "status": "PASS",
+      "details": {
+        "renderer": "forced-no-webgl",
+        "atmosphere": {
+          "hidden": true,
+          "display": "none",
+          "renderer": "fallback"
+        },
+        "content": "usable",
+        "physicalDevice": "NOT_RUN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 14
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "fallback-390-services.png",
+      "sha256": "f99c6744495588944ea1b3332dac6119068d3e3117ba2303c464f659cf0d2513",
+      "kind": "actual-browser-screenshot"
+    }
+  ],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "PASS": 27,
+  "FAIL": 1,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "249c9a60fabf34ed6cb7cecfe75f39df4c2d05962fe998a0e9bd014ebf4d65c4",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "finishedAt": "2026-11-02T13:31:26.002Z",
+  "status": "FAIL",
+  "annotations": [
+    {
+      "scope": "chrome:768",
+      "check": "Existing global motion control pauses and resumes luxury renderer",
+      "originalStatus": "FAIL",
+      "cause": "Hero900px + topbar78px in1000px viewport exposes22px of Showroom, so heavy-scene suspension correctly prevents decorative frames.",
+      "resolutionEvidence": "lifecycle-chrome-768-global-resume-report.json: actual global pause/resume measured in About, outside heavy scenes, PASS."
+    }
+  ]
+}

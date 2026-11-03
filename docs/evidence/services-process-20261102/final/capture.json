@@ -1,0 +1,1005 @@
+{
+  "checks": [
+    {
+      "name": "Services and Process form a direct transition",
+      "status": "PASS",
+      "details": {
+        "ids": [
+          "start",
+          "projekty",
+          "uslugi",
+          "proces",
+          "ekosystem",
+          "wydania",
+          "o-mnie",
+          "wyzwania",
+          "technologie",
+          "kontakt"
+        ],
+        "intervening": []
+      }
+    },
+    {
+      "name": "Services hover activates first object",
+      "status": "PASS",
+      "details": {
+        "active": true,
+        "className": "service-zone service-zone--personal world-surface is-spatial-active",
+        "data": {
+          "worldVisible": "true"
+        },
+        "sectionData": {
+          "worldVisible": "true",
+          "spatialMotion": "running",
+          "serviceRenderer": "webgl2",
+          "spatialActive": "0"
+        }
+      }
+    },
+    {
+      "name": "Scroll activates original Process stages",
+      "status": "PASS",
+      "details": [
+        {
+          "t": 7776.200000017881,
+          "scrollY": 2553,
+          "progress": "0",
+          "stages": [
+            {
+              "id": "idea"
+            },
+            {
+              "id": "design"
+            },
+            {
+              "id": "build"
+            },
+            {
+              "id": "test"
+            },
+            {
+              "id": "security"
+            },
+            {
+              "id": "deploy"
+            }
+          ]
+        },
+        {
+          "t": 15598.200000017881,
+          "scrollY": 3024,
+          "progress": "0",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "pending"
+            },
+            {
+              "id": "design",
+              "state": "pending"
+            },
+            {
+              "id": "build",
+              "state": "pending"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "t": 16287.800000011921,
+          "scrollY": 3311,
+          "progress": "0.0004",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "active"
+            },
+            {
+              "id": "design",
+              "state": "pending"
+            },
+            {
+              "id": "build",
+              "state": "pending"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "t": 16719.80000001192,
+          "scrollY": 3468,
+          "progress": "0.1768",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "active"
+            },
+            {
+              "id": "build",
+              "state": "pending"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "t": 17282.80000001192,
+          "scrollY": 3615,
+          "progress": "0.342",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "complete"
+            },
+            {
+              "id": "build",
+              "state": "active"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "t": 18405.30000001192,
+          "scrollY": 3763,
+          "progress": "0.5083",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "complete"
+            },
+            {
+              "id": "build",
+              "state": "complete"
+            },
+            {
+              "id": "test",
+              "state": "active"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "t": 18855.80000001192,
+          "scrollY": 3907,
+          "progress": "0.67",
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "complete"
+            },
+            {
+              "id": "build",
+              "state": "complete"
+            },
+            {
+              "id": "test",
+              "state": "complete"
+            },
+            {
+              "id": "security",
+              "state": "active"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Six original Process stages retained",
+      "status": "PASS",
+      "details": [
+        {
+          "id": "idea",
+          "title": "Pomysł",
+          "state": "complete"
+        },
+        {
+          "id": "design",
+          "title": "Projekt",
+          "state": "complete"
+        },
+        {
+          "id": "build",
+          "title": "Budowa",
+          "state": "complete"
+        },
+        {
+          "id": "test",
+          "title": "Testy",
+          "state": "complete"
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "state": "active"
+        },
+        {
+          "id": "deploy",
+          "title": "Wdrożenie",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "name": "Original Services copy remains readable",
+      "status": "PASS",
+      "details": "USŁUGI 01 Dla Ciebie / małego biznesu Strony · sklepy · aplikacje Aplikacje mobilne Platformy internetowe Gry i 3D 02 Dla firmy / systemu Backend .NET i API SaaS i bazy danych Infrastruktura Testy i wdrożenia Automatyzacja i integracje C# .NET ASP.NET Core PostgreSQL Android POROZMAWIAJMY O PROJEKCIE → PRZEDSTAW SWÓJ POMYSŁ ↓"
+    },
+    {
+      "name": "Seven original link targets and accessible names retained",
+      "status": "PASS",
+      "details": [
+        {
+          "text": "C#",
+          "href": "projekty/?technologia=C%23",
+          "visible": true
+        },
+        {
+          "text": ".NET",
+          "href": "projekty/?technologia=.NET",
+          "visible": true
+        },
+        {
+          "text": "ASP.NET Core",
+          "href": "projekty/?technologia=ASP.NET%20Core",
+          "visible": true
+        },
+        {
+          "text": "PostgreSQL",
+          "href": "projekty/?technologia=PostgreSQL",
+          "visible": true
+        },
+        {
+          "text": "Android",
+          "href": "projekty/?technologia=Android",
+          "visible": true
+        },
+        {
+          "text": "Porozmawiajmy o projekcie →",
+          "href": "#kontakt",
+          "visible": true
+        },
+        {
+          "text": "Przedstaw swój pomysł ↓",
+          "href": "#brief",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "No horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "scrollWidth": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "Decorative Services canvas stays outside accessibility tree",
+      "status": "PASS",
+      "details": [
+        {
+          "hidden": true,
+          "tabindex": null
+        }
+      ]
+    },
+    {
+      "name": "Original CTA remains keyboard focusable",
+      "status": "PASS"
+    },
+    {
+      "name": "Original Services copy remains readable",
+      "status": "PASS",
+      "details": "USŁUGI 01 Dla Ciebie / małego biznesu Strony · sklepy · aplikacje Aplikacje mobilne Platformy internetowe Gry i 3D 02 Dla firmy / systemu Backend .NET i API SaaS i bazy danych Infrastruktura Testy i wdrożenia Automatyzacja i integracje C# .NET ASP.NET Core PostgreSQL Android POROZMAWIAJMY O PROJEKCIE → PRZEDSTAW SWÓJ POMYSŁ ↓"
+    },
+    {
+      "name": "Seven original link targets and accessible names retained",
+      "status": "PASS",
+      "details": [
+        {
+          "text": "C#",
+          "href": "projekty/?technologia=C%23",
+          "visible": true
+        },
+        {
+          "text": ".NET",
+          "href": "projekty/?technologia=.NET",
+          "visible": true
+        },
+        {
+          "text": "ASP.NET Core",
+          "href": "projekty/?technologia=ASP.NET%20Core",
+          "visible": true
+        },
+        {
+          "text": "PostgreSQL",
+          "href": "projekty/?technologia=PostgreSQL",
+          "visible": true
+        },
+        {
+          "text": "Android",
+          "href": "projekty/?technologia=Android",
+          "visible": true
+        },
+        {
+          "text": "Porozmawiajmy o projekcie →",
+          "href": "#kontakt",
+          "visible": true
+        },
+        {
+          "text": "Przedstaw swój pomysł ↓",
+          "href": "#brief",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "No horizontal overflow",
+      "status": "PASS",
+      "details": {
+        "scrollWidth": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "name": "Decorative Services canvas stays outside accessibility tree",
+      "status": "PASS",
+      "details": [
+        {
+          "hidden": true,
+          "tabindex": null
+        }
+      ]
+    },
+    {
+      "name": "Original CTA remains keyboard focusable",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile Process responds to real scrolling",
+      "status": "PASS",
+      "details": {
+        "before": "0",
+        "after": "0.3849"
+      }
+    },
+    {
+      "name": "Mobile Process has no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "No uncaught browser errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "artifacts": [
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/services-idle.png",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/services-hover.png",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/transition.png",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/process.png",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/mobile-services.png",
+    "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/mobile-process.png"
+  ],
+  "errors": [],
+  "crops": [
+    {
+      "selector": "#uslugi",
+      "section": {
+        "x": 0,
+        "y": 89.890625,
+        "width": 1440,
+        "height": 1109.875
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "mobile": false,
+      "clip": {
+        "x": 0,
+        "y": 89.890625,
+        "width": 1440,
+        "height": 998.109375
+      },
+      "clipped": true
+    },
+    {
+      "selector": ".production-space",
+      "section": {
+        "x": 100,
+        "y": 89.65625,
+        "width": 1240,
+        "height": 890
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "clip": {
+        "x": 100,
+        "y": 89.65625,
+        "width": 1240,
+        "height": 890
+      },
+      "clipped": false
+    },
+    {
+      "selector": "#uslugi",
+      "section": {
+        "x": 0,
+        "y": 89.96875,
+        "width": 390,
+        "height": 1409.515625
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mobile": true,
+      "clip": {
+        "x": 0,
+        "y": 89.96875,
+        "width": 390,
+        "height": 742.03125
+      },
+      "clipped": true
+    },
+    {
+      "selector": "#proces",
+      "section": {
+        "x": 0,
+        "y": 66.484375,
+        "width": 390,
+        "height": 1680.671875
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mobile": true,
+      "clip": {
+        "x": 0,
+        "y": 66.484375,
+        "width": 390,
+        "height": 765.515625
+      },
+      "clipped": true
+    }
+  ],
+  "events": [
+    {
+      "seconds": 0.006,
+      "event": "Services idle"
+    },
+    {
+      "seconds": 3.893,
+      "event": "Services hover"
+    },
+    {
+      "seconds": 6.001,
+      "event": "Scroll Services → Process"
+    },
+    {
+      "seconds": 10.037,
+      "event": "Continue to Process chambers"
+    },
+    {
+      "seconds": 12.037,
+      "event": "Process chambers"
+    }
+  ],
+  "telemetry": [
+    {
+      "label": "started",
+      "t": 7778.9000000059605,
+      "scrollY": 2553,
+      "services": {
+        "frames": 54,
+        "drawCalls": 16,
+        "triangles": 11892,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": true,
+        "objects": 2,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 935
+        }
+      },
+      "servicesMotion": "running",
+      "process": {
+        "frames": 0,
+        "rafPending": false,
+        "progress": 0,
+        "active": null,
+        "activeIndex": -1,
+        "visible": false,
+        "running": false,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1054,
+          "height": 757
+        },
+        "disposed": false
+      }
+    },
+    {
+      "label": "Services hover",
+      "t": 12655.59999999404,
+      "scrollY": 2553,
+      "services": {
+        "frames": 183,
+        "drawCalls": 16,
+        "triangles": 11892,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": true,
+        "objects": 2,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 935
+        }
+      },
+      "servicesMotion": "running",
+      "process": {
+        "frames": 0,
+        "rafPending": false,
+        "progress": 0,
+        "active": null,
+        "activeIndex": -1,
+        "visible": false,
+        "running": false,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1054,
+          "height": 757
+        },
+        "disposed": false
+      }
+    },
+    {
+      "label": "after journey",
+      "t": 19812.59999999404,
+      "scrollY": 4013,
+      "services": {
+        "frames": 335,
+        "drawCalls": 1,
+        "triangles": 2,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": false,
+        "objects": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 935
+        }
+      },
+      "servicesMotion": "paused",
+      "process": {
+        "frames": 98,
+        "rafPending": true,
+        "progress": 0.7892,
+        "active": "security",
+        "activeIndex": 4,
+        "visible": true,
+        "running": true,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1054,
+          "height": 757
+        },
+        "disposed": false
+      }
+    },
+    {
+      "label": "final Process hold",
+      "t": 24288.59999999404,
+      "scrollY": 4013,
+      "services": {
+        "frames": 335,
+        "drawCalls": 1,
+        "triangles": 2,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": false,
+        "objects": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 935
+        }
+      },
+      "servicesMotion": "paused",
+      "process": {
+        "frames": 205,
+        "rafPending": true,
+        "progress": 0.7892,
+        "active": "security",
+        "activeIndex": 4,
+        "visible": true,
+        "running": true,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1054,
+          "height": 757
+        },
+        "disposed": false
+      }
+    }
+  ],
+  "sectionOrder": [
+    {
+      "id": "start",
+      "top": 79,
+      "height": 880
+    },
+    {
+      "id": "projekty",
+      "top": 959,
+      "height": 1684
+    },
+    {
+      "id": "uslugi",
+      "top": 2643,
+      "height": 1110
+    },
+    {
+      "id": "proces",
+      "top": 3753,
+      "height": 1350
+    },
+    {
+      "id": "ekosystem",
+      "top": 5103,
+      "height": 1321
+    },
+    {
+      "id": "wydania",
+      "top": 6424,
+      "height": 448
+    },
+    {
+      "id": "o-mnie",
+      "top": 6872,
+      "height": 860
+    },
+    {
+      "id": "wyzwania",
+      "top": 7731,
+      "height": 389
+    },
+    {
+      "id": "technologie",
+      "top": 8121,
+      "height": 943
+    },
+    {
+      "id": "kontakt",
+      "top": 9064,
+      "height": 467
+    }
+  ],
+  "captureTelemetry": {
+    "serviceFpsStartToHover": 26.45231406490359,
+    "serviceFramesDuringProcessHold": 0,
+    "servicesPausedAtEnd": true,
+    "finalProcessMetrics": {
+      "frames": 205,
+      "rafPending": true,
+      "progress": 0.7892,
+      "active": "security",
+      "activeIndex": 4,
+      "visible": true,
+      "running": true,
+      "dpr": 0.85,
+      "buffer": {
+        "width": 1054,
+        "height": 757
+      },
+      "disposed": false
+    }
+  },
+  "stageEvents": [
+    {
+      "t": 7776.200000017881,
+      "scrollY": 2553,
+      "progress": "0",
+      "stages": [
+        {
+          "id": "idea"
+        },
+        {
+          "id": "design"
+        },
+        {
+          "id": "build"
+        },
+        {
+          "id": "test"
+        },
+        {
+          "id": "security"
+        },
+        {
+          "id": "deploy"
+        }
+      ]
+    },
+    {
+      "t": 15598.200000017881,
+      "scrollY": 3024,
+      "progress": "0",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "pending"
+        },
+        {
+          "id": "design",
+          "state": "pending"
+        },
+        {
+          "id": "build",
+          "state": "pending"
+        },
+        {
+          "id": "test",
+          "state": "pending"
+        },
+        {
+          "id": "security",
+          "state": "pending"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "t": 16287.800000011921,
+      "scrollY": 3311,
+      "progress": "0.0004",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "active"
+        },
+        {
+          "id": "design",
+          "state": "pending"
+        },
+        {
+          "id": "build",
+          "state": "pending"
+        },
+        {
+          "id": "test",
+          "state": "pending"
+        },
+        {
+          "id": "security",
+          "state": "pending"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "t": 16719.80000001192,
+      "scrollY": 3468,
+      "progress": "0.1768",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "complete"
+        },
+        {
+          "id": "design",
+          "state": "active"
+        },
+        {
+          "id": "build",
+          "state": "pending"
+        },
+        {
+          "id": "test",
+          "state": "pending"
+        },
+        {
+          "id": "security",
+          "state": "pending"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "t": 17282.80000001192,
+      "scrollY": 3615,
+      "progress": "0.342",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "complete"
+        },
+        {
+          "id": "design",
+          "state": "complete"
+        },
+        {
+          "id": "build",
+          "state": "active"
+        },
+        {
+          "id": "test",
+          "state": "pending"
+        },
+        {
+          "id": "security",
+          "state": "pending"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "t": 18405.30000001192,
+      "scrollY": 3763,
+      "progress": "0.5083",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "complete"
+        },
+        {
+          "id": "design",
+          "state": "complete"
+        },
+        {
+          "id": "build",
+          "state": "complete"
+        },
+        {
+          "id": "test",
+          "state": "active"
+        },
+        {
+          "id": "security",
+          "state": "pending"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    },
+    {
+      "t": 18855.80000001192,
+      "scrollY": 3907,
+      "progress": "0.67",
+      "stages": [
+        {
+          "id": "idea",
+          "state": "complete"
+        },
+        {
+          "id": "design",
+          "state": "complete"
+        },
+        {
+          "id": "build",
+          "state": "complete"
+        },
+        {
+          "id": "test",
+          "state": "complete"
+        },
+        {
+          "id": "security",
+          "state": "active"
+        },
+        {
+          "id": "deploy",
+          "state": "pending"
+        }
+      ]
+    }
+  ],
+  "recording": {
+    "readyOffset": 7.792,
+    "duration": 15,
+    "raw": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/services-process-20261102/final/raw/page@44fa73bba339cce793d7b9fa3f52fcff.webm"
+  },
+  "servicesData": {
+    "worldVisible": "true",
+    "spatialMotion": "running",
+    "serviceRenderer": "webgl2"
+  },
+  "PASS": 17,
+  "FAIL": 0
+}

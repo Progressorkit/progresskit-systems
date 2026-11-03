@@ -1,0 +1,388 @@
+{
+  "checks": [
+    {
+      "name": "No audio engine or autoplay on load",
+      "status": "PASS"
+    },
+    {
+      "name": "Core activation never opts into audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Project hover never opts into audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit hum button starts one audio context",
+      "status": "PASS",
+      "details": {
+        "contexts": 1,
+        "state": "running",
+        "level": 0.0339767262339592,
+        "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+        "motion": "running",
+        "audio": "true",
+        "timeline": [
+          {
+            "at": 472.7000000178814,
+            "classes": "project-showroom section showroom-enhanced capsule-ready",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 585.8000000119209,
+            "classes": "project-showroom section showroom-enhanced capsule-ready",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 1215.6000000238419,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 2086.4000000059605,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 4551.800000011921,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5375.9000000059605,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5383.5,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5386.100000023842,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hum produces a quiet measurable audio signal",
+      "status": "PASS",
+      "details": {
+        "rms": 0.009010416265525201
+      }
+    },
+    {
+      "name": "Related project gently raises hum intensity",
+      "status": "PASS",
+      "details": {
+        "base": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.0339767262339592,
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+          "motion": "running",
+          "audio": "true",
+          "timeline": [
+            {
+              "at": 472.7000000178814,
+              "classes": "project-showroom section showroom-enhanced capsule-ready",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 585.8000000119209,
+              "classes": "project-showroom section showroom-enhanced capsule-ready",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 1215.6000000238419,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 2086.4000000059605,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 4551.800000011921,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5375.9000000059605,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5383.5,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5386.100000023842,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            }
+          ]
+        },
+        "stronger": {
+          "contexts": 1,
+          "state": "running",
+          "level": 0.03998574614524841,
+          "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+          "motion": "running",
+          "audio": "true",
+          "timeline": [
+            {
+              "at": 472.7000000178814,
+              "classes": "project-showroom section showroom-enhanced capsule-ready",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 585.8000000119209,
+              "classes": "project-showroom section showroom-enhanced capsule-ready",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 1215.6000000238419,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 2086.4000000059605,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 4551.800000011921,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5375.9000000059605,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5383.5,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 5386.100000023842,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+              "motion": "running",
+              "audio": "false",
+              "hidden": false
+            },
+            {
+              "at": 6952.300000011921,
+              "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+              "motion": "running",
+              "audio": "true",
+              "hidden": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "One click fades and suspends hum",
+      "status": "PASS",
+      "details": {
+        "contexts": 1,
+        "state": "suspended",
+        "level": 0.00210198643617332,
+        "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+        "motion": "running",
+        "audio": "false",
+        "timeline": [
+          {
+            "at": 472.7000000178814,
+            "classes": "project-showroom section showroom-enhanced capsule-ready",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 585.8000000119209,
+            "classes": "project-showroom section showroom-enhanced capsule-ready",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 1215.6000000238419,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 2086.4000000059605,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 4551.800000011921,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5375.9000000059605,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5383.5,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 5386.100000023842,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "false",
+            "hidden": false
+          },
+          {
+            "at": 6952.300000011921,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake has-relation",
+            "motion": "running",
+            "audio": "true",
+            "hidden": false
+          },
+          {
+            "at": 8855,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "true",
+            "hidden": false
+          },
+          {
+            "at": 8861.40000000596,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "true",
+            "hidden": false
+          },
+          {
+            "at": 8863.800000011921,
+            "classes": "project-showroom section showroom-enhanced capsule-ready showroom-in-view is-awake",
+            "motion": "running",
+            "audio": "true",
+            "hidden": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Leaving showroom suspends opted-in sound",
+      "status": "PASS"
+    },
+    {
+      "name": "Returning resumes only previously opted-in sound",
+      "status": "PASS"
+    },
+    {
+      "name": "Global effect pause suspends hum",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion disables and deselects optional audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Removing reduced motion does not restart audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Rapid audio toggles reuse one engine and finish muted",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile audio control stays inside viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile hum requires and accepts explicit tap",
+      "status": "PASS"
+    },
+    {
+      "name": "Opening a product suspends ambient audio",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported Web Audio hides the optional control",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported audio keeps visual disclosure working",
+      "status": "PASS"
+    },
+    {
+      "name": "No browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "PASS": 19,
+  "FAIL": 0
+}

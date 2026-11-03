@@ -1,0 +1,1345 @@
+{
+  "schemaVersion": 1,
+  "kit": "ProgressKit Brand Promo Kit",
+  "date": "2026-11-02",
+  "language": "pl-PL",
+  "status": "LOCAL_30_SECOND_PREVIEW_TECHNICALLY_VERIFIED_REVIEW_OPEN",
+  "scope": "Ten authentic local 3-second clips and assembled 30-second silent preview exist and are technically verified. Primary phone frames reviewed with secondary-detail limits. Owner artistic approval and final website gate remain separate; no publication or production changes.",
+  "specification": {
+    "width": 1080,
+    "height": 1920,
+    "orientation": "9:16",
+    "fps": 30,
+    "codec": "H.264",
+    "pixelFormat": "yuv420p",
+    "totalDurationSeconds": 30,
+    "shotDurationSeconds": 3,
+    "shotCount": 10,
+    "framesPerShot": 90,
+    "totalFrames": 900,
+    "audio": "NO_AUDIO_STREAM",
+    "style": "Existing premiumtechnology identity:graphite/silver,controlledred accents. Preserveoriginalbrandassets."
+  },
+  "directoryPolicy": {
+    "publicWWW": false,
+    "publish": false,
+    "commit": false,
+    "push": false,
+    "deploy": false,
+    "sourceMediaCopies": "Large sibling originals remain in place; exact safe derivative crops and new local browser recordings are retained privately in the kit.",
+    "bigFiles": "Do not copy large source videos into public WWW tree."
+  },
+  "sourcePolicy": {
+    "authenticOnly": true,
+    "fictionalUI": false,
+    "generatedVoice": false,
+    "music": false,
+    "externalMediaDownloads": false,
+    "testClientDataAllowed": false,
+    "patientDataAllowed": false,
+    "correspondenceAllowed": false,
+    "syntheticLabelDoesNotWaivePrivacy": true,
+    "staticCameraMoveAllowed": "Only framing a real screen, never changing its controls/data or pretending camera motion is product interaction."
+  },
+  "assets": [
+    {
+      "id": "brand-primary",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/brand/progressorkit-primary.png",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/brand/progressorkit-primary.png",
+      "kind": "owner-brand-logo",
+      "existsAtInventory": true,
+      "sizeBytes": 1189068,
+      "sha256": "29875e2751973261055c4d75c436b17db0cab413b53f996f5c476ae447cf6532",
+      "provenance": {
+        "source": "Existing brand asset used by current site; identity must remain unchanged.",
+        "captureDate": null
+      },
+      "privacy": {
+        "status": "NO_PERSONAL_DATA_OBSERVED",
+        "review": "Visually inspected full logo; no account, client or correspondence data."
+      },
+      "rights": {
+        "status": "OWNER_ASSET_SCOPE",
+        "review": "Existing owner-controlled brand asset; independent authorship/third-party rights audit not performed."
+      },
+      "status": "SELECTED_LOCAL_OUTPUT_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGBA"
+      },
+      "proposedTreatment": {
+        "method": "Preserve original image and colors; place on existing graphite brand background. Do not redraw/recolor the PK symbol."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "mail-android-splash",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/mail/mail-splash.webp",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/projects/mail/mail-splash.webp",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 19958,
+      "sha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1",
+      "provenance": {
+        "source": "catalog/projects.json progresskit-mail gallery; docs/portfolio-audit-20261102/mobile-mail.json authenticShots.",
+        "captureDate": null,
+        "historical": "Historical Android V4 splash, exact APK/capture time unknown."
+      },
+      "privacy": {
+        "status": "NO_CORRESPONDENCE_OR_ACCOUNT_DATA_OBSERVED",
+        "review": "Full image visually inspected. System status and navigation bars only, no mailbox content."
+      },
+      "rights": {
+        "status": "OWNER_REPOSITORY_ASSET",
+        "review": "Authentic existing app screen; independent rights audit not performed."
+      },
+      "status": "SAFE_DERIVATIVE_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 688,
+        "height": 1536,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "cropPixels": [
+          0,
+          80,
+          688,
+          1375
+        ],
+        "reviewRequired": "Check crop boundaries and quality at final 1080×1920; source is 688 px wide. Preserve actual splash; do not create a fictional inbox."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "glikemia-language",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/glikemia/product-language.webp",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/projects/glikemia/product-language.webp",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 53726,
+      "sha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c",
+      "provenance": {
+        "source": "catalog/projects.json glikemia-premium gallery; mobile-mail.json authenticShots.",
+        "captureDate": null,
+        "historical": "Existing real language screen; does not prove runtime of latest APK."
+      },
+      "privacy": {
+        "status": "NO_HEALTH_RECORDS_OBSERVED",
+        "review": "Full image inspected. Only language controls and informational copy; no patient or measurement records."
+      },
+      "rights": {
+        "status": "OWNER_REPOSITORY_ASSET",
+        "review": "Existing owner-controlled app screenshot; independent rights audit not performed."
+      },
+      "status": "SELECTED_LOCAL_OUTPUT_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 648,
+        "height": 1440,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "cropPixels": [
+          0,
+          80,
+          648,
+          1100
+        ],
+        "reviewRequired": "Remove system bars. Avoid cropping text midway in selected final composition; retain neutral screen identity."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "glikemia-empty-measurement",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/glikemia/product-measurement.webp",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/projects/glikemia/product-measurement.webp",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 49308,
+      "sha256": "710f95be5c4ad7f729020b666119d2c73492ec0227c95eae2e95a229404f0a58",
+      "provenance": {
+        "source": "catalog/projects.json explicitly describes real empty measurement form; full image inspected.",
+        "captureDate": null
+      },
+      "privacy": {
+        "status": "EMPTY_FORM_ONLY",
+        "review": "Observed default zero values, blank note and no patient identity/history. Prefer language screen to avoid any impression that zero is a clinical reading."
+      },
+      "rights": {
+        "status": "OWNER_REPOSITORY_ASSET",
+        "review": "Existing app screenshot; independent rights audit not performed."
+      },
+      "status": "ALTERNATIVE_NOT_SELECTED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 648,
+        "height": 1440,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "method": "Use only if final reviewer accepts that this is an empty input form, never as a measurement/result. No history or PDF screenshots."
+      },
+      "selectedInFinal": false
+    },
+    {
+      "id": "community-desktop",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-community/community-desktop.webp",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/projects/progresskit-community/community-desktop.webp",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 436464,
+      "sha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c",
+      "provenance": {
+        "source": "catalog gallery labels isolated local QA14.10.2026; saas-platforms.json cites COMMUNITY_DISCOVERY_VALIDATION.md118-140.",
+        "captureDate": "2026-10-14",
+        "historical": "Real local UI on isolated fixture, not public production activity."
+      },
+      "privacy": {
+        "status": "FULL_SOURCE_EXCLUDED_SELECTED_CROP_REVIEWED",
+        "review": "Selected exact rectangle contains heading and empty search controls only; fixture cards/counts/authors/posts/conversations are excluded. See qa/crop-review.json."
+      },
+      "rights": {
+        "status": "OWNER_REPOSITORY_ASSET",
+        "review": "App UI and existing site artwork; independent clearance not performed."
+      },
+      "status": "SAFE_DERIVATIVE_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 1440,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "cropPixels": [
+          304,
+          14,
+          1094,
+          514
+        ],
+        "content": "Heading/search/filter controls only; bottom boundary above first fixture cards.",
+        "mustExclude": "No fixture communities, record counts, author content, account drawer or private routes.",
+        "reviewRequired": "Actual derived crop and phone framing must be reviewed before accepting the shot. Caption local development UI, not live community activity."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "tax-work-queue",
+      "repository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/progresskit-tax/docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 146016,
+      "sha256": "312fd0dabcf5c3d582f986677648d9739fa161f33e366dc304fe853ce73051a4",
+      "provenance": {
+        "source": "Same directory README.md8-19 and manifest.json; actual Chrome capture, sourceHead335d081dbcc4ce4b7e705b73bd77c53223784ced.",
+        "captureDate": "2026-10-25"
+      },
+      "privacy": {
+        "status": "FULL_FRAME_REJECTED_STATIC_FRAGMENT_CROPS_REVIEWED",
+        "review": "Full image inspected. Contains synthetic client names, staff email-like addresses, office identity, case titles and counts. User explicitly forbids test client data; DEMO label is not sufficient."
+      },
+      "rights": {
+        "status": "NOT_REVIEWED_FOR_PUBLIC_DISTRIBUTION",
+        "review": "Private repo QA asset; no publication clearance inferred from existence."
+      },
+      "status": "FULL_SOURCE_REJECTED_SAFE_DERIVATIVES_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 1440,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "selectedDerivatives": [
+          "stills/03-tax-sections-nav.png",
+          "stills/03-tax-country-filter.png"
+        ],
+        "noFullFrame": true
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "tax-workflow",
+      "repository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/progresskit-tax/docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 124321,
+      "sha256": "6733a6c8288682df9361b48c063d1a502ae03fc96b164aa2d7047f5cbd464913",
+      "provenance": {
+        "source": "Same directory README.md and manifest.json; authentic Chrome screenshot from real authorized local API.",
+        "captureDate": "2026-10-25"
+      },
+      "privacy": {
+        "status": "FULL_FRAME_REJECTED_DERIVATIVE_REVIEWED",
+        "review": "Full frame is rejected. Exact fixed-control crop was created and visually inspected; selected alongside separately framed navigation and default filter fragments. No client/staff identifiers, record status or history appears in the selected crop."
+      },
+      "rights": {
+        "status": "NOT_CLEARED",
+        "review": "Private QA capture; final crop needs privacy and owner review."
+      },
+      "status": "SAFE_DERIVATIVE_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 1440,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "selectedDerivatives": [
+          "stills/03-tax-approval-control.png"
+        ],
+        "noFullFrame": true,
+        "reviewEvidence": "qa/crop-review.json"
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "translator-neutral-start",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-translator/translator-start.webp",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/projects/progresskit-translator/translator-start.webp",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 653132,
+      "sha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78",
+      "provenance": {
+        "source": "Catalog gallery explicitly describes actual0.2.0 screen onRedmi; mobile-mail.json authenticShots.",
+        "captureDate": null,
+        "historical": "Not current0.2.2runtime proof; stereo toggle does not proveTWS."
+      },
+      "privacy": {
+        "status": "NO_RECOGNIZED_SPEECH_OR_HISTORY_OBSERVED",
+        "review": "Full image inspected: empty start/placeholder only; statusbar shows device indicators. No conversation content."
+      },
+      "rights": {
+        "status": "OWNER_REPOSITORY_ASSET",
+        "review": "Existing app asset; independent rights audit not performed."
+      },
+      "status": "SELECTED_LOCAL_OUTPUT_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "mode": "RGB"
+      },
+      "proposedTreatment": {
+        "cropPixels": [
+          0,
+          130,
+          1080,
+          2140
+        ],
+        "reviewRequired": "Remove system bars; retain empty transcription placeholder. Do not imply tested Bluetooth/stereo/offline capabilities."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "vaeloria-real-elemental",
+      "repository": "Vaeloria",
+      "sourcePath": "docs/verification/production-ui-propagation/redmi/candidate6/elemental-screenrecord.mp4",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/Vaeloria/docs/verification/production-ui-propagation/redmi/candidate6/elemental-screenrecord.mp4",
+      "kind": "authentic-gameplay-video",
+      "existsAtInventory": true,
+      "sizeBytes": 25578854,
+      "sha256": "093da2355c1809ff1e950fc47aaf3cedb8c28df1f1ae4e8a63579902229cb5eb",
+      "provenance": {
+        "source": "docs/PRODUCTION_UI_PROPAGATION_REPORT.md115-147; real physicalRedmiAPK6 campaign recording.",
+        "captureDate": null,
+        "historical": "Older productionUI candidate6 before the later POV arena/forest; not a current rendering or reference movie."
+      },
+      "privacy": {
+        "status": "ALL_90_SELECTED_OUTPUT_FRAMES_REVIEWED",
+        "review": "All 90 encoded frames of the 3.9–6.9 s interval reviewed in contact sheets. Genuine gameplay; no account, patient, client or correspondence records observed."
+      },
+      "rights": {
+        "status": "OWNER_AUTHORIZED",
+        "authority": "Właściciel potwierdził prawa do reklamowego użycia Vaelorii 02.11.2026; informacja przekazana w bieżącej instrukcji root.",
+        "scope": "Autentyczny gameplay i widoczna grafika gry w materiałach reklamowych ProgressKit.",
+        "independentLegalAudit": false
+      },
+      "status": "OWNER_AUTHORIZED_SELECTED_INTERVAL_REVIEWED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "proposedTreatment": {
+        "candidateRangeSeconds": [
+          3.9,
+          6.9
+        ],
+        "method": "Selected genuine gameplay interval 3.9–6.9 s; silent and labeled as development gameplay. No reference/demo substitution."
+      },
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 2400,
+        "durationSeconds": 19.981656,
+        "ffprobeInspectedAt": "2026-11-02",
+        "limits": "Historical physical APK6 source; does not prove later preview or current gameplay build."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "code-catalog-validation",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "tests/test_catalog_validation.py",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/tests/test_catalog_validation.py",
+      "kind": "real-source-code",
+      "existsAtInventory": true,
+      "sizeBytes": 19481,
+      "sha256": "a3930d0b54eb867a1bff179028d326a093dbf6fccc97499efb60a1737577d133",
+      "provenance": {
+        "source": "Actual repository source; expected to change during pending catalog integration.",
+        "captureDate": null,
+        "hashRefreshNote": "Refreshed after V2integration; actualtestoutputcapture still root-owned and pending."
+      },
+      "privacy": {
+        "status": "SOURCE_SNIPPET_REVIEWED",
+        "review": "Lines 45–69 contain genuine validation tests with no customer/patient/correspondence data. Synthetic catalog fixture is software test input, not a product customer record; avoid showing unrelated terminal history."
+      },
+      "rights": {
+        "status": "OWNER_WORKSPACE_CODE_SCOPE",
+        "review": "Show only narrow source snippet already reviewed; no publication of private product repositories."
+      },
+      "status": "NOT_SELECTED_HISTORICAL_CANDIDATE",
+      "copiedToKit": false,
+      "publicReady": false,
+      "inspectedAt": "2026-11-02",
+      "proposedTreatment": {
+        "capture": "After final edits/tests, rehash file and capture real editor/terminal. Record exact test command and result from this run; no fabricated terminal/textnumbers.",
+        "proposedLines": "45-69",
+        "refreshShaBeforeCapture": true
+      },
+      "selectedInFinal": false
+    },
+    {
+      "id": "website-hero-final",
+      "kind": "authentic-live-threejs-browser-recording",
+      "sourcePath": "marketing/brand-launch-2026-11-02/captures/raw/page@9eca6427d53a5abe2ec850f80fac7735.webm",
+      "sha256": "c6e1f80f13c373f8f1f2970ef9935d67e5af2e0fe8d05a7c808ea9da1d6b91b8",
+      "existsAtInventory": true,
+      "expectedOutput": "captures/01-hero-source.webm",
+      "provenance": {
+        "source": "qa/live-captures.json",
+        "capturedAtUTC": "2026-11-02T11:25:00.848Z",
+        "historical": false,
+        "rawCaptureWidth": 900,
+        "rawCaptureHeight": 1400,
+        "selectedRangeSeconds": [
+          6.452,
+          9.452
+        ],
+        "renderer": "three-webgl2",
+        "pageErrors": []
+      },
+      "privacy": {
+        "status": "REVIEWED_PRIMARY_FRAMING_NO_PII_OBSERVED",
+        "review": "Root reviewed final phone framing; no PII observed. Primary labels readable; secondary endpoint/code/test detail small. Owner artistic approval remains OPEN."
+      },
+      "rights": {
+        "status": "PENDING_FINAL_BRAND_VISUAL_APPROVAL"
+      },
+      "status": "LOCAL_CAPTURE_AND_CLIP_TECHNICALLY_VERIFIED",
+      "copiedToKit": true,
+      "publicReady": false,
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/marketing/brand-launch-2026-11-02/captures/raw/page@9eca6427d53a5abe2ec850f80fac7735.webm",
+      "sizeBytes": 1118470,
+      "inspectedAt": "2026-11-02",
+      "runtimeEvidence": {
+        "catalogPath": "catalog/projects.json",
+        "catalogCount": 19,
+        "catalogSHA256AtManifestFinalization": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+        "sceneModule": "assets/showroom-scene.mjs",
+        "sceneSHA256": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1",
+        "threeRuntime": "three-webgl2",
+        "scope": "Actual local ProgressKit Three.js scene from current portfolio; public deployment not inferred."
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "final-test-output",
+      "kind": "actual-tap-test-log",
+      "sourcePath": "docs/final-website-qa-20261102/node-tests/showroom-3d.test.tap",
+      "sha256": "25d8b7639e63c02744a50b348bb75b6ea4e4d5ea457db3d5b57e8b8c1fd0ee9e",
+      "existsAtInventory": true,
+      "expectedOutput": "captures/09-tests-source.webm",
+      "provenance": {
+        "source": "qa/09-code-source.json",
+        "captureDate": "2026-11-02",
+        "scope": "Actual scoped showroom-3d.test.cjs TAP summary; not a claim that every site/product test is shown."
+      },
+      "privacy": {
+        "status": "REVIEWED_PRIMARY_FRAMING_NO_PII_OBSERVED",
+        "review": "Root reviewed final phone framing; no PII observed. Primary labels readable; secondary endpoint/code/test detail small. Owner artistic approval remains OPEN."
+      },
+      "rights": {
+        "status": "OWNER_WORKSPACE_TEST_SCOPE"
+      },
+      "status": "REAL_TAP_SUMMARY_CAPTURED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/final-website-qa-20261102/node-tests/showroom-3d.test.tap",
+      "sizeBytes": 1188,
+      "selectedInFinal": true
+    },
+    {
+      "id": "mail-linux-provider-header",
+      "repository": "ProgressKit Mail",
+      "sourcePath": "artifacts/multi-account/gui-final8/release-product-control-empty.png",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressKit Mail/artifacts/multi-account/gui-final8/release-product-control-empty.png",
+      "kind": "authentic-screenshot",
+      "existsAtInventory": true,
+      "sizeBytes": 264269,
+      "sha256": "e4ebe3041e05e621ab598058405fd3c566182e8b902177dc7ea944e581237958",
+      "provenance": {
+        "source": "Same-directory combined-evidence-sha256.json names and hashes this real Release product-control capture.",
+        "historical": "Existing Linux client screenshot; no new application launch or mailbox test."
+      },
+      "privacy": {
+        "status": "FULL_SOURCE_REJECTED_SAFE_CROP_REVIEWED",
+        "review": "Full source includes an account address and is not copied. Crop547,215,475,135 contains title/providerbuttons only; visually reviewed after removing a cut description line."
+      },
+      "rights": {
+        "status": "OWNER_PRODUCT_UI_SCOPE"
+      },
+      "status": "SAFE_DERIVATIVE_CREATED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "selectedInFinal": true
+    },
+    {
+      "id": "adivara-real-api-docs",
+      "kind": "authentic-live-api-documentation-browser-recording",
+      "sourcePath": "marketing/brand-launch-2026-11-02/captures/raw/page@f656e2c71b31a99253bd1f2f981ee4f3.webm",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/marketing/brand-launch-2026-11-02/captures/raw/page@f656e2c71b31a99253bd1f2f981ee4f3.webm",
+      "sha256": "76058b5d67491a21566e63b1a1fc5495e76f3dbc5fe4b614379ae6d54ed2a60c",
+      "existsAtInventory": true,
+      "provenance": {
+        "source": "qa/live-captures.json",
+        "capturedAtUTC": "2026-11-02T11:25:00.848Z",
+        "historical": false,
+        "rawCaptureWidth": 900,
+        "rawCaptureHeight": 1400,
+        "selectedRangeSeconds": [
+          2.087,
+          5.087
+        ],
+        "renderer": null,
+        "pageErrors": []
+      },
+      "privacy": {
+        "status": "REVIEWED_PRIMARY_FRAMING_NO_PII_OBSERVED",
+        "review": "Root reviewed final phone framing; no PII observed. Primary labels readable; secondary endpoint/code/test detail small. Owner artistic approval remains OPEN."
+      },
+      "rights": {
+        "status": "OWNER_PROJECT_SOURCE_SCOPE"
+      },
+      "status": "LOCAL_CAPTURE_AND_CLIP_TECHNICALLY_VERIFIED",
+      "copiedToKit": true,
+      "publicReady": false,
+      "expectedOutput": "captures/04-adivara-api-docs-source.webm",
+      "sizeBytes": 461664,
+      "inspectedAt": "2026-11-02",
+      "runtimeEvidence": {
+        "reportPath": "docs/portfolio-audit-20261102/adivara-docs-only-runtime.json",
+        "reportSHA256": "0be563bb4eb61d4f9e6115d06eed50b37d064347941caa919b941102f115f97d",
+        "scope": "Real isolated Swagger/OpenAPI documentation from existing API assembly, GET only, no DB/accounts or operational UI claim.",
+        "visibleLabel": "API — widok dokumentacji"
+      },
+      "selectedInFinal": true
+    },
+    {
+      "id": "code-showroom-lifecycle",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "assets/showroom-lifecycle.mjs",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/assets/showroom-lifecycle.mjs",
+      "kind": "real-source-code",
+      "existsAtInventory": true,
+      "sizeBytes": 2226,
+      "sha256": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+      "provenance": {
+        "source": "qa/09-code-source.json",
+        "lines": [
+          30,
+          55
+        ],
+        "captureDate": "2026-11-02"
+      },
+      "privacy": {
+        "status": "REVIEWED_PRIMARY_FRAMING_NO_PII_OBSERVED",
+        "review": "Root reviewed final phone framing; no PII observed. Primary labels readable; secondary endpoint/code/test detail small. Owner artistic approval remains OPEN."
+      },
+      "rights": {
+        "status": "OWNER_WORKSPACE_CODE_SCOPE"
+      },
+      "status": "LOCAL_CAPTURE_AND_CLIP_TECHNICALLY_VERIFIED",
+      "copiedToKit": false,
+      "publicReady": false,
+      "selectedInFinal": true
+    },
+    {
+      "id": "code-tests-live-recording",
+      "repository": "ProgressorKit Systems",
+      "sourcePath": "marketing/brand-launch-2026-11-02/captures/raw/page@280d4ce7e7863ff342706ac6b4b0b1cb.webm",
+      "sourceLocation": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/marketing/brand-launch-2026-11-02/captures/raw/page@280d4ce7e7863ff342706ac6b4b0b1cb.webm",
+      "kind": "authentic-browser-recording-of-source-test-presentation",
+      "existsAtInventory": true,
+      "sizeBytes": 364348,
+      "sha256": "139a7c753e4c83e9b0400c78b8792d800667b6b23167d034921a28905d7f69b6",
+      "provenance": {
+        "source": "qa/live-captures.json and qa/09-code-source.json",
+        "captureDate": "2026-11-02",
+        "selectedRangeSeconds": [
+          0.852,
+          3.852
+        ],
+        "viewerPath": "captures/code-tests-source.html",
+        "viewerSHA256": "45a7e6285ef58a48f4ea3dabea6f60e097cf3f902819761373772d04da23bb24",
+        "scope": "Read-only escaped display of actual source lines and verbatim TAP. Presentation document, not product UI."
+      },
+      "privacy": {
+        "status": "REVIEWED_PRIMARY_FRAMING_NO_PII_OBSERVED",
+        "review": "Root reviewed final phone framing; no PII observed. Primary labels readable; secondary endpoint/code/test detail small. Owner artistic approval remains OPEN."
+      },
+      "rights": {
+        "status": "OWNER_WORKSPACE_CODE_TEST_SCOPE"
+      },
+      "status": "LOCAL_CAPTURE_AND_CLIP_TECHNICALLY_VERIFIED",
+      "copiedToKit": true,
+      "publicReady": false,
+      "selectedInFinal": true
+    }
+  ],
+  "shots": [
+    {
+      "number": 1,
+      "title": "ProgressKit Core — rzeczywista scena Three.js",
+      "startSeconds": 0,
+      "endSeconds": 3,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "website-hero-final",
+        "brand-primary"
+      ],
+      "status": "LOCAL_CLIP_TECHNICALLY_VERIFIED_PRIMARY_REVIEWED",
+      "visualPlan": "Actual recorded Three.js core motion from current local 19-entry portfolio, framed with original branding. No static or reconstructed substitute.",
+      "caption": "ProgressKit Systems",
+      "gate": "Technical ffprobe/full decode PASS; primary phone labels reviewed with secondary detail limits. Owner visual approval OPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/01.mp4",
+        "exists": true,
+        "sha256": "f6fd0e9dce240fc663361433b077bb67523ccbec639ce8e45b50b769e285b6a3",
+        "sizeBytes": 317899,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PRIMARY_LABELS_READABLE / SECONDARY_DETAIL_SMALL — root manual review, no full secondary-text readability claim.",
+      "sourceCapture": {
+        "raw": "marketing/brand-launch-2026-11-02/captures/raw/page@9eca6427d53a5abe2ec850f80fac7735.webm",
+        "rawSHA256": "c6e1f80f13c373f8f1f2970ef9935d67e5af2e0fe8d05a7c808ea9da1d6b91b8",
+        "sourceWidth": 900,
+        "sourceHeight": 1400,
+        "selectedStartSeconds": 6.452,
+        "selectedDurationSeconds": 3,
+        "cropPixels": {
+          "x": 32,
+          "y": 100,
+          "width": 836,
+          "height": 702
+        }
+      }
+    },
+    {
+      "number": 2,
+      "title": "ProgressKit Mail Android/Linux",
+      "startSeconds": 3,
+      "endSeconds": 6,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "mail-android-splash",
+        "mail-linux-provider-header"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "45 frames actual Android splash, followed by45frames cropped actual Linux provider header. No correspondence or account address appears in selected crops.",
+      "caption": "ProgressKit Mail · Android",
+      "gate": "Both actualsourcecrops and encodedphoneframes reviewed. No mailbox/loginfunctionality claim; finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/02.mp4",
+        "exists": true,
+        "sha256": "b42ced41a7d39f4f88f74b2bc5dde16e9cd530d435e8be5905e74828de6b63b2",
+        "sizeBytes": 91993,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible."
+    },
+    {
+      "number": 3,
+      "title": "ProgressKit Tax",
+      "startSeconds": 6,
+      "endSeconds": 9,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "tax-workflow",
+        "tax-work-queue"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Three clearly separated genuine excerpts: static section navigation, default countryfilter and approvalcontrol. Labeled „Fragmenty interfejsu”; never presented as one reconstructedfullappscreen.",
+      "caption": "ProgressKit Tax",
+      "gate": "Source/crop and encodedphoneframe reviewed. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/03.mp4",
+        "exists": true,
+        "sha256": "55cc56d154b16c72d12e9c8c655c4e95c5eb064363dd611a268515f525eccff0",
+        "sizeBytes": 142472,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible.",
+      "sceneVersion": 2,
+      "attempts": [
+        {
+          "path": "qa/attempts/03-button-only-v1.mp4",
+          "sha256": "4a9d522e3e357f904a519a5401667bbcae0c512eee281e4474347d69ca9aa254",
+          "reason": "Technicallyvalid but composition was too sparse for premiumreview; preserved."
+        }
+      ],
+      "sourceFragments": [
+        "stills/03-tax-sections-nav.png",
+        "stills/03-tax-country-filter.png",
+        "stills/03-tax-approval-control.png"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Adivara",
+      "startSeconds": 9,
+      "endSeconds": 12,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "adivara-real-api-docs"
+      ],
+      "status": "LOCAL_CLIP_TECHNICALLY_VERIFIED_PRIMARY_REVIEWED",
+      "visualPlan": "Actual isolated running Swagger/OpenAPI recording, explicitly captioned „API — widok dokumentacji”. It does not imply an operational care dashboard.",
+      "caption": "Adivara · API — widok dokumentacji",
+      "gate": "Technical ffprobe/full decode PASS; primary phone labels reviewed with secondary detail limits. Owner visual approval OPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/04.mp4",
+        "exists": true,
+        "sha256": "5a156d23eaaab21fbc6d2bfc9e551b9ac4eef96d3c338473873c79f4309f7289",
+        "sizeBytes": 105883,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PRIMARY_LABELS_READABLE / SECONDARY_DETAIL_SMALL — root manual review, no full secondary-text readability claim.",
+      "sourceCapture": {
+        "raw": "marketing/brand-launch-2026-11-02/captures/raw/page@f656e2c71b31a99253bd1f2f981ee4f3.webm",
+        "rawSHA256": "76058b5d67491a21566e63b1a1fc5495e76f3dbc5fe4b614379ae6d54ed2a60c",
+        "sourceWidth": 900,
+        "sourceHeight": 1400,
+        "selectedStartSeconds": 2.087,
+        "selectedDurationSeconds": 3,
+        "cropPixels": {
+          "x": 0,
+          "y": 320,
+          "width": 900,
+          "height": 640
+        }
+      }
+    },
+    {
+      "number": 5,
+      "title": "ProgressKit Community",
+      "startSeconds": 12,
+      "endSeconds": 15,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "community-desktop"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Only real Discovery heading/search/category filter controls. Exclude all fixture cards/users, posts and counts; restrained pan of bounded crop.",
+      "caption": "Lud&Pra · społeczności",
+      "gate": "Actualcrop and encodedphoneframe reviewed, excluding fixturecommunities/authors/conversation. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/05.mp4",
+        "exists": true,
+        "sha256": "383d873208532e9bf96aa3cdadd79883567a80f96f85e4ab8891e3ce360459b3",
+        "sizeBytes": 97488,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible."
+    },
+    {
+      "number": 6,
+      "title": "Vaeloria",
+      "startSeconds": 15,
+      "endSeconds": 18,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "vaeloria-real-elemental"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Actual3 second segment from physicalAPK6campaign recording, no reference cinematic.",
+      "caption": "Vaeloria · rozgrywka w rozwoju",
+      "gate": "Owner authorized advertisingrights02.11.2026; all90selectedoutputframes reviewed. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/06.mp4",
+        "exists": true,
+        "sha256": "f2176c2190d91d859c9bec1936c63c867d2ff203915cb721f124bee81cf75cf7",
+        "sizeBytes": 434520,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible.",
+      "sourceRangeSeconds": [
+        3.9,
+        6.9
+      ],
+      "privacyReview": "All90encodedframes inspected ascontactsheet; scene remains actualgameplay, no accounts/patient/client/correspondence records."
+    },
+    {
+      "number": 7,
+      "title": "Glikemia Premium",
+      "startSeconds": 18,
+      "endSeconds": 21,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "glikemia-language"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Actual neutral language selection screen with subtle camera motion; no patient history/PDF/measurementrecord.",
+      "caption": "Glikemia Premium",
+      "gate": "Actualsource and encodedphoneframe reviewed. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/07.mp4",
+        "exists": true,
+        "sha256": "90f0aaf07fa910597fe327aa0a50e85c5eaeb3972d56809dba62798d6c57e4f7",
+        "sizeBytes": 263598,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible."
+    },
+    {
+      "number": 8,
+      "title": "Pozostałe technologie ekosystemu",
+      "startSeconds": 21,
+      "endSeconds": 24,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "translator-neutral-start"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Actual empty historical Translator start, minimal camera motion. Optional subsequent root capture of actualcatalog can be planned separately.",
+      "caption": "ProgressKit Translator",
+      "gate": "Actualsource and encodedphoneframe reviewed. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/08.mp4",
+        "exists": true,
+        "sha256": "158bf51c0a734d3ccbccdb3818e3d2c51ea951b0df62fdacd063d0ee1e190e7b",
+        "sizeBytes": 399157,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible."
+    },
+    {
+      "number": 9,
+      "title": "Rzeczywisty kod i testy",
+      "startSeconds": 24,
+      "endSeconds": 27,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "code-showroom-lifecycle",
+        "final-test-output",
+        "code-tests-live-recording"
+      ],
+      "status": "LOCAL_CLIP_TECHNICALLY_VERIFIED_PRIMARY_REVIEWED",
+      "visualPlan": "Actual showroom-lifecycle.mjs lines 30–55 and verbatim scoped showroom-3d TAP summary, escaped in a read-only presentation and recorded in browser. No invented code or result.",
+      "caption": "Kod i testy",
+      "gate": "Technical ffprobe/full decode PASS; primary phone labels reviewed with secondary detail limits. Owner visual approval OPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/09.mp4",
+        "exists": true,
+        "sha256": "cd21094fe3e8dcceb048cdc208cc95bfdc96f8ab5f947ae930b9ad2d6fe0db6d",
+        "sizeBytes": 206469,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PRIMARY_LABELS_READABLE / SECONDARY_DETAIL_SMALL — root manual review, no full secondary-text readability claim.",
+      "sourceCapture": {
+        "raw": "marketing/brand-launch-2026-11-02/captures/raw/page@280d4ce7e7863ff342706ac6b4b0b1cb.webm",
+        "rawSHA256": "139a7c753e4c83e9b0400c78b8792d800667b6b23167d034921a28905d7f69b6",
+        "sourceWidth": 900,
+        "sourceHeight": 1400,
+        "selectedStartSeconds": 0.852,
+        "selectedDurationSeconds": 3,
+        "cropPixels": {
+          "x": 0,
+          "y": 0,
+          "width": 900,
+          "height": 1400
+        }
+      },
+      "subtitle": "Scheduler sceny · 5 PASS / 0 FAIL",
+      "testResultScope": {
+        "testFile": "tests/showroom-3d.test.cjs",
+        "pass": 5,
+        "fail": 0,
+        "scope": "Scoped existing TAP report shown in qa/09-code-source.json; not total site/product test count."
+      }
+    },
+    {
+      "number": 10,
+      "title": "LogoProgressKit i progresskit.pl",
+      "startSeconds": 27,
+      "endSeconds": 30,
+      "durationSeconds": 3,
+      "targetFrames": 90,
+      "assetIds": [
+        "brand-primary"
+      ],
+      "status": "LOCAL_CLIP_VERIFIED",
+      "visualPlan": "Original PK asset on existing graphite identity, controlled light and restrained camera. Website address legible.",
+      "caption": "ProgressKit · progresskit.pl",
+      "gate": "Actualsource and encodedphoneframe reviewed. Finalownerartisticapproval remainsOPEN.",
+      "fallbackProposal": null,
+      "output": {
+        "expectedPath": "clips/10.mp4",
+        "exists": true,
+        "sha256": "17a578c60bbcad02978a11a312d9dbaa56c8922be011ba80781b9c842a1a8027",
+        "sizeBytes": 248981,
+        "ffprobeStatus": "PASS",
+        "fullDecodeStatus": "PASS",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames": 90,
+        "durationSeconds": 3,
+        "audioStreams": 0
+      },
+      "phoneReadability": "PASS for producttitle and primaryvisual/action at360×640. Small secondary UIlabels are not claimed fullylegible."
+    }
+  ],
+  "coverage": {
+    "plannedShots": 10,
+    "existingMediaCandidateShots": 10,
+    "renderedClips": 10,
+    "renderedDurationSeconds": 30,
+    "assembledPreview": true,
+    "assembledFrames": 900,
+    "capturePendingShots": [],
+    "missingAuthenticUIShots": [],
+    "manualPhoneReviewPendingShots": [],
+    "neutralStillSourceShots": [
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ],
+    "authenticMotionSourceShots": [
+      1,
+      4,
+      6,
+      9
+    ],
+    "ownerAuthorizedGameplayShots": [
+      6
+    ],
+    "notClearedGameplayShots": [],
+    "mailLinuxVisual": "REAL_PROVIDER_HEADER_CROP_CREATED",
+    "adivaraScope": "Real API documentation captured; operational UI not claimed.",
+    "publicationReady": false,
+    "note": "Technical completeness is separate from manual review, owner approval, product release and public deployment.",
+    "manualPhoneReviewedShots": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "gates": [
+    {
+      "id": "website-final-qa",
+      "status": "IN_PROGRESS_ROOT",
+      "scope": "Final browser QA remains separate from technical video validation."
+    },
+    {
+      "id": "privacy-final-frames",
+      "status": "SELECTED_OUTPUT_FRAMES_REVIEWED",
+      "scope": "10 selected phone frames reviewed; all 90 Vaeloria frames reviewed. Primary labels readable, secondary detail small in documentation/code; no blanket all-frame/privacy guarantee or owner approval."
+    },
+    {
+      "id": "adivara-authenticity",
+      "status": "PASS_REAL_DOCUMENTATION_CAPTURE",
+      "scope": "Actual Swagger recording and real existing API runtime proof; explicit documentation label, no app UI reconstruction or substitute brandboard."
+    },
+    {
+      "id": "tax-privacy",
+      "status": "SELECTED_FRAGMENT_CROPS_REVIEWED",
+      "scope": "Version 2 uses separately framed fixed navigation, default country filter and approval control, labeled Fragmenty interfejsu. Full source frames with test records excluded."
+    },
+    {
+      "id": "vaeloria-rights",
+      "status": "OWNER_AUTHORIZED",
+      "scope": "Owner advertising rights confirmation 2026-11-02; not a new independent legal audit."
+    },
+    {
+      "id": "technical-video",
+      "status": "PASS_TEN_OF_TEN_AND_30S_PREVIEW",
+      "scope": "10 clips × 90 frames plus 900-frame 30.000 s preview; H.264 1080×1920 30 FPS no audio, ffprobe and full decode PASS."
+    },
+    {
+      "id": "owner-visual-approval",
+      "status": "OPEN",
+      "scope": "Final artistic acceptance remains with owner."
+    },
+    {
+      "id": "public-deployment-confirmed",
+      "status": "NOT RUN",
+      "scope": "No production publish, commit, push or deploy in this task."
+    }
+  ],
+  "preview": {
+    "expectedPath": "preview/brand-v1.mp4",
+    "exists": true,
+    "sha256": "6c0121c4d352909a98fee802be9c8979ccb6892b16320f812505a8d6361703e5",
+    "sizeBytes": 2301029,
+    "status": "TECHNICAL_PASS_OWNER_REVIEW_OPEN",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 900,
+    "durationSeconds": 30,
+    "codec": "h264",
+    "audioStreams": 0,
+    "ffprobeStatus": "PASS",
+    "fullDecodeStatus": "PASS",
+    "visualReview": "PRIMARY_PHONE_FRAMES_REVIEWED_FULL_PREVIEW_OWNER_REVIEW_OPEN",
+    "ownerVisualApproval": "OPEN",
+    "published": false,
+    "validationPath": "qa/preview-validation.json"
+  },
+  "auditInputs": [
+    {
+      "path": "docs/portfolio-audit-20261102/mobile-mail.json",
+      "sha256": "6f30da8de8295052a55ce70a3edddf00a0fd218eadd7a905fa7abf26d108222b"
+    },
+    {
+      "path": "docs/portfolio-audit-20261102/saas-platforms.json",
+      "sha256": "cf7fcb9af707e2279bcdecd25a9299d8f97706bb619f111769df9c8c5d8c1279"
+    },
+    {
+      "path": "docs/portfolio-audit-20261102/vaeloria.json",
+      "sha256": "59081c9dd42e9e4253d7ca25427d72f93ca548995c49ba130917b686b89cf708"
+    }
+  ],
+  "cropReview": [
+    {
+      "output": "stills/02-mail-android.png",
+      "outputSha256": "70b58f8bd34bdb23a9eba9b59a0309352c11550a2708198c14aa40a34e730ee0",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/mail/mail-splash.webp",
+      "sourceSha256": "5d27885a07a088746087e821c9f70e798a9e96427f87d050c4fe5bd81929c5a1",
+      "cropPixels": {
+        "x": 0,
+        "y": 80,
+        "width": 688,
+        "height": 1375
+      },
+      "derivedDimensions": {
+        "width": 688,
+        "height": 1375
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Cropped system bars; no mailbox/accounts/messages present.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/02-mail-linux-header.png",
+      "outputSha256": "b5161144494b29f4f15ac6630e5c5b2331f99678a5bf939f2b559f9d4f1fd85f",
+      "sourceRepository": "ProgressKit Mail",
+      "sourcePath": "artifacts/multi-account/gui-final8/release-product-control-empty.png",
+      "sourceSha256": "e4ebe3041e05e621ab598058405fd3c566182e8b902177dc7ea944e581237958",
+      "cropPixels": {
+        "x": 547,
+        "y": 215,
+        "width": 475,
+        "height": 135
+      },
+      "derivedDimensions": {
+        "width": 475,
+        "height": 135
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only header and providerbuttons; excludes prefilledaddress and all accountrecords.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-approval-control.png",
+      "outputSha256": "da56c364ae64b233789d94355ae87594a25cf3023daa39fb5de4fda8a07498d8",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "sourceSha256": "6733a6c8288682df9361b48c063d1a502ae03fc96b164aa2d7047f5cbd464913",
+      "cropPixels": {
+        "x": 727,
+        "y": 588,
+        "width": 231,
+        "height": 62
+      },
+      "derivedDimensions": {
+        "width": 231,
+        "height": 62
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only existing fixed approvalbutton; no client/staffIDs,currentcasestatus,dates/history or sidebar/footer.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-workflow-controls-wide.png",
+      "outputSha256": "2e250daba440861db59fef355a611aa94965788816d3c9c1f9ee6a841ebdb8c7",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+      "sourceSha256": "6733a6c8288682df9361b48c063d1a502ae03fc96b164aa2d7047f5cbd464913",
+      "cropPixels": {
+        "x": 310,
+        "y": 589,
+        "width": 650,
+        "height": 58
+      },
+      "derivedDimensions": {
+        "width": 650,
+        "height": 58
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Three existing fixed workflowbuttons only; no testrecords. Alternative QA crop, not selected for the encoded shot.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/05-community-header-filters.png",
+      "outputSha256": "041eb0358d03ac45cabe8b587112ef76028c136ec5b80c0bb9ea19c7cdb55eb4",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-community/community-desktop.webp",
+      "sourceSha256": "c5be155a8136796954f4339cbbdd602b85d2ff5f93d5db7d06f92773c1d04b9c",
+      "cropPixels": {
+        "x": 330,
+        "y": 48,
+        "width": 710,
+        "height": 286
+      },
+      "derivedDimensions": {
+        "width": 710,
+        "height": 286
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Heading and empty searchcontrols only. No fixturecards,usercounts,authors,posts or conversations.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/07-glikemia-language.png",
+      "outputSha256": "95f250597bae75a176f366756ee374f4adcd2bf88f7a2e25b7d847252f2793e8",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/glikemia/product-language.webp",
+      "sourceSha256": "cfe78f53657a8d7d254f59febd12bfefcb4499ebff0f4946df1f6e9a1d91712c",
+      "cropPixels": {
+        "x": 0,
+        "y": 80,
+        "width": 648,
+        "height": 1100
+      },
+      "derivedDimensions": {
+        "width": 648,
+        "height": 1100
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Languagecontrols only; no patientidentity,measurements/history/PDF. Systembars excluded.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/08-translator-neutral.png",
+      "outputSha256": "3d8da45cf60d9af2532ecb0340a1cb0a6b9166c975044e4436dfe385823a2db7",
+      "sourceRepository": "ProgressorKit Systems",
+      "sourcePath": "assets/projects/progresskit-translator/translator-start.webp",
+      "sourceSha256": "d990cd8390b3f873f4d5fddb2d93fa65b247863560117d91c22aca0c775aae78",
+      "cropPixels": {
+        "x": 0,
+        "y": 130,
+        "width": 1080,
+        "height": 2140
+      },
+      "derivedDimensions": {
+        "width": 1080,
+        "height": 2140
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. No UI controls,text,data or states added/removed within the selected rectangle.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Actual empty historicalstartscreen; no spokenphrase/history. Systembars excluded.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; see qa/frames and clips-validation.json."
+    },
+    {
+      "output": "stills/03-tax-sections-nav.png",
+      "outputSha256": "4914e9bf50cc533614e096942a9dbef6bef1a54e085e0457b3ddd29715bcd368",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "sourceSha256": "312fd0dabcf5c3d582f986677648d9739fa161f33e366dc304fe853ce73051a4",
+      "cropPixels": {
+        "x": 16,
+        "y": 176,
+        "width": 222,
+        "height": 514
+      },
+      "derivedDimensions": {
+        "width": 222,
+        "height": 514
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. External scene labels describe fragments and do not alter the productUI.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Static module navigation only; activeoffice selector above and account/footer below excluded. No clientrecords or identities.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; qa/frames/03-1.5-v2.png",
+      "selectedInShot": 3
+    },
+    {
+      "output": "stills/03-tax-country-filter.png",
+      "outputSha256": "483e0e5c2a3d9d4e6f4b2109d4b96f53636219e53ee97681a84b9171c0810508",
+      "sourceRepository": "progresskit-tax",
+      "sourcePath": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+      "sourceSha256": "312fd0dabcf5c3d582f986677648d9739fa161f33e366dc304fe853ce73051a4",
+      "cropPixels": {
+        "x": 1139,
+        "y": 341,
+        "width": 157,
+        "height": 52
+      },
+      "derivedDimensions": {
+        "width": 157,
+        "height": 52
+      },
+      "pixelEdits": "NONE; exact rectangular crop only. External scene labels describe fragments and do not alter the productUI.",
+      "review": "VISUALLY_REVIEWED_SOURCE_AND_CROP",
+      "privacyObservation": "Only default countryfilter control; no rowvalues,clientcountryrecords,counts or identifiers.",
+      "phoneOutputReview": "PASS_PRIMARY_CONTENT; qa/frames/03-1.5-v2.png",
+      "selectedInShot": 3
+    }
+  ],
+  "finalizedAtUTC": "2026-11-02T11:35:42.148531+00:00",
+  "history": {
+    "baselineSevenClips": "qa/clips-validation.json",
+    "baselineSourceChecks": "qa/final-local-source-check.json",
+    "taxFirstAttempt": "qa/attempts/03-button-only-v1.mp4",
+    "earlierCaptureAttempt": "qa/live-captures-v1.json",
+    "note": "Retained historical/intermediate evidence. Baseline 7/10 and missing-shot statements do not describe current final output. Latest complete record: qa/all-clips-validation.json and manifest.json."
+  }
+}

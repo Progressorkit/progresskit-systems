@@ -1,0 +1,2291 @@
+{
+  "auditDate": "2026-11-02",
+  "mode": "READ_ONLY_SOURCE_AUDIT",
+  "newProductTestsRun": false,
+  "publicProsePolicy": "Public fields are sanitized Polish suggestions. Evidence paths/Git/artifact/test details are private audit metadata; do not publish all JSON verbatim.",
+  "products": [
+    {
+      "id": "progresskit-mail",
+      "name": "ProgressKit Mail",
+      "summary": "Wieloplatformowy klient pocztowy z implementacjami Android, Linux i Windows oraz własnym backendem dostępu i powiadomień.",
+      "solution": "Android obsługuje rzeczywiste IMAP/SMTP, lokalny cache i powiadomienia FCM. Linux i Windows współdzielą silnik poczty, izolację kont i OAuth, a korzystają z natywnej ochrony systemowej. Backend zarządza dostępem urządzeń i trwałym stanem enrollmentu. Każda platforma ma osobny zakres odbioru i dystrybucji.",
+      "features": [
+        {
+          "text": "Android: odczyt IMAP, wysyłanie SMTP, zapis kopii Wysłanych i kontrolowane usuwanie wiadomości.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/AngusMailDataSources.kt",
+              "line": 50,
+              "endLine": 185,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "af3a26f0440305415a78f356bf31ae5bb4d311ded952fe7411e0a3f686f900d2"
+            }
+          ]
+        },
+        {
+          "text": "Android: lokalne widoki folderów, wyszukiwanie, szkice, oznaczenia odczytu i ulubionych oraz odkładanie wiadomości w Room.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/RoomMailRepository.kt",
+              "line": 64,
+              "endLine": 88,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "582ba59019d67997cca4ce1aba61dd2b06a50629f811bfbd2a8cb477f65c3268"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/RoomMailRepository.kt",
+              "line": 240,
+              "endLine": 278,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "582ba59019d67997cca4ce1aba61dd2b06a50629f811bfbd2a8cb477f65c3268"
+            }
+          ],
+          "limits": "Foldery użytkownika i część flag są lokalne; nie oznacza to pełnej synchronizacji dowolnych folderów/flag IMAP."
+        },
+        {
+          "text": "Android: ekstrakcja czytelnej treści MIME/plain/HTML z ograniczeniami rozmiaru i tolerancją uszkodzonych metadanych.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/MimeReadableContent.kt",
+              "line": 1,
+              "endLine": 90,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "8d1b73571bd6f7e755e26217fd3815d792e186f05cb763dbb0d84073c9d27a21"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "docs/MIME_CLOSURE.md",
+              "line": 126,
+              "endLine": 135,
+              "kind": "report",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "edccfa5f32492a27d9d2fb26c6edf4fe74d593ef21b32ade9c178874a86217ed"
+            }
+          ],
+          "limits": "Android nie jest pełną przeglądarką rich HTML; pobieranie/otwieranie załączników Android pozostaje poza potwierdzonym zakresem."
+        },
+        {
+          "text": "Android: tożsamość urządzenia oparta na Android Keystore i podpisywaniu challenge, z osobnym chronionym magazynem danych uwierzytelniających.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureDeviceIdentity.kt",
+              "line": 17,
+              "endLine": 63,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "3edbaf72b3096c57953ef5a99473f23f99f43da24bf826e8c2d547c52ff8dd09"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureMailCredentialStore.kt",
+              "line": 25,
+              "endLine": 94,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "177dbd9aa34f574791020e4c2b3bc98b3f53180f9e4e1e4d7c0ce136a02cae4d"
+            }
+          ]
+        },
+        {
+          "text": "Android: FCM uruchamia synchronizację i prywatne, ogólne powiadomienie zamiast ujawniania treści poczty.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/FcmMailPushProvider.kt",
+              "line": 25,
+              "endLine": 74,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "26fc39f19a01d19b5c7f40cd46cd0a78a4670e824d66e8da070ab051c5bbbe9c"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "docs/PRODUCTION_CLOSURE_REPORT.md",
+              "line": 27,
+              "endLine": 35,
+              "kind": "report",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "5a20a834a65e2f3dd6228bd6762d9fd3b531f42f465cdb49e0a12e1b30e7c2bb"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/MailMessagingService.kt",
+              "line": 8,
+              "endLine": 30,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "bdebfc988cb586b17d7dbfd86a7845bc27731e55db0964fab10cef5ec8bfe397"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/PrivateMailNotifications.kt",
+              "line": 17,
+              "endLine": 56,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "01bae8f92ed4da6c4e7688b4da9ae476825875a5b8ea9b42c305293f8eef80ce"
+            }
+          ],
+          "limits": "Historycznie potwierdzono online Debug E2E; pełna macierz offline, Doze i cold-process wymaga odrębnego odbioru."
+        },
+        {
+          "text": "Linux i Windows: wspólny silnik MailKit/MimeKit z listowaniem i odczytem poczty, SMTP, szkicami serwerowymi, Koszem oraz obsługą załączników.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Core/Mail/MailService.cs",
+              "line": 53,
+              "endLine": 231,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "8c1297ee5013afd005846de64f2ecc2ddf2c0de2ac34b989b94ff832ae30a901"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Core/Mail/MessageSafety.cs",
+              "line": 7,
+              "endLine": 80,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "3fd486162cf5573fd1e5f711835c00107ed6a9f9c79f3c2a3589b06099872067"
+            }
+          ]
+        },
+        {
+          "text": "Linux i Windows: rozdzielone konta, osobne środowiska operacji i bezpieczne anulowanie pracy przy zmianie konta.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountWorkspace.cs",
+              "line": 33,
+              "endLine": 105,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "86e7de6ac19b1e1d387eae14ad90152d90decb0b221bdee8a9e4786e815d7677"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Core/Accounts/ProtectedAccountRepositories.cs",
+              "line": 1,
+              "endLine": 45,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "db9540cc4d54110ad8d88faddcb7086896af787b22b99ce529548ab1229e8fe7"
+            }
+          ]
+        },
+        {
+          "text": "Linux i Windows: lokalna implementacja Gmail OAuth Authorization Code + PKCE i XOAUTH2 z odbiornikiem loopback.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthService.cs",
+              "line": 1,
+              "endLine": 85,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "e6983966e9aec8aff9f2f4083ae5ee9e2eec975993df0453c10923cff11926b6"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "docs/GMAIL_OAUTH.md",
+              "line": 3,
+              "endLine": 43,
+              "kind": "report",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "897bccf2d0acdac486ff98e698d03655e3dda236d31bcfa324b8fc3f3a9a0e9e"
+            }
+          ],
+          "limits": "Rzeczywisty Gmail i publiczna akceptacja scope nie są potwierdzone; brak Client ID kończy się bezpieczną odmową."
+        },
+        {
+          "text": "Linux: klient Avalonia z listą i czytnikiem wiadomości, kompozytorem, odpowiedzią/przekazaniem, stronicowaniem oraz przywracaniem szkiców.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+              "line": 20,
+              "endLine": 105,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+              "line": 234,
+              "endLine": 275,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+              "line": 345,
+              "endLine": 407,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+            }
+          ]
+        },
+        {
+          "text": "Linux: Secret Service chroni materiał kluczowy, a lokalne dane są przechowywane przez ograniczony magazyn AES-GCM.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxProtectedStore.cs",
+              "line": 26,
+              "endLine": 95,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "03d912072f916b518ca1efcb79df117db1e24660f6c95eb96e16d05e72b3f8d2"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux.Security/LibSecretStore.cs",
+              "line": 110,
+              "endLine": 118,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "d12dbe071311d5f12bb604f5c8cc2a6eee35502d0c12cd77cc5b8e2e86951b1d"
+            }
+          ]
+        },
+        {
+          "text": "Linux: opcjonalne powiadomienia systemowe przez natywny adapter pulpitu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Linux/Services/DesktopNotificationService.cs",
+              "line": 6,
+              "endLine": 35,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "3c98a32e7b937594f30b93b2dd533c38a86158154c2b900eba8a64068347e75a"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "docs/LINUX_INSTALL_LOGIN_20261027.md",
+              "line": 71,
+              "endLine": 81,
+              "kind": "report",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "da76806db1958bc6a1e3e605b47dea1d8c22406f5f836693b3c929f81893ad6d"
+            }
+          ]
+        },
+        {
+          "text": "Windows: klient WPF korzysta z DPAPI CurrentUser i nieeksportowalnej tożsamości CNG; logowanie hasłem nie wymaga Windows Hello.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsProtectedStore.cs",
+              "line": 8,
+              "endLine": 58,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "a39f13af9207bb9e1b338e2abc14cb3d05ae7c8efe64d8242b514fa191a661d5"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "windows/src/ProgressKit.Mail.Windows/Security/CngDeviceIdentity.cs",
+              "line": 50,
+              "endLine": 63,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "15eabfc5ed0172a6aa5120662943cbb4c555ebcf5301982587562854d086f0b5"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "docs/WINDOWS_MOM_FINALIZATION.md",
+              "line": 3,
+              "endLine": 28,
+              "kind": "report",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "7d681a6c05fd81139df2abb81a0ebcb30d442db9ff501f99cf8ea79dc1fc9c00"
+            }
+          ],
+          "limits": "Wykonanie WPF/DPAPI/CNG na docelowym Windows 11 pozostaje osobną bramką; ochrona kryptograficzna Hello jest PARTIAL/BLOCKED."
+        },
+        {
+          "text": "Backend .NET: trwały enrollment urządzeń, recovery i odwoływanie dostępu, z modelem kont, przypisań i zdarzeń bezpieczeństwa w PostgreSQL.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceEnrollmentWorkflow.cs",
+              "line": 9,
+              "endLine": 84,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "b8bf927802740733ea477d7c10fd061eab35c4a31f8ea390b5306d5522593813"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceRevocationCoordinator.cs",
+              "line": 10,
+              "endLine": 53,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "f24944902f2ce3f07631a114f75b7c612cd55712fba68abc8548fdd2b1f9131e"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneDbContext.cs",
+              "line": 8,
+              "endLine": 17,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": false,
+              "sha256": "5e863a1f19928d1e212265074ae1bcc46c8d76d235b8a5bbabcaf65da268b96c"
+            }
+          ]
+        },
+        {
+          "text": "Backend: przygotowane capability i API zmiany hasła, z koordynacją i kontrolą propagacji, domyślnie zamknięte bez aktywnego dostawcy.",
+          "status": "PARTIAL",
+          "evidence": [
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Api/Passwords/PasswordChangeEndpoints.cs",
+              "line": 14,
+              "endLine": 43,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "0ae3708c79795ef9d04d0f1a655615bca01da7786546ec2e88770bfbc55e7eb1"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Api/Program.cs",
+              "line": 120,
+              "endLine": 122,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "218cbb64c79eba7c3807d203dcd30ffe6c82c16b8883fd30710e4ffd6816e461"
+            },
+            {
+              "repo": "ProgressKit Mail",
+              "path": "server/src/ProgressKit.Mail.Application/Passwords/VerifiedPasswordChangeCoordinator.cs",
+              "line": 123,
+              "endLine": 165,
+              "kind": "code",
+              "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+              "workingTreeSource": true,
+              "sha256": "145329f6489a0fc7b894d0b5512ce27f0643a035979155b685dcc2e52a7e8ffd"
+            }
+          ],
+          "limits": "Aktualny Program rejestruje Unavailable providers. Raport 2026-10-27 stwierdza brak wdrożenia produkcyjnego tej funkcji; produkcji nie odczytywano w tym audycie."
+        }
+      ],
+      "architecture": [
+        "Android: Kotlin/Compose, moduły app/domain/data/security; Room, WorkManager i Angus Mail.",
+        "Desktop: wspólny .NET Core dla poczty i kont; Avalonia na Linux i WPF na Windows; osobne adaptery Secret Service oraz DPAPI/CNG.",
+        "Serwer: .NET 10 API/Application/Domain/Infrastructure, EF Core i PostgreSQL; Postfix/Dovecot i FCM to odrębne integracje.",
+        "Klient komunikuje się z pocztą bezpośrednio przez IMAP/SMTP; control plane odpowiada za dostęp urządzeń i sygnały push, a nie zastępuje serwera poczty."
+      ],
+      "technologies": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Room",
+        "WorkManager",
+        "Android Keystore",
+        "Eclipse Angus Mail",
+        "Firebase Cloud Messaging",
+        "C#",
+        ".NET 10",
+        "Avalonia 11.3.22",
+        "WPF",
+        "MailKit 4.17.0",
+        "MimeKit",
+        "PostgreSQL",
+        "Entity Framework Core",
+        "Secret Service",
+        "DPAPI",
+        "CNG",
+        "OAuth PKCE"
+      ],
+      "platforms": [
+        {
+          "name": "Android",
+          "implementation": "IMPLEMENTED — IMAP/SMTP, MIME, Room i FCM; wersja źródłowa0.1.0.",
+          "verification": "Historyczne219 testów JVM i13 testów fizycznych; online Debug E2E. Brak nowego uruchomienia w audycie.",
+          "distribution": "Lokalny testowy APK Debug; techniczny Release/R8 nie oznacza produkcyjnego wydania.",
+          "limits": [
+            "Osobna konfiguracja Firebase/API dla Release pozostaje bramką.",
+            "Pełny lifecycle FCM offline/Doze/cold-process oraz live revoke nie są domknięte.",
+            "Brak pełnego richHTML i potwierdzonego otwierania załączników Android."
+          ]
+        },
+        {
+          "name": "Linux",
+          "implementation": "IMPLEMENTED — klient Avalonia, MailKit, compose/drafts/attachments, wiele kont i Secret Service.",
+          "verification": "Historyczne106 testów UI/MVVM; izolowany transport, keyring i powiadomienia; instalacja/launcher1.0.0-10 na hoście.",
+          "distribution": "Istnieją self-contained DEB i TAR.GZ1.0.0-10 amd64; niepodpisane.",
+          "limits": [
+            "Rzeczywista skrzynka i utrzymanie sesji po restartach wymagają osobnego odbioru.",
+            "Pakiet1.0.0-10 pochodzi z wcześniejszego builda niż późniejsze zmiany password-change w working tree.",
+            "Brak potwierdzonego publicznego kanału aktualizacji i komercyjnego SLA."
+          ]
+        },
+        {
+          "name": "Windows",
+          "implementation": "IMPLEMENTED — WPF, współdzielony Core, DPAPI/CNG; Hello opcjonalne i nieblokujące logowania.",
+          "verification": "Cross-build/publish i testy Core na Linux; uruchomienie WPF/DPAPI/CNG na Windows 11 PENDING.",
+          "distribution": "Lokalny self-contained instalatorEXE i ZIP; UNSIGNED, bez Authenticode.",
+          "limits": [
+            "Native Windows11 login/upgrade/IMAP/SMTP nieodebrane.",
+            "Hello cryptographic protection PARTIAL/BLOCKED.",
+            "Aktualny kod nie jest dowodem fizycznego uruchomienia na Windows."
+          ]
+        },
+        {
+          "name": "Backend",
+          "implementation": "IMPLEMENTED — trwałe enrollment/recovery/revoke, PostgreSQL, push i kontrole API; password-change PARTIAL/fail-closed.",
+          "verification": "Historyczne201 testów z izolowanym PostgreSQL oraz oddzielne11 po restore.",
+          "distribution": "Kod i lokalne artefakty; brak świeżego dowodu wersji wdrożonej na produkcji.",
+          "limits": [
+            "Domyślnie Unavailable password providers.",
+            "Historyczne migracje/granty i live revoke wymagają reconcile przed produkcyjnym rolloutem."
+          ]
+        },
+        {
+          "name": "Mail Server / hosting",
+          "implementation": "Integracja z Postfix/Dovecot i DMS; osobny zakres od klienta pocztowego.",
+          "verification": "Historyczny kontrolowany SMTP/Gmail delivery i publiczne TLS probes; bez aktualnych sieciowych kontroli w tym audycie.",
+          "distribution": "Istnieją konfiguracje/instrukcje operatorskie; aktualny deployed commit UNKNOWN.",
+          "limits": [
+            "Nie ma nowego dowodu bieżącej dostarczalności, backup/restore produkcji ani monitoringu/SLA.",
+            "Oferowanie klienta nie oznacza gotowości komercyjnego hostingu poczty."
+          ]
+        }
+      ],
+      "functionalStatus": "Rozbudowana implementacja klienta pocztowego na kilku platformach; Android ma historyczną weryfikację fizyczną, Linux lokalną instalację i izolowane testy, Windows wymaga native runtime odbioru.",
+      "distributionStatus": "Lokalne APK/DEB/TAR.GZ/EXE/ZIP o różnych zakresach odbioru. Linux1.0.0-10 i Windows instalatory nie są podpisanym publicznym wydaniem.",
+      "productionStatus": "UNKNOWN / NOT RELEASE APPROVED. Historia zawiera rzeczywiste testy infrastruktury, ale brak świeżej zgodności aktualnego source z produkcją; zmiana hasła nie ma zamkniętej integracji produkcyjnej.",
+      "results": [
+        "Historycznie potwierdzono Android IMAP/MIME, kontrolowane SMTP/Sent i online FCM; nie jest to pusty prototyp.",
+        "Aktualne pliki desktopowe zgadzają się ze 195-plikowym manifestem źródeł kandydata z 27.10.2026.",
+        "Aktualnie istnieją DEB/TAR.GZ1.0.0-10 oraz niepodpisany instalator Windows; zakres fizycznej akceptacji pozostaje osobny."
+      ],
+      "remaining": [
+        "Native Windows11 i rzeczywista skrzynka Linux.",
+        "Rzeczywisty Gmail OAuth, Client ID i akceptacja zakresów Google.",
+        "Produkcja endpointu zmiany hasła i potwierdzona propagacja do IMAP/SMTP.",
+        "Android Release Firebase/API, podpisany kandydat i pełna macierz powiadomień.",
+        "Bieżący hosting, backup/restore, monitoring, polityki retencji oraz formalne warunki płatnego pilota."
+      ],
+      "tests": [
+        {
+          "date": "2026-10-27T17:08:57.9159117+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/server-isolated/server-tests.trx",
+          "passed": 201,
+          "failed": 0,
+          "notExecuted": 0,
+          "category": "server",
+          "historical": true,
+          "newRun": false,
+          "environment": "Linux; izolowany PostgreSQL",
+          "scope": "API i logika serwera, w tym integracje bazy",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "date": "2026-10-27T17:06:30.0698866+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/core/_pawe-ThinkPad-T480s_2026-10-27_17_06_32.trx",
+          "passed": 271,
+          "failed": 0,
+          "notExecuted": 14,
+          "category": "core",
+          "historical": true,
+          "newRun": false,
+          "environment": "Linux .NET; syntetyczne adaptery",
+          "scope": "Wspólny Core Windows/Linux, uwierzytelnianie i poczta",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "date": "2026-10-27T17:07:00.8259484+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/linux/_pawe-ThinkPad-T480s_2026-10-27_17_07_02.trx",
+          "passed": 106,
+          "failed": 0,
+          "notExecuted": 4,
+          "category": "linux",
+          "historical": true,
+          "newRun": false,
+          "environment": "Linux .NET; UI/MVVM",
+          "scope": "Logika klienta Linux",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "date": "2026-10-27T17:07:22.1836257+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/linux-security/_pawe-ThinkPad-T480s_2026-10-27_17_07_23.trx",
+          "passed": 40,
+          "failed": 0,
+          "notExecuted": 1,
+          "category": "linux-security",
+          "historical": true,
+          "newRun": false,
+          "environment": "Linux .NET; bez prywatnego keyringu",
+          "scope": "Ochrona lokalnych danych Linux",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "date": "2026-10-27T17:09:49.7729226+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/local-transport/_pawe-ThinkPad-T480s_2026-10-27_17_09_53.trx",
+          "passed": 14,
+          "failed": 0,
+          "notExecuted": 0,
+          "category": "local-transport",
+          "historical": true,
+          "newRun": false,
+          "environment": "Lokalne IMAPS/SMTP z tymczasowym CA",
+          "scope": "Rzeczywisty protokół loopback, bez produkcyjnej skrzynki",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "date": "2026-10-27T17:10:28.9267884+01:00",
+          "path": "artifacts/windows-wiola-password-20261027/test-results/linux-notifications-native/linux-notifications-private-bus.trx",
+          "passed": 4,
+          "failed": 0,
+          "notExecuted": 0,
+          "category": "notifications",
+          "historical": true,
+          "newRun": false,
+          "environment": "Prywatna magistrala D-Bus; syntetyczne dane",
+          "scope": "Adapter powiadomień Linux",
+          "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
+          "limits": "Nie sumować z innymi uruchomieniami jako jednego nowego gate."
+        },
+        {
+          "category": "android",
+          "historical": true,
+          "newRun": false,
+          "date": "2026-10-27",
+          "passed": 219,
+          "failed": 0,
+          "notExecuted": 0,
+          "environment": "Android JVM/Gradle Debug na Linux",
+          "scope": "domain/data/security/app; nie fizyczne testy Release",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29; kod Android niezmieniony w późniejszym working tree",
+          "evidence": {
+            "repo": "ProgressKit Mail",
+            "path": "docs/WIOLA_PASSWORD_CHANGE_LOCAL_20261027.md",
+            "line": 103,
+            "endLine": 110,
+            "kind": "report",
+            "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+            "workingTreeSource": true,
+            "sha256": "6079fe2c36f3183f051b08e91722d82428d80a09dfc4bcd12fe2347aac358555"
+          }
+        },
+        {
+          "category": "android-physical-and-delivery",
+          "historical": true,
+          "newRun": false,
+          "date": "2026-10-10",
+          "passed": 13,
+          "failed": 0,
+          "environment": "Fizyczny Xiaomi, Debug; kontrolowane wiadomości",
+          "scope": "IMAP/MIME, SMTP i Sent; online LMTP→FCM; odbiór i SPF/DKIM/DMARC częściowo owner-reported",
+          "revision": "checkpoint opisany w raporcie; nie nowy odczyt produkcji",
+          "evidence": {
+            "repo": "ProgressKit Mail",
+            "path": "docs/PRODUCTION_CLOSURE_REPORT.md",
+            "line": 27,
+            "endLine": 48,
+            "kind": "report",
+            "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+            "workingTreeSource": true,
+            "sha256": "5a20a834a65e2f3dd6228bd6762d9fd3b531f42f465cdb49e0a12e1b30e7c2bb"
+          }
+        },
+        {
+          "category": "linux-install",
+          "historical": true,
+          "newRun": false,
+          "date": "2026-10-27",
+          "environment": "ThinkPad T480s, Linux Mint Cinnamon/X11",
+          "scope": "APT upgrade1.0.0-9→1.0.0-10, dpkg verify i gtk-launch; ekran logowania, bez rzeczywistej skrzynki",
+          "revision": "lokalny kandydat1.0.0-10; brak nowego runtime testu w audycie",
+          "evidence": {
+            "repo": "ProgressKit Mail",
+            "path": "docs/LINUX_INSTALL_LOGIN_20261027.md",
+            "line": 77,
+            "endLine": 85,
+            "kind": "report",
+            "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+            "workingTreeSource": true,
+            "sha256": "da76806db1958bc6a1e3e605b47dea1d8c22406f5f836693b3c929f81893ad6d"
+          }
+        }
+      ],
+      "git": {
+        "repoRoot": "/home/pawe/Pulpit/Projekty It/ProgressKit Mail",
+        "HEAD": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+        "headDate": "2026-10-10T19:43:37+02:00",
+        "dirty": true,
+        "trackedChangedEntries": 16,
+        "untrackedEntriesReportedByGit": 42,
+        "scope": "read-only source inspection; no product tests, account access, installation or deployment executed"
+      },
+      "artifacts": [
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/linux-release-20261027/ProgressKit-Mail-linux-x64.deb",
+          "bytes": 37610456,
+          "sha256": "379a8d14cacb52e8894e740d39defe5f5f5581275c8b2cff40f8067d3c197782",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "UNSIGNED według raportu; metadata DEB świeżo odczytane:1.0.0-10 amd64",
+          "limits": "Sam hash nie dowodzi instalacji, logowania ani zgodności całego późniejszego working tree."
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/linux-release-20261027/ProgressKit-Mail-linux-x64.tar.gz",
+          "bytes": 49753727,
+          "sha256": "cb94189ce59ec8b4b1215b5cb20e1d2776fc152cb8a9f3be1c12bf45943c4a79",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "UNSIGNED według raportu",
+          "limits": "Self-contained linux-x64, nie publiczna sprzedaż."
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/windows-wiola-password-20261027-final/windows/ProgressKitMail-Wiola-Win11-x64-Setup.exe",
+          "bytes": 68298055,
+          "sha256": "57148b8ac1964abcfbf021abe8e90a9324d1500dc542a7de74bf64d477505f8c",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "Historyczny audyt: brak Authenticode / UNSIGNED; podpisu nie weryfikowano ponownie",
+          "limits": "Nie uruchamiano instalatora ani Windows runtime."
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/windows-wiola-password-20261027-final/windows/ProgressKitMail-Windows-x64.zip",
+          "bytes": 69048772,
+          "sha256": "e4cd1ea241a91cc1bcb65e24282e2d4c5cae4e000addb22081c096012355f2ec",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "UNSIGNED według raportu",
+          "limits": "Nie publikować prywatnego kandydata automatycznie."
+        }
+      ],
+      "commercialPreflight": {
+        "releaseForPayingUsers": "BLOCKED — brak zamkniętych bramek platformowych i operatorskich; obecny audyt kodu nie zatwierdza sprzedaży.",
+        "safePilotSuggestion": "Najpierw kontrolowany odbiór klienta Linux na dedykowanym syntetycznym koncie i odseparowanej infrastrukturze; ofertę klienta rozdzielić od hostingu poczty. Nie używać prywatnych kont użytkownika.",
+        "licensing": "Istnieją THIRD-PARTY-NOTICES i foldery licenses; dokument nie nadaje licencji samego produktu. Bieżący kompletny SBOM/licensing/commercial review pozostaje osobnym odbiorem.",
+        "signatureGates": [
+          "Windows Authenticode i strategia aktualizacji.",
+          "Linux zaufany kanał dystrybucji/podpisy pakietów.",
+          "Android produkcyjny Release, właściwy podpis i konfiguracja Firebase."
+        ],
+        "operationalGates": [
+          "Backup/restore i monitoring produkcyjnego mailservera.",
+          "Rekonsyliacja wdrożonych migracji i uprawnień.",
+          "Rzeczywiste recovery i password-change na dedykowanym koncie.",
+          "Zweryfikowane warunki usługi, prywatność, retencja, wsparcie i rozliczenia — nie oceniano zgodności prawnej."
+        ],
+        "evidence": [
+          {
+            "repo": "ProgressKit Mail",
+            "path": "windows/installer/THIRD-PARTY-NOTICES.txt",
+            "line": 4,
+            "endLine": 20
+          },
+          {
+            "repo": "ProgressKit Mail",
+            "path": "docs/LINUX_PACKAGING.md",
+            "line": 72,
+            "endLine": 73
+          },
+          {
+            "repo": "ProgressKit Mail",
+            "path": "docs/WINDOWS_VERIFICATION.md",
+            "line": 23,
+            "endLine": 24
+          }
+        ],
+        "availableEvidenceStrength": "Lokalne działanie i historyczne izolowane testy są udokumentowane. Płatny pilot i hosting nie otrzymują automatycznego PASS na tej podstawie."
+      },
+      "availableHostTests": [
+        {
+          "command": "dotnet test windows/tests/ProgressKit.Mail.Core.Tests/ProgressKit.Mail.Core.Tests.csproj -c Release --no-restore",
+          "scope": "lokalny Core; bez prywatnej skrzynki",
+          "status": "AVAILABLE / NOT RUN by this audit",
+          "limits": "Kategorie native/TLS mogą wymagać osobnych runnerów; osobny katalog wyników."
+        },
+        {
+          "command": "dotnet test windows/tests/ProgressKit.Mail.Linux.Tests/ProgressKit.Mail.Linux.Tests.csproj -c Release --no-restore",
+          "scope": "Linux UI/MVVM na syntetycznych adapterach",
+          "status": "AVAILABLE / NOT RUN"
+        },
+        {
+          "command": "windows/linux/verify-local-transport.sh <dedicated-results-directory>",
+          "scope": "IMAPS/SMTP na wysokich portach loopback z procesowym tymczasowym CA",
+          "status": "AVAILABLE / NOT RUN; no production accounts"
+        },
+        {
+          "command": "windows/tests/ProgressKit.Mail.Linux.Security.Tests/run-secretservice-integration.sh",
+          "scope": "nowa prywatna magistrala D-Bus i tymczasowy syntetyczny keyring, nigdy osobista sesja",
+          "status": "AVAILABLE / NOT RUN"
+        },
+        {
+          "command": "windows/tests/ProgressKit.Mail.Linux.Tests/run-notification-integration.sh",
+          "scope": "osobna magistrala D-Bus bez pulpitu użytkownika",
+          "status": "AVAILABLE / NOT RUN"
+        },
+        {
+          "command": "infra/scripts/verify-server-isolated.sh <dedicated-results-directory>",
+          "scope": "własny losowy kontener PostgreSQL i syntetyczny dump/restore; blokada zdalnego Docker endpointu",
+          "status": "AVAILABLE CONDITIONAL / NOT RUN",
+          "requires": [
+            "lokalny Docker",
+            "cached postgres:16",
+            "psql/pg_dump/pg_restore",
+            "dotnet"
+          ]
+        },
+        {
+          "command": "infra/scripts/verify-local.sh",
+          "scope": "pełny gate",
+          "status": "HISTORICALLY BLOCKED at Android Release HTTPS/Firebase configuration; do not bypass guard"
+        }
+      ],
+      "authenticShots": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/projects/mail/mail-splash.webp",
+          "captureDate": "UNKNOWN; historical V4 material",
+          "provenance": "Catalog explicitly labels actual Android startup screenshot; current image visually reviewed.",
+          "privacy": "No mailbox/account/message content visible; phone status bar present.",
+          "rights": "Owner-controlled repo asset; independent rights audit not performed.",
+          "usable": "CANDIDATE — actual splash only, not proof of current inbox features."
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/linux/verification/gui-release-from-deb-restart.png",
+          "captureDate": "historical2026-10-20series; exacttime not established",
+          "provenance": "Real Linux GUI screenshot referenced by LINUX_VERIFICATION.md; visually reviewed.",
+          "privacy": "Public owneraddress shown; no password or correspondence. Contains keyring-unavailable error.",
+          "usable": "NOT RECOMMENDED as promo; obtain clean dedicated login screenshot, never use private mailbox."
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "artifacts/multi-account/gui-final7/matrix/rev7_scale-100_1366x768_login.png",
+          "captureDate": "Historical 2026-10-20 series; exact capture time not established",
+          "provenance": "Visually reviewed real Linux GUI test harness with prominent synthetic-test banner.",
+          "privacy": "Synthetic account identities visible, no private correspondence; harness explicitly says no mail network.",
+          "usable": "DO NOT use as unqualified commercial demo; prefer fresh empty login from real packaged app in isolated test profile."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/AngusMailDataSources.kt",
+          "line": 50,
+          "endLine": 185,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "af3a26f0440305415a78f356bf31ae5bb4d311ded952fe7411e0a3f686f900d2"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/RoomMailRepository.kt",
+          "line": 64,
+          "endLine": 88,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "582ba59019d67997cca4ce1aba61dd2b06a50629f811bfbd2a8cb477f65c3268"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/local/RoomMailRepository.kt",
+          "line": 240,
+          "endLine": 278,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "582ba59019d67997cca4ce1aba61dd2b06a50629f811bfbd2a8cb477f65c3268"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/data/src/main/kotlin/pl/progresskit/mail/data/mail/MimeReadableContent.kt",
+          "line": 1,
+          "endLine": 90,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "8d1b73571bd6f7e755e26217fd3815d792e186f05cb763dbb0d84073c9d27a21"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "docs/MIME_CLOSURE.md",
+          "line": 126,
+          "endLine": 135,
+          "kind": "report",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "edccfa5f32492a27d9d2fb26c6edf4fe74d593ef21b32ade9c178874a86217ed"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureDeviceIdentity.kt",
+          "line": 17,
+          "endLine": 63,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "3edbaf72b3096c57953ef5a99473f23f99f43da24bf826e8c2d547c52ff8dd09"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureMailCredentialStore.kt",
+          "line": 25,
+          "endLine": 94,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "177dbd9aa34f574791020e4c2b3bc98b3f53180f9e4e1e4d7c0ce136a02cae4d"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/FcmMailPushProvider.kt",
+          "line": 25,
+          "endLine": 74,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "26fc39f19a01d19b5c7f40cd46cd0a78a4670e824d66e8da070ab051c5bbbe9c"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "docs/PRODUCTION_CLOSURE_REPORT.md",
+          "line": 27,
+          "endLine": 35,
+          "kind": "report",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "5a20a834a65e2f3dd6228bd6762d9fd3b531f42f465cdb49e0a12e1b30e7c2bb"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Core/Mail/MailService.cs",
+          "line": 53,
+          "endLine": 231,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "8c1297ee5013afd005846de64f2ecc2ddf2c0de2ac34b989b94ff832ae30a901"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Core/Mail/MessageSafety.cs",
+          "line": 7,
+          "endLine": 80,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "3fd486162cf5573fd1e5f711835c00107ed6a9f9c79f3c2a3589b06099872067"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountWorkspace.cs",
+          "line": 33,
+          "endLine": 105,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "86e7de6ac19b1e1d387eae14ad90152d90decb0b221bdee8a9e4786e815d7677"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Core/Accounts/ProtectedAccountRepositories.cs",
+          "line": 1,
+          "endLine": 45,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "db9540cc4d54110ad8d88faddcb7086896af787b22b99ce529548ab1229e8fe7"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthService.cs",
+          "line": 1,
+          "endLine": 85,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "e6983966e9aec8aff9f2f4083ae5ee9e2eec975993df0453c10923cff11926b6"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "docs/GMAIL_OAUTH.md",
+          "line": 3,
+          "endLine": 43,
+          "kind": "report",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "897bccf2d0acdac486ff98e698d03655e3dda236d31bcfa324b8fc3f3a9a0e9e"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+          "line": 20,
+          "endLine": 105,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+          "line": 234,
+          "endLine": 275,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/MainViewModel.cs",
+          "line": 345,
+          "endLine": 407,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "3a374d201ab5593238c59916192180963e7a909df659ee045f64417e414c6226"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux.Security/LinuxProtectedStore.cs",
+          "line": 26,
+          "endLine": 95,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "03d912072f916b518ca1efcb79df117db1e24660f6c95eb96e16d05e72b3f8d2"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux.Security/LibSecretStore.cs",
+          "line": 110,
+          "endLine": 118,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "d12dbe071311d5f12bb604f5c8cc2a6eee35502d0c12cd77cc5b8e2e86951b1d"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Linux/Services/DesktopNotificationService.cs",
+          "line": 6,
+          "endLine": 35,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "3c98a32e7b937594f30b93b2dd533c38a86158154c2b900eba8a64068347e75a"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "docs/LINUX_INSTALL_LOGIN_20261027.md",
+          "line": 71,
+          "endLine": 81,
+          "kind": "report",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "da76806db1958bc6a1e3e605b47dea1d8c22406f5f836693b3c929f81893ad6d"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Windows/Security/WindowsProtectedStore.cs",
+          "line": 8,
+          "endLine": 58,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "a39f13af9207bb9e1b338e2abc14cb3d05ae7c8efe64d8242b514fa191a661d5"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "windows/src/ProgressKit.Mail.Windows/Security/CngDeviceIdentity.cs",
+          "line": 50,
+          "endLine": 63,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "15eabfc5ed0172a6aa5120662943cbb4c555ebcf5301982587562854d086f0b5"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "docs/WINDOWS_MOM_FINALIZATION.md",
+          "line": 3,
+          "endLine": 28,
+          "kind": "report",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "7d681a6c05fd81139df2abb81a0ebcb30d442db9ff501f99cf8ea79dc1fc9c00"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceEnrollmentWorkflow.cs",
+          "line": 9,
+          "endLine": 84,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "b8bf927802740733ea477d7c10fd061eab35c4a31f8ea390b5306d5522593813"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceRevocationCoordinator.cs",
+          "line": 10,
+          "endLine": 53,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "f24944902f2ce3f07631a114f75b7c612cd55712fba68abc8548fdd2b1f9131e"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneDbContext.cs",
+          "line": 8,
+          "endLine": 17,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "5e863a1f19928d1e212265074ae1bcc46c8d76d235b8a5bbabcaf65da268b96c"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Api/Passwords/PasswordChangeEndpoints.cs",
+          "line": 14,
+          "endLine": 43,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "0ae3708c79795ef9d04d0f1a655615bca01da7786546ec2e88770bfbc55e7eb1"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Api/Program.cs",
+          "line": 120,
+          "endLine": 122,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "218cbb64c79eba7c3807d203dcd30ffe6c82c16b8883fd30710e4ffd6816e461"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "server/src/ProgressKit.Mail.Application/Passwords/VerifiedPasswordChangeCoordinator.cs",
+          "line": 123,
+          "endLine": 165,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": true,
+          "sha256": "145329f6489a0fc7b894d0b5512ce27f0643a035979155b685dcc2e52a7e8ffd"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/MailMessagingService.kt",
+          "line": 8,
+          "endLine": 30,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "bdebfc988cb586b17d7dbfd86a7845bc27731e55db0964fab10cef5ec8bfe397"
+        },
+        {
+          "repo": "ProgressKit Mail",
+          "path": "android/app/src/main/kotlin/pl/progresskit/mail/push/PrivateMailNotifications.kt",
+          "line": 17,
+          "endLine": 56,
+          "kind": "code",
+          "revision": "c9b669ce0a2cc8e5baff6125415f62afc4aeed29",
+          "workingTreeSource": false,
+          "sha256": "01bae8f92ed4da6c4e7688b4da9ae476825875a5b8ea9b42c305293f8eef80ce"
+        }
+      ],
+      "hostPreflightAvailability": {
+        "os": "Linux",
+        "architecture": "x86_64",
+        "toolsFound": {
+          "dotnet": true,
+          "docker": true,
+          "psql": true,
+          "pg_dump": true,
+          "pg_restore": true,
+          "dbus-run-session": true,
+          "gnome-keyring-daemon": true,
+          "openssl": true,
+          "python3": true,
+          "adb": true,
+          "gitleaks": false
+        },
+        "limits": "Only executable availability checked. No Docker daemon/image, private D-Bus/keyring, device, account, network or test execution inspected."
+      }
+    },
+    {
+      "id": "glikemia-premium",
+      "name": "Glikemia Premium",
+      "summary": "Działający dziennik glikemii na Androida z lokalną historią, walidacją jednostek, wykresem i wielostronicowym PDF, dostępny jako APK 1.0.",
+      "solution": "Aplikacja .NET MAUI przechowuje pomiary na telefonie, porządkuje historię i tworzy raporty PDF. Nie wymaga własnego backendu danych zdrowotnych i nie zastępuje profesjonalnej porady medycznej.",
+      "features": [
+        {
+          "text": "Dodawanie, edycja i usuwanie pomiarów w lokalnej bazie SQLite, z walidacją wartości przed zapisem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "Models/Services/DatabaseService.cs",
+              "line": 14,
+              "endLine": 52,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "3f821fb929b0cdaac258d7129d05a90df33b1305fe5516c113479906db9cbfb9"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "Models/Services/DatabaseService.cs",
+              "line": 94,
+              "endLine": 99,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "3f821fb929b0cdaac258d7129d05a90df33b1305fe5516c113479906db9cbfb9"
+            }
+          ]
+        },
+        {
+          "text": "Kontekst pomiaru, WW/WBT i notatka są zapisywane razem z rekordem dziennika.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "Wpis_glikemii.cs",
+              "line": 1,
+              "endLine": 35,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "af2cab41726cb69af943c061b705b8ff260f564ea3c249c5391c0871be480a80"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "ViewModels/MainViewModel.cs",
+              "line": 215,
+              "endLine": 240,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "755c5be7d0f1bd7f68f51a7999440ab7537db677b5b9b126449ee8490f6289bb"
+            }
+          ]
+        },
+        {
+          "text": "Historia ma stronicowanie po 50 rekordów, stabilną kolejność daty i ID oraz filtry dnia, tygodnia i miesiąca.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "RaportPage.xaml.cs",
+              "line": 14,
+              "endLine": 25,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "RaportPage.xaml.cs",
+              "line": 159,
+              "endLine": 183,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "Models/Services/MeasurementRecordPersistence.cs",
+              "line": 8,
+              "endLine": 42,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "df8997a941b0d08402644ede9eb4805f222a6a421598a5ffe09ffffba0c99947"
+            }
+          ]
+        },
+        {
+          "text": "Wykres na ekranie historii przedstawia ostatnie pomiary z aktualnie załadowanego widoku.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "RaportPage.xaml.cs",
+              "line": 183,
+              "endLine": 207,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+            }
+          ]
+        },
+        {
+          "text": "Jednostki mg/dL i mmol/L są obsługiwane przy jednej kanonicznej postaci zapisu i jawnych regułach zaokrąglania.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "Models/GlucoseMeasurementPolicy.cs",
+              "line": 17,
+              "endLine": 113,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "a5b5fad7b961b6e522d35f18ed16e6df9c5f0e61f482d49b50cc4b7b838d62dc"
+            }
+          ]
+        },
+        {
+          "text": "Wielostronicowy raport PDF obejmuje całą historię i podsumowanie; generowanie działa poza wątkiem UI i blokuje równoległy eksport.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "PdfService.cs",
+              "line": 17,
+              "endLine": 115,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "9989f0d7d6ad484071520709ded49df0a1dfe41572e409da6f4ab9cd774b4a31"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "RaportPage.xaml.cs",
+              "line": 340,
+              "endLine": 370,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+            }
+          ],
+          "limits": "Filtr ekranu historii nie ogranicza eksportowanego PDF. Raport jest dziennikiem, nie diagnozą."
+        },
+        {
+          "text": "Interfejs oferuje siedem wariantów języka: PL, EN, DE, ES, IT, UK i RU.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "Slownik.cs",
+              "line": 8,
+              "endLine": 31,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "0dcac711a0c93218668ab235305982be9999d30080c314ace01d002db2922177"
+            }
+          ]
+        },
+        {
+          "text": "Lokalne przypomnienie po pomiarze przed posiłkiem jest planowane na dwie godziny później, po obsłudze zgody na powiadomienia.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "ViewModels/MainViewModel.cs",
+              "line": 245,
+              "endLine": 272,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "755c5be7d0f1bd7f68f51a7999440ab7537db677b5b9b126449ee8490f6289bb"
+            }
+          ]
+        },
+        {
+          "text": "Kod aplikacji nie zawiera wbudowanych rzeczywistych pomiarów; baza i pliki pomocnicze są wyłączone z systemowego backupu/transferu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Glikemia Premium",
+              "path": "Models/Services/HistoricalGlucoseImporter.cs",
+              "line": 26,
+              "endLine": 48,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "cf2816e070da5dc22c832583fa777417dee341999f963e9adcf7051b2a0eb71d"
+            },
+            {
+              "repo": "Glikemia Premium",
+              "path": "Platforms/Android/Resources/xml/data_extraction_rules.xml",
+              "line": 3,
+              "endLine": 15,
+              "kind": "code",
+              "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+              "workingTreeSource": false,
+              "sha256": "e26df5b54ae3ab10bea3e2c1a2c304ed8a82b45bcab860a052c2f8507770b127"
+            }
+          ],
+          "limits": "Baza SQLite nie jest szyfrowana przez warstwę aplikacji; eksportowane PDF pozostają pod kontrolą użytkownika."
+        }
+      ],
+      "architecture": [
+        ".NET MAUI na Androidzie, ViewModels + lokalne usługi SQLiteAsyncConnection.",
+        "GlucoseMeasurementPolicy normalizuje wejście; MeasurementRecordPersistence odpowiada za paginację i stabilną kolejność.",
+        "SkiaSharp generuje strony PDF; LocalNotification obsługuje przypomnienia.",
+        "Dystrybucja portfolio i jej licznik/opinie to osobny backend strony, nie chmura danych pomiarowych."
+      ],
+      "technologies": [
+        "C#",
+        ".NET 10",
+        ".NET MAUI",
+        "Android",
+        "SQLite",
+        "SkiaSharp",
+        "Microcharts.Maui",
+        "Plugin.LocalNotification"
+      ],
+      "platforms": [
+        {
+          "name": "Android",
+          "implementation": "IMPLEMENTED — źródłowy target net10.0-android, minSdk 24, wersja 1.0 (1).",
+          "verification": "Historyczne 62 testy automatyczne i starsza fizyczna regresja; finalne manualne bramki Release i Play nie zostały zamknięte.",
+          "distribution": "Istniejący podpisany APK 1.0 arm64 i identyczna kopia downloads/glikemia-premium.apk.",
+          "limits": [
+            "Brak potwierdzonej publikacji Google Play.",
+            "Aktualne manualne QA zmienionego UI, backup/transfer i Play install pozostają osobnymi odbiorami.",
+            "Wolniejszy historyczny Debug cold start nie jest nowym pomiarem aktualnego Release."
+          ]
+        }
+      ],
+      "functionalStatus": "IMPLEMENTED — funkcjonalny lokalny dziennik Android, z rzeczywistym buildem i historyczną weryfikacją; nie sam pusty prototyp.",
+      "distributionStatus": "Istnieje APK 1.0. Lokalna kopia i źródłowy plik mają teraz identyczne 80 235 954 bajty i SHA-256; publikacji Play ani nowej instalacji nie zweryfikowano.",
+      "productionStatus": "Brak backendu danych zdrowotnych. Istnieje osobna strona dystrybucyjna; jej bieżącej produkcji i liczników nie odczytywano. Formalny mobile Release Gate według dokumentacji pozostaje NOT PASSED.",
+      "results": [
+        "Kod potwierdza lokalne CRUD, filtrowanie, wykres, jednostki i PDF.",
+        "Dokument QA z 09.09.2026 opisuje 62 testy PASS; jest to wynik historyczny.",
+        "Aktualny audyt statyczny potwierdził zgodność istniejącego APK z plikiem dystrybucyjnym, bez przebudowy i instalacji."
+      ],
+      "remaining": [
+        "Finalna manualna akceptacja podpisanego Release na Androidzie.",
+        "Formalny proces Google Play i powiązane listing, Data Safety oraz deklaracje aplikacji zdrowotnej.",
+        "Nie przedstawiać raportowanych 417 stron i około 10 tys. rekordów jako nowego benchmarku.",
+        "Nie publikować screenshotów historii lub PDF zawierających rzeczywiste pomiary."
+      ],
+      "tests": [
+        {
+          "historical": true,
+          "newRun": false,
+          "date": "2026-09-09",
+          "scope": "Automatyczna regresja; Debug/Release rebuild",
+          "environment": "lokalny .NET/Android build na Linux",
+          "passed": 62,
+          "failed": 0,
+          "notExecuted": 0,
+          "revision": "Raport opisuje working tree bazujące na5144a187; późniejsze commity domykają te źródła. Brak nowego uruchomienia dla aktualnegoHEAD.",
+          "evidence": {
+            "repo": "Glikemia Premium",
+            "path": "docs/QA_LOG.md",
+            "line": 331,
+            "endLine": 395,
+            "kind": "report",
+            "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+            "workingTreeSource": false,
+            "sha256": "a002cda3e1ab19c28d8ceb7d72e15ff1bb0a0e31454b66ba6458b35db5827131"
+          }
+        },
+        {
+          "historical": true,
+          "newRun": false,
+          "date": "2026-08-24",
+          "scope": "Fizyczna regresja ADB wcześniejszego Debug/legacy applicationId",
+          "environment": "fizyczny Android, starszy kandydat",
+          "result": "Początkowo9PASS/1FAIL, późniejsza dokumentacja odnotowuje10/10; nie zastępuje finalnego Release/Play QA.",
+          "revision": "historyczny artefakt z raportu, nie aktualnyAPK1.0",
+          "evidence": {
+            "repo": "Glikemia Premium",
+            "path": "docs/qa/ANDROID_ADB_QA_2026-08-24.md",
+            "line": 87,
+            "endLine": 98,
+            "kind": "report",
+            "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+            "workingTreeSource": false,
+            "sha256": "272adeff88fa7b694b8d9fe6d9af7c329ce0f87d26c8df6d9f52d73ce9f61284"
+          },
+          "supplement": {
+            "repo": "Glikemia Premium",
+            "path": "docs/QA_LOG.md",
+            "line": 331,
+            "endLine": 357,
+            "kind": "report",
+            "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+            "workingTreeSource": false,
+            "sha256": "a002cda3e1ab19c28d8ceb7d72e15ff1bb0a0e31454b66ba6458b35db5827131"
+          }
+        },
+        {
+          "historical": true,
+          "newRun": false,
+          "date": "2026-09-09",
+          "scope": "Odzyskany od właściciela historyczny stress z ok.10k rekordów i417-stronicowym PDF",
+          "environment": "historyczne dane operatora; brak nowego surowego pomiaru",
+          "result": "operator-reported, nie nowy PASS",
+          "revision": "UNKNOWN in recovered evidence",
+          "evidence": {
+            "repo": "Glikemia Premium",
+            "path": "docs/QA_LOG.md",
+            "line": 335,
+            "endLine": 337,
+            "kind": "report",
+            "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+            "workingTreeSource": false,
+            "sha256": "a002cda3e1ab19c28d8ceb7d72e15ff1bb0a0e31454b66ba6458b35db5827131"
+          }
+        }
+      ],
+      "git": {
+        "repoRoot": "/home/pawe/Pulpit/Projekty It/Glikemia Premium",
+        "HEAD": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+        "headDate": "2026-09-09T15:46:31+02:00",
+        "dirty": true,
+        "trackedChangedEntries": 2,
+        "untrackedEntriesReportedByGit": 1,
+        "scope": "read-only source inspection; no product tests, account access, installation or deployment executed"
+      },
+      "checkoutDecision": {
+        "selected": "/home/pawe/Pulpit/Projekty It/Glikemia Premium",
+        "otherCheckout": "/home/pawe/Pulpit/Projekty It/Glikemia-Premium-clean",
+        "otherHEAD": "4d992f07ff64edd3a5ac85e4421a6106932fc2fb",
+        "reason": "Glikemia Premium ma współczesne ID com.progressorkit.glikemiapremium, dokumentację QA i źródłowy APK zgodny z dystrybucją. Clean ma inne hashe kodu oraz legacy ID com.companyname; nie łączyć obu checkoutów ani tworzyć drugiego produktu."
+      },
+      "artifacts": [
+        {
+          "repo": "Glikemia Premium",
+          "path": "bin/Release/net10.0-android/com.progressorkit.glikemiapremium-Signed.apk",
+          "bytes": 80235954,
+          "sha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "PodpisAPKhistorycznie potwierdzony; aktualny audyt sprawdził tylko hash/rozmiar",
+          "limits": "Wersja1.0(1), źródło lokalne, bez instalacji i publikacji Play."
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "downloads/glikemia-premium.apk",
+          "bytes": 80235954,
+          "sha256": "137c6e4bde496346d186e83d7a34b085aded2b8dc4280ab7e1053c44e1c5684b",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "Kopia istniejącego podpisanego APK; nowej kryptograficznej weryfikacji podpisu nie uruchamiano",
+          "limits": "Hashzgodny zeźródłem iJSONmetadanymi; nie jest dowodem odbioru na telefonie."
+        }
+      ],
+      "downloadCaveats": {
+        "status": "IMPLEMENTED in portfolio backend; historical HTTP evidence, no new network run",
+        "rules": [
+          "Liczone są zakończone pełne GET 200 bez Range.",
+          "HEAD 405, prefetch/prerender 204 i Range 206 nie zwiększają licznika.",
+          "Ponowny pełny GET to nowe obsłużone żądanie pobrania, nie unikalny użytkownik.",
+          "Zakończenie ASGI nie dowodzi zapisu na telefonie ani instalacji; awaria między wysyłką a commitem może zaniżyć licznik."
+        ],
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/product.py",
+            "line": 56,
+            "endLine": 95,
+            "kind": "code",
+            "revision": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "workingTreeSource": false,
+            "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "docs/GLIKEMIA_DISTRIBUTION.md",
+            "line": 34,
+            "endLine": 80,
+            "kind": "report",
+            "revision": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "workingTreeSource": false,
+            "sha256": "125b9f40c7578ecbac8414edb47155654eef53dbafd6b23396a93ed523ba40b2"
+          }
+        ]
+      },
+      "authenticShots": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/projects/glikemia/product-language.webp",
+          "captureDate": "UNKNOWN; existing authentic gallery material",
+          "provenance": "Catalog describes real language-selection screen; visually reviewed.",
+          "privacy": "No measurements/patient information; phone statusbar only.",
+          "usable": "CANDIDATE — safe neutral screen, not runtime proof of current APK."
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/projects/glikemia/product-measurement.webp",
+          "captureDate": "UNKNOWN",
+          "provenance": "Catalog describes real empty measurement form.",
+          "privacy": "Marked empty/no patient measurements by existing catalog; final promo visual inspection still required.",
+          "usable": "CANDIDATE pending final visual review; avoid history/PDF screenshots with real health data."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "Glikemia Premium",
+          "path": "Models/Services/DatabaseService.cs",
+          "line": 14,
+          "endLine": 52,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "3f821fb929b0cdaac258d7129d05a90df33b1305fe5516c113479906db9cbfb9"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Models/Services/DatabaseService.cs",
+          "line": 94,
+          "endLine": 99,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "3f821fb929b0cdaac258d7129d05a90df33b1305fe5516c113479906db9cbfb9"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Wpis_glikemii.cs",
+          "line": 1,
+          "endLine": 35,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "af2cab41726cb69af943c061b705b8ff260f564ea3c249c5391c0871be480a80"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "ViewModels/MainViewModel.cs",
+          "line": 215,
+          "endLine": 240,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "755c5be7d0f1bd7f68f51a7999440ab7537db677b5b9b126449ee8490f6289bb"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "RaportPage.xaml.cs",
+          "line": 14,
+          "endLine": 25,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "RaportPage.xaml.cs",
+          "line": 159,
+          "endLine": 183,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Models/Services/MeasurementRecordPersistence.cs",
+          "line": 8,
+          "endLine": 42,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "df8997a941b0d08402644ede9eb4805f222a6a421598a5ffe09ffffba0c99947"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "RaportPage.xaml.cs",
+          "line": 183,
+          "endLine": 207,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Models/GlucoseMeasurementPolicy.cs",
+          "line": 17,
+          "endLine": 113,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "a5b5fad7b961b6e522d35f18ed16e6df9c5f0e61f482d49b50cc4b7b838d62dc"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "PdfService.cs",
+          "line": 17,
+          "endLine": 115,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "9989f0d7d6ad484071520709ded49df0a1dfe41572e409da6f4ab9cd774b4a31"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "RaportPage.xaml.cs",
+          "line": 340,
+          "endLine": 370,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "138f9987b6a3d2cb328d06d6e4b99f39945a45a7dfb16e2509df4e756012e84f"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Slownik.cs",
+          "line": 8,
+          "endLine": 31,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "0dcac711a0c93218668ab235305982be9999d30080c314ace01d002db2922177"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "ViewModels/MainViewModel.cs",
+          "line": 245,
+          "endLine": 272,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "755c5be7d0f1bd7f68f51a7999440ab7537db677b5b9b126449ee8490f6289bb"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Models/Services/HistoricalGlucoseImporter.cs",
+          "line": 26,
+          "endLine": 48,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "cf2816e070da5dc22c832583fa777417dee341999f963e9adcf7051b2a0eb71d"
+        },
+        {
+          "repo": "Glikemia Premium",
+          "path": "Platforms/Android/Resources/xml/data_extraction_rules.xml",
+          "line": 3,
+          "endLine": 15,
+          "kind": "code",
+          "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2",
+          "workingTreeSource": false,
+          "sha256": "e26df5b54ae3ab10bea3e2c1a2c304ed8a82b45bcab860a052c2f8507770b127"
+        }
+      ]
+    },
+    {
+      "id": "progresskit-translator",
+      "name": "ProgressKit Translator",
+      "summary": "Działająca implementacja tłumacza rozmów PL↔DE na Androida z ASR, ML Kit, TTS, lokalną historią i strumieniowym odtwarzaniem audio.",
+      "solution": "Kotlin i Compose łączą sesję rozpoznawania mowy, tłumaczenia i syntezy z kontrolą stanu oraz wyborem dostępnych lokalnych modeli/głosów. Kod uwzględnia ograniczenia routingu Androida; wynik zależy od modeli i rzeczywistego urządzenia.",
+      "features": [
+        {
+          "text": "Tłumaczenie tekstu i wypowiedzi w kierunkach niemiecki→polski oraz polski→niemiecki przez lokalne modele MLKit.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+              "line": 114,
+              "endLine": 125,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+              "line": 483,
+              "endLine": 501,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+            }
+          ],
+          "limits": "Pierwsze pobranie modeli wymaga sieci; nie potwierdza to offline całego łańcucha mowy."
+        },
+        {
+          "text": "Sesja nasłuch→tłumaczenie→synteza→odtwarzanie ma jawne stany, tokeny generacji, anulowanie i ograniczone odzyskiwanie po błędach.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/SessionController.kt",
+              "line": 3,
+              "endLine": 18,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "96700bd9fc44dd45820e1a4fadc3eea8291f5895d3ee4dcae5d3c389be24b426"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/SessionController.kt",
+              "line": 44,
+              "endLine": 150,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "96700bd9fc44dd45820e1a4fadc3eea8291f5895d3ee4dcae5d3c389be24b426"
+            }
+          ]
+        },
+        {
+          "text": "Lokalny ASR jest wybierany tylko dla zainstalowanego modelu potwierdzonego przez Android; brak modelu prowadzi do kontrolowanego fallbacku.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/AsrRoutingPolicy.kt",
+              "line": 10,
+              "endLine": 40,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "362d50551d224dfe1a3de135b1d66da3050446e318a61fa744114058f9e7fd05"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+              "line": 222,
+              "endLine": 258,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+            }
+          ],
+          "limits": "Downloadable i pending nie oznaczają installed. Funkcjonalny lokalny ASR DE na telefonie nie został potwierdzony."
+        },
+        {
+          "text": "Gotowy lokalny głos TTS jest preferowany na podstawie języka i metadanych silnika.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TtsVoicePolicy.kt",
+              "line": 13,
+              "endLine": 25,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "24f576d49afb0004ee2f8f807113769dd60fe3bcbebabc062d6a6c466352b43b"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TtsVoiceSelector.kt",
+              "line": 13,
+              "endLine": 35,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "67b49e4e91d6f2c3776b90f1a0fc6753a6826b31724b95ca86671c4383e68552"
+            }
+          ],
+          "limits": "Przy braku gotowego lokalnego głosu używany jest tryb domyślny; nie deklarować pracy zawsze offline."
+        },
+        {
+          "text": "Synteza PCM może być odtwarzana strumieniowo przez AudioTrack; dostępne są tryby mono i rozdzielenie polskiego/niemieckiego na kanały.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/StreamingPcmRouter.kt",
+              "line": 4,
+              "endLine": 41,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "e5be9c2c6f057a18e3fe10305dd216ac304fe1cc78e6359e18b3dab27a0f9b7c"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/StereoPlayer.kt",
+              "line": 225,
+              "endLine": 239,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "1a0aba2ece8c00ce50fefdbd4fde3b10f57693522533448389308b43c90e474a"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorUi.kt",
+              "line": 525,
+              "endLine": 534,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "a66f6d346cdbe88c10540fadcb4291b4f7e80f72e865ecfed0765d1cc099eb6e"
+            }
+          ],
+          "limits": "Routing bajtów PCM nie jest dowodem odsłuchu stereo/TWS; Android wybiera rzeczywiste wyjście multimediów."
+        },
+        {
+          "text": "Sesja foreground service ma jawne Start i Stop oraz akcję Stop w powiadomieniu; odpięcie UI nie musi zatrzymywać rozpoczętej sesji.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorService.kt",
+              "line": 83,
+              "endLine": 116,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "531c13c43c9618328632c8cf0e140b831f5d10d476960e43167e3f5eeaf5b36c"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/MainActivity.kt",
+              "line": 175,
+              "endLine": 183,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "b6e71f4331375649850f2cc5ea59c7aeb366c85c96f6e0a17e43a2273fb278f6"
+            }
+          ],
+          "limits": "Pełny scenariusz wygaszonego ekranu, Recents i Stop na fizycznym telefonie w wersji 0.2.2 pozostaje PENDING."
+        },
+        {
+          "text": "Historia tłumaczeń i tempo mowy są zapisywane lokalnie, z możliwością wyczyszczenia historii.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/LocalPreferences.kt",
+              "line": 8,
+              "endLine": 32,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "11a4a7681b0b8083fab24e41cd7ae6d87b603e26b2fe28e8c558e59d0c764418"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+              "line": 165,
+              "endLine": 193,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+            }
+          ]
+        },
+        {
+          "text": "Interfejs Compose udostępnia wybór kierunku, trybu audio, tłumaczenie tekstowe oraz testy głosów PL/DE.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorUi.kt",
+              "line": 210,
+              "endLine": 261,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "a66f6d346cdbe88c10540fadcb4291b4f7e80f72e865ecfed0765d1cc099eb6e"
+            },
+            {
+              "repo": "ProgressKitTranslator-v0.1",
+              "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+              "line": 173,
+              "endLine": 187,
+              "kind": "code",
+              "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+              "workingTreeSource": false,
+              "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+            }
+          ]
+        }
+      ],
+      "architecture": [
+        "Compose UI i foreground TranslatorService wiążą cykl życia użytkownika z TranslatorEngine.",
+        "SessionController kontroluje generacje callbacków, watchdog, retry i anulowanie.",
+        "ML Kit obsługuje PL↔DE; SpeechRecognizer i TextToSpeech zależą od dostępnych usług oraz modeli Androida.",
+        "StreamingPcmRouter i StereoPlayer dostarczają AudioTrack; preferencje i historia to SharedPreferences JSON, nie Room."
+      ],
+      "technologies": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Android",
+        "ML Kit Translate 17.0.3",
+        "SpeechRecognizer",
+        "TextToSpeech",
+        "AudioTrack",
+        "Foreground Service",
+        "SharedPreferences"
+      ],
+      "platforms": [
+        {
+          "name": "Android",
+          "implementation": "IMPLEMENTED — wersja 0.2.2 / versionCode 4, package pl.progresskit.translator, API 26+.",
+          "verification": "Historyczne 123 testy JVM, 39 funkcjonalnych testów Android na emulatorze i 1 diagnostyka; instalacja Redmi zachowała dane.",
+          "distribution": "Lokalny Debug APK 0.2.2; brak potwierdzonego publicznego Release lub Play.",
+          "limits": [
+            "PL: metadane potwierdzały zainstalowany lokalny ASR; DE: tylko dostępność pobrania w historycznym probe.",
+            "Brak potwierdzenia pełnego offline, czterech języków, fizycznego TWS stereo i liczbowej latencji end-to-end.",
+            "Kliknięcia i beepy pozostają otwarte; poprawę wypowiedzi operator zgłosił jakościowo."
+          ]
+        }
+      ],
+      "functionalStatus": "IMPLEMENTED — działający rozwijany tłumacz Android PL↔DE, nie wyłącznie koncept; pełna jakość i warunki ASR/audio wymagają kolejnego odbioru fizycznego.",
+      "distributionStatus": "Lokalny podpisany Debug APK 0.2.2 został historycznie zaktualizowany na Redmi przez install -r; aktualny lokalny plik ma ten sam hash co raport. Publiczne wydanie UNKNOWN.",
+      "productionStatus": "Brak własnego backendu produktu. Brak dowodu finalnego komercyjnego wydania; bramki offline, routingu i opóźnienia pozostają otwarte.",
+      "results": [
+        "Raport z 13.10.2026: 123 testy JVM PASS; 39 funkcjonalnych Android PASS i 1 diagnostyka, lint 18 warnings.",
+        "Historyczna instalacja i odczyt APK z Redmi miały zgodne hashe; audyt obecnie sprawdził lokalny plik, nie urządzenie.",
+        "Lokalne TTS PL/DE potwierdzono na emulatorze; to nie pomiar czasu od końca wypowiedzi do odsłuchu na telefonie."
+      ],
+      "remaining": [
+        "Fizyczny PL/DE ASR, pobranie modelu DE i pełne cykle obu kierunków.",
+        "Pomiar końca wypowiedzi do pierwszego dźwięku; nadal otwarte kliknięcia.",
+        "Wygaszony ekran, Recents, Stop z powiadomienia i TWS audio na fizycznym urządzeniu.",
+        "Publiczny Release, podpis, kanał dystrybucji i finalne QA."
+      ],
+      "tests": [
+        {
+          "date": "2026-10-13",
+          "revision": "UNRECORDED: working tree przed lokalnym commitem 0.2.2; raport nie koduje testowanego SHA.",
+          "revisionCaveat": "Weryfikacja powstała przed lokalnym commitem0.2.2; raport nie koduje własnegoHEAD. Obecnycheckoutjestczysty i zawieraten raport.",
+          "historical": true,
+          "newRun": false,
+          "environment": "Linux / Gradle JVM i emulator Android; osobno historyczna instalacja Redmi oraz capability probe bez funkcjonalnego lokalnego ASR.",
+          "scope": "123 JVM, 39 funkcjonalnych Android + 1 diagnostyka, lint 0 errors / 18 warnings; nie nowy run.",
+          "passedJVM": 123,
+          "passedAndroidFunctional": 39,
+          "androidDiagnosticCompleted": 1,
+          "failed": 0,
+          "limitations": [
+            "Diagnostyka ASR nie jest funkcjonalnym PASS.",
+            "Fizyczna instalacja test APK/instrumentacji była zablokowana przez INSTALL_FAILED_USER_RESTRICTED.",
+            "Brak pomiaru latencji i weryfikacji TWS."
+          ],
+          "evidence": {
+            "repo": "ProgressKitTranslator-v0.1",
+            "path": "docs/V0_2_2_ASR.md",
+            "line": 3,
+            "endLine": 30,
+            "kind": "report",
+            "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+            "workingTreeSource": false,
+            "sha256": "ba8874e7bd7731e3096336549b9b0e0d795e9c1ae2c8ae82d77b352425bc447d"
+          },
+          "machineEvidence": {
+            "repo": "ProgressKitTranslator-v0.1",
+            "path": "docs/evidence-v0.2.2/verification.json",
+            "line": 1,
+            "endLine": 110,
+            "kind": "report",
+            "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+            "workingTreeSource": false,
+            "sha256": "abc7e09370756823aef0000e04f2a59a82dac99613582f0ded654becabbba9c7"
+          },
+          "sourceAuditRevision": "6932b069982e43cbcc91957c72334ee80798de4b"
+        }
+      ],
+      "artifacts": [
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/build/outputs/apk/debug/app-debug.apk",
+          "bytes": 74767312,
+          "sha256": "59a950c425d290091837996050ad9712fa4910d07a9b7018b532aeae04df6f95",
+          "inspection": "current read-only existence/size/hash inspection, not a build/install/runtime PASS",
+          "signature": "Podpisdebughistoryczniezweryfikowany; bieżącyhashzgodnyzraportem",
+          "limits": "NiepublicznyRelease,brakponownejinstalacji."
+        }
+      ],
+      "git": {
+        "repoRoot": "/home/pawe/Pulpit/Projekty It/ProgressKitTranslator-v0.1",
+        "HEAD": "6932b069982e43cbcc91957c72334ee80798de4b",
+        "headDate": "2026-10-13T21:44:53+02:00",
+        "dirty": false,
+        "trackedChangedEntries": 0,
+        "untrackedEntriesReportedByGit": 0,
+        "scope": "read-only source inspection; no product tests, account access, installation or deployment executed"
+      },
+      "authenticShots": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/projects/progresskit-translator/translator-start.webp",
+          "captureDate": "UNKNOWN; catalog identifies version0.2.0onRedmi",
+          "provenance": "Historical actualUI screenshot, visually reviewed; does not represent all0.2.2behavior.",
+          "privacy": "No recognized phrase/history/private data; phone statusbarVPN/Bluetooth/networkicons.",
+          "usable": "CANDIDATE with historicalversionlabel; stereo toggle is not TWS verification."
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+          "line": 114,
+          "endLine": 125,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+          "line": 483,
+          "endLine": 501,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/SessionController.kt",
+          "line": 3,
+          "endLine": 18,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "96700bd9fc44dd45820e1a4fadc3eea8291f5895d3ee4dcae5d3c389be24b426"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/SessionController.kt",
+          "line": 44,
+          "endLine": 150,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "96700bd9fc44dd45820e1a4fadc3eea8291f5895d3ee4dcae5d3c389be24b426"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/AsrRoutingPolicy.kt",
+          "line": 10,
+          "endLine": 40,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "362d50551d224dfe1a3de135b1d66da3050446e318a61fa744114058f9e7fd05"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+          "line": 222,
+          "endLine": 258,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TtsVoicePolicy.kt",
+          "line": 13,
+          "endLine": 25,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "24f576d49afb0004ee2f8f807113769dd60fe3bcbebabc062d6a6c466352b43b"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TtsVoiceSelector.kt",
+          "line": 13,
+          "endLine": 35,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "67b49e4e91d6f2c3776b90f1a0fc6753a6826b31724b95ca86671c4383e68552"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/StreamingPcmRouter.kt",
+          "line": 4,
+          "endLine": 41,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "e5be9c2c6f057a18e3fe10305dd216ac304fe1cc78e6359e18b3dab27a0f9b7c"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/StereoPlayer.kt",
+          "line": 225,
+          "endLine": 239,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "1a0aba2ece8c00ce50fefdbd4fde3b10f57693522533448389308b43c90e474a"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorUi.kt",
+          "line": 525,
+          "endLine": 534,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "a66f6d346cdbe88c10540fadcb4291b4f7e80f72e865ecfed0765d1cc099eb6e"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorService.kt",
+          "line": 83,
+          "endLine": 116,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "531c13c43c9618328632c8cf0e140b831f5d10d476960e43167e3f5eeaf5b36c"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/MainActivity.kt",
+          "line": 175,
+          "endLine": 183,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "b6e71f4331375649850f2cc5ea59c7aeb366c85c96f6e0a17e43a2273fb278f6"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/LocalPreferences.kt",
+          "line": 8,
+          "endLine": 32,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "11a4a7681b0b8083fab24e41cd7ae6d87b603e26b2fe28e8c558e59d0c764418"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+          "line": 165,
+          "endLine": 193,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorUi.kt",
+          "line": 210,
+          "endLine": 261,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "a66f6d346cdbe88c10540fadcb4291b4f7e80f72e865ecfed0765d1cc099eb6e"
+        },
+        {
+          "repo": "ProgressKitTranslator-v0.1",
+          "path": "app/src/main/java/pl/progresskit/translator/TranslatorEngine.kt",
+          "line": 173,
+          "endLine": 187,
+          "kind": "code",
+          "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
+          "workingTreeSource": false,
+          "sha256": "deed168805f31998250fdfdf0d775156fc83335f3fd8ae6342325afb5a5a8c92"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "No sibling repo modifications",
+    "No account credentials, correspondence or device state inspected",
+    "No production/network/mail tests",
+    "No builds/installations",
+    "No binaries/images copied or published"
+  ],
+  "auditSummary": {
+    "products": 3,
+    "features": {
+      "progresskit-mail": 14,
+      "glikemia-premium": 9,
+      "progresskit-translator": 8
+    },
+    "newProductTestRuns": 0,
+    "newArtifactReadOnlyChecks": [
+      "Glikemia source APK and portfolio APK matching hash/size",
+      "Translator local APK matching historical hash",
+      "Mail DEB metadata1.0.0-10 amd64 and local package existence/hashes",
+      "Mail195desktop source manifest entries all match current files"
+    ],
+    "sourcePriority": "current code + actual Git > date-scoped historical reports > marketing text"
+  }
+}

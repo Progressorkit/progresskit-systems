@@ -326,7 +326,14 @@ class SiteV5Tests(unittest.TestCase):
                 self.assertFalse(path.is_absolute())
                 self.assertNotIn('..', path.parts)
                 self.assertFalse(forbidden.intersection(path.parts))
-                self.assertNotIn(path.suffix, {'.sqlite', '.db', '.json', '.log', '.apk', '.zip', '.mp4', '.webm', '.env'})
+                if name == 'assets/brand/progresskit-core-mark.webm':
+                    # Only this recorded public Core is allowed. Private/product
+                    # footage keeps the general video ban below; pin the render
+                    # so replacing its contents requires an explicit review.
+                    self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(),
+                                     'ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733')
+                else:
+                    self.assertNotIn(path.suffix, {'.sqlite', '.db', '.json', '.log', '.apk', '.zip', '.mp4', '.webm', '.env'})
                 self.assertTrue((ROOT / path).is_file())
                 self.assertFalse((ROOT / path).is_symlink())
         # Files appearing in assets or a repository directory do not imply review.
@@ -337,7 +344,8 @@ class SiteV5Tests(unittest.TestCase):
             (root / 'catalog/brand.json').write_text((ROOT / 'catalog/brand.json').read_text())
             decoys = ['docs/private-report.txt', 'analytics/private.db',
                       'assets/projects/raw/production-capture.png',
-                      'assets/cinematic/user-preview.mp4', 'unreviewed-original.png']
+                      'assets/cinematic/user-preview.mp4', 'assets/cinematic/unreviewed.webm',
+                      'unreviewed-original.png']
             for name in decoys:
                 path = root / name
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -387,6 +395,8 @@ class SiteV5Tests(unittest.TestCase):
             project[key] = payload
         for key in ('audiences', 'features', 'technologies', 'architecture', 'results', 'planned', 'remaining'):
             project[key] = [payload]
+        if 'portfolio' in project:
+            project['portfolio']['featureSources'] = [project['portfolio']['featureSources'][0]]
         project['gallery'][0]['alt'] = payload
         project['gallery'][0]['caption'] = payload
         project['sources'][0]['label'] = payload

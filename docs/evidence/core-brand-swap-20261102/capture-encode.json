@@ -1,0 +1,36 @@
+{
+  "asset": "assets/brand/progresskit-core-mark.webm",
+  "bytes": 31271,
+  "sha256": "ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733",
+  "actualScene": true,
+  "sourceStable": true,
+  "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+  "raw": "raw/page@0fe0ef31796fa6c6d6ff497277fc2bcc.webm",
+  "rawSeconds": "17.880000",
+  "trimStartSeconds": 5.279999999999999,
+  "crop": [
+    240,
+    230,
+    320,
+    320
+  ],
+  "output": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 160,
+        "height": 160,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "15/1"
+      }
+    ],
+    "format": {
+      "duration": "11.267000"
+    }
+  },
+  "seamTreatment": "0.75s wrap crossfade from the actual same capture; first 0.75s omitted to close loop",
+  "decode": "PASS",
+  "noAudio": true,
+  "ownerVisualApproval": "OPEN"
+}

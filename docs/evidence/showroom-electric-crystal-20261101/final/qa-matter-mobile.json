@@ -1,0 +1,639 @@
+{
+  "mode": "mobile",
+  "checks": [
+    {
+      "name": "Mobile uses actual procedural matter",
+      "status": "PASS",
+      "details": {
+        "width": 600,
+        "height": 600,
+        "pixels": 360000,
+        "renderer": "webgl",
+        "filaments": 432,
+        "rootRenderer": "webgl",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "Mobile reduces strand count while retaining hundreds of filaments",
+      "status": "PASS",
+      "details": {
+        "desktop": 1080,
+        "mobile": 432
+      }
+    },
+    {
+      "name": "Mobile uses a smaller render buffer than desktop",
+      "status": "PASS",
+      "details": {
+        "desktop": {
+          "width": 900,
+          "height": 900,
+          "pixels": 810000,
+          "renderer": "webgl",
+          "filaments": 1080,
+          "rootRenderer": "webgl",
+          "motion": "running"
+        },
+        "mobile": {
+          "width": 600,
+          "height": 600,
+          "pixels": 360000,
+          "renderer": "webgl",
+          "filaments": 432,
+          "rootRenderer": "webgl",
+          "motion": "running"
+        }
+      }
+    },
+    {
+      "name": "Mobile matter evolves across six seconds of idle",
+      "status": "PASS",
+      "details": {
+        "draws": 190,
+        "samples": [
+          {
+            "t": 2239.399999976158,
+            "hash": 899139576,
+            "occupied": 514,
+            "red": 479,
+            "maxRed": 213,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 2704.399999976158,
+            "hash": 2206851095,
+            "occupied": 503,
+            "red": 474,
+            "maxRed": 210,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 3168.899999976158,
+            "hash": 3231414923,
+            "occupied": 503,
+            "red": 474,
+            "maxRed": 197,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 3647.7999999821186,
+            "hash": 987794487,
+            "occupied": 499,
+            "red": 472,
+            "maxRed": 197,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 4112.5,
+            "hash": 3189866133,
+            "occupied": 499,
+            "red": 476,
+            "maxRed": 184,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 4594.899999976158,
+            "hash": 45989676,
+            "occupied": 502,
+            "red": 475,
+            "maxRed": 180,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 5060.5,
+            "hash": 2182814946,
+            "occupied": 505,
+            "red": 476,
+            "maxRed": 180,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 5527.0999999940395,
+            "hash": 2018402455,
+            "occupied": 509,
+            "red": 476,
+            "maxRed": 189,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 5991.5999999940395,
+            "hash": 462627526,
+            "occupied": 514,
+            "red": 477,
+            "maxRed": 185,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 6455.399999976158,
+            "hash": 3255835314,
+            "occupied": 507,
+            "red": 473,
+            "maxRed": 200,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 6919.399999976158,
+            "hash": 1220720396,
+            "occupied": 506,
+            "red": 475,
+            "maxRed": 215,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 7384.0999999940395,
+            "hash": 2293045191,
+            "occupied": 508,
+            "red": 476,
+            "maxRed": 221,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 7857.5,
+            "hash": 384374150,
+            "occupied": 512,
+            "red": 480,
+            "maxRed": 219,
+            "width": 600,
+            "height": 600
+          },
+          {
+            "t": 8322.299999982119,
+            "hash": 1028966387,
+            "occupied": 513,
+            "red": 484,
+            "maxRed": 210,
+            "width": 600,
+            "height": 600
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mobile keeps the deep-red electric sphere",
+      "status": "PASS",
+      "details": [
+        {
+          "occupied": 514,
+          "red": 479,
+          "maxRed": 213
+        },
+        {
+          "occupied": 503,
+          "red": 474,
+          "maxRed": 210
+        },
+        {
+          "occupied": 503,
+          "red": 474,
+          "maxRed": 197
+        },
+        {
+          "occupied": 499,
+          "red": 472,
+          "maxRed": 197
+        },
+        {
+          "occupied": 499,
+          "red": 476,
+          "maxRed": 184
+        },
+        {
+          "occupied": 502,
+          "red": 475,
+          "maxRed": 180
+        },
+        {
+          "occupied": 505,
+          "red": 476,
+          "maxRed": 180
+        },
+        {
+          "occupied": 509,
+          "red": 476,
+          "maxRed": 189
+        },
+        {
+          "occupied": 514,
+          "red": 477,
+          "maxRed": 185
+        },
+        {
+          "occupied": 507,
+          "red": 473,
+          "maxRed": 200
+        },
+        {
+          "occupied": 506,
+          "red": 475,
+          "maxRed": 215
+        },
+        {
+          "occupied": 508,
+          "red": 476,
+          "maxRed": 221
+        },
+        {
+          "occupied": 512,
+          "red": 480,
+          "maxRed": 219
+        },
+        {
+          "occupied": 513,
+          "red": 484,
+          "maxRed": 210
+        }
+      ]
+    },
+    {
+      "name": "Mobile page remains within viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile pressure and release precede visible materialization",
+      "status": "PASS",
+      "details": {
+        "compression": {
+          "kind": "phase",
+          "state": "compressing",
+          "t": 83
+        },
+        "release": {
+          "kind": "phase",
+          "state": "releasing",
+          "t": 352.90000000596046
+        },
+        "reveals": [
+          {
+            "kind": "project",
+            "id": "glikemia-premium",
+            "state": "refracting",
+            "energized": true,
+            "visible": true,
+            "visual": {
+              "reflection": "none",
+              "contour": "none",
+              "facets": "crystal-facets-resolve",
+              "contentOpacity": 0
+            },
+            "t": 843.1999999880791
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mobile every visible crystal progresses reflection then contour then refraction and readable content",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium"
+      ]
+    },
+    {
+      "name": "Mobile materialization changes reflection, edge and facet geometry before text appears",
+      "status": "PASS",
+      "details": [
+        "glikemia-premium"
+      ]
+    },
+    {
+      "name": "Mobile collection preserves all fourteen real project entries",
+      "status": "PASS"
+    },
+    {
+      "name": "Core and active crystal remain spatially separate on mobile",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile tap opens real project details",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile reading pauses procedural work",
+      "status": "PASS",
+      "details": {
+        "before": 292,
+        "after": 292
+      }
+    },
+    {
+      "name": "Mobile reduced motion retains a static electric sphere",
+      "status": "PASS",
+      "details": {
+        "before": 302,
+        "after": 302
+      }
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-mobile-idle-start.png",
+    "matter-mobile-idle-after-6s.png",
+    "matter-mobile-core-pressure.png",
+    "matter-mobile-activated.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 15,
+  "FAIL": 0,
+  "activationTimeline": [
+    {
+      "kind": "phase",
+      "state": "idle",
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-mail",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-translator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "vaeloria",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-community",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-tax",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "adivara",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "gotrans360",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "ignira",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "obserwator",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "kan-system",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-systems",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-analytics",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "project",
+      "id": "progresskit-infrastructure",
+      "state": "",
+      "energized": false,
+      "visible": false,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 0.19999998807907104
+    },
+    {
+      "kind": "phase",
+      "state": "compressing",
+      "t": 83
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "waiting",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 83
+    },
+    {
+      "kind": "phase",
+      "state": "releasing",
+      "t": 352.90000000596046
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "reflection",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "crystal-first-reflection",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 404
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "contour",
+      "energized": false,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "crystal-contour",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 603.0999999940395
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "refracting",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "crystal-facets-resolve",
+        "contentOpacity": 0
+      },
+      "t": 843.1999999880791
+    },
+    {
+      "kind": "project",
+      "id": "glikemia-premium",
+      "state": "ready",
+      "energized": true,
+      "visible": true,
+      "visual": {
+        "reflection": "none",
+        "contour": "none",
+        "facets": "none",
+        "contentOpacity": 0
+      },
+      "t": 1333.0999999940395
+    }
+  ]
+}

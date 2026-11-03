@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-02",
+  "finishedAt": "2026-11-02T12:04:56.105687+00:00",
+  "status": "LOCAL_AUTOMATED_QA_PASS_OWNER_REVIEW_OPEN",
+  "catalog": {
+    "schemaVersion": 2,
+    "entries": 19,
+    "features": 159,
+    "sources": 260,
+    "verificationRecords": 101,
+    "asOf": "2026-11-02"
+  },
+  "sourceFreeze": {
+    "assets/brand-atmosphere.css": "fbcd495c6b79af160a023c73e1e07c94e5d5c54f2da7acadfe06a269c0195b5d",
+    "assets/category-worlds.css": "02cb3751a30520ff1ff723688dda42886d9b7337462663946ea03765c6b1b3ef",
+    "assets/delivery.css": "29457f0c89d337ecc931d9ee6caaad68a4d53e190e2925150ee17b7175fe813b",
+    "assets/ecosystem-system.css": "07861cd4688f1a43af075794ad844a9e2a09b070beee42c5f8281b7d94ebac01",
+    "assets/ecosystem-system.js": "11d0452c449f81fe762173f97ec3d0900b0682d6f4c71d9418594c28a0ec15fd",
+    "assets/engineering-exhibit.css": "f85fb3f90d44517afa4b465a58146b6a08e40de69bc8ff334c47aa4ad12206d9",
+    "assets/engineering-exhibit.js": "6c5ba9fbb449df46e04ad44fc502cc372a1f120c7acff40e6b33690646311688",
+    "assets/hero-monument.css": "afa94949b02f488477c17f78256101325c8f4719bb9eeefce5eba617d0754a52",
+    "assets/hero-space.js": "270fadffe4ae3e706285f8b190fd7a8d99b983265d852715693c06229d527e09",
+    "assets/hero.css": "5c414ecda9429da366471f87defdfc8f95f71bf30acd4c86ee6f7d5a5c4a66bc",
+    "assets/home-atmosphere.css": "4860e2fee1fd65baa5287f5857b25bea673182948012f4d5df87033c1e70cb70",
+    "assets/interface-life.css": "474a61c9e91c4c623d92dfe6d940f002aa251d6b87c963df664620bbb9b6aca9",
+    "assets/interface-life.js": "d89144bfc5436f4335db2bac2e4a8ca1585b73dc49eaf743c3f2490c2e7fe247",
+    "assets/owner-finish.css": "1a05663da7bf7d215ce9f83d28e995c7582ab30754aac8470652328b5efe0de9",
+    "assets/progresskit-product-shell.css": "a6952c2d3f34ee955be1be0cf469dd635120eb38ad52ec17dbdbd05021f5bdb9",
+    "assets/project-hologram.css": "df270a2fa52e0d1bc540bd9294e477afd12c1a513323565413910f2657cf6e16",
+    "assets/project-hologram.js": "b525f4f6b62b8e86b385836213146443369a70106b0581f18f1132a205cb544f",
+    "assets/project-mechanism.css": "ae2392f10634021a1f46f92b1cd4fc218673cd0d45202e647e2ec9edac931354",
+    "assets/project-showroom.css": "9682342dc9bbcddd4a537daee5060ac5ccbb787a28edb063c3ec354e197672b6",
+    "assets/project-showroom.js": "51907264a95a86de496c84c281bfdbd8d4eff30cfff06951fda840b916d49571",
+    "assets/project-slices.css": "793a69ca4e25523d4b0d73ba25bcf49e10d9c9996d0f6863924462c4d567cef2",
+    "assets/showroom-3d.css": "04b02e9906bb5488a182d57c1de768153978455ba529b0f0b69fd1514beea169",
+    "assets/showroom-3d.mjs": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23",
+    "assets/showroom-capsule.css": "5b4b00ad9dde68524122f9025a43b698da0160253096e268ffc098389e20e1fa",
+    "assets/showroom-capsule.js": "422b542909be5fffdc8a273c0491a4ad1c8948125546bba0f0af00e957388917",
+    "assets/showroom-lifecycle.mjs": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa",
+    "assets/showroom-matter.js": "d065e7311d23e0580809a7464dab34a40ea7adda81ca389fe70741bae4f706ef",
+    "assets/showroom-scene.mjs": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1",
+    "assets/site-v4.css": "8a254113078acb087f77ad948d403aae92863d421ca9ebc2babc8a2a30e24e7d",
+    "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6",
+    "assets/site-v5.js": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3",
+    "assets/spatial-chapters.css": "b2bebc4b6e444eefc421afdbd716b817d5243b244797d1db450e1129470d0810",
+    "assets/spatial-chapters.mjs": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b",
+    "assets/vendor/three/three.core.js": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578",
+    "assets/vendor/three/three.module.js": "104f56145899722094556490d787aae0617cc2fc3382f31df02d724ea1aee341",
+    "assets/visual-acceptance.css": "104d0362cba0a7449422df25ff6e18ec6e44229139e761749249566711acbb13",
+    "assets/world-atmosphere.css": "7b09fab498e26dc85f2c90fd484d89fc5a7c7540a7791b4a361280820554c0df",
+    "assets/world-sections.css": "1ffb459be7e3d298edf3b76f56a6a3dcd0d3039874ff2c3ed4fa4e1e13ece868",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "index.html": "1c0f34088befcc5e101eb436247ef837fe28ae167ef52d41a8cfcc32c29987bd",
+    "projekty/adivara/index.html": "58fe155589eb85420bdffaed09d7a6be26a29ef291b757eabf499a9c522845bd",
+    "projekty/glikemia-premium/index.html": "e702bcd74528b537c74a5acb477e2cbd0a687c632d79f88e2072d9d24c9b7aa7",
+    "projekty/gotrans360/index.html": "7e281af20bac9e1a0e48effd400dafcecd779737377194849ea9de7bc007e8b7",
+    "projekty/ignira/index.html": "8b6e24f925d36f90585618ca9da0622409cf7a4df9fc1282b2fd5ad19ea74737",
+    "projekty/kan-system/index.html": "e17cc55f83f9e47b028da6d3bd519ee46fd400e0349c396c481f55f55c2676ab",
+    "projekty/obserwator/index.html": "bc7babc86b4bf1e3804599794eb194a95a884bf25f39025cdc345713cc7fccb1",
+    "projekty/progresskit-analytics/index.html": "4ab0ed4880703642634574404e1ec131a3110f9bed3dd8fd4ca35ec813dd3076",
+    "projekty/progresskit-community/index.html": "92194601c7c8f5ffd810074a048c1da84aabda374fbcc85c9d6ff9e34e4da776",
+    "projekty/progresskit-infrastructure/index.html": "29d7ac90a757e549740ac9b1303ce22a3838edb1f66c453f9370042d39f95bdd",
+    "projekty/progresskit-mail/index.html": "f4f35a5ec2f1deb9db06bcc32c5adba5f9bdb8b3006158ec3b624e107dd23598",
+    "projekty/progresskit-notes/index.html": "3dabd34104a4441f41aa860a74e4521ba01e1a92c7bd45a5f629a278f6895bc8",
+    "projekty/progresskit-offgrid/index.html": "8c01ce5f02bad268df016024be640a0ad0825fb43051782fda477f9a78aa8e17",
+    "projekty/progresskit-remote/index.html": "1ccb310ff314f2cc23f6b8c06438e758a99c36121d287436fb3651bd4189334e",
+    "projekty/progresskit-systems/index.html": "6eda44c0c3d546fb35c887a90a45c5258f850c3c2540fa4f096b1eb4ca06714f",
+    "projekty/progresskit-tax/index.html": "fc854b256995d0bda6926af572ae12a06047b6e37e394f8e2de6bc01e0c21a09",
+    "projekty/progresskit-translator/index.html": "bc78153005fed30ff722ac2a685b8b7efe2367ac9ae01fde9c2c3a3f431d742f",
+    "projekty/progresskit-vault-key/index.html": "7b9d1c6c0043604343cd686567f465773073a04f6799d44a98b7534ab2b0389d",
+    "projekty/reel-agent/index.html": "8dee5b0d1a181137b0f4f7f3a0976a011ea1b21e1fea2a9e631bacb537db0a4f",
+    "projekty/vaeloria/index.html": "467ccfeb857336392aa727d2fd503239e37f758d2aac7cb5c855c6f219a82d0d",
+    "prywatnosc/index.html": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8",
+    "scripts/build-site.py": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84",
+    "scripts/showroom_markup.py": "5c2832dc472e51821d7d207ed3b6f7e85cabdd2a186db868aa186402100388b6",
+    "templates/site.html": "4b631993b64ac58ae4e9ca8d1e7566574c6d78862bdf1d182484ae9aa008b314"
+  },
+  "automatedResults": {
+    "python": {
+      "PASS": 124,
+      "FAIL": 0,
+      "SKIP": 0,
+      "log": "python-tests-final.log"
+    },
+    "node": {
+      "PASS": 100,
+      "FAIL": 0,
+      "log": "node-tests/report.json"
+    },
+    "static": {
+      "PASS": 1411,
+      "FAIL": 0,
+      "artifact": "static-final/report.json"
+    },
+    "localLinks": {
+      "PASS": 190,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "NOT_RUN": 0
+    },
+    "browserMatrix": {
+      "engines": [
+        "Chrome155.0",
+        "Firefox153.0"
+      ],
+      "widths": [
+        360,
+        390,
+        768,
+        1440
+      ],
+      "uniqueCaseVisitsPASS": 152,
+      "checksPASS": 230,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "sourceFilesStable": 65,
+      "artifact": "matrix-summary.json"
+    },
+    "additionalPublicPages": {
+      "PASS": 26,
+      "FAIL": 0,
+      "scope": "Distribution gallery, invalid empty review, operator privacy and legacy Mail at all widths, both engines; no submit/APK."
+    }
+  },
+  "movie": {
+    "path": "preview/brand-v1.mp4",
+    "sha256": "6c0121c4d352909a98fee802be9c8979ccb6892b16320f812505a8d6361703e5",
+    "bytes": 2301029,
+    "durationSeconds": 30,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 900,
+    "codec": "h264",
+    "audioStreams": 0,
+    "ffprobe": "PASS",
+    "fullDecode": "PASS",
+    "visualReview": "PENDING",
+    "ownerVisualApproval": "OPEN",
+    "published": false
+  },
+  "publicArtifact": {
+    "timestampUTC": "2026-11-02T11:28:16.245450+00:00",
+    "status": "LOCAL_REVIEW_ARTIFACT_READY",
+    "directory": "/tmp/progresskit-release-review-20261102-d9abba5197",
+    "publicDirectory": "/tmp/progresskit-release-review-20261102-d9abba5197/public",
+    "manifest": {
+      "path": "/tmp/progresskit-release-review-20261102-d9abba5197/files.json",
+      "bytes": 13350,
+      "sha256": "b4b1eb89ef4c3544913fe2eb9fdb5689ad1a6e56f0b3652612fac1890304318f"
+    },
+    "checksumsPath": "/tmp/progresskit-release-review-20261102-d9abba5197/SHA256SUMS",
+    "releaseMetadataPath": "/tmp/progresskit-release-review-20261102-d9abba5197/release.json",
+    "publicFiles": 85,
+    "publicBytes": 9665125,
+    "archives": [
+      {
+        "path": "/tmp/progresskit-release-review-20261102-d9abba5197/progresskit-v5-public.tar.gz",
+        "bytes": 6615531,
+        "sha256": "e0a06339a36c6d0a67f8384380e76e07afcf0db9532cf8fad74a2252f05bec2b",
+        "files": 85,
+        "readbackSHA256": "PASS"
+      },
+      {
+        "path": "/tmp/progresskit-release-review-20261102-d9abba5197/progresskit-v5-public.zip",
+        "bytes": 6683308,
+        "sha256": "ad04a04abddf3195bcd35ca3f90516b34c7c4c07013dbf93122b1fe9802f7e60",
+        "files": 85,
+        "readbackSHA256": "PASS"
+      }
+    ],
+    "allowlistPolicy": "Existing scripts/stage-public.py; generated output freshness checked before copying. No raw catalog, private docs, marketing or dynamic APK copied.",
+    "source": {
+      "gitHead": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+      "headUnchanged": true,
+      "workingTreeModified": true,
+      "gitIndexSHA256": "bd2747d60b911452d937aea087dbb915384bd5dbe6ef28a86bbf1cb60a79c024",
+      "gitIndexUnchanged": true,
+      "sourceHashesUnchanged": true,
+      "sourceSHA256": {
+        "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+        "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+        "scripts/build-site.py": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84",
+        "scripts/stage-public.py": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b",
+        "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6",
+        "assets/site-v5.js": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3"
+      }
+    },
+    "verification": {
+      "npmBuild": "PASS: 19 catalog entries / 28 generated files; local vendored Three only, no fetch",
+      "npmCheck": "PASS: vendor bytes, generated output and JavaScript syntax",
+      "gitDiffCheck": "PASS",
+      "python": {
+        "tests": 124,
+        "pass": 124,
+        "fail": 0,
+        "skipped": 0,
+        "log": "docs/final-website-qa-20261102/python-tests-final.log",
+        "statusFile": "docs/final-website-qa-20261102/python-tests-final-status.json",
+        "isolatedSyntheticDB": "/tmp/pk-site-tests-20261102-final-n5ucy3oz",
+        "freshRun": true,
+        "sandboxAttempt": "ENVIRONMENT_BLOCKED: first TestClient did not complete; interrupted attempt preserved separately; approved local IPC rerun PASS"
+      },
+      "publicFileByteComparison": "85/85 PASS",
+      "zipReadback": "85/85 PASS",
+      "tarReadback": "85/85 PASS"
+    },
+    "ownerVisualApproval": "OPEN",
+    "deployment": "NOT DEPLOYED",
+    "gitStageCommitPush": "NOT PERFORMED",
+    "browserQA": "Separate root-coordinated run; this packaging task launched no browser/GPU."
+  },
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT RUN",
+  "productionChanged": false,
+  "publicCandidateDeployment": "NOT RUN — owner approval required first",
+  "mailDelivery": "OWNER_REPORTED accepted; no further account/send/port tests per owner",
+  "mailCommercialRelease": "NOT APPROVED: concrete client/platform/distribution/backend/operational/formal gates remain; see preflight",
+  "remaining": [
+    "Owner visual/art approval of website and film.",
+    "Approved public candidate deployment plus version/header verification.",
+    "Privacy purposes/legal bases/retention and applicable business/legal details review.",
+    "Native platform and signed-release/client-package/commercial scope gates."
+  ],
+  "git": {
+    "HEAD": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+    "stagedFiles": [],
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  },
+  "ownerProofPlayer": {
+    "artifact": "owner-proof/report.json",
+    "PASS": 20,
+    "FAIL": 0,
+    "scope": "12 MP4 metadata/hash,3 PNG,actual play/pause/seek,Range and private-route denial."
+  },
+  "mailSAST": {
+    "artifact": "../mail-commercial-preflight-20261102/fresh-sast.json",
+    "status": "PARTIAL",
+    "engine": "Semgrep CE1.183.0 OSS",
+    "rulesExecuted": 548,
+    "sourceFiles": 258,
+    "findings": 14,
+    "partialParsingWarnings": 26,
+    "remaining": "Two local NuGet XML packaging findings remain OPEN_HARDENING_REVIEW; full parser coverage not established.",
+    "sourceUpload": false
+  }
+}

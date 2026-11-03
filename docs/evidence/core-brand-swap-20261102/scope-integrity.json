@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-02T22:20:06.756712+00:00",
+  "protectedCount": 12,
+  "protectedChanges": [
+    "analytics/preview.py",
+    "analytics/security_headers.py"
+  ],
+  "semanticChanges": {},
+  "headUnchanged": true,
+  "indexUnchanged": true,
+  "ownerVisualApproval": "OPEN",
+  "visualPassDelta": {
+    "modifiedExistingDirtyFiles": [
+      "index.html",
+      "scripts/build-site.py",
+      "scripts/stage-public.py",
+      "tests/test_site_v5.py",
+      "assets/showroom-3d.mjs",
+      "assets/showroom-scene.mjs"
+    ],
+    "removedExistingDirtyFiles": [],
+    "newlyDirtyOrNewFiles": [
+      "analytics/preview.py",
+      "analytics/security_headers.py",
+      "tests/test_security_headers.py",
+      "assets/brand-core-mark.css",
+      "assets/brand-core-mark.mjs",
+      "assets/brand/progresskit-core-mark.webm"
+    ]
+  },
+  "status": "FAIL"
+}

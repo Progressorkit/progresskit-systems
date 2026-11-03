@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "bounds": {
+    "viewport": {
+      "width": 1440,
+      "height": 1900
+    },
+    "contactTop": 89.765625,
+    "briefBottom": 1779.859375,
+    "cta": {
+      "x": 1039.203125,
+      "y": 1633.671875,
+      "width": 235,
+      "height": 66,
+      "top": 1633.671875,
+      "right": 1274.203125,
+      "bottom": 1699.671875,
+      "left": 1039.203125
+    }
+  },
+  "sourceStable": true,
+  "browserErrors": [],
+  "artifact": {
+    "file": "04-contact-console.png",
+    "sha256": "06b00cdb9c74c790c5e8ce814efda637b486471bf404dc01d2a5bed9a5658cdf",
+    "kind": "actual-browser-viewport-screenshot",
+    "viewport": {
+      "width": 1440,
+      "height": 1900
+    },
+    "note": "Full connected console in a real 1440x1900 viewport; no montage or CSS alteration.",
+    "framingEvidence": {
+      "viewport": {
+        "width": 1440,
+        "height": 1900
+      },
+      "contactTop": 89.765625,
+      "briefBottom": 1779.859375,
+      "cta": {
+        "x": 1039.203125,
+        "y": 1633.671875,
+        "width": 235,
+        "height": 66,
+        "top": 1633.671875,
+        "right": 1274.203125,
+        "bottom": 1699.671875,
+        "left": 1039.203125
+      }
+    }
+  },
+  "ownerVisualApproval": "OPEN"
+}

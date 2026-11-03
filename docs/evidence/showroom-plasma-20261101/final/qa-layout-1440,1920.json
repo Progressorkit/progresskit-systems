@@ -1,0 +1,70 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1440x1050 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1440x1050 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1440x1050 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "hover relationship chooses one product",
+      "status": "PASS"
+    },
+    {
+      "name": "other lenses dim during relation",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1920x1080 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1440x1050-idle.png",
+    "1440x1050-activated.png",
+    "1440x1050-project-hover.png",
+    "1920x1080-idle.png",
+    "1920x1080-activated.png"
+  ],
+  "PASS": 13,
+  "FAIL": 0
+}

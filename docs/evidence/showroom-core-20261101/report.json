@@ -1,0 +1,197 @@
+{
+  "checks": [
+    {
+      "name": "1440 page fits horizontally",
+      "status": "PASS"
+    },
+    {
+      "name": "1440 visible titles fit faces",
+      "status": "PASS"
+    },
+    {
+      "name": "1440 original fourteen projects",
+      "status": "PASS"
+    },
+    {
+      "name": "visible core breathes",
+      "status": "PASS",
+      "details": {
+        "halo": "running",
+        "light": "running",
+        "mark": "running",
+        "border": "rgb(163, 186, 187)"
+      }
+    },
+    {
+      "name": "hover lifts and illuminates face",
+      "status": "PASS",
+      "details": {
+        "base": {
+          "transform": "none",
+          "filter": "none",
+          "alpha": "0.6"
+        },
+        "hover": {
+          "transform": "matrix(1.025, 0, 0, 1.025, 0, -4)",
+          "filter": "brightness(1.12)",
+          "alpha": "1"
+        }
+      }
+    },
+    {
+      "name": "hover lights the shared core",
+      "status": "PASS"
+    },
+    {
+      "name": "focus has equivalent material response",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard outline is visible",
+      "status": "PASS"
+    },
+    {
+      "name": "existing keyboard opening still works",
+      "status": "PASS"
+    },
+    {
+      "name": "open product suspends core",
+      "status": "PASS"
+    },
+    {
+      "name": "Escape restores project focus",
+      "status": "PASS"
+    },
+    {
+      "name": "pause suspends core",
+      "status": "PASS"
+    },
+    {
+      "name": "offscreen core pauses",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion disables core animations",
+      "status": "PASS"
+    },
+    {
+      "name": "reduced motion retains static focus without lift",
+      "status": "PASS"
+    },
+    {
+      "name": "forced colors removes decorative mechanism",
+      "status": "PASS"
+    },
+    {
+      "name": "forced colors keeps project link visible",
+      "status": "PASS"
+    },
+    {
+      "name": "1920 page fits horizontally",
+      "status": "PASS"
+    },
+    {
+      "name": "1920 visible titles fit faces",
+      "status": "PASS"
+    },
+    {
+      "name": "1920 original fourteen projects",
+      "status": "PASS"
+    },
+    {
+      "name": "390 page fits horizontally",
+      "status": "PASS"
+    },
+    {
+      "name": "390 visible titles fit faces",
+      "status": "PASS"
+    },
+    {
+      "name": "390 original fourteen projects",
+      "status": "PASS"
+    },
+    {
+      "name": "390 core remains above the project face",
+      "status": "PASS"
+    },
+    {
+      "name": "390 lightweight glass",
+      "status": "PASS"
+    },
+    {
+      "name": "390 mobile disables sweep and logo scale",
+      "status": "PASS"
+    },
+    {
+      "name": "390 touch navigation still selects next project",
+      "status": "PASS"
+    },
+    {
+      "name": "390 touch opens real project content",
+      "status": "PASS"
+    },
+    {
+      "name": "390 closes without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "320 page fits horizontally",
+      "status": "PASS"
+    },
+    {
+      "name": "320 visible titles fit faces",
+      "status": "PASS"
+    },
+    {
+      "name": "320 original fourteen projects",
+      "status": "PASS"
+    },
+    {
+      "name": "320 core remains above the project face",
+      "status": "PASS"
+    },
+    {
+      "name": "320 lightweight glass",
+      "status": "PASS"
+    },
+    {
+      "name": "320 mobile disables sweep and logo scale",
+      "status": "PASS"
+    },
+    {
+      "name": "320 touch navigation still selects next project",
+      "status": "PASS"
+    },
+    {
+      "name": "320 touch opens real project content",
+      "status": "PASS"
+    },
+    {
+      "name": "320 closes without horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "no JavaScript keeps fourteen original project links",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1440-idle.png",
+    "1440-hover.png",
+    "1440-focus.png",
+    "1440-reduced.png",
+    "1920-idle.png",
+    "390-idle.png",
+    "390-open.png",
+    "320-idle.png",
+    "320-open.png"
+  ],
+  "PASS": 40,
+  "FAIL": 0
+}

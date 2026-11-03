@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-02",
+  "clips": [
+    {
+      "number": 1,
+      "path": "clips/01.mp4",
+      "bytes": 317899,
+      "sha256": "f6fd0e9dce240fc663361433b077bb67523ccbec639ce8e45b50b769e285b6a3",
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "frames": 90,
+      "durationSeconds": 3,
+      "audioStreams": 0,
+      "ffprobe": "PASS",
+      "fullDecode": "PASS",
+      "visualReview": "PENDING",
+      "sourcePolicy": "Only real source pixels/crops on brand background; no generated product UI."
+    },
+    {
+      "number": 4,
+      "path": "clips/04.mp4",
+      "bytes": 105883,
+      "sha256": "5a156d23eaaab21fbc6d2bfc9e551b9ac4eef96d3c338473873c79f4309f7289",
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "frames": 90,
+      "durationSeconds": 3,
+      "audioStreams": 0,
+      "ffprobe": "PASS",
+      "fullDecode": "PASS",
+      "visualReview": "PENDING",
+      "sourcePolicy": "Only real source pixels/crops on brand background; no generated product UI."
+    },
+    {
+      "number": 9,
+      "path": "clips/09.mp4",
+      "bytes": 206469,
+      "sha256": "cd21094fe3e8dcceb048cdc208cc95bfdc96f8ab5f947ae930b9ad2d6fe0db6d",
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "frames": 90,
+      "durationSeconds": 3,
+      "audioStreams": 0,
+      "ffprobe": "PASS",
+      "fullDecode": "PASS",
+      "visualReview": "PENDING",
+      "sourcePolicy": "Only real source pixels/crops on brand background; no generated product UI."
+    }
+  ],
+  "source": "Actual recorded browser pixels, with framing/cropping/labels only.",
+  "noUIReconstruction": true
+}

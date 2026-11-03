@@ -1,0 +1,7487 @@
+[
+  {
+    "name": "desktop",
+    "readyOffset": 6.351,
+    "duration": 18,
+    "events": [
+      {
+        "seconds": 0,
+        "event": "idle"
+      },
+      {
+        "seconds": 6.622,
+        "event": "core activation"
+      },
+      {
+        "seconds": 10.501,
+        "event": "Mail raycast hover"
+      },
+      {
+        "seconds": 14.003,
+        "event": "cursor lighting reaction"
+      }
+    ],
+    "metrics": {
+      "revision": "187",
+      "frames": 485,
+      "quality": 2,
+      "fps": 25,
+      "cpuFrameMs": 2.4000000059604645,
+      "gpuFrameMs": 8.358833,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 46,
+      "triangles": 31994,
+      "geometries": 42,
+      "textures": 21,
+      "rafPending": true,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 360,
+      "dpr": 0.65,
+      "transmissionResolutionScale": 0.75,
+      "buffer": {
+        "width": 650,
+        "height": 585
+      },
+      "samples": [
+        {
+          "t": 5534.5,
+          "fps": 18.68975014755065,
+          "cpuFrameMs": 2.4000000059604645,
+          "gpuFrameMs": 40.025416,
+          "drawCalls": 34,
+          "triangles": 70370,
+          "dpr": 1
+        },
+        {
+          "t": 6534.5,
+          "fps": 20,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 21.419749,
+          "drawCalls": 34,
+          "triangles": 70370,
+          "dpr": 1
+        },
+        {
+          "t": 7551,
+          "fps": 19.675356615838663,
+          "cpuFrameMs": 1.699999988079071,
+          "gpuFrameMs": 30.911749,
+          "drawCalls": 34,
+          "triangles": 70370,
+          "dpr": 1
+        },
+        {
+          "t": 8584.4,
+          "fps": 21.28894910005807,
+          "cpuFrameMs": 2.0999999940395355,
+          "gpuFrameMs": 36.835416,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 9634.3,
+          "fps": 24.76426326316793,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 21.287499,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 10651,
+          "fps": 24.58935772597618,
+          "cpuFrameMs": 6.9000000059604645,
+          "gpuFrameMs": 20.308833,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 11667.5,
+          "fps": 25.577963600590262,
+          "cpuFrameMs": 2.0999999940395355,
+          "gpuFrameMs": 11.136666,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 12700.8,
+          "fps": 28.065421465208576,
+          "cpuFrameMs": 1.100000023841858,
+          "gpuFrameMs": 28.93675,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 13700.8,
+          "fps": 25,
+          "cpuFrameMs": 1.699999988079071,
+          "gpuFrameMs": 20.740083,
+          "drawCalls": 34,
+          "triangles": 51170,
+          "dpr": 0.8
+        },
+        {
+          "t": 14700.8,
+          "fps": 22,
+          "cpuFrameMs": 5,
+          "gpuFrameMs": 19.355333,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 15700.8,
+          "fps": 19,
+          "cpuFrameMs": 2.800000011920929,
+          "gpuFrameMs": 15.772083,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 16717.3,
+          "fps": 23.610427939006396,
+          "cpuFrameMs": 2.199999988079071,
+          "gpuFrameMs": 17.328499,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 17734,
+          "fps": 23.605783416937133,
+          "cpuFrameMs": 1.800000011920929,
+          "gpuFrameMs": 31.126249,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 18750.7,
+          "fps": 22.622209107898087,
+          "cpuFrameMs": 2,
+          "gpuFrameMs": 18.645333,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 19783.9,
+          "fps": 21.293070073557864,
+          "cpuFrameMs": 2.7999999821186066,
+          "gpuFrameMs": 39.498833,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 20833.9,
+          "fps": 20.952380952380953,
+          "cpuFrameMs": 5,
+          "gpuFrameMs": 17.015916,
+          "drawCalls": 46,
+          "triangles": 51194,
+          "dpr": 0.8
+        },
+        {
+          "t": 21867.1,
+          "fps": 25.16453735965938,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 4.939833,
+          "drawCalls": 46,
+          "triangles": 31994,
+          "dpr": 0.65
+        },
+        {
+          "t": 22867.1,
+          "fps": 30,
+          "cpuFrameMs": 4.600000023841858,
+          "gpuFrameMs": 13.406,
+          "drawCalls": 46,
+          "triangles": 31994,
+          "dpr": 0.65
+        },
+        {
+          "t": 23867.1,
+          "fps": 25,
+          "cpuFrameMs": 4,
+          "gpuFrameMs": 43.131082,
+          "drawCalls": 46,
+          "triangles": 31994,
+          "dpr": 0.65
+        }
+      ],
+      "phases": [
+        {
+          "id": "glikemia-premium",
+          "phase": "ready"
+        },
+        {
+          "id": "progresskit-mail",
+          "phase": "ready"
+        },
+        {
+          "id": "progresskit-translator",
+          "phase": "ready"
+        },
+        {
+          "id": "vaeloria",
+          "phase": "ready"
+        },
+        {
+          "id": "progresskit-community",
+          "phase": "ready"
+        },
+        {
+          "id": "progresskit-tax",
+          "phase": "ready"
+        }
+      ],
+      "camera": "PerspectiveCamera",
+      "depth": true
+    },
+    "frames": [
+      {
+        "t": 6367,
+        "frames": 42,
+        "cpuFrameMs": 8.700000017881393,
+        "gpuFrameMs": 27.838166,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6450.200000017881,
+        "frames": 43,
+        "cpuFrameMs": 12.099999994039536,
+        "gpuFrameMs": 23.92925,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6486.4000000059605,
+        "frames": 44,
+        "cpuFrameMs": 6.9000000059604645,
+        "gpuFrameMs": 23.92925,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6523.100000023842,
+        "frames": 45,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 23.92925,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6554.5,
+        "frames": 46,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 21.419749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6584.9000000059605,
+        "frames": 47,
+        "cpuFrameMs": 3.2000000178813934,
+        "gpuFrameMs": 21.419749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6640.9000000059605,
+        "frames": 48,
+        "cpuFrameMs": 3.7000000178813934,
+        "gpuFrameMs": 21.419749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6706.100000023842,
+        "frames": 49,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 41.261416,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6783.700000017881,
+        "frames": 50,
+        "cpuFrameMs": 3.300000011920929,
+        "gpuFrameMs": 41.261416,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6820.800000011921,
+        "frames": 51,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 41.261416,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6876,
+        "frames": 52,
+        "cpuFrameMs": 6.700000017881393,
+        "gpuFrameMs": 33.129749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6911.800000011921,
+        "frames": 53,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 33.129749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6957,
+        "frames": 54,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 33.129749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6997.800000011921,
+        "frames": 55,
+        "cpuFrameMs": 3.9000000059604645,
+        "gpuFrameMs": 14.115749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7046.200000017881,
+        "frames": 56,
+        "cpuFrameMs": 3.7999999821186066,
+        "gpuFrameMs": 14.115749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7103.300000011921,
+        "frames": 57,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 14.115749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7141.200000017881,
+        "frames": 58,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 23.247833,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7186.700000017881,
+        "frames": 59,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 23.247833,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7241,
+        "frames": 60,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 23.247833,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7294.100000023842,
+        "frames": 61,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 28.723749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7359,
+        "frames": 62,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 28.723749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7407.9000000059605,
+        "frames": 63,
+        "cpuFrameMs": 2.399999976158142,
+        "gpuFrameMs": 28.723749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7456.200000017881,
+        "frames": 64,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 30.911749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7508.600000023842,
+        "frames": 65,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 30.911749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7556.9000000059605,
+        "frames": 66,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 30.911749,
+        "drawCalls": 34,
+        "triangles": 70370,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7829.5,
+        "frames": 67,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 39.687915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 7854.9000000059605,
+        "frames": 68,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 39.687915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 7887.200000017881,
+        "frames": 69,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 9.308749,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 7945.4000000059605,
+        "frames": 70,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 9.308749,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 7969.4000000059605,
+        "frames": 71,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 9.308749,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 7994.4000000059605,
+        "frames": 72,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 21.347499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8057.9000000059605,
+        "frames": 73,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 21.347499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8096.4000000059605,
+        "frames": 74,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 13.849332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8129.100000023842,
+        "frames": 75,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 13.849332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8163.5,
+        "frames": 76,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 10.350083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8188,
+        "frames": 77,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 10.350083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8219.700000017881,
+        "frames": 78,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 19.131332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8253.90000000596,
+        "frames": 79,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 19.131332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8287.600000023842,
+        "frames": 80,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 18.430832,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8323.5,
+        "frames": 81,
+        "cpuFrameMs": 4.300000011920929,
+        "gpuFrameMs": 18.430832,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8385.40000000596,
+        "frames": 82,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 14.081083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8402.100000023842,
+        "frames": 83,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 14.081083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8422.90000000596,
+        "frames": 84,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 14.081083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8459.5,
+        "frames": 85,
+        "cpuFrameMs": 5.9000000059604645,
+        "gpuFrameMs": 16.948499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8489.90000000596,
+        "frames": 86,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 16.948499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8539,
+        "frames": 87,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 16.948499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8589.800000011921,
+        "frames": 88,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 36.835416,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8626.40000000596,
+        "frames": 89,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 36.835416,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8666.800000011921,
+        "frames": 90,
+        "cpuFrameMs": 4.9000000059604645,
+        "gpuFrameMs": 36.835416,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8709.700000017881,
+        "frames": 91,
+        "cpuFrameMs": 2.7000000178813934,
+        "gpuFrameMs": 22.496582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8761.200000017881,
+        "frames": 92,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 22.496582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8802.600000023842,
+        "frames": 93,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 22.496582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8832.100000023842,
+        "frames": 94,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 13.241832,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8872.5,
+        "frames": 95,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 13.241832,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8927.600000023842,
+        "frames": 96,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 13.241832,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 8972,
+        "frames": 97,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 26.641499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9005.90000000596,
+        "frames": 98,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 26.641499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9040.800000011921,
+        "frames": 99,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 26.641499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9094.100000023842,
+        "frames": 100,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 32.937249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9130.800000011921,
+        "frames": 101,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 32.937249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9159.300000011921,
+        "frames": 102,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 32.937249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9186.90000000596,
+        "frames": 103,
+        "cpuFrameMs": 1.600000023841858,
+        "gpuFrameMs": 10.052833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9245,
+        "frames": 104,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 10.052833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9259.90000000596,
+        "frames": 105,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 10.052833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9320.40000000596,
+        "frames": 106,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 18.526499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9335.5,
+        "frames": 107,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 18.526499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9359.300000011921,
+        "frames": 108,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 18.526499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9412.800000011921,
+        "frames": 109,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 14.631333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9461.100000023842,
+        "frames": 110,
+        "cpuFrameMs": 7,
+        "gpuFrameMs": 14.631333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9494.90000000596,
+        "frames": 111,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 14.631333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9549.800000011921,
+        "frames": 112,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 21.287499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9591.40000000596,
+        "frames": 113,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 21.287499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9642.40000000596,
+        "frames": 114,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 21.287499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9678.90000000596,
+        "frames": 115,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 14.468582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9712.600000023842,
+        "frames": 116,
+        "cpuFrameMs": 3.7999999821186066,
+        "gpuFrameMs": 14.468582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9754.800000011921,
+        "frames": 117,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 14.468582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9789.600000023842,
+        "frames": 118,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 18.310249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9813.800000011921,
+        "frames": 119,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 18.310249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9843.90000000596,
+        "frames": 120,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 18.310249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9876.5,
+        "frames": 121,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 18.310249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9908.300000011921,
+        "frames": 122,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 13.047333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9952.700000017881,
+        "frames": 123,
+        "cpuFrameMs": 5.300000011920929,
+        "gpuFrameMs": 13.047333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 9990.90000000596,
+        "frames": 124,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 13.047333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10044.90000000596,
+        "frames": 125,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 25.675166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10079.600000023842,
+        "frames": 126,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 25.675166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10105.200000017881,
+        "frames": 127,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 25.675166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10150.300000011921,
+        "frames": 128,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 17.282166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10204.100000023842,
+        "frames": 129,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 17.282166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10244.5,
+        "frames": 130,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 17.282166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10280.90000000596,
+        "frames": 131,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 11.238999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10327.200000017881,
+        "frames": 132,
+        "cpuFrameMs": 4.299999982118607,
+        "gpuFrameMs": 11.238999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10379.700000017881,
+        "frames": 133,
+        "cpuFrameMs": 3.2999999821186066,
+        "gpuFrameMs": 11.238999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10430.90000000596,
+        "frames": 134,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 15.501166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10473.40000000596,
+        "frames": 135,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 15.501166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10510.700000017881,
+        "frames": 136,
+        "cpuFrameMs": 3.699999988079071,
+        "gpuFrameMs": 15.501166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10563.600000023842,
+        "frames": 137,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 15.501166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10614.700000017881,
+        "frames": 138,
+        "cpuFrameMs": 8.600000023841858,
+        "gpuFrameMs": 20.308833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10674.800000011921,
+        "frames": 139,
+        "cpuFrameMs": 6.9000000059604645,
+        "gpuFrameMs": 20.308833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10705.800000011921,
+        "frames": 140,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 20.308833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10744.300000011921,
+        "frames": 141,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 22.134915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10797.600000023842,
+        "frames": 142,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 22.134915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10842.5,
+        "frames": 143,
+        "cpuFrameMs": 3.7000000178813934,
+        "gpuFrameMs": 22.134915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10872.600000023842,
+        "frames": 144,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 22.870582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10946.5,
+        "frames": 145,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 22.870582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 10977.800000011921,
+        "frames": 146,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 22.870582,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11027.200000017881,
+        "frames": 147,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 18.181998,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11059.5,
+        "frames": 148,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 18.181998,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11106.800000011921,
+        "frames": 149,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 18.181998,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11141.800000011921,
+        "frames": 150,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 13.148333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11186.90000000596,
+        "frames": 151,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 13.148333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11220.300000011921,
+        "frames": 152,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 13.148333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11254,
+        "frames": 153,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 18.445082,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11274.90000000596,
+        "frames": 154,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 18.445082,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11305.600000023842,
+        "frames": 155,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 18.445082,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11337,
+        "frames": 156,
+        "cpuFrameMs": 1.399999976158142,
+        "gpuFrameMs": 13.240833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11365.800000011921,
+        "frames": 157,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 13.240833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11410.600000023842,
+        "frames": 158,
+        "cpuFrameMs": 4.600000023841858,
+        "gpuFrameMs": 13.240833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11453.90000000596,
+        "frames": 159,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 13.938499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11487.700000017881,
+        "frames": 160,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 13.938499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11514.5,
+        "frames": 161,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 13.938499,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11555.700000017881,
+        "frames": 162,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 23.935915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11589,
+        "frames": 163,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 23.935915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11640.90000000596,
+        "frames": 164,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 23.935915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11672.90000000596,
+        "frames": 165,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 11.136666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11711.90000000596,
+        "frames": 166,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 11.136666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11739.200000017881,
+        "frames": 167,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 11.136666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11779.200000017881,
+        "frames": 168,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 11.712999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11821.200000017881,
+        "frames": 169,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 11.712999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11853.5,
+        "frames": 170,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 11.712999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11893.300000011921,
+        "frames": 171,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 16.01625,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11945,
+        "frames": 172,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 16.01625,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 11977,
+        "frames": 173,
+        "cpuFrameMs": 2.7000000178813934,
+        "gpuFrameMs": 16.01625,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12006.90000000596,
+        "frames": 174,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 11.198915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12037.600000023842,
+        "frames": 175,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 11.198915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12074.300000011921,
+        "frames": 176,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 11.198915,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12110.5,
+        "frames": 177,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 21.100249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12142.100000023842,
+        "frames": 178,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 21.100249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12187.300000011921,
+        "frames": 179,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 21.100249,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12231.700000017881,
+        "frames": 180,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 21.48775,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12253.200000017881,
+        "frames": 181,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 21.48775,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12288.100000023842,
+        "frames": 182,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 21.48775,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12308.800000011921,
+        "frames": 183,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 15.077331,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12341.200000017881,
+        "frames": 184,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 15.077331,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12374.200000017881,
+        "frames": 185,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 15.077331,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12418.600000023842,
+        "frames": 186,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 13.630332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12457.800000011921,
+        "frames": 187,
+        "cpuFrameMs": 1.399999976158142,
+        "gpuFrameMs": 13.630332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12497.800000011921,
+        "frames": 188,
+        "cpuFrameMs": 3.300000011920929,
+        "gpuFrameMs": 13.630332,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12542.5,
+        "frames": 189,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 20.012166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12563.40000000596,
+        "frames": 190,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 20.012166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12590.5,
+        "frames": 191,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 20.012166,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12644.200000017881,
+        "frames": 192,
+        "cpuFrameMs": 2.399999976158142,
+        "gpuFrameMs": 28.93675,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12665,
+        "frames": 193,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 28.93675,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12702.800000011921,
+        "frames": 194,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 28.93675,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12732.100000023842,
+        "frames": 195,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 12.658833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12803.600000023842,
+        "frames": 196,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 12.658833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12823.90000000596,
+        "frames": 197,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 12.658833,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12878.700000017881,
+        "frames": 198,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 18.080999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12913,
+        "frames": 199,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 18.080999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 12952.90000000596,
+        "frames": 200,
+        "cpuFrameMs": 6.199999988079071,
+        "gpuFrameMs": 18.080999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13025.600000023842,
+        "frames": 201,
+        "cpuFrameMs": 2.7000000178813934,
+        "gpuFrameMs": 38.656333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13058.40000000596,
+        "frames": 202,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 38.656333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13106.600000023842,
+        "frames": 203,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 38.656333,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13138.90000000596,
+        "frames": 204,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 15.73,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13182,
+        "frames": 205,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 15.73,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13224.800000011921,
+        "frames": 206,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 15.73,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13259.90000000596,
+        "frames": 207,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 23.31725,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13303.600000023842,
+        "frames": 208,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 23.31725,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13321.600000023842,
+        "frames": 209,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 23.31725,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13354,
+        "frames": 210,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 23.31725,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13408.800000011921,
+        "frames": 211,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 15.847666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13452.800000011921,
+        "frames": 212,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 15.847666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13500.100000023842,
+        "frames": 213,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 9.367666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13547.300000011921,
+        "frames": 214,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 9.367666,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13580.700000017881,
+        "frames": 215,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 11.37475,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13622,
+        "frames": 216,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 11.37475,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13642.200000017881,
+        "frames": 217,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 11.37475,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13672.5,
+        "frames": 218,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 11.37475,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13709.600000023842,
+        "frames": 219,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 20.740083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13751.5,
+        "frames": 220,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 20.740083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13794.300000011921,
+        "frames": 221,
+        "cpuFrameMs": 4.4000000059604645,
+        "gpuFrameMs": 20.740083,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13845.600000023842,
+        "frames": 222,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 20.118,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13881.100000023842,
+        "frames": 223,
+        "cpuFrameMs": 4.4000000059604645,
+        "gpuFrameMs": 20.118,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13923.200000017881,
+        "frames": 224,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 20.118,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 13977.600000023842,
+        "frames": 225,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 28.6155,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14035,
+        "frames": 226,
+        "cpuFrameMs": 6.100000023841858,
+        "gpuFrameMs": 28.6155,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14077.40000000596,
+        "frames": 227,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 28.6155,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14127.5,
+        "frames": 228,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 24.477999,
+        "drawCalls": 34,
+        "triangles": 51170,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14177.5,
+        "frames": 229,
+        "cpuFrameMs": 2.399999976158142,
+        "gpuFrameMs": 24.477999,
+        "drawCalls": 36,
+        "triangles": 51174,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14227,
+        "frames": 230,
+        "cpuFrameMs": 6,
+        "gpuFrameMs": 24.477999,
+        "drawCalls": 38,
+        "triangles": 51178,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14277.600000023842,
+        "frames": 231,
+        "cpuFrameMs": 3.7999999821186066,
+        "gpuFrameMs": 32.031166,
+        "drawCalls": 38,
+        "triangles": 51178,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14303.5,
+        "frames": 232,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 32.031166,
+        "drawCalls": 38,
+        "triangles": 51178,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14363.100000023842,
+        "frames": 233,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 32.031166,
+        "drawCalls": 40,
+        "triangles": 51182,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14379.200000017881,
+        "frames": 234,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 32.031166,
+        "drawCalls": 40,
+        "triangles": 51182,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14424.100000023842,
+        "frames": 235,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 25.770999,
+        "drawCalls": 42,
+        "triangles": 51186,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14502.700000017881,
+        "frames": 236,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 25.770999,
+        "drawCalls": 44,
+        "triangles": 51190,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14564.90000000596,
+        "frames": 237,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 21.713416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14602.5,
+        "frames": 238,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 21.713416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14633.5,
+        "frames": 239,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 21.713416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14679.90000000596,
+        "frames": 240,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 19.355333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14709.90000000596,
+        "frames": 241,
+        "cpuFrameMs": 5,
+        "gpuFrameMs": 19.355333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14762.200000017881,
+        "frames": 242,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 19.355333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14825.100000023842,
+        "frames": 243,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 18.451416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14953.100000023842,
+        "frames": 244,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 34.502249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 14999.300000011921,
+        "frames": 245,
+        "cpuFrameMs": 18.600000023841858,
+        "gpuFrameMs": 34.502249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15039.300000011921,
+        "frames": 246,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 22.73025,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15065.700000017881,
+        "frames": 247,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 22.73025,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15114.100000023842,
+        "frames": 248,
+        "cpuFrameMs": 5.0999999940395355,
+        "gpuFrameMs": 22.73025,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15148.600000023842,
+        "frames": 249,
+        "cpuFrameMs": 4.300000011920929,
+        "gpuFrameMs": 29.621666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15204,
+        "frames": 250,
+        "cpuFrameMs": 3.300000011920929,
+        "gpuFrameMs": 29.621666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15253.300000011921,
+        "frames": 251,
+        "cpuFrameMs": 8.700000017881393,
+        "gpuFrameMs": 29.621666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15293.200000017881,
+        "frames": 252,
+        "cpuFrameMs": 4,
+        "gpuFrameMs": 30.177583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15348.100000023842,
+        "frames": 253,
+        "cpuFrameMs": 5.0999999940395355,
+        "gpuFrameMs": 30.177583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15393.90000000596,
+        "frames": 254,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 30.177583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15462,
+        "frames": 255,
+        "cpuFrameMs": 3.600000023841858,
+        "gpuFrameMs": 23.043999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15508.200000017881,
+        "frames": 256,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 23.043999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15557.200000017881,
+        "frames": 257,
+        "cpuFrameMs": 3.7999999821186066,
+        "gpuFrameMs": 23.043999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15612.700000017881,
+        "frames": 258,
+        "cpuFrameMs": 5.199999988079071,
+        "gpuFrameMs": 15.772083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15658.300000011921,
+        "frames": 259,
+        "cpuFrameMs": 4.699999988079071,
+        "gpuFrameMs": 15.772083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15704.600000023842,
+        "frames": 260,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 15.772083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15760.40000000596,
+        "frames": 261,
+        "cpuFrameMs": 7.0999999940395355,
+        "gpuFrameMs": 30.910583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15824.700000017881,
+        "frames": 262,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 30.910583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15866.800000011921,
+        "frames": 263,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 30.910583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15929.800000011921,
+        "frames": 264,
+        "cpuFrameMs": 8.199999988079071,
+        "gpuFrameMs": 37.619166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15964.300000011921,
+        "frames": 265,
+        "cpuFrameMs": 4.699999988079071,
+        "gpuFrameMs": 37.619166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 15998.90000000596,
+        "frames": 266,
+        "cpuFrameMs": 4.5999999940395355,
+        "gpuFrameMs": 37.619166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16048.40000000596,
+        "frames": 267,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 21.447833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16097.300000011921,
+        "frames": 268,
+        "cpuFrameMs": 4.0999999940395355,
+        "gpuFrameMs": 21.447833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16126.800000011921,
+        "frames": 269,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 21.447833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16175.5,
+        "frames": 270,
+        "cpuFrameMs": 4.700000017881393,
+        "gpuFrameMs": 26.558,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16210,
+        "frames": 271,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 26.558,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16257.40000000596,
+        "frames": 272,
+        "cpuFrameMs": 2.7999999821186066,
+        "gpuFrameMs": 26.558,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16295.800000011921,
+        "frames": 273,
+        "cpuFrameMs": 4.300000011920929,
+        "gpuFrameMs": 24.948915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16339.40000000596,
+        "frames": 274,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 24.948915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16375.200000017881,
+        "frames": 275,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 24.948915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16423,
+        "frames": 276,
+        "cpuFrameMs": 2.600000023841858,
+        "gpuFrameMs": 24.478416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16480.5,
+        "frames": 277,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 24.478416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16520.5,
+        "frames": 278,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 24.478416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16556.5,
+        "frames": 279,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 19.672916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16588.20000001788,
+        "frames": 280,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 19.672916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16616.5,
+        "frames": 281,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 19.672916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16648.100000023842,
+        "frames": 282,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 17.328499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16687.600000023842,
+        "frames": 283,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 17.328499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16724.100000023842,
+        "frames": 284,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 17.328499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16761.600000023842,
+        "frames": 285,
+        "cpuFrameMs": 5.0999999940395355,
+        "gpuFrameMs": 11.632166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16798.30000001192,
+        "frames": 286,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 11.632166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16823.5,
+        "frames": 287,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 11.632166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16890.90000000596,
+        "frames": 288,
+        "cpuFrameMs": 4.4000000059604645,
+        "gpuFrameMs": 32.679666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16924.100000023842,
+        "frames": 289,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 32.679666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16948.5,
+        "frames": 290,
+        "cpuFrameMs": 2.600000023841858,
+        "gpuFrameMs": 32.679666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 16991.100000023842,
+        "frames": 291,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 17.988916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17025.70000001788,
+        "frames": 292,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 17.988916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17063.600000023842,
+        "frames": 293,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 17.988916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17109.40000000596,
+        "frames": 294,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 22.527833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17160,
+        "frames": 295,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 22.527833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17211.600000023842,
+        "frames": 296,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 22.527833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17254.30000001192,
+        "frames": 297,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 20.036916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17298.90000000596,
+        "frames": 298,
+        "cpuFrameMs": 7,
+        "gpuFrameMs": 20.036916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17341,
+        "frames": 299,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 20.036916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17379.40000000596,
+        "frames": 300,
+        "cpuFrameMs": 4.9000000059604645,
+        "gpuFrameMs": 18.008582,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17422.70000001788,
+        "frames": 301,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 18.008582,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17460.100000023842,
+        "frames": 302,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 18.008582,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17506.90000000596,
+        "frames": 303,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 15.718999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17543.80000001192,
+        "frames": 304,
+        "cpuFrameMs": 4.700000017881393,
+        "gpuFrameMs": 15.718999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17597.70000001788,
+        "frames": 305,
+        "cpuFrameMs": 4.699999988079071,
+        "gpuFrameMs": 15.718999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17664.100000023842,
+        "frames": 306,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 31.126249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17695.100000023842,
+        "frames": 307,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 31.126249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17745.100000023842,
+        "frames": 308,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 31.126249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17790.5,
+        "frames": 309,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 19.012333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17841.100000023842,
+        "frames": 310,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 19.012333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17889.80000001192,
+        "frames": 311,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 19.012333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17930.40000000596,
+        "frames": 312,
+        "cpuFrameMs": 4,
+        "gpuFrameMs": 21.000499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 17971.20000001788,
+        "frames": 313,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 21.000499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18021.40000000596,
+        "frames": 314,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 21.000499,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18055.100000023842,
+        "frames": 315,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 40.109416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18107.600000023842,
+        "frames": 316,
+        "cpuFrameMs": 3.300000011920929,
+        "gpuFrameMs": 40.109416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18144.30000001192,
+        "frames": 317,
+        "cpuFrameMs": 3.800000011920929,
+        "gpuFrameMs": 40.109416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18195.100000023842,
+        "frames": 318,
+        "cpuFrameMs": 7.5,
+        "gpuFrameMs": 23.000833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18242,
+        "frames": 319,
+        "cpuFrameMs": 5.9000000059604645,
+        "gpuFrameMs": 23.000833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18275.40000000596,
+        "frames": 320,
+        "cpuFrameMs": 4.4000000059604645,
+        "gpuFrameMs": 23.000833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18325.80000001192,
+        "frames": 321,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 38.916999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18349.90000000596,
+        "frames": 322,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 38.916999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18377.20000001788,
+        "frames": 323,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 38.916999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18396.600000023842,
+        "frames": 324,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 38.916999,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18459.600000023842,
+        "frames": 325,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 20.202416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18514.70000001788,
+        "frames": 326,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 20.202416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18581.90000000596,
+        "frames": 327,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 21.05425,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18633.100000023842,
+        "frames": 328,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 21.05425,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18683.30000001192,
+        "frames": 329,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 18.645333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18726.70000001788,
+        "frames": 330,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 18.645333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18755.100000023842,
+        "frames": 331,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 18.645333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18798.20000001788,
+        "frames": 332,
+        "cpuFrameMs": 10.5,
+        "gpuFrameMs": 16.148915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18820.80000001192,
+        "frames": 333,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 16.148915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18845.30000001192,
+        "frames": 334,
+        "cpuFrameMs": 5.5,
+        "gpuFrameMs": 16.148915,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18906.90000000596,
+        "frames": 335,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 22.457332,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 18962.100000023842,
+        "frames": 336,
+        "cpuFrameMs": 2.7000000178813934,
+        "gpuFrameMs": 22.457332,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19006.80000001192,
+        "frames": 337,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 22.457332,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19051.70000001788,
+        "frames": 338,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 32.765083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19096.5,
+        "frames": 339,
+        "cpuFrameMs": 4.5999999940395355,
+        "gpuFrameMs": 32.765083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19151.100000023842,
+        "frames": 340,
+        "cpuFrameMs": 4.699999988079071,
+        "gpuFrameMs": 32.765083,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19213.100000023842,
+        "frames": 341,
+        "cpuFrameMs": 2.399999976158142,
+        "gpuFrameMs": 33.197832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19251.40000000596,
+        "frames": 342,
+        "cpuFrameMs": 3.699999988079071,
+        "gpuFrameMs": 33.197832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19305.30000001192,
+        "frames": 343,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 33.197832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19357.30000001192,
+        "frames": 344,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 27.622833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19396.90000000596,
+        "frames": 345,
+        "cpuFrameMs": 4.899999976158142,
+        "gpuFrameMs": 27.622833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19445.90000000596,
+        "frames": 346,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 27.622833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19480.80000001192,
+        "frames": 347,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 15.706249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19523.20000001788,
+        "frames": 348,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 15.706249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19587.90000000596,
+        "frames": 349,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 15.706249,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19623.90000000596,
+        "frames": 350,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 16.412333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19675.90000000596,
+        "frames": 351,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 16.412333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19732.40000000596,
+        "frames": 352,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 16.412333,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19791.80000001192,
+        "frames": 353,
+        "cpuFrameMs": 2.7999999821186066,
+        "gpuFrameMs": 39.498833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19827,
+        "frames": 354,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 39.498833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19879.5,
+        "frames": 355,
+        "cpuFrameMs": 4.399999976158142,
+        "gpuFrameMs": 39.498833,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19911.600000023842,
+        "frames": 356,
+        "cpuFrameMs": 4.9000000059604645,
+        "gpuFrameMs": 16.939082,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 19969.40000000596,
+        "frames": 357,
+        "cpuFrameMs": 5.200000017881393,
+        "gpuFrameMs": 16.939082,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20022.5,
+        "frames": 358,
+        "cpuFrameMs": 3.2999999821186066,
+        "gpuFrameMs": 16.939082,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20055,
+        "frames": 359,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 20.800832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20099.30000001192,
+        "frames": 360,
+        "cpuFrameMs": 3.699999988079071,
+        "gpuFrameMs": 20.800832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20145.90000000596,
+        "frames": 361,
+        "cpuFrameMs": 3.9000000059604645,
+        "gpuFrameMs": 20.800832,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20191.5,
+        "frames": 362,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 20.908666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20243.100000023842,
+        "frames": 363,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 20.908666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20290.30000001192,
+        "frames": 364,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 20.908666,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20328.90000000596,
+        "frames": 365,
+        "cpuFrameMs": 3.800000011920929,
+        "gpuFrameMs": 25.774166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20391.20000001788,
+        "frames": 366,
+        "cpuFrameMs": 2.899999976158142,
+        "gpuFrameMs": 25.774166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20443.20000001788,
+        "frames": 367,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 25.774166,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20477.80000001192,
+        "frames": 368,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 16.321416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20538.5,
+        "frames": 369,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 16.321416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20578,
+        "frames": 370,
+        "cpuFrameMs": 6.5999999940395355,
+        "gpuFrameMs": 16.321416,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20640.40000000596,
+        "frames": 371,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 52.430583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20697.5,
+        "frames": 372,
+        "cpuFrameMs": 3.2999999821186066,
+        "gpuFrameMs": 52.430583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20724,
+        "frames": 373,
+        "cpuFrameMs": 2.7000000178813934,
+        "gpuFrameMs": 52.430583,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20786.5,
+        "frames": 374,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 17.015916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 20846.100000023842,
+        "frames": 375,
+        "cpuFrameMs": 5,
+        "gpuFrameMs": 17.015916,
+        "drawCalls": 46,
+        "triangles": 51194,
+        "dpr": 0.8,
+        "quality": 1
+      },
+      {
+        "t": 21041.80000001192,
+        "frames": 376,
+        "cpuFrameMs": 3.2000000178813934,
+        "gpuFrameMs": 22.27675,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21075.100000023842,
+        "frames": 377,
+        "cpuFrameMs": 6.700000017881393,
+        "gpuFrameMs": 22.27675,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21108.100000023842,
+        "frames": 378,
+        "cpuFrameMs": 5.0999999940395355,
+        "gpuFrameMs": 12.059998,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21137.40000000596,
+        "frames": 379,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 12.059998,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21170.90000000596,
+        "frames": 380,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 8.0685,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21204.5,
+        "frames": 381,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 8.0685,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21238.40000000596,
+        "frames": 382,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 12.796333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21275.600000023842,
+        "frames": 383,
+        "cpuFrameMs": 5.9000000059604645,
+        "gpuFrameMs": 4.963333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21304.30000001192,
+        "frames": 384,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 4.963333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21338.20000001788,
+        "frames": 385,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 8.832666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21370.30000001192,
+        "frames": 386,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 8.832666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21405.600000023842,
+        "frames": 387,
+        "cpuFrameMs": 3.2999999821186066,
+        "gpuFrameMs": 9.854166,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21436.40000000596,
+        "frames": 388,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 9.854166,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21473.40000000596,
+        "frames": 389,
+        "cpuFrameMs": 4.799999982118607,
+        "gpuFrameMs": 4.9425,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21503.5,
+        "frames": 390,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 4.9425,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21539.20000001788,
+        "frames": 391,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 5.022833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21571,
+        "frames": 392,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 8.349333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21604.100000023842,
+        "frames": 393,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 8.952833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21638,
+        "frames": 394,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 8.952833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21671.600000023842,
+        "frames": 395,
+        "cpuFrameMs": 2.7999999821186066,
+        "gpuFrameMs": 8.258833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21704.600000023842,
+        "frames": 396,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 8.513666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21738.80000001192,
+        "frames": 397,
+        "cpuFrameMs": 1.399999976158142,
+        "gpuFrameMs": 8.547583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21774,
+        "frames": 398,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 8.198,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21802.90000000596,
+        "frames": 399,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 8.198,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21840.90000000596,
+        "frames": 400,
+        "cpuFrameMs": 4.0999999940395355,
+        "gpuFrameMs": 4.939833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21870.90000000596,
+        "frames": 401,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 4.939833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21905,
+        "frames": 402,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 10.827416,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21936.20000001788,
+        "frames": 403,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 10.827416,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 21970.90000000596,
+        "frames": 404,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 5.13425,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22012.30000001192,
+        "frames": 405,
+        "cpuFrameMs": 6.4000000059604645,
+        "gpuFrameMs": 5.13425,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22038.40000000596,
+        "frames": 406,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 5.16225,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22071.40000000596,
+        "frames": 407,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 5.16225,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22104.30000001192,
+        "frames": 408,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 12.198332,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22137.30000001192,
+        "frames": 409,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 12.198332,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22171.100000023842,
+        "frames": 410,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 5.6105,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22203.600000023842,
+        "frames": 411,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 5.6105,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22238.100000023842,
+        "frames": 412,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 5.294083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22271.30000001192,
+        "frames": 413,
+        "cpuFrameMs": 3.399999976158142,
+        "gpuFrameMs": 8.870583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22326.80000001192,
+        "frames": 414,
+        "cpuFrameMs": 9.400000005960464,
+        "gpuFrameMs": 8.870583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22364.70000001788,
+        "frames": 415,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 9.2705,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22402.100000023842,
+        "frames": 416,
+        "cpuFrameMs": 22.5,
+        "gpuFrameMs": 9.2705,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22420.80000001192,
+        "frames": 417,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 14.241582,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22438.600000023842,
+        "frames": 418,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 14.241582,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22497.100000023842,
+        "frames": 419,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 8.451332,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22515.40000000596,
+        "frames": 420,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 8.451332,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22556.30000001192,
+        "frames": 421,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 14.903833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22580.90000000596,
+        "frames": 422,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 14.903833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22611.80000001192,
+        "frames": 423,
+        "cpuFrameMs": 3.7000000178813934,
+        "gpuFrameMs": 14.433,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22649.600000023842,
+        "frames": 424,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 14.433,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22675,
+        "frames": 425,
+        "cpuFrameMs": 3.2000000178813934,
+        "gpuFrameMs": 8.204666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22714.40000000596,
+        "frames": 426,
+        "cpuFrameMs": 4.100000023841858,
+        "gpuFrameMs": 8.204666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22747.100000023842,
+        "frames": 427,
+        "cpuFrameMs": 3.9000000059604645,
+        "gpuFrameMs": 13.317916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22775,
+        "frames": 428,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 13.317916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22816.100000023842,
+        "frames": 429,
+        "cpuFrameMs": 5.5999999940395355,
+        "gpuFrameMs": 5.436,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22842.600000023842,
+        "frames": 430,
+        "cpuFrameMs": 3.399999976158142,
+        "gpuFrameMs": 5.436,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22876.600000023842,
+        "frames": 431,
+        "cpuFrameMs": 4.600000023841858,
+        "gpuFrameMs": 13.406,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22919.80000001192,
+        "frames": 432,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 13.406,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22959.600000023842,
+        "frames": 433,
+        "cpuFrameMs": 4,
+        "gpuFrameMs": 8.513583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 22981.80000001192,
+        "frames": 434,
+        "cpuFrameMs": 3.899999976158142,
+        "gpuFrameMs": 8.513583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23012.600000023842,
+        "frames": 435,
+        "cpuFrameMs": 4.800000011920929,
+        "gpuFrameMs": 8.513583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23051,
+        "frames": 436,
+        "cpuFrameMs": 6.200000017881393,
+        "gpuFrameMs": 5.742581,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23088.100000023842,
+        "frames": 437,
+        "cpuFrameMs": 2.7999999821186066,
+        "gpuFrameMs": 5.742581,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23130.100000023842,
+        "frames": 438,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 5.742581,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23162.80000001192,
+        "frames": 439,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 7.124583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23204.600000023842,
+        "frames": 440,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 7.124583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23237.100000023842,
+        "frames": 441,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 7.124583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23291.600000023842,
+        "frames": 442,
+        "cpuFrameMs": 3.899999976158142,
+        "gpuFrameMs": 7.027583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23325.90000000596,
+        "frames": 443,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 7.027583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23372,
+        "frames": 444,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 7.027583,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23422.20000001788,
+        "frames": 445,
+        "cpuFrameMs": 2.699999988079071,
+        "gpuFrameMs": 19.466749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23458.30000001192,
+        "frames": 446,
+        "cpuFrameMs": 4.0999999940395355,
+        "gpuFrameMs": 19.466749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23490.90000000596,
+        "frames": 447,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 19.466749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23525.30000001192,
+        "frames": 448,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 8.197833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23577.20000001788,
+        "frames": 449,
+        "cpuFrameMs": 4,
+        "gpuFrameMs": 8.197833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23625.5,
+        "frames": 450,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 8.197833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23656.600000023842,
+        "frames": 451,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 15.363582,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23703.80000001192,
+        "frames": 452,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 15.363582,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23754.80000001192,
+        "frames": 453,
+        "cpuFrameMs": 2.2999999821186066,
+        "gpuFrameMs": 15.363582,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23825.5,
+        "frames": 454,
+        "cpuFrameMs": 3.199999988079071,
+        "gpuFrameMs": 43.131082,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23848.70000001788,
+        "frames": 455,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 43.131082,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23875.5,
+        "frames": 456,
+        "cpuFrameMs": 4,
+        "gpuFrameMs": 43.131082,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23913,
+        "frames": 457,
+        "cpuFrameMs": 4.5,
+        "gpuFrameMs": 14.351749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 23940.20000001788,
+        "frames": 458,
+        "cpuFrameMs": 3.800000011920929,
+        "gpuFrameMs": 14.351749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24005.30000001192,
+        "frames": 459,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 18.147916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24020,
+        "frames": 460,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 18.147916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24038.100000023842,
+        "frames": 461,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 18.147916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24084.80000001192,
+        "frames": 462,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 9.92925,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24109.30000001192,
+        "frames": 463,
+        "cpuFrameMs": 3.5999999940395355,
+        "gpuFrameMs": 9.92925,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24142.40000000596,
+        "frames": 464,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 17.863083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24170.20000001788,
+        "frames": 465,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 17.863083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24203.90000000596,
+        "frames": 466,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 4.9245,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24237.30000001192,
+        "frames": 467,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 4.9245,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24270.90000000596,
+        "frames": 468,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 8.803083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24305.100000023842,
+        "frames": 469,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 8.810083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24339,
+        "frames": 470,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 8.352666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24370.40000000596,
+        "frames": 471,
+        "cpuFrameMs": 2.600000023841858,
+        "gpuFrameMs": 8.352666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24402.90000000596,
+        "frames": 472,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 5.05875,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24437.90000000596,
+        "frames": 473,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 11.161,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24471.30000001192,
+        "frames": 474,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 8.507333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24502.5,
+        "frames": 475,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 8.507333,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24538.40000000596,
+        "frames": 476,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 8.103916,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24570.70000001788,
+        "frames": 477,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 8.294,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24605.5,
+        "frames": 478,
+        "cpuFrameMs": 3.7000000178813934,
+        "gpuFrameMs": 13.000749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24637.600000023842,
+        "frames": 479,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 13.000749,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24669.600000023842,
+        "frames": 480,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 8.599,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24704.600000023842,
+        "frames": 481,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 8.537,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24736.70000001788,
+        "frames": 482,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 9.430666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24773.600000023842,
+        "frames": 483,
+        "cpuFrameMs": 5.5,
+        "gpuFrameMs": 9.430666,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24804.100000023842,
+        "frames": 484,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 8.358833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24837.70000001788,
+        "frames": 485,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 8.358833,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      },
+      {
+        "t": 24871.100000023842,
+        "frames": 486,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 11.594083,
+        "drawCalls": 46,
+        "triangles": 31994,
+        "dpr": 0.65,
+        "quality": 2
+      }
+    ],
+    "errors": [],
+    "raw": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/showroom-three-20261101/final/raw/page@55a9c8b98fe9335d02ae40f16d0cb201.webm"
+  },
+  {
+    "name": "mobile",
+    "readyOffset": 3.678,
+    "duration": 15,
+    "events": [
+      {
+        "seconds": 0,
+        "event": "idle"
+      },
+      {
+        "seconds": 6.218,
+        "event": "core activation"
+      },
+      {
+        "seconds": 10.585,
+        "event": "mobile crystal tap"
+      }
+    ],
+    "metrics": {
+      "revision": "187",
+      "frames": 313,
+      "quality": 0,
+      "fps": 23.81179159919989,
+      "cpuFrameMs": 1.0999999940395355,
+      "gpuFrameMs": 2.645166,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 30,
+      "triangles": 31066,
+      "geometries": 41,
+      "textures": 21,
+      "rafPending": false,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 360,
+      "dpr": 1,
+      "transmissionResolutionScale": 0.65,
+      "buffer": {
+        "width": 362,
+        "height": 720
+      },
+      "samples": [
+        {
+          "t": 2879.4,
+          "fps": 25,
+          "cpuFrameMs": 1.300000011920929,
+          "gpuFrameMs": 2.702083,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 3929.4,
+          "fps": 23.80952380952381,
+          "cpuFrameMs": 1.399999976158142,
+          "gpuFrameMs": 3.388666,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 4962.6,
+          "fps": 24.196670538133947,
+          "cpuFrameMs": 0.9000000059604645,
+          "gpuFrameMs": 3.737416,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 6012.6,
+          "fps": 23.80952380952381,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 2.768166,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 7045.9,
+          "fps": 24.19432884931774,
+          "cpuFrameMs": 2.5,
+          "gpuFrameMs": 8.765999,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 8095.9,
+          "fps": 23.80952380952381,
+          "cpuFrameMs": 2.100000023841858,
+          "gpuFrameMs": 5.135,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 9129.1,
+          "fps": 24.196670538133937,
+          "cpuFrameMs": 0.9000000059604645,
+          "gpuFrameMs": 2.585166,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 10129.1,
+          "fps": 24,
+          "cpuFrameMs": 1.2000000178813934,
+          "gpuFrameMs": 2.420666,
+          "drawCalls": 28,
+          "triangles": 31062,
+          "dpr": 1
+        },
+        {
+          "t": 11179.1,
+          "fps": 23.80952380952381,
+          "cpuFrameMs": 1.0999999940395355,
+          "gpuFrameMs": 2.8325,
+          "drawCalls": 30,
+          "triangles": 31066,
+          "dpr": 1
+        },
+        {
+          "t": 12212.3,
+          "fps": 24.19667053813398,
+          "cpuFrameMs": 1.0999999940395355,
+          "gpuFrameMs": 2.584833,
+          "drawCalls": 30,
+          "triangles": 31066,
+          "dpr": 1
+        },
+        {
+          "t": 13212.3,
+          "fps": 24,
+          "cpuFrameMs": 1.7999999821186066,
+          "gpuFrameMs": 2.506916,
+          "drawCalls": 30,
+          "triangles": 31066,
+          "dpr": 1
+        },
+        {
+          "t": 14262.2,
+          "fps": 23.81179159919989,
+          "cpuFrameMs": 1.7000000178813934,
+          "gpuFrameMs": 2.542833,
+          "drawCalls": 30,
+          "triangles": 31066,
+          "dpr": 1
+        }
+      ],
+      "phases": [
+        {
+          "id": "glikemia-premium",
+          "phase": "ready"
+        }
+      ],
+      "camera": "PerspectiveCamera",
+      "depth": true
+    },
+    "frames": [
+      {
+        "t": 3681.4000000059605,
+        "frames": 52,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 2.429833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3714.2000000178814,
+        "frames": 53,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.441583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3764.5,
+        "frames": 54,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.469416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3798.0999999940395,
+        "frames": 55,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.4715,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3847.300000011921,
+        "frames": 56,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 2.552333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3880.7000000178814,
+        "frames": 57,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 3.401166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3931.300000011921,
+        "frames": 58,
+        "cpuFrameMs": 1.399999976158142,
+        "gpuFrameMs": 3.388666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 3964.2000000178814,
+        "frames": 59,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 3.704833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4014.4000000059605,
+        "frames": 60,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.470666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4048.2000000178814,
+        "frames": 61,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 3.5335,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4097.300000011921,
+        "frames": 62,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 5.0845,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4131,
+        "frames": 63,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.49375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4180.700000017881,
+        "frames": 64,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 2.928083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4214.300000011921,
+        "frames": 65,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 3.513666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4264,
+        "frames": 66,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 3.63,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4297.5999999940395,
+        "frames": 67,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.564333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4347.4000000059605,
+        "frames": 68,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.499166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4381.4000000059605,
+        "frames": 69,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 3.4675,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4430.5999999940395,
+        "frames": 70,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 4.047083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4465,
+        "frames": 71,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.406166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4515,
+        "frames": 72,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 2.355916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4550.200000017881,
+        "frames": 73,
+        "cpuFrameMs": 3,
+        "gpuFrameMs": 2.442333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4597.700000017881,
+        "frames": 74,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 2.388666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4631,
+        "frames": 75,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.40525,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4681.200000017881,
+        "frames": 76,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 25.416666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4715.0999999940395,
+        "frames": 77,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 11.452166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4763.9000000059605,
+        "frames": 78,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 8.397833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4797.300000011921,
+        "frames": 79,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.429166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4847.9000000059605,
+        "frames": 80,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.420833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4881.0999999940395,
+        "frames": 81,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 2.42325,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4930.800000011921,
+        "frames": 82,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.344166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 4964,
+        "frames": 83,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 3.737416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5014,
+        "frames": 84,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 3.701416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5047.5999999940395,
+        "frames": 85,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 3.579166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5097.200000017881,
+        "frames": 86,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 2.50375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5130.5,
+        "frames": 87,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.594333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5181.0999999940395,
+        "frames": 88,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.485416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5214.200000017881,
+        "frames": 89,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 3.397666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5263.9000000059605,
+        "frames": 90,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 4.880583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5297.300000011921,
+        "frames": 91,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.916333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5349.300000011921,
+        "frames": 92,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 2.408583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5382.4000000059605,
+        "frames": 93,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 2.39575,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5430.700000017881,
+        "frames": 94,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 4.08925,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5464.700000017881,
+        "frames": 95,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.3915,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5514.200000017881,
+        "frames": 96,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.504333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5547.5,
+        "frames": 97,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 4.461083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5597.700000017881,
+        "frames": 98,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 5.459666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5631.0999999940395,
+        "frames": 99,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.524166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5680.9000000059605,
+        "frames": 100,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.437833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5714.5999999940395,
+        "frames": 101,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 5.290333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5765.300000011921,
+        "frames": 102,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 5.040916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5798.200000017881,
+        "frames": 103,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 2.439,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5847.200000017881,
+        "frames": 104,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.370583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5882,
+        "frames": 105,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 4.048666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5933.4000000059605,
+        "frames": 106,
+        "cpuFrameMs": 2.899999976158142,
+        "gpuFrameMs": 4.5595,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 5966,
+        "frames": 107,
+        "cpuFrameMs": 2.4000000059604645,
+        "gpuFrameMs": 6.601416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6016.5,
+        "frames": 108,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 2.768166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6049.0999999940395,
+        "frames": 109,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 6.504416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6097.0999999940395,
+        "frames": 110,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 8.943333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6130.5999999940395,
+        "frames": 111,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.39725,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6181.9000000059605,
+        "frames": 112,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 2.474666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6214.800000011921,
+        "frames": 113,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 4.968416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6264.200000017881,
+        "frames": 114,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 4.0865,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6297.200000017881,
+        "frames": 115,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.456333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6347.5,
+        "frames": 116,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.409833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6382.0999999940395,
+        "frames": 117,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 4.12325,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6431,
+        "frames": 118,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 3.70575,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6464.300000011921,
+        "frames": 119,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.462,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6513.800000011921,
+        "frames": 120,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 2.417333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6549.700000017881,
+        "frames": 121,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 2.344166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6599.300000011921,
+        "frames": 122,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 2.429333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6632.4000000059605,
+        "frames": 123,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 2.38275,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6681.0999999940395,
+        "frames": 124,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.396583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6714.700000017881,
+        "frames": 125,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 4.930916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6764.5,
+        "frames": 126,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 4.668166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6798.800000011921,
+        "frames": 127,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.485333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6847.200000017881,
+        "frames": 128,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.427916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6880.800000011921,
+        "frames": 129,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 4.474833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6930.5,
+        "frames": 130,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.37775,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 6963.800000011921,
+        "frames": 131,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 2.43375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7014.0999999940395,
+        "frames": 132,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.512583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7049,
+        "frames": 133,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 8.765999,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7097.0999999940395,
+        "frames": 134,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.444416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7130.700000017881,
+        "frames": 135,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 3.02,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7180.700000017881,
+        "frames": 136,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.375333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7213.800000011921,
+        "frames": 137,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 3.5135,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7263.5999999940395,
+        "frames": 138,
+        "cpuFrameMs": 0.5999999940395355,
+        "gpuFrameMs": 4.03375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7297.200000017881,
+        "frames": 139,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 2.39675,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7347,
+        "frames": 140,
+        "cpuFrameMs": 0.699999988079071,
+        "gpuFrameMs": 2.537333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7380.700000017881,
+        "frames": 141,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.300166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7430.5,
+        "frames": 142,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 3.60375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7464.4000000059605,
+        "frames": 143,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.7305,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7514.200000017881,
+        "frames": 144,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 2.459333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7549.5,
+        "frames": 145,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 5.949166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7597.5,
+        "frames": 146,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 5.931166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7632.0999999940395,
+        "frames": 147,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 3.093583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7681,
+        "frames": 148,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.368333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7715.300000011921,
+        "frames": 149,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 4.814833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7764.5,
+        "frames": 150,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 5.239,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7797.4000000059605,
+        "frames": 151,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.43525,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7848,
+        "frames": 152,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.4005,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7882.5,
+        "frames": 153,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 3.787333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7930.300000011921,
+        "frames": 154,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 5.220166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 7964.700000017881,
+        "frames": 155,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.373166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8016.0999999940395,
+        "frames": 156,
+        "cpuFrameMs": 2.800000011920929,
+        "gpuFrameMs": 2.37225,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8050.300000011921,
+        "frames": 157,
+        "cpuFrameMs": 3.2999999821186066,
+        "gpuFrameMs": 3.555666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8099,
+        "frames": 158,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 5.135,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8131,
+        "frames": 159,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 11.231666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8180.5999999940395,
+        "frames": 160,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 4.374916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8214.200000017881,
+        "frames": 161,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 5.538333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8264.40000000596,
+        "frames": 162,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 5.777,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8298.40000000596,
+        "frames": 163,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.467333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8347.700000017881,
+        "frames": 164,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.384333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8381.09999999404,
+        "frames": 165,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.35425,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8430.59999999404,
+        "frames": 166,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 3.739333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8463.800000011921,
+        "frames": 167,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.473333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8514,
+        "frames": 168,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.427666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8547.200000017881,
+        "frames": 169,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 5.185666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8597.300000011921,
+        "frames": 170,
+        "cpuFrameMs": 1.100000023841858,
+        "gpuFrameMs": 2.354,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8630.40000000596,
+        "frames": 171,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 2.466,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8680.5,
+        "frames": 172,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.388166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8713.800000011921,
+        "frames": 173,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 4.501583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8764.5,
+        "frames": 174,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 4.822166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8798.300000011921,
+        "frames": 175,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 2.461166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8847.200000017881,
+        "frames": 176,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.670416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8881.09999999404,
+        "frames": 177,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 3.329833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8931.40000000596,
+        "frames": 178,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 3.4875,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 8965.59999999404,
+        "frames": 179,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 2.655833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9013.800000011921,
+        "frames": 180,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.396666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9047.200000017881,
+        "frames": 181,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 3.482416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9098.300000011921,
+        "frames": 182,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 3.481166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9130.800000011921,
+        "frames": 183,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.585166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9180.90000000596,
+        "frames": 184,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 2.483,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9213.90000000596,
+        "frames": 185,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 3.4515,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9266.59999999404,
+        "frames": 186,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 3.55175,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9298.300000011921,
+        "frames": 187,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 3.97475,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9347.200000017881,
+        "frames": 188,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.356166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9380.59999999404,
+        "frames": 189,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 4.570833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9430.5,
+        "frames": 190,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 3.469333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9464.5,
+        "frames": 191,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.411166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9513.59999999404,
+        "frames": 192,
+        "cpuFrameMs": 0.5999999940395355,
+        "gpuFrameMs": 2.537583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9547.300000011921,
+        "frames": 193,
+        "cpuFrameMs": 0.8999999761581421,
+        "gpuFrameMs": 3.356583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9596.800000011921,
+        "frames": 194,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 5.019083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9630.40000000596,
+        "frames": 195,
+        "cpuFrameMs": 0.7000000178813934,
+        "gpuFrameMs": 2.436333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9683.700000017881,
+        "frames": 196,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": 2.3985,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9715.700000017881,
+        "frames": 197,
+        "cpuFrameMs": 2.0999999940395355,
+        "gpuFrameMs": 2.431666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9763.700000017881,
+        "frames": 198,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 24.7375,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9798.5,
+        "frames": 199,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 2.36675,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9847.200000017881,
+        "frames": 200,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 3.904083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9880.800000011921,
+        "frames": 201,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 3.576833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9931.700000017881,
+        "frames": 202,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 5.15325,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 9964.09999999404,
+        "frames": 203,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.63025,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10014.09999999404,
+        "frames": 204,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.448,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10047.5,
+        "frames": 205,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 5.17,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10097.90000000596,
+        "frames": 206,
+        "cpuFrameMs": 1.600000023841858,
+        "gpuFrameMs": 5.397166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10130.90000000596,
+        "frames": 207,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 2.420666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10180.5,
+        "frames": 208,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.457083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10213.800000011921,
+        "frames": 209,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.4615,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10264.200000017881,
+        "frames": 210,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 2.419916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10297.700000017881,
+        "frames": 211,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 3.731583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10347.40000000596,
+        "frames": 212,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 2.564083,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10380.5,
+        "frames": 213,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.392666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10431.09999999404,
+        "frames": 214,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 3.462416,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10464.300000011921,
+        "frames": 215,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 2.519916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10513.800000011921,
+        "frames": 216,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.455583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10549.300000011921,
+        "frames": 217,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 3.489916,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10599.800000011921,
+        "frames": 218,
+        "cpuFrameMs": 3.0999999940395355,
+        "gpuFrameMs": 8.88325,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10631.90000000596,
+        "frames": 219,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 7.760166,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10680.5,
+        "frames": 220,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.590583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10713.59999999404,
+        "frames": 221,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 4.259333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10763.800000011921,
+        "frames": 222,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 4.940833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10797,
+        "frames": 223,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.723666,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10848.40000000596,
+        "frames": 224,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 5.6525,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10883,
+        "frames": 225,
+        "cpuFrameMs": 2.5999999940395355,
+        "gpuFrameMs": 3.627833,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10933.300000011921,
+        "frames": 226,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 3.168583,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 10967.300000011921,
+        "frames": 227,
+        "cpuFrameMs": 3.4000000059604645,
+        "gpuFrameMs": 5.824,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11014.200000017881,
+        "frames": 228,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 12.08075,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11047.300000011921,
+        "frames": 229,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 5.555333,
+        "drawCalls": 28,
+        "triangles": 31062,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11098.800000011921,
+        "frames": 230,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 2.607916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11131,
+        "frames": 231,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 3.495333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11180.59999999404,
+        "frames": 232,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.8325,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11215.40000000596,
+        "frames": 233,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 2.5025,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11264.700000017881,
+        "frames": 234,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 4.804166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11298.09999999404,
+        "frames": 235,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 2.598166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11348.800000011921,
+        "frames": 236,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 2.56375,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11382.300000011921,
+        "frames": 237,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 2.553666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11431.300000011921,
+        "frames": 238,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 4.836166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11464.59999999404,
+        "frames": 239,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 2.664583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11513.800000011921,
+        "frames": 240,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.536416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11548.800000011921,
+        "frames": 241,
+        "cpuFrameMs": 2.2000000178813934,
+        "gpuFrameMs": 3.645833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11597.800000011921,
+        "frames": 242,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 2.530416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11631.200000017881,
+        "frames": 243,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 2.646083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11680.59999999404,
+        "frames": 244,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.6275,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11714.09999999404,
+        "frames": 245,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 4.91925,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11763.59999999404,
+        "frames": 246,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 3.630416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11798.09999999404,
+        "frames": 247,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 5.689,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11847.800000011921,
+        "frames": 248,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 5.963583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11880.700000017881,
+        "frames": 249,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 3.49075,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11931.40000000596,
+        "frames": 250,
+        "cpuFrameMs": 1.9000000059604645,
+        "gpuFrameMs": 3.610416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 11965.09999999404,
+        "frames": 251,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 2.563333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12014.700000017881,
+        "frames": 252,
+        "cpuFrameMs": 1.899999976158142,
+        "gpuFrameMs": 2.754833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12048.59999999404,
+        "frames": 253,
+        "cpuFrameMs": 2.300000011920929,
+        "gpuFrameMs": 2.56475,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12098,
+        "frames": 254,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 5.003416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12131.90000000596,
+        "frames": 255,
+        "cpuFrameMs": 2.100000023841858,
+        "gpuFrameMs": 2.674666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12181.09999999404,
+        "frames": 256,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 4.531333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12214.09999999404,
+        "frames": 257,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.584833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12264.5,
+        "frames": 258,
+        "cpuFrameMs": 1.600000023841858,
+        "gpuFrameMs": 3.712083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12298.700000017881,
+        "frames": 259,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 2.724666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12348.200000017881,
+        "frames": 260,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 2.932916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12380.300000011921,
+        "frames": 261,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.58,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12431,
+        "frames": 262,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 2.569416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12464.300000011921,
+        "frames": 263,
+        "cpuFrameMs": 1.199999988079071,
+        "gpuFrameMs": 2.5435,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12514.700000017881,
+        "frames": 264,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.564083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12547,
+        "frames": 265,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 5.055916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12597.90000000596,
+        "frames": 266,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 4.263333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12630.800000011921,
+        "frames": 267,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 2.794166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12681.700000017881,
+        "frames": 268,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 2.573166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12714.09999999404,
+        "frames": 269,
+        "cpuFrameMs": 1.2999999821186066,
+        "gpuFrameMs": 5.383,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12765.700000017881,
+        "frames": 270,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 5.533583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12797.800000011921,
+        "frames": 271,
+        "cpuFrameMs": 1.600000023841858,
+        "gpuFrameMs": 2.711583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12848.200000017881,
+        "frames": 272,
+        "cpuFrameMs": 1.600000023841858,
+        "gpuFrameMs": 2.55825,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12880.59999999404,
+        "frames": 273,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 4.685833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12931.09999999404,
+        "frames": 274,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 4.608333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 12964.59999999404,
+        "frames": 275,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 2.670083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13015.200000017881,
+        "frames": 276,
+        "cpuFrameMs": 2,
+        "gpuFrameMs": 2.654666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13047.09999999404,
+        "frames": 277,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.61025,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13097.5,
+        "frames": 278,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.886583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13131.40000000596,
+        "frames": 279,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 4.77025,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13181,
+        "frames": 280,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 15.875916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13214.700000017881,
+        "frames": 281,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": 2.506916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13263.700000017881,
+        "frames": 282,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 3.662666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13297.90000000596,
+        "frames": 283,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 5.17075,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13347.300000011921,
+        "frames": 284,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 2.848416,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13380.5,
+        "frames": 285,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 5.668666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13431,
+        "frames": 286,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 4.49975,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13464.40000000596,
+        "frames": 287,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 2.78325,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13513.5,
+        "frames": 288,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 3.092833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13546.90000000596,
+        "frames": 289,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 5.22475,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13597.700000017881,
+        "frames": 290,
+        "cpuFrameMs": 1.699999988079071,
+        "gpuFrameMs": 6.668833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13631.09999999404,
+        "frames": 291,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.59725,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13680.59999999404,
+        "frames": 292,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.65825,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13713.90000000596,
+        "frames": 293,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 3.62375,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13764.200000017881,
+        "frames": 294,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.598083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13797.90000000596,
+        "frames": 295,
+        "cpuFrameMs": 1.5999999940395355,
+        "gpuFrameMs": 2.533666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13847.40000000596,
+        "frames": 296,
+        "cpuFrameMs": 1.300000011920929,
+        "gpuFrameMs": 5.682666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13880.59999999404,
+        "frames": 297,
+        "cpuFrameMs": 1,
+        "gpuFrameMs": 2.524583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13931,
+        "frames": 298,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.531083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 13964.40000000596,
+        "frames": 299,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.82825,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14013.5,
+        "frames": 300,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.527083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14047.300000011921,
+        "frames": 301,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 5.049916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14097.800000011921,
+        "frames": 302,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 2.5695,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14131.09999999404,
+        "frames": 303,
+        "cpuFrameMs": 1.5,
+        "gpuFrameMs": 2.653333,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14180.200000017881,
+        "frames": 304,
+        "cpuFrameMs": 0.7999999821186066,
+        "gpuFrameMs": 2.581583,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14214.300000011921,
+        "frames": 305,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.54975,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14264.5,
+        "frames": 306,
+        "cpuFrameMs": 1.7000000178813934,
+        "gpuFrameMs": 2.542833,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14299.5,
+        "frames": 307,
+        "cpuFrameMs": 2.399999976158142,
+        "gpuFrameMs": 2.703916,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14347.5,
+        "frames": 308,
+        "cpuFrameMs": 1.4000000059604645,
+        "gpuFrameMs": 2.66975,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14380.300000011921,
+        "frames": 309,
+        "cpuFrameMs": 0.9000000059604645,
+        "gpuFrameMs": 4.397666,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14430.800000011921,
+        "frames": 310,
+        "cpuFrameMs": 1.2000000178813934,
+        "gpuFrameMs": 6.585083,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14458.300000011921,
+        "frames": 311,
+        "cpuFrameMs": 0.800000011920929,
+        "gpuFrameMs": 2.645166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14466.90000000596,
+        "frames": 312,
+        "cpuFrameMs": 1.800000011920929,
+        "gpuFrameMs": 2.645166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      },
+      {
+        "t": 14468.700000017881,
+        "frames": 313,
+        "cpuFrameMs": 1.0999999940395355,
+        "gpuFrameMs": 2.645166,
+        "drawCalls": 30,
+        "triangles": 31066,
+        "dpr": 1,
+        "quality": 0
+      }
+    ],
+    "errors": [],
+    "raw": "/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/showroom-three-20261101/final/raw/page@2f3f658ea63701d109d15800486281ab.webm"
+  }
+]

@@ -1,0 +1,16 @@
+VSTest version 18.0.2 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.49]     ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.ServiceRejectionAndMissingServiceDoNotPreventMailboxUse [SKIP]
+[xUnit.net 00:00:00.52]     ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.CallerCancellationStopsAndReapsNotificationProcess [SKIP]
+[xUnit.net 00:00:00.52]     ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.RealAdapterUsesCountOnlyPayloadAndSkipsNonPositiveCounts [SKIP]
+[xUnit.net 00:00:00.52]     ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.UnresponsiveServiceHasBoundedWaitAndGdbusIsReaped [SKIP]
+  Skipped ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.ServiceRejectionAndMissingServiceDoNotPreventMailboxUse [1 ms]
+  Skipped ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.CallerCancellationStopsAndReapsNotificationProcess [1 ms]
+  Skipped ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.RealAdapterUsesCountOnlyPayloadAndSkipsNonPositiveCounts [1 ms]
+  Skipped ProgressKit.Mail.Linux.Tests.Services.DesktopNotificationIntegrationTests.UnresponsiveServiceHasBoundedWaitAndGdbusIsReaped [1 ms]
+WARNING: Overwriting results file: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux/linux.trx
+Results File: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/linux/linux.trx
+
+Passed!  - Failed:     0, Passed:   106, Skipped:     4, Total:   110, Duration: 391 ms - ProgressKit.Mail.Linux.Tests.dll (net10.0)

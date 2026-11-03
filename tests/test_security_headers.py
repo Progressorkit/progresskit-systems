@@ -18,6 +18,30 @@ SPEC.loader.exec_module(SECURITY)
 
 
 class SecurityHeadersUnitTests(unittest.TestCase):
+    def test_media_opt_in_is_confined_to_explicit_homepage_routes(self):
+        self.assertIn("media-src 'none'", SECURITY.content_security_policy())
+        policies = {}
+        async def application(scope, receive, send):
+            await send({'type': 'http.response.start', 'status': 200, 'headers': []})
+        async def receive():
+            raise AssertionError('Header configuration must not read request bodies.')
+        async def run():
+            middleware = SECURITY.SecurityHeadersMiddleware(
+                application, media_pages=('/', '/index.html'))
+            for path in ('/', '/index.html', '/projekty/', '/summary',
+                         '/_analytics/event', '/api/glikemia/downloads'):
+                async def send(message):
+                    policies[path] = dict(message['headers'])[b'content-security-policy'].decode()
+                await middleware({'type': 'http', 'path': path, 'method': 'GET'}, receive, send)
+        asyncio.run(run())
+        for path, policy in policies.items():
+            with self.subTest(path=path):
+                self.assertIn("media-src 'self'" if path in ('/', '/index.html')
+                              else "media-src 'none'", policy)
+                self.assertIn("default-src 'none'", policy)
+                self.assertIn("object-src 'none'", policy)
+                self.assertNotIn('https:', policy)
+
     def test_policy_blocks_injection_framing_sensitive_devices_and_external_egress(self):
         policy = SECURITY.content_security_policy()
         for directive in ("default-src 'none'", "script-src 'self'", "script-src-attr 'none'",

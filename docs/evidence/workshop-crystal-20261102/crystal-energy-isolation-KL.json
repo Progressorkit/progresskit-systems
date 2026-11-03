@@ -1,0 +1,106 @@
+{
+  "startedAt": "2026-11-02T19:50:02.546Z",
+  "set": "KL",
+  "note": "Temporary CSS ablations of current source in standalone hardware Chrome, not embedded preview. One 8s sample per condition, no recording.",
+  "variants": [
+    {
+      "name": "K",
+      "css": "#main #technologie .technology-crystal__energy{display:none!important}",
+      "phases": [
+        {
+          "kind": "idle",
+          "index": 0,
+          "frames": 181,
+          "p95Ms": 16.799999999999272,
+          "maxMs": 16.80000000000109,
+          "delaysOver50": 0,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 38.611000000000004,
+            "ScriptDuration": 16.41,
+            "TaskDuration": 330.773
+          }
+        },
+        {
+          "kind": "pointer",
+          "index": 5,
+          "frames": 155,
+          "p95Ms": 33.30000000000109,
+          "maxMs": 116.70000000000073,
+          "delaysOver50": 2,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 138.503,
+            "ScriptDuration": 39.656,
+            "TaskDuration": 832.383
+          }
+        },
+        {
+          "kind": "wheel",
+          "index": 0,
+          "frames": 124,
+          "p95Ms": 16.700000000000728,
+          "maxMs": 16.80000000000109,
+          "delaysOver50": 0,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 36.08800000000001,
+            "ScriptDuration": 18.101999999999993,
+            "TaskDuration": 403.208
+          }
+        }
+      ]
+    },
+    {
+      "name": "L",
+      "css": "#main #technologie .technology-crystal__energy{transition:none!important}#main #technologie .technology-group.is-field-visible .technology-crystal__energy{will-change:opacity!important}",
+      "phases": [
+        {
+          "kind": "idle",
+          "index": 0,
+          "frames": 179,
+          "p95Ms": 16.799999999999272,
+          "maxMs": 33.400000000001455,
+          "delaysOver50": 0,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 45.089000000000006,
+            "ScriptDuration": 18.289,
+            "TaskDuration": 392.38399999999996
+          }
+        },
+        {
+          "kind": "pointer",
+          "index": 5,
+          "frames": 168,
+          "p95Ms": 16.799999999999272,
+          "maxMs": 99.89999999999964,
+          "delaysOver50": 2,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 101.824,
+            "ScriptDuration": 32.01,
+            "TaskDuration": 647.388
+          }
+        },
+        {
+          "kind": "wheel",
+          "index": 0,
+          "frames": 114,
+          "p95Ms": 16.80000000000109,
+          "maxMs": 50,
+          "delaysOver50": 0,
+          "cpuMs": {
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 51.101000000000006,
+            "ScriptDuration": 28.385,
+            "TaskDuration": 574.2049999999998
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "blocked": [],
+  "finishedAt": "2026-11-02T19:50:35.821Z"
+}

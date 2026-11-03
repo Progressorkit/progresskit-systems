@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="877e2874-d853-420d-8a04-d99b21812b20" name="@pawe-ThinkPad-T480s 2026-11-02 11:55:16" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-02T11:55:16.3167466+01:00" queuing="2026-11-02T11:55:16.3167471+01:00" start="2026-11-02T11:55:11.7390833+01:00" finish="2026-11-02T11:55:20.6241346+01:00" />
+  <TestSettings name="default" id="b9549e96-e256-403d-9511-63080458ce23">
+    <Deployment runDeploymentRoot="_pawe-ThinkPad-T480s_2026-11-02_11_55_16" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d02ce710-d093-400a-aa88-e0bcf2f70c4c" testId="ba1f37ad-61f5-5e49-ae84-7517b7323013" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_uses_actual_imaps_and_starttls_auth_without_fetch_or_smtp_envelope" computerName="pawe-ThinkPad-T480s" duration="00:00:00.3100402" startTime="2026-11-02T11:55:16.8119963+01:00" endTime="2026-11-02T11:55:17.1233814+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d02ce710-d093-400a-aa88-e0bcf2f70c4c" />
+    <UnitTestResult executionId="4fae42a7-060b-4d3a-9796-a4d89f0b284c" testId="a6514db1-608e-5669-a637-82b8482d5227" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_wrong_imap_password_prevents_smtp_connection" computerName="pawe-ThinkPad-T480s" duration="00:00:00.1090445" startTime="2026-11-02T11:55:17.5843649+01:00" endTime="2026-11-02T11:55:17.6929457+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4fae42a7-060b-4d3a-9796-a4d89f0b284c" />
+    <UnitTestResult executionId="6058cf7f-a4a0-4986-9644-e2456c10572c" testId="0c728e07-6025-325b-6eb1-0ff40c827d3a" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_reads_and_decodes_account_bound_attachment_over_imaps" computerName="pawe-ThinkPad-T480s" duration="00:00:00.5655355" startTime="2026-11-02T11:55:15.8094545+01:00" endTime="2026-11-02T11:55:16.3751050+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6058cf7f-a4a0-4986-9644-e2456c10572c" />
+    <UnitTestResult executionId="ebc53469-683c-43dc-993b-abe493668813" testId="15616efa-4795-7565-9c85-95fd06517c00" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_certificate_for_localhost_is_rejected_for_ip_hostname" computerName="pawe-ThinkPad-T480s" duration="00:00:00.0324464" startTime="2026-11-02T11:55:16.6545232+01:00" endTime="2026-11-02T11:55:16.6866645+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ebc53469-683c-43dc-993b-abe493668813" />
+    <UnitTestResult executionId="e7590281-43ca-400c-9353-3b8fb71d0d54" testId="22ca43e9-d579-6f8b-62fa-a9a429177022" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_sends_one_attachment_message_and_appends_sent_copy" computerName="pawe-ThinkPad-T480s" duration="00:00:01.5200573" startTime="2026-11-02T11:55:13.9473204+01:00" endTime="2026-11-02T11:55:15.4927210+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7590281-43ca-400c-9353-3b8fb71d0d54" />
+    <UnitTestResult executionId="4cafa207-22c4-45aa-b715-cf4cba67583b" testId="68662b52-4eb1-34a0-4f2d-56f0b4d90e35" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_certificate_for_localhost_is_rejected_for_ip_hostname" computerName="pawe-ThinkPad-T480s" duration="00:00:00.1688321" startTime="2026-11-02T11:55:16.3777428+01:00" endTime="2026-11-02T11:55:16.5485344+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4cafa207-22c4-45aa-b715-cf4cba67583b" />
+    <UnitTestResult executionId="d03a85a4-413b-4d17-a22e-eab9d648cf6b" testId="f2a6712b-e8ae-951c-f43a-0f70bbfff4aa" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_auth_denial_prevents_success_without_sending_mail" computerName="pawe-ThinkPad-T480s" duration="00:00:00.3099011" startTime="2026-11-02T11:55:15.5259457+01:00" endTime="2026-11-02T11:55:15.8072496+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d03a85a4-413b-4d17-a22e-eab9d648cf6b" />
+    <UnitTestResult executionId="36c6188e-1356-45ba-9de1-59acf39b9418" testId="92743a51-9070-eb0f-1bcb-67096b350f75" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_rejects_wrong_credential_without_fetching_mail" computerName="pawe-ThinkPad-T480s" duration="00:00:00.1053990" startTime="2026-11-02T11:55:16.5504680+01:00" endTime="2026-11-02T11:55:16.6530205+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36c6188e-1356-45ba-9de1-59acf39b9418" />
+    <UnitTestResult executionId="483f47ed-4f84-42c0-97e2-d42b11e6275a" testId="3c7fff3a-77ac-e270-94a3-af671573bf01" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_requires_starttls_then_authenticates_and_transfers_one_mime_message" computerName="pawe-ThinkPad-T480s" duration="00:00:00.1233751" startTime="2026-11-02T11:55:16.6876749+01:00" endTime="2026-11-02T11:55:16.8110139+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="483f47ed-4f84-42c0-97e2-d42b11e6275a" />
+    <UnitTestResult executionId="cd5cdabf-db96-4f15-bc73-982611df4f15" testId="5a836150-626b-7352-a948-a638a16e44b2" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_saves_account_bound_server_draft_with_uidplus" computerName="pawe-ThinkPad-T480s" duration="00:00:00.3887480" startTime="2026-11-02T11:55:18.1062638+01:00" endTime="2026-11-02T11:55:18.4954465+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd5cdabf-db96-4f15-bc73-982611df4f15" />
+    <UnitTestResult executionId="79089901-ba68-41f5-aa0f-3d885c63bbd4" testId="13b3fd37-6d5d-1d75-4df0-dfe8477d36ef" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_lists_all_five_folders_over_validated_tls" computerName="pawe-ThinkPad-T480s" duration="00:00:01.8993339" startTime="2026-11-02T11:55:18.4972965+01:00" endTime="2026-11-02T11:55:20.3972796+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79089901-ba68-41f5-aa0f-3d885c63bbd4" />
+    <UnitTestResult executionId="40deba5c-0c76-441a-bb29-acfb214e5409" testId="09dcc790-15f1-2402-a3e0-d87b0f3ede29" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_authenticates_lists_folders_and_downloads_mime_attachment" computerName="pawe-ThinkPad-T480s" duration="00:00:00.4096054" startTime="2026-11-02T11:55:17.7080753+01:00" endTime="2026-11-02T11:55:18.1049304+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40deba5c-0c76-441a-bb29-acfb214e5409" />
+    <UnitTestResult executionId="c347c7db-2449-456c-b2b0-03f1a8c9adaf" testId="0407cd42-8e30-cc52-4c40-77e1929fedd6" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_rejects_wrong_credential_without_submitting_mail" computerName="pawe-ThinkPad-T480s" duration="00:00:00.1328581" startTime="2026-11-02T11:55:17.1253017+01:00" endTime="2026-11-02T11:55:17.2580097+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c347c7db-2449-456c-b2b0-03f1a8c9adaf" />
+    <UnitTestResult executionId="f07cb12a-eb90-4100-b411-26736a2dc48c" testId="e0794efc-780d-e49d-8675-541cd5cd1c11" testName="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_hostname_failure_does_not_transmit_authentication" computerName="pawe-ThinkPad-T480s" duration="00:00:00.3217610" startTime="2026-11-02T11:55:17.2594091+01:00" endTime="2026-11-02T11:55:17.5820564+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f07cb12a-eb90-4100-b411-26736a2dc48c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_lists_all_five_folders_over_validated_tls" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="13b3fd37-6d5d-1d75-4df0-dfe8477d36ef">
+      <Execution id="79089901-ba68-41f5-aa0f-3d885c63bbd4" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Release_service_lists_all_five_folders_over_validated_tls" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_hostname_failure_does_not_transmit_authentication" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="e0794efc-780d-e49d-8675-541cd5cd1c11">
+      <Execution id="f07cb12a-eb90-4100-b411-26736a2dc48c" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Access_verification_actual_smtp_hostname_failure_does_not_transmit_authentication" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_certificate_for_localhost_is_rejected_for_ip_hostname" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="15616efa-4795-7565-9c85-95fd06517c00">
+      <Execution id="ebc53469-683c-43dc-993b-abe493668813" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_imaps_certificate_for_localhost_is_rejected_for_ip_hostname" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_rejects_wrong_credential_without_submitting_mail" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="0407cd42-8e30-cc52-4c40-77e1929fedd6">
+      <Execution id="c347c7db-2449-456c-b2b0-03f1a8c9adaf" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_smtp_rejects_wrong_credential_without_submitting_mail" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_rejects_wrong_credential_without_fetching_mail" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="92743a51-9070-eb0f-1bcb-67096b350f75">
+      <Execution id="36c6188e-1356-45ba-9de1-59acf39b9418" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_imaps_rejects_wrong_credential_without_fetching_mail" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_authenticates_lists_folders_and_downloads_mime_attachment" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="09dcc790-15f1-2402-a3e0-d87b0f3ede29">
+      <Execution id="40deba5c-0c76-441a-bb29-acfb214e5409" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_imaps_authenticates_lists_folders_and_downloads_mime_attachment" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_wrong_imap_password_prevents_smtp_connection" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="a6514db1-608e-5669-a637-82b8482d5227">
+      <Execution id="4fae42a7-060b-4d3a-9796-a4d89f0b284c" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Access_verification_wrong_imap_password_prevents_smtp_connection" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_certificate_for_localhost_is_rejected_for_ip_hostname" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="68662b52-4eb1-34a0-4f2d-56f0b4d90e35">
+      <Execution id="4cafa207-22c4-45aa-b715-cf4cba67583b" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_smtp_certificate_for_localhost_is_rejected_for_ip_hostname" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_uses_actual_imaps_and_starttls_auth_without_fetch_or_smtp_envelope" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="ba1f37ad-61f5-5e49-ae84-7517b7323013">
+      <Execution id="d02ce710-d093-400a-aa88-e0bcf2f70c4c" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Access_verification_uses_actual_imaps_and_starttls_auth_without_fetch_or_smtp_envelope" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_requires_starttls_then_authenticates_and_transfers_one_mime_message" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="3c7fff3a-77ac-e270-94a3-af671573bf01">
+      <Execution id="483f47ed-4f84-42c0-97e2-d42b11e6275a" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Trusted_smtp_requires_starttls_then_authenticates_and_transfers_one_mime_message" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_sends_one_attachment_message_and_appends_sent_copy" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="22ca43e9-d579-6f8b-62fa-a9a429177022">
+      <Execution id="e7590281-43ca-400c-9353-3b8fb71d0d54" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Release_service_sends_one_attachment_message_and_appends_sent_copy" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_reads_and_decodes_account_bound_attachment_over_imaps" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="0c728e07-6025-325b-6eb1-0ff40c827d3a">
+      <Execution id="6058cf7f-a4a0-4986-9644-e2456c10572c" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Release_service_reads_and_decodes_account_bound_attachment_over_imaps" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_saves_account_bound_server_draft_with_uidplus" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="5a836150-626b-7352-a948-a638a16e44b2">
+      <Execution id="cd5cdabf-db96-4f15-bc73-982611df4f15" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Release_service_saves_account_bound_server_draft_with_uidplus" />
+    </UnitTest>
+    <UnitTest name="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_auth_denial_prevents_success_without_sending_mail" storage="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/progresskit.mail.core.tests.dll" id="f2a6712b-e8ae-951c-f43a-0f70bbfff4aa">
+      <Execution id="d03a85a4-413b-4d17-a22e-eab9d648cf6b" />
+      <TestMethod codeBase="/tmp/pkmail-commercial-20261102-bkh8hcrr/repo/tests/core/ProgressKit.Mail.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests" name="Access_verification_actual_smtp_auth_denial_prevents_success_without_sending_mail" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ba1f37ad-61f5-5e49-ae84-7517b7323013" executionId="d02ce710-d093-400a-aa88-e0bcf2f70c4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6514db1-608e-5669-a637-82b8482d5227" executionId="4fae42a7-060b-4d3a-9796-a4d89f0b284c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c728e07-6025-325b-6eb1-0ff40c827d3a" executionId="6058cf7f-a4a0-4986-9644-e2456c10572c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15616efa-4795-7565-9c85-95fd06517c00" executionId="ebc53469-683c-43dc-993b-abe493668813" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="22ca43e9-d579-6f8b-62fa-a9a429177022" executionId="e7590281-43ca-400c-9353-3b8fb71d0d54" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68662b52-4eb1-34a0-4f2d-56f0b4d90e35" executionId="4cafa207-22c4-45aa-b715-cf4cba67583b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f2a6712b-e8ae-951c-f43a-0f70bbfff4aa" executionId="d03a85a4-413b-4d17-a22e-eab9d648cf6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92743a51-9070-eb0f-1bcb-67096b350f75" executionId="36c6188e-1356-45ba-9de1-59acf39b9418" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c7fff3a-77ac-e270-94a3-af671573bf01" executionId="483f47ed-4f84-42c0-97e2-d42b11e6275a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a836150-626b-7352-a948-a638a16e44b2" executionId="cd5cdabf-db96-4f15-bc73-982611df4f15" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13b3fd37-6d5d-1d75-4df0-dfe8477d36ef" executionId="79089901-ba68-41f5-aa0f-3d885c63bbd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="09dcc790-15f1-2402-a3e0-d87b0f3ede29" executionId="40deba5c-0c76-441a-bb29-acfb214e5409" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0407cd42-8e30-cc52-4c40-77e1929fedd6" executionId="c347c7db-2449-456c-b2b0-03f1a8c9adaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0794efc-780d-e49d-8675-541cd5cd1c11" executionId="f07cb12a-eb90-4100-b411-26736a2dc48c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="14" executed="14" passed="14" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.28]   Discovering: ProgressKit.Mail.Core.Tests
+[xUnit.net 00:00:00.60]   Discovered:  ProgressKit.Mail.Core.Tests
+[xUnit.net 00:00:00.67]   Starting:    ProgressKit.Mail.Core.Tests
+[xUnit.net 00:00:07.24]   Finished:    ProgressKit.Mail.Core.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

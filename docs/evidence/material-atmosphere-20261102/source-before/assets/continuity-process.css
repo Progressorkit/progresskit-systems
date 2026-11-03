@@ -1,0 +1,56 @@
+/* The approved Process chambers remain intact. Scroll only changes the grazing
+   reflection and a few pixels of Z inside their existing CSS perspective. */
+#proces .process-object {
+  transform: rotateX(-13deg)
+    rotateY(calc(-24deg + var(--process-scroll-yaw, 0deg)))
+    rotateZ(var(--chamber-turn, -12deg))
+    translateZ(var(--process-scroll-z, 0px));
+}
+#proces [data-production-state="active"] .process-object {
+  transform: rotateX(-9deg)
+    rotateY(calc(-17deg + var(--process-scroll-yaw, 0deg)))
+    rotateZ(var(--chamber-turn, -12deg))
+    translateZ(calc(17px + var(--process-scroll-z, 0px)));
+}
+#proces .process-face--front {
+  background:
+    radial-gradient(ellipse at var(--process-light-x, 24%) var(--process-light-y, 12%), #f5f2ee1c, transparent 33%),
+    linear-gradient(var(--process-light-angle, 108deg), #e3e5ed0a, transparent 46% 76%, #8b24360e);
+}
+#proces [data-production-state="active"] .process-face--front {
+  background:
+    radial-gradient(ellipse at 68% 80%, #a51e352d, transparent 54%),
+    radial-gradient(ellipse at var(--process-light-x, 24%) var(--process-light-y, 12%), #fff5ea29, transparent 33%),
+    linear-gradient(var(--process-light-angle, 108deg), #e8e6e90c, transparent 47%);
+}
+#proces .process-face--back {
+  background:
+    linear-gradient(calc(var(--process-light-angle, 108deg) + 40deg), #dcdce509, #05040535);
+}
+#proces [data-production-state="active"] .process-inlay {
+  border-color: #bfa3a52b;
+  box-shadow: inset 1px 0 #d0d5df0a, 0 1px #7a2b3825;
+}
+html[data-interface-motion="paused"] #proces .process-object,
+html[data-interface-motion="paused"] #proces .process-face {
+  transition: none;
+}
+@media (max-width:700px), (prefers-reduced-motion:reduce) {
+  #proces .process-object {
+    --process-scroll-z:0px !important;
+    --process-scroll-yaw:0deg !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  #proces .process-face--front {
+    --process-light-x:24% !important;
+    --process-light-y:12% !important;
+    --process-light-angle:108deg !important;
+  }
+}
+@media (forced-colors:active) {
+  #proces .process-face--front,
+  #proces .process-face--back {
+    background:none;
+  }
+}

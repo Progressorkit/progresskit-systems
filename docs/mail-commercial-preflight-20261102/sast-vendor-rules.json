@@ -1,0 +1,4663 @@
+{
+  "source": {
+    "timestampUTC": "2026-11-02T11:58:01.219749+00:00",
+    "url": "https://codeload.github.com/semgrep/semgrep-rules/tar.gz/refs/heads/develop",
+    "archiveSHA256": "ba8d9dcbf3aa219ce6cb43836f4b2ac4ea60cb5ac5dba113163ceda2169c40e5",
+    "files": 666,
+    "ruleRepository": "https://github.com/semgrep/semgrep-rules",
+    "license": "Semgrep Rules License; upstream rules maintained by Semgrep and community, no custom patterns invented.",
+    "downloadContainsOnly": "Public rule archive; no source/account/credential data sent."
+  },
+  "configuredRuleCount": 581,
+  "rules": [
+    {
+      "sourcePath": "kotlin/gradle/security/build-gradle-password-hardcoded.yaml",
+      "ruleID": "build-gradle-password-hardcoded",
+      "languages": [
+        "kotlin"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/no-null-cipher.yaml",
+      "ruleID": "no-null-cipher",
+      "languages": [
+        "kt",
+        "scala"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/weak-rsa.yaml",
+      "ruleID": "use-of-weak-rsa-key",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/use-of-sha1.yaml",
+      "ruleID": "use-of-sha1",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/bad-hexa-conversion.yaml",
+      "ruleID": "bad-hexa-conversion",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/command-injection-formatted-runtime-call.yaml",
+      "ruleID": "command-injection-formatted-runtime-call",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/defaulthttpclient-is-deprecated.yaml",
+      "ruleID": "defaulthttpclient-is-deprecated",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/use-of-md5.yaml",
+      "ruleID": "use-of-md5",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/unencrypted-socket.yaml",
+      "ruleID": "unencrypted-socket",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/anonymous-ldap-bind.yaml",
+      "ruleID": "anonymous-ldap-bind",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/cookie-missing-httponly.yaml",
+      "ruleID": "cookie-missing-httponly",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/cookie-missing-secure-flag.yaml",
+      "ruleID": "cookie-missing-secure-flag",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/gcm-detection.yaml",
+      "ruleID": "gcm-detection",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "kotlin/lang/security/ecb-cipher.yaml",
+      "ruleID": "ecb-cipher",
+      "languages": [
+        "kt"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/ci/security/bash-reverse-shell.yaml",
+      "ruleID": "bash_reverse_shell",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/html-templates/security/var-in-script-src.yaml",
+      "ruleID": "var-in-script-src",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/html-templates/security/unquoted-attribute-var.yaml",
+      "ruleID": "unquoted-attribute-var",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/html-templates/security/var-in-script-tag.yaml",
+      "ruleID": "var-in-script-tag",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/html-templates/security/var-in-href.yaml",
+      "ruleID": "var-in-href",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/possible-h2c-smuggling.yaml",
+      "ruleID": "possible-nginx-h2c-smuggling",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/missing-internal.yaml",
+      "ruleID": "missing-internal",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/insecure-redirect.yaml",
+      "ruleID": "insecure-redirect",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/dynamic-proxy-host.yaml",
+      "ruleID": "dynamic-proxy-host",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/header-redefinition.yaml",
+      "ruleID": "header-redefinition",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/dynamic-proxy-scheme.yaml",
+      "ruleID": "dynamic-proxy-scheme",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/header-injection.yaml",
+      "ruleID": "header-injection",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/request-host-used.yaml",
+      "ruleID": "request-host-used",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/insecure-ssl-version.yaml",
+      "ruleID": "insecure-ssl-version",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/missing-ssl-version.yaml",
+      "ruleID": "missing-ssl-version",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/nginx/security/alias-path-traversal.yaml",
+      "ruleID": "alias-path-traversal",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/bicep/security/secure-parameter-for-secrets.yaml",
+      "ruleID": "secure-parameter-for-secrets",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/gradle/security/build-gradle-password-hardcoded.yaml",
+      "ruleID": "build-gradle-password-hardcoded",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/contentful-delivery-api-token.yaml",
+      "ruleID": "contentful-delivery-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/rapidapi-access-token.yaml",
+      "ruleID": "rapidapi-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/grafana-api-key.yaml",
+      "ruleID": "grafana-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/bittrex-secret-key.yaml",
+      "ruleID": "bittrex-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/finicity-client-secret.yaml",
+      "ruleID": "finicity-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/flutterwave-public-key.yaml",
+      "ruleID": "flutterwave-public-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/clojars-api-token.yaml",
+      "ruleID": "clojars-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/postman-api-token.yaml",
+      "ruleID": "postman-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/messagebird-api-token.yaml",
+      "ruleID": "messagebird-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/atlassian-api-token.yaml",
+      "ruleID": "atlassian-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/alibaba-secret-key.yaml",
+      "ruleID": "alibaba-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/kraken-access-token.yaml",
+      "ruleID": "kraken-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/intra42-client-secret.yaml",
+      "ruleID": "intra42-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/codecov-access-token.yaml",
+      "ruleID": "codecov-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/facebook-page-access-token.yaml",
+      "ruleID": "facebook-page-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/planetscale-api-token.yaml",
+      "ruleID": "planetscale-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/pypi-upload-token.yaml",
+      "ruleID": "pypi-upload-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sendgrid-api-token.yaml",
+      "ruleID": "sendgrid-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/beamer-api-token.yaml",
+      "ruleID": "beamer-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/new-relic-user-api-key.yaml",
+      "ruleID": "new-relic-user-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sumologic-access-token.yaml",
+      "ruleID": "sumologic-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/cloudflare-api-key.yaml",
+      "ruleID": "cloudflare-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gocardless-api-token.yaml",
+      "ruleID": "gocardless-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/prefect-api-token.yaml",
+      "ruleID": "prefect-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/etsy-access-token.yaml",
+      "ruleID": "etsy-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twilio-api-key.yaml",
+      "ruleID": "twilio-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/doppler-api-token.yaml",
+      "ruleID": "doppler-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mailgun-pub-key.yaml",
+      "ruleID": "mailgun-pub-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/grafana-service-account-token.yaml",
+      "ruleID": "grafana-service-account-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/dynatrace-api-token.yaml",
+      "ruleID": "dynatrace-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/flutterwave-encryption-key.yaml",
+      "ruleID": "flutterwave-encryption-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-config-refresh-token.yaml",
+      "ruleID": "slack-config-refresh-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitter-bearer-token.yaml",
+      "ruleID": "twitter-bearer-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/microsoft-teams-webhook.yaml",
+      "ruleID": "microsoft-teams-webhook",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/dropbox-long-lived-api-token.yaml",
+      "ruleID": "dropbox-long-lived-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/shopify-shared-secret.yaml",
+      "ruleID": "shopify-shared-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/linear-api-key.yaml",
+      "ruleID": "linear-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/flickr-access-token.yaml",
+      "ruleID": "flickr-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/huggingface-organization-api-token.yaml",
+      "ruleID": "huggingface-organization-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/jfrog-identity-token.yaml",
+      "ruleID": "jfrog-identity-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/cloudflare-global-api-key.yaml",
+      "ruleID": "cloudflare-global-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/square-access-token.yaml",
+      "ruleID": "square-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/huggingface-access-token.yaml",
+      "ruleID": "huggingface-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/easypost-test-api-token.yaml",
+      "ruleID": "easypost-test-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/stripe-access-token.yaml",
+      "ruleID": "stripe-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sentry-access-token.yaml",
+      "ruleID": "sentry-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/planetscale-password.yaml",
+      "ruleID": "planetscale-password",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/discord-client-id.yaml",
+      "ruleID": "discord-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/vault-service-token.yaml",
+      "ruleID": "vault-service-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/new-relic-browser-api-token.yaml",
+      "ruleID": "new-relic-browser-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/plaid-secret-key.yaml",
+      "ruleID": "plaid-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/hubspot-api-key.yaml",
+      "ruleID": "hubspot-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/aws-access-token.yaml",
+      "ruleID": "aws-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/travisci-access-token.yaml",
+      "ruleID": "travisci-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/new-relic-user-api-id.yaml",
+      "ruleID": "new-relic-user-api-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/yandex-api-key.yaml",
+      "ruleID": "yandex-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/duffel-api-token.yaml",
+      "ruleID": "duffel-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/linear-client-secret.yaml",
+      "ruleID": "linear-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/fastly-api-token.yaml",
+      "ruleID": "fastly-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/linkedin-client-id.yaml",
+      "ruleID": "linkedin-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/defined-networking-api-token.yaml",
+      "ruleID": "defined-networking-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/nytimes-access-token.yaml",
+      "ruleID": "nytimes-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitter-api-secret.yaml",
+      "ruleID": "twitter-api-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitch-api-token.yaml",
+      "ruleID": "twitch-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gitlab-ptt.yaml",
+      "ruleID": "gitlab-ptt",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/github-app-token.yaml",
+      "ruleID": "github-app-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/coinbase-access-token.yaml",
+      "ruleID": "coinbase-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/github-oauth.yaml",
+      "ruleID": "github-oauth",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/digitalocean-pat.yaml",
+      "ruleID": "digitalocean-pat",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitter-access-token.yaml",
+      "ruleID": "twitter-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/telegram-bot-api-token.yaml",
+      "ruleID": "telegram-bot-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/zendesk-secret-key.yaml",
+      "ruleID": "zendesk-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/bitbucket-client-secret.yaml",
+      "ruleID": "bitbucket-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/facebook-access-token.yaml",
+      "ruleID": "facebook-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/hashicorp-tf-password.yaml",
+      "ruleID": "hashicorp-tf-password",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/squarespace-access-token.yaml",
+      "ruleID": "squarespace-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/asana-client-secret.yaml",
+      "ruleID": "asana-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/github-refresh-token.yaml",
+      "ruleID": "github-refresh-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/digitalocean-access-token.yaml",
+      "ruleID": "digitalocean-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/databricks-api-token.yaml",
+      "ruleID": "databricks-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-user-token.yaml",
+      "ruleID": "slack-user-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/shopify-custom-access-token.yaml",
+      "ruleID": "shopify-custom-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/kucoin-secret-key.yaml",
+      "ruleID": "kucoin-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/readme-api-token.yaml",
+      "ruleID": "readme-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sendbird-access-token.yaml",
+      "ruleID": "sendbird-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/adafruit-api-key.yaml",
+      "ruleID": "adafruit-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-webhook-url.yaml",
+      "ruleID": "slack-webhook-url",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/okta-access-token.yaml",
+      "ruleID": "okta-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/infracost-api-token.yaml",
+      "ruleID": "infracost-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/datadog-access-token.yaml",
+      "ruleID": "datadog-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/heroku-api-key.yaml",
+      "ruleID": "heroku-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/confluent-access-token.yaml",
+      "ruleID": "confluent-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mailgun-private-api-token.yaml",
+      "ruleID": "mailgun-private-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/authress-service-client-access-key.yaml",
+      "ruleID": "authress-service-client-access-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/airtable-api-key.yaml",
+      "ruleID": "airtable-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/bitbucket-client-id.yaml",
+      "ruleID": "bitbucket-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/alibaba-access-key-id.yaml",
+      "ruleID": "alibaba-access-key-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gitlab-rrt.yaml",
+      "ruleID": "gitlab-rrt",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/yandex-access-token.yaml",
+      "ruleID": "yandex-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/planetscale-oauth-token.yaml",
+      "ruleID": "planetscale-oauth-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/bittrex-access-key.yaml",
+      "ruleID": "bittrex-access-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/adobe-client-secret.yaml",
+      "ruleID": "adobe-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/harness-api-key.yaml",
+      "ruleID": "harness-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/hashicorp-tf-api-token.yaml",
+      "ruleID": "hashicorp-tf-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/shippo-api-token.yaml",
+      "ruleID": "shippo-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/finicity-api-token.yaml",
+      "ruleID": "finicity-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/lob-pub-api-key.yaml",
+      "ruleID": "lob-pub-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitter-access-secret.yaml",
+      "ruleID": "twitter-access-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/netlify-access-token.yaml",
+      "ruleID": "netlify-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/dropbox-short-lived-api-token.yaml",
+      "ruleID": "dropbox-short-lived-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-bot-token.yaml",
+      "ruleID": "slack-bot-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/easypost-api-token.yaml",
+      "ruleID": "easypost-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/snyk-api-token.yaml",
+      "ruleID": "snyk-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/new-relic-insert-key.yaml",
+      "ruleID": "new-relic-insert-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gitter-access-token.yaml",
+      "ruleID": "gitter-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sidekiq-secret.yaml",
+      "ruleID": "sidekiq-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/asana-client-id.yaml",
+      "ruleID": "asana-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-legacy-token.yaml",
+      "ruleID": "slack-legacy-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/frameio-api-token.yaml",
+      "ruleID": "frameio-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/lob-api-key.yaml",
+      "ruleID": "lob-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/rubygems-api-token.yaml",
+      "ruleID": "rubygems-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/plaid-client-id.yaml",
+      "ruleID": "plaid-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/discord-client-secret.yaml",
+      "ruleID": "discord-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mailgun-signing-key.yaml",
+      "ruleID": "mailgun-signing-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sidekiq-sensitive-url.yaml",
+      "ruleID": "sidekiq-sensitive-url",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/github-fine-grained-pat.yaml",
+      "ruleID": "github-fine-grained-pat",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/generic-api-key.yaml",
+      "ruleID": "generic-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-config-access-token.yaml",
+      "ruleID": "slack-config-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/npm-access-token.yaml",
+      "ruleID": "npm-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sendbird-access-id.yaml",
+      "ruleID": "sendbird-access-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/facebook.yaml",
+      "ruleID": "facebook",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/github-pat.yaml",
+      "ruleID": "github-pat",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/finnhub-access-token.yaml",
+      "ruleID": "finnhub-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-legacy-bot-token.yaml",
+      "ruleID": "slack-legacy-bot-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mapbox-api-token.yaml",
+      "ruleID": "mapbox-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/digitalocean-refresh-token.yaml",
+      "ruleID": "digitalocean-refresh-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mattermost-access-token.yaml",
+      "ruleID": "mattermost-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/adobe-client-id.yaml",
+      "ruleID": "adobe-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/grafana-cloud-api-token.yaml",
+      "ruleID": "grafana-cloud-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/jwt.yaml",
+      "ruleID": "jwt",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/typeform-api-token.yaml",
+      "ruleID": "typeform-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/openai-api-key.yaml",
+      "ruleID": "openai-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/messagebird-client-id.yaml",
+      "ruleID": "messagebird-client-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/droneci-access-token.yaml",
+      "ruleID": "droneci-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gcp-api-key.yaml",
+      "ruleID": "gcp-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sumologic-access-id.yaml",
+      "ruleID": "sumologic-access-id",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/shopify-access-token.yaml",
+      "ruleID": "shopify-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/discord-api-token.yaml",
+      "ruleID": "discord-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/pulumi-api-token.yaml",
+      "ruleID": "pulumi-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/intercom-api-key.yaml",
+      "ruleID": "intercom-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/facebook-secret.yaml",
+      "ruleID": "facebook-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/scalingo-api-token.yaml",
+      "ruleID": "scalingo-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/plaid-api-token.yaml",
+      "ruleID": "plaid-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/shopify-private-app-access-token.yaml",
+      "ruleID": "shopify-private-app-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/cloudflare-origin-ca-key.yaml",
+      "ruleID": "cloudflare-origin-ca-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/twitter-api-key.yaml",
+      "ruleID": "twitter-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/linkedin-client-secret.yaml",
+      "ruleID": "linkedin-client-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/dropbox-api-token.yaml",
+      "ruleID": "dropbox-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/gitlab-pat.yaml",
+      "ruleID": "gitlab-pat",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/flutterwave-secret-key.yaml",
+      "ruleID": "flutterwave-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/confluent-secret-key.yaml",
+      "ruleID": "confluent-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-app-token.yaml",
+      "ruleID": "slack-app-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/kucoin-access-token.yaml",
+      "ruleID": "kucoin-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/launchdarkly-access-token.yaml",
+      "ruleID": "launchdarkly-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/age-secret-key.yaml",
+      "ruleID": "age-secret-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/algolia-api-key.yaml",
+      "ruleID": "algolia-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/sendinblue-api-token.yaml",
+      "ruleID": "sendinblue-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/jwt-base64.yaml",
+      "ruleID": "jwt-base64",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/private-key.yaml",
+      "ruleID": "private-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/freshbooks-access-token.yaml",
+      "ruleID": "freshbooks-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/jfrog-api-key.yaml",
+      "ruleID": "jfrog-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/slack-legacy-workspace-token.yaml",
+      "ruleID": "slack-legacy-workspace-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/vault-batch-token.yaml",
+      "ruleID": "vault-batch-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/mailchimp-api-key.yaml",
+      "ruleID": "mailchimp-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/gitleaks/yandex-aws-access-token.yaml",
+      "ruleID": "yandex-aws-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-twilio-api-key.yaml",
+      "ruleID": "detected-twilio-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-snyk-api-key.yaml",
+      "ruleID": "detected-snyk-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/google-maps-apikeyleak.yaml",
+      "ruleID": "google-maps-apikeyleak",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-google-gcm-service-account.yaml",
+      "ruleID": "detected-google-gcm-service-account",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-username-and-password-in-uri.yaml",
+      "ruleID": "detected-username-and-password-in-uri",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-paypal-braintree-access-token.yaml",
+      "ruleID": "detected-paypal-braintree-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-hockeyapp.yaml",
+      "ruleID": "detected-hockeyapp",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-google-oauth.yaml",
+      "ruleID": "detected-google-oauth-url",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-bcrypt-hash.yaml",
+      "ruleID": "detected-bcrypt-hash",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-mailchimp-api-key.yaml",
+      "ruleID": "detected-mailchimp-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-jwt-token.yaml",
+      "ruleID": "detected-jwt-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-facebook-oauth.yaml",
+      "ruleID": "detected-facebook-oauth",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-square-oauth-secret.yaml",
+      "ruleID": "detected-square-oauth-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-google-api-key.yaml",
+      "ruleID": "detected-google-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-artifactory-token.yaml",
+      "ruleID": "detected-artifactory-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-google-cloud-api-key.yaml",
+      "ruleID": "detected-google-cloud-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-aws-access-key-id-value.yaml",
+      "ruleID": "detected-aws-access-key-id-value",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-sauce-token.yaml",
+      "ruleID": "detected-sauce-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-generic-api-key.yaml",
+      "ruleID": "detected-generic-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-codeclimate.yaml",
+      "ruleID": "detected-codeclimate",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-softlayer-api-key.yaml",
+      "ruleID": "detected-softlayer-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-generic-secret.yaml",
+      "ruleID": "detected-generic-secret",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-aws-secret-access-key.yaml",
+      "ruleID": "detected-aws-secret-access-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-private-key.yaml",
+      "ruleID": "detected-private-key",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-sendgrid-api-key.yaml",
+      "ruleID": "detected-sendgrid-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-artifactory-password.yaml",
+      "ruleID": "detected-artifactory-password",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-aws-session-token.yaml",
+      "ruleID": "detected-aws-session-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-slack-webhook.yaml",
+      "ruleID": "detected-slack-webhook",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-facebook-access-token.yaml",
+      "ruleID": "detected-facebook-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-onfido-live-api-token.yaml",
+      "ruleID": "detected-onfido-live-api-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-npm-registry-auth-token.yaml",
+      "ruleID": "detected-npm-registry-auth-token",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-aws-account-id.yaml",
+      "ruleID": "detected-aws-account-id",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-github-token.yaml",
+      "ruleID": "detected-github-token",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-stripe-api-key.yaml",
+      "ruleID": "detected-stripe-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-amazon-mws-auth-token.yaml",
+      "ruleID": "detected-amazon-mws-auth-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-picatic-api-key.yaml",
+      "ruleID": "detected-picatic-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-kolide-api-key.yaml",
+      "ruleID": "detected-kolide-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-aws-appsync-graphql-key.yaml",
+      "ruleID": "detected-aws-appsync-graphql-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-stripe-restricted-api-key.yaml",
+      "ruleID": "detected-stripe-restricted-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-slack-token.yaml",
+      "ruleID": "detected-slack-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-etc-shadow.yaml",
+      "ruleID": "detected-etc-shadow",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-square-access-token.yaml",
+      "ruleID": "detected-square-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-mailgun-api-key.yaml",
+      "ruleID": "detected-mailgun-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-google-oauth-access-token.yaml",
+      "ruleID": "detected-google-oauth-access-token",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-telegram-bot-api-key.yaml",
+      "ruleID": "detected-telegram-bot-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-outlook-team.yaml",
+      "ruleID": "detected-outlook-team",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-pgp-private-key-block.yaml",
+      "ruleID": "detected-pgp-private-key-block",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-sonarqube-docs-api-key.yaml",
+      "ruleID": "detected-sonarqube-docs-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-ssh-password.yaml",
+      "ruleID": "detected-ssh-password",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/secrets/security/detected-heroku-api-key.yaml",
+      "ruleID": "detected-heroku-api-key",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/visualforce/security/ncino/vf/XSSFromUnescapedURLParam.yaml",
+      "ruleID": "xss-from-unescaped-url-param",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/visualforce/security/ncino/html/UseSRIForCDNs.yaml",
+      "ruleID": "use-SRI-for-CDNs",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/visualforce/security/ncino/xml/CSPHeaderAttribute.yaml",
+      "ruleID": "csp-header-attribute",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "generic/visualforce/security/ncino/xml/VisualForceAPIVersion.yaml",
+      "ruleID": "visualforce-page-api-version",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/distributed/security.yaml",
+      "ruleID": "require-encryption",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/fastapi/security/wildcard-cors.yaml",
+      "ruleID": "wildcard-cors",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jinja2/security/audit/autoescape-disabled-false.yaml",
+      "ruleID": "incorrect-autoescape-disabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jinja2/security/audit/missing-autoescape-disabled.yaml",
+      "ruleID": "missing-autoescape-disabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/airflow/security/audit/formatted-string-bashoperator.yaml",
+      "ruleID": "formatted-string-bashoperator",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-samesite-unsafe-default.yaml",
+      "ruleID": "pyramid-set-cookie-samesite-unsafe-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-secure-unsafe-value.yaml",
+      "ruleID": "pyramid-set-cookie-secure-unsafe-value",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/csrf-origin-check-disabled.yaml",
+      "ruleID": "pyramid-csrf-origin-check-disabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/authtkt-cookie-samesite.yaml",
+      "ruleID": "pyramid-authtkt-cookie-samesite",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-secure-unsafe-default.yaml",
+      "ruleID": "pyramid-set-cookie-secure-unsafe-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-httponly-unsafe-default.yaml",
+      "ruleID": "pyramid-set-cookie-httponly-unsafe-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-httponly-unsafe-value.yaml",
+      "ruleID": "pyramid-set-cookie-httponly-unsafe-value",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/authtkt-cookie-secure-unsafe-default.yaml",
+      "ruleID": "pyramid-authtkt-cookie-secure-unsafe-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/authtkt-cookie-httponly-unsafe-default.yaml",
+      "ruleID": "pyramid-authtkt-cookie-httponly-unsafe-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/authtkt-cookie-httponly-unsafe-value.yaml",
+      "ruleID": "pyramid-authtkt-cookie-httponly-unsafe-value",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/set-cookie-samesite-unsafe-value.yaml",
+      "ruleID": "pyramid-set-cookie-samesite-unsafe-value",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/authtkt-cookie-secure-unsafe-value.yaml",
+      "ruleID": "pyramid-authtkt-cookie-secure-unsafe-value",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/csrf-check-disabled.yaml",
+      "ruleID": "pyramid-csrf-check-disabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/audit/csrf-origin-check-disabled-globally.yaml",
+      "ruleID": "pyramid-csrf-origin-check-disabled-globally",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/security/csrf-check-disabled-globally.yaml",
+      "ruleID": "pyramid-csrf-check-disabled-globally",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/security/sqlalchemy-sql-injection.yaml",
+      "ruleID": "pyramid-sqlalchemy-sql-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pyramid/security/direct-use-of-response.yaml",
+      "ruleID": "pyramid-direct-use-of-response",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-cipher-algorithm.yaml",
+      "ruleID": "insecure-cipher-algorithm-xor",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-hash-algorithm.yaml",
+      "ruleID": "insecure-hash-algorithm-sha1",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insufficient-dsa-key-size.yaml",
+      "ruleID": "insufficient-dsa-key-size",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-hash-algorithm-md4.yaml",
+      "ruleID": "insecure-hash-algorithm-md4",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-cipher-algorithm-rc4.yaml",
+      "ruleID": "insecure-cipher-algorithm-rc4",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-cipher-algorithm-rc2.yaml",
+      "ruleID": "insecure-cipher-algorithm-rc2",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/mode-without-authentication.yaml",
+      "ruleID": "crypto-mode-without-authentication",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-cipher-algorithm-des.yaml",
+      "ruleID": "insecure-cipher-algorithm-des",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-cipher-algorithm-blowfish.yaml",
+      "ruleID": "insecure-cipher-algorithm-blowfish",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insufficient-rsa-key-size.yaml",
+      "ruleID": "insufficient-rsa-key-size",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-hash-algorithm-md2.yaml",
+      "ruleID": "insecure-hash-algorithm-md2",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pycryptodome/security/insecure-hash-algorithm-md5.yaml",
+      "ruleID": "insecure-hash-algorithm-md5",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/docker/security/audit/docker-arbitrary-container-run.yaml",
+      "ruleID": "docker-arbitrary-container-run",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/globals-as-template-context.yaml",
+      "ruleID": "globals-as-template-context",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/django-no-csrf-token.yaml",
+      "ruleID": "django-no-csrf-token",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/locals-as-template-context.yaml",
+      "ruleID": "locals-as-template-context",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/hashids-with-django-secret.yaml",
+      "ruleID": "hashids-with-django-secret",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/django-using-request-post-after-is-valid.yaml",
+      "ruleID": "django-using-request-post-after-is-valid",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/nan-injection.yaml",
+      "ruleID": "nan-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/extends-custom-expression.yaml",
+      "ruleID": "extends-custom-expression",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/unvalidated-password.yaml",
+      "ruleID": "unvalidated-password",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/secure-cookies.yaml",
+      "ruleID": "django-secure-set-cookie",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/csrf-exempt.yaml",
+      "ruleID": "no-csrf-exempt",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/custom-expression-as-sql.yaml",
+      "ruleID": "custom-expression-as-sql",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/avoid-mark-safe.yaml",
+      "ruleID": "avoid-mark-safe",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/query-set-extra.yaml",
+      "ruleID": "avoid-query-set-extra",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/raw-query.yaml",
+      "ruleID": "avoid-raw-sql",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/avoid-insecure-deserialization.yaml",
+      "ruleID": "avoid-insecure-deserialization",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/tainted-url-host.yaml",
+      "ruleID": "tainted-url-host",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/csv-writer-injection.yaml",
+      "ruleID": "csv-writer-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/request-data-write.yaml",
+      "ruleID": "request-data-write",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/reflected-data-httpresponsebadrequest.yaml",
+      "ruleID": "reflected-data-httpresponsebadrequest",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/tainted-sql-string.yaml",
+      "ruleID": "tainted-sql-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/reflected-data-httpresponse.yaml",
+      "ruleID": "reflected-data-httpresponse",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/raw-html-format.yaml",
+      "ruleID": "raw-html-format",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/open-redirect.yaml",
+      "ruleID": "open-redirect",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/request-data-fileresponse.yaml",
+      "ruleID": "request-data-fileresponse",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/mass-assignment.yaml",
+      "ruleID": "mass-assignment",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/passwords/use-none-for-password-default.yaml",
+      "ruleID": "use-none-for-password-default",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/passwords/password-empty-string.yaml",
+      "ruleID": "password-empty-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/html-magic-method.yaml",
+      "ruleID": "html-magic-method",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/filter-with-is-safe.yaml",
+      "ruleID": "filter-with-is-safe",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/formathtml-fstring-parameter.yaml",
+      "ruleID": "formathtml-fstring-parameter",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/global-autoescape-off.yaml",
+      "ruleID": "global-autoescape-off",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/class-extends-safestring.yaml",
+      "ruleID": "class-extends-safestring",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/context-autoescape-off.yaml",
+      "ruleID": "context-autoescape-off",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/html-safe.yaml",
+      "ruleID": "html-safe",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/template-var-unescaped-with-safeseq.yaml",
+      "ruleID": "template-var-unescaped-with-safeseq",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/template-autoescape-off.yaml",
+      "ruleID": "template-autoescape-off",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/template-translate-as-no-escape.yaml",
+      "ruleID": "template-translate-as-no-escape",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/template-blocktranslate-no-escape.yaml",
+      "ruleID": "template-blocktranslate-no-escape",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/xss/direct-use-of-httpresponse.yaml",
+      "ruleID": "direct-use-of-httpresponse",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/django-rest-framework/missing-throttle-config.yaml",
+      "ruleID": "missing-throttle-config",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/audit/templates/debug-template-tag.yaml",
+      "ruleID": "debug-template-tag",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/ssrf/ssrf-injection-requests.yaml",
+      "ruleID": "ssrf-injection-requests",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/ssrf/ssrf-injection-urllib.yaml",
+      "ruleID": "ssrf-injection-urllib",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/path-traversal/path-traversal-join.yaml",
+      "ruleID": "path-traversal-join",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/path-traversal/path-traversal-open.yaml",
+      "ruleID": "path-traversal-open",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/path-traversal/path-traversal-file-name.yaml",
+      "ruleID": "path-traversal-file-name",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/code/user-exec-format-string.yaml",
+      "ruleID": "user-exec-format-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/code/user-exec.yaml",
+      "ruleID": "user-exec",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/code/user-eval-format-string.yaml",
+      "ruleID": "user-eval-format-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/code/globals-misuse-code-execution.yaml",
+      "ruleID": "globals-misuse-code-execution",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/code/user-eval.yaml",
+      "ruleID": "user-eval",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/command/command-injection-os-system.yaml",
+      "ruleID": "command-injection-os-system",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/command/subprocess-injection.yaml",
+      "ruleID": "subprocess-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/email/xss-html-email-body.yaml",
+      "ruleID": "xss-html-email-body",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/email/xss-send-mail-html-message.yaml",
+      "ruleID": "xss-send-mail-html-message",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/sql/sql-injection-extra.yaml",
+      "ruleID": "sql-injection-using-extra-where",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/sql/sql-injection-rawsql.yaml",
+      "ruleID": "sql-injection-using-rawsql",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/sql/sql-injection-using-raw.yaml",
+      "ruleID": "sql-injection-using-raw",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/django/security/injection/sql/sql-injection-using-db-cursor-execute.yaml",
+      "ruleID": "sql-injection-db-cursor-execute",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/requests/security/no-auth-over-http.yaml",
+      "ruleID": "no-auth-over-http",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/requests/security/disabled-cert-validation.yaml",
+      "ruleID": "disabled-cert-validation",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/sh/security/string-concat.yaml",
+      "ruleID": "string-concat",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/insecure-deserialization.yaml",
+      "ruleID": "insecure-deserialization",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/unsanitized-input.yaml",
+      "ruleID": "response-contains-unsanitized-input",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/dangerous-template-string.yaml",
+      "ruleID": "dangerous-template-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/hashids-with-flask-secret.yaml",
+      "ruleID": "hashids-with-flask-secret",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/secure-static-file-serve.yaml",
+      "ruleID": "avoid_send_file_without_path_sanitization",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/unescaped-template-extension.yaml",
+      "ruleID": "unescaped-template-extension",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/flask-api-method-string-format.yaml",
+      "ruleID": "flask-api-method-string-format",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/open-redirect.yaml",
+      "ruleID": "open-redirect",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/hardcoded-config.yaml",
+      "ruleID": "avoid_hardcoded_config_TESTING",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/hardcoded-config.yaml",
+      "ruleID": "avoid_hardcoded_config_SECRET_KEY",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/hardcoded-config.yaml",
+      "ruleID": "avoid_hardcoded_config_ENV",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/hardcoded-config.yaml",
+      "ruleID": "avoid_hardcoded_config_DEBUG",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/app-run-security-config.yaml",
+      "ruleID": "avoid_using_app_run_directly",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/host-header-injection-python.yaml",
+      "ruleID": "host-header-injection-python",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/flask-url-for-external-true.yaml",
+      "ruleID": "flask-url-for-external-true",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/secure-set-cookie.yaml",
+      "ruleID": "secure-set-cookie",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/render-template-string.yaml",
+      "ruleID": "render-template-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/app-run-param-config.yaml",
+      "ruleID": "avoid_app_run_with_bad_host",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/wtf-csrf-disabled.yaml",
+      "ruleID": "flask-wtf-csrf-disabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/debug-enabled.yaml",
+      "ruleID": "debug-enabled",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/flask-cors-misconfiguration.yaml",
+      "ruleID": "flask-cors-misconfiguration",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/directly-returned-format-string.yaml",
+      "ruleID": "directly-returned-format-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/tainted-url-host.yaml",
+      "ruleID": "tainted-url-host",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/path-traversal-open.yaml",
+      "ruleID": "path-traversal-open",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/csv-writer-injection.yaml",
+      "ruleID": "csv-writer-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/raw-html-concat.yaml",
+      "ruleID": "raw-html-format",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/ssrf-requests.yaml",
+      "ruleID": "ssrf-requests",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/tainted-sql-string.yaml",
+      "ruleID": "tainted-sql-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/os-system-injection.yaml",
+      "ruleID": "os-system-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/subprocess-injection.yaml",
+      "ruleID": "subprocess-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/nan-injection.yaml",
+      "ruleID": "nan-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/user-exec.yaml",
+      "ruleID": "exec-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/injection/user-eval.yaml",
+      "ruleID": "eval-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/xss/audit/template-unquoted-attribute-var.yaml",
+      "ruleID": "template-unquoted-attribute-var",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/xss/audit/template-unescaped-with-safe.yaml",
+      "ruleID": "template-unescaped-with-safe",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/xss/audit/explicit-unescape-with-markup.yaml",
+      "ruleID": "explicit-unescape-with-markup",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/xss/audit/direct-use-of-jinja2.yaml",
+      "ruleID": "direct-use-of-jinja2",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/xss/audit/template-autoescape-off.yaml",
+      "ruleID": "template-autoescape-off",
+      "languages": [
+        "regex"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/flask/security/audit/xss/make-response-with-unknown-content.yaml",
+      "ruleID": "make-response-with-unknown-content",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/use-defused-xml.yaml",
+      "ruleID": "use-defused-xml",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/insecure-hash-algorithms-md5.yaml",
+      "ruleID": "insecure-hash-algorithm-md5",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-globals-use.yaml",
+      "ruleID": "dangerous-globals-use",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-spawn-process.yaml",
+      "ruleID": "dangerous-spawn-process",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/insecure-hash-function.yaml",
+      "ruleID": "insecure-hash-function",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-os-exec.yaml",
+      "ruleID": "dangerous-os-exec",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-system-call.yaml",
+      "ruleID": "dangerous-system-call",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-testcapi-run-in-subinterp.yaml",
+      "ruleID": "dangerous-testcapi-run-in-subinterp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/insecure-uuid-version.yaml",
+      "ruleID": "insecure-uuid-version",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/use-defusedcsv.yaml",
+      "ruleID": "use-defusedcsv",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-code-run.yaml",
+      "ruleID": "dangerous-interactive-code-run",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-subprocess-use.yaml",
+      "ruleID": "dangerous-subprocess-use",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/use-defused-xml-parse.yaml",
+      "ruleID": "use-defused-xml-parse",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/use-defused-xmlrpc.yaml",
+      "ruleID": "use-defused-xmlrpc",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/unverified-ssl-context.yaml",
+      "ruleID": "unverified-ssl-context",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/insecure-hash-algorithms.yaml",
+      "ruleID": "insecure-hash-algorithm-sha1",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/dangerous-subinterpreters-run-string.yaml",
+      "ruleID": "dangerous-subinterpreters-run-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-shell-audit.yaml",
+      "ruleID": "dangerous-asyncio-shell-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/weak-ssl-version.yaml",
+      "ruleID": "weak-ssl-version",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-subinterpreters-run-string-audit.yaml",
+      "ruleID": "dangerous-subinterpreters-run-string-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-os-exec-tainted-env-args.yaml",
+      "ruleID": "dangerous-os-exec-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/hardcoded-password-default-argument.yaml",
+      "ruleID": "hardcoded-password-default-argument",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/eval-detected.yaml",
+      "ruleID": "eval-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/telnetlib.yaml",
+      "ruleID": "telnetlib",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/system-wildcard-detected.yaml",
+      "ruleID": "system-wildcard-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-shell-tainted-env-args.yaml",
+      "ruleID": "dangerous-asyncio-shell-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/conn_recv.yaml",
+      "ruleID": "multiprocessing-recv",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-create-exec-audit.yaml",
+      "ruleID": "dangerous-asyncio-create-exec-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-annotations-usage.yaml",
+      "ruleID": "dangerous-annotations-usage",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/subprocess-shell-true.yaml",
+      "ruleID": "subprocess-shell-true",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-testcapi-run-in-subinterp-audit.yaml",
+      "ruleID": "dangerous-testcapi-run-in-subinterp-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-system-call-tainted-env-args.yaml",
+      "ruleID": "dangerous-system-call-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-exec-tainted-env-args.yaml",
+      "ruleID": "dangerous-asyncio-exec-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/non-literal-import.yaml",
+      "ruleID": "non-literal-import",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-subprocess-use-audit.yaml",
+      "ruleID": "dangerous-subprocess-use-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/exec-detected.yaml",
+      "ruleID": "exec-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-code-run-tainted-env-args.yaml",
+      "ruleID": "dangerous-interactive-code-run-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-exec-audit.yaml",
+      "ruleID": "dangerous-asyncio-exec-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-spawn-process-audit.yaml",
+      "ruleID": "dangerous-spawn-process-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/ssl-wrap-socket-is-deprecated.yaml",
+      "ruleID": "ssl-wrap-socket-is-deprecated",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/md5-used-as-password.yaml",
+      "ruleID": "md5-used-as-password",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/marshal.yaml",
+      "ruleID": "marshal-usage",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-testcapi-run-in-subinterp-tainted-env-args.yaml",
+      "ruleID": "dangerous-testcapi-run-in-subinterp-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/subprocess-list-passed-as-string.yaml",
+      "ruleID": "subprocess-list-passed-as-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dynamic-urllib-use-detected.yaml",
+      "ruleID": "dynamic-urllib-use-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-file-permissions.yaml",
+      "ruleID": "insecure-file-permissions",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-asyncio-create-exec-tainted-env-args.yaml",
+      "ruleID": "dangerous-asyncio-create-exec-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/regex-dos.yaml",
+      "ruleID": "regex_dos",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-spawn-process-tainted-env-args.yaml",
+      "ruleID": "dangerous-spawn-process-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-subprocess-use-tainted-env-args.yaml",
+      "ruleID": "dangerous-subprocess-use-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-system-call-audit.yaml",
+      "ruleID": "dangerous-system-call-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-subinterpreters-run-string-tainted-env-args.yaml",
+      "ruleID": "dangerous-subinterpreters-run-string-tainted-env-args",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/mako-templates-detected.yaml",
+      "ruleID": "mako-templates-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-code-run-audit.yaml",
+      "ruleID": "dangerous-interactive-code-run-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/paramiko-implicit-trust-host-key.yaml",
+      "ruleID": "paramiko-implicit-trust-host-key",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/sha224-hash.yaml",
+      "ruleID": "sha224-hash",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/httpsconnection-detected.yaml",
+      "ruleID": "httpsconnection-detected",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/dangerous-os-exec-audit.yaml",
+      "ruleID": "dangerous-os-exec-audit",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/formatted-sql-query.yaml",
+      "ruleID": "formatted-sql-query",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/python-reverse-shell.yaml",
+      "ruleID": "python-reverse-shell",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/pickle.yaml",
+      "ruleID": "avoid-pickle",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/pickle.yaml",
+      "ruleID": "avoid-cPickle",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/pickle.yaml",
+      "ruleID": "avoid-dill",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/pickle.yaml",
+      "ruleID": "avoid-shelve",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/avoid-jsonpickle.yaml",
+      "ruleID": "avoid-jsonpickle",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/avoid-unsafe-ruamel.yaml",
+      "ruleID": "avoid-unsafe-ruamel",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/deserialization/avoid-pyyaml-load.yaml",
+      "ruleID": "avoid-pyyaml-load",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/network/http-not-https-connection.yaml",
+      "ruleID": "http-not-https-connection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/network/disabled-cert-validation.yaml",
+      "ruleID": "disabled-cert-validation",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/network/bind.yaml",
+      "ruleID": "avoid-bind-to-all-interfaces",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/sqli/pg8000-sqli.yaml",
+      "ruleID": "pg8000-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/sqli/asyncpg-sqli.yaml",
+      "ruleID": "asyncpg-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/sqli/aiopg-sqli.yaml",
+      "ruleID": "aiopg-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/sqli/psycopg-sqli.yaml",
+      "ruleID": "psycopg-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/logging/listeneval.yaml",
+      "ruleID": "listen-eval",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/logging/logger-credential-leak.yaml",
+      "ruleID": "python-logger-credential-disclosure",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/paramiko/paramiko-exec-command.yaml",
+      "ruleID": "paramiko-exec-command",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopener-retrieve-ftp.yaml",
+      "ruleID": "insecure-urlopener-retrieve-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-request-object-ftp.yaml",
+      "ruleID": "insecure-request-object-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopen.yaml",
+      "ruleID": "insecure-urlopen",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopener-open-ftp.yaml",
+      "ruleID": "insecure-urlopener-open-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlretrieve.yaml",
+      "ruleID": "insecure-urlretrieve",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-openerdirector-open-ftp.yaml",
+      "ruleID": "insecure-openerdirector-open-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-request-object.yaml",
+      "ruleID": "insecure-request-object",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopener-open.yaml",
+      "ruleID": "insecure-urlopener-open",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-openerdirector-open.yaml",
+      "ruleID": "insecure-openerdirector-open",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopener-retrieve.yaml",
+      "ruleID": "insecure-urlopener-retrieve",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlretrieve-ftp.yaml",
+      "ruleID": "insecure-urlretrieve-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/urllib/insecure-urlopen-ftp.yaml",
+      "ruleID": "insecure-urlopen-ftp",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/requests/request-session-http-in-with-context.yaml",
+      "ruleID": "request-session-http-in-with-context",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/requests/request-with-http.yaml",
+      "ruleID": "request-with-http",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/requests/request-session-with-http.yaml",
+      "ruleID": "request-session-with-http",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/ftplib/use-ftp-tls.yaml",
+      "ruleID": "use-ftp-tls",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/lang/security/audit/insecure-transport/ssl/no-set-ciphers.yaml",
+      "ruleID": "no-set-ciphers",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jwt/security/jwt-exposed-credentials.yaml",
+      "ruleID": "jwt-python-exposed-credentials",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jwt/security/unverified-jwt-decode.yaml",
+      "ruleID": "unverified-jwt-decode",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jwt/security/jwt-hardcode.yaml",
+      "ruleID": "jwt-python-hardcoded-secret",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jwt/security/jwt-none-alg.yaml",
+      "ruleID": "jwt-python-none-alg",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/jwt/security/audit/jwt-exposed-data.yaml",
+      "ruleID": "jwt-python-exposed-data",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insufficient-ec-key-size.yaml",
+      "ruleID": "insufficient-ec-key-size",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-hash-algorithms-md5.yaml",
+      "ruleID": "insecure-hash-algorithm-md5",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insufficient-dsa-key-size.yaml",
+      "ruleID": "insufficient-dsa-key-size",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/empty-aes-key.yaml",
+      "ruleID": "empty-aes-key",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-cipher-algorithms.yaml",
+      "ruleID": "insecure-cipher-algorithm-idea",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/mode-without-authentication.yaml",
+      "ruleID": "crypto-mode-without-authentication",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-cipher-algorithms-blowfish.yaml",
+      "ruleID": "insecure-cipher-algorithm-blowfish",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-hash-algorithms.yaml",
+      "ruleID": "insecure-hash-algorithm-sha1",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insufficient-rsa-key-size.yaml",
+      "ruleID": "insufficient-rsa-key-size",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-cipher-algorithms-arc4.yaml",
+      "ruleID": "insecure-cipher-algorithm-arc4",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/cryptography/security/insecure-cipher-mode-ecb.yaml",
+      "ruleID": "insecure-cipher-mode-ecb",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/sqlalchemy/security/sqlalchemy-sql-injection.yaml",
+      "ruleID": "sqlalchemy-sql-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/sqlalchemy/security/sqlalchemy-execute-raw-query.yaml",
+      "ruleID": "sqlalchemy-execute-raw-query",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/sqlalchemy/security/audit/avoid-sqlalchemy-text.yaml",
+      "ruleID": "avoid-sqlalchemy-text",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/boto3/security/hardcoded-token.yaml",
+      "ruleID": "hardcoded-token",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/pymongo/security/mongodb.yaml",
+      "ruleID": "mongo-client-bad-auth",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-asyncio-shell.yaml",
+      "ruleID": "dangerous-asyncio-shell",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/tainted-html-string.yaml",
+      "ruleID": "tainted-html-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-asyncio-create-exec.yaml",
+      "ruleID": "dangerous-asyncio-create-exec",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-spawn-process.yaml",
+      "ruleID": "dangerous-spawn-process",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dynamodb-filter-injection.yaml",
+      "ruleID": "dynamodb-filter-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/tainted-code-exec.yaml",
+      "ruleID": "tainted-code-exec",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/tainted-html-response.yaml",
+      "ruleID": "tainted-html-response",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-system-call.yaml",
+      "ruleID": "dangerous-system-call",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/pymssql-sqli.yaml",
+      "ruleID": "pymssql-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/tainted-sql-string.yaml",
+      "ruleID": "tainted-sql-string",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/mysql-sqli.yaml",
+      "ruleID": "mysql-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-subprocess-use.yaml",
+      "ruleID": "dangerous-subprocess-use",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/tainted-pickle-deserialization.yaml",
+      "ruleID": "tainted-pickle-deserialization",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/psycopg-sqli.yaml",
+      "ruleID": "psycopg-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/pymysql-sqli.yaml",
+      "ruleID": "pymysql-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/sqlalchemy-sqli.yaml",
+      "ruleID": "sqlalchemy-sqli",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/aws-lambda/security/dangerous-asyncio-exec.yaml",
+      "ruleID": "dangerous-asyncio-exec",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "python/twilio/security/twiml-injection.yaml",
+      "ruleID": "twiml-injection",
+      "languages": [
+        "python"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "bash/curl/security/curl-eval.yaml",
+      "ruleID": "curl-eval",
+      "languages": [
+        "bash"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "bash/curl/security/curl-pipe-bash.yaml",
+      "ruleID": "curl-pipe-bash",
+      "languages": [
+        "bash"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "bash/lang/security/ifs-tampering.yaml",
+      "ruleID": "ifs-tampering",
+      "languages": [
+        "bash"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/razor-template-injection.yaml",
+      "ruleID": "razor-template-injection",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/use_weak_rsa_encryption_padding.yaml",
+      "ruleID": "use_weak_rsa_encryption_padding",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/use_weak_rng_for_keygeneration.yaml",
+      "ruleID": "use_weak_rng_for_keygeneration",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/net-webconfig-trace-enabled.yaml",
+      "ruleID": "net-webconfig-trace-enabled",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/web-config-insecure-cookie-settings.yaml",
+      "ruleID": "web-config-insecure-cookie-settings",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/use_ecb_mode.yaml",
+      "ruleID": "use_ecb_mode",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/mvc-missing-antiforgery.yaml",
+      "ruleID": "mvc-missing-antiforgery",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/net-webconfig-debug.yaml",
+      "ruleID": "net-webconfig-debug",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/use_deprecated_cipher_algorithm.yaml",
+      "ruleID": "use_deprecated_cipher_algorithm",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/misconfigured-lockout-option.yaml",
+      "ruleID": "misconfigured-lockout-option",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/open-directory-listing.yaml",
+      "ruleID": "open-directory-listing",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/xpath-injection.yaml",
+      "ruleID": "xpath-injection",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/missing-or-broken-authorization.yaml",
+      "ruleID": "missing-or-broken-authorization",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/razor-use-of-htmlstring.yaml",
+      "ruleID": "razor-use-of-htmlstring",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/mass-assignment.yaml",
+      "ruleID": "mass-assignment",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/dotnet/security/audit/ldap-injection.yaml",
+      "ruleID": "ldap-injection",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/razor/security/html-raw-json.yaml",
+      "ruleID": "html-raw-json",
+      "languages": [
+        "generic"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/stacktrace-disclosure.yaml",
+      "ruleID": "stacktrace-disclosure",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/missing-hsts-header.yaml",
+      "ruleID": "missing-hsts-header",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/open-redirect.yaml",
+      "ruleID": "open-redirect",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/injections/os-command.yaml",
+      "ruleID": "os-command-injection",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/ssrf/rest-client.yaml",
+      "ruleID": "ssrf",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/ssrf/web-client.yaml",
+      "ruleID": "ssrf",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/ssrf/http-client.yaml",
+      "ruleID": "ssrf",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/ssrf/web-request.yaml",
+      "ruleID": "ssrf",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/regular-expression-dos/regular-expression-dos-infinite-timeout.yaml",
+      "ruleID": "regular-expression-dos-infinite-timeout",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/regular-expression-dos/regular-expression-dos.yaml",
+      "ruleID": "regular-expression-dos",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/sqli/csharp-sqli.yaml",
+      "ruleID": "csharp-sqli",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/filesystem/unsafe-path-combine.yaml",
+      "ruleID": "unsafe-path-combine",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/ad/jwt-tokenvalidationparameters-no-expiry-validation.yaml",
+      "ruleID": "jwt-tokenvalidationparameters-no-expiry-validation",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/data-contract-resolver.yaml",
+      "ruleID": "data-contract-resolver",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/newtonsoft.yaml",
+      "ruleID": "insecure-newtonsoft-deserialization",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/binary-formatter.yaml",
+      "ruleID": "insecure-binaryformatter-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/javascript-serializer.yaml",
+      "ruleID": "insecure-javascriptserializer-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/fs-pickler.yaml",
+      "ruleID": "insecure-fspickler-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/net-data-contract.yaml",
+      "ruleID": "insecure-netdatacontract-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/los-formatter.yaml",
+      "ruleID": "insecure-losformatter-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/fast-json.yaml",
+      "ruleID": "insecure-fastjson-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/soap-formatter.yaml",
+      "ruleID": "insecure-soapformatter-deserialization",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/insecure-deserialization/insecure-typefilterlevel-full.yaml",
+      "ruleID": "insecure-typefilterlevel-full",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/memory/memory-marshal-create-span.yaml",
+      "ruleID": "memory-marshal-create-span",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/cryptography/unsigned-security-token.yaml",
+      "ruleID": "unsigned-security-token",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/cryptography/X509-subject-name-validation.yaml",
+      "ruleID": "X509-subject-name-validation",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/cryptography/X509Certificate2-privkey.yaml",
+      "ruleID": "X509Certificate2-privkey",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/xxe/xmlreadersettings-unsafe-parser-override.yaml",
+      "ruleID": "xmlreadersettings-unsafe-parser-override",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/xxe/xmltextreader-unsafe-defaults.yaml",
+      "ruleID": "xmltextreader-unsafe-defaults",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/xxe/xmldocument-unsafe-parser-override.yaml",
+      "ruleID": "xmldocument-unsafe-parser-override",
+      "languages": [
+        "csharp"
+      ],
+      "category": "security"
+    },
+    {
+      "sourcePath": "csharp/lang/security/http/http-listener-wildcard-bindings.yaml",
+      "ruleID": "http-listener-wildcard-bindings",
+      "languages": [
+        "C#"
+      ],
+      "category": "security"
+    }
+  ]
+}

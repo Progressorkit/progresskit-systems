@@ -1,0 +1,848 @@
+{
+  "timestampUTC": "2026-11-02T12:02:23.019522+00:00",
+  "status": "PARTIAL_EXECUTED_WITH_FINDINGS_AND_PARSER_LIMITS",
+  "newRun": true,
+  "scanner": "Semgrep Community Edition",
+  "version": "1.183.0",
+  "engine": "OSS",
+  "exitCode": 1,
+  "gate": "No SAST PASS: --error/--strict exit1 retained,14 findings plus26 PartialParsing warnings. No rule/finding suppression or product-source changes.",
+  "configuredVendorSecurityRules": 581,
+  "rulesActuallyRun": 548,
+  "actualRuleCountEvidence": "Semgrep local scan summary: Rules run548; raw time.rules was empty. No invented full581 execution.",
+  "targetsScanned": 258,
+  "findingsCount": 14,
+  "severityCounts": {
+    "INFO": 1,
+    "ERROR": 13
+  },
+  "parserWarnings": 26,
+  "parserWarningScope": {
+    ".sh": 1,
+    ".cs": 25
+  },
+  "skippedRulesReported": 0,
+  "sourceFilesUnchangedAfterScan": true,
+  "ruleSource": {
+    "timestampUTC": "2026-11-02T11:58:01.219749+00:00",
+    "url": "https://codeload.github.com/semgrep/semgrep-rules/tar.gz/refs/heads/develop",
+    "archiveSHA256": "ba8d9dcbf3aa219ce6cb43836f4b2ac4ea60cb5ac5dba113163ceda2169c40e5",
+    "files": 666,
+    "ruleRepository": "https://github.com/semgrep/semgrep-rules",
+    "license": "Semgrep Rules License; upstream rules maintained by Semgrep and community, no custom patterns invented.",
+    "downloadContainsOnly": "Public rule archive; no source/account/credential data sent."
+  },
+  "execution": {
+    "startedUTC": "2026-11-02T11:59:11.885542+00:00",
+    "finishedUTC": "2026-11-02T11:59:40.529113+00:00",
+    "scanner": "Semgrep Community Edition",
+    "version": "1.183.0",
+    "command": [
+      "/tmp/pkmail-sast-p8wj73ur/venv/bin/semgrep",
+      "scan",
+      "--oss-only",
+      "--metrics=off",
+      "--disable-version-check",
+      "--no-git-ignore",
+      "--json",
+      "--output",
+      "/tmp/pkmail-sast-p8wj73ur/raw-result.json",
+      "--error",
+      "--strict",
+      "--jobs=2",
+      "--timeout=10",
+      "--timeout-threshold=3",
+      "--max-target-bytes=2000000",
+      "--config",
+      "/tmp/pkmail-sast-p8wj73ur/selected-rules",
+      "/tmp/pkmail-sast-p8wj73ur/source"
+    ],
+    "exitCode": 1,
+    "network": "No network rule URI; exclusively local vendor rules. metrics off, version check disabled, no auth token inherited, private settings/config/cache/tmp. Executed within restricted network sandbox.",
+    "sourceUpload": "NONE",
+    "noProductSourceWrites": true
+  },
+  "securityBoundary": {
+    "sourceUpload": "NONE",
+    "metrics": "off",
+    "versionCheck": "disabled",
+    "authTokenInherited": false,
+    "remoteConfigurationUsed": false,
+    "cacheSettingsConfigTmp": "Private under /tmp",
+    "sourceOnly": "258 code/markup files; no .env/appsettings/google-services/keys/DB/logs/artifacts/build/test data.",
+    "accountMailPortTests": "NONE; owner STOP preserved.",
+    "rawOutput": "Only in owned /tmp; not copied to report because it contains source snippets/metavariables."
+  },
+  "rawOutputSHA256": "390b69cb82ed68eca106193a8548cb2919f6f708538ab3eacd3590cb34d54c23",
+  "sourceSnapshot": "sast-source-snapshot.json",
+  "sanitizedFindings": [
+    {
+      "ruleID": "kotlin.lang.security.gcm-detection",
+      "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureMailCredentialStore.kt",
+      "startLine": 184,
+      "endLine": 184,
+      "scannerSeverity": "INFO",
+      "CWE": [
+        "CWE-323: Reusing a Nonce, Key Pair in Encryption"
+      ],
+      "triage": "REVIEWED: flagged operation is decryption with persisted record.iv. Encryption initializes Android Keystore GCM without caller-supplied IV and stores cipher.iv; key requires randomized encryption. No nonce reuse shown by this finding; not a runtime/device acceptance.",
+      "triageStatus": "NO_CONFIRMED_NONCE_REUSE",
+      "reviewEvidence": [
+        {
+          "path": "android/security/src/main/kotlin/pl/progresskit/mail/security/AndroidSecureMailCredentialStore.kt",
+          "lines": [
+            145,
+            148,
+            180,
+            184,
+            273,
+            280
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "infra/scripts/owner-mail-diagnostics.py",
+      "startLine": 35,
+      "endLine": 35,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "infra/scripts/owner-mail-diagnostics.py",
+          "lines": [
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "infra/scripts/test-android-release-configuration.py",
+      "startLine": 28,
+      "endLine": 32,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "infra/scripts/test-android-release-configuration.py",
+          "lines": [
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "infra/scripts/test-fail2ban-dovecot.py",
+      "startLine": 62,
+      "endLine": 62,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "infra/scripts/test-fail2ban-dovecot.py",
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-tainted-env-args",
+      "path": "infra/scripts/test-fail2ban-dovecot.py",
+      "startLine": 62,
+      "endLine": 62,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "infra/scripts/test-fail2ban-dovecot.py",
+          "lines": [
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.use-defused-xml",
+      "path": "windows/linux/package-linux.py",
+      "startLine": 13,
+      "endLine": 13,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-611: Improper Restriction of XML External Entity Reference"
+      ],
+      "triage": "Local packaging tool parses cached NuGet .nuspec metadata with ElementTree. Keep as packaging XML hardening review; no hostile input experiment or remote-service XXE demonstrated. Not automatically dismissed or remediated.",
+      "triageStatus": "OPEN_PACKAGING_HARDENING_REVIEW",
+      "reviewEvidence": [
+        {
+          "path": "windows/linux/package-linux.py",
+          "lines": [
+            38,
+            40,
+            54,
+            58,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.use-defused-xml-parse",
+      "path": "windows/linux/package-linux.py",
+      "startLine": 59,
+      "endLine": 59,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-611: Improper Restriction of XML External Entity Reference"
+      ],
+      "triage": "Local packaging tool parses cached NuGet .nuspec metadata with ElementTree. Keep as packaging XML hardening review; no hostile input experiment or remote-service XXE demonstrated. Not automatically dismissed or remediated.",
+      "triageStatus": "OPEN_PACKAGING_HARDENING_REVIEW",
+      "reviewEvidence": [
+        {
+          "path": "windows/linux/package-linux.py",
+          "lines": [
+            38,
+            40,
+            54,
+            58,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/linux/verify-installation.py",
+      "startLine": 46,
+      "endLine": 46,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/linux/verify-installation.py",
+          "lines": [
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/linux/verify-release-gui.py",
+      "startLine": 44,
+      "endLine": 44,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/linux/verify-release-gui.py",
+          "lines": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/linux/verify-release-gui.py",
+      "startLine": 46,
+      "endLine": 47,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/linux/verify-release-gui.py",
+          "lines": [
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/scripts/build-wiola.py",
+      "startLine": 65,
+      "endLine": 65,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/scripts/build-wiola.py",
+          "lines": [
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/scripts/package-linux.py",
+      "startLine": 55,
+      "endLine": 59,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/scripts/package-linux.py",
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-tainted-env-args",
+      "path": "windows/scripts/package-linux.py",
+      "startLine": 55,
+      "endLine": 58,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/scripts/package-linux.py",
+          "lines": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "ruleID": "python.lang.security.audit.dangerous-subprocess-use-audit",
+      "path": "windows/scripts/package-linux.py",
+      "startLine": 66,
+      "endLine": 67,
+      "scannerSeverity": "ERROR",
+      "CWE": [
+        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+      ],
+      "triage": "Audit rule flags subprocess invocation in owner/build/QA tooling. Reviewed sites use argv lists and no shell=True; local executable/CLI selection is an operator trust boundary. No remote shell-injection exploit established. Retain warning for tooling review; no helper was executed.",
+      "triageStatus": "REVIEWED_TOOLING_TRUST_BOUNDARY",
+      "reviewEvidence": [
+        {
+          "path": "windows/scripts/package-linux.py",
+          "lines": [
+            66
+          ]
+        }
+      ]
+    }
+  ],
+  "parserLimits": [
+    {
+      "path": "infra/scripts/verify-server-isolated.sh",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 242,
+          "endLine": 259
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Program.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 426,
+          "endLine": 426
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/FcmSender.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "startLine": 19,
+          "endLine": 19
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/MailArrivalWorker.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 26,
+          "endLine": 27
+        },
+        {
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "startLine": 97,
+          "endLine": 97
+        },
+        {
+          "startLine": 98,
+          "endLine": 98
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/PushRegistration.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 51,
+          "endLine": 51
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/Push/PushStateStore.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "startLine": 32,
+          "endLine": 32
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ControlPlaneStores.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "startLine": 60,
+          "endLine": 60
+        },
+        {
+          "startLine": 93,
+          "endLine": 93
+        },
+        {
+          "startLine": 222,
+          "endLine": 222
+        },
+        {
+          "startLine": 382,
+          "endLine": 382
+        },
+        {
+          "startLine": 382,
+          "endLine": 382
+        },
+        {
+          "startLine": 713,
+          "endLine": 713
+        },
+        {
+          "startLine": 770,
+          "endLine": 770
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Persistence/ProvisioningTokenAdministrationStore.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 9,
+          "endLine": 9
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DovecotDeviceCredentialIssuer.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 7,
+          "endLine": 9
+        },
+        {
+          "startLine": 10,
+          "endLine": 10
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceCredentialIssuanceCoordinator.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 22,
+          "endLine": 26
+        },
+        {
+          "startLine": 26,
+          "endLine": 26
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceEnrollmentWorkflow.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 9,
+          "endLine": 23
+        },
+        {
+          "startLine": 23,
+          "endLine": 23
+        }
+      ]
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/Provisioning/DurableDeviceRevocationCoordinator.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 10,
+          "endLine": 14
+        },
+        {
+          "startLine": 15,
+          "endLine": 15
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/AccountWorkspace.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 197,
+          "endLine": 198
+        },
+        {
+          "startLine": 217,
+          "endLine": 217
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Accounts/ProtectedAccountRepositories.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "startLine": 142,
+          "endLine": 142
+        },
+        {
+          "startLine": 142,
+          "endLine": 142
+        },
+        {
+          "startLine": 169,
+          "endLine": 169
+        },
+        {
+          "startLine": 169,
+          "endLine": 169
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/EnrollmentManager.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 6,
+          "endLine": 7
+        },
+        {
+          "startLine": 7,
+          "endLine": 7
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Authentication/MailboxPasswordChangeClient.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 13,
+          "endLine": 14
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/MailService.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 452,
+          "endLine": 453
+        },
+        {
+          "startLine": 460,
+          "endLine": 460
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/Mail/SendLedger.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "startLine": 67,
+          "endLine": 67
+        },
+        {
+          "startLine": 105,
+          "endLine": 105
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthHttpClient.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 17,
+          "endLine": 17
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/OAuth/GoogleOAuthModels.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "startLine": 75,
+          "endLine": 75
+        },
+        {
+          "startLine": 86,
+          "endLine": 87
+        },
+        {
+          "startLine": 87,
+          "endLine": 87
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/SecretServiceDeviceIdentity.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 12,
+          "endLine": 12
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/EnrollmentAccountService.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 6,
+          "endLine": 7
+        },
+        {
+          "startLine": 8,
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/Services/ScopedEnrollmentAccountService.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 7,
+          "endLine": 8
+        },
+        {
+          "startLine": 8,
+          "endLine": 8
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/ViewModels/ObservableObject.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "startLine": 18,
+          "endLine": 18
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ViewModels/MainViewModel.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 22,
+          "endLine": 22
+        },
+        {
+          "startLine": 604,
+          "endLine": 604
+        },
+        {
+          "startLine": 605,
+          "endLine": 605
+        }
+      ]
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/ViewModels/ObservableObject.cs",
+      "type": "PartialParsing",
+      "level": "warn",
+      "code": 3,
+      "spans": [
+        {
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "startLine": 18,
+          "endLine": 18
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Community Edition intrafile analysis; no complete cross-file/framework/dataflow guarantee.",
+    "25 C# files and1shell file had PartialParsing warnings; clean full C# coverage is not claimed.",
+    "33 configured rules were not reported as executed; actual548 recorded without guessing reason.",
+    "No product rebuild, remediation, accounts, service runtime or device tests.",
+    "XML/GCM/subprocess warnings are triaged within static source context; no security clearance or confirmed exploit claim."
+  ],
+  "officialReferences": [
+    "https://github.com/semgrep/semgrep",
+    "https://github.com/semgrep/semgrep-rules",
+    "https://semgrep.dev/docs/running-rules",
+    "https://github.com/semgrep/semgrep/blob/develop/metrics.md"
+  ]
+}

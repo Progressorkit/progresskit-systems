@@ -1,0 +1,1058 @@
+{
+  "startedAt": "2026-11-02T13:19:38.784Z",
+  "screenshots": [
+    "1440-hero.png",
+    "1440-showroom-active.png",
+    "1440-services.png",
+    "1440-process.png",
+    "1440-ecosystem.png",
+    "1440-about.png",
+    "1440-contact.png",
+    "1440-footer.png",
+    "390-hero.png",
+    "390-services.png",
+    "390-ecosystem.png"
+  ],
+  "errors": [],
+  "resources": [],
+  "states": [
+    {
+      "width": 1440,
+      "name": "hero",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 29,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 6,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 3.5,
+        "gpuFrameMs": null,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 32,
+        "triangles": 17648,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "showroom-active",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 29,
+        "rafPending": false,
+        "timerPending": false,
+        "present": true,
+        "suspendedHeavy": true,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 260,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.9000000059604645,
+        "gpuFrameMs": 10.191249,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 53,
+        "triangles": 18232,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": true,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "services",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 29,
+        "rafPending": false,
+        "timerPending": false,
+        "present": true,
+        "suspendedHeavy": true,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "process",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 29,
+        "rafPending": false,
+        "timerPending": false,
+        "present": true,
+        "suspendedHeavy": true,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "ecosystem",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 52,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "about",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 74,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "contact",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 97,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 1440,
+      "name": "footer",
+      "scrollWidth": 1440,
+      "luxuryWorld": {
+        "frames": 120,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 600,
+          "height": 417
+        },
+        "fpsLimit": 18,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 263,
+        "quality": 0,
+        "fps": 57.05292150304946,
+        "cpuFrameMs": 2.199999988079071,
+        "gpuFrameMs": 10.776082,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 56,
+        "triangles": 19088,
+        "geometries": 90,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 72,
+        "coronaRoots": 48,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.65,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "samples": [
+          {
+            "t": 7831.6,
+            "fps": 54.10190832185715,
+            "cpuFrameMs": 3.9000000059604645,
+            "gpuFrameMs": 5.829666,
+            "drawCalls": 29,
+            "triangles": 16792,
+            "dpr": 0.85
+          },
+          {
+            "t": 8831.6,
+            "fps": 60,
+            "cpuFrameMs": 1.2999999821186066,
+            "gpuFrameMs": 5.576916,
+            "drawCalls": 35,
+            "triangles": 17500,
+            "dpr": 0.85
+          },
+          {
+            "t": 9848.2,
+            "fps": 60.00393468424157,
+            "cpuFrameMs": 1.699999988079071,
+            "gpuFrameMs": 9.569332,
+            "drawCalls": 49,
+            "triangles": 18224,
+            "dpr": 0.85
+          },
+          {
+            "t": 10864.8,
+            "fps": 57.05292150304946,
+            "cpuFrameMs": 1.800000011920929,
+            "gpuFrameMs": 11.827416,
+            "drawCalls": 56,
+            "triangles": 19088,
+            "dpr": 0.85
+          }
+        ],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "hero",
+      "scrollWidth": 390,
+      "luxuryWorld": {
+        "frames": 12,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 234,
+          "height": 506
+        },
+        "fpsLimit": 12,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 6,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": null,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 22,
+        "triangles": 10532,
+        "geometries": 87,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 30,
+        "coronaRoots": 16,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.5,
+        "buffer": {
+          "width": 300,
+          "height": 612
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "services",
+      "scrollWidth": 390,
+      "luxuryWorld": {
+        "frames": 12,
+        "rafPending": false,
+        "timerPending": false,
+        "present": true,
+        "suspendedHeavy": true,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 234,
+          "height": 506
+        },
+        "fpsLimit": 12,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 6,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": null,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 22,
+        "triangles": 10532,
+        "geometries": 87,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 30,
+        "coronaRoots": 16,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.5,
+        "buffer": {
+          "width": 300,
+          "height": 612
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    },
+    {
+      "width": 390,
+      "name": "ecosystem",
+      "scrollWidth": 390,
+      "luxuryWorld": {
+        "frames": 21,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "reduced": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 234,
+          "height": 506
+        },
+        "fpsLimit": 12,
+        "renderer": "webgl2"
+      },
+      "renderer": "webgl2",
+      "showroom": {
+        "revision": "187",
+        "frames": 6,
+        "quality": 0,
+        "fps": 0,
+        "cpuFrameMs": 1.7999999821186066,
+        "gpuFrameMs": null,
+        "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+        "drawCalls": 22,
+        "triangles": 10532,
+        "geometries": 87,
+        "textures": 28,
+        "rafPending": false,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)",
+        "filaments": 30,
+        "coronaRoots": 16,
+        "dpr": 0.85,
+        "transmissionResolutionScale": 0.5,
+        "buffer": {
+          "width": 300,
+          "height": 612
+        },
+        "samples": [],
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "camera": "PerspectiveCamera",
+        "depth": true
+      }
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "finishedAt": "2026-11-02T13:20:03.801Z",
+  "status": "VISUAL_REVIEW_PENDING"
+}

@@ -1,0 +1,238 @@
+{
+  "startedAt": "2026-11-02T13:39:27.116Z",
+  "sourceBefore": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "scope": "Correct genuine idle framing and verify actual emulated mobile touch disclosure",
+  "checks": [
+    {
+      "scope": "desktop",
+      "name": "Genuine idle core framed in viewport",
+      "status": "PASS",
+      "details": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 625,
+          "y": 329.4375,
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 720,
+            "y": 529.4375
+          }
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "scope": "mobile",
+      "name": "Genuine idle core framed in viewport",
+      "status": "PASS",
+      "details": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 120,
+          "y": 185.875,
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 195,
+            "y": 335.875
+          }
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "scope": "mobile",
+      "name": "Actual project touch opens readable disclosure and touch close works",
+      "status": "PASS",
+      "details": {
+        "projectId": "glikemia-premium",
+        "bounds": {
+          "width": 390,
+          "scrollWidth": 390
+        },
+        "physicalMobile": "NOT_RUN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen source, movies and browser health unchanged",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "artifacts": [
+    {
+      "originalSha256": "617409ad4eca334d6220994984272b0aeb6d6cb28ac27ae2dc0297e3cfc09d47",
+      "preservedAs": "desktop-showroom-heading.png",
+      "file": "desktop-showroom-idle.png",
+      "sha256": "6c7bb3afae2222a15d52018c9fe634b3a5e3231151bd6bce8f58207480bb9469",
+      "kind": "actual-browser-screenshot",
+      "correctedFraming": "Actual viewport before any activation",
+      "state": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "dormant"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "dormant"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 625,
+          "y": 329.4375,
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 720,
+            "y": 529.4375
+          }
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "originalSha256": "82374b73fdb3591e3841a53bff2fca7922a879bb507bc7da9e19bfc4f7d64d30",
+      "preservedAs": "mobile-showroom-heading.png",
+      "file": "mobile-showroom-idle.png",
+      "sha256": "7295e4066fc5c0f5b059f86eab829a2186f43dfad8220d498a6450b06abd2f0f",
+      "kind": "actual-browser-screenshot",
+      "correctedFraming": "Actual viewport before any activation",
+      "state": {
+        "awake": "false",
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "dormant"
+          }
+        ],
+        "core": {
+          "x": 120,
+          "y": 185.875,
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 195,
+            "y": 335.875
+          }
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "file": "mobile-project-tap.png",
+      "sha256": "c0b9bc19dbfd6bbffd7863a03b58550337a6454023f9e1fe98078d20d379d54d",
+      "kind": "actual-browser-screenshot",
+      "input": "actual touchscreen.tap in mobile emulation",
+      "projectId": "glikemia-premium"
+    }
+  ],
+  "videosBefore": {
+    "desktop": "372b5dc5e20a0c02e39209f7fc5c4048abd9cf61e46d3b9c364fc65867ee63bf",
+    "mobile": "5c72d12df13ea34812610c07c853842149cad588324315ca89e629a2cd50ba92"
+  },
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "sourceAfter": {
+    "index.html": "6ccde1cffdf623063ac77726723362df44ff1b9de847ff8080dbba21bde2d57d",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "7575d1ca7e613e38b35d8c855abec45d9e5f6d1b1144d8086e78905d85e6eadb",
+    "assets/spatial-chapters.mjs": "c93852604d4856928396f3b728ea4b85a260d400a9cd4066728d8fd03e7628cc",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "ece35d678d4cfb9a118a5a1cab38d0a0b10798eaecb68e1d27e4958e1b5fa74f",
+    "scripts/stage-public.py": "549c13278b4f49fa436f506fab3448e399dbc6485ae2eb566bb9267dc5b044e1",
+    "package.json": "44ca6f5965f34cb3426b5b3ba858ea79efde601dd1c5e219b1f1dfb87bde63e6"
+  },
+  "videosAfter": {
+    "desktop": "372b5dc5e20a0c02e39209f7fc5c4048abd9cf61e46d3b9c364fc65867ee63bf",
+    "mobile": "5c72d12df13ea34812610c07c853842149cad588324315ca89e629a2cd50ba92"
+  },
+  "finishedAt": "2026-11-02T13:39:40.420Z",
+  "status": "PROOF_FRAMING_CORRECTED_OWNER_VISUAL_APPROVAL_OPEN",
+  "PASS": 4,
+  "FAIL": 0
+}

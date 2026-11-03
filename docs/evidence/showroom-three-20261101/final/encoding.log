@@ -1,0 +1,88 @@
+[
+  {
+    "mode": "desktop",
+    "videoTrimStartSeconds": 6.101,
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "video": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 1080,
+          "r_frame_rate": "25/1",
+          "nb_frames": "450"
+        }
+      ],
+      "format": {
+        "duration": "18.000000"
+      }
+    },
+    "renderFpsActiveMean": 23.81,
+    "renderFpsOneSecondMin": 19,
+    "renderFpsOneSecondMedian": 23,
+    "renderFpsOneSecondMax": 30,
+    "cpuSubmissionMedianMs": 2.5,
+    "cpuSubmissionP95Ms": 6,
+    "gpuQueryLatestMedianMs": 18.43,
+    "gpuQueryLatestP95Ms": 38.66,
+    "DPR": [
+      0.65,
+      0.8,
+      1
+    ],
+    "drawCallsRange": [
+      34,
+      46
+    ],
+    "trianglesRange": [
+      31994,
+      70370
+    ],
+    "finalFilaments": 360,
+    "errors": [],
+    "activeMeasurementSeconds": 17.97
+  },
+  {
+    "mode": "mobile",
+    "videoTrimStartSeconds": 3.428,
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "video": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 390,
+          "height": 844,
+          "r_frame_rate": "25/1",
+          "nb_frames": "375"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    },
+    "renderFpsActiveMean": 24.2,
+    "renderFpsOneSecondMin": 23,
+    "renderFpsOneSecondMedian": 24.0,
+    "renderFpsOneSecondMax": 25,
+    "cpuSubmissionMedianMs": 1.2,
+    "cpuSubmissionP95Ms": 2.4,
+    "gpuQueryLatestMedianMs": 2.73,
+    "gpuQueryLatestP95Ms": 6.5,
+    "DPR": [
+      1
+    ],
+    "drawCallsRange": [
+      28,
+      30
+    ],
+    "trianglesRange": [
+      31062,
+      31066
+    ],
+    "finalFilaments": 360,
+    "errors": [],
+    "activeMeasurementSeconds": 10.79
+  }
+]

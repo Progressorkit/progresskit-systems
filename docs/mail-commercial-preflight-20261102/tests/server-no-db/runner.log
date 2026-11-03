@@ -1,0 +1,30 @@
+VSTest version 18.0.2 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.52]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlExpiredRecoveryAllowsOneFreshChallengeAndRejectsOldProof [SKIP]
+[xUnit.net 00:00:00.55]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRevocationIoFailurePersistsDenialAndRetriesAfterRestart [SKIP]
+[xUnit.net 00:00:00.56]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlCompletionProofPersistsAndIdenticalRetryIsIdempotent [SKIP]
+[xUnit.net 00:00:00.56]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlSignedRevocationRemovesOnlyOwnVerifierAndIsIdempotent [SKIP]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlExpiredRecoveryAllowsOneFreshChallengeAndRejectsOldProof [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRevocationIoFailurePersistsDenialAndRetriesAfterRestart [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlCompletionProofPersistsAndIdenticalRetryIsIdempotent [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlSignedRevocationRemovesOnlyOwnVerifierAndIsIdempotent [1 ms]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRuntimeRoleCanIssueResolveAndRevokeWithoutDdlOrAuditDeletion [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlOldCompleteCannotOverwriteNewerPendingOrIssuedRecoveryCredential [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlOperatorPersistsDigestAndFailsClosedOnAssignmentMismatch [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlPersistsDigestOnlyAndAllowsExactlyOneConcurrentComplete [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRevocationWaitsForInFlightRotationAndRemovesItsPublishedRecord [SKIP]
+[xUnit.net 00:00:00.66]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlLegacyCredentialRequiresSignedRecoveryAndRejectedPreparationRollsBack [SKIP]
+[xUnit.net 00:00:00.66]     ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRecoveryBeginPersistsDigestOnlyAllowsOneWinnerAndFailsClosed [SKIP]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRuntimeRoleCanIssueResolveAndRevokeWithoutDdlOrAuditDeletion [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlOldCompleteCannotOverwriteNewerPendingOrIssuedRecoveryCredential [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlOperatorPersistsDigestAndFailsClosedOnAssignmentMismatch [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlPersistsDigestOnlyAndAllowsExactlyOneConcurrentComplete [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRevocationWaitsForInFlightRotationAndRemovesItsPublishedRecord [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlLegacyCredentialRequiresSignedRecoveryAndRejectedPreparationRollsBack [1 ms]
+  Skipped ProgressKit.Mail.UnitTests.Persistence.PostgreSqlEnrollmentIntegrationTests.RealPostgreSqlRecoveryBeginPersistsDigestOnlyAllowsOneWinnerAndFailsClosed [1 ms]
+WARNING: Overwriting results file: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/server-no-db/server-no-db.trx
+Results File: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/server-no-db/server-no-db.trx
+
+Passed!  - Failed:     0, Passed:   190, Skipped:    11, Total:   201, Duration: 3 s - ProgressKit.Mail.UnitTests.dll (net10.0)

@@ -40,10 +40,11 @@ class HomepageCompositionTests(unittest.TestCase):
         cls.markup = BUILDER.homepage(cls.data)
         cls.page = Composition(cls.markup)
 
-    def test_one_interactive_project_collection_contains_all_fourteen_catalogue_identities(self):
+    def test_one_interactive_project_collection_contains_all_catalogue_identities(self):
         projects = [attrs['data-project-id'] for tag, attrs, _ in self.page.elements
                     if tag == 'article' and 'showroom-card' in attrs.get('class', '').split()]
-        self.assertEqual(14, len(projects))
+        self.assertEqual(len(self.data['projects']), len(projects))
+        self.assertTrue({'glikemia-premium','progresskit-mail','progresskit-translator','vaeloria','progresskit-community','progresskit-tax','adivara','gotrans360','ignira','obserwator','kan-system','progresskit-systems','progresskit-analytics','progresskit-infrastructure'}.issubset(projects))
         self.assertEqual([project['id'] for project in self.data['projects']], projects)
         self.assertEqual(1, sum('data-showroom' in attrs for _, attrs, _ in self.page.elements))
         for _, attrs, _ in self.page.elements:

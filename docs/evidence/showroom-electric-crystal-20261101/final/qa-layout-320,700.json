@@ -1,0 +1,95 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "320x568 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 titles stay inside crystals",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "320x568 faceted silhouette and glass layers",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 core does not overlap active crystal",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 compact materials",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 tap opens actual content",
+      "status": "PASS"
+    },
+    {
+      "name": "320x568 touch close restores awake collection",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 titles stay inside crystals",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "700x900 faceted silhouette and glass layers",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 core does not overlap active crystal",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 compact materials",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 tap opens actual content",
+      "status": "PASS"
+    },
+    {
+      "name": "700x900 touch close restores awake collection",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "320x568-idle.png",
+    "320x568-activated.png",
+    "320x568-project-open.png",
+    "700x900-idle.png",
+    "700x900-activated.png",
+    "700x900-project-open.png"
+  ],
+  "PASS": 19,
+  "FAIL": 0
+}

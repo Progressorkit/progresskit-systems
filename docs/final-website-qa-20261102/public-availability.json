@@ -1,0 +1,27 @@
+{
+  "passiveOnly": true,
+  "requests": "GET public homepage only; default certificate validation; no forms/account/installation/deployment",
+  "checks": [
+    {
+      "url": "https://progresskit.pl/",
+      "status": 200,
+      "finalURL": "https://progresskit.pl/",
+      "bytesRead": 102258,
+      "TLSValidation": true,
+      "contentType": "text/html; charset=utf-8",
+      "HSTS": null,
+      "CSP": null,
+      "date": "2026-11-02T10:55:20.763635+00:00"
+    },
+    {
+      "url": "https://ignira.pl/",
+      "status": "BLOCKED",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "url": "https://marekzaworski.github.io/",
+      "status": "BLOCKED",
+      "reason": "HTTP Error 404: Not Found"
+    }
+  ]
+}

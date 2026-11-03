@@ -1,0 +1,40 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 1050
+  },
+  "readyOffset": 1.843,
+  "idleProof": {
+    "draws": 192,
+    "frames": 96,
+    "renderer": "webgl",
+    "width": 900,
+    "height": 900,
+    "filaments": 1080,
+    "coreDormant": true,
+    "seconds": 7.065
+  },
+  "timeline": [
+    {
+      "seconds": 0.106,
+      "label": "Idle: first seven seconds show evolving electric filaments without interaction"
+    },
+    {
+      "seconds": 7.065,
+      "label": "End of uninterrupted idle proof"
+    },
+    {
+      "seconds": 7.447,
+      "label": "Core activation: reflection, contour, refracting, ready"
+    },
+    {
+      "seconds": 10.961,
+      "label": "Directed filament group and crystal facet response"
+    },
+    {
+      "seconds": 13.096,
+      "label": "Layered material response"
+    }
+  ],
+  "errors": []
+}

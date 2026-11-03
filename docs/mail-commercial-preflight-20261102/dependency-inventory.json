@@ -1,0 +1,900 @@
+{
+  "newRun": true,
+  "status": "INVENTORY_ONLY",
+  "advisoryCheck": "NOT RUN \u2014 no fresh advisory/network query performed by this child task",
+  "items": [
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.activity:activity-compose",
+      "version": "1.10.1",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.compose:compose-bom",
+      "version": "2025.08.00",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.core:core-ktx",
+      "version": "1.16.0",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.datastore:datastore-preferences",
+      "version": "1.1.7",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.fragment:fragment",
+      "version": "1.3.6",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.lifecycle:lifecycle-runtime-ktx",
+      "version": "2.9.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.lifecycle:lifecycle-viewmodel-compose",
+      "version": "2.9.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.navigation:navigation-compose",
+      "version": "2.9.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.room:room-compiler",
+      "version": "2.7.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.room:room-ktx",
+      "version": "2.7.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.room:room-runtime",
+      "version": "2.7.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.room:room-testing",
+      "version": "2.7.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.test.espresso:espresso-core",
+      "version": "3.6.1",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.test.ext:junit",
+      "version": "1.2.1",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.test:runner",
+      "version": "1.6.1",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "androidx.work:work-runtime-ktx",
+      "version": "2.10.3",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "com.google.code.gson:gson",
+      "version": "2.11.0",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "com.google.firebase:firebase-messaging",
+      "version": "25.1.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "jakarta.activation:jakarta.activation-api",
+      "version": "2.1.3",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "jakarta.mail:jakarta.mail-api",
+      "version": "2.1.3",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "junit:junit",
+      "version": "4.13.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.eclipse.angus:angus-activation",
+      "version": "2.0.3",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.eclipse.angus:angus-mail",
+      "version": "2.0.4",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.jetbrains.kotlinx:kotlinx-coroutines-android",
+      "version": "1.10.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.jetbrains.kotlinx:kotlinx-coroutines-core",
+      "version": "1.10.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.jetbrains.kotlinx:kotlinx-coroutines-test",
+      "version": "1.10.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "Maven",
+      "name": "org.jsoup:jsoup",
+      "version": "1.23.2",
+      "sources": [
+        "android/gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Angle.Windows.Natives",
+      "version": "2.1.25547.20250602",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.BuildServices",
+      "version": "11.3.2",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Desktop",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.FreeDesktop",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Native",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Remote.Protocol",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Skia",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Themes.Fluent",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.Win32",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Avalonia.X11",
+      "version": "11.3.22",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "BouncyCastle.Cryptography",
+      "version": "2.6.2",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HarfBuzzSharp",
+      "version": "8.3.1.1",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HarfBuzzSharp.NativeAssets.Linux",
+      "version": "8.3.1.1",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HarfBuzzSharp.NativeAssets.WebAssembly",
+      "version": "8.3.1.1",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HarfBuzzSharp.NativeAssets.Win32",
+      "version": "8.3.1.1",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HarfBuzzSharp.NativeAssets.macOS",
+      "version": "8.3.1.1",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "HtmlAgilityPack",
+      "version": "1.13.1",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Humanizer.Core",
+      "version": "2.14.1",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "MailKit",
+      "version": "4.17.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "MicroCom.Runtime",
+      "version": "0.11.0",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Build.Framework",
+      "version": "18.0.2",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.Analyzers",
+      "version": "3.11.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.CSharp",
+      "version": "5.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.CSharp.Workspaces",
+      "version": "5.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.Common",
+      "version": "5.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.Workspaces.Common",
+      "version": "5.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.CodeAnalysis.Workspaces.MSBuild",
+      "version": "5.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.EntityFrameworkCore",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.EntityFrameworkCore.Abstractions",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.EntityFrameworkCore.Analyzers",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.EntityFrameworkCore.Design",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.EntityFrameworkCore.Relational",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Caching.Abstractions",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Caching.Memory",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Configuration.Abstractions",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.DependencyInjection",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.DependencyModel",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Logging",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Options",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.Extensions.Primitives",
+      "version": "10.0.4",
+      "sources": [
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Microsoft.VisualStudio.SolutionPersistence",
+      "version": "1.0.52",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "MimeKit",
+      "version": "4.17.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Mono.TextTemplating",
+      "version": "3.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Newtonsoft.Json",
+      "version": "13.0.3",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Npgsql",
+      "version": "10.0.3",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Npgsql.EntityFrameworkCore.PostgreSQL",
+      "version": "10.0.3",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Operator/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "SkiaSharp",
+      "version": "2.88.9",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "SkiaSharp.NativeAssets.Linux",
+      "version": "2.88.9",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "SkiaSharp.NativeAssets.WebAssembly",
+      "version": "2.88.9",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "SkiaSharp.NativeAssets.Win32",
+      "version": "2.88.9",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "SkiaSharp.NativeAssets.macOS",
+      "version": "2.88.9",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.CodeDom",
+      "version": "6.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition.AttributedModel",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition.Convention",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition.Hosting",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition.Runtime",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Composition.TypedParts",
+      "version": "9.0.0",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Security.Cryptography.Pkcs",
+      "version": "10.0.13",
+      "sources": [
+        "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "System.Security.Cryptography.ProtectedData",
+      "version": "10.0.12",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Windows/packages.lock.json"
+      ]
+    },
+    {
+      "ecosystem": "NuGet",
+      "name": "Tmds.DBus.Protocol",
+      "version": "0.21.3",
+      "sources": [
+        "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+        "windows/src/ProgressKit.Mail.Linux/packages.lock.json"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/packages.lock.json",
+      "sha256": "16550851c927bf1a34e2ebd6679fb6e9f24a9651831a08e45371ac6afc85670e"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/packages.lock.json",
+      "sha256": "7fdf63a8e22960a0897c47bacff35a9f0e571c831809f5d19462c5239cf8a4f7"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/packages.lock.json",
+      "sha256": "ee0d0c97cb6aad0071f8ce207f82f89e8fb6d314cdc2327073bbef431b139a50"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/packages.lock.json",
+      "sha256": "aa8cfcee8524aa277da9ecf43b098036f0f7cf479038f6b0e36792d0f5f3c7c9"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Operator/obj/project.assets.json",
+      "sha256": "971d12029bf4fe5015b890d188c5ca75ce894dfa2d056810190c0089d2759523",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Application/obj/project.assets.json",
+      "sha256": "47b910667eb3d7e70d62f26731c3daf80953dd55728dede5df622587ae7e42c0",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Api/obj/project.assets.json",
+      "sha256": "a734f0a642cc6d8851b5e9b404e29657afac8bfe2d1962f90575cccfde5e97ab",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Infrastructure/obj/project.assets.json",
+      "sha256": "a48e4541f207b011ed2a87c3052b9ec2b90a85e0ea8d877bfcb200607ee97a1a",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "server/src/ProgressKit.Mail.Domain/obj/project.assets.json",
+      "sha256": "883d33618eeb2b73d7b73a6d30e9778dff063bd5c79e396c67d8fedebaf483ab",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux/obj/project.assets.json",
+      "sha256": "b93709a98e95b0c8d308bb19f5f92212cbe83f8799427e08592ed4548f144b0f",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Windows/obj/project.assets.json",
+      "sha256": "624fac021440d0ff55c061af34b8d8da21f2561f9b0bacc68773c055e3c1142b",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Core/obj/project.assets.json",
+      "sha256": "4e85619255027b7a4848ffa2cfc406b3e5a9c234d4db0431cc154139329dabdb",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "windows/src/ProgressKit.Mail.Linux.Security/obj/project.assets.json",
+      "sha256": "731936b91600b839915f4f642165945d8c445195788519d8f9cce6b816c62424",
+      "kind": "existing resolved build assets; no restore executed"
+    },
+    {
+      "path": "android/gradle/libs.versions.toml",
+      "sha256": "b6ef640f9ae1d325a380210e46c8aebbb2d6e168789daff678c06d7302c9e49f",
+      "kind": "direct version catalog only; not resolved transitive Android graph"
+    }
+  ],
+  "limits": "Current shipping NuGet lockfiles plus existing resolved project assets; Android direct version catalog only, no resolved transitive Android graph. Not a fresh vulnerability/OSV/NuGet advisory PASS or license clearance; native runtime/OS dependencies excluded."
+}

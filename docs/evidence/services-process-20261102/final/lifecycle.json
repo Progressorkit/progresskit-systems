@@ -1,0 +1,871 @@
+{
+  "checks": [
+    {
+      "name": "Services initializes one WebGL2 canvas with visible objects",
+      "status": "PASS",
+      "details": {
+        "frames": 6,
+        "drawCalls": 16,
+        "triangles": 11892,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": true,
+        "objects": 2,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 918
+        }
+      }
+    },
+    {
+      "name": "Visible idle animates with one live scheduler",
+      "status": "PASS",
+      "details": {
+        "frames": 33,
+        "drawCalls": 16,
+        "triangles": 11892,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": true,
+        "objects": 2,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 1224,
+          "height": 918
+        }
+      }
+    },
+    {
+      "name": "Offscreen real scroll produces no frames or RAF",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 35,
+          "drawCalls": 1,
+          "triangles": 2,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 1224,
+            "height": 918
+          }
+        },
+        "after": {
+          "frames": 35,
+          "drawCalls": 1,
+          "triangles": 2,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 1224,
+            "height": 918
+          }
+        },
+        "bounds": {
+          "x": 0,
+          "y": -1470.109375,
+          "width": 1440,
+          "height": 1109.875
+        }
+      }
+    },
+    {
+      "name": "Returning to Services resumes animation",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion keeps rendered 3D but stops continuous work",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 74,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 1224,
+            "height": 918
+          }
+        },
+        "after": {
+          "frames": 74,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 1224,
+            "height": 918
+          }
+        }
+      }
+    },
+    {
+      "name": "Paused resize updates the static renderer and caps desktop DPR",
+      "status": "PASS",
+      "details": {
+        "frames": 77,
+        "drawCalls": 16,
+        "triangles": 11892,
+        "disposed": false,
+        "geometries": 11,
+        "textures": 5,
+        "rafPending": false,
+        "objects": 2,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 833,
+          "height": 765
+        }
+      }
+    },
+    {
+      "name": "Existing global motion control pauses onscreen Services",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 80,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        },
+        "after": {
+          "frames": 80,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        }
+      }
+    },
+    {
+      "name": "Existing global motion control resumes Services",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser exposes real WEBGL_lose_context",
+      "status": "PASS"
+    },
+    {
+      "name": "Context loss fallback retains all seven Services links and headings",
+      "status": "PASS",
+      "details": {
+        "links": [
+          {
+            "href": "projekty/?technologia=C%23",
+            "name": "C#",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=.NET",
+            "name": ".NET",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=ASP.NET%20Core",
+            "name": "ASP.NET Core",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=PostgreSQL",
+            "name": "PostgreSQL",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=Android",
+            "name": "Android",
+            "rendered": true
+          },
+          {
+            "href": "#kontakt",
+            "name": "Porozmawiajmy o projekcie →",
+            "rendered": true
+          },
+          {
+            "href": "#brief",
+            "name": "Przedstaw swój pomysł ↓",
+            "rendered": true
+          }
+        ],
+        "headings": [
+          "Dla Ciebie /małego biznesu",
+          "Dla firmy /systemu"
+        ]
+      }
+    },
+    {
+      "name": "Lost context has no active RAF or frame work",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 97,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        },
+        "after": {
+          "frames": 97,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        }
+      }
+    },
+    {
+      "name": "Context restoration rebuilds one static 3D renderer while reduced",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 1,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        },
+        "after": {
+          "frames": 1,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        }
+      }
+    },
+    {
+      "name": "Explicit dispose cancels RAF and prevents scroll/resize resurrection",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 3,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": true,
+          "geometries": 11,
+          "textures": 5,
+          "remainingGeometries": 0,
+          "remainingTextures": 0,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        },
+        "after": {
+          "frames": 3,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": true,
+          "geometries": 11,
+          "textures": 5,
+          "remainingGeometries": 0,
+          "remainingTextures": 0,
+          "rafPending": false,
+          "objects": 2,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 833,
+            "height": 765
+          }
+        }
+      }
+    },
+    {
+      "name": "Visible Process has one animated canvas and a live RAF",
+      "status": "PASS",
+      "details": {
+        "frames": 57,
+        "rafPending": true,
+        "progress": 0.5422,
+        "active": "test",
+        "activeIndex": 3,
+        "visible": true,
+        "running": true,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 748,
+          "height": 757
+        },
+        "disposed": false
+      }
+    },
+    {
+      "name": "Process observes existing stage state during actual scroll",
+      "status": "PASS",
+      "details": [
+        {
+          "metrics": {
+            "frames": 64,
+            "rafPending": true,
+            "progress": 0,
+            "active": null,
+            "activeIndex": -1,
+            "visible": true,
+            "running": true,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 748,
+              "height": 757
+            },
+            "disposed": false
+          },
+          "stages": [
+            {
+              "id": "idea",
+              "state": "pending"
+            },
+            {
+              "id": "design",
+              "state": "pending"
+            },
+            {
+              "id": "build",
+              "state": "pending"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "metrics": {
+            "frames": 71,
+            "rafPending": true,
+            "progress": 0.2792,
+            "active": "design",
+            "activeIndex": 1,
+            "visible": true,
+            "running": true,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 748,
+              "height": 757
+            },
+            "disposed": false
+          },
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "active"
+            },
+            {
+              "id": "build",
+              "state": "pending"
+            },
+            {
+              "id": "test",
+              "state": "pending"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "metrics": {
+            "frames": 77,
+            "rafPending": true,
+            "progress": 0.5894,
+            "active": "test",
+            "activeIndex": 3,
+            "visible": true,
+            "running": true,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 748,
+              "height": 757
+            },
+            "disposed": false
+          },
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "complete"
+            },
+            {
+              "id": "build",
+              "state": "complete"
+            },
+            {
+              "id": "test",
+              "state": "active"
+            },
+            {
+              "id": "security",
+              "state": "pending"
+            },
+            {
+              "id": "deploy",
+              "state": "pending"
+            }
+          ]
+        },
+        {
+          "metrics": {
+            "frames": 84,
+            "rafPending": true,
+            "progress": 0.868,
+            "active": "deploy",
+            "activeIndex": 5,
+            "visible": true,
+            "running": true,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 748,
+              "height": 757
+            },
+            "disposed": false
+          },
+          "stages": [
+            {
+              "id": "idea",
+              "state": "complete"
+            },
+            {
+              "id": "design",
+              "state": "complete"
+            },
+            {
+              "id": "build",
+              "state": "complete"
+            },
+            {
+              "id": "test",
+              "state": "complete"
+            },
+            {
+              "id": "security",
+              "state": "complete"
+            },
+            {
+              "id": "deploy",
+              "state": "active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Offscreen Process ignores additional real Services scroll",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 85,
+          "rafPending": false,
+          "progress": 0,
+          "active": null,
+          "activeIndex": -1,
+          "visible": false,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        },
+        "after": {
+          "frames": 85,
+          "rafPending": false,
+          "progress": 0,
+          "active": null,
+          "activeIndex": -1,
+          "visible": false,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "Returning to Process resumes its energy packet",
+      "status": "PASS"
+    },
+    {
+      "name": "Existing global pause stops Process canvas and chamber animations",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 113,
+          "rafPending": false,
+          "progress": 0.5422,
+          "active": "test",
+          "activeIndex": 3,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        },
+        "after": {
+          "frames": 113,
+          "rafPending": false,
+          "progress": 0.5422,
+          "active": "test",
+          "activeIndex": 3,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        },
+        "runningAnimations": []
+      }
+    },
+    {
+      "name": "Existing global motion control resumes Process",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion keeps all six Process stages static without RAF or CSS animation",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 127,
+          "rafPending": false,
+          "progress": 1,
+          "active": "deploy",
+          "activeIndex": 5,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        },
+        "after": {
+          "frames": 127,
+          "rafPending": false,
+          "progress": 1,
+          "active": "deploy",
+          "activeIndex": 5,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": false
+        },
+        "stages": [
+          {
+            "state": "complete",
+            "title": "Pomysł"
+          },
+          {
+            "state": "complete",
+            "title": "Projekt"
+          },
+          {
+            "state": "complete",
+            "title": "Budowa"
+          },
+          {
+            "state": "complete",
+            "title": "Testy"
+          },
+          {
+            "state": "complete",
+            "title": "Security"
+          },
+          {
+            "state": "complete",
+            "title": "Wdrożenie"
+          }
+        ],
+        "runningAnimations": []
+      }
+    },
+    {
+      "name": "Explicit Process dispose prevents RAF resurrection after scroll and resize",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "frames": 129,
+          "rafPending": false,
+          "progress": 0.5422,
+          "active": "test",
+          "activeIndex": 3,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": true
+        },
+        "after": {
+          "frames": 129,
+          "rafPending": false,
+          "progress": 0.5422,
+          "active": "test",
+          "activeIndex": 3,
+          "visible": true,
+          "running": false,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 748,
+            "height": 757
+          },
+          "disposed": true
+        }
+      }
+    },
+    {
+      "name": "Mobile DPR3 uses compact rendering rather than a triple-sized buffer",
+      "status": "PASS",
+      "details": {
+        "metrics": {
+          "frames": 12,
+          "drawCalls": 16,
+          "triangles": 11892,
+          "disposed": false,
+          "geometries": 11,
+          "textures": 5,
+          "rafPending": true,
+          "objects": 2,
+          "dpr": 0.7,
+          "buffer": {
+            "width": 273,
+            "height": 590
+          }
+        },
+        "canvas": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "name": "Mobile Services fits the viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile keeps the original seven links and both service groups",
+      "status": "PASS",
+      "details": {
+        "links": [
+          {
+            "href": "projekty/?technologia=C%23",
+            "name": "C#",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=.NET",
+            "name": ".NET",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=ASP.NET%20Core",
+            "name": "ASP.NET Core",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=PostgreSQL",
+            "name": "PostgreSQL",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=Android",
+            "name": "Android",
+            "rendered": true
+          },
+          {
+            "href": "#kontakt",
+            "name": "Porozmawiajmy o projekcie →",
+            "rendered": true
+          },
+          {
+            "href": "#brief",
+            "name": "Przedstaw swój pomysł ↓",
+            "rendered": true
+          }
+        ],
+        "headings": [
+          "Dla Ciebie /małego biznesu",
+          "Dla firmy /systemu"
+        ]
+      }
+    },
+    {
+      "name": "Unavailable WebGL2 preserves rendered Services copy and seven exact link targets",
+      "status": "PASS",
+      "details": {
+        "links": [
+          {
+            "href": "projekty/?technologia=C%23",
+            "name": "C#",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=.NET",
+            "name": ".NET",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=ASP.NET%20Core",
+            "name": "ASP.NET Core",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=PostgreSQL",
+            "name": "PostgreSQL",
+            "rendered": true
+          },
+          {
+            "href": "projekty/?technologia=Android",
+            "name": "Android",
+            "rendered": true
+          },
+          {
+            "href": "#kontakt",
+            "name": "Porozmawiajmy o projekcie →",
+            "rendered": true
+          },
+          {
+            "href": "#brief",
+            "name": "Przedstaw swój pomysł ↓",
+            "rendered": true
+          }
+        ],
+        "headings": [
+          "Dla Ciebie /małego biznesu",
+          "Dla firmy /systemu"
+        ]
+      }
+    },
+    {
+      "name": "Unavailable WebGL2 leaves no scene RAF",
+      "status": "PASS",
+      "details": {
+        "initialized": false
+      }
+    },
+    {
+      "name": "No unhandled JavaScript or shader errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "expectedContextMessages": [
+    {
+      "mode": "desktop",
+      "text": "THREE.WebGLRenderer: Context Lost."
+    },
+    {
+      "mode": "desktop",
+      "text": "THREE.WebGLRenderer: Context Restored."
+    }
+  ],
+  "PASS": 27,
+  "FAIL": 0
+}

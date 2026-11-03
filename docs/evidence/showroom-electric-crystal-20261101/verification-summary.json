@@ -1,0 +1,89 @@
+{
+  "ownerVisualApproval": "OPEN",
+  "browser": {
+    "PASS": 152,
+    "FAIL": 0,
+    "errors": []
+  },
+  "unitTests": {
+    "tests": 42,
+    "pass": 42,
+    "fail": 0
+  },
+  "videos": {
+    "desktop": {
+      "label": "Desktop",
+      "duration": 15.0,
+      "text": "15,00",
+      "idle": {
+        "draws": 192,
+        "frames": 96,
+        "renderer": "webgl",
+        "width": 900,
+        "height": 900,
+        "filaments": 1080,
+        "coreDormant": true,
+        "seconds": 7.065
+      }
+    },
+    "mobile": {
+      "label": "Mobile",
+      "duration": 15.0,
+      "text": "15,00",
+      "idle": {
+        "draws": 210,
+        "frames": 105,
+        "renderer": "webgl",
+        "width": 600,
+        "height": 600,
+        "filaments": 432,
+        "coreDormant": true,
+        "seconds": 7.005
+      }
+    }
+  },
+  "scope": {
+    "baselineSources": 210,
+    "changedExistingSources": [
+      "assets/showroom-capsule.css",
+      "assets/showroom-capsule.js",
+      "assets/showroom-matter.js"
+    ],
+    "unexpectedChanges": [],
+    "projectArticles": 14,
+    "allProjectArticlesByteIdentical": true,
+    "outsideShowroomByteIdentical": true,
+    "htmlByteIdentical": true,
+    "head": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+    "headUnchanged": true
+  },
+  "stage": {
+    "publicFiles": 74,
+    "showroomAssets": [
+      {
+        "file": "assets/showroom-capsule.js",
+        "sha256": "422b542909be5fffdc8a273c0491a4ad1c8948125546bba0f0af00e957388917",
+        "stagedByteIdentical": true
+      },
+      {
+        "file": "assets/showroom-capsule.css",
+        "sha256": "5b4b00ad9dde68524122f9025a43b698da0160253096e268ffc098389e20e1fa",
+        "stagedByteIdentical": true
+      },
+      {
+        "file": "assets/showroom-matter.js",
+        "sha256": "d065e7311d23e0580809a7464dab34a40ea7adda81ca389fe70741bae4f706ef",
+        "stagedByteIdentical": true
+      }
+    ]
+  },
+  "countedQA": [
+    "qa-layout.json",
+    "qa-interaction.json",
+    "qa-matter-desktop.json",
+    "qa-matter-fallback.json",
+    "qa-matter-mobile.json",
+    "qa-audio.json",
+    "qa-audio-start.json"
+  ]
+}

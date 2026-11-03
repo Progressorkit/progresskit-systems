@@ -1,0 +1,49 @@
+{
+  "ownerVisualApproval": "OPEN",
+  "browser": {
+    "PASS": 132,
+    "FAIL": 0,
+    "errors": []
+  },
+  "unitTests": {
+    "tests": 42,
+    "pass": 42,
+    "fail": 0
+  },
+  "videos": {
+    "desktop": {
+      "label": "Desktop",
+      "duration": 13.96,
+      "text": "13,96"
+    },
+    "mobile": {
+      "label": "Mobile",
+      "duration": 14.0,
+      "text": "14,00"
+    }
+  },
+  "scope": {
+    "existingSourceCount": 208,
+    "changedExistingSources": [
+      "assets/showroom-capsule.css",
+      "assets/showroom-capsule.js",
+      "index.html",
+      "scripts/build-site.py",
+      "scripts/showroom_markup.py",
+      "scripts/stage-public.py"
+    ],
+    "unchangedExistingSources": 202,
+    "newRuntimeAsset": "assets/showroom-matter.js",
+    "projectArticles": 14,
+    "allProjectArticlesByteIdentical": true,
+    "outsideShowroomIdenticalExceptNewScript": true
+  },
+  "countedQA": [
+    "qa-layout.json",
+    "qa-interaction.json",
+    "qa-matter-desktop.json",
+    "qa-matter-fallback.json",
+    "qa-matter-mobile.json",
+    "qa-audio.json"
+  ]
+}

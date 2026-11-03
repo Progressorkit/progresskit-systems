@@ -1,0 +1,22 @@
+/* Separate trusted hover latency sampling, no trace, no recording. */
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const pw=require('/home/pawe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const out=__dirname,base='http://127.0.0.1:8201/',files=['assets/technology-field.css','assets/technology-field.mjs','assets/material-finish.css'];
+const report={startedAt:new Date().toISOString(),note:'Standalone local Chrome. Trusted event timestamp→DOM class state and handler→DOM; not optical input-to-display or embedded app preview. ABBA order, 12 samples/variant across first and largest groups; no trace/video.',samples:[],errors:[],blocked:[],summary:{}};
+const save=()=>fs.writeFileSync(path.join(out,'crystal-latency-settling-tilt.json'),JSON.stringify(report,null,2));
+const sources=()=>Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.resolve(out,'../../..',f))).digest('hex')]));
+function summary(samples){const numbers=key=>samples.map(s=>s[key]).sort((a,b)=>a-b),stat=v=>({min:v[0],median:v.length%2?v[(v.length-1)/2]:(v[v.length/2-1]+v[v.length/2])/2,p95:v[Math.ceil(v.length*.95)-1],max:v.at(-1)});return {count:samples.length,eventToDOMMs:stat(numbers('eventToDOMMs')),handlerToDOMMs:stat(numbers('handlerToDOMMs')),allTrusted:samples.every(s=>s.event.trusted)};}
+(async()=>{report.sourceBefore=sources();save();const browser=await pw.chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=gl']});try{for(const [round,mode]of ['baseline','after-final','after-final','baseline'].entries()){
+ const context=await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1});await context.route('**/*',route=>{const q=route.request(),u=new URL(q.url());if(u.origin!==new URL(base).origin||!['GET','HEAD'].includes(q.method())){report.blocked.push(q.url());return route.abort();}const rel=decodeURIComponent(u.pathname.slice(1));if(mode==='baseline'&&files.includes(rel))return route.fulfill({status:200,contentType:rel.endsWith('.css')?'text/css':'text/javascript',body:fs.readFileSync(path.join(out,'source-before',rel))});return route.continue();});
+ const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));await page.goto(base,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
+ for(const groupIndex of[0,5]){await page.mouse.move(5,80);await page.locator('#technologie .technology-group').nth(groupIndex).evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().top-180,behavior:'instant'}));await page.waitForTimeout(500);const b=await page.locator('#technologie .technology-group').nth(groupIndex).boundingBox();for(let n=0;n<3;n++){
+  await page.mouse.move(5,80);await page.waitForTimeout(90);
+  await page.evaluate(groupIndex=>{const root=document.querySelector('#technologie'),group=root.querySelectorAll('.technology-group')[groupIndex],d=window.__reaction={event:null,state:null};group.addEventListener('pointerenter',e=>{d.event={handler:performance.now(),timestamp:e.timeStamp,trusted:e.isTrusted};},{once:true,capture:true});const o=new MutationObserver(()=>{if(d.event&&group.classList.contains('is-field-active')){d.state=performance.now();o.disconnect();}});o.observe(root,{subtree:true,attributes:true,attributeFilter:['class','data-field-active']});},groupIndex);
+  await page.mouse.move(b.x+b.width*(.3+n*.04),Math.max(190,Math.min(800,b.y+230)));
+  await page.waitForFunction(()=>window.__reaction.state!==null,{timeout:2500});
+  const d=await page.evaluate(()=>{const d=window.__reaction;return {...d,eventToDOMMs:d.state-d.event.timestamp,handlerToDOMMs:d.state-d.event.handler};});report.samples.push({round:round+1,mode,groupIndex,sample:n+1,...d});
+ }}
+ await context.close();save();}
+ for(const mode of['baseline','after-final'])report.summary[mode]=summary(report.samples.filter(s=>s.mode===mode));
+ }finally{await browser.close();report.sourceAfter=sources();report.sourceStable=JSON.stringify(report.sourceBefore)===JSON.stringify(report.sourceAfter);report.finishedAt=new Date().toISOString();save();console.log(JSON.stringify({summary:report.summary,sourceStable:report.sourceStable,errors:report.errors,blocked:report.blocked}));}})().catch(e=>{report.failure=e.stack;save();console.error(e);process.exitCode=1;});

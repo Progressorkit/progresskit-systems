@@ -1,0 +1,339 @@
+{
+  "auditDate": "2026-11-02",
+  "mode": "read-only-source-audit",
+  "products": [
+    {
+      "id": "gotrans360",
+      "name": "GoTrans360",
+      "git": {
+        "head": "27cf7155683fba95ff321334a80839e5a9995d58"
+      },
+      "classification": "product",
+      "aliases": [
+        "GoTransport360",
+        "Transport360"
+      ],
+      "features": [
+        {
+          "text": "Interfejs dyspozytora z ekranami floty, tras i dopasowania; dane operacyjne tych widoków są demonstracyjne.",
+          "evidence": [
+            "apps/web-dispatcher/src/app/dashboard/page.tsx",
+            "docs/PROJECT_LOG.md:48-64"
+          ]
+        },
+        {
+          "text": "Formularz wyszukiwania i rezerwacji pasażera; obecny frontend nie realizuje rezerwacji przez backend.",
+          "evidence": [
+            "apps/web-passenger/src/app/page.tsx",
+            "docs/PROJECT_LOG.md:52-54"
+          ]
+        },
+        {
+          "text": "Sesja cookie i role w aplikacji dyspozytora oraz weryfikacja tokenu w osobnym API.",
+          "evidence": [
+            "apps/web-dispatcher/src/lib/auth.ts",
+            "apps/api-core/src/index.ts",
+            "docs/PROJECT_LOG.md:50-56"
+          ]
+        },
+        {
+          "text": "Endpointy przejazdów, pojazdów i przewoźników oraz modele Prisma; integracja z frontendami pozostaje otwarta.",
+          "evidence": [
+            "apps/api-core/src/index.ts",
+            "packages/database/prisma/schema.prisma"
+          ]
+        },
+        {
+          "text": "Heurystyka dopasowania według miejsc, odległości objazdu i szacowanego zysku, oparta o Haversine.",
+          "evidence": [
+            "packages/vrp-engine/src/index.ts"
+          ]
+        },
+        {
+          "text": "Adapter zapytań trasowania do Valhalla, przygotowany jako kod integracyjny.",
+          "evidence": [
+            "packages/vrp-engine/src/routing.ts"
+          ]
+        }
+      ],
+      "summary": "Zaplecze MVP transportowego: interfejs dyspozytora i pasażera, API przewozów oraz eksperymentalne dopasowanie tras. Dane demonstracyjne i niepołączone przepływy wymagają dalszej integracji.",
+      "solution": "Monorepo rozdziela dwa interfejsy Next.js, API Node.js, modele Prisma i moduł dopasowania. To fundament produktu transportowego, z jawnymi granicami między działającym kodem a demonstracyjnymi ekranami.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Prisma",
+        "PostgreSQL",
+        "PostGIS",
+        "pnpm",
+        "Turborepo"
+      ],
+      "architecture": [
+        "Dwa interfejsy Next.js: dyspozytor i pasażer.",
+        "API Node.js i Prisma; frontend nie korzysta jeszcze z całości API.",
+        "Osobny moduł heurystyk i adapter Valhalla."
+      ],
+      "remaining": [
+        "Połączyć wyszukiwanie, rezerwację i panel z autoryzowanym backendem.",
+        "Zamknąć przegląd bezpieczeństwa, izolacji danych i migracji bazy.",
+        "Zastąpić demonstracyjne dane rzeczywistymi przepływami i wykonać E2E.",
+        "Aplikacja kierowcy pozostaje szkieletem."
+      ],
+      "functionalStatus": "Fundament MVP transportowego",
+      "distributionStatus": "Lokalne repozytorium i historyczne buildy; brak potwierdzonego wdrożenia.",
+      "productionStatus": "NOT DEPLOYED w ostatnim raporcie; bieżąca produkcja niepotwierdzona.",
+      "platforms": [
+        {
+          "name": "WWW / API",
+          "implementation": "Interfejsy Next.js, API i moduł dopasowania istnieją; część danych demonstracyjna.",
+          "verification": "Historycznie 3 typechecki, 3 buildy i 2 ograniczone testy Jest PASS.",
+          "distribution": "Lokalne źródła; brak potwierdzonego wydania.",
+          "limits": "Brak E2E; integracja frontend–API oraz bramki bezpieczeństwa otwarte."
+        }
+      ],
+      "tests": [
+        {
+          "date": "2026-08-27",
+          "revision": "3f095ce46823be3ba856d2ffc283933c30788cbd",
+          "environment": "Izolowane lokalne środowisko; raport repozytorium",
+          "scope": "3 typechecki, 3 buildy, 2 testy Jest, Prisma",
+          "status": "PASS",
+          "result": "Wyniki historyczne; test API dopuszcza401 i nie dowodzi zalogowanego dostępu do bazy.",
+          "source": "docs/PROJECT_LOG.md:66-94",
+          "historical": true
+        },
+        {
+          "date": "2026-08-27",
+          "revision": "3f095ce46823be3ba856d2ffc283933c30788cbd",
+          "environment": "Izolowane lokalne środowisko",
+          "scope": "Build zbiorczy i samodzielny typecheck biblioteki UI",
+          "status": "FAIL",
+          "result": "Build zbiorczy: problem lokalnego narzędzia pnpm; UI:20 błędów typów/zależności. Lint0 zadań i E2E pominięte.",
+          "source": "docs/PROJECT_LOG.md:66-94",
+          "historical": true
+        }
+      ]
+    },
+    {
+      "id": "ignira",
+      "name": "Ignira",
+      "git": {
+        "head": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8"
+      },
+      "classification": "realization",
+      "aliases": [
+        "Maria-Salon"
+      ],
+      "features": [
+        {
+          "text": "Autorska prezentacja usług stylizacji paznokci, podejścia do pracy i higieny.",
+          "evidence": [
+            "index.html:96-170"
+          ]
+        },
+        {
+          "text": "Galeria pięciu rzeczywistych realizacji z opisami alternatywnymi i odroczonym ładowaniem.",
+          "evidence": [
+            "index.html:172-220"
+          ]
+        },
+        {
+          "text": "Lokalny formularz układający wiadomość o terminie i inspiracji; podgląd i kopiowanie do schowka.",
+          "evidence": [
+            "index.html:232-277",
+            "js/app.js:234-337"
+          ]
+        },
+        {
+          "text": "Kontakt przez linki społecznościowe; bezpośredni adres Messenger wymaga konfiguracji.",
+          "evidence": [
+            "js/app.js:7-14",
+            "js/app.js:339-351",
+            "index.html:279-312"
+          ]
+        },
+        {
+          "text": "Responsywne menu z obsługą klawiatury, Escape i ograniczonego ruchu.",
+          "evidence": [
+            "js/app.js:16-102"
+          ]
+        }
+      ],
+      "summary": "Autorska witryna salonu stylizacji paznokci: rzeczywiste realizacje, opis usług i lokalny kreator wiadomości o terminie.",
+      "solution": "Statyczna witryna HTML/CSS/JavaScript prowadzi od prac i informacji o usłudze do gotowej wiadomości. Formularz przygotowuje tekst w przeglądarce; nie rezerwuje terminu automatycznie.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "architecture": [
+        "Statyczne HTML, rozdzielone arkusze CSS i skrypt interakcji.",
+        "Formularz działa lokalnie; kontakt prowadzi do wybranej aplikacji społecznościowej."
+      ],
+      "remaining": [
+        "Uzupełnić bezpośredni adres rozmowy Messenger.",
+        "Potwierdzić aktualną publiczną dostępność i odbiór na urządzeniach."
+      ],
+      "functionalStatus": "Witryna usługowa",
+      "distributionStatus": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
+      "productionStatus": "Aktualne wdrożenie nie zostało zweryfikowane.",
+      "platforms": [
+        {
+          "name": "WWW",
+          "implementation": "Galeria, sekcje usług, responsywne menu i kreator wiadomości.",
+          "verification": "2026-11-02: kontrola składni JavaScript PASS; runtime i publiczna dostępność niepotwierdzone.",
+          "distribution": "Statyczne pliki WWW.",
+          "limits": "Formularz nie ma backendu rezerwacji; Messenger wymaga konfiguracji."
+        }
+      ],
+      "tests": [
+        {
+          "date": "2026-11-02",
+          "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
+          "environment": "Node.js, lokalne źródła",
+          "scope": "node --check js/app.js",
+          "status": "PASS",
+          "result": "Kontrola składni; nie oznacza testu interakcji ani wdrożenia.",
+          "source": "js/app.js",
+          "historical": false
+        }
+      ]
+    },
+    {
+      "id": "obserwator",
+      "name": "Obserwator",
+      "git": {
+        "head": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99"
+      },
+      "classification": "realization",
+      "aliases": [
+        "marekzaworski.github.io"
+      ],
+      "features": [
+        {
+          "text": "Literacka strona autorska z wyróżnionymi publikacjami i linkami do materiałów PDF.",
+          "evidence": [
+            "index.html (fresh GitHub blob79fab804a6b338a2dd2e47ea7d8250600a8d36e1)"
+          ]
+        },
+        {
+          "text": "Osobne tematyczne podstrony archiwum, raportu i Bielika z autorską typografią i animacją tekstu.",
+          "evidence": [
+            "archiwum.html (blob4be8c7916e7c0a7bb3fed25b63e00a9812d96a32)",
+            "bielik.html (blob2015631c17dffc95802bf2dc34ffdf4d8256e32d)",
+            "raport.html (commit03f9bbf50afc52392f595b2f0688fe1b9a8e0f99)"
+          ]
+        },
+        {
+          "text": "Odsyłacze do zewnętrznego formularza nadsyłania treści i zakupu publikacji.",
+          "evidence": [
+            "index.html"
+          ]
+        }
+      ],
+      "summary": "Literacki serwis autorski łączący publikacje, archiwum i narracyjne podstrony. Zakres potwierdzono w aktualnym publicznym repozytorium.",
+      "solution": "Statyczny serwis HTML/CSS/JavaScript prezentuje treści autorskie oraz odsyła do publikacji i usług zewnętrznych. Mechanizm ukrywania treści po stronie przeglądarki nie jest bezpiecznym systemem autoryzacji.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "architecture": [
+        "Osobne statyczne dokumenty HTML, CSS i skrypty narracji.",
+        "Odsyłacze PDF oraz formularze i zakup obsługiwane poza witryną."
+      ],
+      "remaining": [
+        "Sprawdzić aktualne działanie publicznej witryny i wszystkich zewnętrznych odsyłaczy.",
+        "Przejrzeć zależności zewnętrzne pod kątem prywatności.",
+        "W razie potrzeby rzeczywistego ograniczenia dostępu zastosować autoryzację serwerową."
+      ],
+      "functionalStatus": "Serwis autorski",
+      "distributionStatus": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
+      "productionStatus": "Aktualne wdrożenie nie zostało zweryfikowane.",
+      "platforms": [
+        {
+          "name": "WWW",
+          "implementation": "Statyczny serwis literacki, archiwum, PDF i narracyjne podstrony.",
+          "verification": "Aktualny publiczny kod odczytany2026-11-02; brak nowego testu interakcji.",
+          "distribution": "Publiczne repozytorium GitHub.",
+          "limits": "Publiczny runtime niepotwierdzony; mechanizm kliencki nie chroni dostępu."
+        }
+      ],
+      "tests": [
+        {
+          "date": "2026-11-02",
+          "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
+          "environment": "Połączone narzędzie GitHub, publiczne repozytorium",
+          "scope": "Odczyt HEAD i plików HTML",
+          "status": "PASS",
+          "result": "Potwierdzono istnienie kodu i zakres; nie jest to test aplikacji ani dowód wdrożenia.",
+          "source": "GitHub main",
+          "historical": false
+        }
+      ]
+    },
+    {
+      "id": "kan-system",
+      "name": "KAN SYSTEM",
+      "git": {
+        "head": "961c50c9820544dd8c32139d82cf8621b328f79d"
+      },
+      "classification": "historical",
+      "aliases": [
+        "RWR",
+        "KAN"
+      ],
+      "features": [],
+      "summary": "Historyczna realizacja związana z organizacją pracy kontrolerów i raportowaniem przejazdów. Zachował się opis portfolio; brak kodu produktu do niezależnego audytu.",
+      "solution": "Historia portfolio dokumentuje zmianę nazwy RWR na KAN SYSTEM i cel systemu. Brak źródeł aplikacji nie pozwala ustalić dzisiejszej implementacji, technologii ani produkcyjnego działania.",
+      "technologies": [],
+      "architecture": [],
+      "remaining": [
+        "Odnaleźć właściwe źródła aplikacji i potwierdzić zakres z właścicielem.",
+        "Uzupełnić dowody interfejsu, testów i aktualnego wdrożenia."
+      ],
+      "functionalStatus": "Realizacja historyczna",
+      "distributionStatus": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
+      "productionStatus": "Aktualne wdrożenie nie zostało zweryfikowane.",
+      "platforms": [
+        {
+          "name": "Zakres historyczny",
+          "implementation": "Cel opisany w historii portfolio; kod produktu nieodnaleziony.",
+          "verification": "Potwierdzono historyczny wpis, nie funkcje aplikacji.",
+          "distribution": "Brak zweryfikowanego artefaktu.",
+          "limits": "Technologie, testy i runtime nieustalone."
+        }
+      ],
+      "tests": [
+        {
+          "date": "2026-08-31",
+          "revision": "961c50c9820544dd8c32139d82cf8621b328f79d",
+          "environment": "Historia Git portfolio",
+          "scope": "Zmiana nazwy RWR na KAN SYSTEM",
+          "status": "PASS",
+          "result": "Dowód wpisu historycznego; testy produktu NOT RUN.",
+          "source": "Git history",
+          "historical": true
+        }
+      ]
+    }
+  ],
+  "externalChecks": [
+    {
+      "url": "https://ignira.pl/",
+      "status": "BLOCKED",
+      "reason": "Sandbox DNS unavailable; separate web tool inaccessible. No runtime result inferred."
+    },
+    {
+      "url": "https://marekzaworski.github.io/",
+      "status": "BLOCKED",
+      "reason": "Sandbox DNS unavailable; separate web tool inaccessible. No runtime result inferred."
+    },
+    {
+      "url": "https://progresskit.pl/",
+      "status": "BLOCKED",
+      "reason": "Sandbox DNS unavailable; separate web tool inaccessible. No runtime result inferred."
+    }
+  ]
+}

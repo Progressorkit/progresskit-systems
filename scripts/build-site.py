@@ -14,16 +14,18 @@ import unicodedata
 from urllib.parse import quote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-AUDIT_DATE = date(2026, 10, 23)
+AUDIT_DATE = date.today()  # Reject future evidence; no frozen historical review ceiling.
 STAGES = {'Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Wersja testowa', 'Finalizacja', 'Dostępny APK', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny'}
 CATEGORIES = {
     'mobile': ('Aplikacje', '▯'), 'saas': ('SaaS', '▦'),
     'platforms': ('Platformy', '◎'), 'games': ('Gry', '◇'),
-    'web': ('Realizacje WWW', '↗'), 'technology': ('Infrastruktura', '⌘'),
+    'web': ('Realizacje WWW', '↗'), 'technology': ('Technologie', '⌘'),
 }
 TEXT = ('id', 'slug', 'name', 'summary', 'problem', 'motivation', 'solution', 'availability', 'updatedAt')
 LISTS = ('audiences', 'features', 'technologies', 'architecture', 'results', 'planned', 'remaining')
 FIELDS = set(TEXT + LISTS + ('category', 'stage', 'gallery', 'videos', 'links', 'repository', 'cases', 'sources', 'coverage'))
+PORTFOLIO_FIELDS = {'classification','aliases','functionalStatus','distributionStatus','productionStatus','platforms','verification','featureSources'}
+CLASSIFICATIONS = {'product':'Produkt','realization':'Realizacja WWW','internal_tool':'Narzędzie wewnętrzne','infrastructure':'Infrastruktura','concept':'Koncepcja / R&D','historical':'Realizacja historyczna'}
 CASE_FIELDS = ('problem', 'diagnosis', 'rootCause', 'solution', 'verification', 'result', 'source')
 TECHNOLOGY_GROUPS = (
     ('clients', 'Klienci i interfejsy', {
@@ -105,7 +107,7 @@ def validate_catalog(data):
 
     if not isinstance(data, dict) or set(data) != {'schemaVersion', 'asOf', 'projects'}:
         return ['Catalog root must contain schemaVersion, asOf, projects.']
-    if type(data['schemaVersion']) is not int or data['schemaVersion'] != 1:
+    if type(data['schemaVersion']) is not int or data['schemaVersion'] not in (1, 2):
         errors.append('Unsupported schemaVersion.')
     as_of = strict_date(data['asOf'])
     if as_of is None:
@@ -117,8 +119,9 @@ def validate_catalog(data):
     seen = set()
     for i, p in enumerate(data['projects']):
         tag = f'projects[{i}]'
-        if not isinstance(p, dict) or set(p) != FIELDS:
-            errors.append(f'{tag}: missing or unknown fields: {FIELDS.symmetric_difference(p) if isinstance(p,dict) else "not an object"}')
+        expected = FIELDS | ({'portfolio'} if data['schemaVersion'] == 2 else set())
+        if not isinstance(p, dict) or set(p) != expected:
+            errors.append(f'{tag}: missing or unknown fields: {expected.symmetric_difference(p) if isinstance(p,dict) else "not an object"}')
             continue
         for key in TEXT:
             if not isinstance(p[key], str) or not p[key].strip():
@@ -135,6 +138,8 @@ def validate_catalog(data):
         if not isinstance(p['coverage'], str) or p['coverage'] not in {'verified', 'partial'}:
             errors.append(f'{tag}: invalid coverage.')
         source_absent = p['stage'] is None and p['coverage'] == 'partial'
+        portfolio = p.get('portfolio') if isinstance(p.get('portfolio'), dict) else {}
+        descriptive_only = portfolio.get('classification') in ('concept', 'historical')
         if not source_absent and (not isinstance(p['stage'], str) or p['stage'] not in STAGES):
             errors.append(f'{tag}: invalid or unevidenced stage.')
         updated_at = strict_date(p['updatedAt'])
@@ -146,7 +151,7 @@ def validate_catalog(data):
             if not isinstance(p[key], list) or any(not isinstance(x, str) or not x.strip() for x in p[key]):
                 errors.append(f'{tag}: {key} must be an array of text.')
         for key in ('audiences', 'features', 'technologies', 'architecture'):
-            if not p[key] and not (source_absent and key in ('features', 'technologies', 'architecture')):
+            if not p[key] and not ((source_absent or descriptive_only) and key in ('features', 'technologies', 'architecture')):
                 errors.append(f'{tag}: {key} is required.')
         source_ids = []
         if not isinstance(p['sources'], list) or not p['sources']:
@@ -162,6 +167,54 @@ def validate_catalog(data):
                         source_ids.append(source['id'])
             if len(set(source_ids)) != len(source_ids):
                 errors.append(f'{tag}: duplicate source ids.')
+        if data['schemaVersion'] == 2:
+            meta = p.get('portfolio')
+            if not isinstance(meta, dict) or set(meta) != PORTFOLIO_FIELDS:
+                errors.append(f'{tag}: invalid portfolio metadata fields.')
+            else:
+                if not isinstance(meta['classification'], str) or meta['classification'] not in CLASSIFICATIONS:
+                    errors.append(f'{tag}: invalid portfolio classification.')
+                if not isinstance(meta['aliases'], list) or any(not isinstance(a,str) or not a.strip() for a in meta['aliases']):
+                    errors.append(f'{tag}: invalid aliases.')
+                for field in ('functionalStatus','distributionStatus','productionStatus'):
+                    if not isinstance(meta[field],str) or not meta[field].strip():
+                        errors.append(f'{tag}: {field} is required.')
+                if isinstance(meta['functionalStatus'],str) and len(meta['functionalStatus'])>48:
+                    errors.append(f'{tag}: functional label must remain readable in the showroom.')
+                platform_fields={'name','implementation','verification','distribution','limits'}
+                if not isinstance(meta['platforms'],list) or not meta['platforms']:
+                    errors.append(f'{tag}: platform status required.')
+                else:
+                    for platform in meta['platforms']:
+                        if not isinstance(platform,dict) or set(platform)!=platform_fields or any(not isinstance(v,str) or not v.strip() for v in platform.values()):
+                            errors.append(f'{tag}: incomplete platform status.')
+                feature_sources=meta['featureSources']
+                if not isinstance(feature_sources,list) or not isinstance(p['features'],list) or len(feature_sources)!=len(p['features']):
+                    errors.append(f'{tag}: each feature requires evidence.')
+                else:
+                    for references in feature_sources:
+                        if not isinstance(references,list) or not references or any(not isinstance(r,str) or r not in source_ids for r in references):
+                            errors.append(f'{tag}: unknown feature evidence.')
+                evidence_fields={'date','revision','environment','scope','status','result','source','historical'}
+                if not isinstance(meta['verification'],list) or not meta['verification']:
+                    errors.append(f'{tag}: verification record required.')
+                else:
+                    for evidence in meta['verification']:
+                        if not isinstance(evidence,dict) or set(evidence)!=evidence_fields:
+                            errors.append(f'{tag}: invalid verification fields.');continue
+                        if type(evidence['historical']) is not bool or evidence['status'] not in ('PASS','FAIL','BLOCKED','NOT RUN'):
+                            errors.append(f'{tag}: invalid verification status.')
+                        if any(not isinstance(evidence[k],str) or not evidence[k].strip() for k in ('revision','environment','scope','result','source')):
+                            errors.append(f'{tag}: verification scope and provenance are required.')
+                        if evidence['source'] not in source_ids:
+                            errors.append(f'{tag}: unknown verification source.')
+                        observed=strict_date(evidence['date'])
+                        if evidence['date'] is None:
+                            if evidence['historical'] is not True:
+                                errors.append(f'{tag}: current verification requires a date.')
+                        elif observed is None or updated_at is None or observed > updated_at:
+                            errors.append(f'{tag}: invalid or future verification date.')
+
         if not isinstance(p['cases'], list):
             errors.append(f'{tag}: cases must be an array.')
         else:
@@ -239,20 +292,23 @@ def project_url(p, prefix=''):
 
 
 def stage(p):
-    return e(p['stage'] or 'Etap do potwierdzenia')
+    return e(p.get('portfolio',{}).get('functionalStatus') or p['stage'] or 'Etap do potwierdzenia')
 
 
 def card(p):
     category = CATEGORIES[p['category']][0]
-    search = normalize(' '.join([p['name'],p['summary'],category,*p['technologies']]))
+    meta = p.get('portfolio', {})
+    classification = meta.get('classification', '')
+    kind = CLASSIFICATIONS.get(classification, category)
+    search = normalize(' '.join([p['name'],p['summary'],category,kind,*meta.get('aliases',[]),*p['features'],*p['technologies']]))
     preview = ''
     if p['gallery']:
         img = p['gallery'][0]
         preview = f'<img class="card-preview" src="{e(img["src"])}" width="{img["width"]}" height="{img["height"]}" alt="{e(img["alt"])}" loading="lazy" decoding="async">'
-    return f'''<article class="catalog-card" data-id="{p['id']}" data-category="{p['category']}" data-stage="{e(p['stage'] or '')}" data-search="{e(search)}" data-technologies="{e(json.dumps(p['technologies'],ensure_ascii=False))}">
-      <div class="card-top"><span class="card-category">{e(category)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="card-stage">{stage(p)}</span></div>{preview}
+    return f'''<article class="catalog-card" data-id="{p['id']}" data-category="{p['category']}" data-classification="{e(classification)}" data-stage="{e(p['stage'] or '')}" data-search="{e(search)}" data-technologies="{e(json.dumps(p['technologies'],ensure_ascii=False))}">
+      <div class="card-top"><span class="card-category">{e(category)} · {e(kind)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="card-stage">{stage(p)}</span></div>{preview}
       <details class="project-drawer" id="projekt-{p['id']}"><summary aria-controls="drawer-{p['id']}">Odkryj projekt <span class="sr-only">{e(p['name'])}</span></summary>
-      <div class="drawer-content" id="drawer-{p['id']}"><h4>Problem</h4><p>{e(p['problem'])}</p><h4>Rozwiązanie</h4><p>{e(p['solution'])}</p><h4>Dla kogo</h4><p>{e(' · '.join(p['audiences']))}</p><h4>Potwierdzony zakres</h4>{items(p['features'][:4])}<h4>Stan i dostęp</h4><p>{e(p['availability'])}</p><p class="tech-line">{e(' / '.join(p['technologies']))}</p><time class="updated" datetime="{p['updatedAt']}">Ostatnie źródło: {p['updatedAt']}</time><a class="cta cta--ghost" href="{project_url(p)}">Pełne case study →</a></div></details></article>'''
+      <div class="drawer-content" id="drawer-{p['id']}"><h4>Problem</h4><p>{e(p['problem'])}</p><h4>Rozwiązanie</h4><p>{e(p['solution'])}</p><h4>Dla kogo</h4><p>{e(' · '.join(p['audiences']))}</p><h4>Potwierdzony zakres</h4>{items(p['features'][:4])}<h4>Stan i dostęp</h4><p>{e(p['availability'])}</p><p class="tech-line">{e(' / '.join(p['technologies']))}</p><time class="updated" datetime="{p['updatedAt']}">Przegląd źródeł: {p['updatedAt']}</time><a class="cta cta--ghost" href="{project_url(p)}">Pełne case study →</a></div></details></article>'''
 
 
 def gallery(p, prefix):
@@ -267,13 +323,55 @@ def case_detail(c):
     return '<article class="engineering-case"><dl>'+''.join(f'<dt>{label}</dt><dd>{e(c[key])}</dd>' for key,label in labels)+'</dl></article>'
 
 
+def portfolio_readiness(p):
+    meta = p.get('portfolio')
+    if not meta:
+        return ''
+    platforms = ''.join('<article class="platform-status"><h3>'+e(x['name'])+'</h3><dl>'+''.join(
+        f'<dt>{label}</dt><dd>{e(x[key])}</dd>' for key,label in (
+            ('implementation','Implementacja'),('verification','Weryfikacja'),
+            ('distribution','Dystrybucja'),('limits','Otwarte kwestie'))
+    )+'</dl></article>' for x in meta['platforms'])
+    return '<p class="portfolio-kind">'+e(CLASSIFICATIONS[meta['classification']])+'</p><dl class="readiness-summary">'+''.join(
+        f'<dt>{label}</dt><dd>{e(value)}</dd>' for label,value in (
+            ('Zakres funkcjonalny',meta['functionalStatus']),
+            ('Dystrybucja',meta['distributionStatus']),('Produkcja',meta['productionStatus']))
+    )+'</dl><div class="platform-status-grid">'+platforms+'</div>'
+
+
+def portfolio_verification(p):
+    meta = p.get('portfolio')
+    if not meta:
+        return ''
+    checks = []
+    for x in meta['verification']:
+        when = f'<time datetime="{e(x["date"])}">{e(x["date"])}</time>' if x['date'] else 'Data wykonania nieustalona'
+        age = 'Wynik historyczny' if x['historical'] else 'Przegląd bieżący'
+        checks.append(f'<li class="verification-record"><p><strong>{e(x["status"])}</strong> · {when} · {age}</p><h3>{e(x["scope"])}</h3><p>{e(x["result"])}</p><p class="verification-context">Środowisko: {e(x["environment"])}<br>Rewizja: <code>{e(x["revision"])}</code> · <a href="#source-{e(x["source"])}">Źródło</a></p></li>')
+    return '<p>Każdy wynik dotyczy wskazanego zakresu i środowiska. Odczyt kodu potwierdza implementację; nie zastępuje uruchomienia produktu.</p><ul class="verification-list">'+''.join(checks)+'</ul>'
+
+
+def evidenced_features(p):
+    references = p.get('portfolio',{}).get('featureSources',[])
+    if not p['features']:
+        return '<p>Brak potwierdzonych funkcji implementacji. Udokumentowany cel i plan opisano poniżej.</p>'
+    return '<ul>'+''.join('<li>'+e(text)+(' <span class="feature-sources">'+ ' '.join(
+        f'<a href="#source-{e(source)}" aria-label="Źródło funkcji {index+1}">[{n+1}]</a>' for n,source in enumerate(references[index]))+'</span>' if index<len(references) else '')+'</li>' for index,text in enumerate(p['features']))+'</ul>'
+
+
 def full_case(p, prefix='../../'):
     def section(id_,title,body):
         return f'<section class="case-section" id="{id_}"><h2>{title}</h2>{body}</section>'
-    out = f'''<header class="case-hero"><div class="shell"><p class="breadcrumb"><a href="{prefix}#projekty">← Eksplorator projektów</a> / {e(CATEGORIES[p['category']][0])}</p><span class="section-kicker">{e(CATEGORIES[p['category']][0])}</span><h1>{e(p['name'])}</h1><p class="section-copy">{e(p['summary'])}</p><div class="status-row"><span class="status-chip">{stage(p)}</span><time class="status-chip" datetime="{p['updatedAt']}">Źródła: {p['updatedAt']}</time></div><nav class="case-index" aria-label="W tej prezentacji"><a href="#problem">Problem</a><a href="#architektura">Architektura</a><a href="#funkcje">Funkcje</a><a href="#galeria">Galeria</a><a href="#wyzwania">Wyzwania</a><a href="#rozwoj">Rozwój</a><a href="#dostep">Dostęp</a></nav></div></header><div class="shell case-content">'''
+    out = f'''<header class="case-hero"><div class="shell"><p class="breadcrumb"><a href="{prefix}#projekty">← Eksplorator projektów</a> / {e(CATEGORIES[p['category']][0])}</p><span class="section-kicker">{e(CATEGORIES[p['category']][0])}</span><h1>{e(p['name'])}</h1><p class="section-copy">{e(p['summary'])}</p><div class="status-row"><span class="status-chip">{stage(p)}</span><time class="status-chip" datetime="{p['updatedAt']}">Źródła: {p['updatedAt']}</time></div><nav class="case-index" aria-label="W tej prezentacji"><a href="#problem">Problem</a><a href="#architektura">Architektura</a><a href="#funkcje">Funkcje</a><a href="#platformy">Platformy</a><a href="#weryfikacja">Dowody</a><a href="#galeria">Galeria</a><a href="#wyzwania">Wyzwania</a><a href="#rozwoj">Rozwój</a><a href="#dostep">Dostęp</a></nav></div></header><div class="shell case-content">'''
+    if not p.get('portfolio'):
+        out = out.replace('<a href="#platformy">Platformy</a><a href="#weryfikacja">Dowody</a>', '')
     out += section('problem','Od potrzeby do produktu',f'<h3>Dla kogo</h3>{items(p["audiences"])}<h3>Problem</h3><p>{e(p["problem"])}</p><h3>Dlaczego powstał</h3><p>{e(p["motivation"])}</p><h3>Rozwiązanie</h3><p>{e(p["solution"])}</p>')
     out += section('architektura','Architektura i technologie','<ul class="architecture">'+''.join(f'<li>{e(x)}</li>' for x in p['architecture'])+'</ul><p class="tech-line">'+e(' / '.join(p['technologies']))+'</p>')
-    out += section('funkcje','Potwierdzony zakres',items(p['features'])+'<h3>Wyniki i granice weryfikacji</h3>'+items(p['results']))
+    if p.get('portfolio'):
+        out += section('platformy','Stan produktu i platform',portfolio_readiness(p))
+    out += section('funkcje','Potwierdzony zakres',evidenced_features(p)+'<h3>Wyniki i granice weryfikacji</h3>'+items(p['results']))
+    if p.get('portfolio'):
+        out += section('weryfikacja','Dowody i testy',portfolio_verification(p))
     out += section('galeria','Materiały z produktu',gallery(p,prefix))
     if p['cases']:
         out += section('wyzwania','Wyzwania i rozwiązania',''.join(case_detail(c) for c in p['cases']))
@@ -299,7 +397,8 @@ def explorer_section(data):
     technologies=sorted({t for p in projects for t in p['technologies']},key=str.casefold)
     stages=sorted({p['stage'] for p in projects if p['stage']})
     options=lambda values:''.join(f'<option value="{e(v)}">{e(v)}</option>' for v in values)
-    return f'''<section class="section" id="projekty"><div class="shell"><div class="catalog-intro"><span class="section-kicker">KATALOG PROJEKTÓW</span><h2 class="section-title">Znajdź projekt.</h2><p class="section-copy">Wyszukaj nazwę lub technologię, porównaj etap rozwoju i poznaj zakres potwierdzony w źródłach.</p></div><noscript><p class="empty-state">Wszystkie projekty i szczegóły są dostępne poniżej. Wyszukiwanie oraz filtry wymagają JavaScript.</p></noscript><div class="category-grid" data-js-only hidden>{cats}</div><form class="catalog-tools" id="catalog-filters" role="search" aria-label="Wyszukaj projekt" data-js-only hidden><label for="project-search">Szukaj w ekosystemie<input id="project-search" name="q" type="search" maxlength="160" placeholder="Nazwa, zastosowanie lub technologia" autocomplete="off"></label><label for="technology-filter">Technologia<select id="technology-filter" name="technologia"><option value="">Wszystkie technologie</option>{options(technologies)}</select></label><label for="stage-filter">Etap produktu<select id="stage-filter" name="etap"><option value="">Wszystkie etapy</option>{options(stages)}<option value="unverified">Etap do potwierdzenia</option></select></label><button class="plain-button" type="reset">Wszystkie projekty ↺</button></form><div class="catalog-feedback"><p id="catalog-results" role="status" aria-live="polite" aria-atomic="true">{len(projects)} projektów i elementów zaplecza</p><a href="#rozwoj">Stan prac ↓</a></div><p class="empty-state" id="catalog-empty" hidden>Brak projektów dla tych kryteriów. Zmień wyszukiwanie lub wybierz „Wszystkie projekty”.</p><div class="catalog-grid">{''.join(card(p) for p in projects)}</div><p class="updated">Przegląd katalogu: {e(data['asOf'])}. Etap i dostępność opisano osobno.</p></div></section>'''
+    kinds=''.join(f'<option value="{key}">{label}</option>' for key,label in CLASSIFICATIONS.items() if any(p.get('portfolio',{}).get('classification')==key for p in projects))
+    return f'''<section class="section" id="projekty"><div class="shell"><div class="catalog-intro"><span class="section-kicker">KATALOG PROJEKTÓW</span><h2 class="section-title">Znajdź projekt.</h2><p class="section-copy">Wyszukaj nazwę lub technologię, porównaj etap rozwoju i poznaj zakres potwierdzony w źródłach.</p></div><noscript><p class="empty-state">Wszystkie projekty i szczegóły są dostępne poniżej. Wyszukiwanie oraz filtry wymagają JavaScript.</p></noscript><div class="category-grid" data-js-only hidden>{cats}</div><form class="catalog-tools" id="catalog-filters" role="search" aria-label="Wyszukaj projekt" data-js-only hidden><label for="project-search">Szukaj w ekosystemie<input id="project-search" name="q" type="search" maxlength="160" placeholder="Nazwa, zastosowanie lub technologia" autocomplete="off"></label><label for="technology-filter">Technologia<select id="technology-filter" name="technologia"><option value="">Wszystkie technologie</option>{options(technologies)}</select></label><label for="classification-filter">Rodzaj<select id="classification-filter" name="typ"><option value="">Wszystkie rodzaje</option>{kinds}</select></label><label for="stage-filter">Etap rozwoju<select id="stage-filter" name="etap"><option value="">Wszystkie etapy</option>{options(stages)}<option value="unverified">Etap do potwierdzenia</option></select></label><button class="plain-button" type="reset">Wszystkie projekty ↺</button></form><div class="catalog-feedback"><p id="catalog-results" role="status" aria-live="polite" aria-atomic="true">{len(projects)} projektów i elementów zaplecza</p><a href="#rozwoj">Stan prac ↓</a></div><p class="empty-state" id="catalog-empty" hidden>Brak projektów dla tych kryteriów. Zmień wyszukiwanie lub wybierz „Wszystkie projekty”.</p><div class="catalog-grid">{''.join(card(p) for p in projects)}</div><p class="updated">Przegląd katalogu: {e(data['asOf'])}. Etap i dostępność opisano osobno.</p></div></section>'''
 
 
 def development_section(projects):
@@ -396,8 +495,8 @@ def homepage(data):
     about_services,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
     about,services=about_services.split('<!-- SERVICES -->')
     out+=services
-    out+=delivery.render_delivery(projects)
     out+=production_section()
+    out+=delivery.render_delivery(projects)
     out+=about
     out+=delivery.render_case_studies()
     out+=technology_section(projects)
@@ -410,7 +509,18 @@ def explorer_page(data):
     content=content.replace('href="projekty/','href="').replace('src="assets/','src="../assets/').replace('href="./#projekty"','href="../#projekty"')
     return content
 
-PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRESSKIT SYSTEMS</span><h1>Prywatność witryny</h1><p>Informacja o działaniu tej wersji witryny, przegląd: 15 października 2026 r. Kontakt w sprawach danych: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>.</p><h2>Oglądanie katalogu</h2><p>Wyszukiwanie i filtry działają w Twojej przeglądarce. Wybrane filtry mogą znajdować się w adresie strony, aby można było go udostępnić. Treść wyszukiwania nie jest dołączana do zdarzeń analitycznych.</p><h2>Własna analityka</h2><p>Na domenie progresskit.pl witryna wysyła do własnego endpointu rodzaj zdarzenia (otwarcie strony lub projektu, kontakt, link zewnętrzny), ścieżkę strony bez zapytania i fragmentu, domenę strony odsyłającej i poprawne oznaczenia kampanii UTM. Kod analityki nie używa cookies, localStorage, identyfikatora urządzenia ani zewnętrznych trackerów. Nie wysyła treści briefu ani wyszukiwania.</p><p>Baza zdarzeń nie ma pól na IP i User-Agent. Serwer i pośrednie warstwy sieci mogą prowadzić osobne dzienniki techniczne; ich konfiguracja wymaga sprawdzenia przez operatora. W dostępnej konfiguracji backendu nie ustalono automatycznej retencji zdarzeń. Te kwestie pozostają do potwierdzenia przed wdrożeniem. Ta informacja nie zastępuje polityk prywatności poszczególnych aplikacji.</p><h2>Brief i kontakt</h2><p>Pola briefu pozostają w otwartej karcie. Pobranie tworzy lokalny plik tekstowy. Drukowanie korzysta z funkcji przeglądarki, a przycisk e-mail otwiera Twój program pocztowy. Witryna nie wysyła wypełnionego briefu automatycznie.</p><h2>Glikemia Premium</h2><p>Strona dystrybucji ma osobną informację o liczniku pobrań, opiniach i moderacji przy formularzu. Opinie są publiczne dopiero po moderacji. Nie wpisuj w nie danych zdrowotnych.</p><h2>Linki zewnętrzne</h2><p>Serwisy otwierane przez linki prowadzą własne zasady przetwarzania danych. Materiały galerii są serwowane lokalnie; witryna nie osadza zewnętrznych odtwarzaczy.</p></article>'''
+PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRESSKIT SYSTEMS</span><h1>Prywatność witryny</h1><p>Informacja o działaniu tej wersji witryny, przegląd: 2 listopada 2026 r. Kontakt w sprawach danych: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>.</p>@@OPERATOR@@<h2>Oglądanie katalogu</h2><p>Wyszukiwanie i filtry działają w Twojej przeglądarce. Wybrane filtry mogą znajdować się w adresie strony, aby można było go udostępnić. Treść wyszukiwania nie jest dołączana do zdarzeń analitycznych.</p><h2>Własna analityka</h2><p>Na domenie progresskit.pl witryna wysyła do własnego endpointu rodzaj zdarzenia (otwarcie strony lub projektu, kontakt, link zewnętrzny), ścieżkę strony bez zapytania i fragmentu, domenę strony odsyłającej i poprawne oznaczenia kampanii UTM. Kod analityki nie używa cookies, localStorage, identyfikatora urządzenia ani zewnętrznych trackerów. Nie wysyła treści briefu ani wyszukiwania.</p><p>Baza zdarzeń nie ma pól na IP i User-Agent. Serwer i pośrednie warstwy sieci mogą prowadzić osobne dzienniki techniczne; ich konfiguracja wymaga sprawdzenia przez operatora. W dostępnej konfiguracji backendu nie ustalono automatycznej retencji zdarzeń. Te kwestie pozostają do potwierdzenia przed wdrożeniem. Ta informacja nie zastępuje polityk prywatności poszczególnych aplikacji.</p><h2>Brief i kontakt</h2><p>Pola briefu pozostają w otwartej karcie. Pobranie tworzy lokalny plik tekstowy. Drukowanie korzysta z funkcji przeglądarki, a przycisk e-mail otwiera Twój program pocztowy. Witryna nie wysyła wypełnionego briefu automatycznie.</p><h2>Glikemia Premium</h2><p>Strona dystrybucji ma osobną informację o liczniku pobrań, opiniach i moderacji przy formularzu. Opinie są publiczne dopiero po moderacji. Nie wpisuj w nie danych zdrowotnych.</p><h2>Linki zewnętrzne</h2><p>Serwisy otwierane przez linki prowadzą własne zasady przetwarzania danych. Materiały galerii są serwowane lokalnie; witryna nie osadza zewnętrznych odtwarzaczy.</p></article>'''
+
+
+
+def privacy_page():
+    operator = json.loads((ROOT/'catalog/operator.json').read_text())
+    if not isinstance(operator, dict) or set(operator) != {'name','address','contact'} or any(not isinstance(v,str) or not v.strip() for v in operator.values()):
+        raise ValueError('Operator requires reviewed name, address and contact.')
+    if not re.fullmatch(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',operator['contact']):
+        raise ValueError('Invalid operator contact.')
+    block = f'<h2 id="operator">Operator witryny</h2><p>{e(operator["name"])}<br>{e(operator["address"])}<br>Kontakt: <a href="mailto:{e(operator["contact"])}">{e(operator["contact"])}</a>.</p>'
+    return PRIVACY.replace('@@OPERATOR@@',block)
 
 
 def render(content, title, description, path, prefix):
@@ -425,8 +535,19 @@ def render(content, title, description, path, prefix):
         page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish','project-mechanism'))
     page_styles+='\n  '+f'<link rel="stylesheet" href="{prefix}assets/world-atmosphere.css">'
     if not path and not prefix:
-        page_styles+='\n  <link rel="stylesheet" href="assets/world-sections.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/world-sections.css">\n  <link rel="stylesheet" href="assets/spatial-chapters.css">'
+    if not path and not prefix:
+        page_styles+='\n  <link rel="stylesheet" href="assets/showroom-3d.css">'
+        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('luxury-world','luxury-chapters','luxury-showroom'))
+        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('continuity-process','continuity-chapters','technology-field'))
+        page_styles+='\n  <link rel="stylesheet" href="assets/material-finish.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/brand-core-mark.css">'
     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
+    if not path and not prefix:
+        page_scripts+='\n  <script type="module" src="assets/showroom-3d.mjs"></script>\n  <script type="module" src="assets/spatial-chapters.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/luxury-world.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/continuity-chapters.mjs"></script>\n  <script type="module" src="assets/technology-field.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/brand-core-mark.mjs"></script>'
     if not page_styles:
         template=template.replace('  @@PAGE_STYLES@@\n','')
     if not page_scripts:
@@ -436,6 +557,8 @@ def render(content, title, description, path, prefix):
         template=template.replace('@@'+name+'@@',value)
     if '@@' in template:
         raise ValueError('Unfilled template slot.')
+    if not path and not prefix:
+        template=template.replace('<body>','<body class="luxury-world">')
     return template
 
 
@@ -458,7 +581,7 @@ def generated(data):
     # Existing V4 Mail URL stays valid and uses the same catalog and renderer.
     mail=next(p for p in data['projects'] if p['id']=='progresskit-mail')
     outputs['progresskit-mail/index.html']=render(full_case(mail,'../'),mail['name']+': projekt | ProgressKit',mail['summary'],'projekty/'+mail['slug']+'/','../')
-    outputs['prywatnosc/index.html']=render(PRIVACY,'Prywatność witryny | ProgressKit Systems','Informacja o prywatności katalogu, własnej analityce i lokalnym briefie ProgressKit Systems.','prywatnosc/','../')
+    outputs['prywatnosc/index.html']=render(privacy_page(),'Prywatność i operator | ProgressKit Systems','Informacja o prywatności katalogu, własnej analityce i lokalnym briefie ProgressKit Systems.','prywatnosc/','../')
     glikemia=next(p for p in data['projects'] if p['id']=='glikemia-premium')
     distribution=(ROOT/'templates/glikemia-distribution.html').read_text()
     for key,value in {'DESCRIPTION':e(glikemia['summary']),'STAGE':stage(glikemia),'AVAILABILITY':e(glikemia['availability']),'FEATURES':''.join(f'<article class="card"><p>{e(feature)}</p></article>' for feature in glikemia['features'])}.items():

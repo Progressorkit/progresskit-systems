@@ -1,0 +1,203 @@
+{
+  "mode": "fallback",
+  "checks": [
+    {
+      "name": "Denied WebGL selects the shipped CSS fallback",
+      "status": "PASS",
+      "details": {
+        "width": 300,
+        "height": 150,
+        "pixels": 45000,
+        "renderer": "fallback",
+        "rootRenderer": "fallback",
+        "motion": "running"
+      }
+    },
+    {
+      "name": "CSS fallback is visibly present and continues animating",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.8",
+        "before": [
+          {
+            "name": "matter-drift-a",
+            "time": 483.33100000721043,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 483.33100000721043,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-a",
+            "time": 483.33100000721043,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-drift-a",
+            "time": 1033.26700000721,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 1033.26700000721,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-a",
+            "time": 1033.26700000721,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "CSS fallback preserves project disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS fallback opens original project content",
+      "status": "PASS"
+    },
+    {
+      "name": "Reduced motion also freezes the CSS fallback",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.8",
+        "before": [],
+        "after": [],
+        "advances": false
+      }
+    },
+    {
+      "name": "Mobile fallback remains live instead of becoming a static image",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.8",
+        "before": [
+          {
+            "name": "matter-drift-a",
+            "time": 666.712999993913,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 666.712999993913,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-drift-a",
+            "time": 1216.650999993913,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 1216.650999993913,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "Mobile fallback retains readable tap activation",
+      "status": "PASS"
+    },
+    {
+      "name": "Context-loss test starts with actual WebGL",
+      "status": "PASS"
+    },
+    {
+      "name": "Browser provides a real WebGL context-loss mechanism",
+      "status": "PASS"
+    },
+    {
+      "name": "Context loss activates animated CSS matter",
+      "status": "PASS",
+      "details": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "0.8",
+        "before": [
+          {
+            "name": "matter-drift-a",
+            "time": 0,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 0,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-a",
+            "time": 0,
+            "state": "running"
+          }
+        ],
+        "after": [
+          {
+            "name": "matter-drift-a",
+            "time": 500.01900000955726,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-b",
+            "time": 500.01900000955726,
+            "state": "running"
+          },
+          {
+            "name": "matter-drift-a",
+            "time": 500.01900000955726,
+            "state": "running"
+          }
+        ],
+        "advances": true
+      }
+    },
+    {
+      "name": "Lost WebGL context stops drawing",
+      "status": "PASS",
+      "details": {
+        "before": 5,
+        "after": 5
+      }
+    },
+    {
+      "name": "Context loss does not block project disclosure",
+      "status": "PASS"
+    },
+    {
+      "name": "Restoring context resumes procedural matter",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "matter-css-fallback-idle.png",
+    "matter-mobile-css-fallback.png",
+    "matter-context-loss-fallback.png"
+  ],
+  "notes": [
+    "Local Chrome; mobile is emulated. Visual acceptance remains owner review."
+  ],
+  "PASS": 14,
+  "FAIL": 0
+}

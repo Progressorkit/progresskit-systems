@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-02",
+  "scope": "Technical facts and owner-information gates, not a legal compliance opinion. No operator identity, address or retention period is invented.",
+  "operatorIdentity": {
+    "status": "SOURCE_PRESENT_LOCAL",
+    "publicationReview": "OPEN",
+    "fieldsPresent": [
+      "name",
+      "address",
+      "contact"
+    ],
+    "evidence": [
+      {
+        "path": "catalog/operator.json",
+        "lines": "1-5",
+        "observation": "Three local operator fields copied by root from existing local Lud&Pra source (published=false); helper does not repeat values or verify registration."
+      },
+      {
+        "path": "scripts/build-site.py",
+        "lines": "516-523",
+        "observation": "Source validation and escaped operator block rendered on local privacy page."
+      }
+    ],
+    "remainingFacts": [
+      "Applicability/completeness of formal business or register data",
+      "Owner publication approval and public deployment verification"
+    ]
+  },
+  "privacyAndRetention": {
+    "status": "OWNER_FACTS_REQUIRED",
+    "fieldsToConfirm": [
+      "Purposes and legal bases by processing operation",
+      "Actual analytics/review retention, deletion and archival policy",
+      "Hosting, proxy, application and backup logging scope/retention",
+      "Recipients/processors and relevant transfers",
+      "Applicable rights and contact/deletion procedure"
+    ],
+    "evidence": [
+      {
+        "path": "analytics/app.py",
+        "lines": "44-65",
+        "observation": "Event schema does not itself establish automatic retention or all-layer logging."
+      },
+      {
+        "path": "analytics/product.py",
+        "lines": "107-118,153-165",
+        "observation": "Token/limiter cleanup is not proof of review/event deletion policy."
+      },
+      {
+        "path": "templates/glikemia-distribution.html",
+        "lines": "29",
+        "observation": "Product notice describes moderated reviews and storage until deletion/end of function."
+      }
+    ]
+  },
+  "mailboxAndForms": {
+    "status": "DELIVERY_NOT_VERIFIED",
+    "scope": "QA checks mailto syntax and downloads a local brief TXT; no mail delivery or review submission is attempted.",
+    "ownerAction": "Verify actual receipt through an authorized independent mailbox test."
+  },
+  "publicDeployment": {
+    "status": "SEPARATE_PUBLIC_VERIFICATION_REQUIRED",
+    "scope": "Local preview success is not production proof. Root reported passive publicGET200/TLS for progresskit.pl and absentCSP/HSTS; those findings need their own evidence pointer in final report. No deployment is authorized."
+  },
+  "externalAvailability": {
+    "status": "PARTIAL_ROOT_COORDINATED",
+    "scope": "Local helper inventories external URLs but never requests them. Root reported DNS verification blocked for an external candidate; do not mark external links or mailbox deliveryPASS from inventory.",
+    "requirements": [
+      "Per-link passive GET/TLS and DNS outcomes with exact testedURL/date",
+      "Unreachable or environment-blocked endpoint recordedBLOCKED with scope",
+      "No forms, externalPOST, paid services or account access"
+    ]
+  },
+  "visualAcceptance": {
+    "status": "OPEN",
+    "ownerVisualApproval": "OPEN",
+    "scope": "Automated geometry does not prove canvas readability, material quality or visual approval."
+  },
+  "mobile": {
+    "status": "EMULATION_ONLY",
+    "scope": "360/390 viewport/touch emulation is not a physical phone run."
+  },
+  "brandAssets": {
+    "status": "SEPARATE_OWNER_REVIEW",
+    "scope": "Use authentic source assets only; no test client/patient/correspondence data in marketing. Missing authentic/privacy-safe source meansBLOCKED."
+  },
+  "productionReleaseReady": false
+}

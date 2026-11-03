@@ -1,0 +1,26 @@
+{
+  "number": 3,
+  "path": "clips/03.mp4",
+  "bytes": 142472,
+  "sha256": "55cc56d154b16c72d12e9c8c655c4e95c5eb064363dd611a268515f525eccff0",
+  "codec": "h264",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 90,
+  "durationSeconds": 3,
+  "audioStreams": 0,
+  "ffprobe": "PASS",
+  "fullDecode": "PASS",
+  "visualReview": "PASS_PHONE_PRIMARY_CONTENT",
+  "sourcePolicy": "Only real source pixels/crops on brand background; no generated product UI.",
+  "visualReviewScope": "360×640frame reviewed; authentic navigation/filter/approval fragments explicitly labeled, no testclient/account/correspondence records.",
+  "sceneVersion": 2,
+  "attempts": [
+    {
+      "path": "qa/attempts/03-button-only-v1.mp4",
+      "sha256": "4a9d522e3e357f904a519a5401667bbcae0c512eee281e4474347d69ca9aa254",
+      "reason": "Technicallyvalid but composition was too sparse for premiumreview; preserved."
+    }
+  ]
+}

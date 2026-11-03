@@ -1,0 +1,187 @@
+{
+  "status": "FAIL_CONTINUOUS_POINTER_REGRESSION_IN_LOCAL_SAMPLE",
+  "ownerVisualApproval": "OPEN",
+  "surface": "standalone local hardware Chrome; embedded preview latency UNKNOWN",
+  "sourceStable": {
+    "baselineFrame": true,
+    "finalFrame": true,
+    "pairedLatency": true
+  },
+  "finalSource": {
+    "assets/technology-field.css": "f9e343b71b744c27755aecdae53861770641ab77e2febeeb5ecb20799f282f31",
+    "assets/technology-field.mjs": "24dafb9fe152b4293e7d73bbb0a61a6952b4197b60f1ae59f13688d10515d902",
+    "assets/material-finish.css": "7871e103002906b80d9bf9b916277531bddc01e24d9c8d79de8f9de864658da8"
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "groups": 6,
+    "links": 110
+  },
+  "latencySummary": {
+    "baseline": {
+      "count": 20,
+      "eventToDOMMs": {
+        "min": 3,
+        "median": 13.299999997019768,
+        "p95": 41,
+        "max": 57.5
+      },
+      "handlerToDOMMs": {
+        "min": 0,
+        "median": 0.25,
+        "p95": 0.4000000059604645,
+        "max": 0.4000000059604645
+      },
+      "allTrusted": true
+    },
+    "after-final": {
+      "count": 20,
+      "eventToDOMMs": {
+        "min": 3.800000011920929,
+        "median": 14.350000008940697,
+        "p95": 32.400000005960464,
+        "max": 58.400000005960464
+      },
+      "handlerToDOMMs": {
+        "min": 0.10000002384185791,
+        "median": 0.30000001192092896,
+        "p95": 0.800000011920929,
+        "max": 0.9000000059604645
+      },
+      "allTrusted": true
+    }
+  },
+  "frames": {
+    "baselineNow": [
+      {
+        "kind": "idle",
+        "groupIndex": 0,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 16.80000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 0,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0,
+          "ScriptDuration": 0.009724,
+          "TaskDuration": 0.08672100000000005
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 0,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 33.30000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 105,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.05236600000000001,
+          "ScriptDuration": 0.013652999999999998,
+          "TaskDuration": 0.269883
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 5,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 33.400000000001455,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 107,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.07891400000000001,
+          "ScriptDuration": 0.012920999999999998,
+          "TaskDuration": 0.393956
+        }
+      },
+      {
+        "kind": "wheel",
+        "groupIndex": 0,
+        "p95Ms": 16.700000000000728,
+        "maxMs": 16.80000000000109,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 91,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.007338000000000011,
+          "ScriptDuration": 0.018217999999999998,
+          "TaskDuration": 0.27924300000000013
+        }
+      }
+    ],
+    "final": [
+      {
+        "kind": "idle",
+        "groupIndex": 0,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 116.59999999999854,
+        "delaysOver50": 1,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 172,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.071826,
+          "ScriptDuration": 0.033917,
+          "TaskDuration": 0.6346609999999999
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 0,
+        "p95Ms": 50,
+        "maxMs": 100,
+        "delaysOver50": 2,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 72,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.07811,
+          "ScriptDuration": 0.019750999999999998,
+          "TaskDuration": 0.5698130000000001
+        }
+      },
+      {
+        "kind": "pointer",
+        "groupIndex": 5,
+        "p95Ms": 49.899999999999636,
+        "maxMs": 133.3000000000011,
+        "delaysOver50": 3,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 78,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.08443400000000001,
+          "ScriptDuration": 0.025025000000000006,
+          "TaskDuration": 0.486043
+        }
+      },
+      {
+        "kind": "wheel",
+        "groupIndex": 0,
+        "p95Ms": 16.799999999999272,
+        "maxMs": 33.29999999999927,
+        "delaysOver50": 0,
+        "performanceDelta": {
+          "LayoutCount": 0,
+          "RecalcStyleCount": 93,
+          "LayoutDuration": 0,
+          "RecalcStyleDuration": 0.021322000000000008,
+          "ScriptDuration": 0.030857999999999997,
+          "TaskDuration": 0.45575800000000033
+        }
+      }
+    ]
+  },
+  "raw": [
+    "baseline-now-crystal-profile.json",
+    "after-final5-crystal-profile.json",
+    "crystal-latency.json"
+  ],
+  "note": "One current frame trial per variant, no trace or recording. Continuous motion is slower despite comparable trusted event activation. No final proof movie generated for this rejected performance state."
+}

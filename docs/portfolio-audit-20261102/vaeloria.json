@@ -1,0 +1,672 @@
+{
+  "auditDate": "2026-11-02",
+  "mode": "read-only-source-audit",
+  "projects": [
+    {
+      "id": "vaeloria",
+      "name": "Vaeloria",
+      "classification": "product",
+      "summary": "Działający prototyp gry fantasy w Godot/C#: eksploracja Lasu Ziemi, kolekcja i rozstawianie kart, turowy silnik walki, autonomiczni rywale, lokalna liga oraz turniej AI. Rozgrywka ma historyczne testy natywne i fizyczny Android; docelowa oprawa i sieciowe PvP pozostają odrębną pracą.",
+      "problem": "Połączenie eksploracji świata i więzi z istotami z przewidywalnymi zasadami taktycznej walki oraz trwałą progresją gracza.",
+      "audiences": [
+        "Gracze lubiący fantasy, kolekcjonowanie istot i walkę turową",
+        "Testerzy rozwoju gry na Androidzie i desktopie"
+      ],
+      "solution": "Klient Godot integruje postać EOS, onboarding, kampanię Ziemi, las3D, lokalne pojedynki i turnieje z jednym silnikiem domenowym. JSON zapisuje profil i oddzielną historię rywalizacji. Osobne API kont oraz czatu istnieje, ale nie realizuje multiplayerowej walki.",
+      "features": [
+        {
+          "text": "Kreator EOS z imieniem, fryzurą, kolorem włosów, strojem i aurą; onboarding, wybór starterów i samouczek prowadzą do rzeczywistej kampanii.",
+          "evidence": [
+            "scripts/ui/eos/CreateEosController.cs:39-109,130-180",
+            "scripts/application/OnboardingService.cs:22-66",
+            "scripts/application/PlayableSession.cs:55-95,122-166"
+          ]
+        },
+        {
+          "text": "Eksploracja 3D: chód/bieg, kamera ze spring arm i kolizją, sterowanie klawiaturą, myszą i dotykiem; las zawiera ścieżki, mosty i interakcje.",
+          "evidence": [
+            "scripts/exploration/player/EosExplorerController.cs:12-49,73-106,118-169,237-251",
+            "scripts/exploration/world/EarthWorld.cs:63-94,151-160,473-558"
+          ]
+        },
+        {
+          "text": "Minimapa odkrywa sektory i znaczniki, zapisuje postęp oraz rozróżnia zebrane obiekty. Skrytki i diamenty aktualizują rzeczywistą kolekcję i zasoby po udanym zapisie.",
+          "evidence": [
+            "scripts/application/EarthExplorationService.cs:25-114",
+            "scripts/domain/exploration/EarthExplorationState.cs:41-107",
+            "scripts/exploration/ui/ExplorationMinimap.cs:1-129"
+          ]
+        },
+        {
+          "text": "Turowy CombatEngine rozstrzyga ataki, zdolności, MP, obrażenia, relacje żywiołów i statusy oraz odrzuca akcje niezgodne z aktywną turą.",
+          "evidence": [
+            "scripts/domain/combat/CombatEngine.cs:12-77,106-166",
+            "scripts/application/PlayableSession.cs:336-410"
+          ]
+        },
+        {
+          "text": "Dziesięciu lokalnych rywali ma własne tożsamości EOS, drużyny i trudności. Sześć strategii to Aggressive, Defensive, Balanced, Control, Support i ElementalSpecialist; wagi wpływają na wybory, nie dodają ukrytych bonusów statystyk.",
+          "evidence": [
+            "scripts/domain/bots/BotRoster.cs:29-94",
+            "scripts/domain/bots/BotBehavior.cs:3-39",
+            "scripts/domain/bots/BotDecisionPolicy.cs:1-119"
+          ]
+        },
+        {
+          "text": "Human i AI przekazują wersjonowane komendy do tej samej sesji pojedynku. Obserwacja AI zawiera własną rękę i ujawnione przywołania przeciwnika; Remote jest obecnie odłączonym adapterem.",
+          "evidence": [
+            "scripts/application/duels/PlayerAgents.cs:5-84",
+            "scripts/application/duels/LocalDuelSession.cs:1-124"
+          ]
+        },
+        {
+          "text": "Lokalna liga liczy punkty z faktycznych wyników; turniej wymaga ośmiu różnych AI i rozgrywa siedmiomeczową drabinkę. Replay komend weryfikuje wynik; remis lub limit jawnie zatrzymuje drabinkę.",
+          "evidence": [
+            "scripts/application/duels/LocalCompetition.cs:23-57,59-130",
+            "scripts/ui/duels/LocalLeagueController.cs:92-116"
+          ]
+        },
+        {
+          "text": "Iria, Sylvara i Veyron wędrują po trzech autorskich trasach lasu, zatrzymują się blisko gracza i udostępniają wejście do lokalnego pojedynku. Oddalone rigi są usypiane; brak symulowania walk w tle eksploracji.",
+          "evidence": [
+            "scripts/exploration/ForestAiParticipants.cs:10-57",
+            "docs/AI_ARENA_SPRINT_REPORT.md:30-39"
+          ]
+        },
+        {
+          "text": "Arena jest sceną 3D z przeciwnymi EOS i Portalem Więzi. Przywołania, efekty zdolności i reakcje odczytują stan silnika; prezentacja nie uruchamia ponownie reguł walki.",
+          "evidence": [
+            "scripts/ui/duels/DuelArenaWorld.cs:9-69",
+            "scripts/ui/duels/DuelArenaWorld.Sanctuary.cs:13-43",
+            "scripts/ui/duels/DuelArenaWorld.Creatures.cs:1-86"
+          ]
+        },
+        {
+          "text": "Plansza ma25 kryształów w układzie5×5. Gracz wybiera łańcuch, a domena sprawdza sąsiedztwo i dozwolone efekty; soczewki kryształów są wspólnym widokiem kampanii i pojedynków.",
+          "evidence": [
+            "scripts/application/duels/LocalDuelSession.cs:114-120",
+            "scripts/ui/duels/LocalDuelController.cs:59-68,176-190",
+            "scripts/domain/stones/StoneSystem.cs:1-108",
+            "scripts/ui/duels/BondCrystalButton.cs:1-40"
+          ]
+        },
+        {
+          "text": "Profil JSONV1, checkpointy i nagrody zapisują się atomowo z kopią poprzedniego zapisu; ukończone węzły i rejestry łupów chronią przed powtórnym odbiorem. Zapis nie jest snapshotem trwającej walki.",
+          "evidence": [
+            "scripts/infrastructure/JsonSaveGameService.cs:7-90",
+            "scripts/application/SaveGame.cs:5-37",
+            "scripts/application/PlayableSession.cs:254-290,491-529"
+          ]
+        },
+        {
+          "text": "Zaimplementowano API rejestracji/logowania, rotację sesji i refresh, wylogowanie oraz klienta konta. Jest to odrębny system od zapisu i gry offline.",
+          "evidence": [
+            "server/Vaeloria.Api/AuthEndpoints.cs:13-101",
+            "server/Vaeloria.Api/Program.cs:18-42",
+            "scripts/infrastructure/accounts/AccountApiClient.cs:1-78"
+          ]
+        },
+        {
+          "text": "Czat globalny wykorzystuje SignalR i PostgreSQL, historię, zgłoszenia wiadomości oraz blokowanie użytkowników; nie jest dowodem sieciowej rozgrywki PvP.",
+          "evidence": [
+            "server/Vaeloria.Api/ChatHub.cs:8-77",
+            "server/Vaeloria.Api/ChatEndpoints.cs:9-59",
+            "scripts/infrastructure/chat/SignalRChatTransport.cs:1-134"
+          ]
+        },
+        {
+          "text": "Profile Low/Medium/High ograniczają koszt prezentacji, a Reduce Motion redukuje ruch ambientów. Efekty lasu stosują MultiMesh, odległość i frustum zamiast osobnej ciężkiej sceny dla minimapy.",
+          "evidence": [
+            "scripts/application/GraphicsQualityProfile.cs:1-13",
+            "docs/MEGA_SPRINT_SYSTEMS.md:23-47",
+            "scripts/exploration/world/ForestLife.cs:1-127"
+          ]
+        }
+      ],
+      "architecture": "Natywny klient Godot4.6.3.NET/net9.0. Osobne biblioteki Domain, Application i Infrastructure na net8.0 oddzielają reguły walki/karty/AI od scen i renderowania. Lokalne profile oraz rywalizacja używają JSON i atomowych adapterów plikowych. Osobne API ASP.NET Core/EFCore/PostgreSQL obsługuje konto, sesje, portal i SignalR chat. Offline AI nie wymaga serwera walk; RemotePlayerAgent jest rozłączony, więc implementacji kont/czatu nie wolno przedstawiać jako PvP.",
+      "modules": [
+        "Kreator i prezentacja EOS",
+        "Onboarding i kampania Ziemi",
+        "Eksploracja3D/minimapa/łupy",
+        "CombatEngine i kamienie",
+        "BotRoster i sześć strategii",
+        "Lokalne pojedynki/liga/turniej/replay",
+        "Kolekcja i Inspect",
+        "SaveGameV1 i historia rywalizacji",
+        "API kont/sesji/portalu",
+        "SignalR chat",
+        "Profile grafiki i reduced motion"
+      ],
+      "technologies": [
+        "Godot4.6.3.NET",
+        "C# / klient net9.0",
+        "Domain/Application/Infrastructure net8.0",
+        "GL Compatibility",
+        "Godot Shaders / MultiMesh",
+        "JSON saveV1",
+        "ASP.NET Core",
+        "EFCore / PostgreSQL",
+        "SignalR",
+        "xUnit",
+        "GDScript harnessy QA",
+        "NSIS — Windows preview"
+      ],
+      "platforms": [
+        {
+          "name": "Linux desktop",
+          "implementation": "Natywny klient Godot i środowisko deweloperskie; rzeczywiste sceny gry.",
+          "verification": "Historyczne natywne testy Godot i .NET; najnowszy13.10 pass dotyczy konkretnych zakresów EOS/lasu/kreatora i wizualnej areny, nie pełnego nowego release gate.",
+          "distribution": "Projekt i lokalne buildy; nie potwierdzano osobnego publicznego instalatora Linux.",
+          "limits": [
+            "Docelowa oprawa/animacje i długotrwały performance gate otwarte."
+          ]
+        },
+        {
+          "name": "Android",
+          "implementation": "APK arm64,pl.progresskit.vaeloria,1.3.0-preview.3/code6; obsługa dotyku i lokalnego zapisu.",
+          "verification": "Historyczne fizyczne OPPO12.10 obejmuje las, pojedynek i turniej; fizyczne Redmi13.10 opisuje własny kontrolowany przebieg. Każdy wynik związany z odrębnym hashem APK.",
+          "distribution": "Historycznie publiczny debug-signed previewAPK14.10. Publiczny plik po sanitizacji symboli ma oddzielny status fizyczny NOT_VERIFIED.",
+          "limits": [
+            "Nie przenosić PASS starego APK na obecny kod lub publicznego kandydata.",
+            "Brak wydania sklepowego i pełnego długiego testu termicznego."
+          ]
+        },
+        {
+          "name": "Windows x64",
+          "implementation": "Rzeczywisty portable folder,ZIP i NSIS installer; self-contained runtime.",
+          "verification": "Historyczna walidacja statyczna20PASS/0FAIL/3NOT_VERIFIED. Fizyczny Windows runtime i instalacja NOT_VERIFIED; UI approvalPENDING.",
+          "distribution": "Historycznie udostępniony unsigned preview setup z10.10; wcześniejszy zakres niż galeria Android.",
+          "limits": [
+            "Podpis/SmartScreen oraz rzeczywista instalacja/odinstalowanie/uruchomienie wymagają odbioru."
+          ]
+        },
+        {
+          "name": "WWW / API",
+          "implementation": "Strona produktu i pliki preview, API konta/portalu/czatu. Brak grywalnego klienta Godot w przeglądarce.",
+          "verification": "Historyczna bramka publicznej strony14.10:186HTTP i29Chrome. Lokalny backend ma starsze rzeczywiste testy PostgreSQL/Kestrel, a późniejsze zestawy pomijały7integracji bez bazy.",
+          "distribution": "Strona publiczna i preview historycznie wdrożone; stan bieżący nieodświeżony w tym audycie.",
+          "limits": [
+            "Publiczny landing nie dowodzi gotowości produkcyjnej gry, API ani PvP."
+          ]
+        }
+      ],
+      "functionalStatus": "Działający prototyp gry z eksploracją3D, prawdziwą walką, dziesięcioma rywalami AI, sześcioma strategiami i lokalnym turniejem. Nie jest samą koncepcją ani preview kart.",
+      "distributionStatus": "Udokumentowane lokalne i historycznie publiczne preview Android/Windows; APKdebug/Windows unsigned. Bez deklaracji sklepowego wydania ani finalnego odbioru platform.",
+      "productionStatus": "Publiczna witryna i wybrane preview miały historycznie potwierdzone wdrożenie14.10.2026. Finalna produkcyjna gra, publiczne PvP i kompletna bramka nowych artefaktów nie są potwierdzone.",
+      "results": [
+        "Kod obecnego checkoutu potwierdza10 rywali,6 strategii,3 leśnych wędrowców,turniej 8 AI i25 kryształów. To inwentaryzacja implementacji, a nie nowa sesja gameplayu.",
+        "Odczytano historyczny plik270 symulacji:156SideAWins/114SideBWins,270ReplayVerified=true. Nie uruchamiano ponownie symulatora.",
+        "Odczytano raport fizycznego OPPO:18 kontroli, pełne zwycięstwa i siedmiomeczowy turniej; odrębne dane konkretnego APK.",
+        "Najpóźniejszy raport EOS13.10 zachowuje osobne ograniczenia sztuki i performance; późniejsza publiczna dystrybucja14.10 nie nadaje automatycznie PASS nowemu APK ani Windows."
+      ],
+      "remaining": [
+        "Finalne assety EOS/świata/istot, rig/animacje i zgodność artystyczna z docelowym kierunkiem.",
+        "Powtarzalne profile performance, długie trasy i test termiczny zamiast krótkich nieruchomych próbekFPS.",
+        "Odbiór nowego publicznego APK na urządzeniu i fizyczna instalacja/runtimeWindows.",
+        "Siedem integracji API pominiętych w późniejszych zestawach wymaga izolowanego PostgreSQL.",
+        "PvP i sieciowe sterowanie walką pozostają przyszłym zakresem; konto/czat nie zamykają tej bramki.",
+        "Pozostałe światy, szersza kampania, ekonomia i finalny balans to rozwój poza obecnym LasemZiemi."
+      ],
+      "tests": [
+        {
+          "name": "AI arena — .NET",
+          "date": "2026-10-12",
+          "status": "PASS",
+          "scope": "Domain192/Application269/API2;7APIintegracji pominięto bez testowej bazy.",
+          "source": "docs/AI_ARENA_SPRINT_REPORT.md:70-100",
+          "counts": {
+            "passed": 463,
+            "failed": 0,
+            "skipped": 7
+          },
+          "revision": "baza a77edc4,checkpoint f50d7b6; kod sprintu w ówczesnym dirtyworktree",
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "7SKIP nie jestPASS. Nie sumować z późniejszym powtórzeniem463.",
+          "historical": true
+        },
+        {
+          "name": "AI arena — natywne scenariusze Godot",
+          "date": "2026-10-12",
+          "status": "PASS",
+          "scope": "Las→pojedynek→powrót→turniej,układy/kampania/prezentacja i część screenshot assertions.",
+          "source": "docs/AI_ARENA_SPRINT_REPORT.md:79-100",
+          "counts": {
+            "passed": 867,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Liczba asercji harnessów,nie867odrębnych sesji gracza.",
+          "historical": true
+        },
+        {
+          "name": "AI arena — symulator i replay",
+          "date": "2026-10-12",
+          "status": "PASS",
+          "scope": "270meczów;156A/114B,bez remisu/limitu/nielegalnego ruchu,270replay.",
+          "source": "docs/AI_ARENA_SPRINT_REPORT.md:85-89",
+          "counts": {
+            "passed": 270,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Historyczne symulacje; ponowny audyt tylko odczytał spójność danych.",
+          "historical": true
+        },
+        {
+          "name": "Fizyczne OPPO — AI arena",
+          "date": "2026-10-12",
+          "status": "PASS",
+          "scope": "Dotyk,rozstawienie,portal,magia,wyjście,zwycięstwa,liga8 AI/7 meczów,trwałość po restarcie.",
+          "source": "docs/AI_ARENA_SPRINT_REPORT.md:111-144",
+          "counts": {
+            "passed": 18,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "OPPOCPH2525/Android15;APKsha ecfae0f2b6ca0c20cf86d4412673b6b8694d3b0a5ccf12967c60f87770799566",
+          "limits": "Nie Windows ani obecny publiczny APK;krótki Low59.4FPS nie jest pełnym performance gate.",
+          "historical": true
+        },
+        {
+          "name": "EarthForest2 — natywne scenariusze Godot",
+          "date": "2026-10-12",
+          "status": "PASS",
+          "scope": "Łupy/zapis/pojedynek482,las106,mosty/woda29.",
+          "source": "docs/EARTH_FOREST_2_REPORT.md:77-98",
+          "counts": {
+            "passed": 617,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": "baza f5c3ca4a74e243e95bc5994cd8d62308281230a7;implementacja a7df436801302d29223d2ffd2ada64fcee8ae765",
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Oddzielny późniejszy zestaw od867AIarena; nie sumować historycznych przebiegów.",
+          "historical": true
+        },
+        {
+          "name": "EOS3D — wybrane regresje .NET",
+          "date": "2026-10-13",
+          "status": "PASS",
+          "scope": "27Domain i34Application:EOS/save/livingidentity/presentationplayback.",
+          "source": "docs/VAELORIA_EOS_3D_SPRINT1_2026-10-13.md:47-66",
+          "counts": {
+            "passed": 61,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Filtrowany zakres;nie nowy pełny test API/gry.",
+          "historical": true
+        },
+        {
+          "name": "EOS3D — natywne regresje Godot",
+          "date": "2026-10-13",
+          "status": "PASS",
+          "scope": "EOS1254,las106,arena visual-only67,kreator156,eksploracja148,reload9.",
+          "source": "docs/VAELORIA_EOS_3D_SPRINT1_2026-10-13.md:55-66",
+          "counts": {
+            "passed": 1740,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Arena67 to visual-only,nie pełny pojedynek. Performance12kontroli osobno,pełna bramka NOT_VERIFIED.",
+          "historical": true
+        },
+        {
+          "name": "Kandydat Windows — statyczna walidacja",
+          "date": "2026-10-10",
+          "status": "PASS",
+          "scope": "PE/runtime/PCK/ZIP i rzeczywiste rozpakowanieNSIS;208plików zgodnych.",
+          "source": "docs/WINDOWS_PREVIEW_INSTALLER_REPORT.md:5-28,52-66",
+          "counts": {
+            "passed": 20,
+            "failed": 0,
+            "skipped": null
+          },
+          "revision": "0af3c84eff005eb64d9e721da516d532b3c5eb13 +dirtysnapshot",
+          "environment": "Linux;statyczna kontrola eksportuWinx64",
+          "limits": "3NOT_VERIFIED,Windows runtime/installer nieodebrane;niepodpisany preview.",
+          "historical": true
+        },
+        {
+          "name": "Publiczna strona — HTTP productiongate",
+          "date": "2026-10-14",
+          "status": "PASS",
+          "scope": "Anonimowa strona/zasoby/downloady/Range i izolacja prywatnych tras.",
+          "source": "docs/VAELORIA_PUBLIC_WEBSITE_RELEASE.md:221-245",
+          "counts": {
+            "passed": 186,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": "0716317aeb73e328c515504056f6eece669d8eb3 +niecommitowany publicrelease",
+          "environment": "Historyczne anonimowe HTTPS;bez odświeżenia02.11",
+          "limits": "Nie produkcyjna jakość gry ani aktualny status hosta.",
+          "historical": true
+        },
+        {
+          "name": "Publiczna strona — Chrome",
+          "date": "2026-10-14",
+          "status": "PASS",
+          "scope": "5szerokości,galeria,Escape/focus,reducedmotion,console/images/overflow.",
+          "source": "docs/VAELORIA_PUBLIC_WEBSITE_RELEASE.md:231-245",
+          "counts": {
+            "passed": 29,
+            "failed": 0,
+            "skipped": 0
+          },
+          "revision": null,
+          "environment": "Historyczny produkcyjnyChrome",
+          "limits": "Nie świeży test portfolio/Godot02.11.",
+          "historical": true
+        },
+        {
+          "name": "Nowy gameplay/inferencja/urządzenia w audycie",
+          "date": "2026-11-02",
+          "status": "NOT RUN",
+          "scope": "Read-only kod/Git/raporty/artefakty.",
+          "source": "audit20261102",
+          "counts": {
+            "passed": null,
+            "failed": null,
+            "skipped": null
+          },
+          "revision": null,
+          "environment": "Linux/Godot4.6.3.NET",
+          "limits": "Nie uruchamiano Godota,telefonu,Windows ani serwera.",
+          "historical": false
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repository": "Vaeloria",
+          "path": "Vaeloria.csproj",
+          "lines": "1-14",
+          "kind": "code",
+          "scope": "Godot.NETSDK i podział projektów",
+          "sha256": "51a113c883e45549e54441deebf3d9da458fb064bf80ca9a8f0de41f9960fa3f",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "project.godot",
+          "lines": "11-17,38-45",
+          "kind": "code",
+          "scope": "Startup i GLCompatibility",
+          "sha256": "71631d6b36b74fba87c161dd164d5a750e806cfb77e2acafa455209cd7155082",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/domain/bots/BotRoster.cs",
+          "lines": "29-94",
+          "kind": "code",
+          "scope": "10autorskich lokalnych rywali",
+          "sha256": "d993ffcbe0d2de7d32ba503aeae41620ea8da51c00faf7c8ec8618f06f6ad1bb",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/domain/bots/BotBehavior.cs",
+          "lines": "3-39",
+          "kind": "code",
+          "scope": "6 strategii",
+          "sha256": "79ee7780820b56e68152ae13484fa945aa3e33ac75f878b1b44c38b67e4ffd1c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/application/duels/LocalCompetition.cs",
+          "lines": "23-130",
+          "kind": "code",
+          "scope": "Prawdziwe mecze/replay/liga8 AI",
+          "sha256": "a2bd8f17c242761695fe7a07209268115329a3a3fb1b5391db5c89d20bf1dd60",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/application/duels/PlayerAgents.cs",
+          "lines": "16-68",
+          "kind": "code",
+          "scope": "AgentAI/Human i odłączonyRemote",
+          "sha256": "3950cb594e44a9fe2a63537bc30b64786d27dffb1ae1d93d072ad4468585e8c8",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/exploration/ForestAiParticipants.cs",
+          "lines": "10-57",
+          "kind": "code",
+          "scope": "3wędrowców i brak symulacji w tle",
+          "sha256": "7eac2839949c88548dd8e28843301edb5283893111dd4774204ab3aae5c0559a",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/ui/duels/LocalDuelController.cs",
+          "lines": "59-68,176-190",
+          "kind": "code",
+          "scope": "25 kryształów",
+          "sha256": "dfee4a8b2850002af6c1454935553683d18a413b2700635363792ecb53721c27",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/domain/combat/CombatEngine.cs",
+          "lines": "12-77,106-166",
+          "kind": "code",
+          "scope": "Reguły walki",
+          "sha256": "e231a82e682c6d23bf6490255e0ab597e01e739797fbb4bea04358bb4028eba7",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/application/EarthExplorationService.cs",
+          "lines": "25-114",
+          "kind": "code",
+          "scope": "Mapa i łupy",
+          "sha256": "47b40d5cdc97db3c1a0875e6a3ecff4b7f78cda9ab1cc562d47ef81831270e6c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "scripts/infrastructure/JsonSaveGameService.cs",
+          "lines": "7-90",
+          "kind": "code",
+          "scope": "Atomowy zapis i odzyskiwanie",
+          "sha256": "15358c47d3d4f15f0d027041aa3d83ac231850c368c311c7f07c0f0d5cf7bad0",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "server/Vaeloria.Api/AuthEndpoints.cs",
+          "lines": "13-101",
+          "kind": "code",
+          "scope": "Konta/sesje",
+          "sha256": "b9d5e0e7afff2a7b19f4fcafcb1d2d4cf3bfa4e99eb4965fa6d2b87d896137f5",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "server/Vaeloria.Api/ChatHub.cs",
+          "lines": "8-90",
+          "kind": "code",
+          "scope": "SignalR i kontrola bieżącej sesji",
+          "sha256": "456790a11ff3ba0ddd0c1612016e1958a4e1a970d1c95fcc3bd0c3053d842c5f",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/AI_ARENA_SPRINT_REPORT.md",
+          "lines": "13-39,70-144",
+          "kind": "report",
+          "scope": "Historyczny zakres i odbiórAI",
+          "sha256": "cb1873648dba588d83fbe987e678d6472f63e203773e01696409f1138f14b03c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/EARTH_FOREST_2_REPORT.md",
+          "lines": "77-98,159-176",
+          "kind": "report",
+          "scope": "Późniejszy las i zakres rewizji",
+          "sha256": "c585f5a730cbb0d2bd7efef2153895a6e573147e90cc86f0ee84f34c95ad4804",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/VAELORIA_EOS_3D_SPRINT1_2026-10-13.md",
+          "lines": "47-66,104-113",
+          "kind": "report",
+          "scope": "Nowsze selektywne testy i limity performance/Android",
+          "sha256": "cc29de424624d73cdf58315b112f3ae88b5b5454804df98ccc3576e118c4427c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/VAELORIA_REDMI_PHYSICAL_QA_2026-10-13.md",
+          "lines": "3-7",
+          "kind": "report",
+          "scope": "Własny syntetyczny przebiegRedmi,bez transferuPASS",
+          "sha256": "d4bbd64841933391989e59a35cc89138b2dcef7eff8f757dd2bfb26fb9eaae36",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/VAELORIA_PUBLIC_WEBSITE_RELEASE.md",
+          "lines": "83-128,221-245,310-328",
+          "kind": "report",
+          "scope": "Strona publiczna i różne stany artefaktówpreview",
+          "sha256": "d5e10850d7675e9c076fcef92d69fd661955175872ef8c4126fc4349911b7d6c",
+          "readAt": "2026-11-02"
+        },
+        {
+          "repository": "Vaeloria",
+          "path": "docs/WINDOWS_PREVIEW_INSTALLER_REPORT.md",
+          "lines": "5-28,52-66",
+          "kind": "report",
+          "scope": "Starszy Windowscandidate,nie fizycznyPASS",
+          "sha256": "b14469ebb6a06c9fabcb755ec2f5ffec71a7f88bad1d644e96683e9278972c26",
+          "readAt": "2026-11-02"
+        }
+      ],
+      "git": {
+        "status": "VERIFIED",
+        "head": "0716317aeb73e328c515504056f6eece669d8eb3",
+        "dirty": true,
+        "lastCommit": "2026-10-13T17:10:06+02:00 wip: checkpoint EOS 3D presentation overhaul",
+        "porcelainEntryCount": 307,
+        "trackedChanges": [
+          " M deploy/preview/status.json",
+          " D docs/Vaeloria_Visual_References/01_TARGET_ARENA_POV.png",
+          " D docs/Vaeloria_Visual_References/02_TARGET_LIVING_FOREST.png",
+          " D docs/Vaeloria_Visual_References/03_TARGET_CINEMATIC_SKILL.png",
+          " D docs/Vaeloria_Visual_References/04_CURRENT_ARENA_PHOTO.jpg",
+          " D docs/Vaeloria_Visual_References/05_EARLIER_BATTLE_PHONE_PHOTO.jpg",
+          " M export_presets.cfg"
+        ],
+        "detail": "Wyłącznie świeży odczyt Git; liczne istniejące untracked dowody/publicrelease zachowane. HEAD nie identyfikuje samodzielnie dirtysnapshotów historycznych APK."
+      },
+      "publicPresentation": "Gotowe do rzetelnego technicznego case study rzeczywistej gry z autentycznymi materiałami po kontroli prywatności/praw. Nie nazywać finalnym wydaniem/PvP ani przenosić dawnychPASS na inny plikAPK."
+    }
+  ],
+  "verifiedImplementationCounts": {
+    "opponents": 10,
+    "opponentNames": [
+      "Iria",
+      "Aren",
+      "Neris",
+      "Solan",
+      "Mira",
+      "Teren",
+      "Velis",
+      "Orven",
+      "Sylvara",
+      "Veyron"
+    ],
+    "strategies": 6,
+    "forestTravelers": 3,
+    "tournamentParticipants": 8,
+    "completedTournamentMatches": 7,
+    "crystalCells": 25,
+    "historicalSimulationRecords": 270,
+    "historicalSimulationOutcomes": {
+      "SideAWins": 156,
+      "SideBWins": 114
+    },
+    "historicalAllReplaysTrue": true
+  },
+  "gameplayVideoCandidates": [
+    {
+      "path": "docs/verification/production-ui-propagation/redmi/candidate6/elemental-screenrecord.mp4",
+      "type": "authentic-gameplay-qa-screenrecord",
+      "width": 1080,
+      "height": 2400,
+      "durationSeconds": 19.981656,
+      "sha256": "093da2355c1809ff1e950fc47aaf3cedb8c28df1f1ae4e8a63579902229cb5eb",
+      "historicalBuild": "FizycznyRedmi,starszycandidate5/6przedarenąPOV/lasem12.10",
+      "provenance": "docs/PRODUCTION_UI_PROPAGATION_REPORT.md:115-147",
+      "sampleVisualReview": "Przejrzano4klatki10/40/80/110s tutorialu i4klatki2/6/10/14s elemental; rzeczywiste HP/MP/łańcuchy,bez danych konta w tych kadrach. Nie jest to pełna kontrola każdego frame.",
+      "publicationRights": "NOT_VERIFIED: pochodzenie capture potwierdza raport,ale artTEMPORARY i provenance nie stanowią pełnego niezależnego clearance wszystkich grafik.",
+      "recommendedUse": "Krótki fragment prawdziwej historycznej rozgrywki po kontroli wybranego odcinka;nie podpisywać jako bieżąca arenaPOV lub finalnaoprawa.",
+      "audio": "Nie wykryto kodeka audio w odczytanych streamach;przedmontażem jawnie wybrać tylko streamvideo."
+    },
+    {
+      "path": "docs/verification/production-ui-propagation/redmi/candidate6/battle-screenrecord.mp4",
+      "type": "authentic-gameplay-qa-screenrecord",
+      "width": 1080,
+      "height": 2400,
+      "durationSeconds": 119.982789,
+      "sha256": "d94790d14031abd13f686ff203c5f586b51dc59ba2cef62e6565f24617c007ea",
+      "historicalBuild": "FizycznyRedmi,starszycandidate5/6przedarenąPOV/lasem12.10",
+      "provenance": "docs/PRODUCTION_UI_PROPAGATION_REPORT.md:115-147",
+      "sampleVisualReview": "Przejrzano4klatki10/40/80/110s tutorialu i4klatki2/6/10/14s elemental; rzeczywiste HP/MP/łańcuchy,bez danych konta w tych kadrach. Nie jest to pełna kontrola każdego frame.",
+      "publicationRights": "NOT_VERIFIED: pochodzenie capture potwierdza raport,ale artTEMPORARY i provenance nie stanowią pełnego niezależnego clearance wszystkich grafik.",
+      "recommendedUse": "Krótki fragment prawdziwej historycznej rozgrywki po kontroli wybranego odcinka;nie podpisywać jako bieżąca arenaPOV lub finalnaoprawa.",
+      "audio": "Nie wykryto kodeka audio w odczytanych streamach;przedmontażem jawnie wybrać tylko streamvideo."
+    },
+    {
+      "path": "docs/verification/production-ui-propagation/redmi/candidate5/battle-action-screenrecord.mp4",
+      "type": "authentic-gameplay-qa-screenrecord",
+      "width": 1080,
+      "height": 2400,
+      "durationSeconds": 180.008767,
+      "sha256": "af1620cdcf5c536d0d298536637c4d7155c2fd42bc21443b80614a67227ff132",
+      "historicalBuild": "FizycznyRedmi,starszycandidate5/6przedarenąPOV/lasem12.10",
+      "provenance": "docs/PRODUCTION_UI_PROPAGATION_REPORT.md:115-147",
+      "sampleVisualReview": "Metadane i raport;nie obejrzano całego filmu.",
+      "publicationRights": "NOT_VERIFIED: pochodzenie capture potwierdza raport,ale artTEMPORARY i provenance nie stanowią pełnego niezależnego clearance wszystkich grafik.",
+      "recommendedUse": "Krótki fragment prawdziwej historycznej rozgrywki po kontroli wybranego odcinka;nie podpisywać jako bieżąca arenaPOV lub finalnaoprawa.",
+      "audio": "Nie wykryto kodeka audio w odczytanych streamach;przedmontażem jawnie wybrać tylko streamvideo."
+    }
+  ],
+  "rejectedGameplayProof": [
+    {
+      "path": "assets/video/reference/demo.mp4",
+      "reason": "Materiałreferencyjny/intro,nieudowodnionygameplay."
+    },
+    {
+      "path": "assets/video/reference/combat_demo_v2.mp4",
+      "reason": "Materiałreferencyjny;nieużywaćjakoautentycznegameplayproof."
+    },
+    {
+      "path": "assets/video/intro/demo.ogv",
+      "reason": "Konwersjaintro,niegameplay."
+    }
+  ],
+  "newChecks": {
+    "scope": "OdczytGit,kodu,raportów,JSONiistniejącychplikówwideo. Nie uruchamiano gry ani nowych symulacji.",
+    "metadataVideosRead": 3,
+    "sampleFramesViewed": 8,
+    "historicalSimulationDataConsistency": "270records,156A/114B,allReplayVerified=true;toodczytstaregodowodu."
+  },
+  "constraints": "Nie zmieniono koduVaelorii,scen,zapisów,buildów,presetów,serweraaniurządzeń. Nie publikowano wideo/klatek;pochodneQApozostająwyłączniew/tmp. Bezcommitupushu."
+}

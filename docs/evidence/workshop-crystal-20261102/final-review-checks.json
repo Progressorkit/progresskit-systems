@@ -1,0 +1,59 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "REPORT.md",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "workshop-crystal-idle.png",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "workshop-crystal-powered.png",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "workshop-crystal-mobile-tap.png",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "workshop-crystal-desktop.mp4",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "workshop-crystal-mobile.mp4",
+    "status": 200,
+    "expected": 200,
+    "pass": true
+  },
+  {
+    "path": "source-before/index.html",
+    "status": 404,
+    "expected": 404,
+    "pass": true
+  },
+  {
+    "path": "preview technology-field.css",
+    "matchesFinalSource": true,
+    "pass": true
+  },
+  {
+    "path": "source-manifest",
+    "pass": true
+  }
+]

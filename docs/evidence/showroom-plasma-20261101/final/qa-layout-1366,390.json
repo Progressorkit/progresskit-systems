@@ -1,0 +1,78 @@
+{
+  "mode": "layout",
+  "checks": [
+    {
+      "name": "1366x768 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "1366x768 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 initial dormant state",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core reveals original collection",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 page fits",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 titles stay inside lenses",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "name": "390x844 no hexagonal clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 core does not overlap active lens",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 compact materials",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 tap opens actual content",
+      "status": "PASS"
+    },
+    {
+      "name": "390x844 touch close restores awake collection",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser or CSP errors",
+      "status": "PASS",
+      "details": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "1366x768-idle.png",
+    "1366x768-activated.png",
+    "390x844-idle.png",
+    "390x844-activated.png",
+    "390x844-project-open.png"
+  ],
+  "PASS": 15,
+  "FAIL": 0
+}

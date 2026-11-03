@@ -1,0 +1,3998 @@
+{
+  "startedAt": "2026-11-02T14:40:02.287Z",
+  "mode": "qa",
+  "browser": "chrome",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:360",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 20,
+            "right": 340,
+            "fontSize": 37.62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 18,
+            "right": 342,
+            "fontSize": 36
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 16,
+            "right": 344,
+            "fontSize": 64
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 28,
+            "right": 280.8125,
+            "fontSize": 34
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 45
+          },
+          {
+            "text": "Pomysł",
+            "left": 174.3125,
+            "right": 344,
+            "fontSize": 24
+          },
+          {
+            "text": "Projekt",
+            "left": 174.3125,
+            "right": 344,
+            "fontSize": 24
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 16,
+            "right": 344,
+            "fontSize": 47
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 24,
+            "right": 321,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 39,
+            "right": 336,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 16,
+            "right": 344,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 38,
+            "right": 344,
+            "fontSize": 21
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 16,
+            "right": 344,
+            "fontSize": 66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 45
+          },
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 344,
+            "fontSize": 62
+          },
+          {
+            "text": "Klienci i interfejsy",
+            "left": 48,
+            "right": 302,
+            "fontSize": 23
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 37,
+            "right": 323,
+            "fontSize": 39
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 37,
+            "right": 323,
+            "fontSize": 34
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 360,
+        "scrollWidth": 360,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 181,
+            "y": 335.296875
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "touch"
+        },
+        "contact": {
+          "width": 177.09375,
+          "height": 52.75,
+          "center": {
+            "x": 125.546875,
+            "y": 496.328125
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": true
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 145,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 14,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 145,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 14,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            }
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 153,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 35,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 153,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 275,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 35,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 251,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 213,
+              "height": 884
+            }
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Technology categories, labels, counts and destination links match approved baseline",
+      "status": "PASS",
+      "details": {
+        "groups": 6,
+        "technologies": 110,
+        "identical": true
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "PASS",
+      "details": [
+        {
+          "label": ".NET MAUI 1",
+          "width": 109.34375,
+          "height": 47,
+          "left": 48,
+          "right": 157.34375,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ASP.NET Core 3",
+          "width": 132.65625,
+          "height": 47,
+          "left": 58,
+          "right": 190.65625,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Android Keystore 2",
+          "width": 167.078125,
+          "height": 47,
+          "left": 48,
+          "right": 215.078125,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Caddy 1",
+          "width": 69.6875,
+          "height": 47,
+          "left": 58,
+          "right": 127.6875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": ".NET 1",
+          "width": 54.328125,
+          "height": 47,
+          "left": 48,
+          "right": 102.328125,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ADB — DEBUG ONLY 1",
+          "width": 201.421875,
+          "height": 47,
+          "left": 58,
+          "right": 259.421875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      ]
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Ecosystem existing six modules and planned relationships remain keyboard operable",
+      "status": "PASS",
+      "details": {
+        "modules": [
+          {
+            "id": "tax",
+            "detail": "ecosystem-role-tax"
+          },
+          {
+            "id": "translator",
+            "detail": "ecosystem-role-translator"
+          },
+          {
+            "id": "agents",
+            "detail": "ecosystem-role-agents"
+          },
+          {
+            "id": "voice",
+            "detail": "ecosystem-role-voice"
+          },
+          {
+            "id": "mail",
+            "detail": "ecosystem-role-mail"
+          },
+          {
+            "id": "messenger",
+            "detail": "ecosystem-role-messenger"
+          }
+        ],
+        "edges": [
+          {
+            "id": "tax-translator",
+            "from": "tax",
+            "to": "translator",
+            "status": "planned"
+          },
+          {
+            "id": "translator-agents",
+            "from": "translator",
+            "to": "agents",
+            "status": "planned"
+          },
+          {
+            "id": "agents-voice",
+            "from": "agents",
+            "to": "voice",
+            "status": "planned"
+          },
+          {
+            "id": "tax-mail",
+            "from": "tax",
+            "to": "mail",
+            "status": "planned"
+          },
+          {
+            "id": "mail-messenger",
+            "from": "mail",
+            "to": "messenger",
+            "status": "planned"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Ecosystem focus highlights selected module and only real related energy paths",
+      "status": "PASS",
+      "details": {
+        "preview": true,
+        "active": "translator",
+        "nodes": [
+          {
+            "id": "tax",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "translator",
+            "related": true,
+            "opacity": "1",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -2.9544)"
+          },
+          {
+            "id": "agents",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "voice",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "mail",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "messenger",
+            "related": false,
+            "opacity": "0.480315",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -0.0228839)"
+          }
+        ],
+        "flows": [
+          {
+            "from": "tax",
+            "to": "translator"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Brief fields, local text export and print stay functional without sending",
+      "status": "PASS",
+      "details": {
+        "fields": 6,
+        "syntheticExport": "PASS",
+        "downloadDeleted": true,
+        "printCallback": 1,
+        "mailtoInspected": true,
+        "mailtoInvoked": false,
+        "networkSubmission": false
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "New material field respects global pause and reduced motion",
+      "status": "PASS",
+      "details": {
+        "globalBefore": {
+          "technology": {
+            "frames": 94,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 165,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 147,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "globalAfter": {
+          "technology": {
+            "frames": 94,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 165,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 147,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedBefore": {
+          "technology": {
+            "frames": 96,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 173,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 154,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedAfter": {
+          "technology": {
+            "frames": 96,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 173,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 154,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Forced colors preserves technology links and inset brief fields",
+      "status": "PASS",
+      "details": {
+        "technology": "visible and focusable",
+        "brief": "visible and focusable"
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "Technology field and existing 3D scenes sleep offscreen",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "technology": {
+            "frames": 99,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 181,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 175,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 13,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "after": {
+          "technology": {
+            "frames": 99,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 34,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 181,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 180,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 13,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 24,
+            "right": 366,
+            "fontSize": 40.755
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 18,
+            "right": 372,
+            "fontSize": 36.66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 16,
+            "right": 374,
+            "fontSize": 64
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 28,
+            "right": 312.1875,
+            "fontSize": 38.22
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 46.8
+          },
+          {
+            "text": "Pomysł",
+            "left": 187.515625,
+            "right": 374,
+            "fontSize": 24
+          },
+          {
+            "text": "Projekt",
+            "left": 187.515625,
+            "right": 374,
+            "fontSize": 24
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 16,
+            "right": 369.046875,
+            "fontSize": 47
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 24,
+            "right": 351,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 39,
+            "right": 366,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 16,
+            "right": 374,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 38,
+            "right": 374,
+            "fontSize": 21
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 16,
+            "right": 374,
+            "fontSize": 66
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 45
+          },
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 16,
+            "right": 374,
+            "fontSize": 62
+          },
+          {
+            "text": "Klienci i interfejsy",
+            "left": 48,
+            "right": 332,
+            "fontSize": 23
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 40,
+            "right": 350,
+            "fontSize": 39.78
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 40,
+            "right": 350,
+            "fontSize": 34
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 150,
+          "height": 300,
+          "center": {
+            "x": 196,
+            "y": 335.375
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "touch"
+        },
+        "contact": {
+          "width": 199.796875,
+          "height": 55.8125,
+          "center": {
+            "x": 139.8984375,
+            "y": 498.5
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": true
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 146,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 14,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 146,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 14,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            }
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 154,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 35,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 154,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 300,
+              "height": 612
+            }
+          },
+          "services": {
+            "frames": 35,
+            "rafPending": false,
+            "dpr": 0.7,
+            "buffer": {
+              "width": 273,
+              "height": 590
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.65,
+            "buffer": {
+              "width": 233,
+              "height": 884
+            }
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Technology categories, labels, counts and destination links match approved baseline",
+      "status": "PASS",
+      "details": {
+        "groups": 6,
+        "technologies": 110,
+        "identical": true
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "PASS",
+      "details": [
+        {
+          "label": ".NET MAUI 1",
+          "width": 109.34375,
+          "height": 47,
+          "left": 48,
+          "right": 157.34375,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ASP.NET Core 3",
+          "width": 132.65625,
+          "height": 47,
+          "left": 58,
+          "right": 190.65625,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Android Keystore 2",
+          "width": 167.078125,
+          "height": 47,
+          "left": 48,
+          "right": 215.078125,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "Caddy 1",
+          "width": 69.6875,
+          "height": 47,
+          "left": 58,
+          "right": 127.6875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": ".NET 1",
+          "width": 54.328125,
+          "height": 47,
+          "left": 48,
+          "right": 102.328125,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        },
+        {
+          "label": "ADB — DEBUG ONLY 1",
+          "width": 201.421875,
+          "height": 47,
+          "left": 58,
+          "right": 259.421875,
+          "hit": true,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      ]
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Ecosystem existing six modules and planned relationships remain keyboard operable",
+      "status": "PASS",
+      "details": {
+        "modules": [
+          {
+            "id": "tax",
+            "detail": "ecosystem-role-tax"
+          },
+          {
+            "id": "translator",
+            "detail": "ecosystem-role-translator"
+          },
+          {
+            "id": "agents",
+            "detail": "ecosystem-role-agents"
+          },
+          {
+            "id": "voice",
+            "detail": "ecosystem-role-voice"
+          },
+          {
+            "id": "mail",
+            "detail": "ecosystem-role-mail"
+          },
+          {
+            "id": "messenger",
+            "detail": "ecosystem-role-messenger"
+          }
+        ],
+        "edges": [
+          {
+            "id": "tax-translator",
+            "from": "tax",
+            "to": "translator",
+            "status": "planned"
+          },
+          {
+            "id": "translator-agents",
+            "from": "translator",
+            "to": "agents",
+            "status": "planned"
+          },
+          {
+            "id": "agents-voice",
+            "from": "agents",
+            "to": "voice",
+            "status": "planned"
+          },
+          {
+            "id": "tax-mail",
+            "from": "tax",
+            "to": "mail",
+            "status": "planned"
+          },
+          {
+            "id": "mail-messenger",
+            "from": "mail",
+            "to": "messenger",
+            "status": "planned"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Ecosystem focus highlights selected module and only real related energy paths",
+      "status": "PASS",
+      "details": {
+        "preview": true,
+        "active": "translator",
+        "nodes": [
+          {
+            "id": "tax",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "translator",
+            "related": true,
+            "opacity": "1",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -2.95438)"
+          },
+          {
+            "id": "agents",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "voice",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "mail",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "messenger",
+            "related": false,
+            "opacity": "0.480315",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -0.0228826)"
+          }
+        ],
+        "flows": [
+          {
+            "from": "tax",
+            "to": "translator"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Brief fields, local text export and print stay functional without sending",
+      "status": "PASS",
+      "details": {
+        "fields": 6,
+        "syntheticExport": "PASS",
+        "downloadDeleted": true,
+        "printCallback": 1,
+        "mailtoInspected": true,
+        "mailtoInvoked": false,
+        "networkSubmission": false
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "New material field respects global pause and reduced motion",
+      "status": "PASS",
+      "details": {
+        "globalBefore": {
+          "technology": {
+            "frames": 92,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 165,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 145,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "globalAfter": {
+          "technology": {
+            "frames": 92,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 165,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 145,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedBefore": {
+          "technology": {
+            "frames": 94,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 173,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 152,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedAfter": {
+          "technology": {
+            "frames": 94,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 173,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 152,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 12,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Forced colors preserves technology links and inset brief fields",
+      "status": "PASS",
+      "details": {
+        "technology": "visible and focusable",
+        "brief": "visible and focusable"
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Technology field and existing 3D scenes sleep offscreen",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "technology": {
+            "frames": 97,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 181,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 173,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 13,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "after": {
+          "technology": {
+            "frames": 97,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 33,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 181,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 178,
+            "rafPending": true,
+            "timerPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 13,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 46.078125,
+            "right": 552.953125,
+            "fontSize": 55.296
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 32,
+            "right": 418.140625,
+            "fontSize": 40
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 15,
+            "right": 753,
+            "fontSize": 67.584
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 39.3125,
+            "right": 351.609375,
+            "fontSize": 39
+          },
+          {
+            "text": "Dla firmy /\nsystemu",
+            "left": 405.0625,
+            "right": 717.359375,
+            "fontSize": 39
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 15,
+            "right": 753,
+            "fontSize": 56
+          },
+          {
+            "text": "Pomysł",
+            "left": 101.046875,
+            "right": 174.9375,
+            "fontSize": 23
+          },
+          {
+            "text": "Projekt",
+            "left": 348.234375,
+            "right": 419.765625,
+            "fontSize": 23
+          },
+          {
+            "text": "Budowa",
+            "left": 588.1875,
+            "right": 671.796875,
+            "fontSize": 23
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 15,
+            "right": 559.59375,
+            "fontSize": 58
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 35,
+            "right": 707,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 61,
+            "right": 733,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 15,
+            "right": 409.359375,
+            "fontSize": 42
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 44,
+            "right": 233,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 290,
+            "right": 479,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 536,
+            "right": 725,
+            "fontSize": 21
+          },
+          {
+            "text": "O mnie",
+            "left": 15,
+            "right": 448.125,
+            "fontSize": 66
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 528.125,
+            "right": 753,
+            "fontSize": 28
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 15,
+            "right": 448.125,
+            "fontSize": 66
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 528.125,
+            "right": 753,
+            "fontSize": 28
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 15,
+            "right": 544.5625,
+            "fontSize": 47
+          },
+          {
+            "text": "Warsztat.",
+            "left": 15,
+            "right": 426.484375,
+            "fontSize": 62
+          },
+          {
+            "text": "Klienci i interfejsy",
+            "left": 40.369686126708984,
+            "right": 280.91225814819336,
+            "fontSize": 19
+          },
+          {
+            "text": "Backend i komunikacja",
+            "left": 492.0583801269531,
+            "right": 731.1246948242188,
+            "fontSize": 19
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 15,
+            "right": 426.484375,
+            "fontSize": 62
+          },
+          {
+            "text": "Klienci i interfejsy",
+            "left": 40.369686126708984,
+            "right": 280.91225814819336,
+            "fontSize": 19
+          },
+          {
+            "text": "Backend i komunikacja",
+            "left": 492.0583801269531,
+            "right": 731.1246948242188,
+            "fontSize": 19
+          },
+          {
+            "text": "Dane i bezpieczeństwo",
+            "left": 48.1854362487793,
+            "right": 288.7279930114746,
+            "fontSize": 19
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 50.546875,
+            "right": 444.09375,
+            "fontSize": 58
+          },
+          {
+            "text": "Opisz swój projekt",
+            "left": 50.546875,
+            "right": 277.046875,
+            "fontSize": 33
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 50.546875,
+            "right": 277.046875,
+            "fontSize": 33
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 385,
+            "y": 431.859375
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "mouse"
+        },
+        "contact": {
+          "width": 214.375,
+          "height": 57.75,
+          "center": {
+            "x": 157.734375,
+            "y": 626.4375
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": false
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 280,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            }
+          },
+          "services": {
+            "frames": 18,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 280,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            }
+          },
+          "services": {
+            "frames": 18,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 10,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            }
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 292,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            }
+          },
+          "services": {
+            "frames": 42,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 292,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 598,
+              "height": 595
+            }
+          },
+          "services": {
+            "frames": 42,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 652,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 627,
+              "height": 740
+            }
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Technology categories, labels, counts and destination links match approved baseline",
+      "status": "PASS",
+      "details": {
+        "groups": 6,
+        "technologies": 110,
+        "identical": true
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "FAIL",
+      "details": "Error: Technology focus indicator state absent\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:31:321\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:15:170)\n    at async continuityChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:31:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:47:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:60:141)"
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Ecosystem existing six modules and planned relationships remain keyboard operable",
+      "status": "PASS",
+      "details": {
+        "modules": [
+          {
+            "id": "tax",
+            "detail": "ecosystem-role-tax"
+          },
+          {
+            "id": "translator",
+            "detail": "ecosystem-role-translator"
+          },
+          {
+            "id": "agents",
+            "detail": "ecosystem-role-agents"
+          },
+          {
+            "id": "voice",
+            "detail": "ecosystem-role-voice"
+          },
+          {
+            "id": "mail",
+            "detail": "ecosystem-role-mail"
+          },
+          {
+            "id": "messenger",
+            "detail": "ecosystem-role-messenger"
+          }
+        ],
+        "edges": [
+          {
+            "id": "tax-translator",
+            "from": "tax",
+            "to": "translator",
+            "status": "planned"
+          },
+          {
+            "id": "translator-agents",
+            "from": "translator",
+            "to": "agents",
+            "status": "planned"
+          },
+          {
+            "id": "agents-voice",
+            "from": "agents",
+            "to": "voice",
+            "status": "planned"
+          },
+          {
+            "id": "tax-mail",
+            "from": "tax",
+            "to": "mail",
+            "status": "planned"
+          },
+          {
+            "id": "mail-messenger",
+            "from": "mail",
+            "to": "messenger",
+            "status": "planned"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Ecosystem focus highlights selected module and only real related energy paths",
+      "status": "PASS",
+      "details": {
+        "preview": true,
+        "active": "translator",
+        "nodes": [
+          {
+            "id": "tax",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "translator",
+            "related": true,
+            "opacity": "1",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -2.95438)"
+          },
+          {
+            "id": "agents",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "voice",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "mail",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "none"
+          },
+          {
+            "id": "messenger",
+            "related": false,
+            "opacity": "0.480316",
+            "filter": "none",
+            "transform": "matrix(1, 0, 0, 1, 0, -0.0194972)"
+          }
+        ],
+        "flows": [
+          {
+            "from": "tax",
+            "to": "translator"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Brief fields, local text export and print stay functional without sending",
+      "status": "PASS",
+      "details": {
+        "fields": 6,
+        "syntheticExport": "PASS",
+        "downloadDeleted": true,
+        "printCallback": 1,
+        "mailtoInspected": true,
+        "mailtoInvoked": false,
+        "networkSubmission": false
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "New material field respects global pause and reduced motion",
+      "status": "PASS",
+      "details": {
+        "globalBefore": {
+          "technology": {
+            "frames": 7,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 293,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 144,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "globalAfter": {
+          "technology": {
+            "frames": 7,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 293,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 144,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedBefore": {
+          "technology": {
+            "frames": 9,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 301,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 153,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedAfter": {
+          "technology": {
+            "frames": 9,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 301,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 153,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Forced colors preserves technology links and inset brief fields",
+      "status": "PASS",
+      "details": {
+        "technology": "visible and focusable",
+        "brief": "visible and focusable"
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Technology field and existing 3D scenes sleep offscreen",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "technology": {
+            "frames": 12,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 309,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 182,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 6,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "after": {
+          "technology": {
+            "frames": 12,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 30,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 309,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 189,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 6,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Prerendered content and catalogue identities unchanged",
+      "status": "PASS",
+      "details": {
+        "catalogCount": 19,
+        "h1": 1
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "hero responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "PROGRESSKIT\nSYSTEMS",
+            "left": 86.390625,
+            "right": 921.59375,
+            "fontSize": 92.88
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "showroom-idle responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "SYSTEM POŁĄCZONYCH ŚWIATÓW.",
+            "left": 60,
+            "right": 840,
+            "fontSize": 72
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "services responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Usługi",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 126.72
+          },
+          {
+            "text": "Dla Ciebie /\nmałego biznesu",
+            "left": 148.8125,
+            "right": 621.28125,
+            "fontSize": 59
+          },
+          {
+            "text": "Dla firmy /\nsystemu",
+            "left": 795.59375,
+            "right": 1268.0625,
+            "fontSize": 59
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "process responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Od pomysłu\ndo wdrożenia.",
+            "left": 100,
+            "right": 1340,
+            "fontSize": 103.68
+          },
+          {
+            "text": "Pomysł",
+            "left": 266.125,
+            "right": 365.703125,
+            "fontSize": 31
+          },
+          {
+            "text": "Projekt",
+            "left": 671.78125,
+            "right": 768.203125,
+            "fontSize": 31
+          },
+          {
+            "text": "Budowa",
+            "left": 1067.734375,
+            "right": 1180.421875,
+            "fontSize": 31
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "ecosystem responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Ekosystem ProgressKit",
+            "left": 100,
+            "right": 1038.953125,
+            "fontSize": 100
+          },
+          {
+            "text": "ProgressKit Tax\nW rozwoju",
+            "left": 98.51700592041016,
+            "right": 484.9422073364258,
+            "fontSize": 16
+          },
+          {
+            "text": "ProgressKit Translator\nW rozwoju",
+            "left": 955.125732421875,
+            "right": 1341.5997314453125,
+            "fontSize": 16
+          },
+          {
+            "text": "Local AI Agents\nPlanowane",
+            "left": 110.47553253173828,
+            "right": 472.5066909790039,
+            "fontSize": 16
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "releases responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wydania i dostępność",
+            "left": 100,
+            "right": 757.265625,
+            "fontSize": 70
+          },
+          {
+            "text": "Beta\n— rozwiązania testowe",
+            "left": 129,
+            "right": 485.328125,
+            "fontSize": 21
+          },
+          {
+            "text": "Stable\n— rozwiązania zweryfikowane",
+            "left": 542.328125,
+            "right": 898.65625,
+            "fontSize": 21
+          },
+          {
+            "text": "Commercial\n— dostępność komercyjna, niezależna od statusu wydania",
+            "left": 955.65625,
+            "right": 1312,
+            "fontSize": 21
+          },
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 953.1875,
+            "right": 1281.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "about responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "O mnie",
+            "left": 100,
+            "right": 803,
+            "fontSize": 112
+          },
+          {
+            "text": "Masz problem do rozwiązania?",
+            "left": 953.1875,
+            "right": 1281.5,
+            "fontSize": 41
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "challenges responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Wyzwania inżynieryjne.",
+            "left": 100,
+            "right": 1046.46875,
+            "fontSize": 84
+          },
+          {
+            "text": "Warsztat.",
+            "left": 100,
+            "right": 791.390625,
+            "fontSize": 100
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "technology responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Warsztat.",
+            "left": 100,
+            "right": 791.390625,
+            "fontSize": 100
+          },
+          {
+            "text": "Klienci i interfejsy",
+            "left": 156.2884063720703,
+            "right": 497.80470275878906,
+            "fontSize": 27
+          },
+          {
+            "text": "Backend i komunikacja",
+            "left": 904.0939331054688,
+            "right": 1246.32958984375,
+            "fontSize": 27
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "contact responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Porozmawiajmy.",
+            "left": 165.796875,
+            "right": 811.375,
+            "fontSize": 83.52
+          },
+          {
+            "text": "Opisz swój projekt",
+            "left": 165.796875,
+            "right": 495.265625,
+            "fontSize": 48
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "brief responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": [
+          {
+            "text": "Opisz swój projekt",
+            "left": 165.796875,
+            "right": 495.265625,
+            "fontSize": 48
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "footer responsive bounds",
+      "status": "PASS",
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "headings": []
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Core keyboard activation, project disclosure and Escape",
+      "status": "PASS",
+      "details": {
+        "renderer": "three-webgl2",
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Desktop GPU iteration sample without recording",
+      "status": "PASS",
+      "details": {
+        "gpu": {
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)"
+        },
+        "frames": 114,
+        "elapsedSeconds": 2.2152000000178815,
+        "observedFPS": 51.46262188474168,
+        "before": {
+          "time": 13940.5,
+          "frames": 259,
+          "rafPending": true,
+          "quality": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "drawCalls": 53,
+          "triangles": 18232,
+          "gpuFrameMs": 9.460666,
+          "cpuFrameMs": 2.5999999940395355,
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ]
+        },
+        "after": {
+          "time": 16155.700000017881,
+          "frames": 373,
+          "rafPending": true,
+          "quality": 0,
+          "dpr": 0.85,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "drawCalls": 53,
+          "triangles": 18232,
+          "gpuFrameMs": 8.999083,
+          "cpuFrameMs": 2.5,
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ]
+        },
+        "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Core raycast and contact hit targets remain operable",
+      "status": "PASS",
+      "details": {
+        "core": {
+          "width": 190,
+          "height": 400,
+          "center": {
+            "x": 721.5,
+            "y": 534.4375
+          },
+          "hit": false,
+          "pointerEvents": "none",
+          "hitTag": "CANVAS",
+          "hitClass": null,
+          "pointerThroughCanvas": true,
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "realRaycastActivation": true,
+          "input": "mouse"
+        },
+        "contact": {
+          "width": 354.171875,
+          "height": 76.5,
+          "center": {
+            "x": 342.8828125,
+            "y": 695.75
+          },
+          "hit": true,
+          "pointerEvents": "auto",
+          "hitTag": "A",
+          "hitClass": "contact__email",
+          "pointerThroughCanvas": false,
+          "outline": "none",
+          "outlineWidth": "3px"
+        },
+        "mobileMenu": false
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Reduced motion stops Three/Services/Process continuous loops",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 427,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            }
+          },
+          "services": {
+            "frames": 16,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 427,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            }
+          },
+          "services": {
+            "frames": 16,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 11,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            }
+          }
+        },
+        "infiniteAnimations": []
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Offscreen showroom, Services and Process pause",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "showroom": {
+            "frames": 439,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            }
+          },
+          "services": {
+            "frames": 40,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            }
+          }
+        },
+        "after": {
+          "showroom": {
+            "frames": 439,
+            "rafPending": false,
+            "quality": 0,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 850,
+              "height": 765
+            }
+          },
+          "services": {
+            "frames": 40,
+            "rafPending": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1224,
+              "height": 850
+            }
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "dpr": 0.85,
+            "buffer": {
+              "width": 1054,
+              "height": 757
+            }
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Technology categories, labels, counts and destination links match approved baseline",
+      "status": "PASS",
+      "details": {
+        "groups": 6,
+        "technologies": 110,
+        "identical": true
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Technology links stay readable, focusable and unobscured in material layers",
+      "status": "FAIL",
+      "details": "Error: Technology focus indicator state absent\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:31:321\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:15:170)\n    at async continuityChecks (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:31:2)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:47:2)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/premium-continuity-20261102/browser-proof.cjs:60:141)"
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Ecosystem existing six modules and planned relationships remain keyboard operable",
+      "status": "PASS",
+      "details": {
+        "modules": [
+          {
+            "id": "tax",
+            "detail": "ecosystem-role-tax"
+          },
+          {
+            "id": "translator",
+            "detail": "ecosystem-role-translator"
+          },
+          {
+            "id": "agents",
+            "detail": "ecosystem-role-agents"
+          },
+          {
+            "id": "voice",
+            "detail": "ecosystem-role-voice"
+          },
+          {
+            "id": "mail",
+            "detail": "ecosystem-role-mail"
+          },
+          {
+            "id": "messenger",
+            "detail": "ecosystem-role-messenger"
+          }
+        ],
+        "edges": [
+          {
+            "id": "tax-translator",
+            "from": "tax",
+            "to": "translator",
+            "status": "planned"
+          },
+          {
+            "id": "translator-agents",
+            "from": "translator",
+            "to": "agents",
+            "status": "planned"
+          },
+          {
+            "id": "agents-voice",
+            "from": "agents",
+            "to": "voice",
+            "status": "planned"
+          },
+          {
+            "id": "tax-mail",
+            "from": "tax",
+            "to": "mail",
+            "status": "planned"
+          },
+          {
+            "id": "mail-messenger",
+            "from": "mail",
+            "to": "messenger",
+            "status": "planned"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Ecosystem focus highlights selected module and only real related energy paths",
+      "status": "PASS",
+      "details": {
+        "preview": true,
+        "active": "translator",
+        "nodes": [
+          {
+            "id": "tax",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "matrix3d(0.997412, -0.0174524, -0.0697458, 0, 0.0174099, 0.999848, -0.00121742, 0, 0.0697565, 0, 0.997564, 0, 0, 0, 0, 1)"
+          },
+          {
+            "id": "translator",
+            "related": true,
+            "opacity": "0.999685",
+            "filter": "none",
+            "transform": "matrix3d(0.99947, 0.00856853, 0.0313994, 0, -0.00856431, 0.999963, -0.000269056, 0, -0.0314005, 0, 0.999507, 0, 0, -8.86317, 57.3614, 1)"
+          },
+          {
+            "id": "agents",
+            "related": true,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "matrix3d(0.994181, -0.0261769, -0.104493, 0, 0.0260335, 0.999657, -0.00273624, 0, 0.104528, 0, 0.994522, 0, 0, 0, -23, 1)"
+          },
+          {
+            "id": "voice",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "matrix3d(0.997441, 0.0157073, 0.0697479, 0, -0.0156691, 0.999877, -0.00109569, 0, -0.0697565, 0, 0.997564, 0, 0, 0, 29, 1)"
+          },
+          {
+            "id": "mail",
+            "related": false,
+            "opacity": "0.48",
+            "filter": "none",
+            "transform": "matrix3d(0.998372, -0.0226873, -0.0523225, 0, 0.0226562, 0.999743, -0.00118736, 0, 0.052336, 0, 0.99863, 0, 0, 0, 9, 1)"
+          },
+          {
+            "id": "messenger",
+            "related": false,
+            "opacity": "0.480315",
+            "filter": "none",
+            "transform": "matrix3d(0.995884, 0.026086, 0.0867989, 0, -0.0259875, 0.99966, -0.00226501, 0, -0.0868284, 0, 0.996223, 0, 0, -0.0521288, -16.5656, 1)"
+          }
+        ],
+        "flows": [
+          {
+            "from": "tax",
+            "to": "translator"
+          },
+          {
+            "from": "translator",
+            "to": "agents"
+          }
+        ]
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Brief fields, local text export and print stay functional without sending",
+      "status": "PASS",
+      "details": {
+        "fields": 6,
+        "syntheticExport": "PASS",
+        "downloadDeleted": true,
+        "printCallback": 1,
+        "mailtoInspected": true,
+        "mailtoInvoked": false,
+        "networkSubmission": false
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "New material field respects global pause and reduced motion",
+      "status": "PASS",
+      "details": {
+        "globalBefore": {
+          "technology": {
+            "frames": 7,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 440,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 158,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "globalAfter": {
+          "technology": {
+            "frames": 7,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 440,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 158,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedBefore": {
+          "technology": {
+            "frames": 9,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 448,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 167,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "reducedAfter": {
+          "technology": {
+            "frames": 9,
+            "rafPending": false,
+            "visible": true,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 448,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 167,
+            "rafPending": false,
+            "timerPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 5,
+            "rafPending": false,
+            "paused": true,
+            "reduced": true,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Forced colors preserves technology links and inset brief fields",
+      "status": "PASS",
+      "details": {
+        "technology": "visible and focusable",
+        "brief": "visible and focusable"
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Technology field and existing 3D scenes sleep offscreen",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "technology": {
+            "frames": 12,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 456,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 197,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 6,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        },
+        "after": {
+          "technology": {
+            "frames": 12,
+            "rafPending": false,
+            "visible": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "process": {
+            "frames": 31,
+            "rafPending": false,
+            "visible": false,
+            "running": false,
+            "disposed": false
+          },
+          "showroom": {
+            "frames": 456,
+            "rafPending": false
+          },
+          "luxury": {
+            "frames": 205,
+            "rafPending": true,
+            "timerPending": true,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          },
+          "footer": {
+            "frames": 6,
+            "rafPending": false,
+            "paused": false,
+            "reduced": false,
+            "forcedColors": false,
+            "disposed": false
+          }
+        }
+      }
+    },
+    {
+      "scope": "fallback",
+      "name": "No-WebGL content and project disclosure remain usable",
+      "status": "PASS",
+      "details": {
+        "renderer": "forced-no-webgl",
+        "atmosphere": {
+          "hidden": true,
+          "display": "none",
+          "renderer": "fallback"
+        },
+        "content": "usable",
+        "physicalDevice": "NOT_RUN"
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No unexpected browser errors or missing resources",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpResourceErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Frozen visual source unchanged during QA",
+      "status": "PASS",
+      "details": {
+        "files": 19
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [],
+  "performance": [
+    {
+      "gpu": {
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "vendor": "Google Inc. (Intel)"
+      },
+      "frames": 114,
+      "elapsedSeconds": 2.2152000000178815,
+      "observedFPS": 51.46262188474168,
+      "before": {
+        "time": 13940.5,
+        "frames": 259,
+        "rafPending": true,
+        "quality": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "drawCalls": 53,
+        "triangles": 18232,
+        "gpuFrameMs": 9.460666,
+        "cpuFrameMs": 2.5999999940395355,
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ]
+      },
+      "after": {
+        "time": 16155.700000017881,
+        "frames": 373,
+        "rafPending": true,
+        "quality": 0,
+        "dpr": 0.85,
+        "buffer": {
+          "width": 850,
+          "height": 765
+        },
+        "drawCalls": 53,
+        "triangles": 18232,
+        "gpuFrameMs": 8.999083,
+        "cpuFrameMs": 2.5,
+        "phases": [
+          {
+            "id": "glikemia-premium",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-mail",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-translator",
+            "phase": "ready"
+          },
+          {
+            "id": "vaeloria",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-community",
+            "phase": "ready"
+          },
+          {
+            "id": "progresskit-tax",
+            "phase": "ready"
+          }
+        ]
+      },
+      "note": "Local browser measurement on this host; no physical mobile claim or precise historical comparison."
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "physicalDesktop": "NOT_RUN",
+  "physicalMobile": "NOT_RUN",
+  "mailActivity": "NOT_RUN",
+  "formsSubmitted": false,
+  "externalRequestsAllowed": false,
+  "sourceBefore": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "3d47aaeb8ab32aea1005681401048b2b31c691db46defc3b012c41171f189349",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "PASS": 102,
+  "FAIL": 2,
+  "BLOCKED": 0,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "f61295836418e00f0db9e5fa8771d33f5f333d3b35a41875b0602ecd4e62f06c",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "catalog/brand.json": "b467480843212e1d3acbb04ff4bbb2d8ae07d0caa63e5caa5a705319cfda0d9b",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/luxury-world.mjs": "bcc0e13db658f2e4d711dc1dcdd6bb7638c4071703621ab806473ca47fd82e6f",
+    "assets/luxury-chapters.css": "acfb47c8de30790c6ca4f5f75160e2f0e50d2c849f7fb38e01860ac7264c5eea",
+    "assets/luxury-showroom.css": "e5d6260a0aee7b8097e36087954d6d4b290c97213fa4794747d84f46ec5c1930",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/black-finish.svg": "b6dfe80715b301e7550324638bd005abb09fd20f182c2cc2ff2002398779c13f",
+    "scripts/build-site.py": "337fac6aed6bb5b069579dd92ea45aa119a90756b4a031c4a3fead1af1884c42",
+    "scripts/stage-public.py": "efa8a1de34c5ad7f046bc45a88b04e17afe6b670b2577ee9d751658555709b2d",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/continuity-chapters.mjs": "e5cba78c1c43222b0585f822a4146615f3703dec16f52e3a858f114be9adb70e",
+    "assets/continuity-process.css": "e132ca8f2d55c80f86dfd3bd7522338a3dbae7dc5e0adb863199f07b3c043147",
+    "assets/technology-field.css": "3d47aaeb8ab32aea1005681401048b2b31c691db46defc3b012c41171f189349",
+    "assets/technology-field.mjs": "5c1ac5563fc36e4804d7cbfe3ce73ec074ec63989782f12f8fe87d12c4bc2bf1"
+  },
+  "finishedAt": "2026-11-02T14:42:11.228Z",
+  "status": "FAIL"
+}

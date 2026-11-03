@@ -1,0 +1,1530 @@
+{
+  "auditDate": "2026-11-02",
+  "auditMode": "READ_ONLY_CODE_AND_RETAINED_REPORTS",
+  "freshTestRuns": "NOT_RUN",
+  "remoteAccess": "NONE",
+  "databaseOrAccountAccess": "NONE",
+  "publicCopyRule": "Kod i lokalne dowody nie oznaczają wdrożenia; prywatnych ścieżek i szczegółów operatora nie publikować automatycznie.",
+  "products": [
+    {
+      "id": "progresskit-systems",
+      "name": "ProgressKit Systems",
+      "portfolioKind": "portfolio-platform",
+      "summary": "Własna platforma prezentacji produktów: recenzowany katalog danych generuje statyczne podstrony projektów, filtry i opisy realizacji, a interaktywna warstwa Three.js pokazuje produkty jako przestrzenny showroom. Funkcjonalny katalog działa także bez WebGL i bez JavaScript.",
+      "solution": "Oddziela źródłowe informacje o produktach od szablonów prezentacji. Ten sam katalog zasila case studies, technologie, filtrowanie i showroom; przeglądanie pozostaje dostępne w HTML, a rozbudowane3D jest dodatkową warstwą obsługi i oprawy.",
+      "features": [
+        {
+          "text": "Walidowany katalog JSON przechowuje tożsamości, opisy, funkcje, status, dostępność, źródła i analizy realizacji zamiast ręcznie powielanych kart.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "106-172",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            }
+          ]
+        },
+        {
+          "text": "Generator Python tworzy indeks katalogu i osobne adresy case studies z problemem, rozwiązaniem, architekturą, funkcjami, galerią i dalszym rozwojem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "270-293",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "459-474",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            }
+          ]
+        },
+        {
+          "text": "Wyszukiwanie, kategorie, technologie i etap produktu mają stan w URL, obsługę powrotu historii i bezpośredni wybór projektu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/site-v5.js",
+              "lines": "259-288",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/site-v5.js",
+              "lines": "300-317",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+            }
+          ]
+        },
+        {
+          "text": "Treść stron jest prerenderowana. Filtry wymagają JavaScript, ale lista projektów i pełne podstrony pozostają dostępne jako statyczny HTML.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "295-302",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "459-474",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            }
+          ]
+        },
+        {
+          "text": "Katalog technologii prowadzi do przefiltrowanych realizacji, a sitemap i metadane generowane są z tych samych rekordów.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "349-373",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "472-474",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            }
+          ]
+        },
+        {
+          "text": "Showroom jest rzeczywistą sceną Three.js/WebGL2: kamera perspektywiczna, geometria kapsuły i kryształów, materiał transmisyjny, energia i światła.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-scene.mjs",
+              "lines": "1-35",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-scene.mjs",
+              "lines": "290-324",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1"
+            }
+          ]
+        },
+        {
+          "text": "Raycasting wskazuje rzeczywistą geometrię obiektu; wybór projektu przekazuje sterowanie istniejącej warstwie treści, routingu i zdarzeń.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-scene.mjs",
+              "lines": "1027-1044",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-3d.mjs",
+              "lines": "205-228",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23"
+            }
+          ]
+        },
+        {
+          "text": "Klawiatura, focus, Escape, reduced motion i statyczny fallback zachowują dostęp do projektów. Renderowanie usypia poza viewportem i podczas odczytu rozwiniętej treści.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-3d.mjs",
+              "lines": "38-46",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-3d.mjs",
+              "lines": "286-330",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-lifecycle.mjs",
+              "lines": "1-66",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "fccf3a7e762dc7cf0b2e3110ffc80bcf68b2836b993d64084e6e9477c07d7cfa"
+            }
+          ]
+        },
+        {
+          "text": "Osobny, niewielki renderer Usług pokazuje dwa szklane obiekty; interakcja zmienia światło i delikatny rozkład materiału, a treści i CTA pozostają semantycznym HTML.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "4-34",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "336-361",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "390-419",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            }
+          ]
+        },
+        {
+          "text": "Proces pracy jest ciągiem sześciu komór CSS3D z lekkim Canvas energii, który czyta istniejący stan etapów i nie przejmuje sterowania scrollem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "475-522",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/interface-life.js",
+              "lines": "43-77",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d89144bfc5436f4335db2bac2e4a8ca1585b73dc49eaf743c3f2490c2e7fe247"
+            }
+          ]
+        },
+        {
+          "text": "Wspólny lifecycle uwzględnia zmianę widoczności, rozmiaru i DPR, utratę kontekstu WebGL oraz jawne zwalnianie zasobów przy opuszczeniu strony.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/showroom-3d.mjs",
+              "lines": "286-330",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d6a383133968585853546b131b3b59c0d12a71b12a5914b972aff25dca808f23"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "417-475",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            }
+          ]
+        },
+        {
+          "text": "Galeria używa lokalnych materiałów z opisami, klawiaturą i przywracaniem fokusu; linki obrazów pozostają dostępne poza modalem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/site-v5.js",
+              "lines": "320-347",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+            }
+          ]
+        },
+        {
+          "text": "Brief projektu tworzy lokalny plik tekstowy i korzysta z drukowania przeglądarki; kontakt e-mail jest jawną akcją użytkownika, bez automatycznej wysyłki formularza.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/site-v5.js",
+              "lines": "350-357",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "prywatnosc/index.html",
+              "lines": "41-41",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "ea1a6e0baa07df8a6159a2059ac8a3ae15cc0622468add45a5f2b162929c34d3"
+            }
+          ]
+        },
+        {
+          "text": "Walidacja odrzuca niebezpieczne ścieżki galerii, niesprawdzone adresy zewnętrzne oraz prywatne lokalizacje lub ciągi przypominające sekrety w publicznym rekordzie.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/build-site.py",
+              "lines": "174-221",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+            }
+          ]
+        },
+        {
+          "text": "Publiczny pakiet powstaje z jawnego allowlistu; prywatna dokumentacja, dane i katalog źródłowy nie są publikowane razem z repozytorium.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/stage-public.py",
+              "lines": "11-41",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/stage-public.py",
+              "lines": "44-63",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Generator Python i katalog JSON → statyczne HTML/CSS/JavaScript; lokalnie dostarczane moduły Three.js dla showroomu i niewielkiej sceny Usług; CSS3D/Canvas dla Procesu; FastAPI jest oddzielnym backendem analityki i dystrybucji produktu, nie serwerem katalogowym.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "scripts/build-site.py",
+            "lines": "416-433",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "scripts/stage-public.py",
+            "lines": "22-24",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/preview.py",
+            "lines": "25-37",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243"
+          }
+        ]
+      },
+      "technologies": [
+        "Python",
+        "HTML",
+        "CSS",
+        "JavaScript ES modules",
+        "Three.js",
+        "WebGL2",
+        "Canvas2D",
+        "CSS3D",
+        "JSON",
+        "GitHub Actions",
+        "FastAPI (osobne API)"
+      ],
+      "platforms": [
+        {
+          "name": "WWW desktop",
+          "implementation": "Działający katalog i statyczne case studies oraz interaktywny showroom3D.",
+          "verification": "Odczytano lokalne raporty funkcjonalne, lifecycle i capture. Podczas tego audytu nie uruchamiano kolejnych przeglądarek ani pomiarów.",
+          "distribution": "Lokalny kandydat i allowlistowane artefakty.",
+          "limits": "Owner visual approval pozostajeOPEN. Aktualne wdrożenie nowego wyglądu na publicznej domenie nie zostało potwierdzone.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/capture.json",
+              "lines": "1003-1004",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "145861c9fb8e46a9caf6b6d9d1a667792d3231cb6be120898569958a42001964"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "3-21",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            }
+          ]
+        },
+        {
+          "name": "WWW mobile",
+          "implementation": "Responsywny układ, dotyk, jeden aktywny kryształ showroomu, uproszczona scena Usług i pionowy Proces.",
+          "verification": "Raporty obejmują emulację viewportu390×844 i dotyku; brak nowego dowodu fizycznego telefonu dla aktualnego passu.",
+          "distribution": "Ten sam statyczny frontend.",
+          "limits": "Emulacja nie jest testem wydajności na rzeczywistym telefonie; część ujęć pokazuje tylko obszar widocznego viewportu.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/capture.json",
+              "lines": "1-20",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "145861c9fb8e46a9caf6b6d9d1a667792d3231cb6be120898569958a42001964"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/spatial-chapters.mjs",
+              "lines": "336-361",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Działająca platforma portfolio ze statycznym katalogiem, interakcjami i rzeczywistym3D; bieżące zmiany wizualne pozostają lokalnym working tree.",
+      "distributionStatus": "Lokalny kandydat i przygotowywalny publiczny artefakt. Repozytorium ma konfigurację Pages, lecz nie potwierdzono publikacji aktualnego working tree.",
+      "productionStatus": "NOT VERIFIED / OWNER VISUAL APPROVAL OPEN. Historyczny odczyt domeny w2026-10-15 dotyczyłV4, nie obecnej sceny3D ani późniejszegoV5.",
+      "results": [
+        "Wspólny model zasila katalog, technologie i podstrony bez wymagania backendu katalogowego.",
+        "Nowszy lokalny proof Services/Process zawiera99 regresji (55Node i44Python),27 kontroli lifecycle oraz17 kontroli capture; są to oddzielne zestawy, nie jeden reporter.",
+        "Baza FPS jest historyczna: zachowany raport Core podaje58,946FPS; późniejsza regresja45,111FPS, a izolacja A/B43,401FPS z warstwą Services i41,465FPS bez niej. Nie udowodniono prostego związku przyczynowego ani aktualnych60FPS."
+      ],
+      "remaining": [
+        "Owner visual approval bieżącej kompozycji i nowego katalogu.",
+        "Pełne ponowne QA po integracjiV2 i materiałów portfolio; nie przenosić wyników wcześniejszych źródeł na późniejsze zmiany.",
+        "Aktualny pomiar wydajności i dostępności całej strony, Lighthouse/CWV oraz test fizycznego telefonu.",
+        "Osobna weryfikacja publicznego wdrożenia i bramek operatorskich/prawnych."
+      ],
+      "git": {
+        "head": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+        "branch": "main",
+        "dirty": true,
+        "scope": "Read-only snapshot of an actively edited working tree on2026-11-02; HEAD alone does not contain current3D/Services/Process work. No fetch, commit, push, production or database access performed by this audit."
+      },
+      "tests": [
+        {
+          "date": "2026-11-02",
+          "revision": "WORKTREE_PHASE_SERVICES_PROCESS; base e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "scope": "Regresje lokalne przed integracją nowego katalogu; Node i Python są odrębnymi reporterami",
+          "recordedResults": {
+            "node": {
+              "pass": 55,
+              "fail": 0
+            },
+            "python": {
+              "pass": 44,
+              "fail": 0
+            },
+            "phaseLabelUniqueRegressionTotal": 99
+          },
+          "limits": "Nie jest to nowy test uruchomiony przez audyt ani wynik po integracjiV2.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/node-tests.log",
+              "lines": "333-338",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "c526952146d5abc425daf4cf23d8b6226e3d516f19191b2c1b87baea4cc62e69"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/python-tests.log",
+              "lines": "46-49",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "f18dbd4b7aa9f4e8f2951c2be04638857691e35b9921517349d9c465eef6cf34"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-02",
+          "revision": "WORKTREE_PHASE_SERVICES_PROCESS; source manifest retained",
+          "scope": "Osobne lifecycle i capture na lokalnej przeglądarce",
+          "recordedResults": {
+            "lifecycle": {
+              "pass": 27,
+              "fail": 0
+            },
+            "capture": {
+              "pass": 17,
+              "fail": 0
+            }
+          },
+          "limits": "Capture jest zakresem funkcjonalnym/scenariuszem; nie zamyka owner visual approval.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/lifecycle.json",
+              "lines": "869-870",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "aedd569b69834c0a566dedbcea91f1f78ed3394deeaf36b1af491b8dde6406f3"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/capture.json",
+              "lines": "1003-1004",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "145861c9fb8e46a9caf6b6d9d1a667792d3231cb6be120898569958a42001964"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-01/02, zachowane lokalne przebiegi",
+          "revision": "Oddzielne source snapshots, nie jeden porównywalny benchmark",
+          "scope": "UHD620; różne chwile, DPR i warianty sceny",
+          "recordedResults": {
+            "earlierCoreFps": 58.946059381315095,
+            "laterShowroomRegressionFps": 45.11138037095722,
+            "isolationFullFps": 43.40106529895403,
+            "isolationDisabledFps": 41.46457150714668,
+            "isolationCssOnlyFps": 50.868752489857386
+          },
+          "limits": "WariantCSS-only miał innyDPR. Nie raportować starego wyniku jako świeżegoFPS ani wszystkich różnic jako winy jednej sekcji.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/showroom-core-final-20261101/final/normal-performance.json",
+              "lines": "1-20",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "f8d16de1e90516d707222c898951642b874b32fd4c21a321df9c1028cad679ff"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/showroom-regression.json",
+              "lines": "1-20",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "1a7a66555221e26ec1fa4cac27f4ff719661fade5479c672b3a28da80f7c80d3"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/evidence/services-process-20261102/final/performance-isolation.json",
+              "lines": "1-29",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "61de249e8e97848e5c2bfed103c1b6e9fd2fb35466396188d558ef215683b491"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "scripts/build-site.py",
+          "lines": "64-172",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "47fa3a917fc8c5f3544b07de59aa6263762f5afc63b5c4c2de95381ade0b01c0"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/showroom-scene.mjs",
+          "lines": "1027-1044",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "87c5a86f53c275ddc638649cfbe27833c65a9360a8ba34acb5878a3abcbf58a1"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/spatial-chapters.mjs",
+          "lines": "336-475",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "11512417743061bb19ded76c673198f7095280d61307be4fd9ba8fbbd927269b"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+          "lines": "3-21",
+          "kind": "historical-report",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "AUTHENTIC_LOCAL_PORTFOLIO_RENDER_CANDIDATES",
+        "items": [
+          {
+            "path": "docs/evidence/services-process-20261102/final/services-idle.png",
+            "scope": "Rzeczywisty render własnej publicznej sekcjiUsług; owner visual approval pozostajeOPEN.",
+            "visualInspection": "Nie przeprowadzano nowych oględzin w tym audycie; provenancecapture17PASS i source manifest."
+          },
+          {
+            "path": "docs/evidence/services-process-20261102/final/process.png",
+            "scope": "Rzeczywisty render komórProcesu własnej strony, nie UI innej aplikacji.",
+            "visualInspection": "Do prywatnego sprawdzenia finalnego kadru przy produkcji materiału."
+          }
+        ],
+        "provenance": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "docs/evidence/services-process-20261102/final/capture.json",
+            "lines": "1003-1004",
+            "kind": "historical-evidence",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "145861c9fb8e46a9caf6b6d9d1a667792d3231cb6be120898569958a42001964"
+          }
+        ]
+      }
+    },
+    {
+      "id": "progresskit-analytics",
+      "name": "ProgressKit Analytics",
+      "portfolioKind": "internal-tool",
+      "summary": "Własny mały backend FastAPI/SQLite do zdarzeń portfolio oraz osobnego licznika pobrań i moderowanych opinii produktu. Zawiera rzeczywistą agregację i kontrolę odpowiedziHTTP; zakres zbieranych danych jest ograniczony w standardowym kliencie strony.",
+      "solution": "Dostarcza podstawowe informacje o użyciu witryny i dystrybucji APK bez wprowadzania identyfikatora odwiedzającego. Oddziela zdarzenia strony od bazy produktu oraz od publicznie wyświetlanej kolejki zatwierdzonych opinii.",
+      "features": [
+        {
+          "text": "Collector akceptuje cztery zdefiniowane typy zdarzeń: odsłona, kontakt, otwarcie projektu i link zewnętrzny; waliduje długości pól i ścieżkę.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "14-20",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "71-94",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            }
+          ]
+        },
+        {
+          "text": "SQLite z trybemWAL i indeksami czasu, rodzaju zdarzenia i źródła kampanii przechowuje historię zdarzeń w oddzielnej bazie.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "36-65",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            }
+          ]
+        },
+        {
+          "text": "Standardowy frontend wysyła zdarzenia wyłącznie na docelowej domenie i respektujeDoNotTrack. Używa pathname bez query/hash, hosta referrera i ograniczonych tokenówUTM; nie dołącza pól briefu ani wyszukiwania.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "assets/site-v5.js",
+              "lines": "359-384",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+            }
+          ]
+        },
+        {
+          "text": "Wewnętrzne podsumowanie agreguje okna5/30minut, dzisiejsze odsłony i kontakty, źródłoLinkedIn oraz do10kampanii.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "128-204",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            }
+          ]
+        },
+        {
+          "text": "Panel operatora odświeża podsumowanie i agregat pobrań; dostęp do tego panelu ma być ograniczony sieciowo/proxy, bo sam endpoint nie dodaje logowania użytkownika.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "206-214",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "248-266",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/deploy/Caddyfile.snippet",
+              "lines": "16-23",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+            }
+          ]
+        },
+        {
+          "text": "LicznikAPK zwiększa się dopiero po pełnym, poprawnie obsłużonym body odpowiedzi200GET o oczekiwanej długości; nie jest licznikiem unikalnych osób ani instalacji.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "56-83",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            }
+          ]
+        },
+        {
+          "text": "ŻądaniaRange/wznowienia nie zwiększają licznika; prefetch/prerender otrzymuje pustą204, a brak pliku503.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "79-97",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            }
+          ]
+        },
+        {
+          "text": "Opinie mają pseudonim, ocenę, komentarz i wersję, zapisują się jako pending, a publiczny odczyt zwraca wyłącznie zatwierdzone rekordy.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "100-104",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "121-135",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "163-167",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            }
+          ]
+        },
+        {
+          "text": "Formularz opinii ma dokładną kontrolęOrigin, jednorazowy token z oknem czasu, limit body, walidację zwykłego tekstu i trwałe globalne limity. Origin jest kontrolą przeglądarkową, a nie uwierzytelnieniem skryptowego klienta.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "107-118",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/product.py",
+              "lines": "138-165",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/GLIKEMIA_DISTRIBUTION.md",
+              "lines": "116-134",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "125b9f40c7578ecbac8414edb47155654eef53dbafd6b23396a93ed523ba40b2"
+            }
+          ]
+        },
+        {
+          "text": "Serwerowe narzędzie operatora odczytuje licznik i kolejkę oraz zatwierdza lub usuwa konkretną opinię; nie ma publicznego endpointu zatwierdzania.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/owner.py",
+              "lines": "1-23",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "c910ba2ea060f881f5161dead90e1cc0c1f3813201a736dcf041e988f189a1f5"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_product.py",
+              "lines": "186-195",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "e69128114a9957ed1135134e8a9de3a61c2df21f2cc92e68fe1d310f8720cdb8"
+            }
+          ]
+        },
+        {
+          "text": "Middleware nakładaCSP i nagłówki ochronne oraz strumieniowo ogranicza body collectora do8192B przed parserem, również bez prawdziwegoContent-Length.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/security_headers.py",
+              "lines": "45-79",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/security_headers.py",
+              "lines": "97-128",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Frontend first-party → mały backendFastAPI → SQLite zdarzeń; router produktu w tym samym procesie używa osobnej bazy dla pobrań, opinii, tokenów i globalnych liczników. Dashboard/operator są wewnętrzną warstwą zaplecza, a nie publicznym produktem analitycznymSaaS.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/app.py",
+            "lines": "13-33",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/app.py",
+            "lines": "277-282",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/product.py",
+            "lines": "13-38",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+          }
+        ]
+      },
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "SQLiteWAL",
+        "ASGI",
+        "JavaScript sendBeacon/fetch",
+        "Docker"
+      ],
+      "platforms": [
+        {
+          "name": "BackendHTTP",
+          "implementation": "Collector, agregacje, download API i opinie są zaimplementowane.",
+          "verification": "Istnieją syntetyczne testy zapisu, walidacji, schematu,Range/prefetch, równoległego licznika, przerwanej wysyłki i moderacji; w tym audycie odczytano kod testów, bez uruchamiania realnej bazy.",
+          "distribution": "Kod, Dockerfile i fragment konfiguracji serwera; aktualne publiczne połączenie frontend→baza niepotwierdzone.",
+          "limits": "Collector nie ma pełnego systemu antyabuse, dashboard nie ma własnego logowania, a zdarzenia nie mają automatycznej retencji.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_analytics_v5.py",
+              "lines": "28-65",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "74f996fc1d5a429a7cac5b902e6a6d2eb2cbd99fe56cdba9daa9d9372f5e87f3"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_product.py",
+              "lines": "94-151",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "e69128114a9957ed1135134e8a9de3a61c2df21f2cc92e68fe1d310f8720cdb8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/deploy/Caddyfile.snippet",
+              "lines": "16-23",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+            }
+          ]
+        },
+        {
+          "name": "Panel WWW operatora",
+          "implementation": "HTML/JS z agregatami i cyklicznym odświeżaniem.",
+          "verification": "Kod panelu potwierdzony; nie odczytywano aktualnych danych, kont, liczników ani opinii.",
+          "distribution": "Przeznaczony do zaplecza.",
+          "limits": "Brak autentycznego, zatwierdzonego screenshotu z bezpiecznymi syntetycznymi agregatami w tym audycie; nie tworzyć fikcyjnych statystyk do materiału marki.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/app.py",
+              "lines": "212-266",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Zaimplementowana, niewielka usługa analityczna i backend dystrybucji produktu; zakres odpowiada własnej witrynie, nie pełnej platformie analitycznej.",
+      "distributionStatus": "Kod i kontener do samodzielnego wdrożenia; nie potwierdzono bieżącego publicznego wydania i danych produkcyjnych.",
+      "productionStatus": "NOT VERIFIED. Health i sam runbook nie potwierdzają kompletności zbierania, ochrony panelu, konfiguracji logów ani retencji.",
+      "results": [
+        "Standardowy klient nie wysyła treści briefu/wyszukiwania ani query/hash do zdarzeń; tabela nie definiuje kolumnIP,User-Agent lubdeviceID.",
+        "Licznik obsługuje semantykę ukończonej odpowiedziHTTP, zamiast zliczać samo kliknięcie lub każdy fragmentRange.",
+        "Publiczna lista opinii jest oddzielona od kolejki wymagającej decyzji operatora."
+      ],
+      "remaining": [
+        "Ustalić i wdrożyć retencję zdarzeń oraz operacyjny proces retencji/usuwania opinii; istniejąceTTL dotyczą tokenów i okien limitera, nie całej historii.",
+        "Potwierdzić ochronę dashboardu i/summary na wszystkich warstwach; aplikacja sama nie uwierzytelnia odczytu tego endpointu.",
+        "Sprawdzić konfigurację dzienników wszystkich warstw i formalne informacje o administratorze/przetwarzaniu.",
+        "Potwierdzić rzeczywisty przepływ first-partyfrontend→backend→baza na właściwym środowisku oraz spójność trwałych mountów.",
+        "Nie deklarować braku jakichkolwiek danych osobowych tylko na podstawie braku kolumnIP/UA: ścieżka ireferrer są polami tekstowymi od klienta.",
+        "Globalny limit opinii to kompromis małego serwisu, nie ochronaDDoS ani indywidualna identyfikacja nadawców."
+      ],
+      "git": {
+        "head": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+        "branch": "main",
+        "dirty": true,
+        "scope": "Read-only snapshot of an actively edited working tree on2026-11-02; HEAD alone does not contain current3D/Services/Process work. No fetch, commit, push, production or database access performed by this audit."
+      },
+      "tests": [
+        {
+          "date": "2026-10-22",
+          "revision": "6a52e83 + finalization working tree, później utrwalony raport",
+          "scope": "Historyczna szeroka regresja witryny, obejmująca także security/API/negative; nie sameAnalytics",
+          "recordedResults": {
+            "python": {
+              "pass": 105,
+              "fail": 0,
+              "skip": 0
+            }
+          },
+          "limits": "To historyczny raport szerokiego zakresu, nie nowy wynik obecnej usługi ani dowód wdrożenia.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/FINAL_WEBSITE_DELIVERY_20261022.md",
+              "lines": "24-37",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "27a79d1644c3ac39bd11304de4529172fef865afea2f8dbeb55b2eeb5fbe3f83"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-02 audit read",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "scope": "Odczyt definicji testów, bez wykonania",
+          "recordedResults": "NOT_RUN_THIS_AUDIT",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_analytics_v5.py",
+              "lines": "28-65",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "74f996fc1d5a429a7cac5b902e6a6d2eb2cbd99fe56cdba9daa9d9372f5e87f3"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_product.py",
+              "lines": "42-88",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "e69128114a9957ed1135134e8a9de3a61c2df21f2cc92e68fe1d310f8720cdb8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_product.py",
+              "lines": "94-202",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "e69128114a9957ed1135134e8a9de3a61c2df21f2cc92e68fe1d310f8720cdb8"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "tests/test_security_headers.py",
+              "lines": "113-137",
+              "kind": "test-source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "8c46cc4928008104b679effa86b81adbb4634144aa6313cf4ad8394e70602884"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/app.py",
+          "lines": "36-65",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/product.py",
+          "lines": "56-97",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/product.py",
+          "lines": "138-167",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/security_headers.py",
+          "lines": "97-128",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "257c5b4d952f0e197bb12d428953769720b8950ac09657753d6d22d574d10f01"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "assets/site-v5.js",
+          "lines": "359-384",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "prywatnosc/index.html",
+          "lines": "41-41",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "ea1a6e0baa07df8a6159a2059ac8a3ae15cc0622468add45a5f2b162929c34d3"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "BLOCKED_NO_SANITIZED_PANEL_CAPTURE",
+        "items": [],
+        "limits": "Nie odczytywano prywatnego panelu ani rzeczywistych statystyk; nie tworzyć fikcyjnych wartości lub zrzutu pustej makiety jako dowodu produktu."
+      }
+    },
+    {
+      "id": "progresskit-infrastructure",
+      "name": "Zaplecze ProgressKit",
+      "portfolioKind": "infrastructure",
+      "summary": "Zaplecze operatorskie witryny i usług: konfiguracje kontenerów i reverse proxy, jawny publiczny artefakt, bramki publikacji oraz procedury backupu i wycofania kodu. Jest elementem infrastruktury ekosystemu, nie osobnym produktem komercyjnym.",
+      "solution": "Rozdziela publikowaną stronę, proces API, plik dystrybucji i trwałe dane. Przygotowanie wydania wiąże manifest i hashe ze źródłami, a procedura wycofania kodu zachowuje nowsze dane zamiast nadpisywać je starym backupem.",
+      "features": [
+        {
+          "text": "Dockerfile opisuje odrębny procesFastAPI i wyłącza access logUvicorn; fragmentCompose definiuje trwałe dane i tylko odczyt pliku dystrybucji.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/Dockerfile",
+              "lines": "1-10",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/deploy/compose.override.yaml",
+              "lines": "1-16",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4"
+            }
+          ]
+        },
+        {
+          "text": "FragmentCaddy kieruje wyłącznie określone endpointy zdarzeń i produktu do backendu oraz odmawia publicznego dostępu do źródeł, dokumentacji, baz i podsumowania.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/deploy/Caddyfile.snippet",
+              "lines": "1-23",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+            }
+          ]
+        },
+        {
+          "text": "Konfiguracja produktu zawieraCSP,nosniff,Referrer-Policy i regułę pomijania logów dla tras produktu; jej obecność w pliku nie jest dowodem aktywacji na serwerze.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/deploy/Caddyfile.snippet",
+              "lines": "25-49",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+            }
+          ]
+        },
+        {
+          "text": "Lokalny preview serwuje tylko ścieżki z tego samego allowlistu co wydanie i zwraca prawdziwe404 dla pozostałych zasobów.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "analytics/preview.py",
+              "lines": "25-37",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "66159f8fe714ea8822d4e5686ff88512da8a802765be8acee22c621d04c90243"
+            }
+          ]
+        },
+        {
+          "text": "Deterministyczna paczka publiczna ma posortowane pliki, stałe metadane archiwum, SHA-256 plików i archiwum oraz informację oGitHEAD i nieczystym working tree.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/package-release.py",
+              "lines": "16-40",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d4f06a1adbe8de31d9ea61eb57aac2789fdf35a6fc45730e0f9862184244dbde"
+            }
+          ]
+        },
+        {
+          "text": "WorkflowGitHubActions waliduje wygenerowane strony i testy, wymaga jawnego owner visual approval, a dopiero potem publikuje przygotowany publiczny artefaktPages.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": ".github/workflows/static.yml",
+              "lines": "36-60",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "89f3031321f2d0e7ef35d8baed46219c5144ed452e4a9d2069fd42825c711464"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/check-publication.py",
+              "lines": "9-14",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "a3fca06dbfda94ec7860b29ed0160b59320ff74962d89ba57e54c55c3c81c559"
+            }
+          ]
+        },
+        {
+          "text": "Runbook rozdziela backupSQLite z uwzględnieniemWAL od rollbacku kodu i konfiguracji; normalny rollback nie nadpisuje nowszej bazy starym stanem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "98-106",
+              "kind": "runbook",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/GLIKEMIA_DISTRIBUTION.md",
+              "lines": "407-411",
+              "kind": "runbook",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "125b9f40c7578ecbac8414edb47155654eef53dbafd6b23396a93ed523ba40b2"
+            }
+          ]
+        },
+        {
+          "text": "Bramka przed publikacją wymaga ustalenia rzeczywistej konfiguracji/mountów, zachowania starego wydania i weryfikacji hashy, zamiast kopiowania całego repo na serwer.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "68-82",
+              "kind": "runbook",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "98-106",
+              "kind": "runbook",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Statyczne pliki publiczne + osobny kontenerAPI + reverse proxy + trwałe dane poza wydaniem. Repozytorium zawiera fragmentyCompose/Caddy i narzędzia pakowania, lecz nie kompletny, zweryfikowany stan infrastruktury produkcyjnej.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/deploy/compose.override.yaml",
+            "lines": "1-16",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/deploy/Caddyfile.snippet",
+            "lines": "1-23",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+            "lines": "15-21",
+            "kind": "historical-report",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+          }
+        ]
+      },
+      "technologies": [
+        "Docker",
+        "Caddy",
+        "Linux",
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "GitHub Actions",
+        "GitHub Pages",
+        "SHA-256 / deterministyczne archiwa"
+      ],
+      "platforms": [
+        {
+          "name": "Narzędzia lokalnego wydania",
+          "implementation": "Allowlist, staging, manifest i paczkowanie są zaimplementowane; lokalny preview wykorzystuje te same jawne ścieżki.",
+          "verification": "Odczytano kod oraz zachowane lokalne raporty. Niczego nie uruchamiano i nie publikowano podczas audytu.",
+          "distribution": "Źródła narzędzi i przygotowywalny publiczny artefakt.",
+          "limits": "Kandydat po nowych zmianach wymaga własnego manifestu i ponownej walidacji; stary hash nie opisuje bieżącego dirty tree.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/stage-public.py",
+              "lines": "44-63",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/package-release.py",
+              "lines": "36-40",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d4f06a1adbe8de31d9ea61eb57aac2789fdf35a6fc45730e0f9862184244dbde"
+            }
+          ]
+        },
+        {
+          "name": "Środowisko serwerowe",
+          "implementation": "Konfiguracje przykładowe i runbooki są dostępne.",
+          "verification": "NOT_VERIFIED_CURRENT_REMOTE: brakSSH, odczytu realnych mountów, logów lub baz w tym audycie.",
+          "distribution": "To infrastruktura usług, nie aplikacja instalowana przez odbiorcę.",
+          "limits": "Konfiguracja backupu nie jest dowodem wykonanego backupu lub odtworzenia; pełny aktualnyHTTPS, monitoring irollback wymagają odrębnego dowodu operatora.",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "15-21",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "98-106",
+              "kind": "runbook",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Zaimplementowane narzędzia wydania i lokalnego preview oraz konfiguracje integracyjne zaplecza.",
+      "distributionStatus": "Artefakty statyczne i konfiguracje do wdrożenia; zaplecze nie jest osobnym produktem komercyjnym.",
+      "productionStatus": "NOT VERIFIED_CURRENT_REMOTE. Repozytoryjne fragmenty i instrukcje nie potwierdzają stanu usług,HTTPS, mountów, kopii ani restore.",
+      "results": [
+        "Publikowany artefakt jest jawnie oddzielony od dokumentacji, źródeł i danych.",
+        "Źródło paczki zawieraGitHEAD oraz flagędirty; hash samegoHEAD nie jest przedstawiany jako hash niezacommitowanego wydania.",
+        "Workflow zawiera rzeczywistą bramkę owner visual approval, która przyOPEN ma odmówić publikacji."
+      ],
+      "remaining": [
+        "Potwierdzenie pełnej konfiguracji środowiska i rzeczywistych granic sieciowych dostępu do panelu.",
+        "Spójny backup i niezależny restore z identyfikacją źródła, hashami i zakresem danych; nie zaliczać samej instrukcji jako wykonanego testu.",
+        "Kontrolowany smoke i rollback po ewentualnym autoryzowanym wdrożeniu; brak automatycznej zgody na produkcję z wyników lokalnych testów.",
+        "Potwierdzenie retencji, logów, monitoringu, odbudowy i formalnych faktów operatorskich."
+      ],
+      "git": {
+        "head": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+        "branch": "main",
+        "dirty": true,
+        "scope": "Read-only snapshot of an actively edited working tree on2026-11-02; HEAD alone does not contain current3D/Services/Process work. No fetch, commit, push, production or database access performed by this audit."
+      },
+      "tests": [
+        {
+          "date": "2026-11-02 audit read",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "scope": "Kod narzędzi i zachowane raporty lokalne; brak testu infrastruktury zdalnej",
+          "recordedResults": "NO_NEW_INFRA_TESTS; REMOTE_NOT_ACCESSED",
+          "evidence": [
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/stage-public.py",
+              "lines": "44-63",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "scripts/package-release.py",
+              "lines": "16-40",
+              "kind": "source",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d4f06a1adbe8de31d9ea61eb57aac2789fdf35a6fc45730e0f9862184244dbde"
+            },
+            {
+              "repo": "ProgressorKit Systems",
+              "path": "docs/PROGRESSKIT_V5_DEPLOYMENT.md",
+              "lines": "3-21",
+              "kind": "historical-report",
+              "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+              "sha256": "d41d865225e071bfec3f127099c84a29542289522ca86d2d56e3b518450574f1"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/Dockerfile",
+          "lines": "1-10",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "7bb42c85589a7b0e13518afd94eb7f155f664dfd1f3ba50eaddfbef36d0ca6d9"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/deploy/compose.override.yaml",
+          "lines": "1-16",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "e3ad6cdf901cd0147120c08ac7489d59df222fbbb1c980ccb76e39353a7e5ff4"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "analytics/deploy/Caddyfile.snippet",
+          "lines": "1-49",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "70cf159d417dc98b9b8fd812c6a1e80b6e15b8cb333b4a0aa12335e8737e7d68"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": ".github/workflows/static.yml",
+          "lines": "36-60",
+          "kind": "source",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "89f3031321f2d0e7ef35d8baed46219c5144ed452e4a9d2069fd42825c711464"
+        },
+        {
+          "repo": "ProgressorKit Systems",
+          "path": "docs/GLIKEMIA_DISTRIBUTION.md",
+          "lines": "163-168",
+          "kind": "runbook",
+          "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+          "sha256": "125b9f40c7578ecbac8414edb47155654eef53dbafd6b23396a93ed523ba40b2"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "NO_PRODUCT_GUI_ASSERTED",
+        "items": [],
+        "limits": "Nie otwierano serwerów lub paneli operatorskich. Ewentualny diagram architektury należy oznaczyć jako diagram, nie screenshot działającej infrastruktury."
+      }
+    }
+  ],
+  "formalPrivacyAndBusinessData": {
+    "status": "OPERATOR_FACTS_AND_LEGAL_REVIEW_OPEN",
+    "scope": "Odczyt treści i kodu, bez porady prawnej lub aktualnej oceny zgodności.",
+    "observations": [
+      {
+        "text": "Informacja Prywatność jest technicznym opisem tej wersji witryny z kontaktem i datą przeglądu15.10.2026; nie identyfikuje w pełni zweryfikowanego administratora/podmiotu gospodarczego i jego danych formalnych.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "prywatnosc/index.html",
+            "lines": "41-41",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "ea1a6e0baa07df8a6159a2059ac8a3ae15cc0622468add45a5f2b162929c34d3"
+          }
+        ]
+      },
+      {
+        "text": "Kod nie definiuje automatycznej retencji events ani reviews. Kasowanie tokenów i okien limitera nie oznacza czyszczenia historii. Strona produktu deklaruje przechowywanie opinii do usunięcia lub zakończenia funkcji.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/app.py",
+            "lines": "44-65",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "a48d4895297b347da36dcc326317f912f41cfd7ad66c64f67c8a1f34405458c8"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/product.py",
+            "lines": "107-118",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "analytics/product.py",
+            "lines": "153-165",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "031c171ffa1c8211af83b55102d2f7bda59dd2b2f4f57378b66ca5d13250e529"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "templates/glikemia-distribution.html",
+            "lines": "29-29",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "78711cb144bccad4ccff1467bf65182c33420f0742eb2be0bdead3aefc2f1b75"
+          }
+        ]
+      },
+      {
+        "text": "BrakIP/UA w bazie i brak identyfikatora w standardowym kliencie nie potwierdzają konfiguracji wszystkich dzienników lub braku danych osobowych w dowolnym tekście przesłanym do serwera.",
+        "evidence": [
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "assets/site-v5.js",
+            "lines": "359-384",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "b74df3f34fa7635c76828bd8877978efc2f60edf834ef23802eb576e3234d797"
+          },
+          {
+            "repo": "ProgressorKit Systems",
+            "path": "prywatnosc/index.html",
+            "lines": "41-41",
+            "kind": "source",
+            "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+            "sha256": "ea1a6e0baa07df8a6159a2059ac8a3ae15cc0622468add45a5f2b162929c34d3"
+          }
+        ]
+      }
+    ],
+    "factsToConfirm": [
+      "Właściwa tożsamość i forma prawna administratora/operatora, kraj, dane rejestrowe i adres wymagany w danym modelu działalności.",
+      "Podstawy, cele, okresy przechowywania, odbiorcy i podmioty przetwarzające dla witryny/analityki/opinii oraz rzeczywiste dzienniki i kopie.",
+      "Treść informacji i procedur kontaktu/usuwania danych po potwierdzeniu faktów; nie kopiować danych operatora z innego produktu bez potwierdzenia."
+    ],
+    "integrationWarning": "ObecnaCSP ma media-src none. W razie osadzenia filmu marki w publicznej stronie wymaga to świadomej zmiany wyłącznie na self i testu; samo utworzenie oddzielnego artefaktuMP4 nie wymaga zmianyCSP."
+  },
+  "memoryUsedForNavigationOnly": [
+    {
+      "path": "MEMORY.md",
+      "lines": "253-261"
+    },
+    {
+      "path": "MEMORY.md",
+      "lines": "285-293"
+    }
+  ]
+}

@@ -1,0 +1,1859 @@
+{
+  "startedAt": "2026-11-02T16:34:02.192Z",
+  "mode": "sanity",
+  "checks": [
+    {
+      "scope": "sanity:1440",
+      "name": "Exact approved layout and context count sanity",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "contextCount": 3,
+        "document": {
+          "scrollWidth": 1440,
+          "height": 14888
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Scroll invalidation hides stale haze until freshly masked draw",
+      "status": "PASS",
+      "details": {
+        "invalidated": {
+          "scroll": 9399,
+          "visibility": "hidden",
+          "metrics": {
+            "frames": 25,
+            "rafPending": true,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": false,
+            "throttledHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 384,
+              "height": 267
+            },
+            "fpsLimit": 15,
+            "bufferLimit": 384,
+            "maskCount": 7,
+            "masksReady": true,
+            "maskReads": 86,
+            "masksPending": true,
+            "composited": false,
+            "masks": [
+              0.0555555559694767,
+              0.22885937988758087,
+              0.5634657144546509,
+              0.27885937690734863,
+              0.0555555559694767,
+              0.25685936212539673,
+              0.5634657144546509,
+              0.4028593897819519,
+              0.6045681238174438,
+              0.26368749141693115,
+              0.8293619751930237,
+              0.3948593735694885,
+              0.09669794142246246,
+              0.5341014862060547,
+              0.36079850792884827,
+              0.6335596442222595,
+              0.09728356450796127,
+              0.6166957020759583,
+              0.5369825959205627,
+              0.8273469805717468,
+              0.6113690137863159,
+              0.6867191791534424,
+              0.8756481409072876,
+              0.7878573536872864,
+              0.6088710427284241,
+              0.7718034982681274,
+              0.9030978083610535,
+              1
+            ],
+            "alphaMax": 0.12,
+            "alpha": true,
+            "canvasCount": 1,
+            "renderer": "webgl2"
+          }
+        },
+        "fresh": {
+          "frames": 26,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 7,
+          "masksReady": true,
+          "maskReads": 93,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0555555559694767,
+            0.11885937303304672,
+            0.5634657144546509,
+            0.16885937750339508,
+            0.0555555559694767,
+            0.14685937762260437,
+            0.5634657144546509,
+            0.29285937547683716,
+            0.6045681238174438,
+            0.1536875069141388,
+            0.8293619751930237,
+            0.28485938906669617,
+            0.09464851021766663,
+            0.42307421565055847,
+            0.3595889210700989,
+            0.5309754014015198,
+            0.0967080146074295,
+            0.49934062361717224,
+            0.5390321016311646,
+            0.7246545553207397,
+            0.6139490604400635,
+            0.5697899460792542,
+            0.8793885707855225,
+            0.6835648417472839,
+            0.6051661968231201,
+            0.6547673940658569,
+            0.9045925736427307,
+            0.9273506999015808
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        },
+        "alphaSample": {
+          "time": 7301.5999999940395,
+          "maxAlphaByte": 23,
+          "nonzeroPixels": 11949,
+          "totalPixels": 102528,
+          "samples": [
+            {
+              "tag": "H2",
+              "text": "Warsztat.",
+              "x": 445.6953125,
+              "y": 329.859375,
+              "alpha": 0
+            },
+            {
+              "tag": "P",
+              "text": "Wybierz technologię, aby zobaczyć projekty, w których został",
+              "x": 1032.4296875,
+              "y": 329.2734375,
+              "alpha": 0
+            },
+            {
+              "tag": "H3",
+              "text": "Klienci i interfejsy",
+              "x": 327.0465545654297,
+              "y": 587.0309448242188,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": ".NET MAUI 1",
+              "x": 223.74079132080078,
+              "y": 673.8688659667969,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Android 2",
+              "x": 346.24241638183594,
+              "y": 671.5531311035156,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "AudioTrack 1",
+              "x": 456.4877014160156,
+              "y": 667.7032775878906,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "CSS 3",
+              "x": 554.1409301757812,
+              "y": 662.3310241699219,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "HTML 3",
+              "x": 630.9672546386719,
+              "y": 661.6103210449219,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Jetpack Compose 3",
+              "x": 238.31208038330078,
+              "y": 731.6220703125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Next.js 2",
+              "x": 376.94036865234375,
+              "y": 724.8189392089844,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "React 3",
+              "x": 468.5311279296875,
+              "y": 723.5826110839844,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "SkiaSharp 2",
+              "x": 564.1056823730469,
+              "y": 720.2450866699219,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "SpeechRecognizer 1",
+              "x": 268.11216735839844,
+              "y": 784.919189453125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "TextToSpeech 1",
+              "x": 453.8408660888672,
+              "y": 780.3955383300781,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "WorkManager 1",
+              "x": 600.0642395019531,
+              "y": 775.2893371582031,
+              "alpha": 0
+            },
+            {
+              "tag": "H3",
+              "text": "Backend i komunikacja",
+              "x": 1075.2117614746094,
+              "y": 736.6763916015625,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "ASP.NET Core 3",
+              "x": 978.5554809570312,
+              "y": 814.9046630859375,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "ASP.NET Core Identity 1",
+              "x": 1168.9882202148438,
+              "y": 826.8484497070312,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Eclipse Angus Mail 1",
+              "x": 978.9330749511719,
+              "y": 873.2309265136719,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "FastAPI 3",
+              "x": 1125.9512939453125,
+              "y": 878.97216796875,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Firebase Cloud Messaging 1",
+              "x": 1007.4315795898438,
+              "y": 925.05908203125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Node.js 2",
+              "x": 1176.4027709960938,
+              "y": 933.9144592285156,
+              "alpha": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Actual text alpha sanity: #start",
+      "status": "PASS",
+      "details": {
+        "time": 8048.5999999940395,
+        "maxAlphaByte": 15,
+        "nonzeroPixels": 10460,
+        "totalPixels": 102528,
+        "samples": [
+          {
+            "tag": "P",
+            "text": "Aplikacje · systemy · gry",
+            "x": 503.9921875,
+            "y": 273.8359375,
+            "alpha": 0
+          },
+          {
+            "tag": "H1",
+            "text": "PROGRESSKIT SYSTEMS",
+            "x": 503.9921875,
+            "y": 396.015625,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+            "x": 317.140625,
+            "y": 556.015625,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Kontakt",
+            "x": 157.390625,
+            "y": 656.984375,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Usługi",
+            "x": 311.390625,
+            "y": 656.984375,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Pobierz Glikemia Premium",
+            "x": 503.9921875,
+            "y": 711.484375,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Poznaj ekosystem↓",
+            "x": 165.28125,
+            "y": 934,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 45,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 3,
+          "masksReady": true,
+          "maskReads": 103,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0.05900000035762787,
+            0.6538845300674438,
+            0.899484395980835,
+            0.04610460251569748,
+            0.8920000195503235,
+            0.18345269560813904,
+            0.9760000109672546,
+            0.8177626132965088,
+            0.8960000276565552,
+            0.9538953900337219,
+            0.9760000109672546
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Actual text alpha sanity: #uslugi",
+      "status": "PASS",
+      "details": {
+        "time": 8901.59999999404,
+        "maxAlphaByte": 8,
+        "nonzeroPixels": 2644,
+        "totalPixels": 25536,
+        "samples": [
+          {
+            "tag": "H2",
+            "text": "Usługi",
+            "x": 720,
+            "y": 311.96875,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Dla Ciebie /małego biznesu",
+            "x": 385.046875,
+            "y": 689.015625,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Strony · sklepy · aplikacje",
+            "x": 396.609375,
+            "y": 790.2109375,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Dla firmy /systemu",
+            "x": 1031.828125,
+            "y": 834.015625,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 50,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 133
+          },
+          "fpsLimit": 5,
+          "bufferLimit": 192,
+          "maskCount": 6,
+          "masksReady": true,
+          "maskReads": 109,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0555555559694767,
+            0.2286093682050705,
+            0.9444444179534912,
+            0.3953281342983246,
+            0.08945312350988388,
+            0.6047187447547913,
+            0.44533419609069824,
+            0.773312509059906,
+            0.08945312350988388,
+            0.7583125233650208,
+            0.46139323711395264,
+            0.8221094012260437,
+            0.08945312350988388,
+            0.8041093945503235,
+            0.3463975787162781,
+            0.9651718735694885,
+            0.5386067628860474,
+            0.7497187256813049,
+            0.8944878578186035,
+            0.9183124899864197,
+            0.5386067628860474,
+            0.9033125042915344,
+            0.7955512404441833,
+            1
+          ],
+          "alphaMax": 0.08399999999999999,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Actual text alpha sanity: [data-ecosystem-map]",
+      "status": "PASS",
+      "details": {
+        "time": 9715.90000000596,
+        "maxAlphaByte": 16,
+        "nonzeroPixels": 11992,
+        "totalPixels": 102528,
+        "samples": [
+          {
+            "tag": "H3",
+            "text": "ProgressKit TaxW rozwoju",
+            "x": 291.72960662841797,
+            "y": 187.3946990966797,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "ProgressKit TranslatorW rozwoju",
+            "x": 1148.3627319335938,
+            "y": 238.89649963378906,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Local AI AgentsPlanowane",
+            "x": 291.4911117553711,
+            "y": 547.8998107910156,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Voice GatewayPlanowane",
+            "x": 1154,
+            "y": 609.6875,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Niezależna komunikacja",
+            "x": 1154,
+            "y": 792.546875,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "ProgressKit Tax",
+            "x": 719.9921875,
+            "y": 420.6484375,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "W rozwoju",
+            "x": 578.3984375,
+            "y": 471.109375,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Obsługa biura.",
+            "x": 719.9921875,
+            "y": 510.703125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Zobacz cały projekt ProgressKit Tax→",
+            "x": 655.3984375,
+            "y": 555.296875,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 60,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 12,
+          "masksReady": true,
+          "maskReads": 121,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.054525699466466904,
+            0.07705368101596832,
+            0.3506543040275574,
+            0.29773572087287903,
+            0.05662939324975014,
+            0.2510271668434143,
+            0.3513011336326599,
+            0.3512275815010071,
+            0.64939284324646,
+            0.12789052724838257,
+            0.9455553889274597,
+            0.3499024510383606,
+            0.6486177444458008,
+            0.30185234546661377,
+            0.9430345296859741,
+            0.40339070558547974,
+            0.06283023208379745,
+            0.4362230896949768,
+            0.3420185446739197,
+            0.6595765352249146,
+            0.06597594916820526,
+            0.6101634502410889,
+            0.34298574924468994,
+            0.7130581736564636,
+            0.657717227935791,
+            0.4997766613960266,
+            0.9450605511665344,
+            0.7195983529090881,
+            0.6583333611488342,
+            0.7642968893051147,
+            0.9444444179534912,
+            0.8207968473434448,
+            0.14911967515945435,
+            0.9217557311058044,
+            0.44613856077194214,
+            1,
+            0.6314866542816162,
+            0.8902018666267395,
+            0.9282464981079102,
+            1,
+            0.34832900762557983,
+            0.34818750619888306,
+            0.651660144329071,
+            0.651296854019165,
+            0.3636067807674408,
+            0.4781093895435333,
+            0.6363824009895325,
+            0.6212968826293945
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Actual text alpha sanity: #technologie",
+      "status": "PASS",
+      "details": {
+        "time": 10476.300000011921,
+        "maxAlphaByte": 18,
+        "nonzeroPixels": 11452,
+        "totalPixels": 102528,
+        "samples": [
+          {
+            "tag": "H2",
+            "text": "Warsztat.",
+            "x": 445.6953125,
+            "y": 329.859375,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Wybierz technologię, aby zobaczyć projekty, w których został",
+            "x": 1032.4296875,
+            "y": 329.2734375,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Klienci i interfejsy",
+            "x": 327.0465545654297,
+            "y": 587.0309448242188,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": ".NET MAUI 1",
+            "x": 223.74079132080078,
+            "y": 673.8688659667969,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Android 2",
+            "x": 346.24241638183594,
+            "y": 671.5531311035156,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "AudioTrack 1",
+            "x": 456.4877014160156,
+            "y": 667.7032775878906,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "CSS 3",
+            "x": 554.1409301757812,
+            "y": 662.3310241699219,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "HTML 3",
+            "x": 630.9672546386719,
+            "y": 661.6103210449219,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Jetpack Compose 3",
+            "x": 238.31208038330078,
+            "y": 731.6220703125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Next.js 2",
+            "x": 376.94036865234375,
+            "y": 724.8189392089844,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "React 3",
+            "x": 468.5311279296875,
+            "y": 723.5826110839844,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "SkiaSharp 2",
+            "x": 564.1056823730469,
+            "y": 720.2450866699219,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "SpeechRecognizer 1",
+            "x": 268.11216735839844,
+            "y": 784.919189453125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "TextToSpeech 1",
+            "x": 453.8408660888672,
+            "y": 780.3955383300781,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "WorkManager 1",
+            "x": 600.0642395019531,
+            "y": 775.2893371582031,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Backend i komunikacja",
+            "x": 1075.2117614746094,
+            "y": 736.6763916015625,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "ASP.NET Core 3",
+            "x": 978.5554809570312,
+            "y": 814.9046630859375,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "ASP.NET Core Identity 1",
+            "x": 1168.9882202148438,
+            "y": 826.8484497070312,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Eclipse Angus Mail 1",
+            "x": 978.9330749511719,
+            "y": 873.2309265136719,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "FastAPI 3",
+            "x": 1125.9512939453125,
+            "y": 878.97216796875,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Firebase Cloud Messaging 1",
+            "x": 1007.4315795898438,
+            "y": 925.05908203125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Node.js 2",
+            "x": 1176.4027709960938,
+            "y": 933.9144592285156,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 71,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 7,
+          "masksReady": true,
+          "maskReads": 128,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0555555559694767,
+            0.22885937988758087,
+            0.5634657144546509,
+            0.27885937690734863,
+            0.0555555559694767,
+            0.25685936212539673,
+            0.5634657144546509,
+            0.4028593897819519,
+            0.6045681238174438,
+            0.26368749141693115,
+            0.8293619751930237,
+            0.3948593735694885,
+            0.09464472532272339,
+            0.5330723524093628,
+            0.35958659648895264,
+            0.6409895420074463,
+            0.09670703858137131,
+            0.6093266606330872,
+            0.5390358567237854,
+            0.8346683382987976,
+            0.6139541268348694,
+            0.6797769665718079,
+            0.8793955445289612,
+            0.7935758233070374,
+            0.605159342288971,
+            0.7647541165351868,
+            0.9045951962471008,
+            1
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:1440",
+      "name": "Actual text alpha sanity: #brief",
+      "status": "PASS",
+      "details": {
+        "time": 11195.300000011921,
+        "maxAlphaByte": 26,
+        "nonzeroPixels": 2074,
+        "totalPixels": 102528,
+        "samples": [
+          {
+            "tag": "H3",
+            "text": "Opisz swój projekt",
+            "x": 330.53125,
+            "y": 228.6875,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Wypełnij brief, zapisz go do pliku lub wydrukuj do PDF i prz",
+            "x": 980.9375,
+            "y": 175.359375,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Jaki problem ma rozwiązać system?",
+            "x": 434.1484375,
+            "y": 476.3828125,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 434.1484375,
+            "y": 499.453125,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Kto będzie z niego korzystać?",
+            "x": 1005.8515625,
+            "y": 476.3828125,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 1005.8515625,
+            "y": 499.453125,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Jakie procesy lub funkcje powinien obsługiwać?",
+            "x": 434.1484375,
+            "y": 710.5234375,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 434.1484375,
+            "y": 733.59375,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Czy wymaga integracji z istniejącymi usługami?",
+            "x": 1005.8515625,
+            "y": 710.5234375,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 1005.8515625,
+            "y": 733.59375,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 81,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 384,
+            "height": 267
+          },
+          "fpsLimit": 15,
+          "bufferLimit": 384,
+          "maskCount": 3,
+          "masksReady": true,
+          "maskReads": 131,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.0555555559694767,
+            0,
+            0.9444444179534912,
+            0.11106249690055847,
+            0.0555555559694767,
+            0.07006250321865082,
+            0.9444444179534912,
+            1,
+            0.10124783217906952,
+            0.12606249749660492,
+            0.46227213740348816,
+            0.17606249451637268
+          ],
+          "alphaMax": 0.12,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Exact approved layout and context count sanity",
+      "status": "PASS",
+      "details": {
+        "elements": 224,
+        "contextCount": 3,
+        "document": {
+          "scrollWidth": 390,
+          "height": 18510
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Scroll invalidation hides stale haze until freshly masked draw",
+      "status": "PASS",
+      "details": {
+        "invalidated": {
+          "scroll": 10400,
+          "visibility": "hidden",
+          "metrics": {
+            "frames": 22,
+            "rafPending": true,
+            "timerPending": false,
+            "present": true,
+            "suspendedHeavy": false,
+            "throttledHeavy": false,
+            "reduced": false,
+            "forcedColors": false,
+            "paused": false,
+            "lost": false,
+            "disposed": false,
+            "size": {
+              "width": 192,
+              "height": 416
+            },
+            "fpsLimit": 12,
+            "bufferLimit": 192,
+            "maskCount": 6,
+            "masksReady": true,
+            "maskReads": 70,
+            "masksPending": true,
+            "composited": false,
+            "masks": [
+              0,
+              0,
+              0.5883814096450806,
+              0.03547096997499466,
+              0,
+              0.20134775340557098,
+              0.5846955180168152,
+              0.26177430152893066,
+              0,
+              0.24020659923553467,
+              1,
+              0.36546579003334045,
+              0,
+              0.3465084433555603,
+              0.7904247045516968,
+              0.45692017674446106,
+              0.07179487496614456,
+              0.5327495336532593,
+              0.9025641083717346,
+              0.6404398679733276,
+              0.07179487496614456,
+              0.6202976703643799,
+              0.9025641083717346,
+              1
+            ],
+            "alphaMax": 0.0516,
+            "alpha": true,
+            "canvasCount": 1,
+            "renderer": "webgl2"
+          }
+        },
+        "fresh": {
+          "frames": 23,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 5,
+          "masksReady": true,
+          "maskReads": 76,
+          "masksPending": true,
+          "composited": false,
+          "masks": [
+            0,
+            0.07101599872112274,
+            0.5846955180168152,
+            0.13144253194332123,
+            0,
+            0.10987485200166702,
+            1,
+            0.2351340353488922,
+            0,
+            0.21617668867111206,
+            0.7904247045516968,
+            0.3265884220600128,
+            0.07179487496614456,
+            0.4024178087711334,
+            0.9025641083717346,
+            0.5101081132888794,
+            0.07179487496614456,
+            0.48996594548225403,
+            0.9025641083717346,
+            0.8892550468444824
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        },
+        "alphaSample": {
+          "time": 6509.0999999940395,
+          "maxAlphaByte": 3,
+          "nonzeroPixels": 2640,
+          "totalPixels": 79872,
+          "samples": [
+            {
+              "tag": "H2",
+              "text": "Warsztat.",
+              "x": 195,
+              "y": 255.59375,
+              "alpha": 0
+            },
+            {
+              "tag": "P",
+              "text": "Wybierz technologię, aby zobaczyć projekty, w których został",
+              "x": 152.1328125,
+              "y": 339.046875,
+              "alpha": 0
+            },
+            {
+              "tag": "H3",
+              "text": "Klienci i interfejsy",
+              "x": 190,
+              "y": 495.0859375,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": ".NET MAUI 1",
+              "x": 102.671875,
+              "y": 567.03125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Android 2",
+              "x": 207.9296875,
+              "y": 570.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "AudioTrack 1",
+              "x": 92.015625,
+              "y": 622.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "CSS 3",
+              "x": 176.34375,
+              "y": 619.03125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "HTML 3",
+              "x": 243.1875,
+              "y": 622.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Jetpack Compose 3",
+              "x": 112.6328125,
+              "y": 674.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "Next.js 2",
+              "x": 231.265625,
+              "y": 671.03125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "React 3",
+              "x": 73.296875,
+              "y": 721.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "SkiaSharp 2",
+              "x": 155.6640625,
+              "y": 721.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "SpeechRecognizer 1",
+              "x": 136.75,
+              "y": 770.03125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "TextToSpeech 1",
+              "x": 100.5859375,
+              "y": 818.53125,
+              "alpha": 0
+            },
+            {
+              "tag": "A",
+              "text": "WorkManager 1",
+              "x": 225.1953125,
+              "y": 818.53125,
+              "alpha": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Actual text alpha sanity: #start",
+      "status": "PASS",
+      "details": {
+        "time": 7283.9000000059605,
+        "maxAlphaByte": 0,
+        "nonzeroPixels": 0,
+        "totalPixels": 79872,
+        "samples": [
+          {
+            "tag": "P",
+            "text": "Aplikacje · systemy · gry",
+            "x": 195,
+            "y": 133.796875,
+            "alpha": 0
+          },
+          {
+            "tag": "H1",
+            "text": "PROGRESSKIT SYSTEMS",
+            "x": 195,
+            "y": 200.6875,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+            "x": 195,
+            "y": 295.78125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Kontakt",
+            "x": 107,
+            "y": 377.28125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Usługi",
+            "x": 283,
+            "y": 377.28125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Pobierz Glikemia Premium",
+            "x": 132,
+            "y": 430.78125,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 40,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 1,
+          "masksReady": true,
+          "maskReads": 83,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0.053317535668611526,
+            1,
+            0.9819682836532593
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Actual text alpha sanity: #uslugi",
+      "status": "PASS",
+      "details": {
+        "time": 8205.40000000596,
+        "maxAlphaByte": 4,
+        "nonzeroPixels": 3523,
+        "totalPixels": 35456,
+        "samples": [
+          {
+            "tag": "H2",
+            "text": "Usługi",
+            "x": 195,
+            "y": 207.15625,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Dla Ciebie /małego biznesu",
+            "x": 170.09375,
+            "y": 448.8125,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Strony · sklepy · aplikacje",
+            "x": 195,
+            "y": 527.3671875,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 44,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 128,
+            "height": 277
+          },
+          "fpsLimit": 4,
+          "bufferLimit": 128,
+          "maskCount": 5,
+          "masksReady": true,
+          "maskReads": 88,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0,
+            1,
+            0.03336048498749733,
+            0,
+            0.18383441865444183,
+            1,
+            0.3070571720600128,
+            0.020512821152806282,
+            0.45871594548225403,
+            0.8517628312110901,
+            0.6048207879066467,
+            0.020512821152806282,
+            0.5870482921600342,
+            0.9794871807098389,
+            0.6626369953155518,
+            0.020512821152806282,
+            0.6413099765777588,
+            0.9692307710647583,
+            0.8321423530578613
+          ],
+          "alphaMax": 0.03612,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Actual text alpha sanity: [data-ecosystem-map]",
+      "status": "PASS",
+      "details": {
+        "time": 9011.800000011921,
+        "maxAlphaByte": 5,
+        "nonzeroPixels": 616,
+        "totalPixels": 79872,
+        "samples": [
+          {
+            "tag": "P",
+            "text": "Plan współpracy modułów. Połączenia poniżej są roadmapą, nie",
+            "x": 195,
+            "y": 28.78125,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "ProgressKit TaxW rozwoju",
+            "x": 187.5,
+            "y": 176.671875,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Obsługa biura.",
+            "x": 187.5,
+            "y": 273.171875,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Zobacz cały projekt ProgressKit Tax→",
+            "x": 132.1015625,
+            "y": 318.671875,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "ProgressKit TranslatorW rozwoju",
+            "x": 202.5,
+            "y": 534.34375,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 51,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 6,
+          "masksReady": true,
+          "maskReads": 94,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.010256410576403141,
+            0.09676762670278549,
+            0.9512820243835449,
+            0.3218861222267151,
+            0.010256410576403141,
+            0.2744927406311035,
+            0.9512820243835449,
+            0.45577237010002136,
+            0.010256410576403141,
+            0.4083789885044098,
+            0.9512820243835449,
+            0.510867178440094,
+            0.04871794953942299,
+            0.5203458070755005,
+            0.9897435903549194,
+            0.7458716034889221,
+            0.04871794953942299,
+            0.6984782218933105,
+            0.9897435903549194,
+            0.8009663820266724,
+            0.010256410576403141,
+            0.8104450702667236,
+            0.9512820243835449,
+            1
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Actual text alpha sanity: #technologie",
+      "status": "PASS",
+      "details": {
+        "time": 9800.5,
+        "maxAlphaByte": 3,
+        "nonzeroPixels": 2714,
+        "totalPixels": 79872,
+        "samples": [
+          {
+            "tag": "H2",
+            "text": "Warsztat.",
+            "x": 195,
+            "y": 255.59375,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Wybierz technologię, aby zobaczyć projekty, w których został",
+            "x": 152.1328125,
+            "y": 339.046875,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Klienci i interfejsy",
+            "x": 190,
+            "y": 495.0859375,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": ".NET MAUI 1",
+            "x": 102.671875,
+            "y": 567.03125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Android 2",
+            "x": 207.9296875,
+            "y": 570.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "AudioTrack 1",
+            "x": 92.015625,
+            "y": 622.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "CSS 3",
+            "x": 176.34375,
+            "y": 619.03125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "HTML 3",
+            "x": 243.1875,
+            "y": 622.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Jetpack Compose 3",
+            "x": 112.6328125,
+            "y": 674.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "Next.js 2",
+            "x": 231.265625,
+            "y": 671.03125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "React 3",
+            "x": 73.296875,
+            "y": 721.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "SkiaSharp 2",
+            "x": 155.6640625,
+            "y": 721.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "SpeechRecognizer 1",
+            "x": 136.75,
+            "y": 770.03125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "TextToSpeech 1",
+            "x": 100.5859375,
+            "y": 818.53125,
+            "alpha": 0
+          },
+          {
+            "tag": "A",
+            "text": "WorkManager 1",
+            "x": 225.1953125,
+            "y": 818.53125,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 59,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 6,
+          "masksReady": true,
+          "maskReads": 100,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0,
+            0.5883814096450806,
+            0.03547096997499466,
+            0,
+            0.20134775340557098,
+            0.5846955180168152,
+            0.26177430152893066,
+            0,
+            0.24020659923553467,
+            1,
+            0.36546579003334045,
+            0,
+            0.3465084433555603,
+            0.7904247045516968,
+            0.45692017674446106,
+            0.07179487496614456,
+            0.5327495336532593,
+            0.9025641083717346,
+            0.6404398679733276,
+            0.07179487496614456,
+            0.6202976703643799,
+            0.9025641083717346,
+            1
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "sanity:390",
+      "name": "Actual text alpha sanity: #brief",
+      "status": "PASS",
+      "details": {
+        "time": 10548.90000000596,
+        "maxAlphaByte": 0,
+        "nonzeroPixels": 0,
+        "totalPixels": 79872,
+        "samples": [
+          {
+            "tag": "A",
+            "text": "TikTok: @progresskit ↗",
+            "x": 132.0234375,
+            "y": 27.09375,
+            "alpha": 0
+          },
+          {
+            "tag": "H3",
+            "text": "Opisz swój projekt",
+            "x": 195,
+            "y": 171.1484375,
+            "alpha": 0
+          },
+          {
+            "tag": "P",
+            "text": "Wypełnij brief, zapisz go do pliku lub wydrukuj do PDF i prz",
+            "x": 195,
+            "y": 254.21875,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Jaki problem ma rozwiązać system?",
+            "x": 195,
+            "y": 446.3046875,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 195,
+            "y": 469.375,
+            "alpha": 0
+          },
+          {
+            "tag": "LABEL",
+            "text": "Kto będzie z niego korzystać?",
+            "x": 195,
+            "y": 658.4453125,
+            "alpha": 0
+          },
+          {
+            "tag": "TEXTAREA",
+            "text": "field",
+            "x": 195,
+            "y": 681.515625,
+            "alpha": 0
+          }
+        ],
+        "budget": {
+          "frames": 67,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": false,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 416
+          },
+          "fpsLimit": 12,
+          "bufferLimit": 192,
+          "maskCount": 3,
+          "masksReady": true,
+          "maskReads": 103,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0,
+            0,
+            1,
+            0.1316276639699936,
+            0,
+            0.0830494686961174,
+            1,
+            1,
+            0.05128205195069313,
+            0.12451866269111633,
+            0.9487179517745972,
+            0.1837603598833084
+          ],
+          "alphaMax": 0.0516,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No browser console or missing-resource errors",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Visual sources remain frozen during QA",
+      "status": "PASS",
+      "details": {
+        "files": 11
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "externalRequests": 0,
+  "formsSubmitted": false,
+  "PASS": 16,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "sourceBefore": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/luxury-world.mjs": "ec3fea118921c1ea9536e02b53da607461c269d6accfc336224f5ffd0a7657dc",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/material-finish.css": "ec18c79d499e6b8622018b8e74c9d8cd646bd0cd393ca3ecc4f28f9df41cabf9",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "scripts/build-site.py": "7ac89aa14e93f0fc038337f9f2e9e2d3f4745e39c971bb1a1bdb8d70802ab52a",
+    "scripts/stage-public.py": "ecd3a572a0a8e6ede1f09a7944db374e4fd9c310bd0b0598eb4b7e5dd092f343",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0"
+  },
+  "sourceAfter": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/luxury-world.mjs": "ec3fea118921c1ea9536e02b53da607461c269d6accfc336224f5ffd0a7657dc",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/material-finish.css": "ec18c79d499e6b8622018b8e74c9d8cd646bd0cd393ca3ecc4f28f9df41cabf9",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "scripts/build-site.py": "7ac89aa14e93f0fc038337f9f2e9e2d3f4745e39c971bb1a1bdb8d70802ab52a",
+    "scripts/stage-public.py": "ecd3a572a0a8e6ede1f09a7944db374e4fd9c310bd0b0598eb4b7e5dd092f343",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0"
+  },
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN",
+  "finishedAt": "2026-11-02T16:34:25.400Z"
+}

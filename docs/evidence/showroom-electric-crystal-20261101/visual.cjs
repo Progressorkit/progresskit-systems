@@ -1,0 +1,17 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {chromium}=require('/home/pawe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const out=path.join(__dirname,'final');fs.mkdirSync(out,{recursive:true});
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+const page=await browser.newPage({viewport:{width:1440,height:1050},deviceScaleFactor:1}),errors=[];
+page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+await page.goto('http://127.0.0.1:8191/',{waitUntil:'networkidle'});await page.locator('.showroom-viewport').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().top-80,behavior:'instant'}));
+await page.waitForTimeout(6500);await page.screenshot({path:path.join(out,'showroom-idle.png')});
+const core=await page.locator('[data-capsule-toggle]').boundingBox();const cx=core.x+core.width/2,cy=core.y+core.height/2;
+await page.screenshot({path:path.join(out,'core-closeup.png'),clip:{x:Math.max(0,cx-325),y:Math.max(0,cy-325),width:650,height:650}});
+await page.locator('[data-capsule-toggle]').hover();await page.waitForTimeout(2100);await page.screenshot({path:path.join(out,'showroom-activated.png')});
+const card=page.locator('.showroom-card[data-project-id="progresskit-mail"]');await card.locator('[data-showroom-open]').hover();await page.waitForTimeout(1100);
+await page.screenshot({path:path.join(out,'showroom-project-hover.png')});
+const face=await card.boundingBox();await page.screenshot({path:path.join(out,'crystal-closeup.png'),clip:{x:Math.max(0,face.x-70),y:Math.max(0,face.y-60),width:Math.min(face.width+140,1440-Math.max(0,face.x-70)),height:Math.min(face.height+120,1050-Math.max(0,face.y-60))}});
+const state=await page.locator('.capsule-matter').evaluate(c=>({renderer:c.dataset.matterRenderer,filaments:c.dataset.matterFilaments,buffer:[c.width,c.height],target:document.querySelector('#projekty').dataset.relatedProject}));
+await browser.close();fs.writeFileSync(path.join(out,'visual-capture.json'),JSON.stringify({errors,state},null,2));console.log({errors,state});if(errors.length)process.exitCode=1;})().catch(e=>{console.error(e);process.exitCode=1;});

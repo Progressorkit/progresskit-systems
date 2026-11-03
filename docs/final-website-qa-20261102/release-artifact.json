@@ -1,0 +1,71 @@
+{
+  "timestampUTC": "2026-11-02T11:28:16.245450+00:00",
+  "status": "LOCAL_REVIEW_ARTIFACT_READY",
+  "directory": "/tmp/progresskit-release-review-20261102-d9abba5197",
+  "publicDirectory": "/tmp/progresskit-release-review-20261102-d9abba5197/public",
+  "manifest": {
+    "path": "/tmp/progresskit-release-review-20261102-d9abba5197/files.json",
+    "bytes": 13350,
+    "sha256": "b4b1eb89ef4c3544913fe2eb9fdb5689ad1a6e56f0b3652612fac1890304318f"
+  },
+  "checksumsPath": "/tmp/progresskit-release-review-20261102-d9abba5197/SHA256SUMS",
+  "releaseMetadataPath": "/tmp/progresskit-release-review-20261102-d9abba5197/release.json",
+  "publicFiles": 85,
+  "publicBytes": 9665125,
+  "archives": [
+    {
+      "path": "/tmp/progresskit-release-review-20261102-d9abba5197/progresskit-v5-public.tar.gz",
+      "bytes": 6615531,
+      "sha256": "e0a06339a36c6d0a67f8384380e76e07afcf0db9532cf8fad74a2252f05bec2b",
+      "files": 85,
+      "readbackSHA256": "PASS"
+    },
+    {
+      "path": "/tmp/progresskit-release-review-20261102-d9abba5197/progresskit-v5-public.zip",
+      "bytes": 6683308,
+      "sha256": "ad04a04abddf3195bcd35ca3f90516b34c7c4c07013dbf93122b1fe9802f7e60",
+      "files": 85,
+      "readbackSHA256": "PASS"
+    }
+  ],
+  "allowlistPolicy": "Existing scripts/stage-public.py; generated output freshness checked before copying. No raw catalog, private docs, marketing or dynamic APK copied.",
+  "source": {
+    "gitHead": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
+    "headUnchanged": true,
+    "workingTreeModified": true,
+    "gitIndexSHA256": "bd2747d60b911452d937aea087dbb915384bd5dbe6ef28a86bbf1cb60a79c024",
+    "gitIndexUnchanged": true,
+    "sourceHashesUnchanged": true,
+    "sourceSHA256": {
+      "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+      "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+      "scripts/build-site.py": "537a3fcac8faf3de9b2a53edca36b9d93103baef6be3ffb4390bd739378fff84",
+      "scripts/stage-public.py": "d844e6aeae0a3e681e6799b17f63bbfcd73bf0f296f00fcfe54ca39078f8824b",
+      "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6",
+      "assets/site-v5.js": "c05a40647e1ad67bfdb2b6ff7d2d2c260c504f74f84ebd7a3bc35d2596f034a3"
+    }
+  },
+  "verification": {
+    "npmBuild": "PASS: 19 catalog entries / 28 generated files; local vendored Three only, no fetch",
+    "npmCheck": "PASS: vendor bytes, generated output and JavaScript syntax",
+    "gitDiffCheck": "PASS",
+    "python": {
+      "tests": 124,
+      "pass": 124,
+      "fail": 0,
+      "skipped": 0,
+      "log": "docs/final-website-qa-20261102/python-tests-final.log",
+      "statusFile": "docs/final-website-qa-20261102/python-tests-final-status.json",
+      "isolatedSyntheticDB": "/tmp/pk-site-tests-20261102-final-n5ucy3oz",
+      "freshRun": true,
+      "sandboxAttempt": "ENVIRONMENT_BLOCKED: first TestClient did not complete; interrupted attempt preserved separately; approved local IPC rerun PASS"
+    },
+    "publicFileByteComparison": "85/85 PASS",
+    "zipReadback": "85/85 PASS",
+    "tarReadback": "85/85 PASS"
+  },
+  "ownerVisualApproval": "OPEN",
+  "deployment": "NOT DEPLOYED",
+  "gitStageCommitPush": "NOT PERFORMED",
+  "browserQA": "Separate root-coordinated run; this packaging task launched no browser/GPU."
+}

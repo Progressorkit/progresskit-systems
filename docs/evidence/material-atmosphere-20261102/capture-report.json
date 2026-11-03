@@ -1,0 +1,517 @@
+{
+  "startedAt": "2026-11-02T17:10:50.500Z",
+  "mode": "capture",
+  "checks": [
+    {
+      "scope": "core-only",
+      "name": "Actual haze alpha is zero over projected Canvas project titles and Core label",
+      "status": "PASS",
+      "details": {
+        "time": 8203.199999988079,
+        "maxAlphaByte": 12,
+        "nonzeroPixels": 4312,
+        "totalPixels": 25536,
+        "samples": [
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "glikemia-premium",
+            "x": 720,
+            "y": 243.4375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "progresskit-mail",
+            "x": 1041.5,
+            "y": 390.9375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "progresskit-translator",
+            "x": 1017.5,
+            "y": 681.4375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "vaeloria",
+            "x": 720,
+            "y": 840.4375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "progresskit-community",
+            "x": 408.5,
+            "y": 687.9375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CANVAS_PROJECT_TITLE_PROXY",
+            "text": "progresskit-tax",
+            "x": 418.5,
+            "y": 394.9375,
+            "width": 170,
+            "height": 140,
+            "alpha": 0
+          },
+          {
+            "tag": "CORE_LABEL",
+            "text": "Wybierz projekt",
+            "x": 721,
+            "y": 735.9375,
+            "width": 270,
+            "height": 16,
+            "alpha": 0
+          }
+        ],
+        "metrics": {
+          "frames": 21,
+          "rafPending": true,
+          "timerPending": true,
+          "present": true,
+          "suspendedHeavy": false,
+          "throttledHeavy": true,
+          "reduced": false,
+          "forcedColors": false,
+          "paused": false,
+          "lost": false,
+          "disposed": false,
+          "size": {
+            "width": 192,
+            "height": 133
+          },
+          "fpsLimit": 5,
+          "bufferLimit": 192,
+          "maskCount": 11,
+          "masksReady": true,
+          "maskReads": 146,
+          "masksPending": false,
+          "composited": true,
+          "masks": [
+            0.02777777798473835,
+            0.00793750025331974,
+            0.9722222089767456,
+            0.09193749725818634,
+            0.7143988609313965,
+            0.019734375178813934,
+            0.9722222089767456,
+            0.08012499660253525,
+            0.3930555582046509,
+            0.7074375152587891,
+            0.6083333492279053,
+            0.7634375095367432,
+            0.4270833432674408,
+            0.15293750166893005,
+            0.5729166865348816,
+            0.3329375088214874,
+            0.6503472328186035,
+            0.3004375100135803,
+            0.7961805462837219,
+            0.4804374873638153,
+            0.6336805820465088,
+            0.5909374952316284,
+            0.7795138955116272,
+            0.7709375023841858,
+            0.4270833432674408,
+            0.7504374980926514,
+            0.5729166865348816,
+            0.9304375052452087,
+            0.21076388657093048,
+            0.598437488079071,
+            0.3565972149372101,
+            0.7784374952316284,
+            0.21770833432674408,
+            0.30543750524520874,
+            0.3635416626930237,
+            0.4854375123977661,
+            0.7541666626930237,
+            0.07993750274181366,
+            0.8513888716697693,
+            0.1639374941587448,
+            0.02777777798473835,
+            0.9779375195503235,
+            0.9722222089767456,
+            1
+          ],
+          "alphaMax": 0.08399999999999999,
+          "alpha": true,
+          "canvasCount": 1,
+          "renderer": "webgl2"
+        }
+      }
+    },
+    {
+      "scope": "capture",
+      "name": "Final Core atmosphere screenshot",
+      "status": "PASS"
+    },
+    {
+      "scope": "capture",
+      "name": "Desktop full-scroll movie",
+      "status": "PASS"
+    },
+    {
+      "scope": "capture",
+      "name": "Mobile emulation full-scroll movie",
+      "status": "PASS"
+    },
+    {
+      "scope": "all",
+      "name": "No browser console or missing-resource errors",
+      "status": "PASS",
+      "details": {
+        "browserErrors": 0,
+        "httpErrors": 0
+      }
+    },
+    {
+      "scope": "all",
+      "name": "Visual sources remain frozen during QA",
+      "status": "PASS",
+      "details": {
+        "files": 11
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "artifacts": [
+    {
+      "file": "01-hero-material.png",
+      "kind": "actual-local-browser-screenshot",
+      "sha256": "a5902267fbe663c65d5ff77df338bc448f4439a0caf69948ae90fe9132fb2b3d",
+      "provenance": "Approved quick capture; later source edit only narrows Core/project masks outside these sections."
+    },
+    {
+      "file": "03-technology-gloss.png",
+      "kind": "actual-local-browser-screenshot",
+      "sha256": "5247bf76a34834c67ff31aabf5d51077b8e13babfd4a12de59ec6d9ac248e507",
+      "provenance": "Approved quick capture; later source edit only narrows Core/project masks outside these sections."
+    },
+    {
+      "file": "04-contact-depth.png",
+      "kind": "actual-local-browser-screenshot",
+      "sha256": "8dc372e4e58d72fc8d3c5e75d53df3c763b04fdb1372f03caaa51ede514c83a4",
+      "provenance": "Approved quick capture; later source edit only narrows Core/project masks outside these sections."
+    },
+    {
+      "file": "02-core-atmosphere.png",
+      "kind": "actual-local-browser-screenshot",
+      "sha256": "53fe5e66240e86f3eeea059a822aa66183a7dd20d6b59a470c756ef5b7669c15",
+      "atmosphere": {
+        "frames": 24,
+        "rafPending": true,
+        "timerPending": true,
+        "present": true,
+        "suspendedHeavy": false,
+        "throttledHeavy": true,
+        "reduced": false,
+        "forcedColors": false,
+        "paused": false,
+        "lost": false,
+        "disposed": false,
+        "size": {
+          "width": 192,
+          "height": 133
+        },
+        "fpsLimit": 5,
+        "bufferLimit": 192,
+        "maskCount": 11,
+        "masksReady": true,
+        "maskReads": 157,
+        "masksPending": false,
+        "composited": true,
+        "masks": [
+          0.02777777798473835,
+          0.00793750025331974,
+          0.9722222089767456,
+          0.09193749725818634,
+          0.7143988609313965,
+          0.019734375178813934,
+          0.9722222089767456,
+          0.08012499660253525,
+          0.3930555582046509,
+          0.7089375257492065,
+          0.6083333492279053,
+          0.7649375200271606,
+          0.4270833432674408,
+          0.1499374955892563,
+          0.5729166865348816,
+          0.32993748784065247,
+          0.6472222208976746,
+          0.30293750762939453,
+          0.793055534362793,
+          0.4829375147819519,
+          0.6312500238418579,
+          0.588937520980835,
+          0.7770833373069763,
+          0.7689375281333923,
+          0.4270833432674408,
+          0.745437502861023,
+          0.5729166865348816,
+          0.9254375100135803,
+          0.2135416716337204,
+          0.5949375033378601,
+          0.359375,
+          0.7749375104904175,
+          0.22013889253139496,
+          0.3059374988079071,
+          0.36597222089767456,
+          0.4859375059604645,
+          0.7541666626930237,
+          0.07993750274181366,
+          0.8513888716697693,
+          0.1639374941587448,
+          0.02777777798473835,
+          0.9779375195503235,
+          0.9722222089767456,
+          1
+        ],
+        "alphaMax": 0.08399999999999999,
+        "alpha": true,
+        "canvasCount": 1,
+        "renderer": "webgl2"
+      }
+    },
+    {
+      "file": "desktop-full-scroll.mp4",
+      "kind": "actual-local-browser-recording",
+      "sha256": "9a506db75ffda780dc69c191bafbacdb21151b31628970457765526ae9a0e435",
+      "width": 1440,
+      "height": 1000,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 35.088,
+      "rawDurationSeconds": 39.8,
+      "trimStartSeconds": 4.711999999999996,
+      "recording": [
+        {
+          "name": "hero-idle-haze",
+          "elapsedSeconds": 0.001,
+          "scroll": 0
+        },
+        {
+          "name": "core-idle-haze",
+          "elapsedSeconds": 6.207,
+          "scroll": 1517
+        },
+        {
+          "name": "core-crystals-active",
+          "elapsedSeconds": 9.482,
+          "scroll": 1517
+        },
+        {
+          "name": "services-light-depth",
+          "elapsedSeconds": 12.226,
+          "scroll": 2690
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 15.176,
+          "scroll": 4047
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 17.444,
+          "scroll": 6006
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 20.863,
+          "scroll": 7824
+        },
+        {
+          "name": "technology-field",
+          "elapsedSeconds": 23.39,
+          "scroll": 9289
+        },
+        {
+          "name": "technology-depth",
+          "elapsedSeconds": 27.052,
+          "scroll": 11156
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 29.524,
+          "scroll": 12362
+        },
+        {
+          "name": "brief-console",
+          "elapsedSeconds": 31.103,
+          "scroll": 13077
+        },
+        {
+          "name": "footer-fades",
+          "elapsedSeconds": 33.884,
+          "scroll": 13888
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 35.086,
+          "scroll": 13888
+        }
+      ],
+      "sourceFootage": "raw-video-desktop/page@e828e9e8f5efdcc43ea6b39bfa4d1fba.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 1000,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "877"
+          }
+        ],
+        "format": {
+          "duration": "35.080000"
+        }
+      }
+    },
+    {
+      "file": "mobile-full-scroll.mp4",
+      "kind": "actual-local-browser-recording",
+      "sha256": "6468fe39b6a8792532ce098601c4ddc63a85f33b174eee330a284e47ada961e9",
+      "width": 390,
+      "height": 844,
+      "playbackRate": 1,
+      "actualInteractionSeconds": 33.005,
+      "rawDurationSeconds": 36.2,
+      "trimStartSeconds": 3.1950000000000003,
+      "recording": [
+        {
+          "name": "hero-idle-haze",
+          "elapsedSeconds": 0,
+          "scroll": 0
+        },
+        {
+          "name": "core-idle-haze",
+          "elapsedSeconds": 6.124,
+          "scroll": 1485
+        },
+        {
+          "name": "core-crystals-active",
+          "elapsedSeconds": 8.964,
+          "scroll": 1485
+        },
+        {
+          "name": "services-light-depth",
+          "elapsedSeconds": 11.496,
+          "scroll": 2540
+        },
+        {
+          "name": "process",
+          "elapsedSeconds": 14.432,
+          "scroll": 4093
+        },
+        {
+          "name": "ecosystem",
+          "elapsedSeconds": 16.666,
+          "scroll": 6106
+        },
+        {
+          "name": "about",
+          "elapsedSeconds": 19.396,
+          "scroll": 8505
+        },
+        {
+          "name": "technology-field",
+          "elapsedSeconds": 21.862,
+          "scroll": 10290
+        },
+        {
+          "name": "technology-depth",
+          "elapsedSeconds": 25.009,
+          "scroll": 12614
+        },
+        {
+          "name": "contact",
+          "elapsedSeconds": 27.412,
+          "scroll": 15446
+        },
+        {
+          "name": "brief-console",
+          "elapsedSeconds": 29.012,
+          "scroll": 16163
+        },
+        {
+          "name": "footer-fades",
+          "elapsedSeconds": 31.797,
+          "scroll": 17666
+        },
+        {
+          "name": "recording-end",
+          "elapsedSeconds": 33.003,
+          "scroll": 17666
+        }
+      ],
+      "sourceFootage": "raw-video-mobile/page@f4b8d5252b795f2d338236fded4f109c.webm",
+      "audio": "none",
+      "physicalDevice": "NOT_RUN",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 390,
+            "height": 844,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "825"
+          }
+        ],
+        "format": {
+          "duration": "33.000000"
+        }
+      }
+    }
+  ],
+  "performance": [],
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "externalRequests": 0,
+  "formsSubmitted": false,
+  "PASS": 6,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "sourceBefore": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/luxury-world.mjs": "d8eb1608a43a7bee2fa98fd444a07d2ec03c69e6fe360a206ec952c632603105",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/material-finish.css": "ec18c79d499e6b8622018b8e74c9d8cd646bd0cd393ca3ecc4f28f9df41cabf9",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "scripts/build-site.py": "7ac89aa14e93f0fc038337f9f2e9e2d3f4745e39c971bb1a1bdb8d70802ab52a",
+    "scripts/stage-public.py": "ecd3a572a0a8e6ede1f09a7944db374e4fd9c310bd0b0598eb4b7e5dd092f343",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0"
+  },
+  "sourceAfter": {
+    "index.html": "e3f8ddcec00ca8c89f3fc606fbb39b035f1431e65abd135e8e49530acba9b3c1",
+    "assets/luxury-world.mjs": "d8eb1608a43a7bee2fa98fd444a07d2ec03c69e6fe360a206ec952c632603105",
+    "assets/luxury-world.css": "b316cff6f6604a0d5c221b3bed5c7afe12f0462b893efdae8f5f1e82dae1fcf7",
+    "assets/material-finish.css": "ec18c79d499e6b8622018b8e74c9d8cd646bd0cd393ca3ecc4f28f9df41cabf9",
+    "assets/showroom-scene.mjs": "eefd88d3d0e069005489b05ed387249c314c2f84b7a540931f6b2e4cfd2cd170",
+    "assets/spatial-chapters.mjs": "c1e66f37fb2474b1f34baae7bdba5364d5823c2638b74e6a41a72e264b199336",
+    "assets/continuity-chapters.css": "b0af17985e6d90a9c5968e1c0f39c0e953b71cb451eb585756e2b4de51810ab7",
+    "assets/technology-field.css": "91967285a532cd9ec75fe0585e09b7b4342968155fe5a8cd84a831fa689cf1c0",
+    "scripts/build-site.py": "7ac89aa14e93f0fc038337f9f2e9e2d3f4745e39c971bb1a1bdb8d70802ab52a",
+    "scripts/stage-public.py": "ecd3a572a0a8e6ede1f09a7944db374e4fd9c310bd0b0598eb4b7e5dd092f343",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0"
+  },
+  "status": "AUTOMATED_CHECKS_PASS_VISUAL_APPROVAL_OPEN",
+  "finishedAt": "2026-11-02T17:12:45.789Z"
+}

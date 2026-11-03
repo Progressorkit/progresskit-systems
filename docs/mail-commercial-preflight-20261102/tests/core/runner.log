@@ -1,0 +1,36 @@
+VSTest version 18.0.2 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.62]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_sends_one_attachment_message_and_appends_sent_copy [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_auth_denial_prevents_success_without_sending_mail [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_reads_and_decodes_account_bound_attachment_over_imaps [SKIP]
+[xUnit.net 00:00:00.65]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_certificate_for_localhost_is_rejected_for_ip_hostname [SKIP]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_sends_one_attachment_message_and_appends_sent_copy [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_auth_denial_prevents_success_without_sending_mail [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_reads_and_decodes_account_bound_attachment_over_imaps [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_certificate_for_localhost_is_rejected_for_ip_hostname [1 ms]
+[xUnit.net 00:00:00.75]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_rejects_wrong_credential_without_fetching_mail [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_certificate_for_localhost_is_rejected_for_ip_hostname [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_requires_starttls_then_authenticates_and_transfers_one_mime_message [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_uses_actual_imaps_and_starttls_auth_without_fetch_or_smtp_envelope [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_rejects_wrong_credential_without_submitting_mail [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_hostname_failure_does_not_transmit_authentication [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_wrong_imap_password_prevents_smtp_connection [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_authenticates_lists_folders_and_downloads_mime_attachment [SKIP]
+[xUnit.net 00:00:00.77]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_saves_account_bound_server_draft_with_uidplus [SKIP]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_rejects_wrong_credential_without_fetching_mail [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_certificate_for_localhost_is_rejected_for_ip_hostname [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_requires_starttls_then_authenticates_and_transfers_one_mime_message [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_uses_actual_imaps_and_starttls_auth_without_fetch_or_smtp_envelope [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_smtp_rejects_wrong_credential_without_submitting_mail [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_actual_smtp_hostname_failure_does_not_transmit_authentication [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Access_verification_wrong_imap_password_prevents_smtp_connection [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Trusted_imaps_authenticates_lists_folders_and_downloads_mime_attachment [1 ms]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_saves_account_bound_server_draft_with_uidplus [1 ms]
+[xUnit.net 00:00:00.78]     ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_lists_all_five_folders_over_validated_tls [SKIP]
+  Skipped ProgressKit.Mail.Core.Tests.Mail.LocalProtocolIntegrationTests.Release_service_lists_all_five_folders_over_validated_tls [1 ms]
+WARNING: Overwriting results file: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/core/core.trx
+Results File: /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/mail-commercial-preflight-20261102/tests/core/core.trx
+
+Passed!  - Failed:     0, Passed:   271, Skipped:    14, Total:   285, Duration: 1 s - ProgressKit.Mail.Core.Tests.dll (net10.0)

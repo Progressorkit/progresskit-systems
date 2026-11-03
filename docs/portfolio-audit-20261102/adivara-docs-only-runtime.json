@@ -1,0 +1,119 @@
+{
+  "timestampUTC": "2026-11-02T11:07:20.011425+00:00",
+  "purpose": "Authentic API documentation preview only, not product GUI, operational E2E or production proof.",
+  "sourceRepo": "Adivara",
+  "port": 8202,
+  "bind": "127.0.0.1",
+  "stage": "/tmp/adivara-docs-only-ljzmr337",
+  "configCopied": false,
+  "accountsUsed": false,
+  "requestedMethods": [
+    "GET"
+  ],
+  "requestedPaths": [
+    "/swagger/index.html",
+    "/swagger/v1/swagger.json"
+  ],
+  "DBOperations": "NONE requested; no migration/startup query in reviewed source. Synthetic connection target is closed loopback port1.",
+  "privateStores": "APPDATA and XDG are private temporary directories; HOME preserved unchanged. No personal configuration/usersecrets read.",
+  "copiedFileNames": [
+    "Adivara.API.deps.json",
+    "Adivara.API.dll",
+    "Adivara.API.pdb",
+    "Adivara.API.runtimeconfig.json",
+    "Adivara.Application.dll",
+    "Adivara.Application.pdb",
+    "Adivara.Domain.dll",
+    "Adivara.Domain.pdb",
+    "Adivara.Infrastructure.dll",
+    "Adivara.Infrastructure.pdb",
+    "Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
+    "Microsoft.AspNetCore.OpenApi.dll",
+    "Microsoft.Bcl.Cryptography.dll",
+    "Microsoft.EntityFrameworkCore.Abstractions.dll",
+    "Microsoft.EntityFrameworkCore.Relational.dll",
+    "Microsoft.EntityFrameworkCore.dll",
+    "Microsoft.IdentityModel.Abstractions.dll",
+    "Microsoft.IdentityModel.JsonWebTokens.dll",
+    "Microsoft.IdentityModel.Logging.dll",
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+    "Microsoft.IdentityModel.Protocols.dll",
+    "Microsoft.IdentityModel.Tokens.dll",
+    "Microsoft.OpenApi.dll",
+    "Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+    "Npgsql.dll",
+    "Swashbuckle.AspNetCore.Swagger.dll",
+    "Swashbuckle.AspNetCore.SwaggerGen.dll",
+    "Swashbuckle.AspNetCore.SwaggerUI.dll",
+    "System.IdentityModel.Tokens.Jwt.dll"
+  ],
+  "assemblies": [
+    {
+      "name": "Adivara.API.dll",
+      "sha256": "5f4efe91b15ea18ab760a3de6447d576bff8227e1eb95aa3daa5288ce15c38f8",
+      "bytes": 63488
+    },
+    {
+      "name": "Adivara.Application.dll",
+      "sha256": "3833dbc2e4b5f5dd819180eab5d84715200bcb00e16ac965b01c65c1580a1538",
+      "bytes": 35840
+    },
+    {
+      "name": "Adivara.Domain.dll",
+      "sha256": "c7c58512713b04eaed00c952ccfe9e2238e238954b975695d86f613ba3d0fca4",
+      "bytes": 30720
+    },
+    {
+      "name": "Adivara.Infrastructure.dll",
+      "sha256": "70ef005942305bcd6e478048b3a15495ba382d5b0a3f7ed23681a8e5a5453a45",
+      "bytes": 150016
+    }
+  ],
+  "gitHEAD": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+  "pid": 3848964,
+  "swaggerHTTP": 200,
+  "openAPIHTTP": 200,
+  "openAPIOperationPaths": [
+    "/api/auth/login",
+    "/api/auth/me",
+    "/api/company-memberships/{membershipId}/caregiver",
+    "/api/family-member-access",
+    "/api/family-member-access/{accessId}",
+    "/api/me/companies"
+  ],
+  "openAPISHA256": "d94e6380aa23d6a6dede9f1f72a2cc7f7bfd2b6924feb4a6125d23f79c908b16",
+  "title": "Adivara.API",
+  "ownedProcessTCPSockets": [
+    {
+      "protocol": "tcp",
+      "local": "0100007F:200A",
+      "remote": "00000000:0000",
+      "state": "0A"
+    }
+  ],
+  "establishedTCPConnectionsAfterGET": 0,
+  "personalSecretFilesInPrivateAppdata": 0,
+  "siblingGitStateUnchanged": true,
+  "status": "DOCUMENTATION_GET_PASS; product/DB/auth tests NOT RUN",
+  "PDBSourceFreshness": {
+    "PDBs": 4,
+    "documents": 68,
+    "uniqueDocuments": 68,
+    "matchingDocuments": 67,
+    "matchingUniqueFiles": 67,
+    "mismatchedCurrentSourceFiles": [],
+    "missingDocuments": [
+      "src/Adivara.API/obj/Release/net10.0/Microsoft.AspNetCore.OpenApi.SourceGenerators/Microsoft.AspNetCore.OpenApi.SourceGenerators.XmlCommentGenerator/OpenApiXmlCommentSupport.generated.cs"
+    ],
+    "scope": "Current copied prebuilt API DLL portable PDB source hashes only; no fresh build, source modifications, DB/auth tests or production inference."
+  },
+  "lifecycleStopObservation": {
+    "timestampUTC": "2026-11-02T11:31:18.902000+00:00",
+    "ownedPID": 3848964,
+    "procExists": false,
+    "ownedRunnerSessionExitCode": 143,
+    "action": "NONE: owned process and session were already stopped when checked. No other process targeted.",
+    "mailAccountOrPortTests": "NONE; explicit owner STOP preserved."
+  }
+}

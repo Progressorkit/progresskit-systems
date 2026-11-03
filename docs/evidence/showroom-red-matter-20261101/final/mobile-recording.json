@@ -1,0 +1,34 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "readyOffset": 1.982,
+  "idleProof": {
+    "draws": 54,
+    "renderer": "webgl",
+    "width": 220,
+    "height": 208,
+    "coreDormant": true,
+    "seconds": 6.007
+  },
+  "timeline": [
+    {
+      "seconds": 0.004,
+      "label": "Idle: first six seconds show evolving volume without interaction"
+    },
+    {
+      "seconds": 6.007,
+      "label": "End of uninterrupted idle proof"
+    },
+    {
+      "seconds": 6.064,
+      "label": "Core pressure and materialization"
+    },
+    {
+      "seconds": 9.067,
+      "label": "Tap opens genuine project"
+    }
+  ],
+  "errors": []
+}

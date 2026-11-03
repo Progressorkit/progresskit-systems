@@ -1,0 +1,1632 @@
+{
+  "auditDate": "2026-11-02",
+  "auditMode": "READ_ONLY_SOURCE_AND_DOCUMENTATION",
+  "freshTestRuns": "NOT_RUN",
+  "safetyScope": "No sibling edits, launches, database/account access, network calls, deployment, commit or push. Only source/docs/Git and four explicitly synthetic screenshot candidates were inspected. No secrets or personal records are included.",
+  "statusRule": "Historical reporter results retain date/revision/environment and are not summed across runs or promoted to current execution.",
+  "products": [
+    {
+      "id": "progresskit-tax",
+      "name": "ProgressKit Tax",
+      "summary": "Rozbudowany system biurowo-księgowy SaaS: backend .NET, panel WWW oraz natywny portal klienta na Androida. Implementacja obejmuje obsługę klientów i spraw, obieg dokumentów, księgi oraz rejestry; status produkcyjny i merytoryczny odbiór podatkowy pozostają odrębnymi bramkami.",
+      "solution": "Łączy kartoteki biura, przydzielanie pracy, weryfikację dokumentów i moduły księgowe w jednym modelu organizacji i uprawnień. Pozwala rozdzielić pracę osoby prowadzącej sprawę od niezależnego zatwierdzenia oraz udostępnić klientowi wyłącznie jawnie przyznany zakres spraw i dokumentów.",
+      "features": [
+        {
+          "text": "Rejestracja i logowanie ASP.NET Identity, potwierdzanie konta, odzyskiwanie dostępu oraz kontrola sesji; endpointy zabezpieczają filtry konta i MFA.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Identity/IdentityEndpoints.cs",
+              "lines": "12-34",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/tax-app.tsx",
+              "lines": "27-33",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Model wielu biur z członkostwem i rolami Owner, Manager, Staff, Reviewer oraz Client; rozdzielone uprawnienia do osób i firm.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Domain/Entities.cs",
+              "lines": "11-43",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Organizations/OrganizationEndpoints.cs",
+              "lines": "24-54",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Kartoteki osób, JDG i spółek z adresami, identyfikatorami podatkowymi oraz powiązaniem firmy z osobą; wyszukiwanie i stronicowanie rejestrów.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Domain/Entities.cs",
+              "lines": "49-103",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Clients/ClientEndpoints.cs",
+              "lines": "11-39",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Rejestr spraw PL/DE/NL z rokiem podatkowym, krajami, statusem i przypisanym pracownikiem. Ten obieg organizuje pracę nad sprawą; nie jest deklaracją automatycznego obliczania lub wysyłania zeznań.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Cases/WorkEndpoints.cs",
+              "lines": "13-46",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Osobna obsługa administracyjna firm oraz lista członków możliwych do przypisania do pracy.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Cases/WorkEndpoints.cs",
+              "lines": "21-26",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Wersjonowane przejścia workflow, niezależne zatwierdzenie, historia sprawy oraz kontrolowane odzyskiwanie i archiwizacja; testy obejmują replay i równoległe zatwierdzenia.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Cases/WorkEndpoints.cs",
+              "lines": "18-20",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/security/TAX-SECURITY-GATE-2026-10-25.md",
+              "lines": "12-18",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Prywatny upload, lista i pobieranie dokumentów, obieg zatwierdzania oraz ponowne skanowanie. Role biura i portal klienta stosują odrębne granice odczytu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Documents/DocumentEndpoints.cs",
+              "lines": "22-30",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Portal/PortalEndpoints.cs",
+              "lines": "18-40",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Kontrola rozmiaru i typu plików oraz skanowanie ClamAV z rozróżnieniem Clean, Quarantined i ScanFailed; brak skanera lub nieaktualne sygnatury powodują odmowę bezpiecznej ścieżki.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Documents/ClamAvScanner.cs",
+              "lines": "31-64",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Prywatny magazyn dokumentów kontroluje zgodność pobranych bajtów z SHA-256; wynik starego zatwierdzenia nie zastępuje aktualnego sprawdzenia pliku.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Documents/PrivateDocumentStore.cs",
+              "lines": "31-50",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/security/TAX-SECURITY-GATE-2026-10-25.md",
+              "lines": "93-98",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Plan kont roku z tworzeniem, historią oraz importem i eksportem; moduł WWW udostępnia te operacje przez rzeczywiste API.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/ChartEndpoints.cs",
+              "lines": "13-19",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/tax-app.tsx",
+              "lines": "14-25",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Dziennik księgowy z odczytem pozycji, tworzeniem dekretów, korektą i pełnym stornem; kontrola bilansowania i niezmienności zapisów ma warstwę bazodanową.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/JournalEndpoints.cs",
+              "lines": "13-18",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/ACCOUNTING_COMPLIANCE_STATUS.md",
+              "lines": "12-21",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Rejestry KPiR i ryczałtu, w tym warianty kolumn i reguł 2026 oraz powiązane korekty zastępujące. Techniczna implementacja nie oznacza merytorycznego zatwierdzenia reguł księgowych.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/SimpleRegisterEndpoints.cs",
+              "lines": "12-20",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/Register2026Endpoints.cs",
+              "lines": "14-27",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Zestawienie obrotów i sald z bilansem otwarcia, karta konta oraz raportowanie okresowe z kontrolą sum.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/ReportingCalculations.cs",
+              "lines": "21-55",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/accounting-reports.tsx",
+              "lines": "27-29",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Eksport danych raportowych do CSV i PDF z panelu WWW.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/ReportExport.cs",
+              "lines": "18-45",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/report-exports.tsx",
+              "lines": "20-61",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Kontrola zamykania i ponownego otwierania okresów, historia operacji oraz osobne uprawnienia administracyjne.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Accounting/PeriodControlEndpoints.cs",
+              "lines": "11-14",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Kokpit biura z kolejką pracy i interwencjami, szybkie działania, rejestry, audyt oraz responsywny interfejs pracownika.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Modules/Organizations/OrganizationEndpoints.cs",
+              "lines": "45-54",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/tax-app.tsx",
+              "lines": "13-25",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/qa/TAX-DASHBOARD-02-REGRESSION-2026-10-25.md",
+              "lines": "38-53",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Portal Android pozwala zalogować klienta, wybrać kontekst biura, przeglądać sprawy i dokumenty oraz wysyłać i pobierać pliki; tokeny przechowuje przez Android Keystore.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "android/app/src/main/java/pl/progresskit/tax/PortalViewModel.kt",
+              "lines": "22-29",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "android/app/src/main/java/pl/progresskit/tax/PortalViewModel.kt",
+              "lines": "42-148",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "android/app/src/main/java/pl/progresskit/tax/TokenVault.kt",
+              "lines": "21-46",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "text": "Katalog kontraktów integracyjnych KSeF/JPK i lokalny fundament modułów AI Office są przygotowane jako osobne granice integracji. Adaptery tłumaczeń i agenta są lokalne/symulowane; zewnętrznych wysyłek urzędowych nie wdrożono.",
+          "status": "PARTIAL",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/KSEF_JPK_INTEGRATION_PLAN.md",
+              "lines": "3-12",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Program.cs",
+              "lines": "29-31",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Modularny backend ASP.NET Core i EF Core/PostgreSQL, panel Next.js/React/TypeScript korzystający z API oraz odrębny natywny Android Kotlin/Compose. Organizacja, kategorie danych i granty portalu są egzekwowane także po stronie serwera. Historyczne katalogi src/mobile nie opisują aktualnego natywnego klienta android/.",
+        "evidence": [
+          {
+            "repo": "progresskit-tax",
+            "path": "src/backend/ProgressKit.Tax.Api.csproj",
+            "lines": "1-20",
+            "kind": "source",
+            "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+          },
+          {
+            "repo": "progresskit-tax",
+            "path": "src/backend/Infrastructure/AppDbContext.cs",
+            "lines": "44-114",
+            "kind": "source",
+            "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+          },
+          {
+            "repo": "progresskit-tax",
+            "path": "src/web/components/tax-app.tsx",
+            "lines": "1-25",
+            "kind": "source",
+            "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+          },
+          {
+            "repo": "progresskit-tax",
+            "path": "android/app/src/main/java/pl/progresskit/tax/MainActivity.kt",
+            "lines": "6-8",
+            "kind": "source",
+            "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+          }
+        ]
+      },
+      "technologies": [
+        "C#",
+        ".NET 10",
+        "ASP.NET Core Identity",
+        "Entity Framework Core",
+        "PostgreSQL / Npgsql",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Kotlin",
+        "Jetpack Compose",
+        "Android Keystore",
+        "ClamAV",
+        "CSV / PDF"
+      ],
+      "platforms": [
+        {
+          "name": "Backend API",
+          "implementation": "Rozbudowane moduły obsługi biura, dokumentów i księgowości.",
+          "verification": "Historyczny pełny backend Release: 981/981 w Dashboard02; późniejszy 01B wykonał węższe 258 testów bezpieczeństwa. W tym audycie nie uruchamiano testów.",
+          "distribution": "Lokalne buildy i konfiguracje deweloperskie/testowe.",
+          "limits": "Program jawnie odmawia startu poza Development/Testing; produkcja BLOCKED.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/backend/Program.cs",
+              "lines": "23-32",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/qa/TAX-DASHBOARD-02-REGRESSION-2026-10-25.md",
+              "lines": "3-16",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "name": "WWW",
+          "implementation": "Działający interfejs biura z kokpitem, klientami, workflow, dokumentami i księgowością.",
+          "verification": "Dashboard02: 218 Vitest, build/lint/typecheck, odrębne przebiegi Chrome i Firefox; pełne biegi i delty opisano osobno.",
+          "distribution": "Historyczny lokalny production build Next.js; nie potwierdzono publicznego wdrożenia.",
+          "limits": "Odbiór produkcyjny i pełny audyt dostępności pozostają odrębne.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "src/web/components/tax-app.tsx",
+              "lines": "13-25",
+              "kind": "source",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/qa/TAX-DASHBOARD-02-REGRESSION-2026-10-25.md",
+              "lines": "8-31",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "name": "Android",
+          "implementation": "Natywny portal klienta Kotlin/Compose, odczyt spraw, dokumenty, upload/download i cykl sesji.",
+          "verification": "Raport 2026-10-11 dokumentuje 23 unikalne kontrole na fizycznym Redmi Note 14 / Android 16 dla APK 0.4.0-debug; późniejsze buildy/JVM nie są nowym testem telefonu.",
+          "distribution": "Lokalne Debug APK; brak potwierdzonego podpisanego publicznego Release lub Google Play.",
+          "limits": "Nowszy security checkpoint nie obejmuje fizycznego Androida ani podpisanego Release.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/ANDROID_PHYSICAL_QA.md",
+              "lines": "3-18",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "android/README.md",
+              "lines": "31-50",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            },
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/finalization/CHECKPOINT_01B_REPORT.md",
+              "lines": "189-193",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Rozbudowany, lokalnie uruchamiany system z backendem, panelem WWW i działającym portalem Android; nie pusty prototyp.",
+      "distributionStatus": "Lokalne buildy WWW/API i Debug APK. Publiczne wydanie aplikacji niepotwierdzone.",
+      "productionStatus": "BLOCKED — kod dopuszcza tylko Development/Testing; najnowszy odczytany checkpoint 01B zachowuje otwarte bramki bezpieczeństwa.",
+      "results": [
+        "W ramach historycznego Dashboard02 utrwalono pełny wynik 981 backend i 218 frontend oraz osobne dowody przeglądarek.",
+        "Natywny portal ma starszy, konkretny raport testu fizycznego telefonu; nie utożsamiono go z nowszym lokalnym buildem.",
+        "Wersjonowanie, niezależny approval, kwarantanna i kontrola ksiąg mają negatywne regresje, a nie wyłącznie formularze UI."
+      ],
+      "remaining": [
+        "Osobny merytoryczny i prawny odbiór reguł księgowych oraz profili podatkowych.",
+        "KSeF/JPK i zagraniczne wysyłki urzędowe są kontraktami/planem; brak wdrożonego połączenia i produkcyjnej wysyłki.",
+        "Zamknięcie otwartych ustaleń vendor/build-tooling odnotowanych w 01B i ponowny pełny security gate; nie oceniano aktualnych advisory online.",
+        "Produkcyjny transport poczty/MFA/klucze, backup i recovery, monitoring, retencja i pełny odbiór środowiska.",
+        "Podpisany Android Release, dystrybucja i ponowna weryfikacja fizycznego urządzenia dla bieżącego wydania."
+      ],
+      "git": {
+        "repository": "/home/pawe/Pulpit/Projekty It/progresskit-tax",
+        "head": "e002ebe2d16bccf552a2a86ac66dc15c702de79e",
+        "headDate": "2026-10-25T19:46:50+01:00",
+        "branch": "security/remediation-02",
+        "dirty": true,
+        "status": [
+          " M global.json",
+          " M src/backend/packages.lock.json",
+          " M tests/ProgressKit.Tax.Tests/packages.lock.json",
+          "?? docs/evidence/",
+          "?? global.json.backup"
+        ],
+        "verification": "Read-only Git snapshot 2026-11-02; no fetch, checkout, commit or push."
+      },
+      "tests": [
+        {
+          "date": "2026-10-25",
+          "revision": "5816877",
+          "scope": "Dashboard02, pełny backend Release na lokalnym syntetycznym środowisku; oddzielny pełny Vitest",
+          "recordedResults": {
+            "backend": {
+              "pass": 981,
+              "fail": 0,
+              "skip": 0
+            },
+            "frontend": {
+              "pass": 218,
+              "fail": 0,
+              "skip": 0
+            }
+          },
+          "limits": "Chrome14/Firefox5 to pokrycie z opisanych pełnych biegów i delt; raport nie deklaruje nowych drugich pełnych runów.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/qa/TAX-DASHBOARD-02-REGRESSION-2026-10-25.md",
+              "lines": "3-35",
+              "kind": "historical-report",
+              "revision": "5816877"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "revision": "e002ebe (baseline 3672a22)",
+          "scope": "Checkpoint01B, lokalna wąska regresja bezpieczeństwa, Debug/JVM i tooling",
+          "recordedResults": {
+            "backendSecurity": {
+              "pass": 258,
+              "fail": 0,
+              "skip": 0
+            },
+            "androidJvm": {
+              "pass": 11,
+              "fail": 0,
+              "skip": 0
+            },
+            "frontendFirstRun": {
+              "pass": 221,
+              "fail": 1,
+              "skip": 0
+            },
+            "frontendTargetedRetry": {
+              "pass": 1,
+              "fail": 0,
+              "filtered": 6
+            },
+            "vendorGate": "BLOCKED"
+          },
+          "limits": "Nie jest to pełny nowy backend981 ani pełny frontend222/222 w jednym reporterze; Zod unbounded ma trzy zachowane FAIL_UNFIXED.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/finalization/CHECKPOINT_01B_REPORT.md",
+              "lines": "149-193",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-11",
+          "revision": "04A/04B; APK0.4.0-debug, SHA059361d4f32ad43d746b3c715f18da7a2fdd2a818541019a61a73350c8e6652a",
+          "scope": "Fizyczny Redmi Note14, Android16/API36, fikcyjne dane, lokalny backend",
+          "recordedResults": {
+            "uniqueChecks": 23,
+            "fail": 0,
+            "skip": 0
+          },
+          "limits": "To historyczny checkpoint konkretnego APK; późniejsze buildy z innym SHA nie dziedziczą tego PASS.",
+          "evidence": [
+            {
+              "repo": "progresskit-tax",
+              "path": "docs/ANDROID_PHYSICAL_QA.md",
+              "lines": "3-33",
+              "kind": "historical-report",
+              "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "progresskit-tax",
+          "path": "docs/qa/TAX-DASHBOARD-02-REGRESSION-2026-10-25.md",
+          "lines": "3-53",
+          "kind": "historical-report",
+          "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+        },
+        {
+          "repo": "progresskit-tax",
+          "path": "docs/finalization/CHECKPOINT_01B_REPORT.md",
+          "lines": "3-26",
+          "kind": "historical-report",
+          "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+        },
+        {
+          "repo": "progresskit-tax",
+          "path": "docs/security/RELEASE_SECURITY_GATE.md",
+          "lines": "3-14",
+          "kind": "historical-report",
+          "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+        },
+        {
+          "repo": "progresskit-tax",
+          "path": "docs/KSEF_JPK_INTEGRATION_PLAN.md",
+          "lines": "3-12",
+          "kind": "historical-report",
+          "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+        },
+        {
+          "repo": "progresskit-tax",
+          "path": "src/backend/Program.cs",
+          "lines": "23-32",
+          "kind": "source",
+          "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "CANDIDATES_WITH_SYNTHETIC_DATA",
+        "provenance": [
+          {
+            "repo": "progresskit-tax",
+            "path": "docs/evidence/tax-screenshots-2026-10-25/README.md",
+            "lines": "8-19",
+            "kind": "historical-evidence",
+            "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e"
+          },
+          {
+            "repo": "progresskit-tax",
+            "path": "docs/evidence/tax-screenshots-2026-10-25/manifest.json",
+            "lines": "1-10",
+            "kind": "historical-evidence",
+            "revision": "335d081dbcc4ce4b7e705b73bd77c53223784ced"
+          }
+        ],
+        "items": [
+          {
+            "path": "docs/evidence/tax-screenshots-2026-10-25/03-work-queue-desktop-1440.png",
+            "visualInspection": "Inspected2026-11-02: real Tax UI, explicitDEMO client names andexample.invalid test addresses; no real client/patient data observed.",
+            "privacy": "Eligible as synthetic-demonstration screenshot; label it explicitly and inspect final crop."
+          },
+          {
+            "path": "docs/evidence/tax-screenshots-2026-10-25/05-documents-desktop-1440.png",
+            "visualInspection": "Not inspected during this audit; provenance labels all set as synthetic via realAPI.",
+            "privacy": "Private inspection required before public use."
+          },
+          {
+            "path": "docs/evidence/tax-screenshots-2026-10-25/06-workflow-approval-desktop-1440.png",
+            "visualInspection": "Inspected2026-11-02: real workflow review UI, explicitDEMO client andexample.invalid test addresses; no real client data observed.",
+            "privacy": "Eligible as synthetic demonstration; preserve explicit demo framing and inspect final crop."
+          },
+          {
+            "path": "docs/evidence/tax-screenshots-2026-10-25/08-document-details-desktop-1440.png",
+            "visualInspection": "Not inspected during this audit.",
+            "privacy": "Private inspection required before public use."
+          }
+        ]
+      }
+    },
+    {
+      "id": "adivara",
+      "name": "Adivara",
+      "summary": "Rozwinięty backend wielofirmowej platformy dla organizacji opiekuńczych. Implementuje tożsamość, członkostwa, role i centralne reguły dostępu do podopiecznych; interfejs operacyjny i komplet procesów opiekuńczych pozostają kolejnym etapem.",
+      "solution": "Oddziela konto użytkownika od jego członkostwa w organizacji i od uprawnień do konkretnego podopiecznego. Zmiana firmy, roli lub grantu jest sprawdzana na aktualnym stanie bazy, zamiast traktować samo zalogowanie jako prawo do wszystkich danych firmy.",
+      "features": [
+        {
+          "text": "Logowanie ASP.NET Identity i podpisany JWT; API weryfikuje issuer, audience, podpis oraz czas ważności tokenu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Infrastructure/Authentication/IdentityService.cs",
+              "lines": "6-26",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/Program.cs",
+              "lines": "32-46",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Użytkownik może należeć do wielu firm; kontekst X-Company-Id jest rozwiązywany przez aktywne CompanyMembership i aktywną firmę przy żądaniu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/MultiTenancy/TenantResolutionMiddleware.cs",
+              "lines": "19-62",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/Controllers/MeController.cs",
+              "lines": "9-35",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Rozdzielony model CompanyMembership z rolą i cyklem członkostwa oraz deklaratywne ograniczanie operacji do ról tenantowych.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/Controllers/CompanyMembershipCaregiversController.cs",
+              "lines": "14-57",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/MultiTenancy/TenantResolutionMiddleware.cs",
+              "lines": "40-61",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Linkowanie i odpinanie profilu opiekuna od członkostwa przez kontrolowane endpointy API.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/Controllers/CompanyMembershipCaregiversController.cs",
+              "lines": "10-57",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Jawne przyznawanie i cofanie rodzinie dostępu do konkretnego podopiecznego; operacje są częścią istniejącego API.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.API/Controllers/FamilyMemberAccessController.cs",
+              "lines": "10-62",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "PatientAccessScope stosuje jawne predykaty organizacji i ABAC. Rodzina widzi tylko aktywny, nieodwołany grant; brak kompletnego kontekstu lub nieobsługiwana rola oznacza deny-all.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Application/FamilyMemberAccess/PatientAccessScope.cs",
+              "lines": "22-65",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Tenantowe filtry EF, złożone relacje i guardy zapisów chronią granice modelu; centralny query scope zachowuje predykaty dostępu również wobec IgnoreQueryFilters.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Infrastructure/Persistence/AdivaraDbContext.cs",
+              "lines": "69-129",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Infrastructure/Persistence/AdivaraDbContext.cs",
+              "lines": "261-297",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Application/FamilyMemberAccess/PatientAccessScope.cs",
+              "lines": "8-11",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Modele domenowe pacjentów, opiekunów i przypisań obejmują stan oraz zakres dat; okresy stawek mają walidację kwoty, waluty i dat. To fundament domeny, a nie pełny moduł payroll lub produkcyjny Patient CRUD.",
+          "status": "IMPLEMENTED_DOMAIN",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Domain/Entities/Assignment.cs",
+              "lines": "6-75",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            },
+            {
+              "repo": "Adivara",
+              "path": "src/Adivara.Domain/Entities/CaregiverCompensationTerm.cs",
+              "lines": "6-70",
+              "kind": "source",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "text": "Lokalne rozszerzenie kontaktu zmienników zawiera domenę zgody i politykę dostępu z tenantem, członkostwem i przypisaniem. Nie dodano endpointu, DI ani migracji; nie jest jeszcze uruchamianą funkcją API.",
+          "status": "PARTIAL_NOT_WIRED",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "docs/delivery/review-20261028.md",
+              "lines": "23-32",
+              "kind": "local-untracked-report",
+              "revision": "WORKTREE_UNTRACKED"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Warstwy Domain, Application, Infrastructure i API na .NET10; EF Core/PostgreSQL, ASP.NET Identity oraz JWT. Centralny scope zasobów podopiecznego uzupełnia granicę tenantową. Część testów używa SQLite, a migracje i API mają scenariusze PostgreSQL/Testcontainers.",
+        "evidence": [
+          {
+            "repo": "Adivara",
+            "path": "src/Adivara.API/Program.cs",
+            "lines": "17-56",
+            "kind": "source",
+            "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+          },
+          {
+            "repo": "Adivara",
+            "path": "docs/ADIVARA_RECOVERY_INVENTORY.md",
+            "lines": "19-25",
+            "kind": "local-untracked-report",
+            "revision": "WORKTREE_UNTRACKED"
+          },
+          {
+            "repo": "Adivara",
+            "path": "docs/ADIVARA_RECOVERY_INVENTORY.md",
+            "lines": "79-85",
+            "kind": "local-untracked-report",
+            "revision": "WORKTREE_UNTRACKED"
+          }
+        ]
+      },
+      "technologies": [
+        "C#",
+        ".NET10",
+        "ASP.NET Core",
+        "ASP.NET Identity",
+        "JWT",
+        "Entity Framework Core",
+        "PostgreSQL / Npgsql",
+        "xUnit",
+        "SQLite (testy)",
+        "Testcontainers (testy)"
+      ],
+      "platforms": [
+        {
+          "name": "Backend/API",
+          "implementation": "Funkcjonalny fundament wielofirmowy, autoryzacja i ograniczony zestaw endpointów tożsamości/członkostwa/grantów.",
+          "verification": "Raport remediacji zapisuje203 przypadki; kod naprawy jest wHEAD17bc746. Ten audyt nie odtwarzał testów.",
+          "distribution": "Źródła i lokalna konfiguracja backendu; brak potwierdzonego publicznego wydania.",
+          "limits": "Brak dowodu produkcyjnego Patient CRUD; kontrolery PatientAccessTestController/TenantTestController są testowe. Security Gate#1 historycznieFAIL.",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "docs/ADIVARA_RECOVERY_INVENTORY.md",
+              "lines": "47-71",
+              "kind": "local-untracked-report",
+              "revision": "WORKTREE_UNTRACKED"
+            },
+            {
+              "repo": "Adivara",
+              "path": "docs/security/sec-001-remediation.md",
+              "lines": "196-219",
+              "kind": "historical-report",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "name": "WWW / Android / iOS",
+          "implementation": "Nie potwierdzono operacyjnego frontendu ani aplikacji mobilnej w audytowanym repo.",
+          "verification": "Brak testów UI/telefonu i brak autentycznych screenshotów produktu w tym checkout.",
+          "distribution": "Niepotwierdzona.",
+          "limits": "Nie przedstawiać backendu jako gotowej aplikacji dla opiekunów lub rodzin.",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "docs/delivery/review-20261028.md",
+              "lines": "10-16",
+              "kind": "local-untracked-report",
+              "revision": "WORKTREE_UNTRACKED"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Rozwinięty backend/fundament SaaS z rzeczywistą logiką domeny i API autoryzacji; pełny produkt operacyjny jest częściowy.",
+      "distributionStatus": "Źródła backendu i dokumentacja; niepotwierdzona publiczna dystrybucja lub interfejs klienta.",
+      "productionStatus": "BLOCKED/PENDING — SEC-001 ma implementację naprawy, lecz wymagany jest osobny re-gate. Historyczny Gate#1 pozostajeFAIL i inne findingi nie są automatycznie zamknięte.",
+      "results": [
+        "Centralizacja PatientAccessScope została utrwalona w rewizji17bc746 z2026-08-27.",
+        "Raport remediacji podaje203 testy:91API,67domain,45infrastructure; wynik jest historyczny, bez nowego uruchomienia podczas audytu.",
+        "Dostawa dokumentacyjna z2026-10-28 zachowuje wcześniejsze pliki i rozróżnia przygotowany moduł handover od czynnego API."
+      ],
+      "remaining": [
+        "Osobny Security Re-Gate oraz triage SEC-002–SEC-007; szczególnie unieważnianieJWT po zmianie konta, lockout/rate limiting i cykle uprawnień.",
+        "Projekt i weryfikacja ABAC opiekuna; obecny centralny query scope dla nieobsługiwanej roli odmawia dostępu.",
+        "Operacyjny Patient CRUD, procesy opieki, interfejs WWW/mobilny, czat/push/RCP oraz pełny payroll nie są potwierdzonym zakresem produktu.",
+        "Handover: persystencja, kontrakt zatwierdzonego przekazania, endpointy/DI, migracje i wykonanie testów;71 dodanych przypadków nie ma wyniku .NET.",
+        "Pełny audyt zależności, infrastruktury i produkcyjnego środowiska nie mieścił się w historycznym Gate#1."
+      ],
+      "git": {
+        "repository": "/home/pawe/Pulpit/Projekty It/Adivara",
+        "head": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+        "headDate": "2026-08-27T14:10:47+02:00",
+        "branch": "main",
+        "dirty": true,
+        "status": [
+          "?? docs/ADIVARA_AI_MASTER_PROMPT.md",
+          "?? docs/ADIVARA_RECOVERY_INVENTORY.md",
+          "?? docs/ADIVARA_SYSTEM_SPEC.md",
+          "?? docs/START_HERE.md",
+          "?? docs/delivery/",
+          "?? docs/features/",
+          "?? docs/security/handover-contact-review-20261028.md",
+          "?? src/Adivara.Application/Handover/",
+          "?? src/Adivara.Domain/Handover/",
+          "?? tests/Adivara.Domain.Tests/HandoverContactRequestTests.cs",
+          "?? tests/Adivara.Infrastructure.Tests/HandoverContactAccessPolicyTests.cs",
+          "?? tools/"
+        ],
+        "verification": "Read-only Git snapshot 2026-11-02; no fetch, checkout, commit or push."
+      },
+      "tests": [
+        {
+          "date": "Data wykonania niepodana w raporcie; raport utrwalony w commicie2026-08-27",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4",
+          "scope": "Historyczny końcowy working tree remediacjiSEC-001; build i API/domain/infrastructure",
+          "recordedResults": {
+            "api": 91,
+            "domain": 67,
+            "infrastructure": 45,
+            "reportedTotal": 203,
+            "fail": 0,
+            "skip": 0
+          },
+          "limits": "Raport opisuje historyczny run; nie zalicza71 nowszych przypadków handover i nie zmienia Gate#1naPASS.",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "docs/security/sec-001-remediation.md",
+              "lines": "196-219",
+              "kind": "historical-report",
+              "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-28",
+          "revision": "WORKTREE_UNTRACKED; delivery review",
+          "scope": "Nowe testy domeny i polityki handover",
+          "recordedResults": {
+            "definedCases": 71,
+            "execution": "NOT_RUN"
+          },
+          "limits": "Brak wykonanej kompilacji/testówC# w tej dostawie;21 testów narzędziPython nie dowodzi działaniaAPI.",
+          "evidence": [
+            {
+              "repo": "Adivara",
+              "path": "docs/delivery/review-20261028.md",
+              "lines": "23-32",
+              "kind": "local-untracked-report",
+              "revision": "WORKTREE_UNTRACKED"
+            },
+            {
+              "repo": "Adivara",
+              "path": "docs/delivery/review-20261028.md",
+              "lines": "50-61",
+              "kind": "local-untracked-report",
+              "revision": "WORKTREE_UNTRACKED"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "Adivara",
+          "path": "src/Adivara.Application/FamilyMemberAccess/PatientAccessScope.cs",
+          "lines": "22-88",
+          "kind": "source",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+        },
+        {
+          "repo": "Adivara",
+          "path": "docs/security/security-gate-1.md",
+          "lines": "5-30",
+          "kind": "historical-report",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+        },
+        {
+          "repo": "Adivara",
+          "path": "docs/security/security-gate-1.md",
+          "lines": "228-232",
+          "kind": "historical-report",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+        },
+        {
+          "repo": "Adivara",
+          "path": "docs/security/sec-001-remediation.md",
+          "lines": "5-12",
+          "kind": "historical-report",
+          "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4"
+        },
+        {
+          "repo": "Adivara",
+          "path": "docs/delivery/review-20261028.md",
+          "lines": "5-16",
+          "kind": "local-untracked-report",
+          "revision": "WORKTREE_UNTRACKED"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "BLOCKED_NO_AUTHENTIC_PRODUCT_UI_ASSET",
+        "items": [],
+        "limits": "No PNG/JPG/WebP/MP4 product screenshots found in repository scan excluding build outputs. Do not fabricate a medical/operational UI; source backend is not evidence of an existing client application."
+      }
+    },
+    {
+      "id": "progresskit-community",
+      "name": "ProgressKit Community",
+      "aliases": [
+        "Lud&Pra"
+      ],
+      "summary": "Działająca implementacja platformy społecznościowej z panelem Next.js i backendem .NET: społeczności, publikacje, rozmowy w komentarzach, wyszukiwanie, media oraz moderacja z odwołaniem i niezależnym przeglądem. Lud&Pra jest nazwą tego samego produktu, nie drugim projektem.",
+      "solution": "Zapewnia wspólny mechanizm członkostwa, widoczności treści i dostępu do mediów oraz jawny lifecycle zgłoszenia moderacyjnego. Discovery pomaga przejść od tematu i fragmentu rzeczywistej rozmowy do społeczności, bez generowania fikcyjnej aktywności.",
+      "features": [
+        {
+          "text": "Rejestracja i logowanie, cookie sesji z hashem tokenu, logout oraz unieważnienie wszystkich sesji konta.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/AuthEndpoints.cs",
+              "lines": "18-23",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/AuthEndpoints.cs",
+              "lines": "207-242",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/AuthTokenService.cs",
+              "lines": "8-24",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Weryfikacja adresu e-mail, ponowna wysyłka oraz odzyskiwanie i reset hasła. Mutacje publikacji korzystają z VerifiedEmailFilter.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/EmailVerification.cs",
+              "lines": "30-31",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/PasswordRecovery.cs",
+              "lines": "24-38",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Content/ContentEndpoints.cs",
+              "lines": "18-30",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Tworzenie i zarządzanie społecznościami, lista własnych grup, widoczność Public/Private/Restricted, członkostwo oraz role administracyjne.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Communities/CommunityEndpoints.cs",
+              "lines": "15-26",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/DOMAIN.md",
+              "lines": "41-65",
+              "kind": "architecture-doc",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Polityki dołączania, wnioski o członkostwo z akceptacją/odmową oraz zaproszenia z akceptacją, odrzuceniem i anulowaniem.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Communities/MembershipApplicationEndpoints.cs",
+              "lines": "20-27",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Communities/InvitationEndpoints.cs",
+              "lines": "19-24",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Publikacje globalne i w społecznościach, feedy, szczegóły posta, edycja i usuwanie z zachowaniem istniejących reguł widoczności.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Content/ContentEndpoints.cs",
+              "lines": "18-25",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Rozmowy pod postami: komentarze, odpowiedzi na komentarz nadrzędny, edycja i usuwanie. Nie jest to deklaracja prywatnego czatu lub komunikatora DM.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Content/ContentEndpoints.cs",
+              "lines": "27-30",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Content/ContentEndpoints.cs",
+              "lines": "356-359",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Zdjęcia publikacji, awatary i albumy: upload weryfikuje sesję, stan konta, MIME i limit rozmiaru. Odczyt zdjęcia posta egzekwuje widoczność publikacji; albumy i awatary mają własne reguły udostępniania.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Media/MediaEndpoints.cs",
+              "lines": "26-33",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Media/MediaEndpoints.cs",
+              "lines": "45-67",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Media/MediaEndpoints.cs",
+              "lines": "127-143",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Interaktywne Discovery obsługuje tekst i tagi, sugestie, wybór do trzech tematów oraz podgląd do pięciu fragmentów dostępnych postów lub komentarzy; endpoint ogranicza zapytanie i respektuje widoczność.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Content/ContentEndpoints.cs",
+              "lines": "17-17",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_VALIDATION.md",
+              "lines": "22-45",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_VALIDATION.md",
+              "lines": "74-88",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Karty społeczności i podglądy są obsługiwane myszą, klawiaturą i dotykiem; zamknięte szczegóły są inert/aria-hidden, a modal przywraca fokus i pobiera świeży podgląd.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_VALIDATION.md",
+              "lines": "53-70",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Zgłoszenia treści, decyzje moderacyjne, apelacje, eskalacje i final-review tworzą jawny obieg spraw. Końcowy recenzent musi być niezależny od moderatora, zgłaszającego i właściciela treści.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Moderation/ModerationEndpoints.cs",
+              "lines": "18-29",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Moderation/ModerationEndpoints.cs",
+              "lines": "130-198",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Moderation/ModerationEndpoints.cs",
+              "lines": "363-367",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Profile użytkowników, odczyt własnych uprawnień oraz lista powiadomień z oznaczaniem odczytu.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Users/UserEndpoints.cs",
+              "lines": "12-13",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Users/AccessEndpoints.cs",
+              "lines": "14-14",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Notifications/NotificationEndpoints.cs",
+              "lines": "11-19",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "text": "Katalog wersji dokumentów i zgód oraz żądanie usunięcia konta mają własny lifecycle; interfejs kontrolowany występuje w PL/EN/DE. Żądanie usunięcia nie oznacza pełnej automatycznej anonimizacji treści.",
+          "status": "IMPLEMENTED",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/LegalEndpoints.cs",
+              "lines": "25-36",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Auth/AccountDeletion.cs",
+              "lines": "14-14",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/PUBLIC_BETA_CLOSURE_2026-10-10.md",
+              "lines": "49-56",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_VALIDATION.md",
+              "lines": "68-70",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        }
+      ],
+      "architecture": {
+        "text": "Modularny monolit ASP.NET Core/.NET10 z modułami Identity, Users, Communities, Content, Moderation i Notifications; EF Core/PostgreSQL. Next.js/React/TypeScript komunikuje się z API, bez bezpośredniego dostępu frontendu do bazy. Wersjonowane migracje, kontrola sesji i serwerowe reguły widoczności są wspólne dla widoków i mediów.",
+        "evidence": [
+          {
+            "repo": "progresskit-community",
+            "path": "docs/ARCHITECTURE.md",
+            "lines": "22-65",
+            "kind": "architecture-doc",
+            "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+          },
+          {
+            "repo": "progresskit-community",
+            "path": "src/api/ProgressKit.Community.Api.csproj",
+            "lines": "1-12",
+            "kind": "source",
+            "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+          },
+          {
+            "repo": "progresskit-community",
+            "path": "src/infrastructure/ProgressKit.Community.Infrastructure.csproj",
+            "lines": "14-24",
+            "kind": "source",
+            "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+          }
+        ]
+      },
+      "technologies": [
+        "C#",
+        ".NET10",
+        "ASP.NET Core",
+        "Entity Framework Core",
+        "PostgreSQL / Npgsql",
+        "Next.js16",
+        "React",
+        "TypeScript",
+        "SkiaSharp",
+        "SMTP / MIME",
+        "Caddy (historyczne lokalne testyHTTPS)",
+        "Docker (izolowane testy)"
+      ],
+      "platforms": [
+        {
+          "name": "Backend/API",
+          "implementation": "Szeroki backend społecznościowy i moderacyjny z rzeczywistymi endpointami i bazą PostgreSQL.",
+          "verification": "Ostatni raport Discovery closure:286 testów backendu na jednorazowym PostgreSQL; build0errors/0warnings. Historyczne weryfikacjeSMTP/recovery są osobno.",
+          "distribution": "Lokalny build i kontenery testowe; dokumentacja produkcyjna istnieje.",
+          "limits": "Nowszy target nie ma potwierdzenia publicznego wdrożenia w tym audycie; legal published=false pozostaje guardem.",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_CLOSURE_AUDIT.md",
+              "lines": "68-89",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "src/api/Program.cs",
+              "lines": "51-54",
+              "kind": "source",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "name": "WWW desktop/mobile",
+          "implementation": "Responsywny interfejs Next.js z feedem, społecznościami, Discovery, kontem i moderacją.",
+          "verification": "Closure:154 frontend,170 browser na disposable fixture; zwykły lokalny API smoke24PASS/5SKIP. Mobile to390×844/emulacja dotyku.",
+          "distribution": "Historyczny production build Next.js; brak natywnego Android/iOS w sprawdzonym zakresie.",
+          "limits": "To web/PWA-agnostic UI; nie deklarować osobnej natywnej aplikacji ani testu fizycznego telefonu.",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_CLOSURE_AUDIT.md",
+              "lines": "70-95",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        }
+      ],
+      "functionalStatus": "Rozbudowana, działająca implementacja lokalna platformy społecznościowej; publiczna beta jest odrębną bramką.",
+      "distributionStatus": "Zaimplementowany frontend WWW i backend; nowy target publicznej bety nie ma potwierdzonego wdrożenia. Lud&Pra i ProgressKit Community liczone jako jeden produkt.",
+      "productionStatus": "PUBLIC BETA BLOCKED według ostatnich odczytanych raportów; brak publikacji legalu i potwierdzonej obsady/warunków organizacyjnych. Obecnego zdalnego środowiska nie sprawdzano.",
+      "results": [
+        "Discovery closure dokumentuje286 backend,154 frontend i170 testów przeglądarkowych na izolowanej fixture; osobny zwykły-host smoke ma24PASS i5SKIP.",
+        "P0Email/Auth ma historyczny prywatny test20/20E2E z kontrolowanym odbiorem, weryfikacją/recovery i unieważnianiem starych sesji; nie jest dowodem wdrożenia nowego flow publicznie.",
+        "Frontend prezentuje fragmenty prawdziwych postów/komentarzy dostępnych użytkownikowi, a nie fake activity."
+      ],
+      "remaining": [
+        "Potwierdzenie i publikacja właściwego legalu oraz danych organizacyjnych; ostatni raport wskazywał brak faktówDPA/kopii i brak pełnej kwalifikowanej obsady. Nie weryfikowano ich ponownie zdalnie.",
+        "Kontrolowane wdrożenie docelowych migracji i nowego flow konta, produkcyjny smoke i rollback zgodny z runbookiem.",
+        "Prywatny czat/DM, reakcje lub natywne aplikacje nie zostały potwierdzone w tym audycie; rozmowy oznaczają posty i komentarze.",
+        "Powiadomienie o nowym logowaniu pozostaje osobnym backlogiem według raportuP0.",
+        "Żądanie usunięcia konta nie jest pełną automatyczną anonimizacją wszystkich treści/audytu."
+      ],
+      "git": {
+        "repository": "/home/pawe/Pulpit/Projekty It/progresskit-community",
+        "head": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+        "headDate": "2026-10-15T09:31:25+02:00",
+        "branch": "main",
+        "dirty": true,
+        "status": [
+          "?? assets/",
+          "?? docs/bootstrap/",
+          "?? docs/evidence/",
+          "?? scripts/initialize-ludpra.py",
+          "?? scripts/publish-ludpra-editorial-comments.py",
+          "?? scripts/publish-ludpra-public-voices.py"
+        ],
+        "verification": "Read-only Git snapshot 2026-11-02; no fetch, checkout, commit or push."
+      },
+      "tests": [
+        {
+          "date": "2026-10-14; raport utrwalony wcommicie2026-10-15",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968",
+          "scope": "Discovery closure; jednorazowy PostgreSQL, frontend i disposable browser fixture",
+          "recordedResults": {
+            "backend": {
+              "pass": 286,
+              "fail": 0,
+              "skip": 0
+            },
+            "frontend": {
+              "pass": 154,
+              "fail": 0,
+              "skip": 0
+            },
+            "disposableBrowser": {
+              "pass": 170,
+              "fail": 0,
+              "skip": 0
+            },
+            "ordinaryApiSmoke": {
+              "pass": 24,
+              "fail": 0,
+              "skip": 5
+            }
+          },
+          "limits": "5SKIP zwykłegoAPI dotyczy nieobecnych danych anonimowego użytkownika. Fixture to syntetyczne rekordy, nie produkcja.",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_CLOSURE_AUDIT.md",
+              "lines": "3-7",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/COMMUNITY_DISCOVERY_CLOSURE_AUDIT.md",
+              "lines": "68-100",
+              "kind": "historical-report",
+              "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-14",
+          "revision": "c5d3683 — Email/Auth; e9981fb — poprawka prywatnej diagnostyki",
+          "scope": "Historyczne lokalneP0 i odrębny prywatny externalE2E",
+          "recordedResults": {
+            "backendP0": 278,
+            "frontendP0": 108,
+            "browserP0": 213,
+            "externalE2E": {
+              "pass": 20,
+              "fail": 0,
+              "skip": 0
+            }
+          },
+          "limits": "Są to różne przebiegi, nie sumować do wyniku Discovery. Kontrolowane externalQA nie jest publicznym wdrożeniem; nie wykonywano nowych połączeń w tym audycie.",
+          "evidence": [
+            {
+              "repo": "progresskit-community",
+              "path": "docs/SPRINT_P0_EMAIL_AUTH_2026-10-14.md",
+              "lines": "69-82",
+              "kind": "historical-report",
+              "revision": "c5d3683"
+            },
+            {
+              "repo": "progresskit-community",
+              "path": "docs/SPRINT_P0_EMAIL_AUTH_2026-10-14.md",
+              "lines": "117-138",
+              "kind": "historical-report",
+              "revision": "e9981fb"
+            }
+          ]
+        }
+      ],
+      "evidenceSources": [
+        {
+          "repo": "progresskit-community",
+          "path": "src/api/Content/ContentEndpoints.cs",
+          "lines": "17-30",
+          "kind": "source",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        },
+        {
+          "repo": "progresskit-community",
+          "path": "src/api/Moderation/ModerationEndpoints.cs",
+          "lines": "18-29",
+          "kind": "source",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        },
+        {
+          "repo": "progresskit-community",
+          "path": "docs/COMMUNITY_DISCOVERY_CLOSURE_AUDIT.md",
+          "lines": "68-100",
+          "kind": "historical-report",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        },
+        {
+          "repo": "progresskit-community",
+          "path": "docs/PUBLIC_BETA_CLOSURE_2026-10-10.md",
+          "lines": "3-19",
+          "kind": "historical-report",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        },
+        {
+          "repo": "progresskit-community",
+          "path": "src/web/src/legal/legal-documents.json",
+          "lines": "2-3",
+          "kind": "source",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        },
+        {
+          "repo": "progresskit-community",
+          "path": "src/api/Program.cs",
+          "lines": "51-54",
+          "kind": "source",
+          "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+        }
+      ],
+      "authenticScreenshots": {
+        "status": "CANDIDATES_FROM_ISOLATED_FIXTURE",
+        "provenance": [
+          {
+            "repo": "progresskit-community",
+            "path": "docs/COMMUNITY_DISCOVERY_VALIDATION.md",
+            "lines": "118-140",
+            "kind": "historical-evidence",
+            "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968"
+          }
+        ],
+        "items": [
+          {
+            "path": "docs/evidence/community-discovery/desktop.png",
+            "visualInspection": "Inspected2026-11-02: real Discovery UI, technology topic/community names, no personal email/name/phone visible.",
+            "privacy": "Eligible with explicit syntheticQA label, not described as production activity."
+          },
+          {
+            "path": "docs/evidence/community-discovery/mobile.png",
+            "visualInspection": "Inspected2026-11-02: mobile Discovery with topic cards and filters; no personal name, email or phone visible. Image starts below heading, so its framing is weaker than the desktop candidate.",
+            "privacy": "Eligible with syntheticQA labeling; prefer better-framed authentic screenshot for branding."
+          },
+          {
+            "path": "docs/evidence/community-discovery/desktop-topic-preview.png",
+            "visualInspection": "Not inspected during this audit; may display fixture author names and post snippets.",
+            "privacy": "Confirm synthetic provenance and inspect visible authors/content before use."
+          },
+          {
+            "path": "docs/evidence/community-discovery/desktop-expanded.png",
+            "visualInspection": "Not inspected during this audit.",
+            "privacy": "Private inspection required before public use."
+          }
+        ]
+      }
+    }
+  ],
+  "memoryUsedForNavigationOnly": [
+    {
+      "path": "MEMORY.md",
+      "lines": "330-366"
+    },
+    {
+      "path": "MEMORY.md",
+      "lines": "958-999"
+    }
+  ],
+  "publicSafetyNote": "Publiczne opisy należy budować z potwierdzonych funkcji i rozdzielonych statusów. Prywatnych ścieżek dowodów, szczegółów otwartych findingów i danych roboczych nie publikować automatycznie."
+}

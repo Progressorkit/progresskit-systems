@@ -1,0 +1,105 @@
+[
+  {
+    "command": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-show_entries",
+      "format=duration",
+      "-of",
+      "json",
+      "docs/evidence/core-brand-swap-20261102/raw/page@0fe0ef31796fa6c6d6ff497277fc2bcc.webm"
+    ],
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-ss",
+      "5.280",
+      "-i",
+      "docs/evidence/core-brand-swap-20261102/raw/page@0fe0ef31796fa6c6d6ff497277fc2bcc.webm",
+      "-t",
+      "12",
+      "-filter_complex_threads",
+      "2",
+      "-filter_complex",
+      "crop=320:320:240:230,scale=160:160:flags=lanczos,fps=15,format=yuv420p,split[a][b];[a][b]xfade=transition=fade:duration=0.75:offset=11.25,trim=start=0.75:end=12,setpts=PTS-STARTPTS,format=yuv420p[v]",
+      "-map",
+      "[v]",
+      "-an",
+      "-c:v",
+      "libvpx-vp9",
+      "-b:v",
+      "0",
+      "-crf",
+      "34",
+      "-deadline",
+      "good",
+      "-cpu-used",
+      "3",
+      "-row-mt",
+      "1",
+      "-threads",
+      "2",
+      "assets/brand/progresskit-core-mark.webm"
+    ],
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-show_entries",
+      "stream=codec_name,width,height,pix_fmt,avg_frame_rate",
+      "-show_entries",
+      "format=duration",
+      "-of",
+      "json",
+      "assets/brand/progresskit-core-mark.webm"
+    ],
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-threads",
+      "2",
+      "-i",
+      "assets/brand/progresskit-core-mark.webm",
+      "-map",
+      "0:v:0",
+      "-f",
+      "null",
+      "-"
+    ],
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "command": [
+      "ffmpeg",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-y",
+      "-i",
+      "assets/brand/progresskit-core-mark.webm",
+      "-frames:v",
+      "1",
+      "docs/evidence/core-brand-swap-20261102/capture-thumbnail.png"
+    ],
+    "exit": 0,
+    "stderr": ""
+  }
+]

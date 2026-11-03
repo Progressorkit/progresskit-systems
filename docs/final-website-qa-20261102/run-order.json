@@ -1,0 +1,112 @@
+{
+  "status": "EXECUTED_FINAL_LOCAL_AUTOMATED_QA_PASS_OWNER_VISUAL_APPROVAL_OPEN",
+  "safetyPreconditions": [
+    "Freeze catalog/source and rebuild generated pages before a coherent QA run.",
+    "Use the owned loopback preview with a disposable synthetic product DB; page startup can request a short-lived form token through GET.",
+    "No existing browser profile, signed-in session, production DB or remote service is used.",
+    "Coordinate browser/GPU runs with brand-video capture and performance measurements.",
+    "No form or mail is submitted; only a local brief TXT download is exercised. External resources and non-GET/HEAD browser requests are blocked and reported."
+  ],
+  "commandsFromRepositoryRoot": [
+    "npm run check",
+    "PK_QA_EXPECTED_COUNT=19 python3 docs/final-website-qa-20261102/static-audit.py docs/final-website-qa-20261102/static-final",
+    "node docs/final-website-qa-20261102/local-links.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/static-final/report.json",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=360 PK_QA_EXTRA=1 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-360",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=390 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-390",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=768 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-768",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=1440 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-1440",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=360 PK_QA_EXTRA=1 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-360",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=390 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-390",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=768 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-768",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=1440 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-1440",
+    "python3 docs/final-website-qa-20261102/matrix-summary.py docs/final-website-qa-20261102/matrix-final",
+    "PK_QA_BROWSERS=firefox node docs/final-website-qa-20261102/support-pages.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/support-pages/firefox",
+    "PK_QA_BROWSERS=chrome node docs/final-website-qa-20261102/support-pages.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/support-pages/chrome",
+    "node docs/final-website-qa-20261102/owner-proof.cjs"
+  ],
+  "browserMatrix": {
+    "engines": [
+      "chrome",
+      "firefox"
+    ],
+    "widths": [
+      360,
+      390,
+      768,
+      1440
+    ],
+    "allProjectCases": "Every case URL from current V2 catalog JSON in both browsers at each of360,390,768,1440px. At19 identities this is152 case visits, with exact IDs, platforms, date/revision/environment/source provenance, source anchors and decoded gallery images.",
+    "fallbacks": [
+      "Forced WebGL unavailable",
+      "JavaScript disabled catalog",
+      "Reduced motion",
+      "Chrome CPU throttle 4x and DPR3",
+      "All three renderer frame counters stop with no pending RAF offscreen",
+      "CPU4x observed frame deltas bounded by30/30/24fps on mobile showroom/Services/Process"
+    ],
+    "mobileMeaning": "Viewport/touch emulation, not a physical-device test. Firefox does not receive unsupported isMobile option."
+  },
+  "overrides": {
+    "PK_QA_BROWSERS": "chrome,firefox or one engine for a coordinated split run",
+    "PK_QA_WIDTHS": "360,390,768,1440 or selected widths for diagnostics",
+    "PK_QA_SCREENSHOTS": "Set 0 to suppress screenshots; visual approval remains OPEN.",
+    "PK_QA_FIREFOX": "Optional explicit compatible Firefox engine path",
+    "PK_QA_CHROME": "Optional Chrome binary path",
+    "PK_QA_EXPECTED_COUNT": "Optional release-specific guard; command explicitly expects19 while all ID/case loops and totals derive from JSON.",
+    "PK_QA_EXTRA": "Set0 after first width per engine to avoid repeating forcedWebGL/noJS/ChromeCPU stress contexts; all responsive main checks and all cases still run."
+  },
+  "releaseGates": {
+    "automatedChecks": "No current result until executed; browser launch/environment failures are BLOCKED, not PASS.",
+    "sourceIntegrity": "Before/after hashes detect edits during QA and block a coherent final verdict.",
+    "visualReview": "Required even if geometry checks pass. Canvas text/refraction/overlap need actual image inspection.",
+    "operatorLegalFacts": "SOURCE_PRESENT_LOCAL name/address/contact; publication reviewOPEN. Retention/processors/logging/legal applicability remain owner/legal facts.",
+    "mailboxDelivery": "NOT VERIFIED; mailto syntax is not a delivery test.",
+    "externalLinksAndPublicDeployment": "NOT VERIFIED by local helper; external URLs inventoried without network calls.",
+    "physicalMobile": "NOT RUN"
+  },
+  "preview": {
+    "base": "http://127.0.0.1:8201/",
+    "scope": "Owned isolated local preview; disposable synthetic product DB"
+  },
+  "reports": {
+    "static": "static-final/report.json",
+    "browser": "matrix-summary.json with individual matrix-final/{engine}-{width}/report.json",
+    "firstAttempt": "browser-final/attempt-environment-failure.json",
+    "formalGates": "formal-gates.json",
+    "finalTemplate": "final-report-template.json",
+    "firstUninterruptedRetry": "browser-final-retry/report.json",
+    "interruptedFullMatrix": "browser-final-coherent/report.json",
+    "manualSamples": "manual-final-samples.json",
+    "ownerProof": "owner-proof/report.json",
+    "coreActiveCorrection": "owner-proof/core-active-correction.json"
+  },
+  "browserExecution": "Split each engine/width into an independent browser process after outer-process interruptions; no parallel GPU sessions.",
+  "browserSplitCommands": [
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=360 PK_QA_EXTRA=1 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-360",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=390 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-390",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=768 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-768",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=firefox PK_QA_WIDTHS=1440 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/firefox-1440",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=360 PK_QA_EXTRA=1 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-360",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=390 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-390",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=768 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-768",
+    "PK_QA_EXPECTED_COUNT=19 PK_QA_BROWSERS=chrome PK_QA_WIDTHS=1440 PK_QA_EXTRA=0 node docs/final-website-qa-20261102/browser-qa.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/matrix-final/chrome-1440",
+    "python3 docs/final-website-qa-20261102/matrix-summary.py docs/final-website-qa-20261102/matrix-final"
+  ],
+  "supportPages": {
+    "helper": "support-pages.cjs",
+    "scope": "Existing product distribution,privacy and legacyMail alias at all4 widths and both engines; actual gallery keyboard/native empty-formvalidation, no APKclick or reviewPOST.",
+    "status": "EXECUTED_13PASS_0FAIL_PER_ENGINE",
+    "command": "PK_QA_BROWSERS={engine} node docs/final-website-qa-20261102/support-pages.cjs http://127.0.0.1:8201/ docs/final-website-qa-20261102/support-pages/{engine}",
+    "reports": [
+      "support-pages/chrome/report.json",
+      "support-pages/firefox/report.json"
+    ]
+  },
+  "ownerProof": {
+    "base": "http://127.0.0.1:8204/",
+    "status": "20PASS_0FAIL",
+    "elapsedSeconds": 6.806,
+    "scope": "Private allowlisted media viewer; Range206,servedPreviewSHA,12actualMP4metadata,3PNGdecodes,2realplayback/pause/seek traces,3deny404; not a productAPI test.",
+    "correctedCoreActiveSha256": "d39d10ab00ca94cc10be6b73cccfd37df8732057b0e0720a6ae25df8848939aa"
+  }
+}

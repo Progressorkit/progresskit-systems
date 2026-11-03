@@ -1,0 +1,25 @@
+{
+  "status": "HISTORICAL_PARTIAL_MATRIX_BEFORE_FINAL_REFREEZE",
+  "scope": "FrozenV2/19 catalog before confirmed Firefox narrow-copy wrapping fix and planned final metadata/privacy updates.",
+  "retainedResults": {
+    "chromeWidths": [
+      360,
+      390,
+      768,
+      1440
+    ],
+    "chromeUniqueCasesPassed": 76,
+    "firefox360": {
+      "PASS": 28,
+      "FAIL": 2,
+      "BLOCKED": 0,
+      "realFindings": [
+        "Translator feature arrow-chain text overflow",
+        "Vaeloria verification heading chain/list overflow"
+      ]
+    }
+  },
+  "productErrorEvidence": "../firefox-overflow/report.json",
+  "finalMatrixFolder": "../matrix-final",
+  "note": "Do not substitute these earlier source hashes/results for the final coherent release candidate."
+}

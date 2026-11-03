@@ -1,0 +1,47 @@
+{
+  "newRun": true,
+  "stage": "/tmp/pkmail-native-preflight-shkejd1l",
+  "fixtureSourceSHA256": "e3f70014cc5317d3732c881ed0d3c48754746c1de402a34dbd10629e8d5ed04f",
+  "fixtureAdaptation": "Only test invocation changed to prebuilt Core DLL; original ephemeral CA/CRL generation and TLS verification unchanged. No private profiles or global trust used.",
+  "loopbackExitCode": 0,
+  "keyringExitCode": 0,
+  "notificationExitCode": 0,
+  "results": [
+    {
+      "path": "native-tests/keyring-locked/keyring-locked.trx",
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "native-tests/keyring-restart/keyring-restart.trx",
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "native-tests/keyring-unavailable/keyring-unavailable.trx",
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "native-tests/keyring-unlocked/keyring-unlocked.trx",
+      "passed": 1,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "native-tests/notifications/notifications.trx",
+      "passed": 4,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    {
+      "path": "native-tests/trusted-loopback/trusted-loopback.trx",
+      "passed": 14,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  ]
+}

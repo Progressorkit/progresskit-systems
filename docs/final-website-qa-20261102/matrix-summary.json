@@ -1,0 +1,1170 @@
+{
+  "status": "AUTOMATED_MATRIX_PASS_VISUAL_REVIEW_OPEN",
+  "catalogCount": 19,
+  "catalogFeatureCount": 159,
+  "catalogAsOf": "2026-11-02",
+  "catalogIds": [
+    "glikemia-premium",
+    "progresskit-mail",
+    "progresskit-translator",
+    "vaeloria",
+    "progresskit-community",
+    "progresskit-tax",
+    "adivara",
+    "gotrans360",
+    "ignira",
+    "obserwator",
+    "kan-system",
+    "progresskit-systems",
+    "progresskit-analytics",
+    "progresskit-infrastructure",
+    "progresskit-notes",
+    "progresskit-offgrid",
+    "reel-agent",
+    "progresskit-remote",
+    "progresskit-vault-key"
+  ],
+  "expectedCaseVisits": 152,
+  "runs": [
+    {
+      "scope": "chrome:360",
+      "artifact": "matrix-final/chrome-360/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 32,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "chrome",
+          "version": "155.0.8059.39",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "chrome:390",
+      "artifact": "matrix-final/chrome-390/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "chrome",
+          "version": "155.0.8059.39",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "chrome:768",
+      "artifact": "matrix-final/chrome-768/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "chrome",
+          "version": "155.0.8059.39",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "chrome:1440",
+      "artifact": "matrix-final/chrome-1440/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "chrome",
+          "version": "155.0.8059.39",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "firefox:360",
+      "artifact": "matrix-final/firefox-360/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 30,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "firefox",
+          "version": "153.0",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "firefox:390",
+      "artifact": "matrix-final/firefox-390/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "firefox",
+          "version": "153.0",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "firefox:768",
+      "artifact": "matrix-final/firefox-768/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "firefox",
+          "version": "153.0",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    },
+    {
+      "scope": "firefox:1440",
+      "artifact": "matrix-final/firefox-1440/report.json",
+      "status": "AUTOMATED_CHECKS_PASS_VISUAL_REVIEW_OPEN",
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "caseVisits": 19,
+      "passedCaseVisits": 19,
+      "sourceStable": true,
+      "sameFreeze": true,
+      "browsers": [
+        {
+          "name": "firefox",
+          "version": "153.0",
+          "status": "LAUNCHED"
+        }
+      ],
+      "showroomModes": [
+        "three-webgl2"
+      ],
+      "signals": []
+    }
+  ],
+  "missing": [],
+  "sourceDifferences": [],
+  "coverage": [
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 360,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 390,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 768,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "chrome",
+      "width": 1440,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 360,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 390,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 768,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "glikemia-premium",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-mail",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-translator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "vaeloria",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-community",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-tax",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "adivara",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "gotrans360",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "ignira",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "obserwator",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "kan-system",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-systems",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-analytics",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-infrastructure",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-notes",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-offgrid",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "reel-agent",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-remote",
+      "status": "PASS"
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "id": "progresskit-vault-key",
+      "status": "PASS"
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "physicalMobile": "NOT_RUN",
+  "releaseReady": false,
+  "runtimeLimitSmoke": [
+    {
+      "context": "Chrome CDP CPU4x, viewport390x844, deviceScaleFactor3",
+      "samples": [
+        {
+          "key": "showroom",
+          "frames": 34,
+          "elapsedSeconds": 1.1345999999940395,
+          "observedFPS": 29.96650802060516,
+          "frameCap": 30,
+          "dpr": 0.85
+        },
+        {
+          "key": "services",
+          "frames": 28,
+          "elapsedSeconds": 1.1195,
+          "observedFPS": 25.011165698972757,
+          "frameCap": 30,
+          "dpr": 0.7
+        },
+        {
+          "key": "process",
+          "frames": 27,
+          "elapsedSeconds": 1.1166999999880791,
+          "observedFPS": 24.17838273510184,
+          "frameCap": 24,
+          "dpr": 0.65
+        }
+      ],
+      "note": "Observed iteration caps only; no physical-phone or GPU benchmark claim."
+    }
+  ],
+  "missingCoverage": [],
+  "unexpectedCoverage": [],
+  "actualCaseVisits": 152,
+  "allCasesPassed": true,
+  "interpretation": "Per-run totals stay separate. Only unique engine/width/project case coverage is combined; earlier interrupted attempts and historical product tests are excluded."
+}

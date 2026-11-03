@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: Local pause clears queued parallax and blocks later pointer updates
+ok 1 - Local pause clears queued parallax and blocks later pointer updates
+  ---
+  duration_ms: 5.744431
+  type: 'test'
+  ...
+# Subtest: Resume enables fresh pointer work while touch remains native
+ok 2 - Resume enables fresh pointer work while touch remains native
+  ---
+  duration_ms: 1.322654
+  type: 'test'
+  ...
+# Subtest: Reduced motion cannot be overridden by the scene button
+ok 3 - Reduced motion cannot be overridden by the scene button
+  ---
+  duration_ms: 2.339679
+  type: 'test'
+  ...
+# Subtest: Visibility, intersection and page restoration preserve an explicit pause
+ok 4 - Visibility, intersection and page restoration preserve an explicit pause
+  ---
+  duration_ms: 1.933541
+  type: 'test'
+  ...
+# Subtest: Offscreen, hidden and coarse-pointer transitions cancel queued work
+ok 5 - Offscreen, hidden and coarse-pointer transitions cancel queued work
+  ---
+  duration_ms: 1.954598
+  type: 'test'
+  ...
+# Subtest: Shared mechanism pause cancels queued hero light and blocks pointer updates until resumed
+ok 6 - Shared mechanism pause cancels queued hero light and blocks pointer updates until resumed
+  ---
+  duration_ms: 2.058925
+  type: 'test'
+  ...
+# Subtest: Desktop hero stops behind later chapters while mobile hero has its own visibility
+ok 7 - Desktop hero stops behind later chapters while mobile hero has its own visibility
+  ---
+  duration_ms: 2.082016
+  type: 'test'
+  ...
+# Subtest: Independent world hero remains responsive before the showroom enters view and stops offscreen
+ok 8 - Independent world hero remains responsive before the showroom enters view and stops offscreen
+  ---
+  duration_ms: 1.814426
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 35.095247

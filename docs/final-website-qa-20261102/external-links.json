@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-02T11:01:09.781181+00:00",
+  "method": "HEAD only, public catalog links, no forms/account actions",
+  "catalogSHA256": "9fb4c8ba06fa23bc282403160101f03372be01821347cdfd9b27e731bdcaa4f1",
+  "checks": [
+    {
+      "url": "https://github.com/Progressorkit/Maria-Salon",
+      "status": "PASS",
+      "http": 200,
+      "finalURL": "https://github.com/Progressorkit/Maria-Salon",
+      "certificateValidation": true
+    },
+    {
+      "url": "https://github.com/Progressorkit/marekzaworski.github.io",
+      "status": "PASS",
+      "http": 200,
+      "finalURL": "https://github.com/Progressorkit/marekzaworski.github.io",
+      "certificateValidation": true
+    },
+    {
+      "url": "https://vaeloria.progresskit.pl/",
+      "status": "PASS",
+      "http": 200,
+      "finalURL": "https://vaeloria.progresskit.pl/",
+      "certificateValidation": true
+    }
+  ]
+}

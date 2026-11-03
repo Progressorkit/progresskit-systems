@@ -1,0 +1,23 @@
+{
+  "timestampUTC": "2026-11-02T11:55:55.609968+00:00",
+  "alreadyInstalled": {
+    "semgrep": null,
+    "codeql": null,
+    "security-scan": null,
+    "bandit": null,
+    "shellcheck": null,
+    "gitleaks": null
+  },
+  "SemgrepModule": false,
+  "repositorySecurityAnalyzerReferencesFound": false,
+  "stage": "/tmp/pkmail-sast-p8wj73ur",
+  "next": "Attempt isolated Semgrep OSS installation under /tmp only; no source upload. No mail/account/port tests.",
+  "installedIsolated": {
+    "scanner": "Semgrep CE",
+    "version": "1.183.0",
+    "venv": "/tmp/pkmail-sast-p8wj73ur/venv",
+    "systemInstallation": false
+  },
+  "finalStatus": "PARTIAL_EXECUTED_WITH_FINDINGS_AND_PARSER_LIMITS",
+  "result": "fresh-sast.json"
+}

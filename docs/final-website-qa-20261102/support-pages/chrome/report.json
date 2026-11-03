@@ -1,0 +1,197 @@
+{
+  "status": "AUTOMATED_SUPPORT_PAGES_PASS_VISUAL_REVIEW_OPEN",
+  "base": "http://127.0.0.1:8201/",
+  "checks": [
+    {
+      "scope": "chrome:360",
+      "name": "Distribution UI, native validation, gallery keyboard; no submit/download",
+      "status": "PASS",
+      "details": {
+        "downloadLinks": 2,
+        "formReady": true,
+        "emptyFormValid": false,
+        "submitted": false,
+        "apkRequested": false,
+        "gallery": {
+          "left": 0,
+          "max": 192,
+          "after": 192
+        },
+        "counterSource": "Disposable local synthetic DB; no production count queried."
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "prywatnosc/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 360,
+        "scrollWidth": 360
+      }
+    },
+    {
+      "scope": "chrome:360",
+      "name": "progresskit-mail/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 360,
+        "scrollWidth": 360
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "Distribution UI, native validation, gallery keyboard; no submit/download",
+      "status": "PASS",
+      "details": {
+        "downloadLinks": 2,
+        "formReady": true,
+        "emptyFormValid": false,
+        "submitted": false,
+        "apkRequested": false,
+        "gallery": {
+          "left": 0,
+          "max": 207,
+          "after": 207
+        },
+        "counterSource": "Disposable local synthetic DB; no production count queried."
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "prywatnosc/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "scope": "chrome:390",
+      "name": "progresskit-mail/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "Distribution UI, native validation, gallery keyboard; no submit/download",
+      "status": "PASS",
+      "details": {
+        "downloadLinks": 2,
+        "formReady": true,
+        "emptyFormValid": false,
+        "submitted": false,
+        "apkRequested": false,
+        "gallery": {
+          "left": 0,
+          "max": 0,
+          "after": 0
+        },
+        "counterSource": "Disposable local synthetic DB; no production count queried."
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "prywatnosc/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "scope": "chrome:768",
+      "name": "progresskit-mail/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "Distribution UI, native validation, gallery keyboard; no submit/download",
+      "status": "PASS",
+      "details": {
+        "downloadLinks": 2,
+        "formReady": true,
+        "emptyFormValid": false,
+        "submitted": false,
+        "apkRequested": false,
+        "gallery": {
+          "left": 0,
+          "max": 0,
+          "after": 0
+        },
+        "counterSource": "Disposable local synthetic DB; no production count queried."
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "prywatnosc/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "scope": "chrome:1440",
+      "name": "progresskit-mail/ readable route",
+      "status": "PASS",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No browser error, failed resource or prohibited request",
+      "status": "PASS",
+      "details": {
+        "errors": 0,
+        "failedResources": 0,
+        "submitted": false,
+        "apkRequested": false
+      }
+    }
+  ],
+  "errors": [],
+  "resources": [],
+  "engines": [
+    {
+      "name": "chrome",
+      "version": "155.0.8059.39"
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "formsSubmitted": false,
+  "apkRequested": false,
+  "mailDelivery": "NOT_VERIFIED",
+  "scope": "Owned loopback preview with disposable synthetic product DB only.",
+  "sourceBefore": {
+    "glikemia-premium/index.html": "42d3cfa3ee99e18de38e2d298ddf10d1d49ac02d581dac2e46036397fa90db0f",
+    "glikemia-premium/product.js": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+    "glikemia-premium/product.css": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+    "prywatnosc/index.html": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8",
+    "progresskit-mail/index.html": "71f179fcb5f27c90ece94277e34e276c41562e77a9acbfbef9550fcec529ed03",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6"
+  },
+  "PASS": 13,
+  "FAIL": 0,
+  "BLOCKED": 0,
+  "sourceAfter": {
+    "glikemia-premium/index.html": "42d3cfa3ee99e18de38e2d298ddf10d1d49ac02d581dac2e46036397fa90db0f",
+    "glikemia-premium/product.js": "6d96f01480ba6529f6abcdd4b25ac52cc6343158431a6f98d7b7d6c071b509b5",
+    "glikemia-premium/product.css": "398f281f6207d2841810d1ee2402ad2680e243907e52472b4b83158ef3e7464f",
+    "prywatnosc/index.html": "0f1f766776a08f897e821daa50a470c1dd673ae35cc380f40a5a84ea382d64c8",
+    "progresskit-mail/index.html": "71f179fcb5f27c90ece94277e34e276c41562e77a9acbfbef9550fcec529ed03",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "catalog/operator.json": "8bb24dd418f929d866f44c154d94b69f3f9f0db8c516e3576f54f8a03552bb33",
+    "assets/site-v5.css": "28b4b95bf99198adc649b6d66964685860de17c8a0da99ebcb1e3b34542917d6"
+  }
+}

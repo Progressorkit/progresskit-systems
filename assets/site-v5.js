@@ -8,17 +8,19 @@ const CatalogFilters = {
   matches(project, state) {
     const words = this.normalize(state.q || '').trim().split(/\s+/).filter(Boolean);
     return (!state.category || project.category === state.category)
+      && (!state.classification || project.classification === state.classification)
       && (!state.technology || project.technologies.includes(state.technology))
       && (!state.stage || (state.stage === 'unverified' ? !project.stage : project.stage === state.stage))
       && words.every(word => this.normalize(project.search).includes(word));
   },
   read(url) {
     const params = new URL(url).searchParams;
-    return { q: (params.get('q') || '').slice(0, 160), category: params.get('kategoria') || '', technology: params.get('technologia') || '', stage: params.get('etap') || '', project: params.get('projekt') || '' };
+    const kind = params.get('typ');
+    return { ...(kind ? {classification:kind} : {}), q: (params.get('q') || '').slice(0, 160), category: params.get('kategoria') || '', technology: params.get('technologia') || '', stage: params.get('etap') || '', project: params.get('projekt') || '' };
   },
   url(url, state) {
     const next = new URL(url);
-    for (const [key, field] of [['q','q'], ['kategoria','category'], ['technologia','technology'], ['etap','stage'], ['projekt','project']]) {
+    for (const [key, field] of [['typ','classification'], ['q','q'], ['kategoria','category'], ['technologia','technology'], ['etap','stage'], ['projekt','project']]) {
       if (state[field]) next.searchParams.set(key, state[field]);
       else next.searchParams.delete(key);
     }
@@ -227,13 +229,14 @@ if (typeof document !== 'undefined') {
   if (form) {
     const cards = [...document.querySelectorAll('.catalog-card')].map(node => ({
       node, id: node.dataset.id, category: node.dataset.category,
-      stage: node.dataset.stage, technologies: JSON.parse(node.dataset.technologies), search: node.dataset.search,
+      classification: node.dataset.classification, stage: node.dataset.stage, technologies: JSON.parse(node.dataset.technologies), search: node.dataset.search,
       details: node.querySelector('details'),
     }));
     const categories = [...document.querySelectorAll('[data-filter-category]')];
     const search = document.querySelector('#project-search');
     const technology = document.querySelector('#technology-filter');
     const stage = document.querySelector('#stage-filter');
+    const classification = document.querySelector('#classification-filter');
     const results = document.querySelector('#catalog-results');
     const empty = document.querySelector('#catalog-empty');
     let state = CatalogFilters.read(location.href);
@@ -258,13 +261,15 @@ if (typeof document !== 'undefined') {
       if (!cards.some(c => c.category === state.category)) state.category = '';
       if (![...technology.options].some(option => option.value === state.technology)) state.technology = '';
       if (![...stage.options].some(option => option.value === state.stage)) state.stage = '';
+      if (classification && ![...classification.options].some(option => option.value === state.classification)) state.classification = '';
       const selected = cards.find(c => c.id === state.project);
       if (!selected) state.project = '';
       // A direct project link always reveals its target, including an outdated filter link.
       if (selected && !CatalogFilters.matches(selected, state)) {
-        state.q = ''; state.category = ''; state.technology = ''; state.stage = '';
+        state.q = ''; state.category = ''; state.technology = ''; state.stage = ''; state.classification = '';
       }
       search.value = state.q; technology.value = state.technology; stage.value = state.stage;
+      if (classification) classification.value = state.classification || '';
       applyFilters(false);
       for (const card of cards) {
         const details = card.node.querySelector('details');
@@ -282,6 +287,7 @@ if (typeof document !== 'undefined') {
     });
     technology.addEventListener('change', () => { state.technology = technology.value; applyFilters(); });
     stage.addEventListener('change', () => { state.stage = stage.value; applyFilters(); });
+    classification?.addEventListener('change', () => { state.classification = classification.value; applyFilters(); });
     categories.forEach(button => button.addEventListener('click', () => {
       state.category = state.category === button.dataset.filterCategory ? '' : button.dataset.filterCategory;
       applyFilters();
@@ -290,6 +296,7 @@ if (typeof document !== 'undefined') {
       event.preventDefault(); clearTimeout(searchTimer);
       state = { q:'',category:'',technology:'',stage:'',project:'' };
       search.value = ''; technology.value = ''; stage.value = '';
+      if (classification) classification.value = '';
       cards.forEach(card => { card.node.querySelector('details').open = false; });
       applyFilters();
     });

@@ -1,0 +1,123 @@
+{
+  "capturedAt": "2026-11-02T22:18:28.841Z",
+  "rawReport": "QA.json (automatically archived by a subsequent run)",
+  "rawStatus": "ABORTED",
+  "rawPASS": 7,
+  "rawFAIL": 13,
+  "confirmedPasses": [
+    {
+      "scope": "after:390",
+      "name": "Existing header geometry, links, labels and project catalog exactly match the saved source"
+    },
+    {
+      "scope": "after:390",
+      "name": "Reduced-motion first visit keeps the original static image without requesting video"
+    },
+    {
+      "scope": "after:390",
+      "name": "Real tap on the central logo reveals the existing mobile project"
+    },
+    {
+      "scope": "after:390",
+      "name": "Project hover/focus, native disclosure and close retain their existing behavior"
+    },
+    {
+      "scope": "after:390",
+      "name": "Header teardown removes only its media and leaves the original brand link/image"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Existing header geometry, links, labels and project catalog exactly match the saved source"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Reduced-motion first visit keeps the original static image without requesting video"
+    }
+  ],
+  "rootCause": {
+    "kind": "CSP blocks new local WebM",
+    "evidence": "preview-before-media-csp.headers",
+    "HTTPStatus": 200,
+    "directive": "media-src 'none'",
+    "policySource": "analytics/security_headers.py:58",
+    "videoState": {
+      "kind": "recorded-three-core",
+      "running": false,
+      "loaded": true,
+      "pending": false,
+      "visible": true,
+      "reduced": false,
+      "forcedColors": false,
+      "documentHidden": false,
+      "failed": true,
+      "blocked": false,
+      "disposed": true,
+      "currentTime": 0,
+      "webglContextsCreated": 0
+    },
+    "correctAssetEncoding": "VP9 Profile 0 / yuv420p / 160x160 / 15fps / 31271 bytes / no audio",
+    "affectedChecks": [
+      {
+        "scope": "after:390",
+        "name": "Header plays real cached Core frames in the original 48/34px slot without audio, controls or WebGL"
+      },
+      {
+        "scope": "after:390",
+        "name": "Global pause, reduced motion, forced colors and print show the original still and resume cleanly"
+      },
+      {
+        "scope": "after:390",
+        "name": "Controlled hidden state and real offscreen intersection pause playback and retain a resumable still"
+      },
+      {
+        "scope": "after:390",
+        "name": "Brand link retains native #start navigation and the header is reviewable"
+      },
+      {
+        "scope": "after:1440",
+        "name": "Header plays real cached Core frames in the original 48/34px slot without audio, controls or WebGL"
+      },
+      {
+        "scope": "after:1440",
+        "name": "Global pause, reduced motion, forced colors and print show the original still and resume cleanly"
+      },
+      {
+        "scope": "after:1440",
+        "name": "Controlled hidden state and real offscreen intersection pause playback and retain a resumable still"
+      }
+    ]
+  },
+  "qaFixtureCorrection": {
+    "affectedChecks": [
+      {
+        "scope": "after:390",
+        "name": "Production showroom uses the original logo presentation and keeps exactly one existing showroom WebGL context"
+      }
+    ],
+    "reason": "Baseline was measured with reduced motion, before the existing global haze created its WebGL context. Final QA compares both pages in normal motion, retaining exactly one showroom context and no header context."
+  },
+  "abortedChecks": [
+    {
+      "scope": "after:1440",
+      "name": "Brand link retains native #start navigation and the header is reviewable"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Production showroom uses the original logo presentation and keeps exactly one existing showroom WebGL context"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Central logo pointer activation reveals the existing desktop projects"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Project hover/focus, native disclosure and close retain their existing behavior"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Header teardown removes only its media and leaves the original brand link/image"
+    }
+  ],
+  "termination": "Own driver SIGINT after repeated media timeouts; owned Chrome PID 535200 confirmed absent; no product source edits by QA agent",
+  "ownerVisualApproval": "OPEN"
+}

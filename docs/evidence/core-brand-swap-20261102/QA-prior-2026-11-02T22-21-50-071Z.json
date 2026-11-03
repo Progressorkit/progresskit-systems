@@ -1,0 +1,1292 @@
+{
+  "startedAt": "2026-11-02T22:21:50.071Z",
+  "checks": [
+    {
+      "scope": "after:390",
+      "name": "Homepage CSP permits only local media while the catalog keeps media disabled",
+      "status": "PASS",
+      "details": {
+        "homepage": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "catalog": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Reduced-motion first visit keeps the original static image without requesting video",
+      "status": "PASS",
+      "details": {
+        "reason": "initial reduced motion",
+        "before": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": false,
+            "pending": false,
+            "visible": true,
+            "reduced": true,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "none",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": null,
+          "src": ""
+        },
+        "after": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": false,
+            "pending": false,
+            "visible": true,
+            "reduced": true,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "none",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": null,
+          "src": ""
+        }
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Header plays real cached Core frames in the original 48/34px slot without audio, controls or WebGL",
+      "status": "FAIL",
+      "details": "Error: Header slot or renderer changed\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:36:874\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:13:94)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:36:1)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:47:757)"
+    },
+    {
+      "scope": "after:390",
+      "name": "Global pause, reduced motion, forced colors and print show the original still and resume cleanly",
+      "status": "FAIL",
+      "details": "page.waitForFunction: Timeout 15000ms exceeded.\n    at playing (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:16:41)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:37:730\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:13:94)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:37:1)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:47:757)"
+    },
+    {
+      "scope": "after:390",
+      "name": "Controlled hidden state and real offscreen intersection pause playback and retain a resumable still",
+      "status": "PASS",
+      "details": [
+        {
+          "reason": "controlled document.hidden getter and visibilitychange",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": true,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.674196,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.674196,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 30,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": true,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.674196,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.674196,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 30,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        },
+        {
+          "reason": "real IntersectionObserver with temporarily translated mark",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": false,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.880559,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.880559,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 64,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": false,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.880559,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.880559,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 64,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "after:390",
+      "name": "Brand link retains native #start navigation and the header is reviewable",
+      "status": "PASS",
+      "details": {
+        "href": "#start",
+        "URL": "http://127.0.0.1:8201/#start"
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Production showroom uses the original logo presentation and keeps exactly one existing showroom WebGL context",
+      "status": "FAIL",
+      "details": "Error: Additional WebGL context created\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:40:743\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:13:94)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:40:1)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:47:757)"
+    },
+    {
+      "scope": "after:390",
+      "name": "Real tap on the central logo reveals the existing mobile project",
+      "status": "PASS",
+      "details": {
+        "point": {
+          "x": 195,
+          "y": 346.875
+        },
+        "scene": {
+          "revision": "187",
+          "frames": 138,
+          "quality": 0,
+          "fps": 30.003871467286082,
+          "cpuFrameMs": 2,
+          "gpuFrameMs": 1.790333,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 10,
+          "triangles": 728,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 300,
+            "height": 612
+          },
+          "samples": [
+            {
+              "t": 27299.2,
+              "fps": 26,
+              "cpuFrameMs": 1.5,
+              "gpuFrameMs": 1.0145,
+              "drawCalls": 5,
+              "triangles": 452,
+              "dpr": 0.85
+            },
+            {
+              "t": 28299.2,
+              "fps": 30,
+              "cpuFrameMs": 3,
+              "gpuFrameMs": 14.470583,
+              "drawCalls": 8,
+              "triangles": 814,
+              "dpr": 0.85
+            },
+            {
+              "t": 29332.4,
+              "fps": 30.003871467286082,
+              "cpuFrameMs": 3.800000011920929,
+              "gpuFrameMs": 1.837833,
+              "drawCalls": 10,
+              "triangles": 728,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "scope": "after:390",
+      "name": "Header teardown removes only its media and leaves the original brand link/image",
+      "status": "PASS",
+      "details": {
+        "metrics": {
+          "kind": "recorded-three-core",
+          "running": false,
+          "loaded": true,
+          "pending": false,
+          "visible": true,
+          "reduced": false,
+          "forcedColors": false,
+          "documentHidden": false,
+          "failed": false,
+          "blocked": false,
+          "disposed": true,
+          "currentTime": 0,
+          "webglContextsCreated": 0
+        },
+        "videos": 0,
+        "images": 1,
+        "dataset": null,
+        "imageOpacity": "1",
+        "href": "#start"
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Homepage CSP permits only local media while the catalog keeps media disabled",
+      "status": "PASS",
+      "details": {
+        "homepage": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+        "catalog": "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-aqNNdDLnnrDOnTNdkJpYlAxKVJtLt9CtFLklmInuUAE='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Reduced-motion first visit keeps the original static image without requesting video",
+      "status": "PASS",
+      "details": {
+        "reason": "initial reduced motion",
+        "before": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": false,
+            "pending": false,
+            "visible": true,
+            "reduced": true,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "none",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": null,
+          "src": ""
+        },
+        "after": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": false,
+            "pending": false,
+            "visible": true,
+            "reduced": true,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "none",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": null,
+          "src": ""
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Header plays real cached Core frames in the original 48/34px slot without audio, controls or WebGL",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": true,
+            "loaded": true,
+            "pending": false,
+            "visible": true,
+            "reduced": false,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0.15458,
+            "webglContextsCreated": 0
+          },
+          "paused": false,
+          "time": 0.15458,
+          "ready": 4,
+          "videoWidth": 160,
+          "videoHeight": 160,
+          "duration": 11.267,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "1",
+          "videoDisplay": "block",
+          "imageOpacity": "0",
+          "frames": 9,
+          "error": null,
+          "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+        },
+        "after": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": true,
+            "loaded": true,
+            "pending": false,
+            "visible": true,
+            "reduced": false,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0.79459,
+            "webglContextsCreated": 0
+          },
+          "paused": false,
+          "time": 0.79459,
+          "ready": 4,
+          "videoWidth": 160,
+          "videoHeight": 160,
+          "duration": 11.267,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "1",
+          "videoDisplay": "block",
+          "imageOpacity": "0",
+          "frames": 18,
+          "error": null,
+          "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+        },
+        "bitmapA": {
+          "bright": 1196,
+          "max": 216,
+          "checksum": 1561178,
+          "width": 96,
+          "height": 96
+        },
+        "bitmapB": {
+          "bright": 1178,
+          "max": 226,
+          "checksum": 1547205,
+          "width": 96,
+          "height": 96
+        },
+        "geometry": {
+          "width": 48,
+          "height": 48,
+          "hidden": "true",
+          "canvases": 0,
+          "videoCount": 1
+        },
+        "wrapped": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": true,
+            "loaded": true,
+            "pending": false,
+            "visible": true,
+            "reduced": false,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": false,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0.495275,
+            "webglContextsCreated": 0
+          },
+          "paused": false,
+          "time": 0.495275,
+          "ready": 4,
+          "videoWidth": 160,
+          "videoHeight": 160,
+          "duration": 11.267,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "1",
+          "videoDisplay": "block",
+          "imageOpacity": "0",
+          "frames": 74,
+          "error": null,
+          "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Global pause, reduced motion, forced colors and print show the original still and resume cleanly",
+      "status": "FAIL",
+      "details": "page.waitForFunction: Timeout 15000ms exceeded.\n    at playing (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:16:41)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:37:730\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:13:94)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:37:1)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:47:757)"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Controlled hidden state and real offscreen intersection pause playback and retain a resumable still",
+      "status": "PASS",
+      "details": [
+        {
+          "reason": "controlled document.hidden getter and visibilitychange",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": true,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.537287,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.537287,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 92,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": true,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.537287,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.537287,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 92,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        },
+        {
+          "reason": "real IntersectionObserver with temporarily translated mark",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": false,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.874234,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.874234,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 126,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": false,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 1.874234,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 1.874234,
+            "ready": 4,
+            "videoWidth": 160,
+            "videoHeight": 160,
+            "duration": 11.267,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 126,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "after:1440",
+      "name": "Brand link retains native #start navigation and the header is reviewable",
+      "status": "PASS",
+      "details": {
+        "href": "#start",
+        "URL": "http://127.0.0.1:8201/#start"
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Production showroom uses the original logo presentation and keeps exactly one existing showroom WebGL context",
+      "status": "FAIL",
+      "details": "Error: Additional WebGL context created\n    at assert (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:11:34)\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:40:743\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:13:94)\n    at async qaWidth (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:40:1)\n    at async main (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/core-brand-swap-20261102/browser-qa.cjs:47:757)"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Central logo pointer activation reveals the existing desktop projects",
+      "status": "PASS",
+      "details": {
+        "point": {
+          "x": 720,
+          "y": 540.4375
+        },
+        "scene": {
+          "revision": "187",
+          "frames": 190,
+          "quality": 0,
+          "fps": 19.387001477104928,
+          "cpuFrameMs": 7.5,
+          "gpuFrameMs": 9.829166,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 35,
+          "triangles": 1944,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 0.85,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 850,
+            "height": 765
+          },
+          "samples": [
+            {
+              "t": 30952.3,
+              "fps": 26.13240418118465,
+              "cpuFrameMs": 2.7000000178813934,
+              "gpuFrameMs": 34.331999,
+              "drawCalls": 10,
+              "triangles": 452,
+              "dpr": 0.85
+            },
+            {
+              "t": 31952.3,
+              "fps": 49,
+              "cpuFrameMs": 3,
+              "gpuFrameMs": 8.576583,
+              "drawCalls": 17,
+              "triangles": 1212,
+              "dpr": 0.85
+            },
+            {
+              "t": 32952.3,
+              "fps": 45.99999999999983,
+              "cpuFrameMs": 6.699999988079071,
+              "gpuFrameMs": 8.107332,
+              "drawCalls": 33,
+              "triangles": 1940,
+              "dpr": 0.85
+            },
+            {
+              "t": 34035.5,
+              "fps": 19.387001477104928,
+              "cpuFrameMs": 4.799999982118607,
+              "gpuFrameMs": 8.927583,
+              "drawCalls": 35,
+              "triangles": 1944,
+              "dpr": 0.85
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Project hover/focus, native disclosure and close retain their existing behavior",
+      "status": "PASS",
+      "details": {
+        "id": "glikemia-premium",
+        "href": "projekty/glikemia-premium/",
+        "open": {
+          "expanded": "true",
+          "hidden": false,
+          "closeFocused": true
+        },
+        "closed": true,
+        "keyboardCoreActivation": true
+      }
+    },
+    {
+      "scope": "after:1440",
+      "name": "Header teardown removes only its media and leaves the original brand link/image",
+      "status": "PASS",
+      "details": {
+        "metrics": {
+          "kind": "recorded-three-core",
+          "running": false,
+          "loaded": true,
+          "pending": false,
+          "visible": true,
+          "reduced": false,
+          "forcedColors": false,
+          "documentHidden": false,
+          "failed": false,
+          "blocked": false,
+          "disposed": true,
+          "currentTime": 0,
+          "webglContextsCreated": 0
+        },
+        "videos": 0,
+        "images": 1,
+        "dataset": null,
+        "imageOpacity": "1",
+        "href": "#start"
+      }
+    },
+    {
+      "scope": "after:1440:media-error",
+      "name": "A controlled media decode error keeps the original image and native start link",
+      "status": "PASS",
+      "details": {
+        "reason": "controlled invalid local WebM response",
+        "before": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": true,
+            "pending": false,
+            "visible": true,
+            "reduced": false,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": true,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "block",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": {
+            "code": 4,
+            "message": "PipelineStatus::DEMUXER_ERROR_COULD_NOT_OPEN: FFmpegDemuxer: open context failed"
+          },
+          "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+        },
+        "after": {
+          "metrics": {
+            "kind": "recorded-three-core",
+            "running": false,
+            "loaded": true,
+            "pending": false,
+            "visible": true,
+            "reduced": false,
+            "forcedColors": false,
+            "documentHidden": false,
+            "failed": true,
+            "blocked": false,
+            "disposed": false,
+            "currentTime": 0,
+            "webglContextsCreated": 0
+          },
+          "paused": true,
+          "time": 0,
+          "ready": 0,
+          "videoWidth": 0,
+          "videoHeight": 0,
+          "duration": null,
+          "loop": true,
+          "muted": true,
+          "defaultMuted": true,
+          "inline": true,
+          "controls": false,
+          "tabIndex": -1,
+          "ariaHidden": "true",
+          "videoOpacity": "0",
+          "videoDisplay": "block",
+          "imageOpacity": "1",
+          "frames": 0,
+          "error": {
+            "code": 4,
+            "message": "PipelineStatus::DEMUXER_ERROR_COULD_NOT_OPEN: FFmpegDemuxer: open context failed"
+          },
+          "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+        }
+      }
+    },
+    {
+      "scope": "after:1440:controlled-abort",
+      "name": "Repeated AbortError is bounded, keeps the original still and retries only after external state changes",
+      "status": "PASS",
+      "details": {
+        "callsA": 1,
+        "callsB": 1,
+        "callsAfterExternalChange": 2,
+        "first": {
+          "reason": "controlled repeated AbortError from play",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 0,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 0,
+            "ready": 0,
+            "videoWidth": 0,
+            "videoHeight": 0,
+            "duration": null,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 0,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 0,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 0,
+            "ready": 0,
+            "videoWidth": 0,
+            "videoHeight": 0,
+            "duration": null,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 0,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        },
+        "final": {
+          "reason": "controlled AbortError after one external resume",
+          "before": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 0,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 0,
+            "ready": 0,
+            "videoWidth": 0,
+            "videoHeight": 0,
+            "duration": null,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 0,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          },
+          "after": {
+            "metrics": {
+              "kind": "recorded-three-core",
+              "running": false,
+              "loaded": true,
+              "pending": false,
+              "visible": true,
+              "reduced": false,
+              "forcedColors": false,
+              "documentHidden": false,
+              "failed": false,
+              "blocked": false,
+              "disposed": false,
+              "currentTime": 0,
+              "webglContextsCreated": 0
+            },
+            "paused": true,
+            "time": 0,
+            "ready": 0,
+            "videoWidth": 0,
+            "videoHeight": 0,
+            "duration": null,
+            "loop": true,
+            "muted": true,
+            "defaultMuted": true,
+            "inline": true,
+            "controls": false,
+            "tabIndex": -1,
+            "ariaHidden": "true",
+            "videoOpacity": "0",
+            "videoDisplay": "block",
+            "imageOpacity": "1",
+            "frames": 0,
+            "error": null,
+            "src": "http://127.0.0.1:8201/assets/brand/progresskit-core-mark.webm"
+          }
+        },
+        "fixture": "Only the header play() promise is replaced with repeated AbortError; real decoding is independently checked in both viewport tests."
+      }
+    },
+    {
+      "scope": "source",
+      "name": "The new brand module and stylesheet are registered only on the homepage",
+      "status": "PASS",
+      "details": {
+        "pagesChecked": 25,
+        "registered": [
+          "index.html"
+        ]
+      }
+    },
+    {
+      "scope": "all",
+      "name": "No page errors, missing local assets or external requests",
+      "status": "PASS",
+      "details": {
+        "pageErrors": 0,
+        "missingResources": 0,
+        "externalRequests": 0
+      }
+    },
+    {
+      "scope": "source",
+      "name": "All source and media fingerprints remain identical during QA",
+      "status": "PASS",
+      "details": {
+        "files": 17
+      }
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "screenshots": [
+    {
+      "file": "header-mobile.png",
+      "sha256": "12bbfb9939015fe98e6b0a0f274f1f3e260ef50dd29da6f47ed42e477bdb1ed8"
+    },
+    {
+      "file": "showroom-logo-mobile-active.png",
+      "sha256": "d02a7fdc0d17e34e31e98adfce133184326e1f8fc04cb1a66e99d237dcc08d54"
+    },
+    {
+      "file": "header-desktop.png",
+      "sha256": "9524e8d633aff36fd249569191ae7094653dc8f4fe907e93bfdd3b60cf9df769"
+    },
+    {
+      "file": "showroom-logo-desktop-active.png",
+      "sha256": "d30200f65820ad8fb297755101a63adae7cfd66d0c1a68e8f0842264be030a64"
+    }
+  ],
+  "ownerVisualApproval": "OPEN",
+  "browser": "standalone local Chrome",
+  "physicalMobile": "NOT_RUN",
+  "published": false,
+  "formsSubmitted": false,
+  "note": "Checks actual WebM decode and cached-frame motion; capture provenance is supplied separately by the rendering pipeline. Controlled document-hidden and offscreen fixtures are explicitly identified.",
+  "sourceBefore": {
+    "index.html": "2afc00b37c8341ecec76778bf347c62f26849dcf358ef1fc19c86184c7a94169",
+    "assets/brand-core-mark.css": "f00e024abae0ac11bf73339f7e410e8f1da330f4484f177d0edbda06106bebf0",
+    "assets/brand-core-mark.mjs": "eab8565984df35c54a2597bd7a34541bdf972ca0eeee3d2f6b2d975e2ef11eaa",
+    "assets/brand/progresskit-core-mark.webm": "ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+    "assets/showroom-3d.mjs": "073ef4b570254241b5e9834e32c4fe5932fb1f71e828770eb6a8799d0019682a",
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/luxury-world.mjs": "739ddd9d9a49985a13af5f018646b755dfeed97d3d9dedb552b734b9293bf07f",
+    "assets/technology-field.css": "150d1528337f699ee1cef8573567fedffc7b58b87690749f7f69c04457d11999",
+    "assets/technology-field.mjs": "aa21b08c80b3d00b3535d64b10fe26c7f286b8f5bebbcf23d97071295a27efa2",
+    "assets/material-finish.css": "96d801fb84e9b0da8377ddd1b69d4497872e35e5405484e52c33395a9926cd1b",
+    "scripts/build-site.py": "30a5b95ecc9fc51f443211ba3726acd6a6ad56c1fc93a69aa945088d6375d1ab",
+    "scripts/stage-public.py": "309120f713e8189227f49396aea4af1b2c1f48f3dc791e8559065e9527a5758f",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "analytics/security_headers.py": "28d853d861999be2d8080e5dcd918df2638cb00914b5ffc7e25a4a1fc039d435",
+    "analytics/preview.py": "98e48751fc347e5bd7edd4bcc2195ad2a2c632c466d046195710dd70fda09296"
+  },
+  "mode": "targeted followup after CSP and bounded-AbortError fixes",
+  "carriedForward": [
+    {
+      "scope": "after:390",
+      "name": "Existing header geometry, links, labels and project catalog exactly match the saved source",
+      "source": "archived initial QA before CSP and AbortError fixes",
+      "status": "PASS"
+    },
+    {
+      "scope": "after:390",
+      "name": "Project hover/focus, native disclosure and close retain their existing behavior",
+      "source": "archived initial QA before CSP and AbortError fixes",
+      "status": "PASS"
+    },
+    {
+      "scope": "after:1440",
+      "name": "Existing header geometry, links, labels and project catalog exactly match the saved source",
+      "source": "archived initial QA before CSP and AbortError fixes",
+      "status": "PASS"
+    }
+  ],
+  "PASS": 19,
+  "FAIL": 5,
+  "browserVersion": "155.0.8059.39",
+  "sourceAfter": {
+    "index.html": "2afc00b37c8341ecec76778bf347c62f26849dcf358ef1fc19c86184c7a94169",
+    "assets/brand-core-mark.css": "f00e024abae0ac11bf73339f7e410e8f1da330f4484f177d0edbda06106bebf0",
+    "assets/brand-core-mark.mjs": "eab8565984df35c54a2597bd7a34541bdf972ca0eeee3d2f6b2d975e2ef11eaa",
+    "assets/brand/progresskit-core-mark.webm": "ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733",
+    "assets/brand/progressorkit-stamp.png": "b41bda6edaf8395a4a4ca61adda0d24c5e9ccf39393b9fd587a9ca9aaffc16b3",
+    "assets/showroom-3d.mjs": "073ef4b570254241b5e9834e32c4fe5932fb1f71e828770eb6a8799d0019682a",
+    "assets/showroom-scene.mjs": "7f1ca210201718b159c99ce6f39429ad1d6b037f3a53914fe1d9822c5c173bf8",
+    "assets/luxury-world.mjs": "739ddd9d9a49985a13af5f018646b755dfeed97d3d9dedb552b734b9293bf07f",
+    "assets/technology-field.css": "150d1528337f699ee1cef8573567fedffc7b58b87690749f7f69c04457d11999",
+    "assets/technology-field.mjs": "aa21b08c80b3d00b3535d64b10fe26c7f286b8f5bebbcf23d97071295a27efa2",
+    "assets/material-finish.css": "96d801fb84e9b0da8377ddd1b69d4497872e35e5405484e52c33395a9926cd1b",
+    "scripts/build-site.py": "30a5b95ecc9fc51f443211ba3726acd6a6ad56c1fc93a69aa945088d6375d1ab",
+    "scripts/stage-public.py": "309120f713e8189227f49396aea4af1b2c1f48f3dc791e8559065e9527a5758f",
+    "package.json": "afa2afb2638deca07b44601a2f42572d81ed527ddf0ebee2cc62f540f15689d0",
+    "catalog/projects.json": "1326dac648786672095b75bae9d81f90fd3610fa458bc4bbf8f8435d03613a7f",
+    "analytics/security_headers.py": "28d853d861999be2d8080e5dcd918df2638cb00914b5ffc7e25a4a1fc039d435",
+    "analytics/preview.py": "98e48751fc347e5bd7edd4bcc2195ad2a2c632c466d046195710dd70fda09296"
+  },
+  "finishedAt": "2026-11-02T22:23:26.585Z",
+  "status": "FAIL"
+}
