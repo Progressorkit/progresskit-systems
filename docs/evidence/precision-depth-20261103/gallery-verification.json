@@ -1,0 +1,192 @@
+{
+  "status": "PASS",
+  "links": [
+    {
+      "url": "http://127.0.0.1:8209/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/ODBIOR.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/changed-files.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/QA.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/PERFORMANCE.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop.mp4",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile.mp4",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-01-hero.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-03-pulse.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-05-showroom.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-technology-grid.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-07-services.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-09-guide-security.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-04-transition.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-crystal-close.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile-05-showroom.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-08-process.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-10-ecosystem.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-11-technologies.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-06-guide-project.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-12-guide-technology.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile-01-hero.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile-services-systems.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile-09-guide-security.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/mobile-12-guide-technology.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/desktop-13-contact.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-hero.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-core.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-showroom.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-services.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-process.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-ecosystem.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/depth-technologies.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/IMAGEGEN-PROMPTS.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/generated-assets.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8209/proof/SHA256SUMS.txt",
+      "status": 200
+    }
+  ],
+  "videos": [
+    {
+      "source": "http://127.0.0.1:8209/proof/desktop.mp4",
+      "duration": 144.24,
+      "width": 1440,
+      "height": 900,
+      "time": 136.940484,
+      "target": 136.24,
+      "error": null
+    },
+    {
+      "source": "http://127.0.0.1:8209/proof/mobile.mp4",
+      "duration": 118.48,
+      "width": 390,
+      "height": 844,
+      "time": 111.181198,
+      "target": 110.48,
+      "error": null
+    }
+  ],
+  "ranges": [
+    {
+      "name": "desktop",
+      "status": 206,
+      "contentRange": "bytes 200000-200999/16457229"
+    },
+    {
+      "name": "mobile",
+      "status": 206,
+      "contentRange": "bytes 200000-200999/4714327"
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

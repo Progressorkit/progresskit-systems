@@ -1,0 +1,112 @@
+/* Travel within the same installation; foreground objects keep their material
+   identity. No chapter backgrounds, banners or hard scene boundaries. */
+body.luxury-world #main .section-kicker { font-size:12px; letter-spacing:.17em; }
+body.luxury-world #main :is(.showroom-current,.showroom-card__category,.showroom-card__stage,.showroom-card__action,.project-guide-label,.delivery-flow__relationship) { font-size:13px; line-height:1.5; }
+body.luxury-world #main .technology-discover { font-size:12px; letter-spacing:.02em; }
+body.luxury-world #main #technologie .technology-chip .technology-name { font-size:13px; }
+body.luxury-world #main #technologie .technology-chip .technology-count { font-size:11px; }
+body.luxury-world #main #technologie .technology-discover { font-size:12px; }
+body.luxury-world #main #ekosystem :is(.delivery-state,.ecosystem-console__state) { font-size:12px; }
+body.luxury-world #main .scene-core-caption span { font-size:12px; }
+body.luxury-world #main .context-guide__eyebrow { font-size:10px; letter-spacing:.07em; }
+body.luxury-world #main .context-guide p { font-size:14px; line-height:1.6; }
+body.luxury-world #main .context-guide__title { font-size:16px; }
+body.luxury-world #main .guide-dock--project { width:370px; }
+body.luxury-world #main .guide-dock--project .context-guide { padding-right:50px; }
+body.luxury-world #main .technology-group__title { overflow-wrap:normal; }
+/* Selectors sit in individual metal sockets. The front glass uses exactly the
+   shared control material; casing and recessed seam establish physical depth. */
+body.luxury-world #projekty .showroom-gates { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:26px; perspective:1100px; padding:34px 10px 38px; }
+body.luxury-world #projekty .showroom-gate {
+ position:relative; display:grid; grid-template-columns:1fr auto; align-content:center; gap:12px;
+ --control-height:116px; --control-padding:19px 18px; --control-radius:5px 16px 5px 16px;
+ --control-top:#35353dcc; --control-bottom:#090b13e8; --control-foot:#34232fe6;
+ transform:perspective(900px) rotateX(9deg) rotateY(var(--selector-yaw,-5deg))!important;
+ transition:transform .45s ease,translate .3s,border-color .3s,box-shadow .3s!important;
+ box-shadow:inset 0 1px #e5eafa77,inset 0 -5px 6px #000a,0 6px 0 #06070a,0 7px 0 #79737c70,0 18px 22px #0009!important;
+}
+body.luxury-world #projekty .showroom-gate:nth-child(even) { --selector-yaw:5deg; translate:0 10px; }
+body.luxury-world #projekty .showroom-gate::before { content:""; display:block; position:absolute; z-index:-1; inset:-8px -8px -13px; width:auto; border-radius:8px 20px 8px 20px; opacity:1; background:linear-gradient(118deg,#3b3e46,#090b12 14% 85%,#55515a); border:1px solid #70717a50; box-shadow:inset 0 2px 3px #000c,0 7px 10px #000b; }
+body.luxury-world #projekty .showroom-gate::after { content:""; display:block; position:absolute; inset:auto 18% 8px; height:2px; border:0; background:#843746; box-shadow:0 1px 2px #000; opacity:calc(.28 + var(--proximity,0)*.7); transition:opacity .25s; }
+body.luxury-world #projekty .showroom-gate__label { grid-row:2; grid-column:1/-1; font-size:15px; overflow-wrap:normal; }
+body.luxury-world #projekty .showroom-gate__count { grid-column:2; grid-row:1; justify-self:end; }
+body.luxury-world #projekty .showroom-gate:is([aria-pressed="true"],.is-hover-preview) { transform:perspective(900px) rotateX(3deg) translateZ(18px)!important; --control-top:#603644d9; --control-bottom:#16121ce8; --control-foot:#5a263ce6; }
+body.luxury-world #projekty .showroom-gate[aria-pressed="true"]::after { opacity:1; background:#d58a8f; }
+/* A local circuit closes toward the selected collection. It is finite and is
+   removed by the interaction controller, including on pause and pagehide. */
+body.luxury-world #projekty[data-category-impulse] .showroom-viewport::before { content:""; position:absolute; z-index:2; inset:0 7% auto; height:2px; pointer-events:none; background:linear-gradient(90deg,transparent,#c58186,transparent); transform-origin:left; animation:selector-transfer .28s ease-out both; }
+@keyframes selector-transfer { from { scale:.05 1; opacity:.9; } to { scale:1 1; opacity:0; } }
+/* The service volumes have physical clearance before the process header. No
+   sticky plates or negative overflowing corners remain at that handoff. */
+body.luxury-world #uslugi .service-zones { padding-bottom:85px; }
+body.luxury-world #uslugi .service-object { inset:0!important; }
+body.luxury-world #uslugi .services-actions { margin-top:45px; margin-bottom:45px; }
+body.luxury-world #proces .production-heading { padding-top:20px; }
+/* Process housings dock onto a continuous raised rail. Existing scroll state
+   chooses the powered chamber and drives the light packet between chambers. */
+#proces .production-line { isolation:isolate; }
+#proces .production-station { position:relative; perspective:1100px; }
+#proces .production-station::before { content:""; position:absolute; z-index:-1; left:12%; right:12%; top:72%; height:36%; border-radius:50%; background:radial-gradient(ellipse,#08090eef 30%,#39353f 32%,#080910 36% 50%,#5b535d 52%,#12121b 55% 63%,transparent 65%); transform:rotateX(65deg); box-shadow:0 18px 13px #0008; }
+#proces .process-object::before { content:""; position:absolute; z-index:3; inset:21% 7% auto; height:5%; border-radius:40%; border:2px solid #8c879260; background:linear-gradient(#9d9da533,#0c0d1360); transform:rotateX(48deg); box-shadow:0 6px 0 #06070da6; }
+#proces .process-object::after { content:""; position:absolute; z-index:4; inset:22% 12% 19%; pointer-events:none; background:linear-gradient(110deg,transparent 32%,#f1cedd22 39%,transparent 45%); mask:url('world/process-crystal.webp') center/contain no-repeat; transform:translateX(var(--process-sweep,0px)); }
+#proces [data-production-state="active"] .production-station::before { background:radial-gradient(ellipse,#08090eef 30%,#84505f 32%,#080910 36% 50%,#aa5e6c 52%,#12121b 55% 63%,transparent 65%); }
+#proces .production-line li:nth-child(2n) .process-object { --chamber-turn:8deg; }
+#proces .production-line li:nth-child(3n) .process-object img { scale:.88 1.08; }
+#proces .production-number { font-size:13px!important; }
+body.luxury-world #proces .production-line h3 { font-size:19px; }
+/* Contact is an open assembly of two offset optical leaves, mounted on metal
+   uprights. The form fields remain native, locally stored in this document. */
+body.luxury-world #main > .installation-console { border:0; background:none; box-shadow:none; padding:65px 4% 80px; perspective:1500px; }
+body.luxury-world .installation-console::before { inset:0 auto 0 0; width:18px; border:0; border-radius:5px 5px 24px 5px; background:linear-gradient(90deg,#030409,#58535e 25%,#27232c 34%,#05050b 75%,#76606a); box-shadow:10px 20px 22px #000a; transform:rotateY(18deg); }
+body.luxury-world .installation-console::after { content:""; pointer-events:none; position:absolute; right:0; top:18%; bottom:6%; width:14px; background:linear-gradient(90deg,#6d606b,#17141e 45%,#050509); border-radius:18px 3px; box-shadow:-8px 18px 25px #0008; }
+body.luxury-world #main .installation-console #kontakt { position:relative; isolation:isolate; padding:36px 4% 60px; border:0; }
+body.luxury-world #main .installation-console #kontakt::before { content:""; position:absolute; z-index:-1; pointer-events:none; inset:-20px -1% 12px 1%; background:linear-gradient(115deg,#b3bfca14,transparent 30%),linear-gradient(170deg,#16141ec4,#0808108c); clip-path:polygon(2% 0,96% 3%,100% 15%,98% 93%,3% 100%,0 84%); border:1px solid #a5a0b548; box-shadow:inset 0 2px #b5b2c666; }
+body.luxury-world #main .installation-console #brief { position:relative; isolation:isolate; margin-top:45px; padding:60px 4% 35px; }
+body.luxury-world #main .installation-console #brief::before { display:block; content:""; position:absolute; z-index:-1; pointer-events:none; inset:5px -1% 0 1%; background:linear-gradient(115deg,#d7dce816,transparent 23% 75%,#ac617b17),linear-gradient(170deg,#14131eb8,#07080cc9); clip-path:polygon(2% 0,98% 2%,100% 9%,97% 100%,0 97%,0 8%); box-shadow:inset 0 2px #c1bfcd55; }
+body.luxury-world #main #brief .brief-grid { gap:32px; }
+body.luxury-world #main #brief .brief-grid label { position:relative; padding:18px; border-left:3px solid #5b52605e; border-radius:2px 12px 3px 2px; background:linear-gradient(115deg,#a6adbd10,transparent 60%),#08091040; font-size:15px; transition:border-color .3s,background .3s; }
+body.luxury-world #main #brief .brief-grid label:nth-child(even) { translate:0 24px; }
+body.luxury-world #main #brief .brief-grid textarea { border:1px solid #9a91a440; border-top-color:#030409; border-radius:3px 8px 3px 3px; box-shadow:inset 4px 7px 12px #000c,inset 0 -1px #c7badb40,0 1px #b4a2c724; background:linear-gradient(165deg,#03050be8,#13101ce0); font:15px/1.6 var(--sans); }
+body.luxury-world #main #brief .brief-grid label:focus-within { background:radial-gradient(ellipse at 40% 0,#97425928,transparent 75%),#13101b66; border-left-color:#c38499; }
+body.luxury-world #main #brief .brief-grid textarea:focus { outline:2px solid #d5b6c6; outline-offset:4px; box-shadow:inset 3px 7px 12px #000a,inset 0 -2px #b9769980; }
+body.luxury-world #main #brief .brief__actions { margin-top:70px; }
+@media(min-width:1000px) and (hover:hover) and (pointer:fine) {
+ body.luxury-world #main .core-shell__reflection { animation-duration:9s; }
+ body.luxury-world #projekty .showroom-gate:hover { transform:perspective(900px) rotateX(4deg) rotateY(0deg) translateZ(13px)!important; }
+}
+@media(max-width:1000px) { body.luxury-world #projekty .showroom-gates { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:700px) {
+ body.luxury-world #main .section-kicker { font-size:11px; }
+ body.luxury-world #projekty .showroom-gates { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 22px; padding:24px 12px; }
+ body.luxury-world #projekty .showroom-gate { --control-height:94px; --control-padding:12px; }
+ body.luxury-world #projekty .showroom-gate__label { font-size:14px; }
+ body.luxury-world #main .guide-dock--project { width:auto; }
+ body.luxury-world #main .technology-group__title { font-size:15px!important; white-space:normal!important; }
+ body.luxury-world #main #technologie .technology-discover { font-size:12px; }
+ body.luxury-world #main #technologie .technology-chip .technology-name { font-size:12px; }
+ body.luxury-world #main .installation-console { width:calc(100% - 16px); }
+ body.luxury-world #main > .installation-console { padding:40px 16px; }
+ body.luxury-world .installation-console::before { width:8px; }
+ body.luxury-world .installation-console::after { width:6px; }
+ body.luxury-world #main .installation-console #kontakt { padding:25px 5px 40px; }
+ body.luxury-world #main .installation-console #brief { padding:40px 5px 25px; margin-top:18px; }
+ body.luxury-world #main #brief .brief-grid { gap:24px; }
+ body.luxury-world #main #brief .brief-grid label { padding:12px; }
+ body.luxury-world #main #brief .brief-grid label:nth-child(even) { translate:none; }
+ #proces .production-station::before { left:0; right:0; }
+}
+html[data-interface-motion="paused"] body.luxury-world #projekty .showroom-gate { transition:none!important; }
+@media(prefers-reduced-motion:reduce) { body.luxury-world #projekty .showroom-gate { transition:none!important; }.selector-transfer { animation:none!important; } }
+@media(forced-colors:active) { body.luxury-world #projekty .showroom-gate::before,body.luxury-world #projekty .showroom-gate::after,.installation-console::before,.installation-console::after,body.luxury-world #main .installation-console #kontakt::before,body.luxury-world #main .installation-console #brief::before { display:none; } body.luxury-world #main #brief .brief-grid label { border:1px solid CanvasText; } }
+/* Machined perimeter: the socket is hollow, so it does not cover the shared
+   glass face. Its facets and lower rail describe a mounted selector bank. */
+body.luxury-world #projekty .showroom-gates { position:relative; }
+body.luxury-world #projekty .showroom-gates::before { content:""; position:absolute; left:3%; right:3%; bottom:20px; height:9px; border-radius:3px; background:linear-gradient(#73707c55,#090a10 35% 75%,#8c506337); box-shadow:0 5px 6px #0008; }
+body.luxury-world #projekty .showroom-gate::before { z-index:1; pointer-events:none; padding:8px; border:0; background:conic-gradient(from 45deg,#414550,#a9a7b2 8%,#151720 20%,#2c2734 43%,#aa8090 48%,#24232e 60%,#65636e 78%,#14151c); clip-path:polygon(8% 0,88% 0,100% 16%,97% 88%,87% 100%,6% 100%,0 86%,0 10%); mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude; }
+body.luxury-world #uslugi .service-zone { opacity:var(--bay-visible,1); transition:opacity .25s,transform .45s; }
+body.luxury-world .topbar .nav a { font-size:12px; letter-spacing:.035em; }
+body.luxury-world #main :is(.services-technologies li,.services-technologies a,.hero__enter-caption,.scene-core-caption,.hero__discipline,.machine-caption,.hero__explore) { font-size:12px; }
+body.luxury-world #main #brief .brief-grid label::before { content:""; position:absolute; right:12px; top:12px; width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,#d0c6d050,#15111c 60%); box-shadow:inset 0 1px #e1d4e25c; }
+@media(max-width:700px) { body.luxury-world #main :is(.hero__discipline,.machine-caption) { font-size:10px; }body.luxury-world #projekty .showroom-gates::before { left:50%; right:auto; top:10px; bottom:10px; width:7px; height:auto; background:linear-gradient(90deg,#73707c55,#090a10 35% 75%,#8c506337); } }
+@media(prefers-reduced-motion:reduce) { body.luxury-world #uslugi .service-zone { opacity:1; transition:none; } }
+@media(forced-colors:active) { body.luxury-world #projekty .showroom-gates::before { display:none; } }

@@ -1,0 +1,63 @@
+PROGRESSKIT SYSTEMS — LOKALNY PROOF — 2026-11-03
+
+Strona: http://127.0.0.1:8205/
+Galeria: http://127.0.0.1:8205/proof/
+ownerVisualApproval: OPEN
+
+ZAKRES
+Hero z metalowym mechanizmem i grawerem. Niżej duże pulsujące logo w szklanej kuli, z żarem za obiektem. Kliknięcie uruchamia ciągłe pomniejszenie i materializację ciemnych kryształów projektów.
+Spójne materiały usług, sześciu etapów procesu, ośmiu grup technologii, ekosystemu, kontaktu/briefu i wygasającej stopki.
+Etapy A–D wykonane kolejno: cutout/przyciski, trzy powierzchnie proximity, lokalny CRT, przewodnik w trzech kontekstach. Oceny robocze: stage-assessments.json. Odbiór estetyczny należy do właściciela.
+
+WERYFIKACJA
+JavaScript: 100 PASS / 0 FAIL (7 plików uruchomionych bezpośrednio).
+Python: 37 PASS / 0 FAIL (site_v5 18, homepage_composition 4, delivery_sections 15).
+Browser: 29 PASS / 0 FAIL. Dodatkowe interakcje: 5 PASS / 0 FAIL.
+Build/check i git diff --check: PASS.
+19 projektów, payload, opisy, statusy, nawigacja, 110 linków technologii i analytics zachowane. Hashy plików chronionych: guards.json.
+Sprawdzone: klawiatura, touch, szerokości 320/390/768/1366/1440, reduced motion, global pause, forced colors, brak WebGL i brak JavaScript, offscreen sleep, zamknięcie/wyłączenie przewodnika.
+Brak błędów JS, brakujących zasobów statycznych i zewnętrznych żądań w głównym przebiegu QA.
+
+WYDAJNOŚĆ — PRÓBKI, NIE PEŁNY BENCHMARK
+desktop: próbka 48.4 FPS, GPU 12.17 ms, DPR 1, bufor 1000×750.
+mobile: próbka 30.0 FPS, GPU 2.32 ms, DPR 1, bufor 354×720.
+Renderer: ANGLE / Mesa Intel UHD Graphics 620. Pomiary podczas nagrywania w Chrome headless.
+Usługi używają CSS; usunięto pusty canvas poprzedniej sceny. Ambient ma limity 24 FPS desktop / 18 FPS mobile; proximity 30 / 24 FPS i zatrzymuje się bez aktywności.
+
+MATERIAŁY
+48 screenów końcowego przebiegu (pełne sekcje, detale i widoki mobile).
+Desktop MP4 + mobile MP4, H.264, bez dźwięku. To rzeczywisty zapis lokalnej przeglądarki.
+Mobile = emulacja viewportu i dotyku 390×844 na tym samym komputerze. Fizyczny telefon: NOT_RUN.
+Kontrola wideo: video-verification.json. Galeria: 53 lokalne adresy HTTP 200; oba MP4 odtwarzają się i przewijają w Chrome. Hashy: SHA256SUMS.txt.
+
+ITERACJE QA
+Pierwszy przebieg: 26 PASS / 2 FAIL. Usunięto niewykorzystywany canvas usług. Test ochrony copy rozdzielono na dokładną treść statyczną i zachowanie live DOM: istniejący ekosystem przenosi opis wybranego modułu do konsoli. Nie zmieniono tego opisu ani działania. Zachowano QA-initial.json i copy-diagnostic.json.
+Dodatkowo poprawiono impuls dotykowy: pozostaje przypisany do powierzchni podczas rozwijania modułu i wygasa po 620 ms. Test 5/5 PASS; odświeżony przebieg mobile 8/8 PASS. Poprawiono selektor eksportu briefu i zmierzono cooldown CRT szybką sekwencją klawiatury.
+Zablokowano przypadkowy hover filtrów podczas przelotu rdzenia (ostatni przebieg desktop 10/10 PASS; QA-before-flight-guard.json zachowuje wcześniejsze wykrycie). Na mobile otwarta grupa utrzymuje nagłówek w widoku; usunięto odziedziczony dodatkowy padding Security.
+W oględzinach poszerzono otwarte moduły technologii, poprawiono ostrość znaku w showroomie i usunięto zagnieżdżoną ramę kontaktu. Końcowe screeny i filmy po poprawkach.
+
+PLIKI ZMIENIONE W TYM PASSIE
+assets/hero-entry.css
+assets/hero-entry.mjs
+assets/installation.css
+assets/installation.mjs
+assets/interactions.css
+assets/interactions.mjs
+assets/showroom-scene.mjs
+assets/spatial-chapters.mjs
+index.html
+package.json
+scripts/build-site.py
+scripts/stage-public.py
+templates/about-contact.html
+templates/hero-installation.html
+templates/production-line.html
+
+WCZEŚNIEJSZE LOKALNE ZMIANY ZACHOWANE
+assets/hero-strata.svg
+assets/showroom-3d.mjs
+assets/showroom-lifecycle.mjs
+
+GIT / PUBLIKACJA
+HEAD: ca7330bca29396191413618df6cba7ecf09d18ca (niezmieniony).
+Bez commita, pushu, wdrożenia i publikacji. Preview nasłuchuje wyłącznie na 127.0.0.1:8205.

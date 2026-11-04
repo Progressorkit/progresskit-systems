@@ -1,0 +1,102 @@
+PROGRESSKIT SYSTEMS — MATERIAL / DEPTH / SHOWROOM PASS
+2026-11-03 | ownerVisualApproval: OPEN
+
+Strona: http://127.0.0.1:8209/
+Galeria, nowe filmy, screeny i rozdziały: http://127.0.0.1:8209/proof/
+
+Zachowano obecną kompozycję hero, położenie i skalę mechanizmu oraz paletę.
+To korekta istniejącej wersji, bez redesignu od zera.
+
+ZMIANY
+- Głębia: trzy odległości atmosfery w istniejących canvasach, różne prędkości,
+  oszczędny parallax perspektywiczny i miejscowe światło. Ruch samego tła
+  architektonicznego ograniczono do kilku pikseli.
+- Core: dodatkowy tylny przekrój optyczny, odbicia wewnętrzne, ostrzejszy
+  kierunkowy refleks i słabe odbicie logo przy krawędzi. Centrum pozostaje
+  czytelne. Wzmocniono istniejącą warstwę żaru, gorące końcówki i smugi popiołu.
+- Hero: korekta cienia kontaktowego i odbicia w podłożu oraz światła
+  odbieranego przez mechanizm. Układ i mechanizm zachowane.
+- Showroom: Core większy o około 14% względem poprzedniej skali WebGL,
+  projekty większe o około 5%, mocniejsza czytelność scenografii i powierzchni.
+  Hover płynnie wysuwa projekt w Z, lekko obraca materiał i lokalnie go oświetla;
+  pozostałe obiekty cofają się optycznie. Projekty korzystają z tej samej puli
+  proximity co dotychczasowe powierzchnie.
+- Services: ten sam układ dwóch obiektów; wyraźniejsze płaszczyzny, szlify,
+  cienie i lokalny refleks.
+- Process: pełne obrazy kryształów z bocznymi płaszczyznami CSS 3D, metalem
+  i aktywnym wnętrzem. Sześć obiektów, zero elementów .process-facet/wireframe.
+- Technologie: osiem zamkniętych kategorii z ikoną i liczbą pozycji.
+  Dopiero kliknięcie ujawnia siatkę z ikonami, nazwami i licznikami. Jedna
+  kategoria otwarta naraz, trzy kolumny desktop / dwie mobile. Zachowano 110
+  technologii oraz wszystkie ich wartości filtrów i liczniki.
+- Przewodnik: robot pozostaje; ciężką ramkę zastąpiono transparentną powierzchnią
+  projekcji i wiązką od robota. Dotychczasowy krótki sygnał służy akwizycji
+  projekcji. Teksty bez zmian. Film pokazuje projekt, Security i PostgreSQL.
+- Proximity: reakcja zależy od odległości. Pomiar przy 200 / 100 / 12 px dał
+  intensywność 0,026 / 0,460 / 0,932; blisko występują krótkie micro arcs.
+- Relief: większa różnica głębokości górnej i dolnej krawędzi, ciemne wnętrze,
+  wąski metaliczny refleks i lokalny crimson. Nadal maska SVG, bez text-shadow.
+
+BEZ ZMIAN DANYCH
+10/10 chronionych plików zachowało SHA-256: katalog, brand/operator, analytics,
+kontrolery katalogu/showroomu i ekosystemu. Oryginalne logo zachowane.
+19 projektów, statusy, nawigacja i sprawdzane treści zgodne z bazą.
+Jedyna zmiana nazw prezentacji to wskazane w odbiorze Web, Data i Delivery;
+pozostałe copy i nazwy technologii pozostały bez zmian.
+Nie dodano bitmap, zależności, rendererów ani kolejnej puli particles.
+Sześć istniejących canvasów ambient, 24 miejsca w puli proximity
+(maksymalnie osiem aktywnych na mobile). Atmosfera korzysta z małego
+jednorazowo przygotowanego obrazu w pamięci. Reużyto istniejący materiał
+i geometrię WebGL dust zamiast nowego systemu cząstek.
+
+WERYFIKACJA
+Zbiorcze wyniki: QA.json; szczegółowe raporty QA-desktop/mobile/checks.json,
+interaction-checks.json i material-checks.json.
+100 testów JavaScript PASS; 37 testów Python PASS; npm run check PASS.
+Dwa istniejące testy HTML technologii dostosowano do nowych spanów nazwy
+i licznika. Nadal sprawdzają każdą nazwę, licznik, unikalność, URL i escapowanie.
+Lokalny staging: 110 publicznych plików w /tmp/pk-precision-frozen-20261103.
+git diff --check PASS. Źródła i zachowane pliki opisano w manifestach SHA-256.
+
+PERFORMANCE — RZECZYWISTY LOKALNY T480s / UHD 620
+Chrome 155, 1440×900, DPR 1, quality 0. Pomiar bez nagrywania filmu.
+Ostatnie pięć sekund showroomu: przed mediana 50,3 FPS (44,5–51,1),
+po mediana 46,0 FPS (36,4–49,2). Typowa klatka przeglądarki 16,7 ms.
+Końcowy pomiar procesu miał p95 49,9 ms wobec 33,4 ms w bazie; wcześniejszy
+pomiar po zmianach miał 16,7 ms. Krótkie pomiary wykazują zmienność.
+To nie jest gwarancja stabilnych 60 FPS ani długotrwały benchmark. Szczegóły: PERFORMANCE.txt.
+Po pauzie i poza ekranem odpowiednie pętle zatrzymują się.
+
+PROOF I GRANICE
+Nowy desktop walkthrough: co najmniej 3 sekundy idle przy HERO, CORE,
+SHOWROOM, SERVICES, PROCESS, TECHNOLOGIES i ASSISTANT. Dodatkowo pokazuje
+hover, materializację, otwieranie projektu, ekosystem, kontakt, brief i stopkę.
+Film jest ciągły, bez przyspieszania i montowania scen. Rozdziały w galerii
+odpowiadają rzeczywistym znacznikom czasu. Znacznik kursora/tapnięć dotyczy
+tylko nagrania i odwzorowuje rzeczywiste zdarzenia wejściowe.
+Siedem kadrów depth test wykonano po wstrzymaniu ruchu kontrolką strony.
+Mobile jest emulacją Chrome z dotykiem; fizyczny telefon: NOT_RUN.
+
+Materiały nadal są hybrydowe: bitmapowe powierzchnie, płaszczyzny CSS 3D
+i Canvas oraz geometria/refrakcja WebGL w showroomie. Nie jest to pełna
+symulacja optyczna całej strony. Kadry i filmy pochodzą z przeglądarki.
+Testy funkcjonalne nie zastępują odbioru estetycznego właściciela.
+
+changed-files.txt — 11 plików zmienionych w tej rewizji.
+source-final-hashes.json — źródła odpowiadające końcowemu proof.
+SHA256SUMS.txt — integralność wybranych materiałów odbiorowych.
+QA-NOTES.txt — wyjaśnienia błędów w początkowych próbach kontrolnych.
+Wcześniejsze lokalne zmiany i artefakty zachowane.
+
+HEAD bez zmian: ca7330bca29396191413618df6cba7ecf09d18ca.
+Bez commita. Bez pushu. Bez publikacji.
+Serwer wyłącznie 127.0.0.1. ownerVisualApproval: OPEN.
+
+KOŃCOWE FILMY
+desktop.mp4 — 144.240 s, 1440×900, H.264, 25/1.
+mobile.mp4 — 118.480 s, 390×844, H.264, 25/1.
+Kontrole przeglądarkowe: 47 PASS / 0 FAIL.
+
+Kontrola galerii: 36/36 linków HTTP 200, oba MP4 odtwarzają się po seek
+do końcowych fragmentów, Range 206; bez błędów JS i overflow przy 1440/390 px.
+Obejrzano 9 kadrów z końcowego desktop MP4 i 6 z mobile MP4.

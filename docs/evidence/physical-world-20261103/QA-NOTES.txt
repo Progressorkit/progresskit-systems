@@ -1,0 +1,9 @@
+Final proof uses actual local Chrome screenshots and unedited browser recordings. MP4 is a format conversion of the original WebM.
+
+QA corrections during preparation:
+- An early transition check ran after an expensive screenshot and observed the already completed flight. The final check measures the state before taking its screenshot.
+- Locator screenshot of a larger-than-viewport scene could trigger category hover under a stationary pointer. Final proof moves the cursor to a neutral page edge before scrolling and uses viewport captures.
+- Animated process objects never satisfy the automation condition "stable". Final walkthrough moves the real pointer to their measured screen coordinates instead of waiting for them to stop.
+- One desktop browser session closed unexpectedly. Its incomplete take is not used as the final desktop proof.
+
+Original recordings from individual takes remain in raw-video/. Only desktop.webm and mobile.webm are the final selected recordings.

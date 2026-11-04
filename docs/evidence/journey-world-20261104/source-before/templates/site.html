@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <title>@@TITLE@@</title>
+  <meta name="description" content="@@DESCRIPTION@@">
+  <link rel="canonical" href="@@CANONICAL@@">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@@TITLE@@">
+  <meta property="og:description" content="@@DESCRIPTION@@">
+  <meta property="og:url" content="@@CANONICAL@@">
+  <meta property="og:image" content="https://progresskit.pl/og-progresskit.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@@TITLE@@">
+  <meta name="twitter:description" content="@@DESCRIPTION@@">
+  <meta name="twitter:image" content="https://progresskit.pl/og-progresskit.jpg">
+  <link rel="icon" href="@@ROOT@@assets/brand/progressorkit-stamp.png" type="image/png">
+  <link rel="stylesheet" href="@@ROOT@@assets/site-v4.css">
+  <link rel="stylesheet" href="@@ROOT@@assets/site-v5.css">
+  <link rel="stylesheet" href="@@ROOT@@assets/hero.css">
+  @@PAGE_STYLES@@
+  <link rel="stylesheet" href="@@ROOT@@assets/premium-controls.css">
+  <script type="module" src="@@ROOT@@assets/premium-controls.mjs"></script>
+  <script src="@@ROOT@@assets/site-v5.js" defer></script>
+  @@PAGE_SCRIPTS@@
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="brand" href="@@ROOT@@#start" aria-label="ProgressKit Systems, start">
+        <span class="brand__mark" aria-hidden="true"><img src="@@ROOT@@assets/brand/progressorkit-stamp.png" width="48" height="48" alt=""></span>
+        <span><span class="brand__title">PROGRESSKIT SYSTEMS</span></span>
+      </a>
+      <nav class="nav" aria-label="Główna nawigacja">@@NAV@@</nav>
+      <button class="menu-btn" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav id="mobile-menu" class="mobile-panel" aria-label="Nawigacja mobilna" hidden>@@NAV@@</nav>
+  </header>
+  <noscript><nav class="shell fallback-nav" aria-label="Nawigacja bez JavaScript">@@NAV@@</nav></noscript>
+  <main id="main" tabindex="-1">@@CONTENT@@</main>
+  <footer>
+    <div class="shell footer__inner">
+      <div class="footer-brand"><img src="@@ROOT@@assets/brand/progressorkit-stamp.png" width="40" height="40" alt="" aria-hidden="true"><div><strong>PROGRESSKIT SYSTEMS</strong></div></div>
+      <div class="footer__links"><span>© 2026 ProgressKit Systems</span><a href="mailto:pawel@progresskit.pl">E-mail</a><a href="https://www.tiktok.com/@progresskit" target="_blank" rel="noopener noreferrer">TikTok: @progresskit</a><a href="@@ROOT@@glikemia-premium/">Glikemia Premium</a><a href="@@ROOT@@progresskit-mail/">ProgressKit Mail</a><a href="@@ROOT@@prywatnosc/">Prywatność</a><a href="#main">↑ Góra</a></div>
+    </div>
+  </footer>
+  <dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-title">
+    <div class="gallery-dialog__toolbar"><h2 id="gallery-title">Galeria projektu</h2><button type="button" data-gallery-close aria-label="Zamknij powiększenie">Zamknij ×</button></div>
+    <figure><img id="gallery-image" alt=""><figcaption id="gallery-caption"></figcaption></figure>
+    <div class="gallery-dialog__controls"><button type="button" data-gallery-prev aria-label="Poprzedni obraz">← Poprzedni</button><span id="gallery-position" aria-live="polite"></span><button type="button" data-gallery-next aria-label="Następny obraz">Następny →</button></div>
+  </dialog>
+</body>
+</html>

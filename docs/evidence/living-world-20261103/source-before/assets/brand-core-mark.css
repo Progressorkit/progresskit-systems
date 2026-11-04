@@ -1,0 +1,37 @@
+/* The header keeps its original slot and link. This small cached recording is
+   the real showroom Core; it does not create another live WebGL renderer. */
+body.luxury-world > .topbar .brand__mark[data-brand-core-mark] {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  filter: none;
+}
+body.luxury-world > .topbar .brand__mark[data-brand-core-mark] > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  opacity: 1;
+  filter: grayscale(.7) drop-shadow(0 2px 3px #000);
+}
+body.luxury-world > .topbar .brand-core-mark__video {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  /* The capture fades into the same near-black material as the navigation. */
+  mask-image: radial-gradient(ellipse 70% 70%, #000 62%, transparent 97%);
+}
+body.luxury-world > .topbar .brand__mark.is-brand-core-playing > img { opacity: 0; }
+body.luxury-world > .topbar .brand__mark.is-brand-core-playing > .brand-core-mark__video { opacity: 1; }
+html[data-interface-motion="paused"] body.luxury-world > .topbar .brand__mark[data-brand-core-mark] > img { opacity: 1; }
+html[data-interface-motion="paused"] body.luxury-world > .topbar .brand__mark[data-brand-core-mark] > video { opacity: 0; }
+@media (prefers-reduced-motion: reduce), (forced-colors: active), print {
+  body.luxury-world > .topbar .brand__mark[data-brand-core-mark] > img { opacity: 1; }
+  body.luxury-world > .topbar .brand__mark[data-brand-core-mark] > video { display: none; }
+}

@@ -1,0 +1,56 @@
+
+> test
+> node --test tests/*.test.cjs
+
+TAP version 13
+# Subtest: tests/catalog-filters.test.cjs
+ok 1 - tests/catalog-filters.test.cjs
+  ---
+  duration_ms: 347.831662
+  type: 'test'
+  ...
+# Subtest: tests/hero-space.test.cjs
+ok 2 - tests/hero-space.test.cjs
+  ---
+  duration_ms: 201.858577
+  type: 'test'
+  ...
+# Subtest: tests/interface-life.test.cjs
+ok 3 - tests/interface-life.test.cjs
+  ---
+  duration_ms: 263.838075
+  type: 'test'
+  ...
+# Subtest: tests/project-hologram.test.cjs
+ok 4 - tests/project-hologram.test.cjs
+  ---
+  duration_ms: 300.782079
+  type: 'test'
+  ...
+# Subtest: tests/project-showroom.test.cjs
+ok 5 - tests/project-showroom.test.cjs
+  ---
+  duration_ms: 1214.775717
+  type: 'test'
+  ...
+# Subtest: tests/showroom-3d.test.cjs
+ok 6 - tests/showroom-3d.test.cjs
+  ---
+  duration_ms: 324.53367
+  type: 'test'
+  ...
+# Subtest: tests/site-analytics.test.cjs
+ok 7 - tests/site-analytics.test.cjs
+  ---
+  duration_ms: 273.901073
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1283.457628

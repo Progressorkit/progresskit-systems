@@ -1,0 +1,40 @@
+PERFORMANCE / T480s / LOCAL UHD 620 / Chrome 155 / 1440x900
+Five-second samples without recording. Browser rAF cadence and WebGL render FPS are different metrics.
+
+BEFORE: ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)
+Showroom last five one-second samples: median 50.3 FPS; range 44.5–51.1 FPS.
+DPR 1; quality 0; draw calls 38–38.
+start: browser rAF median 16.7 ms, p95 16.8 ms
+rdzen: browser rAF median 16.7 ms, p95 33.3 ms
+projekty: browser rAF median 16.7 ms, p95 33.4 ms
+uslugi: browser rAF median 16.7 ms, p95 16.7 ms
+proces: browser rAF median 16.7 ms, p95 33.4 ms
+technologie: browser rAF median 16.7 ms, p95 16.7 ms
+Paused pending loops: {'scene': False, 'ambient': False, 'interaction': False}
+
+AFTER: ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)
+Showroom last five one-second samples: median 51.0 FPS; range 46.2–55.0 FPS.
+DPR 1; quality 0; draw calls 39–40.
+start: browser rAF median 16.7 ms, p95 16.8 ms
+rdzen: browser rAF median 16.7 ms, p95 33.3 ms
+projekty: browser rAF median 16.7 ms, p95 33.4 ms
+uslugi: browser rAF median 16.7 ms, p95 16.8 ms
+proces: browser rAF median 16.7 ms, p95 16.7 ms
+technologie: browser rAF median 16.7 ms, p95 16.7 ms
+Paused pending loops: {'scene': False, 'ambient': False, 'interaction': False}
+
+FINAL: ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)
+Showroom last five one-second samples: median 46.0 FPS; range 36.4–49.2 FPS.
+DPR 0.65; quality 2; draw calls 39–40.
+start: browser rAF median 16.7 ms, p95 33.3 ms
+rdzen: browser rAF median 16.7 ms, p95 33.4 ms
+projekty: browser rAF median 16.7 ms, p95 33.4 ms
+uslugi: browser rAF median 16.7 ms, p95 16.8 ms
+proces: browser rAF median 16.7 ms, p95 49.9 ms
+technologie: browser rAF median 16.7 ms, p95 16.8 ms
+Paused pending loops: {'scene': False, 'ambient': False, 'interaction': False}
+
+Interpretation: showroom throughput and median browser cadence remain close to baseline.
+The final process sample has a higher p95 (49.9 ms versus baseline 33.4 ms); the earlier after sample was 16.7 ms.
+Short measurements vary; this is not a sustained benchmark or a claim of stable 60 FPS.
+Same six ambient canvases and 24-slot proximity pool, 8 live particles maximum on mobile. Existing dust renderer material reused.

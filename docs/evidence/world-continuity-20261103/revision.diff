@@ -1,0 +1,505 @@
+--- before/index.html
++++ after/index.html
+@@ -49,6 +49,7 @@
+   <link rel="stylesheet" href="assets/hero-entry.css">
+   <link rel="stylesheet" href="assets/installation.css">
+   <link rel="stylesheet" href="assets/interactions.css">
++  <link rel="stylesheet" href="assets/world-continuity.css">
+   <script src="assets/site-v5.js" defer></script>
+   <script src="assets/hero-space.js" defer></script>
+   <script src="assets/project-hologram.js" defer></script>
+@@ -57,7 +58,6 @@
+   <script src="assets/ecosystem-system.js" defer></script>
+   <script type="module" src="assets/showroom-3d.mjs"></script>
+   <script type="module" src="assets/spatial-chapters.mjs"></script>
+-  <script type="module" src="assets/luxury-world.mjs"></script>
+   <script type="module" src="assets/continuity-chapters.mjs"></script>
+   <script type="module" src="assets/technology-field.mjs"></script>
+   <script type="module" src="assets/brand-core-mark.mjs"></script>
+@@ -66,6 +66,7 @@
+   <script type="module" src="assets/interactions.mjs"></script>
+ </head>
+ <body class="luxury-world">
++  <div class="installation-world" aria-hidden="true"><div class="installation-world__architecture"></div><div class="installation-world__light"></div><canvas class="world-embers"></canvas></div>
+   <a class="skip-link" href="#main">Przejdź do treści</a>
+   <header class="topbar">
+     <div class="shell topbar__inner">
+
+--- before/scripts/build-site.py
++++ after/scripts/build-site.py
+@@ -562,10 +562,10 @@
+         page_styles+='\n  <link rel="stylesheet" href="assets/hero-entry.css">'
+         page_styles+='\n  <link rel="stylesheet" href="assets/installation.css">'
+         page_styles+='\n  <link rel="stylesheet" href="assets/interactions.css">'
++        page_styles+='\n  <link rel="stylesheet" href="assets/world-continuity.css">'
+     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
+     if not path and not prefix:
+         page_scripts+='\n  <script type="module" src="assets/showroom-3d.mjs"></script>\n  <script type="module" src="assets/spatial-chapters.mjs"></script>'
+-        page_scripts+='\n  <script type="module" src="assets/luxury-world.mjs"></script>'
+         page_scripts+='\n  <script type="module" src="assets/continuity-chapters.mjs"></script>\n  <script type="module" src="assets/technology-field.mjs"></script>'
+         page_scripts+='\n  <script type="module" src="assets/brand-core-mark.mjs"></script>'
+         page_scripts+='\n  <script type="module" src="assets/hero-entry.mjs"></script>'
+@@ -581,7 +581,7 @@
+     if '@@' in template:
+         raise ValueError('Unfilled template slot.')
+     if not path and not prefix:
+-        template=template.replace('<body>','<body class="luxury-world">')
++        template=template.replace('<body>','<body class="luxury-world">\n  <div class="installation-world" aria-hidden="true"><div class="installation-world__architecture"></div><div class="installation-world__light"></div><canvas class="world-embers"></canvas></div>')
+     return template
+ 
+ 
+
+--- before/scripts/stage-public.py
++++ after/scripts/stage-public.py
+@@ -23,7 +23,7 @@
+         'assets/luxury-world.css','assets/luxury-world.mjs','assets/luxury-chapters.css','assets/luxury-showroom.css','assets/black-finish.svg',
+         'assets/continuity-process.css','assets/continuity-chapters.css','assets/continuity-chapters.mjs','assets/technology-field.css','assets/technology-field.mjs',
+         'assets/world/installation-chamber.webp','assets/world/optical-core.webp','assets/world/crystal-artefact.webp','assets/world/process-crystal.webp',
+-        'assets/material-finish.css','assets/hero-entry.css','assets/hero-entry.mjs','assets/hero-strata.svg','assets/installation.css','assets/installation.mjs','assets/interactions.css','assets/interactions.mjs',
++        'assets/material-finish.css','assets/hero-entry.css','assets/hero-entry.mjs','assets/hero-strata.svg','assets/installation.css','assets/world-continuity.css','assets/installation.mjs','assets/interactions.css','assets/interactions.mjs',
+         'assets/brand-core-mark.css','assets/brand-core-mark.mjs',
+         'assets/brand/progresskit-core-mark.webm',
+         'assets/showroom-3d.css','assets/showroom-3d.mjs','assets/showroom-scene.mjs','assets/showroom-lifecycle.mjs',
+
+--- before/assets/hero-entry.css
++++ after/assets/hero-entry.css
+@@ -1,7 +1,5 @@
+ /* Foyer → sealed core → existing project scene. The same mark survives the handoff. */
+-body.luxury-world #main > .hero.hero--installation { position:relative; isolation:isolate; height:calc(100svh - 78px); min-height:700px; max-height:1000px; margin:0; padding:0; overflow:hidden; background:#060607; }
+-body.luxury-world #main > .hero--installation::before { inset:-3%; opacity:1; background:url('world/installation-chamber.webp') 65% 50%/cover; transform:translate(var(--depth-far-x,0px),var(--depth-far-y,0px)); transition:transform 1.8s ease-out; animation:none; }
+-body.luxury-world #main > .hero--installation::after { inset:0; height:auto; background:linear-gradient(90deg,#08070944,transparent 55%),linear-gradient(0deg,#050505,transparent 14%); pointer-events:none; }
++body.luxury-world #main > .hero.hero--installation { position:relative; isolation:isolate; height:calc(100svh - 78px); min-height:700px; max-height:1000px; margin:0; padding:0; overflow:visible; background:none; }
+ body.luxury-world #main .hero--installation .hero__stone-title { position:absolute; inset:0; width:100%; max-width:none; padding:0; z-index:2; pointer-events:none; }
+ body.luxury-world #main .hero--installation .hero__discipline { position:absolute; top:15%; left:6%; margin:0; font:9px/1.5 var(--mono); letter-spacing:.28em; color:#b09fa5; }
+ body.luxury-world #main .hero--installation h1.stone-word { position:absolute; top:23%; left:5.5%; width:65%; max-width:none; display:flex; flex-direction:column; align-items:flex-start; gap:.1em; margin:0; font:700 clamp(52px,7.3vw,122px)/1.03 "PK Monument",Georgia,serif; transform:none; }
+@@ -28,8 +26,7 @@
+ .machine-shadow { position:absolute; inset:73% 2% -4%; background:radial-gradient(ellipse,#000e,transparent 70%); transform:rotate(-12deg); filter:blur(14px); }
+ .machine-caption { position:absolute; bottom:0; left:28%; right:10%; color:#b3a5ac; font:9px/1.8 var(--mono); letter-spacing:.22em; display:flex; justify-content:space-between; border-top:1px solid #ba9ba338; padding-top:15px; }.machine-caption span { color:#96888f; }.machine-caption b { font-size:18px; font-weight:400; }
+ /* The main core lives below the foyer, centred inside a thick convex shell. */
+-.core-sanctum { position:relative; isolation:isolate; min-height:820px; height:calc(100svh - 80px); max-height:1100px; overflow:hidden; scroll-margin-top:65px; background:#060506; }
+-.core-sanctum::before { content:""; position:absolute; inset:0; background:linear-gradient(#050505,transparent 26% 72%,#050505),url('world/installation-chamber.webp') 72% 50%/cover; opacity:.45; transform:scale(1.25) translate(var(--depth-far-x,0px),var(--depth-far-y,0px)); transition:transform 1.8s ease-out; }
++.core-sanctum { position:relative; isolation:isolate; min-height:820px; height:calc(100svh - 80px); max-height:1100px; overflow:visible; scroll-margin-top:65px; background:none; }
+ .core-relief { position:absolute; top:9%; width:100%; text-align:center; font:700 clamp(55px,10vw,156px)/1.1 "PK Monument",Georgia,serif; letter-spacing:-.055em; color:#080609; -webkit-text-stroke:0; text-shadow:none; filter:url(#pk-cutout); pointer-events:none; }
+ .core-relief span { display:block; margin-top:20px; font:400 .18em/1.4 var(--sans); letter-spacing:.7em; padding-left:.7em; }
+ body.luxury-world .core-sanctum .hero__insignia { position:absolute; display:block; left:50%; top:51%; width:min(47vw,calc(100svh - 280px),690px); aspect-ratio:1; right:auto; bottom:auto; transform:translate(-50%,-50%); z-index:3; opacity:1; text-decoration:none; border-radius:50%; outline-offset:14px; }
+@@ -88,7 +85,6 @@
+ .machine-assembly::before { content:""; position:absolute; inset:5%; transform:translateZ(78px); background:radial-gradient(ellipse at var(--light-x,45%) var(--light-y,35%),#eef0f317,transparent 54%); mask:url('world/optical-core.webp') center/contain no-repeat; pointer-events:none; }
+ .machine-shadow { filter:blur(10px); background:radial-gradient(ellipse,#000 10%,#000d 35%,transparent 72%); }
+ .machine-shadow::after { content:""; position:absolute; inset:-110% 5% -25%; background:url('world/optical-core.webp') center/contain no-repeat; transform:scaleY(-.42) skewX(-12deg); opacity:.23; mask-image:linear-gradient(transparent,#000 35%,transparent 80%); }
+-.core-sanctum::before { opacity:.55; }
+ .core-shell__depth { box-shadow:inset 12px 7px 5px #c0c8d923,inset -15px -8px 8px #000b,inset 2px 3px 1px #b9abb54a,12px 38px 35px #000b; background:radial-gradient(ellipse at 46% 68%,#721d2638,#07050880 66%); }
+ .core-shell__rim::before { content:""; position:absolute; inset:0; background:inherit; transform:translate(-6px,8px) scale(1.025); z-index:-1; filter:brightness(.58); }
+ .core-shell__rim::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at var(--light-x,38%) var(--light-y,24%),#e7edf61c,transparent 58%); mask:url('world/optical-core.webp') center/contain no-repeat; }
+
+--- before/assets/installation.css
++++ after/assets/installation.css
+@@ -1,19 +1,16 @@
+ /* Physical installation: photographed material plates and separate optical
+    depth planes. Catalog, navigation and interaction state are unchanged. */
+ body.luxury-world { --world-energy:#b04642; --text:#e9e2e6; --muted:#b9adb4; }
+-body.luxury-world #main { background:#050505; }
+ body.luxury-world #main > :is(.home-chapter,.technology-section,.project-showroom),
+ body.luxury-world #main > .installation-console { position:relative; isolation:isolate; }
+-body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#wydania,#o-mnie,#wyzwania,#technologie,#kontakt) { background-color:#060607; }
+ .world-embers { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; contain:strict; }
+ body.luxury-world #main :is(.home-chapter,.technology-section,.project-showroom) > .shell { position:relative; z-index:2; }
+-body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#technologie)::before { content:""; position:absolute; z-index:0; inset:0; width:auto; height:auto; border:0; border-radius:0; transform:none; background:url('world/installation-chamber.webp') 60% 70%/cover; opacity:.32; pointer-events:none; mask-image:linear-gradient(transparent,#000 25% 75%,transparent); }
+ body.luxury-world #main .section-title { letter-spacing:-.055em; text-transform:none; }
+ body.luxury-world #main .section-kicker { font-size:9px; letter-spacing:.24em; color:#be9da8; }
+ body.luxury-world #main .cta { border-radius:1px; box-shadow:inset 0 1px #e9d2d338,inset 0 -1px #0009,0 8px 22px #0005; }
+ body.luxury-world #main .cta--primary { background:linear-gradient(125deg,#78283a,#451324 62%,#271019); border-color:#ba657160; }
+ /* Services: two large optical volumes. Text sits in the central clear region. */
+-body.luxury-world #main #uslugi { padding:110px 0 120px; background:radial-gradient(ellipse 65% 43% at 50% 55%,#2d10203a,transparent 82%),#060607; }
++body.luxury-world #main #uslugi { padding:110px 0 120px; background:none; }
+ #uslugi .service-space { display:none; }
+ #uslugi .service-zones { gap:9%; padding:30px 2% 25px; perspective:1600px; }
+ #uslugi .services-heading { margin-bottom:60px; }
+@@ -31,7 +28,7 @@
+ #uslugi .services-technologies { margin-top:60px; }
+ /* Six suspended instruments, each with a solid quartz body and metal collar.
+    The process controller still owns the current stage and energy handoff. */
+-body.luxury-world #main #proces { background:#050506; }
++body.luxury-world #main #proces { background:none; }
+ #proces .production-heading::after { display:none; }
+ #proces .production-space { min-height:920px; }
+ #proces .process-object { width:190px; height:265px; position:relative; background:none; transform-style:preserve-3d; transform:rotateY(calc(-8deg + var(--process-scroll-yaw,0deg))) rotateZ(var(--chamber-turn,-9deg)) translateZ(var(--process-scroll-z,0px)); filter:drop-shadow(14px 26px 10px #000b); transition:filter .8s,transform .9s,opacity .8s; }
+@@ -45,7 +42,7 @@
+ #proces .production-line h3 { letter-spacing:.02em; }
+ @keyframes process-heat { from { opacity:.35; } to { opacity:1; } }
+ /* Workshop: a navigable collection of eight optical instruments. */
+-body.luxury-world #main #technologie { background:radial-gradient(ellipse 80% 50% at 20% 60%,#25132238,transparent 86%),#060608; padding:120px 0; }
++body.luxury-world #main #technologie { background:none; padding:120px 0; }
+ #main #technologie .technology-groups { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:start; gap:55px 24px; margin-top:70px; padding:0 8px; }
+ #main #technologie .technology-group:nth-child(n) { grid-column:auto!important; grid-row:auto!important; margin:0!important; padding:0; min-height:0; transform:rotate(var(--field-turn,-2deg)); --field-turn:-2deg; --field-shape:polygon(7% 0,86% 3%,100% 23%,94% 88%,80% 100%,8% 93%,0 71%); transition:transform .5s,filter .5s; }
+ #main #technologie .technology-group:nth-child(2n) { --field-turn:2deg; margin-top:40px!important; }
+@@ -79,10 +76,10 @@
+ body.luxury-world #ekosystem .ecosystem-system.has-preview .ecosystem-node:not(.is-previewed):not(.is-related) { opacity:.37; }
+ body.luxury-world #ekosystem .ecosystem-console { background:radial-gradient(ellipse at 40% 0,#c0cad313,transparent 70%),#0b0a1180; border-color:#aa9db139; box-shadow:inset 0 1px #e5e7ee1c,inset 0 -8px 12px #0007; }
+ /* Quiet chapters retain their content with a deeper material backdrop. */
+-body.luxury-world #main #o-mnie { background:#040405; padding:145px 0; }
++body.luxury-world #main #o-mnie { background:none; padding:145px 0; }
+ body.luxury-world #o-mnie::before { content:"PK"; position:absolute; right:4%; top:-30px; color:#0a070b; font:700 400px/1 "PK Monument",serif; -webkit-text-stroke:1px #47343f42; text-shadow:1px 2px 2px #7143561f; opacity:.7; pointer-events:none; }
+ body.luxury-world #o-mnie .collaboration { background:none; border:0; box-shadow:none; padding:0 0 0 35px; border-left:1px solid #9d4d6338; }
+-body.luxury-world #main #wyzwania { background:radial-gradient(ellipse at 74% 55%,#38132424,transparent 65%),#050506; }
++body.luxury-world #main #wyzwania { background:none; }
+ /* Contact and brief are two semantic parts of one recessed console. */
+ body.luxury-world #main > .installation-console { position:relative; margin:90px auto 110px; width:calc(100% - 10vw); max-width:1400px; padding:72px 6%; border:1px solid #a2aab04a; border-radius:2px; background:radial-gradient(ellipse 80% 14% at 38% 0,#d9e3ef16,transparent 78%),radial-gradient(ellipse at 92% 82%,#66213b23,transparent 64%),linear-gradient(120deg,#171b2466,#08090e 52%,#101019); box-shadow:inset 4px 4px 4px #d7e2ef1a,inset -8px -10px 14px #000a,0 40px 100px #000a; }
+ body.luxury-world .installation-console::before { content:""; position:absolute; inset:9px; border:1px solid #c4c3dd16; border-radius:0; pointer-events:none; }
+@@ -97,7 +94,7 @@
+ body.luxury-world #main #brief .brief-grid textarea:focus { outline:1px solid #cfaab9; outline-offset:3px; border-color:#bf718a99; box-shadow:inset 1px 3px 8px #0009,inset 0 -2px #a1455f5c,0 8px 20px #55172e15; }
+ body.luxury-world #main #brief .brief-grid label:focus-within { color:#f3e0e9; }
+ /* The last optical footprint loses its heat and leaves a silver mark in black. */
+-body.luxury-world:has(#main > .hero--monument) > footer { position:relative; min-height:580px; background:linear-gradient(#050505,#030203 65%,#010102); isolation:isolate; }
++body.luxury-world:has(#main > .hero--monument) > footer { position:relative; min-height:580px; background:none; isolation:isolate; }
+ body.luxury-world:has(#main > .hero--monument) > footer::before { height:380px; margin:0; mask-image:none; background:url('brand/progressorkit-stamp.png') center 38%/160px no-repeat; opacity:calc(.25 - var(--continuity-end)*.15); filter:grayscale(1) brightness(.65); transform:none; }
+ body.luxury-world:has(#main > .hero--monument) > footer::after { top:0; left:0; right:0; height:400px; background:radial-gradient(ellipse 42% 22% at 50% 35%,#7c23342b,transparent 80%); opacity:calc(.7 - var(--continuity-end)*.65); transform:none; }
+ body.luxury-world:has(#main > .hero--monument) > footer .footer__inner { position:relative; z-index:2; }
+@@ -163,9 +160,6 @@
+ body.luxury-world #main #technologie .technology-chips::before { content:none; }
+ #main #technologie .technology-group__title::before { content:none; }
+ 
+-body.luxury-world #main #proces::before { background-position:30% 50%; transform:scaleX(-1); opacity:.28; }
+-body.luxury-world #main #ekosystem::before { background-position:78% 50%; opacity:.25; }
+-body.luxury-world #main #technologie::before { background-position:35% 50%; opacity:.24; }
+ 
+ #projekty.showroom-3d-ready .capsule-audio { left:14px; right:auto; }
+ 
+@@ -176,7 +170,6 @@
+ 
+ /* Material/depth correction, retaining the chapter layouts and assets. */
+ .world-embers { z-index:1; }
+-body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#technologie)::before { transition:translate 1.8s ease-out; translate:var(--depth-far-x,0px) var(--depth-far-y,0px); }
+ body.luxury-world #uslugi .service-object { filter:drop-shadow(13px 35px 12px #000c) contrast(1.08) brightness(1.09); }
+ body.luxury-world #uslugi .service-object::before { inset:2%; background:linear-gradient(118deg,transparent 12%,#f0f0f13b 14%,#c2c9d314 17%,transparent 21% 70%,#dfc3cd19 73%,transparent 76%); clip-path:polygon(7% 7%,83% 0,100% 21%,94% 84%,82% 100%,8% 93%,0 72%); mask:url('world/crystal-artefact.webp') center/100% 100% no-repeat; transform:translateZ(32px); opacity:.65; }
+ body.luxury-world #uslugi .service-object::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at var(--light-x,30%) var(--light-y,30%),#cbd6df24,transparent 63%); mask:url('world/crystal-artefact.webp') center/100% 100% no-repeat; pointer-events:none; }
+
+--- before/assets/installation.mjs
++++ after/assets/installation.mjs
+@@ -1,76 +1,96 @@
+-/* Ambient hot ash belongs behind the objects. Bounded Canvas2D pools, never DOM particles. */
++/* One persistent world: viewport-sized atmosphere, world-space camera travel.
++   Section observers control foreground animation only; never particle pools. */
+ const root = document.querySelector('.hero--installation');
+-if (root) {
+-  const reduce=matchMedia('(prefers-reduced-motion: reduce)'), forced=matchMedia('(forced-colors: active)');
+-  const compact=matchMedia('(max-width: 700px)'), fine=matchMedia('(hover: hover) and (pointer: fine)');
+-  const listeners=[], pools=[], visible=new Set();
+-  let raf=0,timer=0,dead=false,leaving=false,frames=0,last=0,charge=0;
++const world = document.querySelector('.installation-world');
++if (root && world) {
++  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
++  const forced = matchMedia('(forced-colors: active)');
++  const compact = matchMedia('(max-width: 700px)');
++  const fine = matchMedia('(hover: hover) and (pointer: fine)');
++  const listeners = [], visible = new Set();
++  const canvas = world.querySelector('canvas'), ctx = canvas.getContext('2d', {alpha:true});
++  let raf=0, timer=0, pointerFrame=0, dead=false, leaving=false;
++  let frames=0, last=0, elapsed=0, charge=0, w=1, h=1, scale=1;
++  let scrollTarget=scrollY, cameraY=scrollY;
+   const perspective={x:0,y:0,tx:0,ty:0};
+-  const on=(node,type,fn,options)=>{node.addEventListener(type,fn,options);listeners.push(()=>node.removeEventListener(type,fn,options));};
++  const on=(node,type,fn,options)=>{node?.addEventListener(type,fn,options);listeners.push(()=>node?.removeEventListener(type,fn,options));};
+   const paused=()=>reduce.matches||forced.matches||document.hidden||leaving||document.documentElement.dataset.interfaceMotion==='paused';
+-  const sprite=document.createElement('canvas');sprite.width=sprite.height=32;const s=sprite.getContext('2d');
+-  const g=s.createRadialGradient(16,16,0,16,16,15);g.addColorStop(0,'#fff2d8');g.addColorStop(.13,'#f4a174');g.addColorStop(.3,'#c94838b0');g.addColorStop(1,'#9b211d00');s.fillStyle=g;s.fillRect(0,0,32,32);
+-  // One cached atmosphere plate, composited at three distances into the same
+-  // six canvases. No additional renderer, particle pool or animation loop.
++  const sprite=document.createElement('canvas');sprite.width=sprite.height=32;
++  const s=sprite.getContext('2d'), g=s.createRadialGradient(16,16,0,16,16,15);
++  g.addColorStop(0,'#fff2d8');g.addColorStop(.13,'#f4a174');g.addColorStop(.3,'#c94838b0');g.addColorStop(1,'#9b211d00');s.fillStyle=g;s.fillRect(0,0,32,32);
+   const haze=document.createElement('canvas');haze.width=512;haze.height=256;
+-  const hctx=haze.getContext('2d');
++  const hc=haze.getContext('2d');
+   for(let i=0;i<24;i++){
+     const x=(i*137)%512,y=(i*71)%256,r=35+(i*19)%90;
+-    const cloud=hctx.createRadialGradient(x,y,0,x,y,r);
++    const cloud=hc.createRadialGradient(x,y,0,x,y,r);
+     cloud.addColorStop(0,i%3?'#79545c50':'#a86d682e');cloud.addColorStop(.45,'#482b3540');cloud.addColorStop(1,'#15101900');
+-    hctx.fillStyle=cloud;hctx.fillRect(0,0,512,256);
++    hc.fillStyle=cloud;hc.fillRect(0,0,512,256);
+   }
+-  for(const section of document.querySelectorAll('#start,#rdzen,#uslugi,#proces,#ekosystem,body.luxury-world>footer')) {
+-    const canvas=document.createElement('canvas');canvas.className='world-embers';canvas.setAttribute('aria-hidden','true');section.prepend(canvas);
+-    const core=section.id==='rdzen',hero=section.id==='start',footer=section.tagName==='FOOTER';
+-    const p={section,canvas,ctx:canvas.getContext('2d',{alpha:true}),w:1,h:1,scale:1,core,hero,footer,particles:[],frames:0};
+-    let seed=31+pools.length*211;const rand=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);
+-    for(let i=0;i<(core?148:hero?42:footer?9:16);i++)p.particles.push({x:rand(),phase:rand(),speed:.018+rand()*.025,z:rand(),wave:rand()*6.28,life:.3+rand()*.65});
+-    const resize=()=>{const b=section.getBoundingClientRect();p.w=b.width;p.h=b.height;p.scale=Math.min(.75,900/p.w,800/p.h);canvas.width=Math.max(1,Math.round(p.w*p.scale));canvas.height=Math.max(1,Math.round(p.h*p.scale));};
+-    p.resize=resize;resize();pools.push(p);
++  let seed=31;
++  const rand=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);
++  // Pool identity survives scrolling, chapter changes, resizing and charging.
++  const particles=Array.from({length:116},(_,id)=>({id,x:rand(),phase:rand(),speed:.014+rand()*.024,z:rand(),wave:rand()*6.28,life:.3+rand()*.65}));
++  const count=()=>compact.matches?64:particles.length;
++  function resize(){
++    w=innerWidth;h=innerHeight;scale=Math.min(.75,1000/w,800/h);
++    canvas.width=Math.max(1,Math.round(w*scale));canvas.height=Math.max(1,Math.round(h*scale));
+   }
+-  const objects=[...document.querySelectorAll('[data-installation-object]')];
+-  const observer=new IntersectionObserver(entries=>{for(const e of entries){e.target.dataset.installationVisible=String(e.isIntersecting);const p=pools.find(p=>p.section===e.target);if(p){if(e.isIntersecting)visible.add(p);else visible.delete(p);}}sync();},{threshold:.01});
+-  [...new Set([...pools.map(p=>p.section),...objects])].forEach(n=>observer.observe(n));
+-  const ro=new ResizeObserver(entries=>{for(const e of entries)pools.find(p=>p.section===e.target)?.resize();});pools.forEach(p=>ro.observe(p.section));
+-  function stop(){cancelAnimationFrame(raf);clearTimeout(timer);raf=timer=0;last=0;}
+-  function draw(now){raf=0;if(paused()||dead||!visible.size)return;last=now;const time=now/1000;
+-    perspective.x+=(perspective.tx-perspective.x)*.045;perspective.y+=(perspective.ty-perspective.y)*.045;
+-    for(const p of visible){const {ctx,w,h}=p;ctx.setTransform(p.scale,0,0,p.scale,0,0);ctx.clearRect(0,0,w,h);
+-      // The distant opening, middle smoke and near reflected haze move at
+-      // different scales. The architecture itself barely shifts at all.
+-      if(!p.footer){
+-        ctx.globalAlpha=.21;ctx.drawImage(haze,w*.12+Math.sin(time*.018)*w*.025-perspective.x*2,h*.12-perspective.y,w*.85,h*.6);
+-        ctx.globalAlpha=.19;ctx.drawImage(haze,w*-.1+Math.sin(time*.033+2)*w*.045-perspective.x*8,h*.38+Math.cos(time*.021)*h*.035-perspective.y*5,w*1.25,h*.45);
+-        ctx.globalAlpha=.12;ctx.drawImage(haze,w*.3+Math.cos(time*.047)*w*.055-perspective.x*18,h*.68-perspective.y*10,w*.9,h*.35);
+-        ctx.strokeStyle='#ad8f9e';ctx.globalAlpha=.035;ctx.lineWidth=1;
+-        for(let j=0;j<3;j++){const vx=w*(.53+j*.08)-perspective.x*4;ctx.beginPath();ctx.moveTo(vx,h*.43);ctx.lineTo(w*(j*.48-.22)-perspective.x*14,h);ctx.stroke();}
+-      }
+-      if(p.core){
+-        const heat=ctx.createRadialGradient(w*.5,h*.51,5,w*.5,h*.51,w*.3);
+-        heat.addColorStop(0,'#ad27213d');heat.addColorStop(.35,'#8d18252a');heat.addColorStop(1,'#3b0a1400');
+-        ctx.globalAlpha=.8+Math.sin(time*.43)*.12;ctx.fillStyle=heat;ctx.fillRect(0,h*.15,w,h*.7);
+-      }
+-      const max=compact.matches?Math.ceil(p.particles.length*.5):p.particles.length;
+-      const energy=p.core&&now<charge?1.7:1;
+-      p.particles.slice(0,max).forEach((a,i)=>{const phase=(a.phase+time*a.speed*energy)%1,fade=Math.sin(phase*Math.PI)*a.life;
+-        const x=(p.core?w*(.23+a.x*.54)+Math.sin(time*.32+a.wave)*(12+a.z*18):p.hero?w*(.54+a.x*.4):(i%2?w*(.93+a.x*.06):w*(.01+a.x*.07)))-perspective.x*(3+a.z*18);
+-        const y=p.core?h*(.9-phase*.72):p.hero?h*(.76-phase*.48):h*(1-phase);
+-        const size=(p.core?.8:.6)+a.z*(p.core?2.2:1.6);ctx.globalAlpha=Math.min(1,fade*(p.footer?.4:p.core?1.2:.8)*energy);ctx.drawImage(sprite,x-size*2,y-size*2,size*4,size*4);
+-        if(p.core&&a.z>.42){ctx.fillStyle=a.z>.78?'#ffe5c5':'#dc7959';ctx.fillRect(x,y,Math.max(.9,a.z*1.8),Math.max(1,a.z*2.5));}
+-        if(a.z>.58&&p.core){ctx.strokeStyle='#ef9b7199';ctx.lineWidth=1.1;ctx.beginPath();ctx.moveTo(x+1.8,y+size*(3+a.z*4));ctx.lineTo(x-.6,y-size*.8);ctx.stroke();}
+-      });ctx.globalAlpha=1;p.frames++;
+-    }frames++;schedule();
++  const objects=[...new Set(document.querySelectorAll('#start,#rdzen,[data-installation-object]'))];
++  const observer=new IntersectionObserver(entries=>{
++    for(const e of entries){e.target.dataset.installationVisible=String(e.isIntersecting);if(e.isIntersecting)visible.add(e.target);else visible.delete(e.target);}
++  },{threshold:.01});
++  objects.forEach(e=>observer.observe(e));
++  function stop(){cancelAnimationFrame(raf);clearTimeout(timer);cancelAnimationFrame(pointerFrame);raf=timer=pointerFrame=0;last=0;}
++  function draw(now){
++    raf=0;if(paused()||dead)return;
++    const dt=last?Math.min(.1,(now-last)/1000):0;last=now;elapsed+=dt;
++    cameraY+=(scrollTarget-cameraY)*Math.min(1,dt*9);
++    perspective.x+=(perspective.tx-perspective.x)*.09;perspective.y+=(perspective.ty-perspective.y)*.09;
++    const depth=1-Math.exp(-Math.max(0,cameraY)/6500);
++    // Far architecture, middle illumination and near ash have distinct rates,
++    // all derived from the same unsegmented camera coordinate.
++    world.style.setProperty('--world-scale',String(1+depth*.14));
++    world.style.setProperty('--world-far-x',`${perspective.x*-4}px`);
++    world.style.setProperty('--world-far-y',`${depth*-h*.065-perspective.y*3}px`);
++    world.style.setProperty('--world-mid-x',`${perspective.x*-12}px`);
++    world.style.setProperty('--world-mid-y',`${depth*-h*.12-perspective.y*7}px`);
++    for(const e of visible){e.style.setProperty('--depth-near-x',`${perspective.x*3}deg`);e.style.setProperty('--depth-near-y',`${perspective.y*-2}deg`);}
++    ctx.setTransform(scale,0,0,scale,0,0);ctx.clearRect(0,0,w,h);
++    const t=elapsed, nearTravel=cameraY*.025;
++    ctx.globalAlpha=.22;ctx.drawImage(haze,w*.1+Math.sin(t*.018)*w*.025-perspective.x*2,h*.08-depth*h*.03,w*.9,h*.65);
++    ctx.globalAlpha=.2;ctx.drawImage(haze,w*-.1+Math.sin(t*.033+2)*w*.045-perspective.x*8,h*.36-depth*h*.07+Math.cos(t*.021)*h*.035,w*1.25,h*.5);
++    ctx.globalAlpha=.13;ctx.drawImage(haze,w*.3+Math.cos(t*.047)*w*.055-perspective.x*18,h*.63-depth*h*.12,w*.95,h*.42);
++    const heat=ctx.createRadialGradient(w*.87,h*.62,0,w*.87,h*.62,w*.48);
++    heat.addColorStop(0,'#a2212426');heat.addColorStop(.4,'#77102116');heat.addColorStop(1,'#3b0a1400');
++    ctx.globalAlpha=.7+Math.sin(t*.43)*.14;ctx.fillStyle=heat;ctx.fillRect(0,0,w,h);
++    const energy=1+Math.max(0,(charge-now)/2100)*.6;
++    for(let i=0;i<count();i++){
++      const a=particles[i];
++      const phase=((a.phase+t*a.speed+nearTravel*(.3+a.z*.7)/h)%1+1)%1;
++      const fade=Math.sin(phase*Math.PI)*a.life;
++      const x=w*(.03+a.x*.94)+Math.sin(t*.23+a.wave)*(8+a.z*14)-perspective.x*(3+a.z*18);
++      const y=h*(1.1-phase*1.2), size=.6+a.z*1.9;
++      ctx.globalAlpha=Math.min(1,fade*(.55+a.z*.5)*energy);
++      ctx.drawImage(sprite,x-size*2,y-size*2,size*4,size*4);
++      if(a.z>.78){ctx.strokeStyle='#ef9b7166';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(x+1,y+size*4);ctx.lineTo(x,y);ctx.stroke();}
++    }
++    ctx.globalAlpha=1;frames++;schedule();
+   }
+-  function schedule(){if(!raf&&!timer&&!dead&&!paused()&&visible.size)timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(draw);},1000/(compact.matches?18:24));}
+-  function sync(){if(paused()||!visible.size){stop();if(reduce.matches||forced.matches)pools.forEach(p=>p.ctx.clearRect(0,0,p.canvas.width,p.canvas.height));}else schedule();}
+-  const machine=document.querySelector('.hero-machine');let pointerFrame=0,point=null,depthFrame=0;
+-  on(document,'pointermove',e=>{if(!fine.matches||paused()||depthFrame)return;const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);perspective.tx=x;perspective.ty=y;depthFrame=requestAnimationFrame(()=>{depthFrame=0;for(const p of visible){p.section.style.setProperty('--depth-far-x',`${x*-2}px`);p.section.style.setProperty('--depth-far-y',`${y*-1.5}px`);p.section.style.setProperty('--depth-near-x',`${x*3}deg`);p.section.style.setProperty('--depth-near-y',`${y*-2}deg`);p.section.style.setProperty('--light-x',`${50+x*35}%`);p.section.style.setProperty('--light-y',`${40+y*25}%`);}});},{passive:true});
+-  on(machine,'pointermove',e=>{if(!fine.matches||paused()||e.pointerType==='touch')return;point={x:e.clientX,y:e.clientY};if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;const b=machine.getBoundingClientRect();machine.style.setProperty('--machine-x',`${((point.y-b.top)/b.height-.5)*-7}deg`);machine.style.setProperty('--machine-y',`${((point.x-b.left)/b.width-.5)*9}deg`);});},{passive:true});
++  function schedule(){if(!raf&&!timer&&!dead&&!paused())timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(draw);},1000/(compact.matches?18:24));}
++  function sync(){if(paused()){stop();if(reduce.matches||forced.matches)ctx.clearRect(0,0,canvas.width,canvas.height);}else schedule();}
++  const machine=document.querySelector('.hero-machine');let point=null;
++  on(document,'pointermove',e=>{if(!fine.matches||paused()||e.pointerType==='touch')return;perspective.tx=e.clientX/innerWidth-.5;perspective.ty=e.clientY/innerHeight-.5;},{passive:true});
++  on(machine,'pointermove',e=>{
++    if(!fine.matches||paused()||e.pointerType==='touch')return;point={x:e.clientX,y:e.clientY};
++    if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;const b=machine.getBoundingClientRect();machine.style.setProperty('--machine-x',`${((point.y-b.top)/b.height-.5)*-7}deg`);machine.style.setProperty('--machine-y',`${((point.x-b.left)/b.width-.5)*9}deg`);});
++  },{passive:true});
+   on(machine,'pointerleave',()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;machine.style.removeProperty('--machine-x');machine.style.removeProperty('--machine-y');});
++  on(window,'scroll',()=>{scrollTarget=scrollY;},{passive:true});
++  on(window,'resize',()=>{resize();sync();},{passive:true});
+   on(document,'progresskit:core-charge',()=>{charge=performance.now()+2100;schedule();});
+   on(window,'progresskit:motionchange',sync);on(document,'visibilitychange',sync);on(reduce,'change',sync);on(forced,'change',sync);on(compact,'change',sync);
+-  function dispose(){if(dead)return;dead=true;stop();cancelAnimationFrame(pointerFrame);cancelAnimationFrame(depthFrame);observer.disconnect();ro.disconnect();listeners.splice(0).forEach(f=>f());pools.forEach(p=>p.canvas.remove());}
+-  on(window,'pagehide',e=>{leaving=true;sync();if(!e.persisted)dispose();});on(window,'pageshow',()=>{leaving=false;sync();});
+-  root.installation={metrics:()=>({frames,pending:!!(raf||timer),paused:paused(),visible:visible.size,canvasCount:pools.length,particles:pools.reduce((n,p)=>n+(compact.matches?Math.ceil(p.particles.length*.5):p.particles.length),0),fpsLimit:compact.matches?18:24,disposed:dead,sections:pools.map(p=>({id:p.section.id||'footer',frames:p.frames,visible:visible.has(p)}))}),dispose};sync();
++  function dispose(){if(dead)return;dead=true;stop();observer.disconnect();listeners.splice(0).forEach(f=>f());canvas.remove();}
++  on(window,'pagehide',e=>{leaving=true;sync();if(!e.persisted)dispose();});on(window,'pageshow',()=>{leaving=false;scrollTarget=scrollY;sync();});
++  root.installation={metrics:()=>({frames,pending:!!(raf||timer||pointerFrame),paused:paused(),visible:visible.size,canvasCount:dead?0:1,particles:count(),poolSize:particles.length,poolSignature:particles.map(p=>p.id).join(','),fpsLimit:compact.matches?18:24,disposed:dead,cameraY,depthRates:{far:.065,mid:.12,ash:.025},size:{width:canvas.width,height:canvas.height},coordinateSpace:'global-camera',sections:objects.map(e=>({id:e.id||e.className,visible:visible.has(e)}))}),dispose};
++  resize();sync();
+ }
+
+--- before/assets/showroom-scene.mjs
++++ after/assets/showroom-scene.mjs
+@@ -4,7 +4,7 @@
+ export async function createShowroomScene(canvas, projects, onProject, options = {}) {
+   const logoOnly = options.corePresentation === "logo";
+   const gl = canvas.getContext("webgl2", {
+-    alpha: false,
++    alpha: true,
+     antialias: true,
+     powerPreference: "low-power",
+   });
+@@ -12,20 +12,20 @@
+   const renderer = new THREE.WebGLRenderer({
+     canvas,
+     context: gl,
+-    alpha: false,
++    alpha: true,
+     antialias: true,
+   });
+   renderer.outputColorSpace = THREE.SRGBColorSpace;
+   renderer.toneMapping = THREE.ACESFilmicToneMapping;
+   renderer.toneMappingExposure = 1.04;
+   const depthBuffer = gl.getContextAttributes().depth;
+-  renderer.setClearColor(0x050505, 0);
++  renderer.setClearColor(0x000000, 0);
+   renderer.shadowMap.enabled = true;
+   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+   renderer.info.autoReset = false;
+   const scene = new THREE.Scene(),
+     camera = new THREE.PerspectiveCamera(42, 1, 0.1, 50);
+-  scene.background = new THREE.Color(0x050505);
++  scene.background = null;
+   camera.position.set(0.25, 0.45, 11.8);
+   camera.lookAt(0, 0, 0);
+   const owned = new Set(),
+@@ -188,7 +188,7 @@
+     rim.position.set(3, 2, -1);
+     scene.add(rim);
+     const red = new THREE.PointLight(0xe82032, 6, 10, 2);
+-    red.position.set(-0.2, 0, -0.6);
++    red.position.set(2.8, -0.4, -1.45);
+     scene.add(red);
+     scene.fog = new THREE.Fog(0x050505, 13, 24);
+     const profilePoints = [
+@@ -327,8 +327,31 @@
+         envMap: env.texture,
+       }),
+     );
+-    const glass = own(
++    // Three r187 clears its transmission target to premultiplied white / .5
++    // whenever the main canvas has alpha. Recover the actual covered colour
++    // and alpha before refraction; otherwise that fallback becomes milky glass.
++    // Opaque samples (a=1) stay unchanged. Empty samples (.5,.5,.5,.5) become
++    // transparent black and reveal the one CSS world, without a second plate.
++    function worldTransmission(material) {
++      material.onBeforeCompile = shader => {
++        const chunk = THREE.ShaderChunk.transmission_pars_fragment.replace(
++          'return textureBicubic( transmissionSamplerMap, fragCoord.xy, lod );',
++          `vec4 sampleColor = textureBicubic( transmissionSamplerMap, fragCoord.xy, lod );
++           sampleColor.rgb = max(vec3(0.0), sampleColor.rgb - vec3(1.0 - sampleColor.a));
++           sampleColor.a = clamp(2.0 * sampleColor.a - 1.0, 0.0, 1.0);
++           return sampleColor;`,
++        );
++        shader.fragmentShader = shader.fragmentShader.replace('#include <transmission_pars_fragment>', chunk);
++      };
++      material.customProgramCacheKey = () => 'pk-world-transmission-r187';
++      return material;
++    }
++    const glass = own(worldTransmission(
+       new THREE.MeshPhysicalMaterial({
++        // Transmission outputs coverage alpha when it sees the CSS world.
++        // Match the canvas' premultiplied alpha, including specular RGB, so
++        // low-coverage facets cannot composite as opaque white rectangles.
++        premultipliedAlpha: true,
+         color: 0xf2f7fa,
+         metalness: 0,
+         roughness: 0.012,
+@@ -343,7 +366,7 @@
+         envMap: env.texture,
+         dispersion: 0,
+       }),
+-    );
++    ));
+     const core = new THREE.Group();
+     scene.add(core);
+     core.position.set(0, 0.12, 0.85);
+@@ -399,12 +422,8 @@
+       lid.castShadow = true;
+     }
+     const loader = new THREE.TextureLoader();
+-    const chamberTexture = own(await loader.loadAsync(new URL('./world/installation-chamber.webp',import.meta.url).href));
+-    chamberTexture.colorSpace = THREE.SRGBColorSpace;
+-    scene.background = chamberTexture;
+-    scene.backgroundIntensity = .62;
+-    // The chamber supplies the far architecture and floor. Keep the old floor
+-    // available for the cached header model, never in the optical showroom.
++    // Architecture and atmosphere belong to the single DOM world behind this
++    // transparent canvas. Keeping a scene background here recreates a banner.
+     if (logoOnly) floor.visible = false;
+     const opticTexture = own(await loader.loadAsync(new URL('./world/optical-core.webp',import.meta.url).href));
+     opticTexture.colorSpace = THREE.SRGBColorSpace;
+@@ -464,7 +483,7 @@
+     for(let i=0;i<=16;i++){const a=i*Math.PI*2/16,x=Math.cos(a)*1.16,y=Math.sin(a)*1.16;i?collarShape.lineTo(x,y):collarShape.moveTo(x,y);}
+     hole.absarc(0,0,.97,0,Math.PI*2,true);collarShape.holes.push(hole);
+     const collar=mesh(new THREE.ExtrudeGeometry(collarShape,{depth:.48,bevelEnabled:true,bevelSize:.045,bevelThickness:.045,bevelSegments:1,steps:1,curveSegments:32}),
+-      new THREE.MeshPhysicalMaterial({color:0x777077,roughness:.045,metalness:0,transmission:.97,thickness:.4,ior:1.62,attenuationColor:0x40363a,attenuationDistance:2,envMap:env.texture,envMapIntensity:1.85}),coreOrb);
++      worldTransmission(new THREE.MeshPhysicalMaterial({premultipliedAlpha:true,color:0x777077,roughness:.045,metalness:0,transmission:.97,thickness:.4,ior:1.62,attenuationColor:0x40363a,attenuationDistance:2,envMap:env.texture,envMapIntensity:1.85})),coreOrb);
+     collar.position.z=-.43;
+     const logoVertices = logo.geometry.getAttribute("position");
+     for (let i = 0; i < logoVertices.count; i++) {
+@@ -958,7 +977,7 @@
+     const crystals = projects.map((p, index) => {
+       const group = new THREE.Group();
+       scene.add(group);
+-      const material = own(glass.clone());
++      const material = own(worldTransmission(glass.clone()));
+       material.color.set(0xf4ecef);
+       material.roughness = 0.025;
+       material.thickness = 0.64;
+@@ -1155,9 +1174,6 @@
+       camera.aspect = canvas.clientWidth / Math.max(1, canvas.clientHeight);
+       camera.position.z = compact ? 10.3 : 11.8;
+       camera.fov = compact ? 47 : 44;
+-      const roomAspect=1672/941,viewAspect=camera.aspect;
+-      chamberTexture.repeat.set(Math.min(1,viewAspect/roomAspect),Math.min(1,roomAspect/viewAspect));
+-      chamberTexture.offset.set((1-chamberTexture.repeat.x)*.66,(1-chamberTexture.repeat.y)*.5);
+       camera.updateProjectionMatrix();
+       if (changed || metrics.filaments !== p.roots * 3) {
+         filament.geometry.dispose();
+@@ -1215,7 +1231,7 @@
+       energy.rotation.y = reduced ? 0.15 : elapsed * 0.022;
+       energyMaterial.uniforms.uTime.value = elapsed;
+       energyMaterial.uniforms.uPower.value = power;
+-      red.position.set(-0.55, baseY + 0.1, -1.45);
++      red.position.set(2.8, baseY - 0.4, -1.45);
+       red.intensity = 2.8 + breath * 0.2 + power * 2 + (active ? 1.1 : 0);
+       innerEnergy.visible = !compact;
+       skin.visible = !compact;
+
+--- before/assets/world-continuity.css
++++ after/assets/world-continuity.css
+@@ -0,0 +1,26 @@
++/* One room, outside the scrolling content. Only the camera moves: no chapter
++   background, opacity gate, seam gradient or repeated section-sized plate. */
++.installation-world { position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; background:#050507; }
++.installation-world__architecture { position:absolute; inset:-8%; background:url('world/installation-chamber.webp') 65% 50%/cover no-repeat; opacity:.78; transform:translate3d(var(--world-far-x,0px),var(--world-far-y,0px),0) scale(var(--world-scale,1)); transform-origin:66% 48%; will-change:transform; }
++.installation-world__light { position:absolute; inset:-10%; background:radial-gradient(ellipse 50% 75% at 96% 58%,#57121e3b,transparent 80%),radial-gradient(ellipse 65% 30% at 44% 0%,#b3bfce12,transparent 78%),radial-gradient(ellipse 75% 28% at 64% 106%,#771b292e,transparent 83%),linear-gradient(90deg,#05050770,transparent 62%); transform:translate3d(var(--world-mid-x,0px),var(--world-mid-y,0px),0); }
++.installation-world .world-embers { position:absolute; inset:0; width:100%; height:100%; z-index:1; contain:strict; }
++
++/* Explicit surface contract neutralises the old chapter skins, including
++   their more-specific ID rules. Bounded objects keep their own materials. */
++body.luxury-world:has(.installation-world) #main { z-index:1; background:none; overflow-x:clip; overflow-y:visible; }
++body.luxury-world:has(.installation-world) #main::before { content:none; }
++body.luxury-world:has(.installation-world) #main > section:is(#start,#rdzen,#projekty,#uslugi,#proces,#ekosystem,#wydania,#o-mnie,#wyzwania,#technologie),
++body.luxury-world:has(.installation-world) > footer { background:none; border:0; box-shadow:none; overflow:visible; }
++body.luxury-world:has(.installation-world) #main > section:is(#start,#rdzen,#projekty,#uslugi,#proces,#ekosystem,#wydania,#o-mnie,#wyzwania,#technologie)::before,
++body.luxury-world:has(.installation-world) #main > section:is(#start,#rdzen,#projekty,#uslugi,#proces,#ekosystem,#wydania,#o-mnie,#wyzwania,#technologie)::after { content:none; }
++body.luxury-world:has(.installation-world) > footer { position:relative; z-index:1; }
++body.luxury-world:has(.installation-world) > footer::after { content:none; }
++/* The WebGL renderer clears to alpha. A mask would still erase the shared
++   particles/reflections around its edge and is no longer needed. */
++body.luxury-world:has(.installation-world) #projekty .showroom-scene { mask:none; -webkit-mask:none; background:none; }
++body.luxury-world:has(.installation-world) #projekty .showroom-heading { border-bottom:0; }
++
++@media(max-width:700px) { .installation-world__architecture { background-position:67% 50%; opacity:.64; } }
++@media(prefers-reduced-motion:reduce) { .installation-world__architecture,.installation-world__light { transform:none!important; will-change:auto; } }
++@media(forced-colors:active) { .installation-world { display:none; } }
++@media print { .installation-world { display:none; } }

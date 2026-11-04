@@ -1,0 +1,10 @@
+PASS one global architecture, one atmosphere canvas, no legacy renderer
+PASS all full-width chapter surfaces transparent, no boundary border/shadow/pseudo
+PASS world lives before any interaction
+PASS global camera progresses continuously and same particle pool survives resize
+PASS transparent WebGL pixels at all four corners after activation; no edge mask
+PASS offscreen showroom sleeps while shared atmosphere continues at footer
+PASS global pause cancels atmosphere, pointer and timer; resume works
+PASS pagehide cancels global loop, persisted pageshow resumes without duplicate canvas
+PASS dispose releases canvas/listeners and cannot restart scheduler
+PASS no JavaScript or WebGL shader errors

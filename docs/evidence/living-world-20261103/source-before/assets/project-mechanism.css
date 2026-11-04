@@ -1,0 +1,248 @@
+/* Mechanical showroom V5. This existing sheet owns the enhanced geometry and
+   module material, after owner-finish's site palette. No duplicate scene. */
+#projekty {
+  --module-metal:repeating-linear-gradient(0deg,#ffffff24 0 1px,#1114140c 1px 2px,transparent 2px 4px),linear-gradient(115deg,#b6bcb9,#e0e3dd 29%,#a0a8a4 56%,#d4d9d4 77%,#7a8580);
+  --hexagon:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+  --mechanism-turn:0deg;
+  overflow:clip;
+  container-type:inline-size;
+}
+#projekty.showroom-enhanced .showroom-viewport {
+  container-type:inline-size;
+  --showroom-base-height:calc(94cqw + 22px);
+  --showroom-origin-y:46cqw;
+  --showroom-radius-x:32cqw;
+  --showroom-radius-y:32cqw;
+  width:100%; max-width:900px; margin-inline:auto;
+  height:var(--showroom-base-height); min-height:0; padding:0;
+  perspective:1500px; overflow:visible; isolation:isolate;
+  touch-action:pan-y pinch-zoom;
+}
+/* cqw here resolves against the viewport, rather than a transformed module. */
+#projekty.showroom-enhanced .showroom-track { position:relative; width:100%; height:calc(94cqw + 22px); padding:0; transform:none; }
+#projekty.showroom-enhanced .showroom-card {
+  display:block; position:absolute; left:50%; top:46cqw;
+  width:29cqw; height:25.1cqw; max-width:none; min-width:0; margin:0;
+  opacity:var(--showroom-opacity); filter:drop-shadow(0 12px 10px #0009);
+  transform:translate(-50%,-50%) translate3d(calc(var(--showroom-x) * 32cqw),calc(var(--showroom-y) * 32cqw),0)
+    rotateY(var(--showroom-angle)) scale(var(--showroom-scale));
+  transform-origin:center; transition:none; will-change:auto;
+}
+#projekty.showroom-enhanced .showroom-card.is-orbit-hidden { visibility:hidden; opacity:0; pointer-events:none; }
+#projekty.showroom-enhanced.is-orbit-moving .showroom-card:not(.is-orbit-hidden) { will-change:transform; }
+#projekty .showroom-card::before,#projekty .showroom-card::after { content:none; animation:none; }
+#projekty .showroom-card .project-slice {
+  position:relative; isolation:isolate; display:block; width:100%; height:100%;
+  padding:0; border:0; border-radius:0; overflow:visible;
+  clip-path:var(--hexagon); color:#111716;
+  background:linear-gradient(125deg,#fafbf4,#76807a 19%,#1c2520 48%,#e6ece5 72%,#626b65);
+  box-shadow:none; transform:none; animation:none;
+}
+#projekty .project-slice::before {
+  content:""; position:absolute; z-index:-2; inset:3px; width:auto; height:auto;
+  clip-path:var(--hexagon); border:0; border-radius:0;
+  background:linear-gradient(135deg,#303835,#111714 45%,#5b6660 70%,#171d1a);
+  box-shadow:none; transform:none;
+}
+#projekty .project-slice::after {
+  content:""; position:absolute; z-index:-1; inset:7px; width:auto; height:auto;
+  clip-path:var(--hexagon); border:0; border-radius:0; opacity:1;
+  background:var(--module-metal); transform:none; animation:none; box-shadow:none;
+}
+#projekty .showroom-card.is-active .project-slice {
+  background:linear-gradient(130deg,#ffd0c8,#a22c3c 26%,#4d131f 48%,#ed8490 76%,#f5aaa8);
+  box-shadow:none;
+}
+#projekty .showroom-card.is-active .project-slice::before { background:linear-gradient(145deg,#c34856,#32151c 50%,#a33245); }
+#projekty .showroom-card.is-active .project-slice::after {
+  background:linear-gradient(120deg,#eaa2a42b,transparent 42%),var(--module-metal);
+}
+#projekty .showroom-card .showroom-card__open {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  gap:5px; padding:22px 21%; width:100%; height:100%; min-height:0;
+  border:0; border-radius:0; color:#141916; background:none; box-shadow:none;
+  text-decoration:none; text-align:center;
+}
+#projekty .showroom-card__open::before,#projekty .showroom-card__open::after { content:none; }
+#projekty .showroom-card .showroom-card__category { display:none; }
+#projekty .showroom-card .showroom-card__badge { display:flex; justify-content:center; align-items:center; width:auto; min-width:0; height:auto; border:0; margin:0; padding:0; color:#252d29; }
+#projekty .showroom-card__badge svg { width:24px; height:24px; }
+#projekty .showroom-card__badge>span { display:none; }
+#projekty .showroom-card .showroom-card__caption { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; width:100%; }
+#projekty .showroom-card .project-slice h3 {
+  margin:0; color:#111915; font:750 clamp(14px,1.9cqw,19px)/1.12 var(--sans);
+  letter-spacing:-.025em; text-shadow:0 1px 0 #ffffff80; overflow-wrap:anywhere;
+}
+#projekty .showroom-card .showroom-card__stage {
+  display:inline-block; align-self:center; max-width:100%; min-height:0;
+  padding:3px 5px; border:1px solid #4b5650; border-radius:2px;
+  color:#eff1eb; background:#28352e; font:600 clamp(10px,1.3cqw,12px)/1.25 var(--mono);
+  letter-spacing:0; white-space:normal; text-transform:none;
+}
+#projekty .showroom-card .showroom-card__action {
+  display:flex; justify-content:center; align-items:center; gap:3px;
+  padding:0; min-height:20px; color:#791c2d; font:700 clamp(10px,1.3cqw,12px)/1.2 var(--sans);
+}
+#projekty .showroom-card .module-hardware { position:absolute; inset:0; z-index:4; pointer-events:none; }
+#projekty .module-hardware i { position:absolute; width:6px; height:6px; margin:-3px; border-radius:50%; border:1px solid #202824; background:linear-gradient(35deg,transparent 42%,#111914 44% 57%,transparent 60%),radial-gradient(circle at 35% 30%,#f0f3e9,#849189 48%,#28372e 60%,#bbc2b7 78%); box-shadow:0 1px 1px #fff8; }
+#projekty .module-hardware i:nth-child(1) { left:29%; top:9%; }
+#projekty .module-hardware i:nth-child(2) { left:71%; top:9%; }
+#projekty .module-hardware i:nth-child(3) { left:91%; top:50%; }
+#projekty .module-hardware i:nth-child(4) { left:71%; top:91%; }
+#projekty .module-hardware i:nth-child(5) { left:29%; top:91%; }
+#projekty .module-hardware i:nth-child(6) { left:9%; top:50%; }
+/* Structural parts belong to one assembly; the approved ruby material is a
+   bounded circular insert inside its casing, never a rectangular backdrop. */
+#projekty .showroom-frame { display:none; }
+#projekty.showroom-enhanced .showroom-frame {
+  display:block; position:absolute; z-index:1; inset:auto;
+  left:50%; top:46cqw; width:94cqw; height:94cqw;
+  border:0; border-radius:50%; background:none; box-shadow:none; pointer-events:none;
+  transform:translate(-50%,-50%) rotateY(-7deg) rotateX(4deg);
+}
+#projekty .showroom-frame::before,#projekty .showroom-frame::after { content:none; }
+#projekty .mechanism-wheel { display:block; width:100%; height:100%; overflow:visible; filter:drop-shadow(0 16px 10px #0009); }
+#projekty .mechanism-rotor { transform-box:view-box; transform-origin:500px 500px; transform:rotate(var(--mechanism-turn)); }
+#projekty .mechanism-bearing { transform-box:view-box; transform-origin:500px 500px; animation:mechanism-bearing 28s linear infinite; animation-play-state:paused; }
+#projekty.showroom-in-view:not(.is-energy-paused):not(.showroom-reduced-motion):not(.is-slice-open):not(.is-projecting):not(.is-page-hidden) .mechanism-bearing { animation-play-state:running; }
+@keyframes mechanism-bearing { to { transform:rotate(360deg); } }
+#projekty .mechanism-hub {
+  position:absolute; left:50%; top:50%; width:26%; height:26%;
+  display:grid; place-items:center; transform:translate(-50%,-50%); border-radius:50%;
+  border:2px solid #969f98; background:repeating-linear-gradient(0deg,#edf0df16 0 1px,transparent 1px 3px),radial-gradient(ellipse at 32% 25%,#6d7871,#25302a 55%,#0c1410 76%);
+  box-shadow:inset 0 0 0 5px #0c1411,inset 0 0 0 7px #66756b,inset 0 5px 8px #edf0df66,0 7px 0 #050b08,0 10px 18px #000b;
+}
+#projekty .mechanism-hub img { display:block; width:69%; height:69%; object-fit:contain; filter:drop-shadow(0 4px 3px #000b); }
+#projekty .mechanism-plinth {
+  position:absolute; left:-3%; right:-3%; bottom:-1%; height:10%; border-radius:50%;
+  border:3px solid #86968d; border-bottom:7px solid #141f19;
+  background:radial-gradient(ellipse at center,#090e0b 55%,#86978c 56%,#d2d9cb 58%,#18271d 62%,#8f9e91 67%,#343f35 72%,#0c150f 80%);
+  box-shadow:inset 0 -3px #c4cec0,0 9px 0 #080d09,0 15px 23px #000a;
+}
+#projekty .mechanism-plinth::after { content:""; position:absolute; left:25%; right:25%; bottom:1px; height:2px; background:#b32b40; box-shadow:0 0 6px #b92e4c88; }
+/* A selected face becomes the same larger six-sided object. Its real panel
+   participates in normal document flow and is never placed in a new modal. */
+#projekty.showroom-enhanced.is-slice-open .showroom-viewport { height:auto; min-height:calc(94cqw + 22px); }
+#projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; min-height:calc(94cqw + 22px); padding:16px 0 32px; }
+#projekty.is-slice-open .showroom-card:not(.is-slice-expanded) { opacity:.12; pointer-events:none; visibility:visible; }
+#projekty.is-slice-open .showroom-card.is-orbit-hidden { visibility:hidden; }
+#projekty.showroom-enhanced .showroom-card.is-slice-expanded {
+  display:block; position:relative; left:2%; top:auto; width:96%; height:auto; max-width:none;
+  margin:0; z-index:30!important; opacity:1!important; transform:none; filter:drop-shadow(0 18px 14px #000b)!important;
+}
+#projekty .showroom-card.is-slice-expanded .project-slice {
+  display:block; height:auto; min-height:620px; padding:56px 21% 60px; container-type:normal; border-radius:0;
+}
+#projekty .showroom-card.is-slice-expanded .showroom-card__open {
+  height:auto; min-height:0; padding:0 0 12px; gap:8px;
+}
+#projekty .showroom-card.is-slice-expanded .showroom-card__badge { display:none; }
+#projekty .showroom-card.is-slice-expanded h3 { font-size:clamp(20px,2.6cqw,28px); line-height:1.15; }
+#projekty .showroom-card.is-slice-expanded .showroom-card__stage { font-size:12px; }
+#projekty .showroom-card.is-slice-expanded .showroom-card__action { display:none; }
+#projekty .project-slice__panel {
+  display:grid; grid-template-rows:auto auto auto; gap:12px; min-height:0; height:auto;
+  margin:0; padding:12px; border:1px solid #65716b; border-radius:3px;
+  color:#e3e8df; background:linear-gradient(125deg,#27302c,#141c17); box-shadow:inset 0 2px 5px #0007;
+}
+#projekty .project-slice__body { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:14px; padding:0; height:auto; max-height:none; overflow:visible; }
+#projekty .project-slice__body:not(:has(.project-slice__media)) { grid-template-columns:1fr; }
+#projekty .project-slice__media { order:0; }
+#projekty .project-slice__copy { order:1; }
+#projekty .project-slice__media img { height:210px; max-height:none; width:100%; object-fit:contain; background:#101712; border-color:#67756c; }
+#projekty .project-slice__media figcaption { font-size:11px; line-height:1.5; color:#c0ccbf; }
+#projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child { margin:0 0 12px; font-size:14px; line-height:1.55; color:#e1e8dd; }
+#projekty .project-slice__technologies { gap:5px; }
+#projekty .project-slice__technologies li { font-size:10px; line-height:1.3; padding:4px; color:#dce4d8; background:#27342b; border-color:#768573; }
+#projekty .project-slice__close { min-width:80px; min-height:44px; font-size:12px; color:#edf1e9; background:linear-gradient(#48564b,#28382b); border-color:#9ba994; }
+#projekty .project-slice__actions { gap:8px; padding-top:12px; }
+#projekty .project-slice__actions a { min-height:44px; padding:10px 8px; font-size:12px; line-height:1.3; color:#f1f2eb; background:linear-gradient(#48564c,#2b3b2e); border-color:#9baa96; }
+#projekty .project-slice__actions a:first-child { flex-basis:100%; }
+#projekty .project-slice__actions a[href*="/download/"] { color:#fff; background:#a41e34; border-color:#d58b96; font-size:12px; }
+#projekty .project-slice__actions a[href$="#kontakt"] { color:#f1f2eb; background:#314034; border-color:#9baa96; min-width:0; }
+#projekty .project-slice :focus-visible { outline:3px solid #9e2035; outline-offset:-4px; }
+#projekty .project-slice__panel :focus-visible { outline-color:#ffd7be; }
+#projekty .showroom-controls { gap:12px; margin-top:8px; }
+#projekty .showroom-controls button[data-showroom-step] { border-radius:50%; width:48px; height:48px; min-width:48px; padding:0; }
+#projekty .showroom-heading { margin-top:32px; }
+#projekty .showroom-gates { display:flex; flex-wrap:wrap; gap:8px; }
+#projekty .showroom-gate { display:flex; align-items:center; gap:8px; min-height:48px; padding:10px 12px; flex:1 1 auto; }
+#projekty .showroom-gate__icon { width:22px; height:22px; flex-shrink:0; }
+#projekty .showroom-gate__label { font-size:13px; }
+#projekty .showroom-gate__count { margin:0; }
+@media (min-width:701px) and (max-width:1100px) {
+  #main:has(>.hero--monument) { display:block; }
+  .hero.hero--monument { height:auto; min-height:0; padding-bottom:24px; }
+  .hero--monument .hero__stone-title { padding:40px 32px 24px; }
+  .hero__explore { position:relative; inset:auto; margin:0 32px; }
+  #projekty { padding:0 24px 40px; }
+  #projekty.showroom-enhanced .showroom-viewport { max-width:780px; }
+}
+@media (min-width:701px) and (max-width:1280px) {
+  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__open { padding-block:10px; gap:4px; }
+  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__caption { gap:4px; }
+  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__badge svg { width:20px; height:20px; }
+  #projekty .showroom-card:not(.is-slice-expanded) .showroom-card__stage { flex-shrink:0; }
+}
+@media (max-width:700px) {
+  .hero--monument .hero__stone-title { padding-top:18px; }
+  .hero--monument h1.stone-word { font-size:34px; }
+  .hero--monument .hero__motto { font-size:15px; line-height:1.45; }
+  #projekty.showroom-enhanced .showroom-viewport { --showroom-base-height:calc(296px + min(40.7cqw,163px)); max-width:400px; height:var(--showroom-base-height); padding:0; perspective:none; }
+  #projekty.showroom-enhanced .showroom-track { height:calc(296px + min(40.7cqw,163px)); }
+  #projekty.showroom-enhanced .showroom-frame { top:117px; width:94cqw; height:94cqw; transform:translate(-50%,-50%); }
+  #projekty .mechanism-plinth { display:none; }
+  #projekty .mechanism-hub { width:25%; height:25%; }
+  #projekty.showroom-enhanced .showroom-card { display:none; }
+  #projekty.showroom-enhanced .showroom-card.is-active {
+    display:block; position:absolute; left:50%; top:278px; width:94%; height:81.4cqw;
+    transform:translate(-50%,-50%); opacity:1; filter:drop-shadow(0 10px 8px #0009); scroll-margin-top:84px;
+  }
+  #projekty .showroom-card .showroom-card__open { padding:32px 22%; }
+  #projekty .showroom-card .project-slice h3 { font-size:19px; line-height:1.15; }
+  #projekty .showroom-card__badge svg { width:30px; height:30px; }
+  #projekty .showroom-card .showroom-card__stage { font-size:11px; }
+  #projekty .showroom-card .showroom-card__action { min-height:28px; font-size:12px; }
+  #projekty.showroom-enhanced.is-slice-open .showroom-viewport { height:auto; min-height:420px; }
+  #projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; min-height:420px; padding-top:180px; padding-bottom:12px; }
+  #projekty.showroom-enhanced .showroom-card.is-slice-expanded { position:relative; top:auto; left:0; width:100%; height:auto; transform:none; }
+  #projekty .showroom-card.is-slice-expanded .project-slice { min-height:0; padding:60px 21% 66px; --hexagon:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
+  /* Long phone content stays inside a wide six-sided housing. Each reading
+     row uses the safe central strip; no inner scrollbar or clipped copy. */
+  #projekty .showroom-card.is-slice-expanded .showroom-card__open { width:100%; margin:auto; padding:0 0 14px; }
+  #projekty .project-slice__panel { padding:10px; }
+  #projekty .project-slice__body { grid-template-columns:minmax(0,1fr); gap:14px; }
+  #projekty .project-slice__copy { order:0; }
+  #projekty .project-slice__media { order:1; }
+  #projekty .project-slice__media img { height:250px; }
+  #projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child { font-size:14px; line-height:1.55; }
+  #projekty .project-slice__actions a { flex-basis:100%; }
+  #projekty .showroom-controls { gap:10px; margin-top:10px; }
+  #projekty .showroom-gate { flex:1 1 130px; }
+}
+@media (max-width:360px) {
+  #projekty.showroom-enhanced .showroom-viewport,#projekty.showroom-enhanced .showroom-track { height:385px; }
+  #projekty.showroom-enhanced .showroom-card.is-active { top:248px; }
+  #projekty.showroom-enhanced.is-slice-open .showroom-viewport,#projekty.showroom-enhanced.is-slice-open .showroom-track { height:auto; }
+  #projekty.showroom-enhanced .showroom-card.is-slice-expanded { top:auto; }
+  #projekty .showroom-card .project-slice h3 { font-size:17px; }
+}
+html[data-interface-motion="paused"] #projekty .mechanism-bearing,
+html[data-interface-quality="compact"] #projekty .mechanism-bearing { animation:none; }
+@media(prefers-reduced-motion:reduce) { #projekty .mechanism-bearing { animation:none!important; } }
+@media(forced-colors:active) {
+  #projekty .showroom-frame,#projekty .module-hardware { display:none!important; }
+  #projekty .project-slice,#projekty .project-slice::after { color:CanvasText; background:Canvas; }
+  #projekty .project-slice::before { background:CanvasText; }
+  #projekty .showroom-card .project-slice h3,#projekty .showroom-card .showroom-card__badge,#projekty .showroom-card .showroom-card__action { color:CanvasText; text-shadow:none; }
+  #projekty .showroom-card .showroom-card__stage,#projekty .project-slice__panel,#projekty .project-slice__close,#projekty .project-slice__technologies li,#projekty .project-slice__actions a { color:CanvasText; background:Canvas; border-color:CanvasText; box-shadow:none; }
+  #projekty .project-slice__copy p,#projekty .project-slice__copy p:first-child,#projekty .project-slice__media figcaption { color:CanvasText; }
+  #projekty .project-slice :focus-visible { outline-color:Highlight; }
+}
+@media print {
+  #projekty .showroom-frame,#projekty .module-hardware { display:none!important; }
+  #projekty.showroom-enhanced .showroom-viewport,#projekty.showroom-enhanced .showroom-track { height:auto; }
+  #projekty.showroom-enhanced .showroom-card { display:block; position:static; width:100%; height:auto; transform:none; opacity:1; visibility:visible; filter:none; }
+  #projekty .project-slice { clip-path:none; color:#111; background:#fff; }
+  #projekty .project-slice::before,#projekty .project-slice::after { content:none; }
+}

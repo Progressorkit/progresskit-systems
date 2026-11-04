@@ -1,0 +1,147 @@
+/* One installation: aluminium, clear smoked optics, carbon and ember light.
+   Geometry is HTML/CSS; only the project room uses Three.js. */
+body.luxury-world { --world-energy:#b04642; --text:#e9e2e6; --muted:#b9adb4; }
+body.luxury-world #main { background:#050505; }
+body.luxury-world #main > :is(.home-chapter,.technology-section,.project-showroom),
+body.luxury-world #main > .installation-console { position:relative; isolation:isolate; }
+body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#wydania,#o-mnie,#wyzwania,#technologie,#kontakt) { background-color:#060607; }
+.world-embers { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; contain:strict; }
+body.luxury-world #main :is(.home-chapter,.technology-section,.project-showroom) > .shell { position:relative; z-index:2; }
+body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#technologie)::before { content:""; position:absolute; z-index:0; inset:0; width:auto; height:auto; border:0; border-radius:0; transform:none; background:url('hero-strata.svg') center/cover; opacity:.34; pointer-events:none; mask-image:linear-gradient(transparent,#000 25% 75%,transparent); }
+body.luxury-world #main .section-title { letter-spacing:-.055em; text-transform:none; }
+body.luxury-world #main .section-kicker { font-size:9px; letter-spacing:.24em; color:#be9da8; }
+body.luxury-world #main .cta { border-radius:1px; box-shadow:inset 0 1px #e9d2d338,inset 0 -1px #0009,0 8px 22px #0005; }
+body.luxury-world #main .cta--primary { background:linear-gradient(125deg,#78283a,#451324 62%,#271019); border-color:#ba657160; }
+/* Services: two large optical volumes. Text sits in the central clear region. */
+body.luxury-world #main #uslugi { padding:110px 0 120px; background:radial-gradient(ellipse 65% 43% at 50% 55%,#2d10203a,transparent 82%),#060607; }
+#uslugi .service-space { display:none; }
+#uslugi .service-zones { gap:9%; padding:30px 2% 25px; perspective:1600px; }
+#uslugi .services-heading { margin-bottom:60px; }
+#uslugi .service-zone { isolation:isolate; padding:135px 55px 70px; min-height:585px; background:none; border:0; box-shadow:none; transform:rotateX(var(--world-tilt-x,0deg)) rotateY(var(--world-tilt-y,0deg)); transition:transform .45s; }
+#uslugi .service-zone--personal { margin:0; }
+#uslugi .service-zone--systems { margin-top:130px; }
+body.luxury-world #uslugi .service-object { inset:-18px -8px -8px; z-index:-1; border-radius:46% 46% 42% 44% / 23% 23% 28% 26%; transform:rotate(-5deg); border:1px solid #aebdca55; background:radial-gradient(ellipse 62% 13% at 38% 3%,#e4f0ff52,transparent 82%),radial-gradient(ellipse 12% 56% at 5% 50%,#9ab9d326,transparent 90%),radial-gradient(ellipse 57% 30% at 70% 92%,#8f273333,transparent 87%),linear-gradient(126deg,#899ebc15,#08091250 32%,#0b0b1342 68%,#788b9c16); box-shadow:inset 5px 5px 6px #d3e1ee18,inset -14px -19px 12px #02030aa3,inset 0 -23px 20px #a5b6cc0c,8px 32px 38px #0009; }
+body.luxury-world #uslugi .service-object::before { content:""; inset:15px 15px 20px; border-radius:inherit; border:1px solid #c5d8e01f; background:linear-gradient(110deg,transparent 18%,#e4effb12 19%,transparent 27% 73%,#f5dfe111 74%,transparent 75%); transform:none; box-shadow:inset 0 1px 4px #e4ecf61c; }
+body.luxury-world #uslugi .service-object::after { content:""; inset:4%; border-radius:inherit; background:radial-gradient(ellipse 22% 5% at 33% 4%,#ecf0ff78,transparent 90%),radial-gradient(ellipse 6% 26% at 95% 66%,#b8c9da33,transparent 85%); box-shadow:none; opacity:.6; transform:rotate(5deg); transition:transform 1.5s,opacity .6s; }
+body.luxury-world #uslugi .service-zone--systems .service-object { border-radius:22% 35% 24% 29% / 25% 23% 21% 29%; transform:rotate(6deg); }
+#uslugi .service-zone:hover .service-object::after { transform:rotate(-6deg); opacity:1; }
+#uslugi .service-zone h3 { font:400 clamp(29px,3.25vw,47px)/1.12 var(--sans); letter-spacing:-.055em; color:#ede8ed; max-width:13ch; }
+#uslugi .service-zone__index { top:44px; left:53px; color:#c0a8b0; letter-spacing:.3em; }
+#uslugi .service-zone .competency-list li { color:#c2b7c0; }
+#uslugi .services-technologies { margin-top:60px; }
+/* Process: eight triangular planes form every suspended cut crystal. */
+body.luxury-world #main #proces { background:radial-gradient(ellipse 70% 40% at 65% 50%,#34121b33,transparent 80%),#050506; }
+#proces .production-heading::after { display:none; }
+#proces .production-space { min-height:840px; }
+#proces .process-object { width:130px; height:150px; position:relative; transform-style:preserve-3d; transform:rotateX(-13deg) rotateY(calc(-24deg + var(--process-scroll-yaw,0deg))) rotateZ(var(--chamber-turn,-9deg)); background:none; }
+#proces .process-facet { position:absolute; left:50%; top:50%; width:112px; height:128px; transform-origin:50% 100%; clip-path:polygon(50% 0,100% 100%,0 100%); background:linear-gradient(118deg,#c3d6ea35,#12141d66 26%,#04060c50 65%,#a5bfd232); backface-visibility:visible; }
+#proces .process-facet::before { content:""; position:absolute; inset:0; clip-path:polygon(50% 0,100% 100%,0 100%,50% 0,50% 3%,2% 99%,98% 99%,50% 3%); background:linear-gradient(115deg,#eff5ffb0,#7d8b9644 40%,#be7b8244); }
+#proces .process-facet--0 { transform:translate(-50%,-100%) rotateY(45deg) translateZ(40px) rotateX(18deg); }
+#proces .process-facet--1 { transform:translate(-50%,-100%) rotateY(135deg) translateZ(40px) rotateX(18deg); }
+#proces .process-facet--2 { transform:translate(-50%,-100%) rotateY(225deg) translateZ(40px) rotateX(18deg); }
+#proces .process-facet--3 { transform:translate(-50%,-100%) rotateY(315deg) translateZ(40px) rotateX(18deg); }
+#proces .process-facet--4 { transform:translate(-50%,-100%) rotateY(45deg) translateZ(40px) rotateX(155deg); }
+#proces .process-facet--5 { transform:translate(-50%,-100%) rotateY(135deg) translateZ(40px) rotateX(155deg); }
+#proces .process-facet--6 { transform:translate(-50%,-100%) rotateY(225deg) translateZ(40px) rotateX(155deg); }
+#proces .process-facet--7 { transform:translate(-50%,-100%) rotateY(315deg) translateZ(40px) rotateX(155deg); }
+#proces .process-heart { position:absolute; inset:25% 21%; background:radial-gradient(ellipse,#dca49033,#a9323d33 35%,transparent 72%); transform:translateZ(-4px); opacity:.2; transition:opacity .7s; }
+#proces [data-production-state="active"] .process-facet { background:linear-gradient(118deg,#e4effb66,#18202c45 28%,#13081166 60%,#d45f5265); }
+#proces [data-production-state="active"] .process-heart { opacity:1; }
+#proces [data-production-state="active"] .process-object { opacity:1; transform:rotateX(-8deg) rotateY(-10deg) rotateZ(var(--chamber-turn,-9deg)) translateZ(25px); }
+#proces [data-production-state="complete"] .process-object { opacity:.58; }
+#proces [data-production-state="pending"] .process-object { opacity:.28; }
+#proces [data-production-state="active"] h3 { color:#f6e9ee; text-shadow:0 2px 15px #91433433; }
+#proces .production-line h3 { letter-spacing:.02em; }
+/* Workshop: a navigable collection of eight optical instruments. */
+body.luxury-world #main #technologie { background:radial-gradient(ellipse 80% 50% at 20% 60%,#25132238,transparent 86%),#060608; padding:120px 0; }
+#main #technologie .technology-groups { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:start; gap:55px 24px; margin-top:70px; padding:0 8px; }
+#main #technologie .technology-group:nth-child(n) { grid-column:auto!important; grid-row:auto!important; margin:0!important; padding:0; min-height:0; transform:rotate(var(--field-turn,-2deg)); --field-turn:-2deg; --field-shape:polygon(7% 0,86% 3%,100% 23%,94% 88%,80% 100%,8% 93%,0 71%); transition:transform .5s,filter .5s; }
+#main #technologie .technology-group:nth-child(2n) { --field-turn:2deg; margin-top:40px!important; }
+#main #technologie .technology-group::before { inset:3px -4px -8px 3px; clip-path:var(--field-shape); background:linear-gradient(115deg,#c1ccda80,#091019 8% 81%,#94516080 95%,#06080c); }
+#main #technologie .technology-group::after { inset:0; clip-path:var(--field-shape); background:radial-gradient(ellipse 70% 9% at 35% 1%,#b6cde76b,transparent 80%),radial-gradient(ellipse at 70% 87%,#7622372b,transparent 60%),linear-gradient(125deg,#2d354451,#070b1394 45%,#16151d6b); box-shadow:inset 5px 2px 8px #d2e2ef22,inset -9px -12px 13px #000b; }
+#main #technologie .technology-group summary { display:flex; flex-direction:column; align-items:flex-start; list-style:none; cursor:pointer; min-height:295px; padding:38px 28px 28px; outline-offset:10px; }
+#main #technologie .technology-group summary::-webkit-details-marker { display:none; }
+#main #technologie .technology-sigil { display:block; color:#b0bbc9; width:44px; height:44px; margin:0 0 25px; filter:drop-shadow(2px 4px 2px #000); }
+#main #technologie .technology-sigil svg { width:100%; height:100%; }
+#main #technologie .technology-group__title { font:400 clamp(18px,1.6vw,25px)/1.2 var(--sans); margin:0 0 14px; color:#e4dfe7; }
+#main #technologie .technology-preview { color:#9f939e; font-size:10px; line-height:1.65; min-height:3.3em; overflow-wrap:anywhere; }
+#main #technologie .technology-discover { display:flex; justify-content:space-between; width:100%; margin-top:22px; padding-top:15px; border-top:1px solid #aaa2b124; font:10px var(--mono); color:#bda4af; }
+#main #technologie .technology-discover b { font:18px/10px var(--sans); }
+#main #technologie .technology-group[open] .technology-discover b { rotate:45deg; }
+#main #technologie .technology-group[open] { z-index:5; transform:none!important; }
+#main #technologie .technology-group .technology-chips { display:flex; flex-direction:column; gap:8px; padding:0 26px 38px; }
+#main #technologie .technology-group .technology-chip { display:flex; justify-content:space-between; gap:6px; white-space:normal; font-size:11px; padding:8px 0; border:0; border-bottom:1px solid #a7a5b11c; background:none; box-shadow:none; overflow-wrap:anywhere; }
+#main #technologie .technology-group .technology-chip span { padding:0; border:0; background:none; color:#a78999; }
+#main #technologie .technology-crystal { pointer-events:none; }
+#main #technologie .technology-group:is(:hover,:focus-within,[open]) .technology-sigil { color:#e6efff; }
+#main #technologie .technology-group:is(:hover,:focus-within,[open])::after { background:radial-gradient(ellipse 60% 9% at 38% 0,#ecf3ff91,transparent 85%),radial-gradient(ellipse at 70% 87%,#93324a46,transparent 60%),linear-gradient(125deg,#34405178,#070b1399 45%,#19131d88); }
+/* Ecosystem: the original roadmap links retain their planned/dashed semantics. */
+body.luxury-world #ekosystem .ecosystem-node { --lens-shape:23% 32% 19% 29% / 27% 21% 34% 28%; }
+body.luxury-world #ekosystem .ecosystem-node::before { background:radial-gradient(ellipse 65% 9% at 35% 2%,#e4f1ff4f,transparent 78%),radial-gradient(ellipse at 85% 87%,#8f253c22,transparent 65%),linear-gradient(125deg,#576b7d38,#080a1260 50%,#34455820); border-color:#cedbe275 #b1c2da33 #b45c663a #a8bbc259; box-shadow:inset 6px 4px 6px #c2d6ef12,inset -12px -12px 13px #000a,0 25px 45px #0007; }
+body.luxury-world #ekosystem .ecosystem-node::after { inset:6px 8px 10px; border:1px solid #b7c8d52c; background:linear-gradient(125deg,transparent 10%,#e3edfa11 12%,transparent 17% 79%,#ceb8d212 80%,transparent 82%); }
+body.luxury-world #ekosystem .ecosystem-node:is(.is-selected,.is-previewed) { transform:translateZ(calc(var(--lens-z) + 35px)) rotateY(0deg) scale(1.025); }
+body.luxury-world #ekosystem .ecosystem-node:is(.is-selected,.is-previewed)::before { border-color:#d6ddec9a #bdc4e24d #b4586b6a #d1e3ed7a; box-shadow:inset 6px 4px 8px #d6e8fb25,inset -12px -12px 13px #0009,0 25px 45px #0008; }
+body.luxury-world #ekosystem .ecosystem-system.has-preview .ecosystem-node:not(.is-previewed):not(.is-related) { opacity:.37; }
+body.luxury-world #ekosystem .ecosystem-console { background:radial-gradient(ellipse at 40% 0,#c0cad313,transparent 70%),#0b0a1180; border-color:#aa9db139; box-shadow:inset 0 1px #e5e7ee1c,inset 0 -8px 12px #0007; }
+/* Quiet chapters retain their content with a deeper material backdrop. */
+body.luxury-world #main #o-mnie { background:#040405; padding:145px 0; }
+body.luxury-world #o-mnie::before { content:"PK"; position:absolute; right:4%; top:-30px; color:#0a070b; font:700 400px/1 "PK Monument",serif; -webkit-text-stroke:1px #47343f42; text-shadow:1px 2px 2px #7143561f; opacity:.7; pointer-events:none; }
+body.luxury-world #o-mnie .collaboration { background:none; border:0; box-shadow:none; padding:0 0 0 35px; border-left:1px solid #9d4d6338; }
+body.luxury-world #main #wyzwania { background:radial-gradient(ellipse at 74% 55%,#38132424,transparent 65%),#050506; }
+/* Contact and brief are two semantic parts of one recessed console. */
+body.luxury-world #main > .installation-console { position:relative; margin:90px auto 110px; width:calc(100% - 10vw); max-width:1400px; padding:72px 6%; border:1px solid #a2aab04a; border-radius:12px 40px 12px 40px; background:radial-gradient(ellipse 80% 14% at 38% 0,#d9e3ef16,transparent 78%),radial-gradient(ellipse at 92% 82%,#66213b23,transparent 64%),linear-gradient(120deg,#171b2466,#08090e 52%,#101019); box-shadow:inset 4px 4px 4px #d7e2ef1a,inset -8px -10px 14px #000a,0 40px 100px #000a; }
+body.luxury-world .installation-console::before { content:""; position:absolute; inset:9px; border:1px solid #c4c3dd16; border-radius:9px 34px 9px 34px; pointer-events:none; }
+body.luxury-world #main .installation-console #kontakt { padding:0 0 65px; background:none; border-bottom:1px solid #d4baca26; }
+body.luxury-world #main .installation-console #kontakt .shell { width:100%; max-width:none; padding:0; }
+body.luxury-world .installation-console .contact { gap:8%; }
+body.luxury-world .installation-console #kontakt .section-title { font-size:clamp(40px,6vw,78px); }
+body.luxury-world #main .installation-console > .shell { width:100%; max-width:none; padding:0; }
+body.luxury-world #main .installation-console #brief { margin:0; padding:60px 0 0; background:none; border:0; box-shadow:none; border-radius:0; }
+body.luxury-world #main .installation-console #brief::before,body.luxury-world #main .installation-console #brief::after { display:none; }
+body.luxury-world #main #brief .brief-grid textarea { background:radial-gradient(ellipse at 40% 0,#acbed20a,transparent 75%),#05070c9c; border:1px solid #8a90a33a; border-radius:3px; box-shadow:inset 1px 3px 8px #0009,inset 0 -1px #d3d9e515; transition:border-color .3s,box-shadow .3s; }
+body.luxury-world #main #brief .brief-grid textarea:focus { outline:1px solid #cfaab9; outline-offset:3px; border-color:#bf718a99; box-shadow:inset 1px 3px 8px #0009,inset 0 -2px #a1455f5c,0 8px 20px #55172e15; }
+body.luxury-world #main #brief .brief-grid label:focus-within { color:#f3e0e9; }
+/* The last optical footprint loses its heat and leaves a silver mark in black. */
+body.luxury-world:has(#main > .hero--monument) > footer { position:relative; min-height:580px; background:linear-gradient(#050505,#030203 65%,#010102); isolation:isolate; }
+body.luxury-world:has(#main > .hero--monument) > footer::before { height:380px; margin:0; mask-image:none; background:url('brand/progressorkit-stamp.png') center 38%/160px no-repeat; opacity:calc(.25 - var(--continuity-end)*.15); filter:grayscale(1) brightness(.65); transform:none; }
+body.luxury-world:has(#main > .hero--monument) > footer::after { top:0; left:0; right:0; height:400px; background:radial-gradient(ellipse 42% 22% at 50% 35%,#7c23342b,transparent 80%); opacity:calc(.7 - var(--continuity-end)*.65); transform:none; }
+body.luxury-world:has(#main > .hero--monument) > footer .footer__inner { position:relative; z-index:2; }
+@media(max-width:1100px) {
+  #main #technologie .technology-groups { grid-template-columns:repeat(2,minmax(0,1fr)); gap:35px; }
+  #uslugi .service-zone { padding-inline:35px; }#uslugi .service-zone h3 { font-size:34px; }
+}
+@media(max-width:700px) {
+  body.luxury-world #main :is(#uslugi,#proces,#ekosystem,#technologie) { padding-block:80px; }
+  #uslugi .service-zones { display:block; padding:0 12px; }#uslugi .services-heading { margin-bottom:55px; }
+  #uslugi .service-zone,#uslugi .service-zone--systems { margin:0 0 90px; min-height:510px; padding:110px 32px 55px; }
+  #uslugi .service-zone--systems { margin-bottom:25px; }#uslugi .service-zone h3 { font-size:32px; }
+  #uslugi .service-zone__index { left:33px; top:32px; }
+  #uslugi .service-object { filter:none; }
+  #proces .production-space { min-height:0; }#proces .process-object { scale:.7; }
+  #main #technologie .technology-groups { gap:28px 12px; padding:0; }
+  #main #technologie .technology-group { --field-turn:-1deg; }#main #technologie .technology-group:nth-child(2n) { --field-turn:1deg; margin-top:20px!important; }
+  #main #technologie .technology-group summary { min-height:245px; padding:28px 18px 24px; }
+  #main #technologie .technology-sigil { width:33px; height:33px; margin-bottom:18px; }
+  #main #technologie .technology-group__title { font-size:17px; overflow-wrap:anywhere; }
+  #main #technologie .technology-preview { font-size:9px; }
+  #main #technologie .technology-discover { font-size:8px; margin-top:15px; }
+  #main #technologie .technology-group .technology-chips { padding:0 14px 32px; }
+  #main #technologie .technology-group .technology-chip { font-size:10px; }
+  body.luxury-world #main #o-mnie { padding-block:80px; }body.luxury-world #o-mnie::before { font-size:260px; top:150px; }
+  body.luxury-world #o-mnie .collaboration { padding:24px 0 0; border-left:0; border-top:1px solid #9d4d6338; }
+  body.luxury-world #main > .installation-console { width:calc(100% - 28px); padding:40px 22px; margin-block:50px 60px; border-radius:10px 25px 10px 25px; }
+  body.luxury-world #main .installation-console #kontakt { padding-bottom:35px; }body.luxury-world .installation-console #kontakt .section-title { font-size:40px; }
+  body.luxury-world .installation-console .contact { display:block; }.installation-console .contact__meta { margin-top:35px; }
+  body.luxury-world #main .installation-console #brief { padding-top:35px; }.installation-console .brief__heading { display:block; }
+  body.luxury-world:has(#main > .hero--monument) > footer { min-height:490px; }body.luxury-world:has(#main > .hero--monument) > footer::before { height:280px; background-size:125px; }
+}
+@media(prefers-reduced-motion:reduce) { .world-embers { display:none; }#uslugi .service-zone,#main #technologie .technology-group { transition:none; } }
+@media(forced-colors:active) { .world-embers,.process-heart,.technology-sigil,body.luxury-world #o-mnie::before { display:none; }#main #technologie .technology-group { border:1px solid CanvasText; transform:none!important; }#main #technologie .technology-group summary { color:CanvasText; }body.luxury-world #main > .installation-console { border:1px solid CanvasText;background:Canvas;box-shadow:none; } }
+@media print { .world-embers { display:none!important; }body.luxury-world #main > .installation-console { width:100%; margin:0; padding:0; border:0; background:white; box-shadow:none; } }
+
+html:has(.hero--installation) { scroll-padding-top:80px; }
+body.luxury-world #main :is(#rdzen,.home-chapter,.technology-section,#projekty,#kontakt,#brief) { scroll-margin-top:0; }
+@media(max-width:700px) { html:has(.hero--installation) { scroll-padding-top:65px; } }
+
+body.luxury-world #main .installation-console #kontakt .contact { padding:0; background:none; border:0; box-shadow:none; }
+body.luxury-world #main .installation-console #kontakt .contact::before,body.luxury-world #main .installation-console #kontakt .contact::after { display:none; }

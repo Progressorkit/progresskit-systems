@@ -1,0 +1,41 @@
+Input #0, matroska,webm, from '/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/journey-world-20261104/mobile.webm':
+  Metadata:
+    ENCODER         : Lavf60.16.100
+  Duration: 00:01:03.52, start: 0.000000, bitrate: 781 kb/s
+  Stream #0:0(eng): Video: vp8, yuv420p(tv, bt470bg/unknown/unknown, progressive), 390x844, SAR 1:1 DAR 195:422, 25 fps, 25 tbr, 1k tbn (default)
+    Metadata:
+      ENCODER         : Lavc60.31.102 libvpx
+      DURATION        : 00:01:03.520000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp8 (native) -> h264 (libx264))
+[libx264 @ 0x56cc1e453040] using SAR=1/1
+[libx264 @ 0x56cc1e453040] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x56cc1e453040] profile High, level 3.0, 4:2:0, 8-bit
+[libx264 @ 0x56cc1e453040] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=2 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=19.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/journey-world-20261104/mobile.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0(eng): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt470bg/unknown/unknown, progressive), 390x844 [SAR 1:1 DAR 195:422], q=2-31, 25 fps, 12800 tbn (default)
+    Metadata:
+      DURATION        : 00:01:03.520000000
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    frame=  190 fps=0.0 q=24.0 size=     256kB time=00:00:07.52 bitrate= 278.9kbits/s speed=14.9x    frame=  353 fps=351 q=24.0 size=     768kB time=00:00:14.04 bitrate= 448.1kbits/s speed=  14x    frame=  519 fps=344 q=24.0 size=    1280kB time=00:00:20.68 bitrate= 507.1kbits/s speed=13.7x    frame=  710 fps=354 q=24.0 size=    1792kB time=00:00:28.32 bitrate= 518.4kbits/s speed=14.1x    frame=  899 fps=358 q=24.0 size=    2048kB time=00:00:35.88 bitrate= 467.6kbits/s speed=14.3x    frame= 1087 fps=361 q=24.0 size=    2560kB time=00:00:43.40 bitrate= 483.2kbits/s speed=14.4x    frame= 1293 fps=368 q=24.0 size=    3072kB time=00:00:51.64 bitrate= 487.3kbits/s speed=14.7x    frame= 1497 fps=373 q=24.0 size=    3584kB time=00:00:59.80 bitrate= 491.0kbits/s speed=14.9x    [mp4 @ 0x56cc1e4523c0] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0x56cc1e453640] video:3764kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.475428%
+frame= 1588 fps=383 q=-1.0 Lsize=    3782kB time=00:01:03.40 bitrate= 488.7kbits/s speed=15.3x    
+[libx264 @ 0x56cc1e453040] frame I:12    Avg QP:15.47  size: 27737
+[libx264 @ 0x56cc1e453040] frame P:645   Avg QP:16.95  size:  4852
+[libx264 @ 0x56cc1e453040] frame B:931   Avg QP:18.06  size:   420
+[libx264 @ 0x56cc1e453040] consecutive B-frames: 16.8% 13.4%  5.1% 64.7%
+[libx264 @ 0x56cc1e453040] mb I  I16..4: 25.8% 28.1% 46.1%
+[libx264 @ 0x56cc1e453040] mb P  I16..4:  4.1%  4.2%  2.3%  P16..4: 24.5%  4.7%  2.5%  0.0%  0.0%    skip:57.7%
+[libx264 @ 0x56cc1e453040] mb B  I16..4:  0.4%  0.4%  0.1%  B16..8:  4.9%  0.9%  0.1%  direct: 2.3%  skip:91.0%  L0:41.9% L1:51.5% BI: 6.5%
+[libx264 @ 0x56cc1e453040] 8x8 transform intra:38.3% inter:20.1%
+[libx264 @ 0x56cc1e453040] coded y,uvDC,uvAC intra: 53.5% 46.0% 21.5% inter: 5.3% 5.6% 0.7%
+[libx264 @ 0x56cc1e453040] i16 v,h,dc,p: 43% 34% 20%  3%
+[libx264 @ 0x56cc1e453040] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 39% 22%  2%  1%  1%  1%  2%  3%
+[libx264 @ 0x56cc1e453040] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 31% 15%  3%  3%  4%  4%  4%  4%
+[libx264 @ 0x56cc1e453040] i8c dc,h,v,p: 51% 24% 22%  3%
+[libx264 @ 0x56cc1e453040] Weighted P-Frames: Y:0.3% UV:0.3%
+[libx264 @ 0x56cc1e453040] kb/s:485.36

@@ -1,0 +1,23 @@
+PASS desktop: hero dominates and showroom dormant
+PASS desktop: real logo pulse changes scale and light
+PASS desktop: continuous flight before activation
+PASS desktop: activation, materialization and cleanup
+PASS desktop: native project disclosure and close
+PASS mobile: hero dominates and showroom dormant
+PASS mobile: real logo pulse changes scale and light
+PASS mobile: continuous flight before activation
+PASS mobile: activation, materialization and cleanup
+PASS mobile: native project disclosure and close
+PASS layout 320: no overflow, visible logo and native navigation
+PASS layout 768: no overflow, visible logo and native navigation
+PASS layout 1920: no overflow, visible logo and native navigation
+PASS reduce: accessible keyboard entry and visible projects
+PASS paused: accessible keyboard entry and visible projects
+PASS forced: accessible keyboard entry and visible projects
+PASS controlled WebGL unavailable: usable native project fallback
+PASS interrupt transition and re-enter without stuck overlay
+PASS core pointer hover and focus do not activate; Enter does
+PASS existing navigation and project text preserved
+PASS JavaScript disabled: hero and catalog link remain usable
+PASS no browser errors, missing resources or external requests
+{"PASS":22,"FAIL":0}

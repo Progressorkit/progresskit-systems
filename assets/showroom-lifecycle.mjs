@@ -87,7 +87,7 @@ export function resourceScope() {
 }
 export function qualityProfile(width, dpr = 1, level = 0) {
   const compact = width <= 700;
-  const ratio = Math.min(dpr, 1) * [0.85, 0.72, 0.6][Math.min(2, level)];
+  const ratio = Math.min(dpr, 1) * [1, 0.8, 0.65][Math.min(2, level)];
   return {
     compact,
     dpr: Math.max(0.5, ratio),

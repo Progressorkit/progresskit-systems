@@ -1,0 +1,802 @@
+[
+  {
+    "width": 1440,
+    "viewport": 1440,
+    "ambient": {
+      "frames": 56,
+      "pending": true,
+      "paused": false,
+      "visible": 2,
+      "canvasCount": 1,
+      "particles": 116,
+      "poolSize": 116,
+      "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+      "fpsLimit": 24,
+      "disposed": false,
+      "cameraY": 0,
+      "elapsed": 3.2998999999999987,
+      "desktopLiving": true,
+      "depthRates": {
+        "far": 0.065,
+        "mid": 0.12,
+        "ash": 0.025
+      },
+      "size": {
+        "width": 1000,
+        "height": 625
+      },
+      "coordinateSpace": "global-camera",
+      "sections": [
+        {
+          "id": "start",
+          "visible": true
+        },
+        {
+          "id": "hero-machine",
+          "visible": true
+        },
+        {
+          "id": "rdzen",
+          "visible": false
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+        "class": "hero__motto",
+        "box": {
+          "x": 86.390625,
+          "y": 506.4375,
+          "width": 461.5625,
+          "height": 103.6875,
+          "top": 506.4375,
+          "right": 547.953125,
+          "bottom": 610.125,
+          "left": 86.390625
+        },
+        "font": "34.56px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 462,
+        "clientWidth": 462
+      },
+      {
+        "text": "Kontakt",
+        "class": "cta cta--primary",
+        "box": {
+          "x": 86.390625,
+          "y": 687.265625,
+          "width": 142,
+          "height": 52,
+          "top": 687.265625,
+          "right": 228.390625,
+          "bottom": 739.265625,
+          "left": 86.390625
+        },
+        "font": "16px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(124, 53, 73, 0.77), rgba(53, 19, 32, 0.9) 65%, rgba(102, 43, 64, 0.81))",
+        "weight": "600",
+        "scrollWidth": 140,
+        "clientWidth": 140
+      },
+      {
+        "text": "Usługi",
+        "class": "cta cta--ghost",
+        "box": {
+          "x": 238.390625,
+          "y": 687.265625,
+          "width": 142,
+          "height": 52,
+          "top": 687.265625,
+          "right": 380.390625,
+          "bottom": 739.265625,
+          "left": 238.390625
+        },
+        "font": "16px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 140,
+        "clientWidth": 140
+      },
+      {
+        "text": "Pobierz Glikemia Premium",
+        "class": "cta cta--text",
+        "box": {
+          "x": 86.390625,
+          "y": 749.265625,
+          "width": 294,
+          "height": 46,
+          "top": 749.265625,
+          "right": 380.390625,
+          "bottom": 795.265625,
+          "left": 86.390625
+        },
+        "font": "14px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 292,
+        "clientWidth": 292
+      },
+      {
+        "text": "Poznaj ekosystem↓",
+        "class": "hero__explore",
+        "box": {
+          "x": 86.390625,
+          "y": 829,
+          "width": 174.59375,
+          "height": 44,
+          "top": 829,
+          "right": 260.984375,
+          "bottom": 873,
+          "left": 86.390625
+        },
+        "font": "12px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 175,
+        "clientWidth": 175
+      },
+      {
+        "text": "Wstrzymaj ruch sceny",
+        "class": "hero__motion-toggle",
+        "box": {
+          "x": 276.390625,
+          "y": 829,
+          "width": 185.0625,
+          "height": 44,
+          "top": 829,
+          "right": 461.453125,
+          "bottom": 873,
+          "left": 276.390625
+        },
+        "font": "13px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 183,
+        "clientWidth": 183
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 390,
+    "viewport": 390,
+    "ambient": {
+      "frames": 31,
+      "pending": true,
+      "paused": false,
+      "visible": 2,
+      "canvasCount": 1,
+      "particles": 64,
+      "poolSize": 116,
+      "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+      "fpsLimit": 18,
+      "disposed": false,
+      "cameraY": 0,
+      "elapsed": 2.0832000000000006,
+      "desktopLiving": false,
+      "depthRates": {
+        "far": 0.065,
+        "mid": 0.12,
+        "ash": 0.025
+      },
+      "size": {
+        "width": 293,
+        "height": 633
+      },
+      "coordinateSpace": "global-camera",
+      "sections": [
+        {
+          "id": "start",
+          "visible": true
+        },
+        {
+          "id": "hero-machine",
+          "visible": true
+        },
+        {
+          "id": "rdzen",
+          "visible": false
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+        "class": "hero__motto",
+        "box": {
+          "x": 27.296875,
+          "y": 613,
+          "width": 362.703125,
+          "height": 69,
+          "top": 613,
+          "right": 390,
+          "bottom": 682,
+          "left": 27.296875
+        },
+        "font": "23px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 363,
+        "clientWidth": 363
+      },
+      {
+        "text": "Kontakt",
+        "class": "cta cta--primary",
+        "box": {
+          "x": 27.296875,
+          "y": 694,
+          "width": 162.703125,
+          "height": 52,
+          "top": 694,
+          "right": 190,
+          "bottom": 746,
+          "left": 27.296875
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(124, 53, 73, 0.77), rgba(53, 19, 32, 0.9) 65%, rgba(102, 43, 64, 0.81))",
+        "weight": "600",
+        "scrollWidth": 161,
+        "clientWidth": 161
+      },
+      {
+        "text": "Usługi",
+        "class": "cta cta--ghost",
+        "box": {
+          "x": 200,
+          "y": 694,
+          "width": 162.703125,
+          "height": 52,
+          "top": 694,
+          "right": 362.703125,
+          "bottom": 746,
+          "left": 200
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 161,
+        "clientWidth": 161
+      },
+      {
+        "text": "Pobierz Glikemia Premium",
+        "class": "cta cta--text",
+        "box": {
+          "x": 27.296875,
+          "y": 757,
+          "width": 335.40625,
+          "height": 46,
+          "top": 757,
+          "right": 362.703125,
+          "bottom": 803,
+          "left": 27.296875
+        },
+        "font": "14px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 333,
+        "clientWidth": 333
+      },
+      {
+        "text": "Poznaj ekosystem↓",
+        "class": "hero__explore",
+        "box": {
+          "x": 23.390625,
+          "y": 827,
+          "width": 114,
+          "height": 44,
+          "top": 827,
+          "right": 137.390625,
+          "bottom": 871,
+          "left": 23.390625
+        },
+        "font": "12px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 114,
+        "clientWidth": 114
+      },
+      {
+        "text": "Wstrzymaj ruch sceny",
+        "class": "hero__motion-toggle",
+        "box": {
+          "x": 235.5,
+          "y": 820.625,
+          "width": 135,
+          "height": 50.375,
+          "top": 820.625,
+          "right": 370.5,
+          "bottom": 871,
+          "left": 235.5
+        },
+        "font": "12px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 133,
+        "clientWidth": 133
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 320,
+    "viewport": 320,
+    "ambient": {
+      "frames": 30,
+      "pending": true,
+      "paused": false,
+      "visible": 2,
+      "canvasCount": 1,
+      "particles": 64,
+      "poolSize": 116,
+      "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+      "fpsLimit": 18,
+      "disposed": false,
+      "cameraY": 0,
+      "elapsed": 1.9999000000000002,
+      "desktopLiving": false,
+      "depthRates": {
+        "far": 0.065,
+        "mid": 0.12,
+        "ash": 0.025
+      },
+      "size": {
+        "width": 240,
+        "height": 633
+      },
+      "coordinateSpace": "global-camera",
+      "sections": [
+        {
+          "id": "start",
+          "visible": true
+        },
+        {
+          "id": "hero-machine",
+          "visible": true
+        },
+        {
+          "id": "rdzen",
+          "visible": false
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+        "class": "hero__motto",
+        "box": {
+          "x": 22.390625,
+          "y": 613,
+          "width": 297.609375,
+          "height": 69,
+          "top": 613,
+          "right": 320,
+          "bottom": 682,
+          "left": 22.390625
+        },
+        "font": "23px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 298,
+        "clientWidth": 298
+      },
+      {
+        "text": "Kontakt",
+        "class": "cta cta--primary",
+        "box": {
+          "x": 22.390625,
+          "y": 694,
+          "width": 132.609375,
+          "height": 52,
+          "top": 694,
+          "right": 155,
+          "bottom": 746,
+          "left": 22.390625
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(124, 53, 73, 0.77), rgba(53, 19, 32, 0.9) 65%, rgba(102, 43, 64, 0.81))",
+        "weight": "600",
+        "scrollWidth": 131,
+        "clientWidth": 131
+      },
+      {
+        "text": "Usługi",
+        "class": "cta cta--ghost",
+        "box": {
+          "x": 165,
+          "y": 694,
+          "width": 132.609375,
+          "height": 52,
+          "top": 694,
+          "right": 297.609375,
+          "bottom": 746,
+          "left": 165
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 131,
+        "clientWidth": 131
+      },
+      {
+        "text": "Pobierz Glikemia Premium",
+        "class": "cta cta--text",
+        "box": {
+          "x": 22.390625,
+          "y": 757,
+          "width": 275.21875,
+          "height": 46,
+          "top": 757,
+          "right": 297.609375,
+          "bottom": 803,
+          "left": 22.390625
+        },
+        "font": "14px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 273,
+        "clientWidth": 273
+      },
+      {
+        "text": "Poznaj ekosystem↓",
+        "class": "hero__explore",
+        "box": {
+          "x": 19.1875,
+          "y": 827,
+          "width": 114,
+          "height": 44,
+          "top": 827,
+          "right": 133.1875,
+          "bottom": 871,
+          "left": 19.1875
+        },
+        "font": "12px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 114,
+        "clientWidth": 114
+      },
+      {
+        "text": "Wstrzymaj ruch sceny",
+        "class": "hero__motion-toggle",
+        "box": {
+          "x": 169,
+          "y": 820.625,
+          "width": 135,
+          "height": 50.375,
+          "top": 820.625,
+          "right": 304,
+          "bottom": 871,
+          "left": 169
+        },
+        "font": "12px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 133,
+        "clientWidth": 133
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "viewport": 768,
+    "ambient": {
+      "frames": 48,
+      "pending": true,
+      "paused": false,
+      "visible": 3,
+      "canvasCount": 1,
+      "particles": 116,
+      "poolSize": 116,
+      "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+      "fpsLimit": 24,
+      "disposed": false,
+      "cameraY": 0,
+      "elapsed": 2.4833000000000016,
+      "desktopLiving": false,
+      "depthRates": {
+        "far": 0.065,
+        "mid": 0.12,
+        "ash": 0.025
+      },
+      "size": {
+        "width": 576,
+        "height": 675
+      },
+      "coordinateSpace": "global-camera",
+      "sections": [
+        {
+          "id": "start",
+          "visible": true
+        },
+        {
+          "id": "hero-machine",
+          "visible": true
+        },
+        {
+          "id": "rdzen",
+          "visible": true
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+        "class": "hero__motto",
+        "box": {
+          "x": 46.078125,
+          "y": 496.4375,
+          "width": 281.203125,
+          "height": 117,
+          "top": 496.4375,
+          "right": 327.28125,
+          "bottom": 613.4375,
+          "left": 46.078125
+        },
+        "font": "26px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 281,
+        "clientWidth": 281
+      },
+      {
+        "text": "Kontakt",
+        "class": "cta cta--primary",
+        "box": {
+          "x": 46.078125,
+          "y": 677.265625,
+          "width": 112.65625,
+          "height": 52,
+          "top": 677.265625,
+          "right": 158.734375,
+          "bottom": 729.265625,
+          "left": 46.078125
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(124, 53, 73, 0.77), rgba(53, 19, 32, 0.9) 65%, rgba(102, 43, 64, 0.81))",
+        "weight": "600",
+        "scrollWidth": 111,
+        "clientWidth": 111
+      },
+      {
+        "text": "Usługi",
+        "class": "cta cta--ghost",
+        "box": {
+          "x": 168.734375,
+          "y": 677.265625,
+          "width": 112.65625,
+          "height": 52,
+          "top": 677.265625,
+          "right": 281.390625,
+          "bottom": 729.265625,
+          "left": 168.734375
+        },
+        "font": "15px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 111,
+        "clientWidth": 111
+      },
+      {
+        "text": "Pobierz Glikemia Premium",
+        "class": "cta cta--text",
+        "box": {
+          "x": 46.078125,
+          "y": 739.265625,
+          "width": 235.3125,
+          "height": 46,
+          "top": 739.265625,
+          "right": 281.390625,
+          "bottom": 785.265625,
+          "left": 46.078125
+        },
+        "font": "14px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 233,
+        "clientWidth": 233
+      },
+      {
+        "text": "Poznaj ekosystem↓",
+        "class": "hero__explore",
+        "box": {
+          "x": 78.078125,
+          "y": 819,
+          "width": 174.59375,
+          "height": 44,
+          "top": 819,
+          "right": 252.671875,
+          "bottom": 863,
+          "left": 78.078125
+        },
+        "font": "12px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 175,
+        "clientWidth": 175
+      },
+      {
+        "text": "Wstrzymaj ruch sceny",
+        "class": "hero__motion-toggle",
+        "box": {
+          "x": 236.078125,
+          "y": 819,
+          "width": 185.0625,
+          "height": 44,
+          "top": 819,
+          "right": 421.140625,
+          "bottom": 863,
+          "left": 236.078125
+        },
+        "font": "13px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 183,
+        "clientWidth": 183
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "viewport": 1366,
+    "ambient": {
+      "frames": 59,
+      "pending": true,
+      "paused": false,
+      "visible": 2,
+      "canvasCount": 1,
+      "particles": 116,
+      "poolSize": 116,
+      "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+      "fpsLimit": 24,
+      "disposed": false,
+      "cameraY": 0,
+      "elapsed": 3.116433999999999,
+      "desktopLiving": true,
+      "depthRates": {
+        "far": 0.065,
+        "mid": 0.12,
+        "ash": 0.025
+      },
+      "size": {
+        "width": 1000,
+        "height": 659
+      },
+      "coordinateSpace": "global-camera",
+      "sections": [
+        {
+          "id": "start",
+          "visible": true
+        },
+        {
+          "id": "hero-machine",
+          "visible": true
+        },
+        {
+          "id": "rdzen",
+          "visible": false
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "Technologia ma dawać kontrolę. Nie na odwrót.",
+        "class": "hero__motto",
+        "box": {
+          "x": 81.953125,
+          "y": 506.4375,
+          "width": 437.765625,
+          "height": 98.34375,
+          "top": 506.4375,
+          "right": 519.71875,
+          "bottom": 604.78125,
+          "left": 81.953125
+        },
+        "font": "32.784px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 438,
+        "clientWidth": 438
+      },
+      {
+        "text": "Kontakt",
+        "class": "cta cta--primary",
+        "box": {
+          "x": 81.953125,
+          "y": 687.265625,
+          "width": 142,
+          "height": 52,
+          "top": 687.265625,
+          "right": 223.953125,
+          "bottom": 739.265625,
+          "left": 81.953125
+        },
+        "font": "16px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(124, 53, 73, 0.77), rgba(53, 19, 32, 0.9) 65%, rgba(102, 43, 64, 0.81))",
+        "weight": "600",
+        "scrollWidth": 140,
+        "clientWidth": 140
+      },
+      {
+        "text": "Usługi",
+        "class": "cta cta--ghost",
+        "box": {
+          "x": 233.953125,
+          "y": 687.265625,
+          "width": 142,
+          "height": 52,
+          "top": 687.265625,
+          "right": 375.953125,
+          "bottom": 739.265625,
+          "left": 233.953125
+        },
+        "font": "16px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 140,
+        "clientWidth": 140
+      },
+      {
+        "text": "Pobierz Glikemia Premium",
+        "class": "cta cta--text",
+        "box": {
+          "x": 81.953125,
+          "y": 749.265625,
+          "width": 294,
+          "height": 46,
+          "top": 749.265625,
+          "right": 375.953125,
+          "bottom": 795.265625,
+          "left": 81.953125
+        },
+        "font": "14px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 292,
+        "clientWidth": 292
+      },
+      {
+        "text": "Poznaj ekosystem↓",
+        "class": "hero__explore",
+        "box": {
+          "x": 81.953125,
+          "y": 829,
+          "width": 174.59375,
+          "height": 44,
+          "top": 829,
+          "right": 256.546875,
+          "bottom": 873,
+          "left": 81.953125
+        },
+        "font": "12px",
+        "background": "none",
+        "weight": "400",
+        "scrollWidth": 175,
+        "clientWidth": 175
+      },
+      {
+        "text": "Wstrzymaj ruch sceny",
+        "class": "hero__motion-toggle",
+        "box": {
+          "x": 271.953125,
+          "y": 829,
+          "width": 185.0625,
+          "height": 44,
+          "top": 829,
+          "right": 457.015625,
+          "bottom": 873,
+          "left": 271.953125
+        },
+        "font": "13px",
+        "background": "radial-gradient(at 28% 0%, rgba(233, 237, 255, 0.157), rgba(0, 0, 0, 0) 65%), linear-gradient(116deg, rgba(230, 233, 244, 0.1), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 66%, rgba(221, 183, 197, 0.08) 78%, rgba(0, 0, 0, 0) 88%), linear-gradient(rgba(41, 38, 48, 0.76), rgba(13, 13, 20, 0.863) 65%, rgba(54, 35, 47, 0.76))",
+        "weight": "600",
+        "scrollWidth": 183,
+        "clientWidth": 183
+      }
+    ],
+    "errors": []
+  }
+]

@@ -1,0 +1,371 @@
+/* Final material pass, loaded after the existing stylesheets.
+   Theme and typography only: the mechanical module layout belongs to its
+   existing controller and rail stylesheet. No new animation or filter layer. */
+:root {
+  color-scheme:dark;
+  --bg:#1c2226;
+  --bg-2:#242c31;
+  --panel:#303a41;
+  --panel-2:#3a454c;
+  --text:#f1f4f5;
+  --muted:#c3cdd3;
+  --dim:#b6c3cb;
+  --steel:#d8e0e5;
+  --blue:#ffd3dc;
+  --line:#61717c;
+  --line-strong:#95a5af;
+  --signal:#bb2340;
+  --signal-bright:#ffacb9;
+  --signal-dark:#8c142b;
+}
+body {
+  color:var(--text);
+  background:linear-gradient(120deg,#222a30,#171f24 55%,#2c353b);
+}
+.topbar {
+  color:#edf2f5;
+  border-bottom-color:#7f909b;
+  background:
+    repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 4px),
+    linear-gradient(115deg,#434d54,#2a343b 46%,#38434b);
+  box-shadow:inset 0 1px 0 #ffffff38,inset 0 -3px 0 #111a20,0 5px 18px #080d1270;
+  backdrop-filter:none;
+}
+.topbar .brand__title { color:#f0f4f6; text-shadow:0 1px 1px #070d12; }
+.topbar .brand__mark { filter:none; }
+.topbar .nav a { color:#e0e7ec; font-size:12px; }
+.topbar .nav a:hover,.topbar .nav a:focus-visible { color:#fff; }
+.topbar .nav a[href="#kontakt"] {
+  color:#fff;
+  background:linear-gradient(120deg,#ac1934,#85132b);
+  border-color:#f19aaa;
+  text-shadow:none;
+}
+.topbar .menu-btn { color:#fff; border-color:#a0afb9; background:linear-gradient(#35424b,#24313a); }
+.topbar .menu-btn span { background:#f1f4f6; }
+.topbar .menu-btn span:last-child { background:#ffa4b6; }
+.mobile-panel { background:#252f36; border-color:#8b9ea9; }
+.mobile-panel a { color:#f1f4f6; font-size:14px; }
+.mobile-panel a:hover,.mobile-panel a:focus-visible { color:#fff; background:#3b464f; }
+#main:has(>.hero--monument) {
+  background:
+    repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 4px),
+    linear-gradient(115deg,#2e373d,#20292f 48%,#343d43);
+}
+.hero--monument .stone-line {
+  color:#e6ecef;
+  background:none;
+  -webkit-text-stroke:0;
+  text-shadow:0 1px 0 #ffffff30,0 3px 0 #101b22,0 5px 9px #070d1270;
+}
+.hero--monument .hero__motto { color:#d1dbe1; text-shadow:none; }
+.hero__explore { color:#e0e7eb; }
+.hero__explore span:last-child { border-color:#99aab5; }
+.hero__commercial-actions .cta:first-child,
+#main .cta--primary,
+#o-mnie .collaboration__actions .cta--primary,
+#brief>.hero__actions .cta--primary {
+  color:#fff;
+  border-color:#f6a1b2;
+  background:linear-gradient(115deg,#af1e39,#851329);
+  box-shadow:inset 0 1px 0 #ffc9d33d,0 3px 0 #4e0b1a,0 7px 16px #0b11174d;
+}
+.hero__commercial-actions .cta:first-child:hover,
+#main .cta--primary:hover,
+#o-mnie .collaboration__actions .cta--primary:hover,
+#brief>.hero__actions .cta--primary:hover { color:#fff; background:linear-gradient(115deg,#bd2540,#981c33); }
+.hero__commercial-actions .cta:nth-child(2),
+#main .cta--ghost,
+#o-mnie .collaboration__actions .cta--ghost,
+#brief>.hero__actions .cta--ghost {
+  color:#f1f4f6;
+  border-color:#a0b0ba;
+  background:
+    repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 4px),
+    linear-gradient(120deg,#43515b,#2c3943);
+  box-shadow:inset 0 1px 0 #ffffff30,0 3px 0 #131f28;
+}
+#main .cta--ghost:hover,
+#o-mnie .collaboration__actions .cta--ghost:hover,
+#brief>.hero__actions .cta--ghost:hover { color:#fff; border-color:#ffc1ce; background:linear-gradient(120deg,#4d5b65,#36444e); }
+.hero__commercial-actions .cta:nth-child(n+3) { color:#ffbdcb; background:none; box-shadow:none; }
+.section-kicker { color:#ffacb9; }
+.section-copy { color:#c9d3d9; }
+
+/* Rail/module skins. No position, size, transform, grid, overflow or motion rules. */
+.project-showroom .showroom-heading .section-title { color:#f0f4f6; text-shadow:0 2px 1px #0a141c; }
+.project-showroom .section-kicker { color:#ffadbc; }
+.project-showroom .showroom-heading>p,
+.project-showroom .showroom-instructions { color:#ced8de; font-size:15px; line-height:1.7; }
+.project-showroom .showroom-catalog-link a { color:#ffc4d0; font-size:15px; }
+.project-showroom .showroom-gate {
+  color:#f0f4f6;
+  border-color:#96a4ad;
+  background:linear-gradient(125deg,#414c54,#29343c);
+  box-shadow:inset 0 1px 0 #ffffff2c,0 3px 0 #121e27;
+}
+.project-showroom .showroom-gate__label { color:#edf3f6; font-size:14px; }
+.project-showroom .showroom-gate__icon { color:#d8e4eb; }
+.project-showroom .showroom-gate__count { color:#cbd6de; font-size:12px; }
+.project-showroom .showroom-gate[aria-pressed="true"] { border-color:#ffafbf; background:linear-gradient(125deg,#5c3441,#392b35); }
+.project-showroom .showroom-gate[aria-pressed="true"] .showroom-gate__label { color:#fff0f4; }
+.project-showroom .showroom-all,
+.project-showroom .showroom-controls button {
+  color:#eef3f6;
+  border-color:#9aabb6;
+  background:linear-gradient(#3f4c55,#283640);
+  font-size:14px;
+}
+.project-showroom .showroom-filterbar p,
+.project-showroom .showroom-controls>span { color:#d1dce3; font-size:14px; }
+.project-showroom #showroom-status { color:#d1dce3; font-size:14px; line-height:1.7; }
+/* Enhanced module faces are owned by project-mechanism.css. */
+.project-showroom .project-slice__panel { color:#eef3f6; border-color:#91a0aa; background:linear-gradient(120deg,#2a363f,#202c35); box-shadow:inset 0 1px 0 #e5f0f526; }
+.project-showroom .project-slice__copy p,
+.project-showroom .project-slice__copy p:first-child { color:#e0e8ed; font-size:16px; line-height:1.75; }
+.project-showroom .project-slice__technologies li { color:#e1ebf1; border-color:#8299aa; background:#22333f; font-size:12px; line-height:1.5; }
+.project-showroom .project-slice__media figcaption { color:#cad6df; font-size:14px; line-height:1.65; }
+.project-showroom .project-slice__close { color:#fff; border-color:#a6b9c6; background:linear-gradient(#435868,#2b4050); font-size:14px; }
+.project-showroom .project-slice__actions a { color:#f0f5f7; border-color:#a1b3c0; background:linear-gradient(#435767,#2b4050); font-size:14px; }
+.project-showroom .project-slice__actions a[href$="#kontakt"] { color:#fff; border-color:#f2a5b6; background:linear-gradient(#ad1b38,#85132d); }
+.project-showroom .project-slice__actions a[href*="/download/"] { color:#f1e2e9; border-color:#b59aa9; background:#3a2c38; font-size:14px; }
+
+/* Retain different metal planes below the main mechanism. */
+#main #o-mnie,#main #kontakt {
+  color:#eef3f6;
+  border-top-color:#7e8d97;
+  border-bottom-color:#121c23;
+  background:
+    repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 4px),
+    linear-gradient(120deg,#354047,#232d34 70%);
+  box-shadow:inset 0 2px 0 #0d171e,inset 0 3px 0 #d7e5ed26;
+}
+#main #o-mnie .chapter-heading .section-title,
+#main #kontakt .section-title { color:#f0f4f6; text-shadow:0 2px 1px #101b23; }
+#main #o-mnie .chapter-heading .section-kicker,
+#main #kontakt .section-kicker { color:#ffb1c0; }
+#main #o-mnie .about-v5__copy p,
+#main #kontakt .section-copy { color:#d0dbe2; }
+#main #o-mnie .about-v5__copy p:first-child { color:#e9eff3; }
+#o-mnie .collaboration { background:linear-gradient(120deg,#3c4952,#283640); border-color:#8b9eaa; border-top-color:#ed849b; box-shadow:inset 1px 1px 0 #e0edf433,3px 5px 0 #14222c,0 10px 24px #1018204d; }
+#o-mnie .collaboration p { color:#d2dce3; font-size:16px; }
+#o-mnie .collaboration .section-kicker { color:#ffb4c4; }
+#main #kontakt .contact__email { color:#ffb6c6; border-bottom-color:#f39bb0; text-shadow:none; overflow-wrap:anywhere; }
+#main #kontakt .contact__email:hover { color:#ffe0e8; border-bottom-color:#ffe0e8; }
+#kontakt .contact__meta>div { border-top-color:#7d919f; box-shadow:none; }
+#main #kontakt .contact__meta small { color:#bcccd7; font-size:12px; line-height:1.5; }
+#main #kontakt .contact__meta strong { color:#e5edf2; font-size:16px; }
+#main #kontakt .contact__meta a { color:#ffc2d0; }
+#main #uslugi { background:linear-gradient(115deg,#29343c,#202b33 60%,#303c45); }
+#main #ekosystem { background:linear-gradient(115deg,#303a42,#222d35 65%,#29363e); }
+#main #wydania { background:linear-gradient(115deg,#27343d,#1e2b34 65%,#2e3b45); }
+#uslugi .competency-list li { color:#edf3f7; border-color:#899eac; border-left-color:#ee8199; background:linear-gradient(120deg,#3e4d57,#2d3c47); font-size:16px; }
+#uslugi .services-technologies a { color:#ffd1dc; font-size:15px; }
+.delivery-node,.delivery-channel { color:#ecf3f7; border-color:#849ba9; background:linear-gradient(120deg,#3a4a56,#263945); }
+.delivery-state { color:#ffe8ef; border-color:#c891a5; background:#4a3041; font-size:13px; }
+.delivery-node h3,.delivery-channel h3 { color:#f1f5f8; }
+.delivery-channel h3>span { color:#dbe6ed; font-size:16px; }
+.delivery-project-link { color:#ffd0dd; font-size:15px; }
+.delivery-roadmap { color:#e0eaf1; border-color:#b897a7; background:#202f3a; }
+.delivery-roadmap p,.delivery-roadmap p+p { color:#dce6ed; font-size:16px; }
+.delivery-release-note { color:#efdae3; font-size:16px; }
+/* The ecosystem is one shared process diagram, not another product-card grid. */
+.delivery-map--flow { display:block; }
+.delivery-map--flow::before { content:none; }
+.delivery-map-intro { max-width:88ch; margin:0 0 28px; color:#d0dce4; font-size:16px; line-height:1.8; }
+.delivery-flow {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(26px,3vw,46px);
+  margin:32px 0 0;
+  padding:0;
+  border-top:2px solid #95a4ae;
+  list-style:none;
+}
+.delivery-flow__node {
+  position:relative;
+  min-width:0;
+  padding:24px 0 18px;
+  border-top:3px solid #ba6b82;
+}
+.delivery-flow__heading { margin:18px 0 12px; color:#f0f5f8; font-size:22px; line-height:1.35; overflow-wrap:anywhere; }
+.delivery-flow__description { margin:14px 0; color:#d0dce5; font-size:15px; line-height:1.75; overflow-wrap:anywhere; }
+.delivery-flow__connector { position:absolute; top:26px; right:-30px; color:#ffc2d3; font-size:24px; line-height:1; }
+.delivery-flow__relationship { display:block; margin-top:16px; color:#f3c2d2; font-size:13px; line-height:1.65; overflow-wrap:anywhere; }
+.delivery-independent { margin-top:28px; padding-top:28px; border-top:1px solid #7e929f; }
+.delivery-independent>h3 { margin:0 0 20px; color:#edf4f8; font-size:21px; line-height:1.4; }
+.delivery-independent__branches { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 48px; }
+.delivery-branch { min-width:0; padding:0 0 0 20px; border-left:2px dashed #bd8094; }
+.delivery-branch h4 { margin:0 0 14px; color:#f0f4f8; font-size:19px; line-height:1.45; }
+.delivery-case-studies { border-top:1px solid #7c929f; border-bottom:1px solid #182933; background:linear-gradient(120deg,#2b3a45,#202f3a); }
+.delivery-case-studies .section-copy { color:#d3e0e9; font-size:16px; line-height:1.8; }
+.delivery-case-studies a { display:inline-flex; align-items:center; min-height:48px; color:#ffcfdf; font-size:16px; text-decoration:underline; text-underline-offset:5px; }
+#technologie .section-title { color:#f0f4f6; }
+#technologie .section-copy { color:#c8d5de; }
+#technologie .technology-group__title { color:#d3dfe7; font-size:13px; }
+#technologie .technology-group .technology-chip,
+.technology-chip { color:#e3edf3; border-color:#8299a9; font-size:14px; }
+#technologie .technology-chip span { color:#c6d7e2; }
+#technologie .technology-chip:hover { color:#ffdee7; border-color:#f2a2b9; }
+
+/* Engineering evidence stays visually separate from product navigation. */
+.engineering-exhibit .section-kicker { color:#ffb5c6; }
+.engineering-exhibit .engineering-exhibit__intro .section-copy { color:#c8d5de; font-size:16px; }
+.engineering-selector { color:#d3dfe7; border-color:#6f8493; font-size:14px; }
+.engineering-selector__number { color:#b9cedd; font-size:12px; }
+.engineering-selector__arrow { color:#ffc1d2; opacity:1; }
+.engineering-selector[aria-selected="true"] { color:#fff1f6; background:linear-gradient(90deg,#5d3443,#2a333b); }
+.engineering-case-display__heading h3 { color:#eff5f8; }
+.engineering-phase h4 { color:#e7eff4; font-size:15px; }
+.engineering-phase p,.engineering-phase:last-child p { color:#c9d7e1; font-size:15px; }
+.engineering-phase__number { color:#d3e1eb; border-color:#a26a80; }
+.engineering-phase:not(:last-child)::after { color:#ffc6d8; background:#26343e; }
+.engineering-analysis>summary,.engineering-case-link { color:#ffd5e1; font-size:14px; }
+.engineering-analysis dt { color:#f2bacb; font-size:12px; }
+.engineering-analysis dd { color:#cad8e2; font-size:15px; }
+.engineering-analysis dd a { color:#ffd6e3; }
+
+#brief { color:#edf4f8; border-color:#8a9eac; border-top-color:#ee92aa; background:linear-gradient(120deg,#354650,#24353f); box-shadow:inset 1px 1px 0 #e1eef536,0 4px 0 #15252f; }
+#brief .brief__heading .section-kicker { color:#ffbed0; }
+#brief .brief__heading>p,#brief .brief-grid label { color:#d3e1ea; font-size:16px; }
+#brief .brief-grid textarea { color:#eff5f8; border-color:#a4b7c5; background:linear-gradient(125deg,#152630,#21343f); box-shadow:inset 0 2px 4px #050f1666; font-size:16px; line-height:1.6; color-scheme:dark; }
+#brief .brief-grid textarea:hover { border-color:#ffb3c8; }
+#brief .brief-grid textarea:focus-visible { color:#fff; background:#223b4b; border-color:#ffd4e1; outline-color:#ffd4e1; }
+#brief>[data-brief-status] { color:#ffe0e9; }
+footer { color:#d3dfe7; border-top:1px solid #718795; background:linear-gradient(115deg,#28353e,#182831 65%,#263842); }
+.footer-brand strong { color:#e1edf4; }
+.footer__links { color:#c7d7e2; font-size:14px; }
+.footer__links a { color:#deebf3; }
+.footer__links a:hover { color:#ffd6e3; text-decoration:underline; }
+
+/* Shared case studies and catalogue retain the same readable material palette. */
+.catalog-card { background:linear-gradient(150deg,#31414d,#21333f 75%); border-color:#8196a6; }
+.card-top p,.drawer-content p,.drawer-content li,.case-section p,.case-section ul,.privacy p { color:#d2dfe8; font-size:16px; }
+.card-stage,.status-chip { color:#eaf2f8; border-color:#94aabb; background:#293f50; font-size:13px; }
+.card-category,.tech-line,.updated,.source-list code { color:#c9dbe8; font-size:12px; }
+.source-list code { overflow-wrap:anywhere; }
+.project-drawer>summary { color:#ffd5e4; font-size:15px; }
+.project-drawer[open]>summary { background:#324957; }
+.case-index a,.case-content a,.privacy a,.breadcrumb a { color:#ffd5e3; }
+.case-content .cta--ghost { color:#edf4f8; }
+.catalog-tools label { color:#e1ebf3; font-size:14px; }
+.catalog-tools input,.catalog-tools select { color:#eef4f8; border-color:#92a9ba; background:#1a2e3c; }
+.catalog-tools input::placeholder { color:#bacfdf; }
+.screenshot figcaption { color:#c2d4e2; font-size:14px; }
+
+:focus-visible,
+#o-mnie a:focus-visible,
+#kontakt a:focus-visible,
+#brief .cta:focus-visible,
+.project-showroom :focus-visible,
+.delivery-section :focus-visible { outline-color:#ffd4df; }
+::selection { color:#fff; background:#8d2847; }
+@media (max-width:700px) {
+  .topbar .nav a { font-size:12px; }
+  .project-showroom .showroom-card .project-slice h3 { font-size:22px; }
+  .project-showroom .showroom-gate__label { font-size:13px; }
+  .delivery-flow { grid-template-columns:minmax(0,1fr); gap:20px; border-top:0; border-left:2px solid #879ca9; }
+  .delivery-flow__node { padding:0 0 24px 24px; border-top:0; border-bottom:1px solid #627f92; }
+  .delivery-flow__heading { margin-top:14px; }
+  .delivery-flow__connector { top:auto; right:auto; left:-13px; bottom:-12px; padding:0 3px; background:#26353f; transform:rotate(90deg); }
+  .delivery-independent__branches { grid-template-columns:minmax(0,1fr); gap:26px; }
+  .delivery-branch { padding-left:18px; }
+}
+@media (forced-colors:active) {
+  body,.topbar,.mobile-panel,#main:has(>.hero--monument),
+  #main #o-mnie,#main #kontakt,#main #uslugi,#main #ekosystem,#main #wydania,
+  #o-mnie .collaboration,#brief,footer,.delivery-node,.delivery-channel,.delivery-roadmap,
+  .project-showroom .showroom-card .project-slice,.project-showroom .project-slice__panel,
+  .project-showroom .showroom-gate,.project-showroom .showroom-controls button,
+  .project-showroom .showroom-all,.project-showroom .project-slice__close,
+  .project-showroom .project-slice__actions a,.catalog-card,
+  #brief .brief-grid textarea,#brief .brief-grid textarea:focus-visible {
+    color:CanvasText;
+    background:Canvas;
+    border-color:CanvasText;
+    box-shadow:none;
+    text-shadow:none;
+  }
+  .topbar .brand__title,.topbar .nav a,.hero--monument .stone-line,.hero--monument .hero__motto,
+  #main #o-mnie .chapter-heading .section-title,#main #kontakt .section-title,
+  #main #o-mnie .about-v5__copy p,#main #kontakt .section-copy,
+  #main #kontakt .contact__email,#main #kontakt .contact__meta small,#main #kontakt .contact__meta strong,
+  .project-showroom .showroom-card .project-slice h3,.project-showroom .project-slice__copy p,
+  .project-showroom .project-slice__copy p:first-child,
+  .delivery-channel h3>span,.delivery-roadmap p,.delivery-roadmap p+p,.delivery-release-note,
+  .engineering-phase p,.engineering-phase:last-child p,.engineering-analysis dd,
+  #brief .brief__heading>p,#brief .brief-grid label,.footer__links,.footer__links a {
+    color:CanvasText;
+    text-shadow:none;
+  }
+  :focus-visible { outline-color:Highlight; }
+}
+@media print {
+  body,#main:has(>.hero--monument),#main #o-mnie,#main #kontakt,#main #uslugi,#main #ekosystem,#main #wydania,
+  #o-mnie .collaboration,#brief,.delivery-node,.delivery-channel,.delivery-roadmap,.catalog-card {
+    color:#111;
+    background:#fff;
+    box-shadow:none;
+    text-shadow:none;
+  }
+  .hero--monument .stone-line,.hero--monument .hero__motto,
+  #main #o-mnie .chapter-heading .section-title,#main #kontakt .section-title,
+  #main #o-mnie .about-v5__copy p,#main #o-mnie .about-v5__copy p:first-child,#main #kontakt .section-copy,
+  #main #kontakt .contact__email,#main #kontakt .contact__meta small,#main #kontakt .contact__meta strong,
+  .delivery-channel h3>span,.delivery-roadmap p,.delivery-roadmap p+p,.delivery-release-note,
+  #brief .brief__heading>p,#brief .brief-grid label,#brief .brief-grid textarea {
+    color:#111;
+    background:none;
+    text-shadow:none;
+  }
+}
+
+/* Approved reconstruction: decorative panorama above the existing page footer. */
+body>footer {
+  padding-top:0;
+  padding-inline:0;
+  padding-bottom:42px;
+  color:#d8d8d2;
+  border-top-color:#8b8b82;
+  background:
+    repeating-linear-gradient(0deg,#f0f0e706 0 1px,transparent 1px 4px),
+    linear-gradient(115deg,#343431,#20201e 65%,#2c2c29);
+}
+body>footer::before {
+  content:"";
+  display:block;
+  width:100%;
+  aspect-ratio:1672 / 150;
+  min-height:128px;
+  margin-bottom:32px;
+  border-bottom:1px solid #8b8b82;
+  background:#252820 url("brand/footer-forest-mountains-reconstruction.png") center / cover no-repeat;
+  pointer-events:none;
+}
+body>footer .footer-brand strong { color:#e8e8e1; }
+body>footer .footer__links { color:#d2d2ca; }
+body>footer .footer__links a,body>footer.pk-footer a { color:#e4e4dc; }
+body>footer a:hover,body>footer a:focus-visible { color:#ffd0c5; text-decoration:underline; }
+@media (max-width:700px) {
+  body>footer { padding-bottom:32px; }
+  body>footer::before { min-height:88px; margin-bottom:24px; }
+}
+@media (forced-colors:active) {
+  body>footer {
+    color:CanvasText;
+    background:Canvas;
+    border-color:CanvasText;
+    box-shadow:none;
+  }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links { color:CanvasText; }
+  body>footer .footer__links a,body>footer.pk-footer a,
+  body>footer a:hover,body>footer a:focus-visible { color:LinkText; }
+}
+@media print {
+  body>footer { color:#111; background:#fff; border-color:#777; }
+  body>footer::before { display:none; background:none; }
+  body>footer .footer-brand strong,body>footer .footer__links,
+  body>footer .footer__links a,body>footer.pk-footer a { color:#111; }
+}
+/* End shared reconstructed footer panorama. */

@@ -1,0 +1,78 @@
+PROGRESSKIT SYSTEMS — LOKALNY PROOF / 2026-11-03
+ownerVisualApproval: OPEN
+
+Strona: http://127.0.0.1:8207/
+Galeria i filmy: http://127.0.0.1:8207/proof/
+
+Zmiana dotyczy materiału, głębi, skali i hierarchii informacji w aktualnym
+lokalnym projekcie. Hero otrzymał architektoniczną przestrzeń z metalowymi
+konstrukcjami, soczewką i wieloplanowym ruchem. Core ma gruby szlifowany
+pierścień optyczny, oryginalne logo oraz żar i popiół. Po aktywacji przechodzi
+płynnie do większej sceny projektów: obiekty mają fasety, różne głębokości,
+przezroczyste wnętrza i tekst pomiędzy warstwami optycznymi.
+
+Usługi i ekosystem używają ostrych brył z metalowymi mocowaniami. Sześć etapów
+procesu ma kryształowe moduły zamiast wireframe. Technologie pokazują najpierw
+osiem kategorii z ikonami; otwarcie jednej ujawnia jej zawartość. Zachowano
+110 pozycji technologii. Przewodnik jest pokazany w rzeczywistym użyciu przy
+projekcie, Security oraz PostgreSQL. Reakcje proximity i krótkie sygnały CRT
+są widoczne w nagraniach; kontrola wstrzymania ruchu obejmuje wszystkie efekty.
+
+FILMY
+desktop.mp4 — 120,600 s, 1440×900, H.264, 25 kl./s.
+mobile.mp4 — 99,240 s, 390×844, H.264, 25 kl./s.
+Oryginalne nagrania: desktop.webm oraz mobile.webm w tym katalogu.
+Bez przyspieszania ani montowania scen. Nagrania obejmują cały walkthrough,
+momenty idle, trzy konteksty przewodnika, Contact, brief i stopkę. Rozdziały
+w galerii prowadzą do rzeczywistych znaczników czasowych z QA.
+Znacznik kursora/tapnięć występuje tylko w nagraniu i śledzi faktyczne zdarzenia.
+
+SZEŚĆ GŁÓWNYCH SCREENÓW
+desktop-01-hero.png — hero, relief i mechanizm w architekturze.
+desktop-03-pulse.png — duży aktywny Core z oryginalnym logo.
+desktop-04-transition.png — ciągłe przejście do showroomu.
+desktop-05-showroom.png — showroom po materializacji.
+desktop-crystal-close.png — zbliżenie na materiał i wnętrze projektu.
+mobile-05-showroom.png — showroom w emulacji mobile.
+Galeria zawiera też dalsze sekcje, trzy konteksty przewodnika i siedem
+rzeczywistych kadrów depth test po wstrzymaniu ruchu przyciskiem strony.
+Kadry depth test obejrzano; stan pauzy oraz zatrzymane pętle zapisano
+w depth-review.json. Nie jest to akceptacja estetyczna właściciela.
+
+WERYFIKACJA
+41 PASS / 0 FAIL — kontrole runtime w Chrome (12 desktop, 11 mobile,
+13 dodatkowych, 5 interakcji). Raport zbiorczy: QA.json.
+100 PASS / 0 FAIL — istniejące testy JavaScript.
+37 PASS — istniejące testy Python.
+npm run check: PASS. git diff --check: PASS.
+Lokalny staging: 110 publicznych plików, /tmp/pk-physical-stage-20261103.
+10/10 chronionych plików zachowało SHA-256; szczegóły: preservation.json.
+Katalog 19 projektów, statusy, nawigacja i sprawdzane treści zachowane.
+Oryginalny assets/brand/progressorkit-stamp.png zachowany bez zmian.
+Nie zmieniono kodu analytics ani istniejącej logiki katalogu i ekosystemu.
+Zachowano wcześniejsze lokalne zmiany i artefakty.
+
+GRANICE DOWODU
+Mobile: emulacja Chrome z dotykiem; fizyczny telefon NOT_RUN.
+Materiały to implementacja hybrydowa: wygenerowane warstwy scenografii
+i optycznych powierzchni z CSS 3D/Canvas, a w showroomie geometria WebGL,
+transmisja/refrakcja oraz tekstury faset. Nie jest to pełna symulacja optyczna
+każdego elementu. Screenshoty i filmy pochodzą z działającej przeglądarki.
+Ocena zgodności kierunku wizualnego pozostaje otwarta: ownerVisualApproval OPEN.
+
+PLIKI I POCHODZENIE
+changed-files.txt — 20 plików źródeł i assetów zmienionych w tej rewizji.
+source-final-hashes.json — SHA-256 źródeł odpowiadających nagraniom.
+SHA256SUMS.txt — integralność wybranych materiałów proof.
+Nowe assety zapisano w assets/world/: installation-chamber, optical-core,
+crystal-artefact, process-crystal (PNG źródłowe oraz publiczne WebP).
+Tryb: wbudowane image_gen, bez klucza/API ani zewnętrznej publikacji.
+IMAGEGEN-PROMPTS.txt zawiera cztery dokładne prompty końcowe oraz ścieżki;
+generated-assets.json zawiera manifest pochodzenia.
+
+Git HEAD bez zmian: ca7330bca29396191413618df6cba7ecf09d18ca.
+Bez commita. Bez pushu. Bez publikacji. Serwer słucha wyłącznie 127.0.0.1.
+
+Końcowa kontrola galerii: 34/34 linki HTTP 200, oba filmy odtwarzają się
+po seek do końcowego fragmentu, HTTP Range 206, brak błędów JS i overflow
+przy 1440/390 px. Obejrzano również kadry wyodrębnione z obu MP4.

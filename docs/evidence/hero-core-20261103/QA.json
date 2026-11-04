@@ -1,0 +1,866 @@
+{
+  "date": "2026-11-03",
+  "browser": "local Chrome",
+  "mobile": "viewport and touch emulation; physical device NOT_RUN",
+  "checks": [
+    {
+      "name": "desktop: hero dominates and showroom dormant",
+      "status": "PASS",
+      "detail": {
+        "width": 460.796875,
+        "centerY": 555.75,
+        "viewport": 900,
+        "animation": "entry-mark",
+        "playState": "running",
+        "awake": "false",
+        "overflow": false,
+        "relief": "rgba(136, 112, 120, 0.314) 1px 2px 1px, rgb(0, 0, 0) -2px -3px 2px, rgb(0, 0, 0) 0px -8px 18px"
+      }
+    },
+    {
+      "name": "desktop: real logo pulse changes scale and light",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "transform": "matrix(0.999346, 0, 0, 0.999346, 0, 0.848039)",
+          "filter": "grayscale(0.85) brightness(0.966078) contrast(1.18) drop-shadow(rgba(0, 0, 0, 0.6) 0px 20.152px 10.7933px)"
+        },
+        "after": {
+          "transform": "matrix(1.02415, 0, 0, 1.02415, 0, -2.87175)",
+          "filter": "grayscale(0.85) brightness(1.11487) contrast(1.18) drop-shadow(rgba(0, 0, 0, 0.6) 0px 23.8717px 13.8931px)"
+        }
+      }
+    },
+    {
+      "name": "desktop: continuous flight before activation",
+      "status": "PASS",
+      "detail": {
+        "entry": "entering",
+        "awake": "false",
+        "flight": 1,
+        "width": 1440,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 9,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 3,
+          "gpuFrameMs": 3.288083,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 5,
+          "triangles": 652,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 1000,
+            "height": 750
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "dormant"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "dormant"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "dormant"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "dormant"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "dormant"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "dormant"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "box": {
+          "x": 566.247802734375,
+          "y": 347.26739501953125,
+          "width": 307.49169921875,
+          "height": 307.49176025390625
+        }
+      }
+    },
+    {
+      "name": "desktop: activation, materialization and cleanup",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 1440,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 195,
+          "quality": 0,
+          "fps": 49.17871545195245,
+          "cpuFrameMs": 5.300000000745058,
+          "gpuFrameMs": 7.2265,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 35,
+          "triangles": 1944,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 1000,
+            "height": 750
+          },
+          "samples": [
+            {
+              "t": 14240.7,
+              "fps": 27.54278969112728,
+              "cpuFrameMs": 1.3999999994412065,
+              "gpuFrameMs": 3.213666,
+              "drawCalls": 10,
+              "triangles": 452,
+              "dpr": 1
+            },
+            {
+              "t": 15257.3,
+              "fps": 52.13456620106244,
+              "cpuFrameMs": 2.599999999627471,
+              "gpuFrameMs": 5.251833,
+              "drawCalls": 16,
+              "triangles": 1086,
+              "dpr": 1
+            },
+            {
+              "t": 16290.6,
+              "fps": 41.61424562082644,
+              "cpuFrameMs": 4.900000000372529,
+              "gpuFrameMs": 10.07325,
+              "drawCalls": 29,
+              "triangles": 1932,
+              "dpr": 1
+            },
+            {
+              "t": 17307.3,
+              "fps": 49.17871545195245,
+              "cpuFrameMs": 2.900000000372529,
+              "gpuFrameMs": 11.068999,
+              "drawCalls": 35,
+              "triangles": 1944,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "desktop: native project disclosure and close",
+      "status": "PASS",
+      "detail": {
+        "id": "glikemia-premium"
+      }
+    },
+    {
+      "name": "mobile: hero dominates and showroom dormant",
+      "status": "PASS",
+      "detail": {
+        "width": 323.6875,
+        "centerY": 423.796875,
+        "viewport": 844,
+        "animation": "entry-mark",
+        "playState": "running",
+        "awake": "false",
+        "overflow": false,
+        "relief": "rgba(136, 112, 120, 0.314) 1px 2px 1px, rgb(0, 0, 0) -2px -3px 2px, rgb(0, 0, 0) 0px -8px 18px"
+      }
+    },
+    {
+      "name": "mobile: real logo pulse changes scale and light",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "transform": "matrix(0.990775, 0, 0, 0.990775, 0, 2.13377)",
+          "filter": "grayscale(0.85) brightness(0.914649) contrast(1.18) drop-shadow(rgba(0, 0, 0, 0.6) 0px 18.8662px 9.72186px)"
+        },
+        "after": {
+          "transform": "matrix(0.999801, 0, 0, 0.999801, 0, 0.779786)",
+          "filter": "grayscale(0.85) brightness(0.968809) contrast(1.18) drop-shadow(rgba(0, 0, 0, 0.6) 0px 20.2202px 10.8502px)"
+        }
+      }
+    },
+    {
+      "name": "mobile: continuous flight before activation",
+      "status": "PASS",
+      "detail": {
+        "entry": "entering",
+        "awake": "false",
+        "flight": 1,
+        "width": 390,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 10,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 2.2000000001862645,
+          "gpuFrameMs": 15.164166,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 4,
+          "triangles": 452,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "dormant"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "box": {
+          "x": 66.54679870605469,
+          "y": 238.88424682617188,
+          "width": 256.8933868408203,
+          "height": 256.8934020996094
+        }
+      }
+    },
+    {
+      "name": "mobile: activation, materialization and cleanup",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 137,
+          "quality": 0,
+          "fps": 30.00387146728613,
+          "cpuFrameMs": 4.1000000005587935,
+          "gpuFrameMs": 5.284916,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 11,
+          "triangles": 928,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [
+            {
+              "t": 10850.6,
+              "fps": 30,
+              "cpuFrameMs": 2.6000000005587935,
+              "gpuFrameMs": 3.6425,
+              "drawCalls": 5,
+              "triangles": 452,
+              "dpr": 1
+            },
+            {
+              "t": 11883.9,
+              "fps": 30.000967773153995,
+              "cpuFrameMs": 2.2000000001862645,
+              "gpuFrameMs": 5.864416,
+              "drawCalls": 7,
+              "triangles": 614,
+              "dpr": 1
+            },
+            {
+              "t": 12917.2,
+              "fps": 30.000967773153942,
+              "cpuFrameMs": 3.5,
+              "gpuFrameMs": 5.934083,
+              "drawCalls": 10,
+              "triangles": 728,
+              "dpr": 1
+            },
+            {
+              "t": 13950.4,
+              "fps": 30.00387146728613,
+              "cpuFrameMs": 2.599999999627471,
+              "gpuFrameMs": 3.90525,
+              "drawCalls": 10,
+              "triangles": 728,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "mobile: native project disclosure and close",
+      "status": "PASS",
+      "detail": {
+        "id": "glikemia-premium"
+      }
+    },
+    {
+      "name": "layout 320: no overflow, visible logo and native navigation",
+      "status": "PASS",
+      "detail": {
+        "width": 320,
+        "viewport": 320,
+        "logo": {
+          "x": 27.203125,
+          "y": 291,
+          "width": 265.59375,
+          "height": 265.59375,
+          "top": 291,
+          "right": 292.796875,
+          "bottom": 556.59375,
+          "left": 27.203125
+        },
+        "links": [
+          [
+            "PROGRESSKIT SYSTEMS",
+            "#start"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "layout 768: no overflow, visible logo and native navigation",
+      "status": "PASS",
+      "detail": {
+        "width": 768,
+        "viewport": 768,
+        "logo": {
+          "x": 204,
+          "y": 279.65625,
+          "width": 360,
+          "height": 360,
+          "top": 279.65625,
+          "right": 564,
+          "bottom": 639.65625,
+          "left": 204
+        },
+        "links": [
+          [
+            "PROGRESSKIT SYSTEMS",
+            "#start"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "layout 1920: no overflow, visible logo and native navigation",
+      "status": "PASS",
+      "detail": {
+        "width": 1920,
+        "viewport": 1920,
+        "logo": {
+          "x": 715,
+          "y": 278.265625,
+          "width": 490,
+          "height": 490,
+          "top": 278.265625,
+          "right": 1205,
+          "bottom": 768.265625,
+          "left": 715
+        },
+        "links": [
+          [
+            "PROGRESSKIT SYSTEMS",
+            "#start"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ],
+          [
+            "Projekty",
+            "#projekty"
+          ],
+          [
+            "Usługi",
+            "#uslugi"
+          ],
+          [
+            "Proces",
+            "#proces"
+          ],
+          [
+            "Wyzwania",
+            "#wyzwania"
+          ],
+          [
+            "Technologie",
+            "#technologie"
+          ],
+          [
+            "O mnie",
+            "#o-mnie"
+          ],
+          [
+            "Ekosystem",
+            "#ekosystem"
+          ],
+          [
+            "Wydania",
+            "#wydania"
+          ],
+          [
+            "Kontakt",
+            "#kontakt"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "reduce: accessible keyboard entry and visible projects",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 2.2000000001862645,
+          "gpuFrameMs": 4.42825,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 11,
+          "triangles": 928,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "paused: accessible keyboard entry and visible projects",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 12,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 3.099999999627471,
+          "gpuFrameMs": 1.671916,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 11,
+          "triangles": 928,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "forced: accessible keyboard entry and visible projects",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "renderer": "three-webgl2",
+        "metrics": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 0.900000000372529,
+          "gpuFrameMs": 1.303333,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 6,
+          "triangles": 652,
+          "geometries": 79,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "charge"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "controlled WebGL unavailable: usable native project fallback",
+      "status": "PASS",
+      "detail": {
+        "fallback": true
+      }
+    },
+    {
+      "name": "interrupt transition and re-enter without stuck overlay",
+      "status": "PASS",
+      "detail": {
+        "reentry": true
+      }
+    },
+    {
+      "name": "core pointer hover and focus do not activate; Enter does",
+      "status": "PASS",
+      "detail": {
+        "keyboard": true,
+        "hover": false
+      }
+    },
+    {
+      "name": "existing navigation and project text preserved",
+      "status": "PASS",
+      "detail": {
+        "nav": true,
+        "cards": true,
+        "count": 19
+      }
+    },
+    {
+      "name": "JavaScript disabled: hero and catalog link remain usable",
+      "status": "PASS",
+      "detail": {
+        "nativeAnchor": true
+      }
+    },
+    {
+      "name": "no browser errors, missing resources or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [
+    "01-hero-start.png",
+    "02-hero-pulse.png",
+    "03-transition.png",
+    "04-showroom.png",
+    "05-crystal-detail.png",
+    "06-mobile-hero.png"
+  ],
+  "videos": [
+    "desktop.webm",
+    "mobile.webm"
+  ],
+  "version": "155.0.8059.39",
+  "PASS": 22,
+  "FAIL": 0
+}

@@ -1,0 +1,5 @@
+Pierwsza próba boundary-review: ERR_CONNECTION_REFUSED. Serwer uruchomiony w zestawie poleceń zakończył się kodem 143. Uruchomiono samodzielny proces serwera i powtórzono capture. Nie jest to zaliczony test produktu.
+Druga sesja foreground serwera również zakończyła się w środowisku narzędzia. Docelowy serwer uruchomiony przez Popen(start_new_session=True); wszystkie końcowe testy i nagrania dotyczą tego procesu.
+Próba alpha:true ujawniła biały fallback transmisji Three r187. Pierwsza korekta samej premultiplikacji nie wystarczyła. Finalnie usunięto biały wkład próbki refrakcji w lokalnym hooku materiału; ponownie wykonano kadry oraz testy.
+Przyczynę zweryfikowano w lokalnym node_modules/three/src/renderers/WebGLRenderer.js (renderTransmissionPass) i shaderach r187. Vendor pozostaje bez zmian.
+Galeria, pierwsza kontrola: FAIL na nieobsłużonym AbortError play() przy szybkim pause po wyborze rozdziału. Poprawiono obsługę normalnego przerwania play() w galerii; pozostałe błędy nadal raportowane. Test czeka na rzeczywiste odtwarzanie zamiast stałej zwłoki. Powtórzono pełne sprawdzenie galerii.

@@ -1,0 +1,788 @@
+/* A continuous material world below the Core. Existing content and controllers
+   remain authoritative: this sheet changes surfaces, composition and light. */
+
+#main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt) {
+  --chapter-ink: #eeece9;
+  --chapter-copy: #b4b0ad;
+  --chapter-metal: #c9c9c7;
+  --chapter-ember: #8f2633;
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  color: var(--chapter-ink);
+}
+#main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt) .section-title {
+  color: #eeece9;
+  font-weight: 400;
+  letter-spacing: -.055em;
+  text-transform: none;
+  text-wrap: balance;
+}
+#main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt) .section-kicker {
+  color: #a89998;
+  letter-spacing: .2em;
+}
+#main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt)::before {
+  animation: none;
+  transform: none;
+}
+
+/* SERVICES — two optical instruments suspended in a dark, open studio. */
+#main #uslugi {
+  padding: clamp(110px, 11vw, 172px) 0 62px;
+  background:
+    radial-gradient(ellipse at 85% 44%, #57121d1d, transparent 48%),
+    radial-gradient(ellipse at 11% 20%, #3b3b3c0f, transparent 45%),
+    linear-gradient(180deg, #030303, #070506 52%, #040303);
+  overflow: clip;
+}
+#uslugi .services-heading {
+  margin-bottom: clamp(42px, 6vw, 90px);
+}
+#uslugi .services-heading .section-title {
+  font-size: clamp(66px, 8.8vw, 130px);
+  line-height: 1;
+}
+#uslugi .service-space {
+  mask-image: linear-gradient(transparent, #000 12%, #000 72%, transparent);
+}
+#uslugi .service-zone {
+  min-height: 555px;
+  padding-top: 163px;
+  background: none;
+}
+#uslugi .service-zone--systems {
+  margin-top: 145px;
+}
+#uslugi .service-zone__index {
+  top: 28px;
+  left: 45%;
+  color: #a6a4a3;
+  font-size: 10px;
+  letter-spacing: .25em;
+}
+#uslugi .service-zone h3 {
+  max-width: 14ch;
+  margin-bottom: 25px;
+  color: #efeeeb;
+  font-size: clamp(34px, 4.2vw, 59px);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: 1.09;
+  text-shadow: 0 2px 12px #020202, 0 8px 35px #020202;
+}
+#uslugi .service-zone__focus {
+  color: #c5bfbb;
+  letter-spacing: .015em;
+}
+#uslugi .service-zone .competency-list {
+  gap: 4px;
+}
+#uslugi .service-zone .competency-list li {
+  padding: 8px 0 8px 19px;
+  color: #b8b6b4;
+}
+#uslugi .service-zone .competency-list li::before {
+  top: 18px;
+  width: 3px;
+  height: 3px;
+  background: #bdbfbd;
+  box-shadow: 0 0 6px #d5d7dc18;
+}
+#uslugi .service-zone--systems .competency-list li::before {
+  background: #c87b81;
+  box-shadow: 0 0 7px #b83c4c22;
+}
+#uslugi .service-object {
+  border-color: #c3c5c42e;
+  background:
+    radial-gradient(ellipse at 24% 15%, #f3f4f40c, transparent 48%),
+    radial-gradient(ellipse at 80% 88%, #801c2924, transparent 45%);
+  box-shadow: inset 1px 0 #e0e3e415, 15px 35px 60px #0005;
+}
+#uslugi[data-service-renderer="webgl2"] .service-object {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+#uslugi .services-technologies {
+  gap: 16px 36px;
+  margin-top: 55px;
+  padding: 24px 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, #b9b8b322, transparent) top / 100% 1px no-repeat;
+}
+#uslugi .services-technologies a {
+  color: #b0abaa;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+#uslugi .services-technologies a:is(:hover, :focus-visible) {
+  color: #f0eae6;
+  text-decoration-color: #b56870;
+}
+#uslugi .services-actions { margin-top: 20px; gap: 16px; }
+
+/* PROCESS — clear, cut glass and thin brushed caps, with room between stages. */
+#main #proces {
+  padding: 110px 0 105px;
+  background:
+    radial-gradient(ellipse at 80% 47%, #63182313, transparent 51%),
+    radial-gradient(ellipse at 8% 81%, #24222420, transparent 45%),
+    #040303;
+}
+#main #proces::before {
+  content: "";
+  inset: 6% -8% 0;
+  width: auto;
+  height: auto;
+  opacity: .55;
+  border: 0;
+  background:
+    radial-gradient(ellipse at 36% 65%, transparent 32%, #8b3f4912 32.3%, transparent 34%),
+    radial-gradient(ellipse at 75% 30%, #38101612, transparent 43%);
+  mask-image: linear-gradient(transparent, #000 28%, #000 70%, transparent);
+}
+#proces .production-heading { margin-bottom: 80px; }
+#proces .section-title {
+  font-size: clamp(56px, 7.2vw, 104px);
+  line-height: 1.04;
+}
+#proces .production-heading::after {
+  width: 300px;
+  height: 190px;
+  top: -95px;
+  right: 1%;
+  opacity: .3;
+  border-color: #d1d0cc30;
+  border-bottom-color: #9d445240;
+  background: linear-gradient(155deg, #c6c6ca05, transparent 65%);
+}
+#proces .production-number { color: #a99a98; letter-spacing: .2em; }
+#proces .production-line h3 { color: #b6afac; font-weight: 400; }
+#proces .process-face {
+  border-color: #d2d3d237;
+  background: linear-gradient(135deg, #f3f4f408, transparent 24% 70%, #d6d8df05), #08070905;
+  box-shadow: inset 1px 0 #f4f1ed12, inset -1px -1px #0008;
+}
+#proces .process-face--front {
+  border-color: #d3d4d54f #b9c2c72c #8b344638 #f7f5ef78;
+  background:
+    radial-gradient(ellipse at 20% 8%, #f5f4f51b, transparent 32%),
+    linear-gradient(115deg, #edeff507, transparent 47% 80%, #8b243610);
+  box-shadow: inset 1px 0 #ffffff23, inset -1px -1px #b4c2ce0a;
+}
+#proces .process-face--back {
+  border-color: #c8c6c41e;
+  background: linear-gradient(155deg, #dddde305, #05040535);
+}
+#proces .process-face--left,
+#proces .process-face--right {
+  opacity: .7;
+  background: linear-gradient(90deg, #0007, #e3e6eb0c, #09070730);
+}
+#proces .process-face--top,
+#proces .process-face--bottom {
+  opacity: .8;
+  border-top: 1px solid #e4e1db33;
+  background:
+    repeating-linear-gradient(90deg, #e6e4df09 0 1px, #17151808 1px 3px),
+    linear-gradient(90deg, #24232450, #c5c2bb17 20%, #0b090a90 72%, #8b35451a);
+}
+#proces .process-inlay {
+  border-color: #c8c9ca19;
+  background: linear-gradient(125deg, #d3d4db0c, transparent 38%);
+}
+#proces [data-production-state="pending"] .process-object { opacity: .57; }
+#proces [data-production-state="active"] .process-face--front {
+  border-color: #f1ebe691 #cfb7b848 #b94b6175 #f6f1e9a6;
+  background:
+    radial-gradient(ellipse at 66% 78%, #a51e3530, transparent 54%),
+    radial-gradient(ellipse at 17% 8%, #fff5ea20, transparent 33%),
+    linear-gradient(115deg, #e8e6e90c, transparent 47%);
+  box-shadow: inset 1px 0 #fff5e62e, inset -2px -1px #b64d5723, 0 16px 40px #500b1812;
+}
+#proces [data-production-state="active"] .process-face--bottom {
+  border-bottom-color: #b9637280;
+  box-shadow: 0 1px 12px #8f233825;
+}
+#proces [data-production-state="complete"] .process-face { border-color: #d6d2cb54; }
+#proces [data-production-state="active"] h3,
+#proces [data-production-state="complete"] h3 { color: #ede7e1; }
+
+/* ECOSYSTEM — separate spatial specimens, not a silver control panel. The
+   dashed edges and all roadmap statements retain their existing meaning. */
+#main #ekosystem {
+  padding: clamp(110px, 11vw, 170px) 0 100px;
+  background:
+    radial-gradient(ellipse at 52% 48%, #56121e22, transparent 52%),
+    radial-gradient(ellipse at 93% 9%, #29272b15, transparent 42%),
+    linear-gradient(#040303, #080506 57%, #060405);
+  overflow: clip;
+}
+#main #ekosystem::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 16% -10% 0;
+  width: auto;
+  height: auto;
+  opacity: .32;
+  background:
+    radial-gradient(ellipse at 24% 35%, transparent 45%, #c5aba815 45.1%, transparent 45.5%),
+    radial-gradient(ellipse at 60% 60%, transparent 36%, #9d45551c 36.1%, transparent 36.6%);
+  mask-image: linear-gradient(transparent, #000 30%, #000 70%, transparent);
+}
+#ekosystem .delivery-heading .section-title {
+  max-width: 15ch;
+  font-size: clamp(58px, 7vw, 100px);
+  line-height: 1.06;
+}
+#ekosystem[data-ecosystem-system] .delivery-map-intro {
+  max-width: 64ch;
+  margin: 30px 0 60px;
+  color: #aaa29f;
+  font-size: 15px;
+  line-height: 1.85;
+}
+#ekosystem .ecosystem-system {
+  padding: 20px;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse at 53% 47%, #67152519, transparent 46%),
+    radial-gradient(ellipse at 36% 58%, #b0aeb307, transparent 56%);
+  box-shadow: none;
+  perspective: 1600px;
+}
+#ekosystem .ecosystem-system::before {
+  inset: 23% 16%;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #6b263218, transparent 68%);
+  mask-image: none;
+  transform: rotate(-18deg);
+  opacity: .6;
+}
+#ekosystem .ecosystem-node {
+  --node-light: #bfc5cc;
+  border: 1px solid #cccac721;
+  border-color: #deded935 #d6d7d114 #9a495c22 #ede9dc40;
+  border-radius: 38px 13px 33px 13px;
+  color: #e0deda;
+  background:
+    radial-gradient(ellipse at 12% 3%, #ece8e610, transparent 54%),
+    linear-gradient(134deg, #1b19194d, #08060720 50%, #37121a21);
+  box-shadow: inset 1px 1px #f6f1e511, inset -1px -2px #a9a4a407, 10px 24px 40px #0005;
+  transition: opacity .35s, border-color .45s, background .45s, box-shadow .45s;
+  animation: none;
+}
+#ekosystem .ecosystem-node::before {
+  inset: 7px 6px -6px 8px;
+  width: auto;
+  height: auto;
+  border: 1px solid #c6c5c713;
+  border-top: 0;
+  border-left-color: #ecebea18;
+  border-radius: 35px 11px 31px 11px;
+  background: linear-gradient(160deg, #e8e5df03, transparent 65%, #0003);
+  clip-path: none;
+  transform: none;
+  opacity: .85;
+}
+#ekosystem .ecosystem-node::after {
+  inset: auto 14% -1px 48%;
+  width: auto;
+  height: 1px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, transparent, #b6687655, transparent);
+  box-shadow: 0 2px 13px #9c34412b;
+}
+#ekosystem .ecosystem-node__trigger {
+  min-height: 142px;
+  padding: 29px 27px 23px;
+  color: #dedbd7;
+  border-radius: 38px 13px 33px 13px;
+}
+#ekosystem .ecosystem-node__name,
+#ekosystem .ecosystem-node:hover .ecosystem-node__name,
+#ekosystem .ecosystem-node__trigger[aria-expanded="true"] .ecosystem-node__name {
+  color: #e1dcd7;
+  font-size: clamp(21px, 1.9vw, 27px);
+  line-height: 1.2;
+  font-weight: 450;
+  letter-spacing: -.035em;
+  text-shadow: 0 2px 14px #0009;
+}
+#ekosystem .ecosystem-node .delivery-state,
+#ekosystem .ecosystem-console__state {
+  margin-top: 18px;
+  padding: 0 0 0 11px;
+  color: #c2b4ac;
+  font: 10px/1.6 var(--mono);
+  letter-spacing: .04em;
+  border: 0;
+  border-left: 1px solid #b7737b80;
+  border-radius: 0;
+  background: none;
+}
+#ekosystem [data-ecosystem-stage="planned"] .delivery-state,
+#ekosystem .ecosystem-console[data-ecosystem-stage="planned"] .ecosystem-console__state {
+  color: #a9a3a3;
+  border-left: 1px dashed #b2acaa77;
+  background: none;
+}
+#ekosystem :is([data-ecosystem-stage="development"], [data-ecosystem-stage="prototype"], [data-ecosystem-stage="testing"]) .delivery-state,
+#ekosystem .ecosystem-console:is([data-ecosystem-stage="development"], [data-ecosystem-stage="prototype"], [data-ecosystem-stage="testing"]) .ecosystem-console__state {
+  color: #d0bbb1;
+  border-color: #c28a7c80;
+  background: none;
+}
+#ekosystem .ecosystem-node .delivery-flow__relationship {
+  padding: 0 27px 25px;
+  color: #a59b99;
+  font-size: 10px;
+}
+#ekosystem .ecosystem-node__detail,
+#ekosystem .ecosystem-node__detail .delivery-flow__description {
+  color: #bfb5af;
+}
+#ekosystem .ecosystem-node__detail { padding-inline: 27px; }
+#ekosystem .ecosystem-node__detail .delivery-project-link { color: #d9c9c1; }
+#ekosystem .ecosystem-node:is(.is-selected, .is-previewed) {
+  border-color: #e4c6b66b #b0797842 #9d35464a #f0e4d77c;
+  background:
+    radial-gradient(ellipse at 3% 4%, #fff0d71c, transparent 54%),
+    radial-gradient(ellipse at 87% 89%, #7b18332a, transparent 63%),
+    linear-gradient(134deg, #24202168, #0b080950 60%, #32101836);
+  box-shadow: inset 1px 1px #fff4df20, inset -1px -1px #a85b6226, 8px 24px 48px #0008, 0 0 30px #6b192312;
+}
+#ekosystem .ecosystem-node:is(.is-selected, .is-previewed)::before {
+  border-color: #d9d0c534;
+  border-top: 0;
+  background: linear-gradient(150deg, #d9d0c506, transparent 65%, #6e1d2c12);
+}
+#ekosystem .ecosystem-node:is(.is-selected, .is-previewed)::after {
+  border: 0;
+  background: linear-gradient(90deg, transparent, #db8e8a99, transparent);
+}
+#ekosystem .ecosystem-node__trigger:focus-visible {
+  outline: 2px solid #e2cbc0;
+  outline-offset: 6px;
+  background: #f6e4d606;
+}
+#ekosystem .ecosystem-system.has-preview .ecosystem-node:not(.is-related):not(.is-previewed) {
+  opacity: .55;
+}
+#ekosystem .ecosystem-wires [data-ecosystem-edge] {
+  stroke: #bab4b2;
+  stroke-width: .8;
+  stroke-dasharray: 1 9;
+  opacity: .24;
+}
+#ekosystem .ecosystem-wires [data-ecosystem-edge].is-flowing {
+  stroke: #d49597;
+  stroke-width: 1;
+  stroke-dasharray: 2 19;
+  opacity: .57;
+}
+#ekosystem .ecosystem-console {
+  padding: 24px 27px;
+  border: 0;
+  border-left: 1px solid #ad6b7963;
+  border-radius: 0;
+  color: #c2b8b2;
+  background: linear-gradient(90deg, #3c171c35, transparent 90%);
+  box-shadow: none;
+}
+#ekosystem .ecosystem-console__name {
+  color: #e8dfd6;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+#ekosystem .ecosystem-console__state { margin-block: 3px 19px; }
+#ekosystem .ecosystem-console .delivery-flow__description { color: #bcb2ad; font-size: 14px; }
+#ekosystem .ecosystem-console .delivery-project-link { color: #d4aaa6; font-size: 13px; }
+#ekosystem .ecosystem-system .delivery-independent > h3 {
+  color: #aca19e;
+  font-size: 11px;
+  letter-spacing: .05em;
+}
+#ekosystem[data-ecosystem-system] .delivery-roadmap {
+  margin-top: 60px;
+  padding: 16px 0 16px 23px;
+  color: #b5aaa7;
+  background: none;
+  border: 0;
+  border-left: 1px solid #83414f70;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Quiet interludes retain the same near-black material rather than rebooting
+   the page into flat panels or a wall of technology badges. */
+#main #wydania {
+  padding: 100px 0 115px;
+  background: linear-gradient(#060405, #080607 48%, #050404);
+}
+#wydania .section-title { max-width: 15ch; font-size: clamp(42px, 4.9vw, 70px); line-height: 1.08; }
+#wydania .delivery-channels { gap: 0; margin-top: 46px; }
+#wydania .delivery-channel {
+  padding: 12px 28px 15px;
+  border: 0;
+  border-left: 1px solid #d1b3ad28;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+#wydania .delivery-channel h3 { color: #d2c6be; font-size: 21px; font-weight: 400; }
+#wydania .delivery-channel h3 span { display: block; margin-top: 14px; color: #aaa19b; font-size: 13px; line-height: 1.8; }
+#wydania .delivery-release-note { margin-top: 36px; color: #b4aaa5; font-size: 13px; }
+
+/* ABOUT — a slower, human scale; an engraved mark beneath the surface. */
+#main #o-mnie {
+  padding: clamp(125px, 13vw, 200px) 0;
+  background:
+    radial-gradient(ellipse at 14% 52%, #3e2c3023, transparent 50%),
+    radial-gradient(ellipse at 95% 73%, #57152216, transparent 45%),
+    #050404;
+}
+#o-mnie::after {
+  left: -9%;
+  top: 15%;
+  width: min(56vw, 800px);
+  opacity: .055;
+  filter: grayscale(1) brightness(.9) contrast(1.25);
+  transform: rotate(-13deg);
+}
+#o-mnie .about-v5__grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(50px, 8vw, 125px); }
+#o-mnie .chapter-heading { margin-bottom: 45px; }
+#o-mnie .chapter-heading .section-title { font-size: clamp(66px, 8vw, 112px); }
+#main #o-mnie .about-v5__copy p:first-child {
+  max-width: 32ch;
+  margin-bottom: 28px;
+  color: #d9d1ca;
+  font-size: clamp(23px, 2.5vw, 33px);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -.03em;
+}
+#main #o-mnie .about-v5__copy p { color: #aaa29c; line-height: 1.95; }
+#o-mnie .collaboration {
+  position: relative;
+  padding: 35px 0 36px 35px;
+  border: 0;
+  border-left: 1px solid #a48d8538;
+  background: linear-gradient(90deg, #56222b0d, transparent 88%);
+  box-shadow: none;
+}
+#o-mnie .collaboration::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 15%;
+  width: 1px;
+  height: 28%;
+  background: linear-gradient(transparent, #d3b5a56b, transparent);
+  pointer-events: none;
+}
+#o-mnie .collaboration h3 { color: #e1d7cf; font-weight: 400; font-size: clamp(28px, 3vw, 41px); line-height: 1.2; }
+#o-mnie .collaboration p { color: #b0a49d; }
+#o-mnie .collaboration__actions { margin-top: 34px; gap: 16px; }
+#o-mnie .collaboration__actions .cta--ghost { color: #b8aaa2; border-bottom-color: #b78f8440; }
+#main #wyzwania {
+  padding: 105px 0 110px;
+  background:
+    radial-gradient(ellipse at 85% 25%, #60152413, transparent 47%),
+    linear-gradient(#050404, #080607 54%, #060505);
+}
+#wyzwania .section-title { max-width: 18ch; font-size: clamp(47px, 6vw, 84px); line-height: 1.08; }
+#wyzwania .section-copy { max-width: 54ch; color: #b3a9a2; font-size: 17px; line-height: 1.9; }
+#wyzwania > .shell > a { margin-top: 26px; color: #d8c1b6; border-bottom-color: #8e4b5666; padding-bottom: 12px; }
+#main #technologie {
+  padding: 110px 0 125px;
+  background:
+    radial-gradient(ellipse at 16% 80%, #53212b0d, transparent 52%),
+    linear-gradient(#060505, #080708 45%, #050404);
+}
+#technologie .section-title { font-size: clamp(62px, 7.2vw, 100px); }
+#technologie .section-copy { color: #b4aaa2; }
+#technologie .technology-groups { gap: 38px 50px; margin-top: 48px; }
+#technologie .technology-group { padding: 0; border: 0; background: none; box-shadow: none; }
+#technologie .technology-group__title { margin-bottom: 22px; color: #d7c9c1; font-size: 14px; font-weight: 400; }
+#technologie .technology-chips { gap: 5px 19px; }
+#technologie .technology-chip {
+  padding: 8px 0;
+  color: #aaa09a;
+  border: 0;
+  border-bottom: 1px solid #98827b2b;
+  background: none;
+  box-shadow: none;
+  font-size: 12px;
+}
+#technologie .technology-chip span { color: #a58b85; font-size: 10px; }
+#technologie .technology-chip:is(:hover, :focus-visible) { color: #f0e3d8; border-bottom-color: #c096866e; }
+
+/* CONTACT — a restrained instrument, lit where the visitor touches it. */
+#main #kontakt {
+  padding: clamp(115px, 12vw, 180px) 0 70px;
+  background:
+    radial-gradient(ellipse at 80% 100%, #62152425, transparent 58%),
+    radial-gradient(ellipse at 8% 36%, #30303313, transparent 50%),
+    #050404;
+}
+#kontakt .contact { align-items: end; gap: clamp(45px, 8vw, 120px); }
+#kontakt .contact .section-title { font-size: clamp(62px, 8.3vw, 118px); line-height: 1.02; }
+#main #kontakt .section-copy { max-width: 45ch; color: #bcb0a6; margin-block: 30px; font-size: 17px; line-height: 1.9; }
+#main #kontakt .contact__email {
+  padding: 12px 0 16px;
+  color: #e5d8ce;
+  border-bottom: 1px solid #c39b8659;
+  font-size: clamp(24px, 3.3vw, 45px);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  transition: color .3s, border-color .3s, text-shadow .3s;
+}
+#main #kontakt .contact__email:is(:hover, :focus-visible) { color: #fff0e3; border-bottom-color: #dd988c; text-shadow: 0 0 25px #b74e3726; }
+#kontakt .contact__meta { gap: 29px; padding: 0 0 8px 27px; border-left-color: #b19a8d30; }
+#main #kontakt .contact__meta small { color: #b99e92; font-size: 9px; letter-spacing: .15em; }
+#main #kontakt .contact__meta strong,
+#main #kontakt .contact__meta a { color: #c7bab0; font-weight: 400; }
+#main #brief {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(32px, 5vw, 70px);
+  margin-bottom: 80px;
+  border: 1px solid #c5b8af22;
+  border-top-color: #f0e0cd3a;
+  border-radius: 4px;
+  color: #d8c9bf;
+  background:
+    radial-gradient(ellipse at var(--world-x, 50%) var(--world-y, 10%), #c2b3a20b, transparent 60%),
+    repeating-linear-gradient(0deg, #e7d3c403 0 1px, transparent 1px 4px),
+    linear-gradient(130deg, #161213bd, #080607e6 66%, #1b0b10ad);
+  box-shadow: inset 1px 1px #eadbce06, inset -1px -2px #0009, 0 25px 70px #0006;
+}
+#main #brief::before {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dfcabd68 20%, #b68b8333 55%, transparent);
+}
+#brief .brief__heading { gap: 30px; margin-bottom: 40px; }
+#brief .brief__heading .section-kicker { color: #b79d91; letter-spacing: .16em; }
+#brief .brief__heading h3 { color: #e8dbcf; font-size: clamp(30px, 3.5vw, 47px); font-weight: 400; letter-spacing: -.045em; }
+#main #brief .brief__heading > p { color: #afa198; line-height: 1.95; }
+#main #brief .brief-grid { gap: 28px; }
+#main #brief .brief-grid label { color: #cdbcb0; font-size: 12px; }
+#main #brief .brief-grid textarea {
+  margin-top: 12px;
+  min-height: 145px;
+  padding: 18px;
+  color: #eaded4;
+  border: 1px solid #bb9c8a24;
+  border-bottom-color: #b6927f5e;
+  border-radius: 2px;
+  background: linear-gradient(140deg, #030303d9, #0c080ab3);
+  box-shadow: inset 0 4px 14px #0005, 0 1px #e5c6ac05;
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+#main #brief .brief-grid textarea:hover { border-color: #c3a4916b; }
+#main #brief .brief-grid textarea:focus-visible {
+  color: #fff0e1;
+  background: linear-gradient(140deg, #181113, #0b080a);
+  border-color: #d8b5a2;
+  outline: 2px solid #d8b5a25c;
+  outline-offset: 3px;
+  box-shadow: inset 0 2px 12px #0007, 0 0 30px #a53b3521;
+}
+#brief .brief__actions { gap: 15px; margin-top: 35px; }
+#main #brief > [data-brief-status] { color: #d4b7a8; }
+
+/* FOOTER — the world ends in black relief and a quiet ember horizon. */
+body:has(#main > .hero--monument) > footer {
+  padding: 0 0 50px;
+  border: 0;
+  color: #9f8e85;
+  background:
+    radial-gradient(ellipse at 62% 43%, #5c14211c, transparent 49%),
+    linear-gradient(#050404, #070405 55%, #030303);
+  box-shadow: none;
+  overflow: clip;
+}
+body:has(#main > .hero--monument) > footer::before {
+  height: clamp(210px, 25vw, 390px);
+  margin-bottom: 35px;
+  background:
+    radial-gradient(ellipse 44% 10% at 62% 67%, #b83b3926, transparent 80%),
+    linear-gradient(167deg, transparent 44%, #a2918710 44.2%, #090607 45%, transparent 62%),
+    linear-gradient(14deg, #050404 25%, #211417 48%, #080607 49%, #100c0e 63%, #030303 86%);
+  filter: none;
+  mask-image: linear-gradient(transparent, #000 25%, #000 67%, transparent);
+  opacity: .75;
+}
+body:has(#main > .hero--monument) > footer::after {
+  top: 44%;
+  left: 0;
+  right: 0;
+  height: 100px;
+  opacity: .55;
+  background: radial-gradient(ellipse at 58% 50%, #881e3026, #6a172414 25%, transparent 66%);
+  pointer-events: none;
+}
+body:has(#main > .hero--monument) > footer .footer__inner { gap: 40px; }
+body:has(#main > .hero--monument) > footer .footer-brand strong { color: #c8b9ac; font-size: 11px; letter-spacing: .14em; }
+body:has(#main > .hero--monument) > footer .footer-brand img { filter: grayscale(.8) brightness(.8); opacity: .75; }
+body:has(#main > .hero--monument) > footer .footer__links { color: #9e8e84; font-size: 11px; gap: 20px; }
+body:has(#main > .hero--monument) > footer .footer__links a { color: #c3afa1; }
+body:has(#main > .hero--monument) > footer a:is(:hover, :focus-visible) { color: #f3dfca; }
+
+@media (hover: hover) and (pointer: fine) {
+  #ekosystem .ecosystem-node:hover {
+    border-color: #e5dfd057 #c9ad9b30 #b66c5f44 #f3e1d66b;
+    box-shadow: inset 1px 1px #fff2dc1c, 8px 25px 55px #0008, 0 0 35px #78232a0e;
+  }
+}
+@media (min-width: 901px) {
+  #ekosystem .ecosystem-system.is-enhanced { min-height: 820px; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="tax"] { top: 6%; left: 1%; width: 29%; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="translator"] { top: 0; right: 1%; width: 27%; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="agents"] { top: 42%; left: 0; width: 25%; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="voice"] { top: 43%; right: 0; width: 25%; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="mail"] { bottom: 0; left: 14%; width: 27%; }
+  #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="messenger"] { bottom: 1%; right: 5%; width: 27%; }
+  #ekosystem .ecosystem-system.is-enhanced .ecosystem-console { top: 29%; left: 33%; width: 35%; }
+  #ekosystem .ecosystem-system.is-enhanced .delivery-independent > h3 { right: 5%; bottom: 23%; width: 27%; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  #uslugi .service-zone h3 { font-size: 39px; }
+  #ekosystem .ecosystem-node__trigger { padding-inline: 22px; }
+  #ekosystem .ecosystem-node .delivery-flow__relationship { padding-inline: 22px; }
+  #ekosystem .ecosystem-node__name { font-size: 22px; }
+  #o-mnie .about-v5__grid { gap: 45px; }
+}
+@media (max-width: 700px) {
+  #main #uslugi { padding: 85px 0 45px; }
+  #uslugi .services-heading { margin-bottom: 48px; }
+  #uslugi .services-heading .section-title { font-size: 64px; }
+  #uslugi .service-zone,
+  #uslugi .service-zone--personal,
+  #uslugi .service-zone--systems { min-height: 490px; margin: 0 0 75px; padding: 120px 12px 28px; }
+  #uslugi .service-zone--systems { margin-bottom: 30px; }
+  #uslugi .service-zone h3 { max-width: 13ch; font-size: clamp(34px, 9.8vw, 44px); }
+  #uslugi .service-zone__index { top: 25px; }
+  #uslugi .services-technologies { margin-top: 15px; gap: 14px 24px; }
+  #uslugi .services-actions { gap: 14px; }
+  #main #proces { padding: 80px 0 85px; }
+  #proces .production-heading { margin-bottom: 48px; }
+  #proces .section-title { font-size: clamp(45px, 12vw, 60px); }
+  #proces .production-heading::after { top: -75px; right: 4%; width: 110px; height: 90px; opacity: .25; }
+  #main #ekosystem { padding: 85px 0 80px; }
+  #ekosystem .delivery-heading .section-title { max-width: 12ch; font-size: clamp(47px, 12vw, 62px); }
+  #ekosystem[data-ecosystem-system] .delivery-map-intro { margin: 28px 0 35px; font-size: 14px; }
+  #ekosystem .ecosystem-system { padding: 12px 8px; }
+  #ekosystem .ecosystem-system .ecosystem-node { width: calc(100% - 26px); margin-bottom: 42px; }
+  #ekosystem .ecosystem-system .ecosystem-node:nth-child(even),
+  #ekosystem .ecosystem-system .delivery-branch:last-child { margin-left: 26px; }
+  #ekosystem .ecosystem-node__trigger { min-height: 132px; padding: 27px 24px 23px; }
+  #ekosystem .ecosystem-node__name { font-size: 26px; }
+  #ekosystem .ecosystem-node .delivery-flow__relationship { padding-inline: 24px; }
+  #ekosystem .ecosystem-node__detail { padding-inline: 24px; }
+  #ekosystem .ecosystem-node__detail .delivery-flow__description { font-size: 15px; }
+  #ekosystem .ecosystem-system .delivery-independent > h3 { margin: 25px 0 28px; font-size: 12px; }
+  #ekosystem[data-ecosystem-system] .delivery-roadmap { margin-top: 25px; padding-left: 17px; font-size: 12px; }
+  #main #wydania { padding: 65px 0 80px; }
+  #wydania .section-title { font-size: 42px; }
+  #wydania .delivery-channels { gap: 27px; margin-top: 35px; }
+  #wydania .delivery-channel { padding: 5px 0 8px 21px; }
+  #wydania .delivery-channel h3 { font-size: 21px; }
+  #wydania .delivery-channel h3 span { margin-top: 10px; }
+  #main #o-mnie { padding: 95px 0 100px; }
+  #o-mnie::after { width: 110vw; left: -27%; top: 12%; opacity: .04; }
+  #o-mnie .about-v5__grid { grid-template-columns: minmax(0, 1fr); gap: 55px; }
+  #o-mnie .chapter-heading { margin-bottom: 35px; }
+  #o-mnie .chapter-heading .section-title { font-size: 66px; }
+  #main #o-mnie .about-v5__copy p:first-child { max-width: none; font-size: 25px; line-height: 1.65; }
+  #main #o-mnie .about-v5__copy p { font-size: 15px; }
+  #o-mnie .collaboration { padding: 10px 0 15px 23px; }
+  #o-mnie .collaboration h3 { font-size: 32px; }
+  #main #wyzwania { padding: 80px 0; }
+  #wyzwania .section-title { font-size: 45px; }
+  #wyzwania .section-copy { font-size: 15px; }
+  #main #technologie { padding: 80px 0 90px; }
+  #technologie .section-title { font-size: 62px; }
+  #technologie .technology-groups { gap: 30px; margin-top: 38px; }
+  #technologie .technology-group__title { margin-bottom: 15px; }
+  #main #kontakt { padding: 95px 0 50px; }
+  #kontakt .contact { gap: 47px; align-items: start; }
+  #kontakt .contact .section-title { font-size: clamp(52px, 13vw, 68px); }
+  #main #kontakt .section-copy { margin-block: 28px; font-size: 15px; }
+  #main #kontakt .contact__email { font-size: clamp(22px, 6.4vw, 30px); }
+  #kontakt .contact__meta { padding-left: 22px; gap: 25px; }
+  #main #brief { padding: 32px 22px; margin-bottom: 55px; }
+  #brief .brief__heading { gap: 24px; margin-bottom: 32px; }
+  #brief .brief__heading h3 { font-size: 33px; }
+  #main #brief .brief-grid { gap: 26px; }
+  #main #brief .brief-grid textarea { min-height: 133px; padding: 15px; }
+  #brief .brief__actions { margin-top: 30px; }
+  body:has(#main > .hero--monument) > footer { padding-bottom: 35px; }
+  body:has(#main > .hero--monument) > footer::before { height: 220px; margin-bottom: 20px; background-position: center, 63% 79%; }
+  body:has(#main > .hero--monument) > footer .footer__inner { gap: 30px; }
+  body:has(#main > .hero--monument) > footer .footer-brand strong { font-size: 10px; }
+  body:has(#main > .hero--monument) > footer .footer__links { gap: 17px 23px; line-height: 1.8; }
+}
+@media (max-width: 360px) {
+  #uslugi .service-zone h3 { font-size: 34px; }
+  #ekosystem .ecosystem-node__trigger { padding-inline: 19px; }
+  #ekosystem .ecosystem-node__name { font-size: 23px; }
+  #main #brief { padding-inline: 17px; }
+  #main #kontakt .contact__email { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ekosystem .ecosystem-node,
+  #main #brief .brief-grid textarea,
+  #main #kontakt .contact__email { transition: none; }
+}
+@media (forced-colors: active) {
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt),
+  #main #brief,
+  #ekosystem .ecosystem-node,
+  #ekosystem .ecosystem-node:is(.is-selected, .is-previewed),
+  #ekosystem .ecosystem-console,
+  #main #brief .brief-grid textarea,
+  body:has(#main > .hero--monument) > footer {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt)::before,
+  #o-mnie::after,
+  #ekosystem .ecosystem-node::before,
+  #ekosystem .ecosystem-node::after,
+  body:has(#main > .hero--monument) > footer::before,
+  body:has(#main > .hero--monument) > footer::after { display: none; }
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt) :is(h2, h3, h4, p, span, small, strong),
+  #main #brief :is(h3, p, label),
+  body:has(#main > .hero--monument) > footer :is(strong, span) { color: CanvasText; text-shadow: none; }
+  #main :is(#ekosystem, #uslugi, #technologie, #kontakt) a,
+  body:has(#main > .hero--monument) > footer a { color: LinkText; }
+  #ekosystem .ecosystem-node .delivery-state,
+  #ekosystem .ecosystem-console .ecosystem-console__state { color: CanvasText; background: Canvas; border-color: CanvasText; }
+}
+@media print {
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt),
+  #main #brief,
+  #ekosystem .ecosystem-node,
+  #ekosystem .ecosystem-node:is(.is-selected, .is-previewed),
+  #ekosystem .ecosystem-console,
+  #main #brief .brief-grid textarea { background: white; color: black; box-shadow: none; }
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt) :is(h2, h3, h4, p, span, small, strong),
+  #main #brief :is(h3, p, label) { color: black; text-shadow: none; }
+  #main :is(#uslugi, #proces, #ekosystem, #wydania, #o-mnie, #wyzwania, #technologie, #kontakt)::before,
+  #o-mnie::after,
+  #ekosystem .ecosystem-node::before,
+  #ekosystem .ecosystem-node::after { display: none; }
+}

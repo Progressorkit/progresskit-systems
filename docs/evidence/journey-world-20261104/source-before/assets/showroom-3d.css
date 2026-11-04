@@ -1,0 +1,222 @@
+/* Only semantic UI and a light static fallback. The canvas owns every 3D material. */
+#projekty .showroom-scene {
+  display: none;
+}
+#projekty .scene-core-toggle[hidden] {
+  display: none;
+}
+#projekty.showroom-3d-ready .showroom-viewport {
+  height: clamp(700px, 78vw, 900px);
+  perspective: none;
+}
+#projekty.showroom-3d-ready .showroom-track {
+  height: 100%;
+  pointer-events: none;
+}
+#projekty.showroom-3d-ready .showroom-scene {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+#projekty .showroom-scene canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  outline: none;
+}
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card {
+  position: absolute !important;
+  left: var(--three-x, 50%) !important;
+  top: var(--three-y, 50%) !important;
+  width: 170px !important;
+  height: 140px !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+  filter: none !important;
+}
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card .project-slice {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+#projekty.showroom-3d-ready:not(.is-slice-open)
+  .showroom-card:focus-within::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #d9f2ff;
+  border-radius: 8px;
+  pointer-events: none;
+}
+#projekty.showroom-3d-ready .scene-core-toggle {
+  position: absolute;
+  z-index: 3;
+  width: 190px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 0;
+  background: none;
+  color: #cddce4;
+  padding: 0;
+}
+#projekty.showroom-3d-ready .scene-core-toggle span {
+  position: absolute;
+  top: 100%;
+  left: -40px;
+  right: -40px;
+  font: 10px/1.6 var(--mono);
+  letter-spacing: 0.09em;
+  text-align: center;
+}
+#projekty.showroom-3d-ready .scene-core-toggle:focus-visible {
+  outline: 2px solid #cfe9ff;
+  outline-offset: 8px;
+}
+#projekty.showroom-3d-ready .capsule-audio {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 30;
+  width: auto;
+  min-width: 100px;
+  min-height: 44px;
+  border: 1px solid #86a2b244;
+  border-radius: 22px;
+  padding: 10px 15px;
+  background: #0a141c;
+  color: #bdd4e0;
+  font: 11px var(--mono);
+  cursor: pointer;
+}
+#projekty .capsule-audio:focus-visible {
+  outline: 2px solid #e6f6ff;
+  outline-offset: 4px;
+}
+#projekty.showroom-3d-ready.is-slice-open .showroom-scene {
+  opacity: 0.2;
+  pointer-events: none;
+  height: 650px;
+}
+#projekty.showroom-3d-ready.is-slice-open .scene-core-toggle {
+  display: none;
+}
+#projekty.showroom-3d-ready.is-slice-open .showroom-viewport {
+  height: auto;
+  min-height: 600px;
+}
+#projekty.showroom-3d-ready.is-slice-open .showroom-track {
+  height: auto;
+  pointer-events: auto;
+}
+#projekty.showroom-3d-ready.is-slice-open
+  .showroom-card:not(.is-slice-expanded) {
+  visibility: hidden !important;
+}
+#projekty:not(.showroom-3d-ready) .project-slice {
+  clip-path: none !important;
+  border-radius: 8px !important;
+  background: #0c1720 !important;
+  border: 1px solid #7d919c !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+#projekty:not(.showroom-3d-ready) .project-slice::before,
+#projekty:not(.showroom-3d-ready) .project-slice::after,
+#projekty:not(.showroom-3d-ready) .module-hardware {
+  display: none !important;
+}
+#projekty:not(.showroom-3d-ready) .showroom-card,
+#projekty:not(.showroom-3d-ready) .project-slice {
+  animation: none !important;
+  transition: none !important;
+}
+@media (max-width: 700px) {
+  #projekty.showroom-3d-ready .showroom-viewport {
+    height: 720px;
+  }
+  #projekty.showroom-3d-ready .scene-core-toggle {
+    width: 150px;
+    height: 300px;
+  }
+  #projekty.showroom-3d-ready .capsule-audio {
+    min-width: 80px;
+    right: 0;
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+  #projekty.showroom-3d-ready.is-slice-open .showroom-viewport {
+    height: auto;
+  }
+  #projekty.showroom-3d-ready.is-slice-open .showroom-track {
+    padding-top: 260px;
+  }
+}
+@media (forced-colors: active) {
+  #projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card {
+    pointer-events: auto !important;
+  }
+  #projekty.showroom-3d-ready .showroom-scene {
+    visibility: hidden;
+  }
+  #projekty.showroom-3d-ready .scene-core-toggle {
+    pointer-events: auto;
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+    height: 70px;
+  }
+  #projekty.showroom-3d-ready .scene-core-toggle span {
+    position: static;
+  }
+  #projekty.showroom-3d-ready:not(.is-slice-open)
+    .showroom-card
+    .project-slice {
+    opacity: 1 !important;
+    background: Canvas !important;
+    color: CanvasText !important;
+    pointer-events: auto !important;
+    clip-path: none !important;
+  }
+}
+@media print {
+  #projekty .showroom-scene,
+  #projekty .scene-core-toggle,
+  #projekty .capsule-audio {
+    display: none !important;
+  }
+  #projekty.showroom-3d-ready .showroom-viewport,
+  #projekty.showroom-3d-ready .showroom-track {
+    height: auto;
+  }
+  #projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #projekty.showroom-3d-ready:not(.is-slice-open)
+    .showroom-card
+    .project-slice {
+    opacity: 1 !important;
+  }
+}
+
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card *,
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card *::before,
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-card *::after {
+  animation: none !important;
+  transition: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Isolate projected accessibility controls from layout in other sections. */
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-viewport {
+  contain: layout paint;
+}

@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "name": "1440 projekty/: shared glass controls and no page overflow",
+      "status": "PASS",
+      "detail": 26
+    },
+    {
+      "name": "1440 projekty/glikemia-premium/: shared glass controls and no page overflow",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(s.controls&&s.buttons.length>0)\n"
+    },
+    {
+      "name": "1440 progresskit-mail/: shared glass controls and no page overflow",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(s.controls&&s.buttons.length>0)\n"
+    },
+    {
+      "name": "390 projekty/: shared glass controls and no page overflow",
+      "status": "PASS",
+      "detail": 26
+    },
+    {
+      "name": "390 projekty/glikemia-premium/: shared glass controls and no page overflow",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(s.controls&&s.buttons.length>0)\n"
+    },
+    {
+      "name": "390 progresskit-mail/: shared glass controls and no page overflow",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(s.controls&&s.buttons.length>0)\n"
+    }
+  ],
+  "PASS": 2,
+  "FAIL": 4
+}

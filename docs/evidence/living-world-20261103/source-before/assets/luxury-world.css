@@ -1,0 +1,233 @@
+/* Black is a material, not a blank colour. The original mark and all copy stay
+   intact; the environment is procedural and never a background photograph. */
+body.luxury-world {
+  --bg:#050505; --bg-2:#0a0809; --panel:#121011; --panel-2:#1c1819;
+  --text:#ebe8e4; --muted:#b9b0ad; --dim:#9d9291; --steel:#c9c9c7;
+  --blue:#c1babb; --signal:#a32b3b; --signal-bright:#d97579;
+  --line:#c3aba51f; --line-strong:#b9aaa33e;
+  --world-ink:#050505; --world-glass:#100c0de0;
+  --world-cold:#c2c7cb; --world-energy:#b43b49;
+  background:#050505;
+  color:var(--text);
+}
+body.luxury-world::before { content:none; }
+body.luxury-world::after {
+  content:""; position:fixed; z-index:80; inset:0; pointer-events:none;
+  opacity:.028; mix-blend-mode:screen;
+  background-image:url("black-finish.svg"); background-size:180px 180px;
+}
+body.luxury-world #main {
+  position:relative; isolation:isolate; overflow:clip;
+  background:transparent;
+}
+body.luxury-world #main::before {
+  content:""; position:fixed; z-index:-2; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 55% at 82% 58%,#53101a48,transparent 76%),
+    radial-gradient(ellipse 80% 65% at -8% 35%,#37333331,transparent 75%),
+    conic-gradient(from 202deg at 64% 38%,#080707 0deg,#151213 22deg,#040404 55deg,#0b090a 165deg,#090707 230deg,#191415 268deg,#050505 310deg);
+}
+.luxury-atmosphere {
+  position:fixed; z-index:-1; inset:0; pointer-events:none;
+  display:block; width:100%; height:100%; contain:strict; opacity:.94;
+}
+.luxury-atmosphere[hidden] { display:none; }
+body.luxury-world .topbar {
+  background:linear-gradient(#070606f5,#090707e0);
+  border-color:#c9b3ac12; backdrop-filter:blur(14px);
+  box-shadow:0 14px 55px #0004;
+}
+body.luxury-world .topbar .brand__mark { filter:grayscale(.7) drop-shadow(0 2px 3px #000); }
+body.luxury-world .topbar .brand__title { color:#d3ceca; font-size:11px; letter-spacing:.23em; }
+body.luxury-world .topbar .nav a { color:#b1a9a6; font-size:9px; letter-spacing:.15em; }
+body.luxury-world .topbar .nav a:is(:hover,:focus-visible) { color:#f0e8e2; }
+body.luxury-world .topbar .nav a[href$="#kontakt"] {
+  color:#f0d5d2; background:linear-gradient(140deg,#571824,#230d12);
+  border-color:#9f4d585e; box-shadow:inset 0 1px #d9897f1c;
+}
+body.luxury-world .menu-btn { border-color:#8d76733b; background:#141011; }
+body.luxury-world .menu-btn span { background:#d0c2bd; }
+body.luxury-world .mobile-panel { background:#0c090af5; border-color:#74525466; }
+body.luxury-world .mobile-panel a { color:#ded5d0; }
+body.luxury-world #main .section-title { font-family:"PK Monument",Georgia,serif; font-weight:700; }
+body.luxury-world #main .section-kicker { color:#bfa6a3; }
+body.luxury-world #main .section-copy { color:#bcb2ae; }
+body.luxury-world #main .cta {
+  border-radius:2px; min-height:50px;
+  font-size:11px; letter-spacing:.09em;
+  transition:background .25s,border-color .25s,box-shadow .25s,transform .25s;
+}
+body.luxury-world #main .cta--primary {
+  border:1px solid #b65e675e; color:#f1e6e0;
+  background:linear-gradient(125deg,#8a2434 0%,#5a1725 58%,#291017 100%);
+  box-shadow:inset 0 1px #ffd5c028,inset 0 -1px #25070d,0 12px 35px #10020466;
+}
+body.luxury-world #main .cta--primary:hover {
+  border-color:#e3a29b99; background:linear-gradient(125deg,#a23140,#6b1c2c 65%,#35101a);
+  box-shadow:inset 0 1px #ffe6ce38,0 14px 45px #6a13242b;
+}
+body.luxury-world #main .cta--ghost {
+  color:#d7cfca; border-color:#a89a9145;
+  background:linear-gradient(140deg,#252021a3,#0d0b0cbd);
+  box-shadow:inset 0 1px #eee2cf12,0 10px 35px #0003;
+}
+body.luxury-world #main .cta--ghost:hover { color:#f0e8e2; border-color:#cab7a899; background:#292022; }
+body.luxury-world :focus-visible { outline-color:#e8b7aa; }
+body.luxury-world #main .world-surface { --world-cold:#bbb6b6; }
+
+/* Opening: an original metal mark, light in the fault of a black material. */
+body.luxury-world #main>.hero.hero--monument {
+  position:relative; height:clamp(730px,calc(100svh - 78px),1040px);
+  min-height:730px; margin:0; padding:0; overflow:hidden;
+  background:
+    radial-gradient(ellipse 40% 60% at 80% 47%,#45121b28,transparent 80%),
+    linear-gradient(90deg,#050505b3,transparent 65%);
+  border:0;
+}
+body.luxury-world #main>.hero--monument .hero__scene { display:none; }
+body.luxury-world #main>.hero--monument::before {
+  content:""; position:absolute; z-index:0; inset:0; pointer-events:none;
+  background:
+    linear-gradient(114deg,transparent 43%,#76716c09 43.12%,#00000057 43.6%,transparent 56%),
+    radial-gradient(ellipse at 72% 55%,#a72a3526,transparent 44%),
+    radial-gradient(ellipse 48% 110% at 104% -20%,#98918a09,transparent 75%);
+  filter:none; animation:none; transform:none; opacity:1;
+}
+body.luxury-world #main>.hero--monument::after {
+  content:""; position:absolute; z-index:0; inset:auto 0 0; height:24%; pointer-events:none;
+  background:linear-gradient(transparent,#050505 94%);
+}
+body.luxury-world #main .hero--monument .hero__stone-title {
+  position:relative; inset:auto; z-index:3;
+  width:64%; max-width:1100px;
+  padding:clamp(118px,13vw,215px) 0 150px clamp(28px,6vw,116px);
+}
+body.luxury-world #main .hero__discipline {
+  margin-bottom:37px; color:#b2a7a2;
+  font-size:9px; line-height:1.7; letter-spacing:.32em;
+}
+body.luxury-world #main .hero--monument h1.stone-word {
+  font:700 clamp(58px,6.45vw,118px)/1.08 "PK Monument",Georgia,serif;
+  letter-spacing:-.052em; gap:.2em;
+}
+body.luxury-world #main .hero--monument .stone-line {
+  color:#d9d5d0; -webkit-text-fill-color:transparent;
+  background:linear-gradient(152deg,#faf3e9 0%,#c4c4c2 29%,#77777a 53%,#d5c9c1 68%,#918682 88%,#d2c5bc);
+  background-clip:text; -webkit-background-clip:text;
+  text-shadow:0 15px 35px #0009; letter-spacing:-.052em;
+  -webkit-text-stroke:.2px #d7ccc21c;
+}
+body.luxury-world #main .hero--monument .stone-line::before { content:none; }
+body.luxury-world #main .hero--monument .stone-line--systems {
+  font:400 .30em/1.3 var(--sans); letter-spacing:.49em; padding-left:.12em;
+  color:#b9aea8; background:none; -webkit-text-fill-color:currentColor; -webkit-text-stroke:0;
+}
+body.luxury-world #main .hero--monument .hero__motto {
+  max-width:28ch; margin-top:41px; color:#c8bdb6;
+  font:italic 400 clamp(21px,1.8vw,28px)/1.6 "PK Motto",Georgia,serif;
+  text-shadow:0 4px 18px #000a;
+}
+body.luxury-world #main .hero__commercial-actions { margin-top:35px; gap:12px; }
+body.luxury-world #main .hero__commercial-actions .cta { min-height:49px; padding-inline:25px; }
+body.luxury-world #main .hero__commercial-actions .cta--text {
+  padding:10px 0; color:#a99b96; min-height:36px; font-size:10px;
+  letter-spacing:.045em; background:none; box-shadow:none;
+}
+body.luxury-world .hero__insignia {
+  right:1.5%; top:11%; width:clamp(350px,43vw,650px); aspect-ratio:1;
+  z-index:2; transform-style:preserve-3d;
+  transform:perspective(1200px) translate3d(var(--scene-x,0px),var(--scene-y,0px),0)
+    rotateX(var(--lux-tilt-x,0deg)) rotateY(var(--lux-tilt-y,-6deg)) rotateZ(-7deg);
+}
+body.luxury-world .hero__insignia img {
+  width:83%; height:83%; position:relative; z-index:2;
+  filter:grayscale(.62) brightness(.9) contrast(1.2)
+    drop-shadow(-1px -1px 0 #cbd4d62b) drop-shadow(3px 10px 2px #000e)
+    drop-shadow(0 35px 25px #000e) drop-shadow(-14px 3px 30px #67132522);
+  animation:luxury-mark-breath 8s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+body.luxury-world .hero-motion-enabled.hero-in-view:not(.hero-motion-paused) .hero__insignia img { animation-play-state:running; }
+body.luxury-world .hero__insignia::before {
+  content:""; inset:7% -7% 0 -8%; height:auto; z-index:0; border:0; border-radius:0;
+  background:
+    linear-gradient(118deg,transparent 39%,#a7a19b10 39.2%,#30282c2e 39.5%,transparent 43%),
+    radial-gradient(ellipse 80% 35% at 48% 70%,#71172541,transparent 80%),
+    linear-gradient(140deg,transparent 26%,#0a080996 50%,#1c181b55 54%,transparent 72%);
+  opacity:.8; transform:rotate(-14deg); filter:blur(.3px);
+}
+body.luxury-world .hero__insignia::after {
+  content:""; inset:72% 5% auto; height:43%; z-index:0; border:0; border-radius:0;
+  background:url("brand/progressorkit-stamp.png") center / contain no-repeat;
+  transform:perspective(500px) rotateX(64deg) scaleY(-1);
+  filter:grayscale(.7) brightness(.45) blur(1.6px); opacity:.15;
+  mask-image:linear-gradient(transparent,#000 20%,transparent 88%); box-shadow:none;
+}
+body.luxury-world #main .hero__explore {
+  bottom:45px; left:clamp(28px,6vw,116px); color:#b6aaa3;
+  font-size:9px; letter-spacing:.19em;
+}
+body.luxury-world #main .hero__explore span:last-child {
+  border:1px solid #c7aaa137; color:#d9c2b8;
+  background:linear-gradient(#2420213b,#0b080a75);
+}
+body.luxury-world #main .hero--monument .hero__motion-toggle {
+  right:6%; bottom:45px; color:#a29591; border-color:#9c79712c;
+  background:#110d0e80; letter-spacing:.04em;
+}
+@keyframes luxury-mark-breath {
+  from { opacity:.86; transform:translate3d(0,3px,0) scale(.992); }
+  to { opacity:1; transform:translate3d(0,-3px,0) scale(1.01); }
+}
+@media(min-width:1600px) {
+  body.luxury-world .hero__insignia { right:5%; top:9%; }
+}
+@media(max-width:1050px) {
+  body.luxury-world #main>.hero.hero--monument { height:900px; min-height:900px; }
+  body.luxury-world #main .hero--monument .hero__stone-title { width:72%; padding-top:108px; }
+  body.luxury-world #main .hero--monument h1.stone-word { font-size:clamp(54px,7.2vw,80px); }
+  body.luxury-world .hero__insignia { width:430px; top:32%; right:-4%; opacity:.8; }
+}
+@media(max-width:700px) {
+  body.luxury-world::after { opacity:.02; }
+  body.luxury-world .topbar { backdrop-filter:none; background:#090707f5; }
+  body.luxury-world .topbar .brand__title { font-size:9px; letter-spacing:.17em; }
+  body.luxury-world #main>.hero.hero--monument { height:850px; min-height:850px; }
+  body.luxury-world #main .hero--monument .hero__stone-title { width:100%; padding:62px 24px 360px; max-width:none; }
+  body.luxury-world #main .hero__discipline { font-size:8px; letter-spacing:.24em; margin-bottom:25px; }
+  body.luxury-world #main .hero--monument h1.stone-word { font-size:clamp(34px,10.45vw,68px); line-height:1.1; gap:.22em; }
+  body.luxury-world #main .hero--monument .stone-line--systems { font-size:.31em; letter-spacing:.48em; }
+  body.luxury-world #main .hero--monument .hero__motto { font-size:20px; margin-top:28px; max-width:28ch; }
+  body.luxury-world #main .hero__commercial-actions { margin-top:25px; gap:10px; }
+  body.luxury-world #main .hero__commercial-actions .cta { padding-inline:19px; font-size:10px; }
+  body.luxury-world #main .hero__commercial-actions .cta--text { font-size:10px; margin-top:1px; }
+  body.luxury-world .hero__insignia { top:auto; bottom:75px; right:2%; width:min(83vw,350px); opacity:1; transform:rotate(-7deg); }
+  body.luxury-world .hero__insignia img { width:80%; height:80%; }
+  body.luxury-world #main .hero__explore { left:24px; bottom:25px; font-size:8px; letter-spacing:.08em; gap:12px; }
+  body.luxury-world #main .hero--monument .hero__motion-toggle { right:24px; bottom:29px; font-size:8px; min-height:40px; padding:8px; }
+}
+@media(max-width:380px) {
+  body.luxury-world #main .hero--monument .hero__stone-title { padding-inline:20px; }
+  body.luxury-world #main>.hero.hero--monument { min-height:850px; }
+  body.luxury-world #main .hero--monument .hero__motto { font-size:19px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.luxury-world .hero__insignia,body.luxury-world .hero__insignia img { animation:none; transform:none; opacity:1; }
+  body.luxury-world #main .cta { transition:none; }
+}
+@media(forced-colors:active) {
+  body.luxury-world { background:Canvas; color:CanvasText; }
+  body.luxury-world::after,body.luxury-world #main::before,.luxury-atmosphere,
+  body.luxury-world .hero__insignia { display:none; }
+  body.luxury-world #main>.hero.hero--monument { background:Canvas; }
+  body.luxury-world #main>.hero--monument::before,body.luxury-world #main>.hero--monument::after { display:none; }
+  body.luxury-world #main .hero--monument .stone-line { background:none; color:CanvasText; -webkit-text-fill-color:CanvasText; -webkit-text-stroke:0; }
+  body.luxury-world #main .hero--monument .hero__motto { color:CanvasText; }
+  body.luxury-world #main .cta { background:ButtonFace; color:ButtonText; box-shadow:none; }
+}
+@media print {
+  body.luxury-world::after,body.luxury-world #main::before,.luxury-atmosphere,body.luxury-world .hero__insignia { display:none; }
+  body.luxury-world #main>.hero.hero--monument { height:auto; min-height:0; background:white; }
+  body.luxury-world #main .hero--monument .hero__stone-title { width:100%; padding:30px 0; }
+  body.luxury-world #main .hero--monument .stone-line { background:none; color:black; -webkit-text-fill-color:black; }
+}

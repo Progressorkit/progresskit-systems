@@ -1,0 +1,139 @@
+/* The opening emblem is the first state of the core, not a side decoration. */
+body.luxury-world #main > .hero.hero--monument {
+  height: calc(100svh - 78px);
+  min-height: 740px;
+  background: radial-gradient(ellipse 52% 58% at 50% 61%, #291015 0%, #100b0e 43%, transparent 80%), #060607;
+  isolation: isolate;
+}
+body.luxury-world #main > .hero--monument::before {
+  inset: -10%;
+  background: radial-gradient(ellipse 42% 17% at 34% 67%, #7c263422, transparent 80%),
+    radial-gradient(ellipse 52% 24% at 75% 43%, #73354419, transparent 80%),
+    url('hero-strata.svg') center / cover;
+  opacity: .58;
+  animation: entry-haze 12s ease-in-out infinite alternate;
+}
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-viewport { height: clamp(620px, calc(100svh - 150px), 850px); }
+body.luxury-world #main > .hero--monument::after {
+  inset: 0; height: auto;
+  background: radial-gradient(ellipse at 50% 43%, transparent 30%, #02020388 90%), linear-gradient(0deg, #050505, transparent 22%);
+}
+body.luxury-world #main .hero--monument .hero__stone-title {
+  position: absolute; inset: 0; width: 100%; max-width: none; padding: 0;
+  z-index: 1; pointer-events: none;
+}
+body.luxury-world #main .hero__discipline {
+  position: absolute; top: 5%; left: 0; width: 100%; text-align: center;
+  margin: 0; color: #9e9295; font-size: 9px; letter-spacing: .34em;
+}
+body.luxury-world #main .hero--monument h1.stone-word {
+  position: absolute; top: 11%; left: 0; width: 100%; max-width: none;
+  display: flex; flex-direction: column; align-items: center; gap: .08em;
+  margin: 0; font: 700 clamp(58px, 10.2vw, 170px)/1.05 "PK Monument", Georgia, serif;
+  transform: none; letter-spacing: -.055em;
+}
+body.luxury-world #main .hero--monument .stone-line {
+  position: relative; color: #070608; -webkit-text-fill-color: #070608;
+  background: none; -webkit-text-stroke: .6px #60545b66;
+  text-shadow: 1px 2px 1px #88707850, -2px -3px 2px #000, 0 -8px 18px #000;
+  filter: none; opacity: 1;
+  animation: entry-relief 7s ease-in-out infinite alternate;
+}
+body.luxury-world #main .hero--monument .stone-line--systems {
+  font: 400 .24em/1.5 var(--sans); letter-spacing: .64em; padding-left: .64em;
+  color: #0a080a; -webkit-text-fill-color: #0a080a;
+  text-shadow: 1px 1px 1px #96758070, -1px -2px 2px #000;
+}
+body.luxury-world .hero__insignia {
+  display: grid; position: absolute; left: 50%; top: 58%; right: auto; bottom: auto;
+  width: clamp(340px, 32vw, 490px); aspect-ratio: 1;
+  z-index: 4; opacity: 1; transform: translate(-50%, -50%);
+  padding: 0; border: 0; border-radius: 8px; text-decoration: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+body.luxury-world .hero__insignia img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  animation: entry-mark 4.8s ease-in-out infinite;
+  filter: grayscale(.85) brightness(.94) contrast(1.18) drop-shadow(0 18px 9px #0009);
+  transform-origin: center;
+}
+body.luxury-world .hero__insignia::before {
+  inset: 2% -30% -14%; border-radius: 50%; transform: none; opacity: .5;
+  background: radial-gradient(ellipse, #7f243333, #260c1820 45%, transparent 70%);
+  animation: entry-light 4.8s ease-in-out infinite;
+}
+body.luxury-world .hero__insignia::after {
+  inset: 84% -8% -12%; height: auto; transform: scaleY(.24);
+  background: radial-gradient(ellipse, #000d, #0004 45%, transparent 70%);
+  filter: blur(8px); opacity: .8; mask-image: none;
+}
+.hero__enter-caption {
+  position: absolute; top: 99%; left: 0; width: 100%; text-align: center;
+  color: #b2a3a7; font: 10px/1.8 var(--mono); letter-spacing: .16em;
+}
+.hero__enter-caption span { display: inline-block; margin-left: 14px; color: #d5b0b8; }
+body.luxury-world .hero__insignia:focus-visible { outline: 1px solid #d8bfc5; outline-offset: 15px; }
+body.luxury-world .hero__insignia:hover .hero__enter-caption { color: #f4e9ec; }
+body.luxury-world #main .hero--monument .hero__motto {
+  position: absolute; left: 6%; bottom: 94px; margin: 0; max-width: 24ch;
+  font-size: clamp(17px, 1.45vw, 22px); line-height: 1.6; color: #b8abb0;
+}
+body.luxury-world #main .hero__commercial-actions {
+  position: absolute; right: 6%; bottom: 94px; margin: 0; max-width: 340px;
+  justify-content: flex-end; pointer-events: auto; gap: 8px;
+}
+body.luxury-world #main .hero__commercial-actions .cta { min-height: 42px; padding-inline: 21px; }
+body.luxury-world #main .hero__commercial-actions .cta--text { flex-basis: 100%; text-align: right; padding: 4px 0; }
+body.luxury-world #main .hero__explore { bottom: 24px; left: 6%; z-index: 5; }
+body.luxury-world #main .hero--monument .hero__motion-toggle { bottom: 26px; right: 6%; z-index: 5; }
+.hero-core-flight { position: fixed; z-index: 80; pointer-events: none; object-fit: contain; will-change: transform; }
+.hero-entry-flying .hero__insignia { visibility: hidden; }
+#projekty.hero-entry-landing .showroom-scene { opacity: 0; }
+#projekty.hero-entry-landing .showroom-heading,
+#projekty.hero-entry-landing .showroom-gates,
+#projekty.hero-entry-landing .showroom-filterbar { opacity: .15; transition: opacity .25s; }
+#projekty.hero-entry-landing .scene-core-toggle { visibility: hidden; }
+@keyframes entry-mark {
+  0%, 100% { transform: translateY(3px) scale(.985); filter: grayscale(.85) brightness(.88) contrast(1.18) drop-shadow(0 18px 9px #0009); }
+  50% { transform: translateY(-3px) scale(1.025); filter: grayscale(.85) brightness(1.12) contrast(1.18) drop-shadow(0 24px 14px #0009); }
+}
+@keyframes entry-light { 0%,100% { opacity: .32; transform: scale(.97); } 50% { opacity: .75; transform: scale(1.06); } }
+@keyframes entry-haze { from { transform: translate(-1%, 1%) scale(1); opacity: .45; } to { transform: translate(1%, -1%) scale(1.05); opacity: .7; } }
+@keyframes entry-relief { from { opacity: .74; } to { opacity: 1; } }
+/* All decorative motion follows the existing page motion control. */
+html[data-interface-motion="paused"] .hero--monument *,
+html[data-interface-motion="paused"] .hero--monument::before,
+html[data-interface-motion="paused"] .hero__insignia::before,
+.hero--monument.hero-motion-paused *, .hero--monument.hero-motion-paused::before,
+.hero--monument.hero-motion-paused .hero__insignia::before,
+.hero--monument:not(.hero-in-view) *, .hero--monument:not(.hero-in-view)::before,
+.hero--monument:not(.hero-in-view) .hero__insignia::before { animation-play-state: paused !important; }
+@media (max-width: 900px) and (min-width: 701px) {
+  body.luxury-world #main .hero--monument .hero__motto { bottom: 90px; font-size: 17px; max-width: 21ch; }
+  body.luxury-world .hero__insignia { top: 51%; width: 360px; }
+}
+@media (max-width: 700px) {
+  #projekty.showroom-3d-ready:not(.is-slice-open) .showroom-viewport { height: 720px; }
+  body.luxury-world #main > .hero.hero--monument { height: calc(100svh - 64px); min-height: 730px; }
+  body.luxury-world #main .hero__discipline { top: 5%; font-size: 8px; letter-spacing: .23em; }
+  body.luxury-world #main .hero--monument h1.stone-word { top: 11%; font-size: 10.8vw; gap: .17em; }
+  body.luxury-world .hero__insignia { top: 46%; width: min(83vw, 340px); }
+  body.luxury-world #main .hero--monument .hero__motto { left: 10%; bottom: 156px; width: 80%; max-width: none; text-align: center; font-size: 17px; }
+  body.luxury-world #main .hero__commercial-actions { left: 5%; right: 5%; bottom: 63px; max-width: none; justify-content: center; gap: 6px 10px; }
+  body.luxury-world #main .hero__commercial-actions .cta { min-height: 40px; }
+  body.luxury-world #main .hero__commercial-actions .cta--text { text-align: center; font-size: 9px; }
+  body.luxury-world #main .hero__explore { left: 6%; bottom: 14px; font-size: 8px; letter-spacing: .05em; }
+  body.luxury-world #main .hero--monument .hero__motion-toggle { right: 5%; bottom: 21px; font-size: 8px; }
+  .hero__enter-caption { font-size: 9px; top: 98%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.luxury-world .hero__insignia img, body.luxury-world .hero__insignia::before,
+  body.luxury-world #main > .hero--monument::before,
+  body.luxury-world #main .hero--monument .stone-line { animation: none; }
+}
+@media (forced-colors: active) {
+  body.luxury-world #main .hero--monument .stone-line { color: CanvasText; -webkit-text-fill-color: CanvasText; -webkit-text-stroke: 0; text-shadow: none; }
+  body.luxury-world .hero__insignia { display: grid !important; }
+  .hero__enter-caption { color: LinkText; }
+}
+@media print { body.luxury-world .hero__insignia, .hero-core-flight { display: none; } }

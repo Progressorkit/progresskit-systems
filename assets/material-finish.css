@@ -91,91 +91,6 @@ body.luxury-world #proces .process-face--bottom {
   box-shadow: inset 0 -2px #000a, 9px 14px 24px -12px #23051063;
 }
 
-/* Each lens has a different optical distance: the shadow stays low and soft,
-   while reflections stay precise on the upper edge. */
-body.luxury-world #ekosystem .ecosystem-node::before {
-  border-color: #fff4df8a #c6c1ba2b #a44a554a #e4ded48a;
-  background:
-    radial-gradient(ellipse 29% 6% at 24% 9%, #fff3df3a, transparent 87%),
-    linear-gradient(128deg, transparent 18%, #e9e9e510 18.8%, transparent 20.2% 79%, #cfb8ad0a 80%, transparent 81%),
-    radial-gradient(ellipse 54% 28% at 76% 92%, #8f233f39, transparent 80%),
-    linear-gradient(127deg, #c8c1b509 7%, #211b1d47 36%, #08060721 60%, #3d1b2331);
-  box-shadow: inset 1px 1px #fff4df27, inset -5px -4px #000c,
-    inset -8px -5px #aaa2a012, inset 8px 5px #c0bdc20c;
-}
-body.luxury-world #ekosystem .ecosystem-node::after {
-  box-shadow: inset 1px 1px #fff1dc1c, inset -1px -2px #b3889016;
-}
-body.luxury-world #ekosystem .delivery-flow__relationship::before {
-  content: "";
-  position: absolute;
-  z-index: -3;
-  inset: 75% -16% -20% 10%;
-  background: radial-gradient(ellipse at 53% 53%, #000d, #0007 27%, #24071029 47%, transparent 73%);
-  border-radius: 50%;
-  transform: rotate(5deg);
-  pointer-events: none;
-}
-body.luxury-world #ekosystem .ecosystem-node:nth-of-type(even) .delivery-flow__relationship::before {
-  background: radial-gradient(ellipse at 35% 48%, #000c, #20060f4a 31%, transparent 72%);
-  transform: rotate(-7deg);
-}
-body.luxury-world #ekosystem .ecosystem-node.is-previewed::before {
-  border-color: #fff5dfb0 #d6b8ac50 #ac52627d #fff0d2b0;
-  background:
-    radial-gradient(ellipse 31% 6% at 27% 9%, #fff3df54, transparent 87%),
-    linear-gradient(128deg, transparent 18%, #e9e9e518 18.8%, transparent 20.2% 79%, #cfb8ad10 80%, transparent 81%),
-    radial-gradient(ellipse 54% 28% at 76% 92%, #9d2d443d, transparent 80%),
-    linear-gradient(127deg, #bfb5ac0c, #231b2052 40%, #0c080a29 65%, #451c2a35);
-  box-shadow: inset 1px 1px #fff1d947, inset -5px -4px #000d,
-    inset -8px -5px #a34d5d16, inset 8px 5px #e6e3da10;
-}
-
-/* A broad dark sidewall carries the weight of each cut specimen. The smoked,
-   convex front and a finer internal return catch separate reflections. These
-   surfaces stay static while the dedicated light layers composite above them. */
-body.luxury-world #main #technologie .technology-group::before {
-  background:
-    linear-gradient(169deg, #b6c8d4a3, #2e3c4c9c 9%, #050810ed 32% 64%, #361821cf 83%, #708ea0a8 96%, #151b26e6);
-}
-body.luxury-world #main #technologie .technology-group::after {
-  background:
-    radial-gradient(ellipse 58% 24% at 27% -2%, #d8e5f044, transparent 81%),
-    radial-gradient(ellipse 48% 110% at -7% 42%, #88b1ca1f, transparent 70%),
-    radial-gradient(ellipse 100% 46% at 50% 47%, transparent 35%, #02050a50 100%),
-    radial-gradient(ellipse 62% 14% at 73% 98%, #76233723, transparent 83%),
-    linear-gradient(118deg, transparent 13%, #e1effa0e 13.2%, transparent 18% 73%, #c2d9e909 73.2%, transparent 75%),
-    linear-gradient(149deg, #64748940, #090e1836 39%, #070b144f 70%, #29111b38);
-  box-shadow: inset 0 2px 1px #d7e7f033, inset 4px 0 11px #bed0dd12,
-    inset -9px -13px 18px #010207a6, inset 0 -4px 3px #d8e3ef12;
-}
-body.luxury-world #main #technologie .technology-chips {
-  position: static;
-}
-body.luxury-world #main #technologie .technology-chips::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 4px 6px 11px 5px;
-  clip-path: var(--field-rim);
-  background: linear-gradient(128deg, #eef7ffd1, #c5d7e345 19%, #71859112 39%, #b48b9714 65%, #dfb5c06b 85%, #c1d1de5c);
-  border-radius: 0;
-  pointer-events: none;
-  opacity: .79;
-  transition: opacity .28s ease;
-}
-body.luxury-world #main #technologie .technology-group:nth-child(2n) .technology-chips::before {
-  background: linear-gradient(143deg, #edf5ffc2, #c5d7e336 24%, #71859112 48%, #dfb5c060 82%, #c1d1de54);
-}
-body.luxury-world #main #technologie .technology-group:nth-child(6)::after {
-  box-shadow: inset 0 2px 1px #d7e7f033, inset 6px 0 14px #bed0dd0f,
-    inset -11px -13px 22px #010207a6, inset 0 -4px 3px #d8e3ef12;
-}
-body.luxury-world #main #technologie .technology-group.is-field-active .technology-chips::before { opacity: 1; }
-@media (prefers-reduced-motion: reduce) {
-  body.luxury-world #main #technologie .technology-chips::before { transition: none; }
-}
-
 /* The human interval receives only a grazing reflection, without adding a
    second animation; the approved slow light already travels behind the copy. */
 body.luxury-world #main #o-mnie::before {
@@ -243,10 +158,7 @@ body.luxury-world:has(#main > .hero--monument) > footer::before {
   body.luxury-world #ekosystem .delivery-flow__relationship::before,
   body.luxury-world #main #technologie .technology-chips::before { opacity: .55; }
   body.luxury-world #main #technologie .technology-chips::before { opacity: .66; }
-  body.luxury-world #main #technologie .technology-group::after {
-    box-shadow: inset 0 2px 1px #d7e7f02a, inset 3px 0 8px #bed0dd0c,
-      inset -7px -11px 14px #010207a6, inset 0 -3px 2px #d8e3ef0d;
-  }
+
   body.luxury-world #main #brief {
     box-shadow: inset 1px 0 #fff0da14, inset -4px 0 #8e727709, inset 0 -5px #000a,
       8px 21px 32px -20px #000c;

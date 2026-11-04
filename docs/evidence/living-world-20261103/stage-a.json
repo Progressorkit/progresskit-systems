@@ -1,0 +1,104 @@
+{
+  "states": {
+    "idle": {
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "shadow": "rgba(242, 220, 233, 0.23) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px -2px 0px 0px inset, rgb(3, 2, 5) 0px 4px 0px 0px, rgba(0, 0, 0, 0.467) 0px 7px 16px 0px"
+    },
+    "hover": {
+      "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.5, 3, 1)",
+      "shadow": "rgba(255, 230, 245, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px -2px 0px 0px inset, rgb(3, 2, 5) 0px 5px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 18px 0px"
+    },
+    "pressed": {
+      "transform": "matrix3d(0.995, 0, 0, 0, 0, 0.995, 0, 0, 0, 0, 1, 0, 0, 2, -2, 1)",
+      "shadow": "rgba(0, 0, 0, 0.733) 2px 4px 7px 0px inset, rgba(217, 185, 202, 0.16) -1px -1px 0px 0px inset, rgb(3, 2, 5) 0px 1px 0px 0px"
+    }
+  },
+  "errors": [],
+  "metrics": {
+    "revision": "187",
+    "frames": 190,
+    "quality": 0,
+    "fps": 60,
+    "cpuFrameMs": 3.099999999627471,
+    "gpuFrameMs": 8.612083,
+    "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+    "drawCalls": 36,
+    "triangles": 4920,
+    "geometries": 80,
+    "textures": 27,
+    "rafPending": true,
+    "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+    "vendor": "Google Inc. (Intel)",
+    "filaments": 72,
+    "coronaRoots": 48,
+    "dpr": 1,
+    "transmissionResolutionScale": 0.65,
+    "buffer": {
+      "width": 1000,
+      "height": 750
+    },
+    "samples": [
+      {
+        "t": 9552,
+        "fps": 51.4383692131835,
+        "cpuFrameMs": 0.599999999627471,
+        "gpuFrameMs": 8.653582,
+        "drawCalls": 14,
+        "triangles": 3700,
+        "dpr": 1
+      },
+      {
+        "t": 10552,
+        "fps": 59,
+        "cpuFrameMs": 0.900000000372529,
+        "gpuFrameMs": 8.388332,
+        "drawCalls": 23,
+        "triangles": 4770,
+        "dpr": 1
+      },
+      {
+        "t": 11552,
+        "fps": 60,
+        "cpuFrameMs": 2.5,
+        "gpuFrameMs": 8.198416,
+        "drawCalls": 36,
+        "triangles": 4920,
+        "dpr": 1
+      }
+    ],
+    "phases": [
+      {
+        "id": "glikemia-premium",
+        "phase": "ready"
+      },
+      {
+        "id": "progresskit-mail",
+        "phase": "ready"
+      },
+      {
+        "id": "progresskit-translator",
+        "phase": "ready"
+      },
+      {
+        "id": "vaeloria",
+        "phase": "ready"
+      },
+      {
+        "id": "progresskit-community",
+        "phase": "ready"
+      },
+      {
+        "id": "progresskit-tax",
+        "phase": "ready"
+      }
+    ],
+    "camera": "PerspectiveCamera",
+    "depth": true,
+    "corePresentation": "logo"
+  },
+  "assessment": {
+    "visual": "Inward bevel mask and directional inner shadow; tactile travel 2px. Glass core logo remains legible after handoff.",
+    "coherence": "Cutout and mechanics share graphite and aluminium; no extra page-wide rendering layer.",
+    "performance": "Static local SVG filter only on headings, CSS transforms for controls. No new animation loop."
+  }
+}

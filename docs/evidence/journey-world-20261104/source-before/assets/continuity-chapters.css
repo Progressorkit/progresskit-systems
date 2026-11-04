@@ -1,0 +1,476 @@
+/* Final continuity: the approved world continues through the lower chapters.
+   The existing roadmap, content, links and brief controls remain authoritative. */
+
+/* Six optical specimens share the stage; their existing roadmap wires retain
+   their dashed/planned meaning. No extra product or integration is implied. */
+body.luxury-world #ekosystem .ecosystem-system {
+  perspective: 1900px;
+  background:
+    radial-gradient(ellipse 38% 30% at 49% 49%, #68202a16, transparent 76%),
+    radial-gradient(ellipse 70% 4% at 49% 83%, #b6a9a207, transparent 80%);
+}
+body.luxury-world #ekosystem .ecosystem-node {
+  --lens-shape: 42% 19% 36% 25% / 27% 43% 25% 41%;
+  --lens-z: 0px;
+  --lens-turn: -1deg;
+  --lens-yaw: 4deg;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: translateZ(var(--lens-z)) rotateY(var(--lens-yaw)) rotateZ(var(--lens-turn));
+  transition: transform .65s cubic-bezier(.2,.65,.2,1), opacity .5s;
+}
+body.luxury-world #ekosystem [data-ecosystem-node="translator"] {
+  --lens-shape: 22% 43% 28% 39% / 42% 24% 44% 27%;
+  --lens-z: 16px; --lens-turn: 1.2deg; --lens-yaw: -5deg;
+}
+body.luxury-world #ekosystem [data-ecosystem-node="agents"] {
+  --lens-shape: 38% 28% 44% 20% / 24% 42% 28% 44%;
+  --lens-z: -23px; --lens-turn: -1.5deg; --lens-yaw: 6deg;
+}
+body.luxury-world #ekosystem [data-ecosystem-node="voice"] {
+  --lens-shape: 28% 41% 23% 39% / 39% 26% 40% 29%;
+  --lens-z: 29px; --lens-turn: .9deg; --lens-yaw: -4deg;
+}
+body.luxury-world #ekosystem [data-ecosystem-node="mail"] {
+  --lens-shape: 40% 23% 31% 28% / 31% 42% 24% 38%;
+  --lens-z: 9px; --lens-turn: -1.3deg; --lens-yaw: 3deg;
+}
+body.luxury-world #ekosystem [data-ecosystem-node="messenger"] {
+  --lens-shape: 23% 39% 30% 44% / 44% 27% 38% 23%;
+  --lens-z: -17px; --lens-turn: 1.5deg; --lens-yaw: -5deg;
+}
+body.luxury-world #ekosystem .ecosystem-node::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: auto; height: auto;
+  border: 1px solid #e3ded04a;
+  border-color: #f1ead769 #c6c1ba24 #a44a553e #e4ded465;
+  border-radius: var(--lens-shape);
+  clip-path: none;
+  transform: none;
+  background:
+    radial-gradient(ellipse 35% 26% at 17% 12%, #fff3df18, transparent 80%),
+    radial-gradient(ellipse 54% 30% at 74% 89%, #9e263d30, transparent 76%),
+    linear-gradient(127deg, #c8c1b506 7%, #211b1d47 36%, #08060721 60%, #3d1b2331);
+  box-shadow: inset 2px 2px #eee5d80a, inset -4px -3px #0009,
+    inset -7px -4px #aaa2a006, inset 7px 5px #c0bdc207;
+  opacity: 1;
+  pointer-events: none;
+  transition: border-color .5s, background .5s, box-shadow .5s;
+}
+body.luxury-world #ekosystem .ecosystem-node::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 7px -1px -8px 10px;
+  width: auto; height: auto;
+  border: 1px solid #c3c0bd16;
+  border-top-color: #eee4d329;
+  border-bottom: 3px solid #b9a9a225;
+  border-radius: var(--lens-shape);
+  background:
+    linear-gradient(120deg, transparent 15%, #f9f1df0d 17%, transparent 20%, transparent 74%, #b7a9ac08 76%, transparent 78%),
+    radial-gradient(ellipse at 70% 100%, #b52d4714, transparent 65%);
+  box-shadow: inset 1px 1px #f1e8dc09, inset -1px -1px #cdbab90d;
+  opacity: .9;
+  transform: none;
+  pointer-events: none;
+}
+body.luxury-world #ekosystem .ecosystem-node__trigger {
+  min-height: 174px;
+  padding: 45px 38px 20px;
+  border-radius: var(--lens-shape);
+}
+body.luxury-world #ekosystem .ecosystem-node__name {
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: 400;
+  line-height: 1.18;
+  max-width: 15ch;
+  color: #e6e0da;
+}
+body.luxury-world #ekosystem .ecosystem-node .delivery-flow__relationship {
+  padding: 0 38px 37px;
+  color: #b6a7a3;
+  line-height: 1.65;
+}
+body.luxury-world #ekosystem .ecosystem-node__detail { padding: 0 38px 24px; }
+body.luxury-world #ekosystem .ecosystem-node:is(.is-selected, .is-previewed) {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+body.luxury-world #ekosystem .ecosystem-node:is(.is-selected, .is-previewed)::before {
+  border: 1px solid #ece0cf83;
+  border-color: #f3ead390 #d6b8ac3f #ac526271 #e8e1d090;
+  background:
+    radial-gradient(ellipse 36% 26% at 19% 12%, #fff3dc24, transparent 80%),
+    radial-gradient(ellipse 56% 33% at 74% 89%, #a7334b3c, transparent 76%),
+    linear-gradient(127deg, #bfb5ac0c, #231b2052 40%, #0c080a29 65%, #451c2a35);
+  box-shadow: inset 2px 2px #fff1d917, inset -4px -3px #0009,
+    inset -8px -4px #a34d5d0e, inset 8px 5px #e6e3da09;
+}
+body.luxury-world #ekosystem .ecosystem-node:is(.is-selected, .is-previewed)::after {
+  border: 1px solid #cbb8ac2e;
+  border-bottom: 3px solid #cf7a8261;
+  background:
+    linear-gradient(120deg, transparent 15%, #fff0d715 17%, transparent 20%, transparent 74%, #c0aaa80d 76%, transparent 78%),
+    radial-gradient(ellipse at 70% 100%, #a9344b20, transparent 65%);
+}
+body.luxury-world #ekosystem .ecosystem-system.has-preview .ecosystem-node:not(.is-previewed) {
+  opacity: .48;
+}
+body.luxury-world #ekosystem .ecosystem-node.is-previewed {
+  z-index: 6;
+  opacity: 1;
+  transform: translate3d(0,-9px,58px) rotateY(calc(var(--lens-yaw) * .35)) rotateZ(calc(var(--lens-turn) * .4));
+}
+body.luxury-world #ekosystem .ecosystem-node__trigger:focus-visible {
+  outline: 2px solid #e6c9b7;
+  outline-offset: 9px;
+  background: none;
+}
+body.luxury-world #ekosystem .ecosystem-wires [data-ecosystem-edge] {
+  stroke: #968c8e;
+  opacity: .22;
+  stroke-width: .9;
+  stroke-dasharray: 1 11;
+}
+body.luxury-world #ekosystem .ecosystem-wires [data-ecosystem-edge].is-flowing {
+  stroke: #d79498;
+  stroke-width: 1.25;
+  opacity: .73;
+  stroke-dasharray: 2 20;
+}
+body.luxury-world #ekosystem .ecosystem-console {
+  padding: 30px 22px;
+  border: 0;
+  background: radial-gradient(ellipse at 3% 45%, #581b2520, transparent 80%);
+  box-shadow: none;
+}
+body.luxury-world #ekosystem .ecosystem-console::before {
+  content: ""; position: absolute; inset: 6% auto 6% 0; width: 1px;
+  background: linear-gradient(transparent, #c48a8850, transparent); pointer-events: none;
+}
+body.luxury-world #ekosystem .ecosystem-console__name { font-size: clamp(26px,2.4vw,35px); }
+
+/* About stays still enough to read. Only its distant grazing light travels. */
+body.luxury-world #main #o-mnie {
+  background:
+    radial-gradient(ellipse 65% 70% at 3% 40%, #4e202b20, transparent 74%),
+    radial-gradient(ellipse 55% 80% at 100% 90%, #43121b1a, transparent 77%),
+    linear-gradient(135deg, #050404, #090607 62%, #050404);
+}
+body.luxury-world #main #o-mnie::before {
+  content: ""; position: absolute; z-index: -1; inset: 10% -28%;
+  width: auto; height: auto; border: 0; pointer-events: none;
+  background: linear-gradient(113deg, transparent 35%, #f1c5b305 45%, #c6a29a0d 48%, transparent 58%);
+  mask-image: radial-gradient(ellipse, #000 15%, transparent 70%);
+  opacity: .75;
+  animation: continuity-about-light 32s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+body.luxury-world #main #o-mnie[data-world-visible="true"]::before { animation-play-state: running; }
+body.luxury-world #o-mnie::after {
+  left: -8%; top: 16%; width: min(58vw, 800px);
+  opacity: .075; filter: grayscale(1) brightness(.7) contrast(1.1);
+  transform: perspective(1200px) rotateY(17deg) rotateZ(-13deg);
+  mask-image: linear-gradient(125deg, transparent 3%, #000 30%, #000 65%, transparent 94%);
+}
+body.luxury-world #o-mnie .collaboration {
+  border: 0;
+  background: linear-gradient(110deg, #4b1f2812, transparent 70%);
+}
+body.luxury-world #o-mnie .collaboration::before {
+  top: 5%; height: 85%;
+  background: linear-gradient(transparent, #c8b9a631, #9b4a5430, transparent);
+}
+@keyframes continuity-about-light {
+  from { transform: translate3d(-11%,0,0); opacity: .45; }
+  to { transform: translate3d(11%,0,0); opacity: .8; }
+}
+
+/* The invitation and local brief are two physical parts of one instrument.
+   Their original DOM, labels, values and actions are untouched. */
+body.luxury-world #main #kontakt { padding-bottom: 0; }
+body.luxury-world #kontakt .contact {
+  position: relative;
+  isolation: isolate;
+  align-items: start;
+  padding: clamp(38px,5.2vw,75px) clamp(30px,4.5vw,65px) clamp(42px,5vw,72px);
+  border: 1px solid #c1b2a843;
+  border-top-color: #eadac070;
+  border-bottom: 0;
+  border-radius: 48px 48px 0 0;
+  background:
+    radial-gradient(ellipse 70% 50% at var(--world-x,78%) var(--world-y,0%), #c5b4a00a, transparent 70%),
+    repeating-linear-gradient(0deg, #d7d3c502 0 1px, transparent 1px 4px),
+    linear-gradient(132deg, #211b1f6e, #080607df 62%, #210d15a6);
+  box-shadow: inset 2px 2px #f1e2c80a, inset 7px 0 #aaa1a004,
+    inset -7px 0 #8e727709, 0 -20px 80px #0005;
+}
+body.luxury-world #kontakt .contact::before {
+  content: ""; position: absolute; z-index: -1; inset: 8px 8px 0;
+  border: 1px solid #c7b5a516; border-bottom: 0; border-radius: 40px 40px 0 0;
+  pointer-events: none;
+}
+body.luxury-world #kontakt .contact .section-title {
+  font-size: clamp(58px,5.8vw,84px);
+  overflow-wrap: anywhere;
+}
+body.luxury-world #kontakt .contact__meta { padding-left: 24px; margin-top: 16px; }
+body.luxury-world #main #kontakt .contact__email {
+  font-size: clamp(23px,2.8vw,38px);
+  color: #e8dcd0;
+}
+body.luxury-world #main #brief {
+  width: 100%; max-width: none; margin: -1px 0 80px;
+  padding: 0 clamp(30px,4.5vw,65px) clamp(45px,5.5vw,80px);
+  border: 1px solid #c1b2a843;
+  border-top: 0; border-bottom-color: #b7a09850;
+  border-radius: 0 0 48px 48px;
+  background:
+    radial-gradient(ellipse 72% 32% at 88% 96%, #66203720, transparent 75%),
+    repeating-linear-gradient(0deg, #d7d3c502 0 1px, transparent 1px 4px),
+    linear-gradient(132deg, #171216e3, #080607ef 62%, #210d15a6);
+  box-shadow: inset 2px 0 #f1e2c80a, inset 7px 0 #aaa1a004,
+    inset -7px 0 #8e727709, inset 0 -6px #0008, 0 35px 80px #0007;
+}
+body.luxury-world #main #brief::before {
+  inset: 0 8px 9px; width: auto; height: auto;
+  border: 1px solid #c7b5a516; border-top: 0; border-radius: 0 0 40px 40px;
+  background: none; z-index: -1;
+}
+body.luxury-world #main #brief::after {
+  content: ""; position: absolute; top: 0; left: 5%; right: 5%; height: 1px;
+  background: linear-gradient(90deg, transparent, #d4b6a323 30%, #9b4b5a2b 70%, transparent);
+  pointer-events: none;
+}
+body.luxury-world #brief .brief__heading {
+  padding-top: 56px; margin-bottom: 48px; gap: 42px;
+}
+body.luxury-world #brief .brief__heading h3 { font-size: clamp(33px,3.6vw,48px); }
+body.luxury-world #main #brief .brief-grid { gap: 32px 35px; }
+body.luxury-world #main #brief .brief-grid label { position: relative; font-size: 13px; color: #c7bab1; }
+body.luxury-world #main #brief .brief-grid label::after {
+  content: ""; position: absolute; z-index: 1; pointer-events: none;
+  left: 17%; right: 17%; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, #d4b0a2 35%, #9e4a5c 70%, transparent);
+  opacity: 0; transform: scaleX(.18); transform-origin: left;
+}
+body.luxury-world #main #brief .brief-grid label:focus-within::after {
+  animation: continuity-field-edge .95s cubic-bezier(.2,.65,.25,1) both;
+}
+body.luxury-world #main #brief .brief-grid textarea {
+  min-height: 156px;
+  margin-top: 14px; padding: 20px;
+  border: 1px solid #8b777433;
+  border-top-color: #050404;
+  border-bottom-color: #c9b1a445;
+  border-radius: 9px 9px 15px 15px;
+  background:
+    radial-gradient(ellipse at 10% 0, #55434a08, transparent 65%),
+    linear-gradient(145deg, #050405e8, #0b080bd9);
+  box-shadow: inset 0 5px 12px #0009, inset 2px 0 #0008, 0 1px #d6c2a912;
+  color: #eee2d8;
+  transition: border-color .4s, background .5s, box-shadow .5s;
+}
+body.luxury-world #main #brief .brief-grid textarea:hover { border-color: #b69b905c; border-bottom-color: #c5aea269; }
+body.luxury-world #main #brief .brief-grid textarea:focus-visible {
+  outline: 1px solid #dfc1ac99; outline-offset: 4px;
+  border-color: #b5918c73;
+  border-bottom-color: #bd677681;
+  background: linear-gradient(145deg, #100b0f, #0b080bd9);
+  box-shadow: inset 0 4px 13px #0008, inset 0 -1px #a34b5b24, 0 3px 16px #8d28310d;
+}
+body.luxury-world #brief .brief__actions { align-items: center; gap: 14px; margin-top: 46px; }
+body.luxury-world #main #brief .brief__actions .cta--primary {
+  min-height: 66px; min-width: 235px; padding-inline: 32px;
+  border: 1px solid #e4ab9b85; border-bottom-color: #7c2b3b;
+  border-radius: 5px;
+  color: #fff1e5;
+  font-size: 12px; letter-spacing: .12em;
+  background: linear-gradient(118deg, #a53748, #6d2033 63%, #391422);
+  box-shadow: inset 0 1px #fff0ce3b, inset 0 -3px #22081088, 0 12px 28px #0005;
+}
+body.luxury-world #main #brief .brief__actions .cta--primary:is(:hover,:focus-visible) {
+  border-color: #eed0bca1;
+  background: linear-gradient(118deg, #ba4555, #822b3e 63%, #481b2c);
+  box-shadow: inset 0 1px #fff0ce52, inset 0 -3px #22081088, 0 12px 30px #30081150;
+}
+body.luxury-world #main #brief .brief__actions .cta--ghost {
+  min-height: 48px; padding-inline: 15px;
+  border-color: #a98c8038; background: #0c090c66; font-size: 10px;
+}
+@keyframes continuity-field-edge {
+  0% { opacity: 0; transform: translateX(-12%) scaleX(.18); }
+  45% { opacity: .8; }
+  100% { opacity: .45; transform: translateX(5%) scaleX(1); }
+}
+
+/* A graphite relief recedes into the same black. No photographs are used. */
+body.luxury-world:has(#main > .hero--monument) > footer {
+  --continuity-end: 0;
+  padding-top: 0;
+  background:
+    radial-gradient(ellipse 68% 25% at 68% 15%, #35121c11, transparent 80%),
+    linear-gradient(#050404, #050404 30%, #020202 75%, #010101);
+  isolation: isolate;
+}
+body.luxury-world:has(#main > .hero--monument) > footer::before {
+  content: "";
+  height: clamp(260px,27vw,420px);
+  margin-bottom: 12px;
+  background:
+    radial-gradient(ellipse 38% 9% at 68% 35%, #9f293329, transparent 78%),
+    radial-gradient(ellipse 62% 10% at 32% 47%, #5d414316, transparent 81%),
+    repeating-linear-gradient(165deg, transparent 0 55px, #afa29a03 55px 56px, transparent 56px 112px),
+    linear-gradient(168deg, transparent 39%, #9c8c810b 39.2%, #020202 40%, transparent 61%),
+    linear-gradient(13deg, #030303 20%, #1b1218 45%, #030303 46%, #0d090b 60%, #020202 82%);
+  filter: none;
+  mask-image: linear-gradient(transparent, #000 17%, #000 39%, transparent 92%);
+  opacity: calc(.77 - var(--continuity-end) * .24);
+  transform: translate3d(0,calc(var(--continuity-end) * 13px),0);
+}
+body.luxury-world:has(#main > .hero--monument) > footer::after {
+  top: 9%; left: 5%; right: 5%; height: 200px;
+  background:
+    radial-gradient(ellipse 44% 12% at 68% 40%, #9a3b3d1c, transparent 82%),
+    radial-gradient(ellipse 52% 10% at 37% 51%, #bbafaa0a, transparent 82%);
+  opacity: calc(.7 - var(--continuity-end) * .4);
+  mask-image: linear-gradient(transparent, #000 38%, transparent 75%);
+  transform: translate3d(calc(var(--continuity-end) * -12px),0,0);
+  pointer-events: none;
+}
+body.luxury-world:has(#main > .hero--monument) > footer .footer__inner { position: relative; z-index: 1; }
+
+@media (min-width: 901px) {
+  body.luxury-world #main > .shell:has(> #brief) {
+    width: calc(100% - 12vw); max-width: 1240px; margin-inline: auto;
+  }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced { min-height: 1030px; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="tax"] { top: 1%; left: 0; width: 31%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="translator"] { top: 6%; right: 0; width: 31%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="agents"] { top: 36%; left: 1%; width: 29%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="voice"] { top: 42%; right: 0; width: 30%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="mail"] { bottom: 0; left: 11%; width: 31%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced [data-ecosystem-node="messenger"] { bottom: 3%; right: 2%; width: 31%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced .ecosystem-console { top: 27%; left: 34%; width: 32%; }
+  body.luxury-world #ekosystem .ecosystem-system.is-enhanced .delivery-independent > h3 { right: 0; bottom: 31%; width: 30%; padding-left: 30px; }
+}
+@media (min-width: 901px) and (max-width: 1100px) {
+  body.luxury-world #ekosystem .ecosystem-node__trigger { padding: 37px 27px 16px; }
+  body.luxury-world #ekosystem .ecosystem-node .delivery-flow__relationship { padding-inline: 27px; }
+  body.luxury-world #ekosystem .ecosystem-node__name { font-size: 23px; }
+  body.luxury-world #kontakt .contact { grid-template-columns: minmax(0,1fr); gap: 30px; }
+  body.luxury-world #kontakt .contact__meta { display: flex; flex-wrap: wrap; gap: 24px; }
+}
+@media (max-width: 900px) {
+  body.luxury-world #ekosystem .ecosystem-node { transform: none; }
+  body.luxury-world #ekosystem .ecosystem-node.is-previewed { transform: translateY(-3px); }
+  body.luxury-world #ekosystem .ecosystem-node__trigger { min-height: 150px; padding: 37px 32px 20px; }
+  body.luxury-world #ekosystem .ecosystem-node .delivery-flow__relationship { padding: 0 32px 30px; }
+  body.luxury-world #ekosystem .ecosystem-node__detail { padding-inline: 32px; }
+  body.luxury-world #ekosystem .ecosystem-node__detail .delivery-flow__description { font-size: 15px; }
+}
+@media (max-width: 700px) {
+  body.luxury-world #ekosystem .ecosystem-system { padding-inline: 8px; }
+  body.luxury-world #ekosystem .ecosystem-system .ecosystem-node { width: calc(100% - 15px); margin-bottom: 48px; }
+  body.luxury-world #ekosystem .ecosystem-system .ecosystem-node:nth-child(even),
+  body.luxury-world #ekosystem .ecosystem-system .delivery-branch:last-child { margin-left: 15px; }
+  body.luxury-world #ekosystem .ecosystem-node__name { font-size: 26px; }
+  body.luxury-world #ekosystem .ecosystem-node__trigger { padding: 35px 29px 20px; }
+  body.luxury-world #ekosystem .ecosystem-node .delivery-flow__relationship { padding-inline: 29px; }
+  body.luxury-world #ekosystem .ecosystem-node__detail { padding-inline: 29px; }
+  body.luxury-world #o-mnie::after { left: -19%; width: 115vw; top: 13%; opacity: .055; }
+  body.luxury-world #main #o-mnie::before { animation: none; transform: none; opacity: .45; }
+  body.luxury-world #kontakt .contact {
+    padding: 37px 23px 34px; gap: 35px;
+    border-radius: 29px 29px 0 0;
+  }
+  body.luxury-world #kontakt .contact::before { inset: 6px 6px 0; border-radius: 23px 23px 0 0; }
+  body.luxury-world #kontakt .contact .section-title { font-size: clamp(39px,10.2vw,58px); }
+  body.luxury-world #main #kontakt .section-copy { font-size: 15px; line-height: 1.85; }
+  body.luxury-world #main #kontakt .contact__email { font-size: clamp(20px,5.5vw,27px); }
+  body.luxury-world #kontakt .contact__meta { margin-top: 0; padding-left: 17px; gap: 22px; }
+  body.luxury-world #main #brief { padding: 0 23px 37px; border-radius: 0 0 29px 29px; margin-bottom: 40px; }
+  body.luxury-world #main #brief::before { inset: 0 6px 7px; border-radius: 0 0 23px 23px; }
+  body.luxury-world #brief .brief__heading { padding-top: 35px; gap: 23px; margin-bottom: 31px; }
+  body.luxury-world #brief .brief__heading h3 { font-size: 34px; }
+  body.luxury-world #main #brief .brief-grid { gap: 26px; }
+  body.luxury-world #main #brief .brief-grid textarea { min-height: 140px; padding: 16px; }
+  body.luxury-world #brief .brief__actions { margin-top: 34px; }
+  body.luxury-world #main #brief .brief__actions .cta--primary { min-height: 64px; min-width: 0; font-size: 11px; }
+  body.luxury-world #main #brief .brief__actions .cta--ghost { min-height: 47px; }
+  body.luxury-world:has(#main > .hero--monument) > footer::before { height: 270px; margin-bottom: 15px; }
+  body.luxury-world:has(#main > .hero--monument) > footer::after { height: 150px; }
+}
+@media (max-width: 360px) {
+  body.luxury-world #ekosystem .ecosystem-node__name { font-size: 24px; }
+  body.luxury-world #ekosystem .ecosystem-node__trigger { padding-inline: 24px; }
+  body.luxury-world #ekosystem .ecosystem-node .delivery-flow__relationship,
+  body.luxury-world #ekosystem .ecosystem-node__detail { padding-inline: 24px; }
+  body.luxury-world #kontakt .contact { padding-inline: 20px; }
+  body.luxury-world #main #brief { padding-inline: 20px; }
+  body.luxury-world #main #kontakt .contact__email { font-size: 19px; }
+}
+html[data-interface-motion="paused"] body.luxury-world #main #o-mnie::before,
+html[data-interface-motion="paused"] body.luxury-world #main #brief .brief-grid label:focus-within::after {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.luxury-world #ekosystem .ecosystem-node,
+  body.luxury-world #ekosystem .ecosystem-node.is-previewed { transform: none; transition: none; }
+  body.luxury-world #ekosystem .ecosystem-node::before,
+  body.luxury-world #main #brief .brief-grid textarea { transition: none; }
+  body.luxury-world #main #o-mnie::before { animation: none; transform: none; opacity: .6; }
+  body.luxury-world #main #brief .brief-grid label:focus-within::after { animation: none; opacity: .6; transform: none; }
+  body.luxury-world:has(#main > .hero--monument) > footer::before,
+  body.luxury-world:has(#main > .hero--monument) > footer::after { transform: none; }
+}
+@media (forced-colors: active) {
+  body.luxury-world #ekosystem .ecosystem-node,
+  body.luxury-world #ekosystem .ecosystem-node:is(.is-selected,.is-previewed),
+  body.luxury-world #ekosystem .ecosystem-console,
+  body.luxury-world #main #o-mnie,
+  body.luxury-world #kontakt .contact,
+  body.luxury-world #main #brief,
+  body.luxury-world #main #brief .brief-grid textarea,
+  body.luxury-world:has(#main > .hero--monument) > footer {
+    color: CanvasText; background: Canvas; border-color: CanvasText; box-shadow: none; transform: none;
+  }
+  body.luxury-world #ekosystem .ecosystem-node { border: 1px solid CanvasText; opacity: 1 !important; }
+  body.luxury-world #ekosystem .ecosystem-node::before,
+  body.luxury-world #ekosystem .ecosystem-node::after,
+  body.luxury-world #ekosystem .ecosystem-console::before,
+  body.luxury-world #main #o-mnie::before,
+  body.luxury-world #o-mnie::after,
+  body.luxury-world #kontakt .contact::before,
+  body.luxury-world #main #brief::before,
+  body.luxury-world #main #brief::after,
+  body.luxury-world #main #brief .brief-grid label::after,
+  body.luxury-world:has(#main > .hero--monument) > footer::before,
+  body.luxury-world:has(#main > .hero--monument) > footer::after { display: none; }
+  body.luxury-world #main #brief .brief__actions .cta--primary { color: ButtonText; background: ButtonFace; border-color: ButtonText; box-shadow: none; }
+}
+@media print {
+  body.luxury-world #ekosystem .ecosystem-node,
+  body.luxury-world #ekosystem .ecosystem-node.is-previewed { transform: none; opacity: 1; }
+  body.luxury-world #ekosystem .ecosystem-node::before,
+  body.luxury-world #ekosystem .ecosystem-node::after,
+  body.luxury-world #ekosystem .ecosystem-console::before,
+  body.luxury-world #main #o-mnie::before,
+  body.luxury-world #o-mnie::after,
+  body.luxury-world #kontakt .contact::before,
+  body.luxury-world #main #brief::before,
+  body.luxury-world #main #brief::after,
+  body.luxury-world #main #brief .brief-grid label::after { display: none; }
+  body.luxury-world #kontakt .contact,
+  body.luxury-world #main #brief { background: white; color: black; border-color: #777; box-shadow: none; }
+  body.luxury-world #main #brief .brief-grid textarea { color: black; background: white; border-color: #777; box-shadow: none; }
+  body.luxury-world #main #brief .brief__actions .cta--primary { color: black; background: white; box-shadow: none; border-color: black; }
+}

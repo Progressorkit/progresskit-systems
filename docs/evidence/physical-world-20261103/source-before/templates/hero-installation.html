@@ -1,0 +1,47 @@
+<section id="start" class="hero hero--monument hero--world hero--installation" data-hero-layout="world" data-hero-art="procedural">
+  <svg class="optical-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+    <filter id="pk-cutout" x="-6%" y="-15%" width="112%" height="135%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="erode" radius="1.2" result="inside"/>
+      <feComposite in="SourceAlpha" in2="inside" operator="out" result="lip"/>
+      <feFlood flood-color="#99838e" flood-opacity=".48" result="metal"/>
+      <feComposite in="metal" in2="lip" operator="in" result="cut-edge"/>
+      <feOffset in="SourceAlpha" dx="2" dy="3" result="offset"/>
+      <feGaussianBlur in="offset" stdDeviation="1.4" result="soft"/>
+      <feComposite in="SourceAlpha" in2="soft" operator="out" result="contact"/>
+      <feFlood flood-color="#000000" result="black"/><feComposite in="black" in2="contact" operator="in" result="inner-shadow"/>
+      <feComponentTransfer in="SourceAlpha" result="recess"><feFuncA type="table" tableValues="1 0"/></feComponentTransfer>
+      <feGaussianBlur in="recess" stdDeviation="1.1" result="bevel"/>
+      <feSpecularLighting in="bevel" surfaceScale="4" specularConstant=".55" specularExponent="14" lighting-color="#b7a0aa" result="light"><feDistantLight azimuth="235" elevation="45"/></feSpecularLighting>
+      <feComposite in="light" in2="lip" operator="in" result="edge-light"/>
+      <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="cut-edge"/><feMergeNode in="inner-shadow"/><feMergeNode in="edge-light"/></feMerge>
+    </filter>
+  </defs></svg>
+  <div class="hero__stone-title">
+    <p class="hero__discipline">Aplikacje · systemy · gry</p>
+    <h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1>
+    <p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p>
+    <div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div>
+  </div>
+  <a class="hero-machine" href="#rdzen" aria-label="Odkryj rdzeń ProgressKit" data-installation-object>
+    <span class="machine-shadow" aria-hidden="true"></span>
+    <span class="machine-assembly" aria-hidden="true">
+      <span class="machine-axis"></span>
+      <span class="machine-ring machine-ring--outer"></span><span class="machine-ring machine-ring--rear"></span>
+      <span class="machine-ring machine-ring--inner"></span><span class="machine-ring machine-ring--rim"></span>
+      <span class="machine-lens"><i></i><i></i><i></i></span>
+      <span class="machine-brace machine-brace--a"></span><span class="machine-brace machine-brace--b"></span>
+      <span class="machine-pin machine-pin--a"></span><span class="machine-pin machine-pin--b"></span>
+    </span>
+    <span class="machine-caption">PROGRESSKIT <span>01 / CORE</span><b aria-hidden="true">↘</b></span>
+  </a>
+  <a class="hero__explore" href="#rdzen"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a>
+  <button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button>
+</section>
+<section id="rdzen" class="core-sanctum" aria-label="Rdzeń ProgressKit" data-installation-object>
+  <div class="core-relief" aria-hidden="true">PROGRESSKIT<span>SYSTEMS</span></div>
+  <div class="core-well" aria-hidden="true"></div>
+  <a class="hero__insignia" href="#projekty" data-hero-enter aria-label="Odkryj projekty — aktywuj rdzeń ProgressKit">
+    <span class="core-shell"><span class="core-shell__depth" aria-hidden="true"></span><img src="assets/brand/progressorkit-stamp.png" width="440" height="440" alt="ProgressKit" fetchpriority="high"><span class="core-shell__reflection" aria-hidden="true"></span><span class="core-shell__rim" aria-hidden="true"></span></span>
+    <span class="hero__enter-caption" aria-hidden="true">Odkryj projekty <span>↗</span></span>
+  </a>
+</section>

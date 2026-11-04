@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: Polish search ignores accents, letter case and redundant whitespace
+ok 1 - Polish search ignores accents, letter case and redundant whitespace
+  ---
+  duration_ms: 1.65286
+  type: 'test'
+  ...
+# Subtest: Every search word must match; unknown query returns an empty result
+ok 2 - Every search word must match; unknown query returns an empty result
+  ---
+  duration_ms: 0.548091
+  type: 'test'
+  ...
+# Subtest: Category, technology and stage combine, and technology matching is exact
+ok 3 - Category, technology and stage combine, and technology matching is exact
+  ---
+  duration_ms: 1.608618
+  type: 'test'
+  ...
+# Subtest: Unknown stage is distinct from implemented maturity levels
+ok 4 - Unknown stage is distinct from implemented maturity levels
+  ---
+  duration_ms: 0.213656
+  type: 'test'
+  ...
+# Subtest: Share links preserve deployment subpath, campaign and anchor while roundtripping filters
+ok 5 - Share links preserve deployment subpath, campaign and anchor while roundtripping filters
+  ---
+  duration_ms: 2.159406
+  type: 'test'
+  ...
+# Subtest: Reset removes filter parameters without losing campaign context
+ok 6 - Reset removes filter parameters without losing campaign context
+  ---
+  duration_ms: 0.584274
+  type: 'test'
+  ...
+# Subtest: Search treats markup as text and limits restored query length
+ok 7 - Search treats markup as text and limits restored query length
+  ---
+  duration_ms: 0.380412
+  type: 'test'
+  ...
+# Subtest: Opening another drawer and then closing it leaves a restorable single project state
+ok 8 - Opening another drawer and then closing it leaves a restorable single project state
+  ---
+  duration_ms: 0.326869
+  type: 'test'
+  ...
+# Subtest: Filtering a project closes its drawer and clearing filters does not resurrect an unlinked drawer
+ok 9 - Filtering a project closes its drawer and clearing filters does not resurrect an unlinked drawer
+  ---
+  duration_ms: 0.414606
+  type: 'test'
+  ...
+# Subtest: Hover cannot switch category while crossing another row or tapping a touchscreen
+ok 10 - Hover cannot switch category while crossing another row or tapping a touchscreen
+  ---
+  duration_ms: 0.571217
+  type: 'test'
+  ...
+# Subtest: Keyboard activation retains native disclosure behavior after a mouse hover
+ok 11 - Keyboard activation retains native disclosure behavior after a mouse hover
+  ---
+  duration_ms: 0.24905
+  type: 'test'
+  ...
+# Subtest: A touch pointer leaving on a hybrid laptop cannot trigger the mouse close timer
+ok 12 - A touch pointer leaving on a hybrid laptop cannot trigger the mouse close timer
+  ---
+  duration_ms: 0.142252
+  type: 'test'
+  ...
+# Subtest: Product kind stays independent from maturity and restores through shared URLs
+ok 13 - Product kind stays independent from maturity and restores through shared URLs
+  ---
+  duration_ms: 0.448222
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 27.317897

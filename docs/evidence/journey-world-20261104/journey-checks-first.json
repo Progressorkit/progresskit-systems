@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "name": "camera path: continuous coordinates through twelve distinct zones",
+      "status": "PASS",
+      "detail": {
+        "anchors": 12,
+        "intervals": 1100
+      }
+    },
+    {
+      "name": "idle world changes without any pointer events over five seconds",
+      "status": "PASS",
+      "detail": {
+        "frames": 122
+      }
+    },
+    {
+      "name": "core approach produces bounded sparks and finite discharges",
+      "status": "PASS",
+      "detail": {
+        "frames": 26,
+        "pending": true,
+        "active": "core",
+        "intensity": 0.9267598829805591,
+        "alive": 2,
+        "poolSize": 24,
+        "targets": 33,
+        "emitted": 12,
+        "arcs": 3,
+        "signalCount": 0,
+        "signalsActive": 0,
+        "guideContext": "",
+        "guideDisabled": false,
+        "guideContexts": 3,
+        "paused": false,
+        "disposed": false
+      }
+    },
+    {
+      "name": "six visible crystals have different cuts, depth and thickness",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "glikemia-premium",
+          "phase": "ready",
+          "cut": 0,
+          "facets": 8,
+          "thickness": 0.5599999999999999,
+          "z": -0.08
+        },
+        {
+          "id": "progresskit-mail",
+          "phase": "ready",
+          "cut": 1,
+          "facets": 6,
+          "thickness": 0.6499999999999999,
+          "z": 0.8521315152209004
+        },
+        {
+          "id": "progresskit-translator",
+          "phase": "ready",
+          "cut": 2,
+          "facets": 10,
+          "thickness": 0.7399999999999999,
+          "z": -1.3221137545418307
+        },
+        {
+          "id": "vaeloria",
+          "phase": "ready",
+          "cut": 3,
+          "facets": 8,
+          "thickness": 0.83,
+          "z": 0.6430497054852493
+        },
+        {
+          "id": "progresskit-community",
+          "phase": "ready",
+          "cut": 4,
+          "facets": 7,
+          "thickness": 0.5599999999999999,
+          "z": 0.19861239262530955
+        },
+        {
+          "id": "progresskit-tax",
+          "phase": "ready",
+          "cut": 5,
+          "facets": 8,
+          "thickness": 0.6499999999999999,
+          "z": -1.1743152183605357
+        }
+      ]
+    },
+    {
+      "name": "project proximity activates the same bounded pool",
+      "status": "PASS",
+      "detail": {
+        "frames": 61,
+        "pending": true,
+        "active": "project",
+        "intensity": 1,
+        "alive": 5,
+        "poolSize": 24,
+        "targets": 33,
+        "emitted": 24,
+        "arcs": 6,
+        "signalCount": 1,
+        "signalsActive": 0,
+        "guideContext": "",
+        "guideDisabled": false,
+        "guideContexts": 3,
+        "paused": false,
+        "disposed": false
+      }
+    },
+    {
+      "name": "selector responds before click; native filter and short impulse clear",
+      "status": "FAIL",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n19 !== 4\n\n    at /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/journey-world-20261104/journey-checks.cjs:14:537\n    at async check (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/journey-world-20261104/journey-checks.cjs:3:73)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/journey-world-20261104/journey-checks.cjs:14:1"
+    },
+    {
+      "name": "service objects leave cleanly and restore when scrolling back",
+      "status": "PASS",
+      "detail": {
+        "before": 1,
+        "after": 0,
+        "back": 1
+      }
+    },
+    {
+      "name": "section camera changes while preserving one atmosphere and fixed pool",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "rdzen",
+          "mix": 6.2045771383154436e-15,
+          "scale": 1.229999999999999,
+          "x": -0.0999999999999991,
+          "y": -0.04499999999999981,
+          "portal": 0.399999999999998,
+          "network": 6.204577138315444e-16,
+          "lab": 0,
+          "heat": 0.9199999999999978,
+          "core": 0.9999999999999938
+        },
+        {
+          "id": "proces",
+          "mix": 0.9999997750743431,
+          "scale": 1.4799999460178423,
+          "x": -0.1299999505163555,
+          "y": -0.12999998425520404,
+          "portal": 0.9999998335550139,
+          "network": 0,
+          "lab": 0.05000000674776971,
+          "heat": 0.7299999505163555,
+          "core": 0
+        },
+        {
+          "id": "ekosystem",
+          "mix": 1.501608250081199e-8,
+          "scale": 1.3000000012012867,
+          "x": 0.10999999894887423,
+          "y": -0.07000000030032166,
+          "portal": 0.18000000255273402,
+          "network": 0.9999999932427629,
+          "lab": 0.10000000150160826,
+          "heat": 0.6199999977475876,
+          "core": 0
+        },
+        {
+          "id": "technologie",
+          "mix": 1.7903003973419073e-8,
+          "scale": 1.5399999937339486,
+          "x": 0.09999999758309447,
+          "y": -0.11999999838872964,
+          "portal": 0.5499999940920087,
+          "network": 0.24999999695648933,
+          "lab": 0.9999999860356569,
+          "heat": 0.6399999933758885,
+          "core": 0
+        },
+        {
+          "id": "kontakt",
+          "mix": 1.2733616910222565e-7,
+          "scale": 1.1900000050934467,
+          "x": -0.03500000318340423,
+          "y": -0.030000000636680846,
+          "portal": 0.22000000764017014,
+          "network": 0.08,
+          "lab": 0.2200000152803403,
+          "heat": 0.26999999490655324,
+          "core": 0
+        }
+      ]
+    },
+    {
+      "name": "small interactive and helper type stays readable",
+      "status": "PASS",
+      "detail": {
+        ".technology-name": 13,
+        ".technology-discover": 12,
+        ".delivery-state": 12,
+        ".showroom-gate__label": 15,
+        "#brief textarea": 15,
+        ".scene-core-caption span": null
+      }
+    },
+    {
+      "name": "local scene has no JavaScript errors",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "PASS": 9,
+  "FAIL": 1
+}

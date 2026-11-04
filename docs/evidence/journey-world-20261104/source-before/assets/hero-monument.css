@@ -1,0 +1,214 @@
+/* Second owner correction: physical stone lettering and the original wall relief. */
+@font-face {
+  font-family:"PK Monument";
+  src:url("brand/monument-serif-bold.ttf") format("truetype");
+  font-style:normal;
+  font-weight:700 900;
+  font-display:swap;
+}
+@font-face {
+  font-family:"PK Motto";
+  src:url("brand/motto-serif-italic.ttf") format("truetype");
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+}
+.hero.hero--monument {
+  height:clamp(580px,48vw,780px);
+  min-height:580px;
+  background:#080909;
+  border-bottom:0;
+  box-shadow:none;
+}
+.hero--monument .hero__scene {
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  transform:translate3d(var(--scene-x,0px),var(--scene-y,0px),0) scale(1.018);
+  transform-origin:center;
+}
+.hero--monument::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:0.12;
+  background:radial-gradient(ellipse at var(--light-x,64%) var(--light-y,38%),#a733242b,transparent 53%);
+}
+.hero--monument::before { animation:hero-ember 9s ease-in-out infinite alternate; animation-play-state:paused; }
+.hero--monument.hero-motion-enabled.hero-in-view:not(.hero-motion-paused)::before,
+.hero--monument.hero-motion-enabled.hero-in-view:not(.hero-motion-paused) .hero__climber-travel { animation-play-state:running; }
+.hero--monument .hero__wall-relief { animation:relief-arrive 1.2s ease-out both; }
+.hero__climber { opacity:var(--climber-opacity,.66); pointer-events:none; }
+.hero__climber-motion { transform:translateY(var(--climber-rise,0px)); }
+.hero--monument.hero-has-motion-toggle .hero__climber-travel { animation:climber-ascent 64s linear infinite; animation-play-state:paused; }
+.hero--monument::after {
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:80px;
+  background:linear-gradient(transparent,#080909);
+  pointer-events:none;
+}
+.hero--monument .hero__stone-title {
+  inset:clamp(50px,5vw,82px) auto auto clamp(24px,4.5vw,88px);
+  max-width:78%;
+  /* Keep the glyphs on the normal text surface while the sibling scene moves. */
+  animation:none;
+  transform:none;
+  filter:none;
+}
+.hero__eyebrow {
+  margin:0 0 27px;
+  color:#c3bdb2;
+  font:10px/1.5 var(--mono);
+  letter-spacing:.24em;
+}
+.hero--monument h1.stone-word {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.08em;
+  margin:0;
+  font:900 clamp(48px,7.5vw,132px)/1.08 "PK Monument",Georgia,serif;
+  letter-spacing:-.035em;
+  white-space:normal;
+  color:#d3cfc4;
+  background:none;
+  -webkit-text-stroke:0;
+  text-shadow:none;
+  transform:none;
+}
+.stone-line {
+  position:relative;
+  display:block;
+  isolation:isolate;
+  filter:none;
+  color:#bcb5a6;
+  white-space:nowrap;
+  text-shadow:-1px -1px 0 #d8cdb22b,1px 2px 0 #39352d,3px 6px 0 #171611,5px 11px 0 #000;
+}
+.stone-line::before {
+  content:attr(data-stone);
+  position:absolute;
+  inset:4px -1px -4px 1px;
+  z-index:-1;
+  color:#454036;
+  -webkit-text-stroke:.6px #221f19;
+  background:none;
+  text-shadow:1px 1px 0 #756b58,2px 3px 0 #342e24,3px 6px 0 #15130f,5px 11px 0 #000,0 15px 0 #0009;
+}
+.stone-line--systems { font-size:.79em; letter-spacing:.18em; }
+@supports ((background-clip:text) or (-webkit-background-clip:text)) {
+  .hero--monument .stone-line {
+    color:transparent;
+    /* Low sheen, mineral grain and branching veins take precedence over
+       highlights. The underlying approved rock adds only a little variation. */
+    background-image:linear-gradient(153deg,#cec6b31f 0%,transparent 30%,#1d1a172e 64%,#74272321 100%),url("brand/stone-material.svg"),var(--approved-hero-image,none);
+    background-position:center,center,55% 74%;
+    background-size:100% 100%,130% 165%,260% auto;
+    background-blend-mode:multiply,normal,normal;
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-stroke:.35px #c6c1b036;
+  }
+  .hero--monument .stone-line--systems { background-position:center,76% 64%,55% 74%; }
+}
+.hero--monument .hero__motto {
+  position:static;
+  inset:auto;
+  width:auto;
+  max-width:43ch;
+  margin:clamp(20px,2vw,30px) 0 0;
+  color:#d8cdbb;
+  font:italic 400 clamp(20px,1.65vw,26px)/1.65 "PK Motto",Georgia,serif;
+  font-synthesis:none;
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures;
+  letter-spacing:.005em;
+  text-align:left;
+  text-wrap:balance;
+  text-shadow:0 1px 3px #080909,0 3px 14px #080909cc;
+}
+.hero__explore {
+  position:absolute;
+  z-index:2;
+  right:clamp(24px,4.5vw,88px);
+  bottom:46px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  min-height:48px;
+  color:#ece7de;
+  font:11px/1.5 var(--mono);
+  letter-spacing:.06em;
+  text-decoration:none;
+}
+.hero__explore span:last-child { display:grid; place-items:center; width:44px; height:44px; border:1px solid #9d6d64; border-radius:50%; font-size:22px; transition:transform .25s,border-color .25s; }
+.hero__explore:hover span:last-child { transform:translateY(3px); border-color:#eda196; }
+.hero__motion-toggle { display:none; }
+.hero--monument.hero-has-motion-toggle .hero__motion-toggle { position:absolute; z-index:2; left:clamp(24px,4.5vw,88px); bottom:46px; display:inline-flex; align-items:center; min-height:44px; padding:10px 13px; border:1px solid #827a6b; border-radius:3px; color:#d8cdbb; background:rgba(12,12,11,.72); font:10px/1.5 var(--mono); }
+.hero__motion-toggle:hover { border-color:#bd7771; }
+.hero__motion-toggle:focus-visible { outline:2px solid #e4c7ac; outline-offset:4px; }
+.hero__motion-toggle:disabled { color:#aaa497; border-color:#59564e; cursor:default; }
+@keyframes relief-arrive { from { opacity:0; } to { opacity:1; } }
+@keyframes hero-ember { from { opacity:.12; } to { opacity:.38; } }
+/* A minute uphill progression. Reset only while transparent, never a backward
+   slide down the ridge; at most 2.9 SVG source pixels over a minute. */
+@keyframes climber-ascent {
+  0% { transform:translate(0,0); opacity:0; }
+  5% { opacity:1; }
+  92% { transform:translate(1.9px,-1.8px); opacity:1; }
+  98% { transform:translate(2.1px,-2px); opacity:0; }
+  100% { transform:translate(0,0); opacity:0; }
+}
+@media(max-width:1050px) {
+  .hero.hero--monument { height:660px; }
+  .hero--monument .hero__scene { inset:auto 0 45px auto; width:130%; height:auto; aspect-ratio:1983/793; }
+  .hero--monument .hero__stone-title { max-width:90%; }
+  .hero--monument h1.stone-word { font-size:clamp(48px,8.9vw,91px); }
+  .hero__explore { bottom:20px; }
+  .hero--monument.hero-has-motion-toggle .hero__motion-toggle { bottom:20px; }
+}
+@media(max-width:600px) {
+  .hero.hero--monument { height:620px; min-height:620px; }
+  .hero--monument .hero__stone-title { inset:44px 16px auto; max-width:none; }
+  .hero__eyebrow { margin-bottom:24px; font-size:8px; letter-spacing:.18em; }
+  .hero--monument h1.stone-word { font-size:clamp(31px,10.2vw,61px); gap:.14em; transform:none; }
+  .stone-line--systems { font-size:.82em; letter-spacing:.2em; }
+  .hero--monument .hero__scene { inset:auto 0 65px auto; width:190%; height:auto; }
+  .hero--monument .hero__motto { max-width:28ch; margin-top:20px; font-size:18px; line-height:1.65; }
+  .hero__explore { right:16px; bottom:18px; gap:14px; font-size:10px; }
+  .hero__explore span:last-child { width:40px; height:40px; }
+  .hero--monument.hero-has-motion-toggle .hero__motion-toggle { left:16px; bottom:78px; font-size:9px; }
+}
+@media(max-width:360px) {
+  .hero.hero--monument { height:580px; min-height:580px; }
+  .hero--monument .hero__scene { width:205%; bottom:78px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero__explore span:last-child { transition:none; transform:none!important; }
+  .hero--monument .hero__scene { transform:none; }
+  .hero__climber-motion,.hero__climber-travel { transform:none!important; animation:none!important; opacity:1!important; }
+  .hero--monument::before,.hero--monument .hero__stone-title,.hero--monument .hero__wall-relief { animation:none; }
+}
+@media(forced-colors:active) {
+  .hero--monument .hero__scene { display:none; }
+  .hero--monument h1.stone-word,.hero--monument .stone-line { color:CanvasText; background:none; -webkit-text-stroke:0; text-shadow:none; filter:none; }
+  .stone-line::before { content:none; }
+  .hero--monument .hero__motto,.hero__eyebrow,.hero__explore { color:CanvasText; text-shadow:none; }
+  .hero--monument.hero-has-motion-toggle .hero__motion-toggle { color:CanvasText; background:Canvas; border-color:ButtonText; }
+}
+@media print {
+  .hero.hero--monument { height:auto; min-height:0; background:none; padding-block:24px; }
+  .hero--monument .hero__stone-title,.hero--monument .hero__motto { position:static; width:auto; max-width:none; }
+  .hero--monument .hero__motto { color:#000; text-shadow:none; }
+  .hero--monument h1.stone-word { display:block; font-size:32px; transform:none; }
+  .hero--monument .stone-line { display:inline; color:#000; background:none; text-shadow:none; -webkit-text-stroke:0; filter:none; }
+  .hero__scene,.hero--monument::before,.hero--monument::after,.hero__explore,.hero__eyebrow,.stone-line::before,.hero__motion-toggle { display:none!important; }
+}

@@ -333,7 +333,7 @@ async function serviceScene(root) {
   }
 }
 
-const root = document.querySelector("#uslugi");
+const root = document.querySelector("#uslugi:not([data-service-optics])");
 if (root) {
   const scope = resourceScope(),
     reduce = matchMedia("(prefers-reduced-motion:reduce)"),
@@ -505,6 +505,7 @@ function bootProcessEnergy() {
     height = 0,
     dpr = 1,
     centers = [],
+    rail = null,
     surfaceState = "",
     lastHandoff = -99;
   const clamp = (value) => Math.max(0, Math.min(1, value));
@@ -561,10 +562,20 @@ function bootProcessEnergy() {
         radius: Math.max(12, Math.min(box.width, box.height) * 0.3),
       };
     });
+    rail=document.createElement('canvas');rail.width=canvas.width;rail.height=canvas.height;
+    const rc=rail.getContext('2d');rc.scale(dpr,dpr);rc.lineCap='round';rc.lineJoin='round';
+    for(let i=1;i<centers.length;i++){
+      const a=centers[i-1],b=centers[i],ay=a.y+a.radius*.9,by=b.y+b.radius*.9;
+      const path=()=>{rc.beginPath();rc.moveTo(a.x,ay);rc.bezierCurveTo(a.x+(b.x-a.x)*.5,ay,b.x-(b.x-a.x)*.5,by,b.x,by);};
+      path();rc.strokeStyle='#03040bd9';rc.lineWidth=25;rc.stroke();
+      const metal=rc.createLinearGradient(a.x,ay-12,b.x,by+12);metal.addColorStop(0,'#7e778158');metal.addColorStop(.3,'#191920');metal.addColorStop(.7,'#37313e');metal.addColorStop(1,'#8e7e8a55');
+      path();rc.strokeStyle=metal;rc.lineWidth=17;rc.stroke();path();rc.strokeStyle='#08080ed9';rc.lineWidth=7;rc.stroke();
+      path();rc.strokeStyle='#98506448';rc.lineWidth=1.5;rc.stroke();
+    }
     if (visible && !document.hidden && !leaving && !running) loop.still();
   }
   function glow(point, intensity = 1) {
-    const radius = compact.matches ? 4 : 8;
+    const radius = compact.matches ? 4 : 13;
     const gradient = context.createRadialGradient(
       point.x,
       point.y,
@@ -586,6 +597,7 @@ function bootProcessEnergy() {
     if (dead || !width || !height) return;
     elapsed += dt;
     context.clearRect(0, 0, width, height);
+    if(rail)context.drawImage(rail,0,0,width,height);
     const current = centers[activeIndex];
     if (!current) {
       frames++;
@@ -621,6 +633,10 @@ function bootProcessEnergy() {
     };
     const middle = { x: (start.x + end.x) * 0.5, y: (start.y + end.y) * 0.5 };
     const phase = clamp(progress * stages.length - activeIndex);
+    if(!reduced.matches){
+      const u=(elapsed*.20)%1,v=1-u,ay=previous.y+previous.radius*.9,by=current.y+current.radius*.9,mx=(previous.x+current.x)*.5;
+      glow({x:v*v*v*previous.x+3*v*v*u*mx+3*v*u*u*mx+u*u*u*current.x,y:(v*v*v+3*v*v*u)*ay+(3*v*u*u+u*u*u)*by},.7);
+    }
     const tail = Math.max(0, phase - (progress >= 1 ? 0.035 : 0.2));
     const bow =
       Math.min(64, Math.max(16, length * 0.11)) * (activeIndex % 2 ? 1 : -1);
@@ -716,6 +732,7 @@ function bootProcessEnergy() {
     context.setTransform(1, 0, 0, 1, 0, 0);
     context.clearRect(0, 0, canvas.width, canvas.height);
     root.dataset.processEnergyMotion = "disposed";
+    rail = null;
   }
   const mutation = new MutationObserver((records) => {
     if (

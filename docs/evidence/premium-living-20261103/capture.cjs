@@ -1,0 +1,18 @@
+process.env.PLAYWRIGHT_BROWSERS_PATH='/tmp/pk-hero-playwright';
+const {chromium}=require('/home/pawe/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs'),path=require('path');const out=__dirname,base='http://127.0.0.1:8213/';
+(async()=>{const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=gl']});const report={mobile:'Chrome touch emulation, not a physical device',ownerVisualApproval:'OPEN',errors:[],timeline:[],screens:[]};
+try{for(const mobile of [false,true]){const name=mobile?'mobile':'desktop',width=mobile?390:1440,height=mobile?844:900;const ctx=await b.newContext({viewport:{width,height},deviceScaleFactor:1,isMobile:mobile,hasTouch:mobile,recordVideo:{dir:path.join(out,'raw-video'),size:{width,height}}});const p=await ctx.newPage();p.on('pageerror',e=>report.errors.push(e.message));const start=Date.now(),mark=chapter=>report.timeline.push({video:name,seconds:+((Date.now()-start)/1000).toFixed(1),chapter});
+ const shot=async(label,opts={})=>{const file=`${name}-${label}.png`;await p.screenshot({path:path.join(out,file),...opts});report.screens.push(file);};
+ const go=async(sel,block='center')=>{await p.mouse.move(5,80);await p.locator(sel).first().evaluate((e,block)=>e.scrollIntoView({block,behavior:'smooth'}),block);await p.waitForTimeout(1400);};
+ await p.goto(base);await p.evaluate(()=>document.fonts.ready);await p.waitForFunction(()=>document.querySelector('#projekty').dataset.renderer==='three-webgl2');
+ mark('Hero: swobodny oddech światła');await p.waitForTimeout(5500);await shot('hero',mobile?{clip:{x:0,y:0,width:390,height:885}}:{});
+ if(!mobile){mark('Kursor: głębia świata i odbicie na metalu');await p.mouse.move(430,240,{steps:35});await p.waitForTimeout(1200);await p.mouse.move(1150,530,{steps:45});await p.waitForTimeout(1800);await p.mouse.move(700,270,{steps:35});await p.waitForTimeout(1200);}
+ mark('Przyciski: wspólny materiał');if(mobile){await p.mouse.wheel(0,180);await p.waitForTimeout(1200);}else{const c=p.locator('#start .cta--primary');const r=await c.boundingBox();await p.mouse.move(r.x+20,r.y+20,{steps:30});await p.waitForTimeout(700);await p.mouse.move(r.x+r.width-20,r.y+30,{steps:35});await p.waitForTimeout(1300);await shot('hover');await p.locator('[data-hero-motion-toggle]').focus();await p.keyboard.press('Tab');await p.keyboard.press('Shift+Tab');await p.waitForTimeout(700);await shot('focus');}
+ await p.waitForTimeout(1500);mark('Core i przejście do showroomu');await p.locator('.hero-machine').click();await p.waitForTimeout(2300);await p.locator('[data-hero-enter]').click();await p.waitForFunction(()=>document.querySelector('#rdzen').dataset.entryState==='showroom');await p.mouse.move(5,80);await p.waitForTimeout(3500);await shot('showroom');
+ mark('Filtry projektów: większe etykiety');await go('.showroom-gates');await p.waitForTimeout(1200);await shot('filters');
+ mark('Usługi: wspólne CTA');await go('#uslugi .services-actions');await p.waitForTimeout(2500);if(!mobile)await p.locator('#uslugi .services-actions .cta').first().hover();await p.waitForTimeout(1000);await shot('services');
+ mark('Kontakt: przyciski briefu');await go('#brief .brief__actions');await p.waitForTimeout(2300);await shot('contact');
+ const video=p.video();await ctx.close();await video.saveAs(path.join(out,name+'.webm'));console.log(name,'captured');
+}}finally{await b.close();fs.writeFileSync(path.join(out,'capture.json'),JSON.stringify(report,null,2));}if(report.errors.length)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exitCode=1});

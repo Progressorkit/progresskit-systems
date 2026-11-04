@@ -1,0 +1,65 @@
+/* Two static fragments of the original stamp, confined to existing empty
+   padding. The PNG supplies alpha only: its bright metal never becomes a badge.
+   Section pseudo-elements also stay independent of the content reveal motion. */
+
+@supports (mask-image:url("brand/progressorkit-stamp.png")) or (-webkit-mask-image:url("brand/progressorkit-stamp.png")) {
+  @media (min-width:1101px) {
+    .about-v5::after,
+    .technology-section::after {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      pointer-events:none;
+      user-select:none;
+      background:linear-gradient(140deg,#505552 16%,#713039 19%,#4b504d 22%,#444846 74%,#303532);
+      opacity:.035;
+      -webkit-mask-image:url("brand/progressorkit-stamp.png");
+      mask-image:url("brand/progressorkit-stamp.png");
+      mask-mode:alpha;
+      -webkit-mask-repeat:no-repeat;
+      mask-repeat:no-repeat;
+      clip-path:inset(0);
+      animation:none;
+      transition:none;
+    }
+
+    /* Right-hand breathing room below the collaboration actions. The height
+       follows about's existing bottom padding, with a gap before the text. */
+    .about-v5::after {
+      --brand-stamp-size:clamp(300px,29vw,430px);
+      right:max(24px,calc((100% - var(--max,1420px)) / 2));
+      bottom:8px;
+      width:var(--brand-stamp-size);
+      height:calc(clamp(80px,9vw,142px) - 24px);
+      -webkit-mask-size:var(--brand-stamp-size) var(--brand-stamp-size);
+      mask-size:var(--brand-stamp-size) var(--brand-stamp-size);
+      -webkit-mask-position:center 54%;
+      mask-position:center 54%;
+    }
+
+    /* A second cropped material fragment at the technology/contact boundary.
+       Its box stays inside technology's bottom padding and the viewport edge. */
+    .technology-section::after {
+      --brand-stamp-size:clamp(360px,35vw,520px);
+      left:0;
+      bottom:0;
+      width:clamp(280px,29vw,430px);
+      height:calc(clamp(78px,8vw,120px) - 12px);
+      opacity:.028;
+      -webkit-mask-size:var(--brand-stamp-size) var(--brand-stamp-size);
+      mask-size:var(--brand-stamp-size) var(--brand-stamp-size);
+      -webkit-mask-position:left -80px center;
+      mask-position:left -80px center;
+    }
+  }
+}
+
+/* Narrow layouts have no spare column for a decorative mark. These explicit
+   rules also keep printing and system high-contrast modes entirely unmarked. */
+@media (max-width:1100px), print, (forced-colors:active) {
+  .about-v5::after,
+  .technology-section::after {
+    content:none;
+    display:none;
+  }
+}

@@ -1,0 +1,106 @@
+/* One material contract for action controls. The retained page skins contain
+   ID-based overrides; only material/type/interaction properties are important.
+   Display, placement, ordering and visibility still belong to each component. */
+:where(body) :is(.cta,.hero__explore,.plain-button,.category,.hero__motion-toggle,.showroom-gate,.showroom-all,.showroom-controls button,.capsule-audio,.project-slice__close,.project-hologram__close,.menu-btn,.guide-trigger,.guide-close,.guide-disable,.guide-global-toggle,[data-gallery-close],[data-gallery-prev],[data-gallery-next],.nav a[href$="#kontakt"]) {
+  min-height:var(--control-height,52px)!important;
+  padding:var(--control-padding,13px 22px)!important;
+  border:1px solid #b9b4c152!important;
+  border-top-color:#e2e4ef73!important;
+  border-bottom-color:#8b596545!important;
+  border-radius:var(--control-radius,9px)!important;
+  color:#eee9ef!important;
+  font-family:var(--sans,system-ui,sans-serif)!important;
+  font-size:var(--control-font,15px)!important;
+  font-weight:600!important;
+  line-height:1.35!important;
+  letter-spacing:.035em!important;
+  text-decoration:none!important;
+  text-transform:none!important;
+  text-shadow:0 1px 2px #0009!important;
+  background:
+    radial-gradient(ellipse at var(--control-light-x,28%) var(--control-light-y,0%),#e9edff28,transparent 65%),
+    linear-gradient(116deg,#e6e9f41a,transparent 28% 66%,#ddb7c514 78%,transparent 88%),
+    linear-gradient(180deg,var(--control-top,#292630c2),var(--control-bottom,#0d0d14dc) 65%,var(--control-foot,#36232fc2))!important;
+  box-shadow:inset 0 1px 0 #f1edff40,inset 1px 0 0 #e6e4ff12,inset 0 -3px 3px #9d768d1c,0 3px 0 #030207b3,0 12px 24px #0005!important;
+  transition:translate .28s ease,box-shadow .28s ease,border-color .28s ease,filter .28s ease!important;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  transform:none!important;
+
+  @media(hover:hover) and (pointer:fine) {
+    &:hover:not(:disabled,[aria-disabled="true"]) {
+      translate:0 -2px;
+      border-color:#ddd1e18c!important;
+      filter:brightness(1.12);
+      box-shadow:inset 0 1px 0 #fff3ff77,inset 1px 0 0 #e6e4ff2b,inset 0 -3px 4px #b28ca538,0 4px 0 #09050ab3,0 16px 28px #0006!important;
+    }
+  }
+  &:is([aria-pressed="true"],[aria-expanded="true"],.active,.is-active) {
+    --control-top:#60303cc9; --control-bottom:#211019e6; --control-foot:#572738c4;
+    border-color:#c88d9d99!important;
+    box-shadow:inset 0 1px #ffe7ec66,inset 0 -3px 4px #b5768d40,0 3px 0 #09050ab3,0 10px 22px #0005!important;
+  }
+  &:focus-visible {
+    outline:2px solid #f0d6df!important;
+    outline-offset:5px!important;
+    border-color:#f4d9e6!important;
+    box-shadow:inset 0 1px #fff5ff70,inset 0 -3px 4px #b5768d40,0 3px 0 #09050ab3,0 0 0 2px #110c13!important;
+  }
+  &:is(:active,.is-mechanically-pressed):not(:disabled,[aria-disabled="true"]) {
+    translate:0 2px;
+    transform:none!important;
+    filter:brightness(.96);
+    box-shadow:inset 0 2px 6px #0008,inset 0 -1px #e4b8cd40,0 1px 0 #030207!important;
+    transition-duration:.08s!important;
+  }
+  &:is(:disabled,[aria-disabled="true"]) { opacity:.42!important; cursor:not-allowed; translate:none; filter:none; }
+}
+
+.cta--primary,.nav a[href$="#kontakt"] { --control-top:#7c3549c4; --control-bottom:#351320e6; --control-foot:#662b40cf; }
+.cta--text { --control-font:14px; --control-height:46px; --control-padding:10px 18px; }
+:is(.hero__motion-toggle,.showroom-motion-toggle,.capsule-audio,.showroom-all,.project-slice__close,.project-hologram__close,.guide-disable,.guide-global-toggle,[data-gallery-close]) { --control-font:13px; --control-height:44px; --control-padding:10px 16px; }
+:is(.menu-btn,.guide-trigger,.guide-close,[data-showroom-step]) { --control-padding:0; --control-font:20px; --control-height:44px; min-width:44px; height:44px; }
+.menu-btn { min-width:48px; height:48px; }
+.guide-trigger,.guide-close { width:44px!important; height:44px!important; }
+.guide-close { --control-font:24px; right:0; top:0; }
+.guide-trigger { --control-font:18px; }
+.nav a[href$="#kontakt"] { --control-font:13px; --control-height:44px; --control-padding:10px 16px; }
+.showroom-gate,.category { --control-padding:12px 14px; --control-height:56px; }
+body #projekty .showroom-gate__label { font:600 15px/1.35 var(--sans); letter-spacing:.015em; color:inherit; }
+body #projekty .showroom-gate__count { font-size:12px; }
+body #projekty .showroom-gate { gap:8px; }
+body #projekty .showroom-controls .showroom-motion-toggle { height:auto; }
+/* Optical hit targets (Core, crystals, ecosystem nodes) remain actual objects,
+   not rectangular buttons. The navigation cue retains its own composition. */
+body.luxury-world #main .hero--installation .hero__commercial-actions { display:grid; grid-template-columns:1fr 1fr; max-width:390px; gap:10px; }
+body.luxury-world #main .hero__commercial-actions .cta--text { grid-column:1/-1; justify-self:stretch; justify-content:center; width:100%; max-width:none; }
+body.luxury-world #main .hero__explore { font-size:12px; letter-spacing:.08em; }
+body.luxury-world #main .hero--monument .hero__motion-toggle { bottom:28px; }
+body #main .context-guide { padding-right:49px; }
+@media(min-width:1100px) { .cta:not(.cta--text) { --control-font:16px; } }
+@media(max-width:700px) {
+  .cta:not(.cta--text) { --control-font:15px; --control-padding:12px 18px; }
+  body.luxury-world #main .hero--installation .hero__motto { bottom:203px; }
+  body.luxury-world #main .hero--installation .hero__commercial-actions { bottom:82px; }
+  body.luxury-world #main .hero__explore { gap:8px; bottom:14px; }
+  body.luxury-world #main .hero__explore span:first-child { max-width:80px; line-height:1.35; }
+  body.luxury-world #main .hero--monument .hero__motion-toggle { --control-font:12px; --control-padding:8px 10px; width:44%; right:5%; bottom:14px; }
+  body #projekty .showroom-gate { display:grid; grid-template-columns:1fr auto; gap:6px; align-content:center; --control-height:82px; }
+  body #projekty .showroom-gate__label { grid-row:2; grid-column:1/-1; font-size:14px; overflow-wrap:normal; }
+  body #projekty .showroom-gate__count { justify-self:end; }
+  .guide-disable,.guide-global-toggle { --control-font:12px; --control-padding:8px 12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body :is(.cta,button,.nav a[href$="#kontakt"]) { transition:none!important; translate:none!important; }
+}
+html[data-interface-motion="paused"] body :is(.cta,button,.nav a[href$="#kontakt"]) { transition:none!important; translate:none!important; }
+@media(forced-colors:active) {
+  body :is(.cta,.hero__explore,.plain-button,.category,button,.nav a[href$="#kontakt"]) { background:ButtonFace!important; color:ButtonText!important; border-color:ButtonText!important; box-shadow:none!important; text-shadow:none!important; filter:none!important; }
+  body :is(.cta,button):focus-visible { outline-color:Highlight!important; }
+}
+@media print { body :is(.cta,button) { box-shadow:none!important; text-shadow:none!important; background:white!important; color:black!important; } }
+
+/* The explore cue shares the same glass, while retaining its arrow. */
+.hero__explore { --control-font:13px; --control-height:44px; --control-padding:10px 12px; }
+body.luxury-world #main .hero__explore span:last-child { border:0; width:auto; height:auto; }
+@media(max-width:700px) { body.luxury-world #main .hero__explore { --control-font:12px; --control-padding:8px 10px; max-width:43%; } }

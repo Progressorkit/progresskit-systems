@@ -1,0 +1,130 @@
+{
+  "checks": [
+    {
+      "name": "layout 320: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "layout 390: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "layout 768: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "layout 1024: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "layout 1366: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "layout 1440: readable controls, no hero collision or clipped words",
+      "status": "FAIL",
+      "error": "Aplikacje04 clipped"
+    },
+    {
+      "name": "idle: buttons schedule no animation loop while desktop world breathes",
+      "status": "PASS",
+      "detail": {
+        "controls": {
+          "pending": false,
+          "updates": 0,
+          "paused": false,
+          "disposed": false,
+          "active": ""
+        },
+        "worldFrames": 24
+      }
+    },
+    {
+      "name": "pointer reflection tracks the button, settles and clears on leave",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "x": 20,
+          "translate": "0px -2px"
+        },
+        "after": {
+          "x": 80,
+          "translate": "0px -2px"
+        }
+      }
+    },
+    {
+      "name": "keyboard focus and held press are visible; Space still toggles native motion",
+      "status": "PASS",
+      "detail": {
+        "outline": 2,
+        "nativeSpaceToggle": true
+      }
+    },
+    {
+      "name": "persisted page lifecycle and dispose release reflection and keyboard state",
+      "status": "PASS",
+      "detail": {
+        "pending": false,
+        "updates": 2,
+        "paused": false,
+        "disposed": true,
+        "active": ""
+      }
+    },
+    {
+      "name": "reduce: no pointer reflection or extra mobile world effects",
+      "status": "PASS",
+      "detail": {
+        "controls": {
+          "pending": false,
+          "updates": 0,
+          "paused": true,
+          "disposed": false,
+          "active": ""
+        },
+        "desktopLiving": true
+      }
+    },
+    {
+      "name": "forced: no pointer reflection or extra mobile world effects",
+      "status": "PASS",
+      "detail": {
+        "controls": {
+          "pending": false,
+          "updates": 0,
+          "paused": true,
+          "disposed": false,
+          "active": ""
+        },
+        "desktopLiving": true
+      }
+    },
+    {
+      "name": "touch: no pointer reflection or extra mobile world effects",
+      "status": "PASS",
+      "detail": {
+        "controls": {
+          "pending": false,
+          "updates": 0,
+          "paused": true,
+          "disposed": false,
+          "active": ""
+        },
+        "desktopLiving": false
+      }
+    },
+    {
+      "name": "no JavaScript errors",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "PASS": 8,
+  "FAIL": 6
+}

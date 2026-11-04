@@ -1,0 +1,14 @@
+PASS layout 320: readable controls, no hero collision or clipped words
+PASS layout 390: readable controls, no hero collision or clipped words
+PASS layout 768: readable controls, no hero collision or clipped words
+PASS layout 1024: readable controls, no hero collision or clipped words
+PASS layout 1366: readable controls, no hero collision or clipped words
+PASS layout 1440: readable controls, no hero collision or clipped words
+PASS idle: buttons schedule no animation loop while desktop world breathes
+PASS pointer reflection tracks the button, settles and clears on leave
+PASS keyboard focus and held press are visible; Space still toggles native motion
+PASS persisted page lifecycle and dispose release reflection and keyboard state
+PASS reduce: no pointer reflection or extra mobile world effects
+PASS forced: no pointer reflection or extra mobile world effects
+PASS touch: no pointer reflection or extra mobile world effects
+PASS no JavaScript errors

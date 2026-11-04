@@ -1,0 +1,33 @@
+PASS desktop: foyer alive, engraved title, showroom dormant
+PASS mechanical switch: three distinct physical states
+PASS desktop: large lower core has real pulse and ambient embers
+PASS proximity: far asleep, near charged, pool bounded, asleep again
+FAIL desktop: uninterrupted core flight and temporary signal Expected values to be strictly equal:
+
+'true' !== 'false'
+
+PASS desktop: crystals materialized, flight cleaned, no overflow
+PASS desktop: native project opening, URL and close preserved
+PASS desktop: offscreen scene and proximity sleep
+PASS desktop: no page overflow after all interactions
+PASS mobile: foyer alive, engraved title, showroom dormant
+PASS mobile: large lower core has real pulse and ambient embers
+PASS mobile: uninterrupted core flight and temporary signal
+PASS mobile: crystals materialized, flight cleaned, no overflow
+PASS mobile: native project opening, URL and close preserved
+PASS mobile: offscreen scene and proximity sleep
+PASS mobile: no page overflow after all interactions
+PASS responsive 320: no overflow, sphere inside viewport
+PASS responsive 768: no overflow, sphere inside viewport
+PASS responsive 1366: no overflow, sphere inside viewport
+PASS reduce: keyboard activation, static materials, effects asleep
+PASS pause: keyboard activation, static materials, effects asleep
+PASS forced: keyboard activation, static materials, effects asleep
+PASS preserved live catalog and navigation; exact static section copy (ecosystem relocates selected details at runtime)
+PASS contact and brief: one console, no nested frame
+PASS guide: delayed hover, dismiss, global disable, re-enable, no duplicates
+PASS global pause also stops visible guide and proximity
+PASS WebGL unavailable: native project entry remains usable
+PASS JavaScript disabled: large logo and native links remain
+PASS no browser errors, missing resources or external requests
+{"PASS":28,"FAIL":1}

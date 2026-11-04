@@ -1,0 +1,31 @@
+{
+  checks: [
+    {
+      name: 'three proximity objects: CTA and Security also respond to distance',
+      status: 'PASS',
+      detail: [Array]
+    },
+    {
+      name: 'rare signal: repeated AI toggle within cooldown does not repeat glitch',
+      status: 'PASS',
+      detail: [Object]
+    },
+    {
+      name: 'local brief still exports entered text without sending it',
+      status: 'PASS',
+      detail: [Object]
+    },
+    {
+      name: 'core flight interruption and re-entry remove all temporary objects',
+      status: 'PASS',
+      detail: [Object]
+    },
+    {
+      name: 'touch proximity: finite burst, eight live particles maximum, then sleep',
+      status: 'PASS',
+      detail: [Object]
+    }
+  ],
+  PASS: 5,
+  FAIL: 0
+}

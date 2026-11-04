@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: Scene frame loop has one owner, bounded cadence and idempotent cleanup
+ok 1 - Scene frame loop has one owner, bounded cadence and idempotent cleanup
+  ---
+  duration_ms: 12.60907
+  type: 'test'
+  ...
+# Subtest: Stopping or destroying from inside render never reschedules a leaked RAF
+ok 2 - Stopping or destroying from inside render never reschedules a leaked RAF
+  ---
+  duration_ms: 1.40416
+  type: 'test'
+  ...
+# Subtest: Resource ownership removes listeners and disposes in reverse order once
+ok 3 - Resource ownership removes listeners and disposes in reverse order once
+  ---
+  duration_ms: 2.762797
+  type: 'test'
+  ...
+# Subtest: Adaptive quality caps DPR and progressively reduces real GPU geometry
+ok 4 - Adaptive quality caps DPR and progressively reduces real GPU geometry
+  ---
+  duration_ms: 3.112108
+  type: 'test'
+  ...
+# Subtest: Cadence keeps fractional time on irregular displays and adapts to mobile FPS
+ok 5 - Cadence keeps fractional time on irregular displays and adapts to mobile FPS
+  ---
+  duration_ms: 1.496801
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 50.491302

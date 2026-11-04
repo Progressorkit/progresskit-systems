@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "name": "proof links, images and range video responses resolve locally",
+      "status": "PASS",
+      "detail": {
+        "localLinks": 17,
+        "videoRange": "206"
+      }
+    },
+    {
+      "name": "both MP4 videos seek and play; chapter buttons work without browser errors",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "desktop",
+          "duration": 140.76,
+          "time": 135.762483,
+          "error": null,
+          "width": 1440,
+          "height": 900
+        },
+        {
+          "id": "mobile",
+          "duration": 63.52,
+          "time": 58.521143,
+          "error": null,
+          "width": 390,
+          "height": 844
+        }
+      ]
+    },
+    {
+      "name": "proof gallery 1440: responsive and no overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 1440,
+        "viewport": 1440,
+        "images": 12,
+        "videos": 2
+      }
+    },
+    {
+      "name": "proof gallery 390: responsive and no overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 390,
+        "viewport": 390,
+        "images": 12,
+        "videos": 2
+      }
+    }
+  ],
+  "PASS": 4,
+  "FAIL": 0
+}

@@ -1,0 +1,423 @@
+{
+  "date": "2026-11-03",
+  "ownerVisualApproval": "OPEN",
+  "mobile": "390x844 Chrome touch emulation; physical device NOT_RUN",
+  "pointer": "Recording-only marker follows actual pointer events; no product UI is simulated.",
+  "checks": [
+    {
+      "name": "desktop: architecture, cutout, idle motion and dormant showroom",
+      "status": "PASS",
+      "detail": {
+        "engraving": "url(\"#pk-cutout\")",
+        "architecture": "url(\"http://127.0.0.1:8209/assets/world/installation-chamber.webp\")",
+        "pulse": "sealed-breath",
+        "awake": "false",
+        "groups": 8,
+        "links": 110,
+        "previews": true,
+        "open": 0,
+        "width": 1440
+      }
+    },
+    {
+      "name": "desktop: heavy core breathes, hot ash remains active",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "scale": "1.00464",
+          "y": "0px -0.684128px"
+        },
+        "after": {
+          "scale": "1.01471",
+          "y": "0px -3.90567px"
+        },
+        "ambient": {
+          "frames": 385,
+          "pending": true,
+          "paused": false,
+          "visible": 2,
+          "canvasCount": 6,
+          "particles": 247,
+          "fpsLimit": 24,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 385,
+              "visible": true
+            },
+            {
+              "id": "rdzen",
+              "frames": 139,
+              "visible": true
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "proximity responds visibly before contact and emits short discharges",
+      "status": "PASS",
+      "detail": {
+        "frames": 199,
+        "pending": true,
+        "active": "core",
+        "intensity": 0.9149100115421512,
+        "alive": 3,
+        "poolSize": 24,
+        "emitted": 55,
+        "arcs": 11,
+        "signalCount": 0,
+        "signalsActive": 0,
+        "guideContext": "",
+        "guideDisabled": false,
+        "guideContexts": 3,
+        "paused": false,
+        "disposed": false
+      }
+    },
+    {
+      "name": "desktop: continuous flight retains physical core",
+      "status": "PASS",
+      "detail": {
+        "flight": 1,
+        "entry": "entering",
+        "signals": 1
+      }
+    },
+    {
+      "name": "desktop: full scene materializes at larger scale",
+      "status": "PASS",
+      "detail": {
+        "coreSize": 436.3130253840639,
+        "scene": {
+          "revision": "187",
+          "frames": 355,
+          "quality": 1,
+          "fps": 50.167224080267275,
+          "cpuFrameMs": 5.800000000745058,
+          "gpuFrameMs": 3.839666,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 39,
+          "triangles": 1456,
+          "geometries": 101,
+          "textures": 29,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 54,
+          "coronaRoots": 48,
+          "dpr": 0.8,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 1043,
+            "height": 632
+          },
+          "samples": [
+            {
+              "t": 34961.1,
+              "fps": 52.13456620106244,
+              "cpuFrameMs": 3.300000000745058,
+              "gpuFrameMs": 8.068166,
+              "drawCalls": 15,
+              "triangles": 1048,
+              "dpr": 1
+            },
+            {
+              "t": 35994.4,
+              "fps": 34.83983354301742,
+              "cpuFrameMs": 2.5,
+              "gpuFrameMs": 5.775166,
+              "drawCalls": 20,
+              "triangles": 1232,
+              "dpr": 1
+            },
+            {
+              "t": 37011,
+              "fps": 31.477473932716943,
+              "cpuFrameMs": 4.300000000745058,
+              "gpuFrameMs": 9.113666,
+              "drawCalls": 35,
+              "triangles": 1436,
+              "dpr": 1
+            },
+            {
+              "t": 38044.3,
+              "fps": 32.904287235072005,
+              "cpuFrameMs": 5.300000000745058,
+              "gpuFrameMs": 6.886666,
+              "drawCalls": 39,
+              "triangles": 1456,
+              "dpr": 1
+            },
+            {
+              "t": 39060.9,
+              "fps": 40.33051347629358,
+              "cpuFrameMs": 3.699999999254942,
+              "gpuFrameMs": 4.230416,
+              "drawCalls": 39,
+              "triangles": 1456,
+              "dpr": 0.8
+            },
+            {
+              "t": 40077.6,
+              "fps": 44.26084390675728,
+              "cpuFrameMs": 2.5,
+              "gpuFrameMs": 20.897332,
+              "drawCalls": 39,
+              "triangles": 1456,
+              "dpr": 0.8
+            },
+            {
+              "t": 41094.2,
+              "fps": 42.29785559708839,
+              "cpuFrameMs": 2.400000002235174,
+              "gpuFrameMs": 4.180166,
+              "drawCalls": 39,
+              "triangles": 1456,
+              "dpr": 0.8
+            },
+            {
+              "t": 42110.8,
+              "fps": 50.167224080267275,
+              "cpuFrameMs": 2.399999998509884,
+              "gpuFrameMs": 6.669666,
+              "drawCalls": 40,
+              "triangles": 1656,
+              "dpr": 0.8
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        }
+      }
+    },
+    {
+      "name": "desktop: contextual project guide visible in ordinary use",
+      "status": "PASS",
+      "detail": {
+        "context": "glikemia",
+        "box": {
+          "x": 1008,
+          "y": 142.421875,
+          "width": 350,
+          "height": 151.46875
+        }
+      }
+    },
+    {
+      "name": "desktop: native project URL and close preserved",
+      "status": "PASS",
+      "detail": {
+        "project": "glikemia-premium"
+      }
+    },
+    {
+      "name": "desktop: Security guide beside physical process object",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 541.265625,
+          "y": 673.0625,
+          "width": 357.453125,
+          "height": 207.453125
+        },
+        "physicalModules": 6
+      }
+    },
+    {
+      "name": "desktop: one category open, technology guide visible",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 162,
+          "y": 501.203125,
+          "width": 492,
+          "height": 184.25
+        },
+        "category": "data"
+      }
+    },
+    {
+      "name": "desktop: category exclusivity and temporary CRT",
+      "status": "PASS",
+      "detail": {
+        "open": "media",
+        "signalsActive": 0
+      }
+    },
+    {
+      "name": "desktop: offscreen renderers sleep, no page overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 1440,
+        "frames": 646,
+        "sceneSleeping": true
+      }
+    },
+    {
+      "name": "no browser errors, missing assets or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [
+    "desktop-01-hero.png",
+    "desktop-proximity-cta.png",
+    "desktop-02-core.png",
+    "desktop-proximity-core.png",
+    "desktop-03-pulse.png",
+    "desktop-04-transition.png",
+    "desktop-05-showroom.png",
+    "desktop-06-guide-project.png",
+    "desktop-crystal-close.png",
+    "desktop-project-open.png",
+    "desktop-services-heading.png",
+    "desktop-07-services.png",
+    "desktop-process-heading.png",
+    "desktop-08-process.png",
+    "desktop-09-guide-security.png",
+    "desktop-10-ecosystem.png",
+    "desktop-ecosystem-detail.png",
+    "desktop-11-technologies.png",
+    "desktop-technology-grid.png",
+    "desktop-12-guide-technology.png",
+    "desktop-ai-scan.png",
+    "desktop-ai-clean.png",
+    "desktop-13-contact.png",
+    "desktop-brief.png",
+    "desktop-footer.png"
+  ],
+  "videos": [
+    "desktop.webm"
+  ],
+  "timeline": [
+    {
+      "video": "desktop",
+      "seconds": 5.2,
+      "chapter": "Hero / idle"
+    },
+    {
+      "video": "desktop",
+      "seconds": 9.3,
+      "chapter": "Cursor / mechanism and proximity"
+    },
+    {
+      "video": "desktop",
+      "seconds": 18.2,
+      "chapter": "Core / idle"
+    },
+    {
+      "video": "desktop",
+      "seconds": 32.7,
+      "chapter": "Core activation / uninterrupted handoff"
+    },
+    {
+      "video": "desktop",
+      "seconds": 37.5,
+      "chapter": "Showroom / idle"
+    },
+    {
+      "video": "desktop",
+      "seconds": 42.4,
+      "chapter": "Project / actual hover or tap and guide"
+    },
+    {
+      "video": "desktop",
+      "seconds": 48.5,
+      "chapter": "Project / open and return"
+    },
+    {
+      "video": "desktop",
+      "seconds": 54,
+      "chapter": "Services / physical glass"
+    },
+    {
+      "video": "desktop",
+      "seconds": 64.4,
+      "chapter": "Process / material stages and energy"
+    },
+    {
+      "video": "desktop",
+      "seconds": 75.2,
+      "chapter": "Security / contextual guide"
+    },
+    {
+      "video": "desktop",
+      "seconds": 81.6,
+      "chapter": "Ecosystem / artefacts at different depths"
+    },
+    {
+      "video": "desktop",
+      "seconds": 98.4,
+      "chapter": "Technologies / categories before details"
+    },
+    {
+      "video": "desktop",
+      "seconds": 107.9,
+      "chapter": "Data / reveal and contextual guide"
+    },
+    {
+      "video": "desktop",
+      "seconds": 122.8,
+      "chapter": "AI / brief signal, clean return"
+    },
+    {
+      "video": "desktop",
+      "seconds": 129.2,
+      "chapter": "Contact / recessed console"
+    }
+  ],
+  "version": "155.0.8059.39",
+  "PASS": 12,
+  "FAIL": 0
+}

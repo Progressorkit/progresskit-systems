@@ -1,0 +1,271 @@
+/* The showroom is part of the same black/red material world as the opening.
+   Three.js retains all object materials, raycasting and motion ownership. */
+#main #projekty {
+  --module-metal: radial-gradient(ellipse at 22% 0%, #dde4e413, transparent 55%),
+    repeating-linear-gradient(0deg, #dce2e303 0 1px, transparent 1px 4px),
+    linear-gradient(145deg, #242325, #0b090b 45%, #151012 80%, #060506);
+  padding-block: clamp(88px, 9vw, 144px) clamp(92px, 8vw, 134px);
+  background:
+    radial-gradient(ellipse 54% 33% at 8% 40%, #56111b1c, transparent 80%),
+    radial-gradient(ellipse 28% 42% at 93% 65%, #8b152014, transparent 80%),
+    linear-gradient(180deg, #050505, #090708ed 26%, #070607e8 72%, #050505);
+  border: 0;
+}
+
+#projekty .showroom-heading {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #c6afb319;
+  margin-bottom: 20px;
+}
+
+#projekty .showroom-heading .section-kicker {
+  color: #c9a6ac;
+  letter-spacing: .22em;
+}
+
+#projekty .showroom-heading .section-title {
+  color: #eeeaea;
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 500;
+  line-height: 1.035;
+  letter-spacing: -.065em;
+  text-shadow: 0 2px 25px #0009;
+}
+
+#projekty .showroom-heading > p {
+  color: #b9b0b3;
+  max-width: 32ch;
+  line-height: 1.8;
+}
+
+#projekty .showroom-gates {
+  gap: clamp(10px, 2.2vw, 34px);
+  margin-block: 16px 14px;
+}
+
+#projekty .showroom-gate {
+  padding-inline: 4px;
+  border-color: #bdb7b623;
+  background: transparent;
+  min-height: 52px;
+  transition: border-color .3s, color .3s;
+}
+
+#projekty .showroom-gate__label {
+  color: #c8c3c5;
+  font-size: 13px;
+  letter-spacing: .025em;
+}
+
+#projekty .showroom-gate__icon,
+#projekty .showroom-gate__count {
+  color: #b3a5aa;
+}
+
+#projekty .showroom-gate[aria-pressed="true"] {
+  border-color: #c84653;
+  background: linear-gradient(0deg, #8f26321a, transparent 75%);
+}
+
+#projekty .showroom-gate[aria-pressed="true"] .showroom-gate__label {
+  color: #f2dfe3;
+}
+
+#projekty .showroom-filterbar p,
+#projekty #showroom-status,
+#projekty .showroom-controls > span {
+  color: #b6aeb2;
+  font-size: 12px;
+}
+
+#projekty .showroom-all,
+#projekty .showroom-controls button,
+#projekty.showroom-3d-ready .capsule-audio {
+  color: #d1c8cc;
+  background: linear-gradient(145deg, #211b1eaa, #100d10aa);
+  border: 1px solid #afa3a830;
+  box-shadow: inset 0 1px #e9e1e70a, 0 5px 16px #0003;
+}
+
+#projekty .showroom-all[aria-pressed="true"] {
+  color: #ecd4d9;
+  border-color: #a7505d6b;
+}
+
+#projekty.showroom-3d-ready .showroom-viewport {
+  /* Physical object coordinates and semantic controls keep the current layout. */
+  margin-inline: auto;
+  width: 100%;
+}
+
+#projekty.showroom-3d-ready .showroom-scene {
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent),
+    linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 7%, #000 88%, transparent),
+    linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+#projekty.showroom-3d-ready .scene-core-toggle {
+  color: #c4c2c6;
+}
+
+#projekty.showroom-3d-ready .scene-core-toggle span {
+  font-size: 10px;
+  letter-spacing: .17em;
+  text-shadow: 0 2px 8px #000;
+}
+
+#projekty.showroom-3d-ready .capsule-audio {
+  min-height: 44px;
+  padding-inline: 17px;
+  border-radius: 24px;
+  font-size: 10px;
+}
+
+#projekty .showroom-controls .showroom-motion-toggle {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 1px solid #ad929d33;
+  border-radius: 0;
+}
+
+#projekty .showroom-instructions {
+  color: #b9afb4;
+  font-size: 13px;
+}
+
+#projekty .showroom-catalog-link a {
+  color: #ddbbc3;
+  text-decoration-color: #c57e8a66;
+  text-underline-offset: 5px;
+}
+
+/* The existing product disclosure remains readable in this material language. */
+#projekty .showroom-card.is-slice-expanded .project-slice {
+  color: #eee8eb;
+  background: linear-gradient(145deg, #30272d, #151115 48%, #21151b);
+}
+
+#projekty .project-slice__panel {
+  color: #e8e1e5;
+  border-color: #ba9ca93b;
+  background: linear-gradient(135deg, #211b21f2, #100e12f5 65%, #28131bea);
+  box-shadow: inset 0 1px #ebdde213, 0 24px 60px #0004;
+}
+
+#projekty .project-slice__technologies li {
+  color: #d7ccd2;
+  border-color: #af8e9e3b;
+  background: #1a1319;
+}
+
+#projekty .project-slice__copy p,
+#projekty .project-slice__copy p:first-child,
+#projekty .project-slice__media figcaption {
+  color: #ccc2c8;
+}
+
+#projekty .project-slice__close,
+#projekty .project-slice__actions a {
+  color: #e5dbe1;
+  border-color: #b9a3ae68;
+  background: linear-gradient(#352830, #21171f);
+}
+
+#projekty .project-slice__actions a[href$="#kontakt"] {
+  background: linear-gradient(135deg, #802337, #4d1525);
+  border-color: #b45e7199;
+}
+
+#projekty .showroom-gate:focus-visible,
+#projekty .showroom-all:focus-visible,
+#projekty .showroom-controls button:focus-visible,
+#projekty .capsule-audio:focus-visible,
+#projekty .scene-core-toggle:focus-visible {
+  outline-color: #e4ced8;
+}
+
+@media (hover: hover) {
+  #projekty .showroom-gate:hover {
+    border-color: #bd8b9780;
+  }
+  #projekty .showroom-all:hover,
+  #projekty .showroom-controls button:hover,
+  #projekty .capsule-audio:hover {
+    color: #fff0f5;
+    border-color: #be7a8b8c;
+    background: linear-gradient(145deg, #38232d, #191117);
+  }
+  #projekty .showroom-catalog-link a:hover {
+    color: #f8dbe3;
+  }
+}
+
+@media (max-width: 700px) {
+  #main #projekty {
+    padding: 78px 18px 82px;
+    background: radial-gradient(ellipse 100% 35% at 50% 38%, #60132217, transparent 80%),
+      linear-gradient(#050505, #090708 55%, #050505);
+  }
+  #projekty .showroom-heading {
+    padding-bottom: 20px;
+  }
+  #projekty .showroom-heading .section-title {
+    font-size: clamp(36px, 9.4vw, 48px);
+  }
+  #projekty .showroom-heading > p {
+    color: #c0b5bb;
+    font-size: 14px;
+    max-width: 36ch;
+  }
+  #projekty .showroom-gates {
+    gap: 8px 16px;
+  }
+  #projekty .showroom-gate {
+    flex-basis: 125px;
+    min-height: 49px;
+  }
+  #projekty .showroom-gate__label {
+    font-size: 12px;
+  }
+  #projekty.showroom-3d-ready .capsule-audio {
+    padding-inline: 13px;
+  }
+  #projekty .showroom-instructions,
+  #projekty .showroom-catalog-link {
+    text-wrap: pretty;
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #projekty .showroom-gate {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  #main #projekty,
+  #projekty .project-slice__panel,
+  #projekty .project-slice__technologies li,
+  #projekty .project-slice__close,
+  #projekty .project-slice__actions a,
+  #projekty .showroom-gate,
+  #projekty .showroom-all,
+  #projekty .showroom-controls button,
+  #projekty .capsule-audio {
+    color: CanvasText;
+    background: Canvas;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  #main #projekty {
+    background: white;
+  }
+}

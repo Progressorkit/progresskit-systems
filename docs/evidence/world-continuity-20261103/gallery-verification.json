@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "links": [
+    {
+      "url": "http://127.0.0.1:8211/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/DIAGNOZA.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/changed-files.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/QA.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop.mp4",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile.mp4",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/before-edge-rdzen.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-rdzen.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-hero.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-core.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-pulse.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-transition.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-showroom.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/crystal-close.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-projekty.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-uslugi.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-proces.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-ekosystem.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-wydania.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-o-mnie.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-wyzwania.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-technologie.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-contact-console.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/desktop-edge-footer.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-rdzen.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-projekty.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-uslugi.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-proces.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-ekosystem.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-wydania.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-o-mnie.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-wyzwania.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-technologie.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-contact-console.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/mobile-edge-footer.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/ODBIOR.txt",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8211/proof/SHA256SUMS.txt",
+      "status": 200
+    }
+  ],
+  "videos": [
+    {
+      "source": "http://127.0.0.1:8211/proof/desktop.mp4",
+      "duration": 246.48,
+      "width": 1440,
+      "height": 900,
+      "time": 239.167415,
+      "target": 238.48,
+      "error": null
+    },
+    {
+      "source": "http://127.0.0.1:8211/proof/mobile.mp4",
+      "duration": 120.04,
+      "width": 390,
+      "height": 844,
+      "time": 112.740013,
+      "target": 112.04,
+      "error": null
+    }
+  ],
+  "ranges": [
+    {
+      "name": "desktop",
+      "status": 206,
+      "contentRange": "bytes 200000-200999/51820275"
+    },
+    {
+      "name": "mobile",
+      "status": 206,
+      "contentRange": "bytes 200000-200999/12440393"
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "chapterSeek": {
+    "time": 13.179775,
+    "playing": true
+  },
+  "errors": []
+}

@@ -1,0 +1,1439 @@
+{
+  "date": "2026-11-03",
+  "browser": "local Chrome, Intel UHD 620",
+  "mobile": "390 × 844 touch/viewport emulation; physical device NOT_RUN",
+  "ownerVisualApproval": "OPEN",
+  "checks": [
+    {
+      "name": "desktop: foyer alive, engraved title, showroom dormant",
+      "status": "FAIL",
+      "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "mechanical switch: three distinct physical states",
+      "status": "PASS",
+      "detail": {
+        "idle": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "shadow": "rgba(242, 220, 233, 0.23) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px -2px 0px 0px inset, rgb(3, 2, 5) 0px 4px 0px 0px, rgba(0, 0, 0, 0.467) 0px 7px 16px 0px"
+        },
+        "hover": {
+          "transform": "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.507, 3.014, 1)",
+          "shadow": "rgba(255, 230, 245, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px -2px 0px 0px inset, rgb(3, 2, 5) 0px 5px 0px 0px, rgba(0, 0, 0, 0.6) 0px 10px 18px 0px"
+        },
+        "pressed": {
+          "transform": "matrix3d(0.995, 0, 0, 0, 0, 0.995, 0, 0, 0, 0, 1, 0, 0, 2, -2, 1)",
+          "shadow": "rgba(0, 0, 0, 0.733) 2px 4px 7px 0px inset, rgba(217, 185, 202, 0.16) -1px -1px 0px 0px inset, rgb(3, 2, 5) 0px 1px 0px 0px"
+        }
+      }
+    },
+    {
+      "name": "desktop: large lower core has real pulse and ambient embers",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "scale": "0.994478",
+          "translate": "0px 2.56704px"
+        },
+        "after": {
+          "scale": "0.993316",
+          "translate": "0px 2.93885px"
+        },
+        "box": {
+          "x": 439.203125,
+          "y": 268.546875,
+          "width": 561.59375,
+          "height": 561.59375
+        },
+        "ambient": {
+          "frames": 129,
+          "pending": true,
+          "paused": false,
+          "visible": 2,
+          "canvasCount": 6,
+          "particles": 108,
+          "fpsLimit": 24,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 129,
+              "visible": true
+            },
+            {
+              "id": "rdzen",
+              "frames": 57,
+              "visible": true
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "proximity: far asleep, near charged, pool bounded, asleep again",
+      "status": "PASS",
+      "detail": {
+        "far": {
+          "frames": 26,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 12,
+          "arcs": 2,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        },
+        "near": {
+          "frames": 43,
+          "pending": true,
+          "active": "core",
+          "intensity": 0.8305735470114619,
+          "alive": 4,
+          "poolSize": 24,
+          "emitted": 21,
+          "arcs": 4,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        },
+        "stopped": {
+          "frames": 68,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 29,
+          "arcs": 5,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "desktop: uninterrupted core flight and temporary signal",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 520.4695434570312,
+          "y": 309.5683898925781,
+          "width": 399.04949951171875,
+          "height": 399.0495300292969
+        },
+        "signal": {
+          "frames": 69,
+          "pending": true,
+          "active": "core",
+          "intensity": 1,
+          "alive": 1,
+          "poolSize": 24,
+          "emitted": 30,
+          "arcs": 5,
+          "signalCount": 1,
+          "signalsActive": 1,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "desktop: crystals materialized, flight cleaned, no overflow",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 1440,
+        "scene": {
+          "revision": "187",
+          "frames": 201,
+          "quality": 0,
+          "fps": 44.51756508274448,
+          "cpuFrameMs": 2.400000000372529,
+          "gpuFrameMs": 9.540333,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 37,
+          "triangles": 5120,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 1000,
+            "height": 750
+          },
+          "samples": [
+            {
+              "t": 17091.5,
+              "fps": 48.57142857142857,
+              "cpuFrameMs": 1.2999999998137355,
+              "gpuFrameMs": 22.916082,
+              "drawCalls": 14,
+              "triangles": 3700,
+              "dpr": 1
+            },
+            {
+              "t": 18108.1,
+              "fps": 52.13456620106244,
+              "cpuFrameMs": 2.1000000005587935,
+              "gpuFrameMs": 14.085166,
+              "drawCalls": 23,
+              "triangles": 4770,
+              "dpr": 1
+            },
+            {
+              "t": 19108.1,
+              "fps": 42,
+              "cpuFrameMs": 2.3999999994412065,
+              "gpuFrameMs": 7.577833,
+              "drawCalls": 37,
+              "triangles": 5120,
+              "dpr": 1
+            },
+            {
+              "t": 20141.4,
+              "fps": 44.51756508274448,
+              "cpuFrameMs": 3.2000000001862645,
+              "gpuFrameMs": 9.540333,
+              "drawCalls": 36,
+              "triangles": 4920,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 243,
+          "pending": false,
+          "paused": false,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 108,
+          "fpsLimit": 24,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 227,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 171,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 78,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 32,
+          "arcs": 5,
+          "signalCount": 1,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "desktop: native project opening, URL and close preserved",
+      "status": "PASS",
+      "detail": {
+        "id": "glikemia-premium"
+      }
+    },
+    {
+      "name": "desktop: offscreen scene and proximity sleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 1440,
+        "scene": {
+          "revision": "187",
+          "frames": 428,
+          "quality": 0,
+          "fps": 50.16722408026763,
+          "cpuFrameMs": 1.699999999254942,
+          "gpuFrameMs": 19.407499,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 37,
+          "triangles": 5120,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 72,
+          "coronaRoots": 48,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.65,
+          "buffer": {
+            "width": 1000,
+            "height": 750
+          },
+          "samples": [
+            {
+              "t": 17091.5,
+              "fps": 48.57142857142857,
+              "cpuFrameMs": 1.2999999998137355,
+              "gpuFrameMs": 22.916082,
+              "drawCalls": 14,
+              "triangles": 3700,
+              "dpr": 1
+            },
+            {
+              "t": 18108.1,
+              "fps": 52.13456620106244,
+              "cpuFrameMs": 2.1000000005587935,
+              "gpuFrameMs": 14.085166,
+              "drawCalls": 23,
+              "triangles": 4770,
+              "dpr": 1
+            },
+            {
+              "t": 19108.1,
+              "fps": 42,
+              "cpuFrameMs": 2.3999999994412065,
+              "gpuFrameMs": 7.577833,
+              "drawCalls": 37,
+              "triangles": 5120,
+              "dpr": 1
+            },
+            {
+              "t": 20141.4,
+              "fps": 44.51756508274448,
+              "cpuFrameMs": 3.2000000001862645,
+              "gpuFrameMs": 9.540333,
+              "drawCalls": 36,
+              "triangles": 4920,
+              "dpr": 1
+            },
+            {
+              "t": 21274.6,
+              "fps": 47.65266501941417,
+              "cpuFrameMs": 2.7999999998137355,
+              "gpuFrameMs": 11.368,
+              "drawCalls": 36,
+              "triangles": 4920,
+              "dpr": 1
+            },
+            {
+              "t": 22274.6,
+              "fps": 34,
+              "cpuFrameMs": 2.400000000372529,
+              "gpuFrameMs": 7.633082,
+              "drawCalls": 36,
+              "triangles": 4920,
+              "dpr": 1
+            },
+            {
+              "t": 23291.2,
+              "fps": 46.232539838677845,
+              "cpuFrameMs": 2.900000000372529,
+              "gpuFrameMs": 11.803416,
+              "drawCalls": 36,
+              "triangles": 4920,
+              "dpr": 1
+            },
+            {
+              "t": 24307.8,
+              "fps": 50.16722408026763,
+              "cpuFrameMs": 3.400000000372529,
+              "gpuFrameMs": 9.823582,
+              "drawCalls": 37,
+              "triangles": 5120,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-mail",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-translator",
+              "phase": "ready"
+            },
+            {
+              "id": "vaeloria",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-community",
+              "phase": "ready"
+            },
+            {
+              "id": "progresskit-tax",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 629,
+          "pending": true,
+          "paused": false,
+          "visible": 1,
+          "canvasCount": 6,
+          "particles": 108,
+          "fpsLimit": 24,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 227,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 171,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 170,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 170,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 126,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 60,
+              "visible": true
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 78,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 32,
+          "arcs": 5,
+          "signalCount": 6,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "desktop: no page overflow after all interactions",
+      "status": "PASS",
+      "detail": {
+        "width": 1440
+      }
+    },
+    {
+      "name": "mobile: foyer alive, engraved title, showroom dormant",
+      "status": "PASS",
+      "detail": {
+        "engraving": "url(\"#pk-cutout\")",
+        "machine": "machine-drift",
+        "overflow": false,
+        "awake": "false",
+        "groups": 8,
+        "links": 110,
+        "serviceWebGL": 0
+      }
+    },
+    {
+      "name": "mobile: large lower core has real pulse and ambient embers",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "scale": "1.00966",
+          "translate": "0px -2.29218px"
+        },
+        "after": {
+          "scale": "1.01236",
+          "translate": "0px -3.15494px"
+        },
+        "box": {
+          "x": 27.3046875,
+          "y": 293.8984375,
+          "width": 335.390625,
+          "height": 335.390625
+        },
+        "ambient": {
+          "frames": 68,
+          "pending": true,
+          "paused": false,
+          "visible": 2,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 68,
+              "visible": true
+            },
+            {
+              "id": "rdzen",
+              "frames": 38,
+              "visible": true
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "mobile: uninterrupted core flight and temporary signal",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 27.625783920288086,
+          "y": 284.7310791015625,
+          "width": 334.73291969299316,
+          "height": 334.73291015625
+        },
+        "signal": {
+          "frames": 1,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 1,
+          "signalsActive": 1,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: crystals materialized, flight cleaned, no overflow",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 142,
+          "quality": 0,
+          "fps": 30.000967773153995,
+          "cpuFrameMs": 1.5,
+          "gpuFrameMs": 4.464583,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 11,
+          "triangles": 3704,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [
+            {
+              "t": 8592.1,
+              "fps": 30.968740927126674,
+              "cpuFrameMs": 1.2000000001862645,
+              "gpuFrameMs": 3.032666,
+              "drawCalls": 7,
+              "triangles": 3480,
+              "dpr": 1
+            },
+            {
+              "t": 9592.1,
+              "fps": 30,
+              "cpuFrameMs": 1.2000000001862645,
+              "gpuFrameMs": 2.138083,
+              "drawCalls": 8,
+              "triangles": 3590,
+              "dpr": 1
+            },
+            {
+              "t": 10592.1,
+              "fps": 30,
+              "cpuFrameMs": 1.400000000372529,
+              "gpuFrameMs": 2.343083,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 11625.4,
+              "fps": 30.000967773153995,
+              "cpuFrameMs": 1.6000000005587935,
+              "gpuFrameMs": 2.346416,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 92,
+          "pending": false,
+          "paused": false,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 80,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 62,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 1,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 1,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: native project opening, URL and close preserved",
+      "status": "PASS",
+      "detail": {
+        "id": "glikemia-premium"
+      }
+    },
+    {
+      "name": "mobile: offscreen scene and proximity sleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 221,
+          "quality": 0,
+          "fps": 30,
+          "cpuFrameMs": 0.6000000005587935,
+          "gpuFrameMs": 4.108333,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 12,
+          "triangles": 3904,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [
+            {
+              "t": 8592.1,
+              "fps": 30.968740927126674,
+              "cpuFrameMs": 1.2000000001862645,
+              "gpuFrameMs": 3.032666,
+              "drawCalls": 7,
+              "triangles": 3480,
+              "dpr": 1
+            },
+            {
+              "t": 9592.1,
+              "fps": 30,
+              "cpuFrameMs": 1.2000000001862645,
+              "gpuFrameMs": 2.138083,
+              "drawCalls": 8,
+              "triangles": 3590,
+              "dpr": 1
+            },
+            {
+              "t": 10592.1,
+              "fps": 30,
+              "cpuFrameMs": 1.400000000372529,
+              "gpuFrameMs": 2.343083,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 11625.4,
+              "fps": 30.000967773153995,
+              "cpuFrameMs": 1.6000000005587935,
+              "gpuFrameMs": 2.346416,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 12658.6,
+              "fps": 30.003871467286082,
+              "cpuFrameMs": 1.3999999994412065,
+              "gpuFrameMs": 5.906249,
+              "drawCalls": 12,
+              "triangles": 3904,
+              "dpr": 1
+            },
+            {
+              "t": 13658.6,
+              "fps": 30,
+              "cpuFrameMs": 1.2000000001862645,
+              "gpuFrameMs": 2.303499,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 329,
+          "pending": true,
+          "paused": false,
+          "visible": 1,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 80,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 62,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 100,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 120,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 76,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 40,
+              "visible": true
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 1,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 6,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: no page overflow after all interactions",
+      "status": "PASS",
+      "detail": {
+        "width": 390
+      }
+    },
+    {
+      "name": "responsive 320: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 320,
+        "viewport": 320,
+        "box": {
+          "x": 22.40625,
+          "y": 1135,
+          "width": 275.1875,
+          "height": 275.1875,
+          "top": 1135,
+          "right": 297.59375,
+          "bottom": 1410.1875,
+          "left": 22.40625
+        }
+      }
+    },
+    {
+      "name": "responsive 768: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 768,
+        "viewport": 768,
+        "box": {
+          "x": 199,
+          "y": 1134.5,
+          "width": 370,
+          "height": 370,
+          "top": 1134.5,
+          "right": 569,
+          "bottom": 1504.5,
+          "left": 199
+        }
+      }
+    },
+    {
+      "name": "responsive 1366: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 1366,
+        "viewport": 1366,
+        "box": {
+          "x": 416.6328125,
+          "y": 1121.9765625,
+          "width": 532.734375,
+          "height": 532.734375,
+          "top": 1121.9765625,
+          "right": 949.3671875,
+          "bottom": 1654.7109375,
+          "left": 416.6328125
+        }
+      }
+    },
+    {
+      "name": "reduce: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 1.2999999998137355,
+          "gpuFrameMs": 2.5055,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 12,
+          "triangles": 3904,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 0,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "pause: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 12,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 1.3999999994412065,
+          "gpuFrameMs": 4.9065,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 12,
+          "triangles": 3904,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 2,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 2,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "forced: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 0.900000000372529,
+          "gpuFrameMs": 7.709333,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 8,
+          "triangles": 3680,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "charge"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 0,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "preserved catalog payload, project content, copy and navigation",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(s.nav&&s.cards&&s.payload&&s.copy.every(x=>x.same))\n"
+    },
+    {
+      "name": "guide: delayed hover, dismiss, global disable, re-enable, no duplicates",
+      "status": "PASS",
+      "detail": {
+        "cycles": 10,
+        "oneGuide": true
+      }
+    },
+    {
+      "name": "global pause also stops visible guide and proximity",
+      "status": "PASS",
+      "detail": {
+        "frames": 0,
+        "pending": false,
+        "active": null,
+        "intensity": 0,
+        "alive": 0,
+        "poolSize": 24,
+        "emitted": 0,
+        "arcs": 0,
+        "signalCount": 2,
+        "signalsActive": 0,
+        "guideContext": "security",
+        "guideDisabled": false,
+        "guideContexts": 3,
+        "paused": true,
+        "disposed": false
+      }
+    },
+    {
+      "name": "WebGL unavailable: native project entry remains usable",
+      "status": "PASS",
+      "detail": {
+        "fallback": true
+      }
+    },
+    {
+      "name": "JavaScript disabled: large logo and native links remain",
+      "status": "PASS",
+      "detail": {
+        "native": true
+      }
+    },
+    {
+      "name": "no browser errors, missing resources or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [
+    "desktop-01-hero.png",
+    "button-idle.png",
+    "button-hover.png",
+    "button-pressed.png",
+    "desktop-02-core.png",
+    "proximity-far.png",
+    "proximity-near.png",
+    "proximity-detail.png",
+    "desktop-03-core-pulse.png",
+    "activation-signal.png",
+    "desktop-04-transition.png",
+    "desktop-05-showroom.png",
+    "crystal-detail.png",
+    "desktop-06-guide-project.png",
+    "desktop-07-project-open.png",
+    "desktop-uslugi.png",
+    "desktop-uslugi-full.png",
+    "desktop-proces.png",
+    "desktop-proces-full.png",
+    "desktop-guide-security.png",
+    "desktop-ekosystem.png",
+    "desktop-ekosystem-full.png",
+    "desktop-wyzwania.png",
+    "desktop-o-mnie.png",
+    "desktop-technologie.png",
+    "desktop-guide-postgres.png",
+    "desktop-kontakt.png",
+    "desktop-brief.png",
+    "desktop-footer.png",
+    "mobile-01-hero.png",
+    "mobile-02-core.png",
+    "mobile-03-core-pulse.png",
+    "mobile-04-transition.png",
+    "mobile-05-showroom.png",
+    "mobile-06-guide-project.png",
+    "mobile-07-project-open.png",
+    "mobile-uslugi.png",
+    "mobile-proces.png",
+    "mobile-guide-security.png",
+    "mobile-ekosystem.png",
+    "mobile-wyzwania.png",
+    "mobile-o-mnie.png",
+    "mobile-technologie.png",
+    "mobile-guide-postgres.png",
+    "mobile-kontakt.png",
+    "mobile-brief.png",
+    "mobile-footer.png"
+  ],
+  "videos": [
+    "desktop.webm",
+    "mobile.webm"
+  ],
+  "version": "155.0.8059.39",
+  "PASS": 26,
+  "FAIL": 2
+}

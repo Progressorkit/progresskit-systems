@@ -1,0 +1,13 @@
+{
+  "name": "progressorkit-systems",
+  "private": true,
+  "scripts": {
+    "build": "npm run vendor:three && python3 scripts/build-site.py",
+    "check": "node scripts/vendor-three.cjs --check && python3 scripts/build-site.py --check && node --check assets/site-v5.js && node --check assets/hero-space.js && node --check assets/hero-entry.mjs && node --check assets/project-showroom.js && node --check assets/project-hologram.js && node --check assets/engineering-exhibit.js && node --check assets/interface-life.js && node --check assets/ecosystem-system.js && node --check glikemia-premium/product.js && node --check assets/showroom-scene.mjs && node --check assets/showroom-3d.mjs && node --check assets/showroom-lifecycle.mjs && node --check assets/spatial-chapters.mjs && node --check assets/luxury-world.mjs && node --check assets/continuity-chapters.mjs && node --check assets/technology-field.mjs",
+    "test": "node --test tests/*.test.cjs",
+    "vendor:three": "node scripts/vendor-three.cjs"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  }
+}

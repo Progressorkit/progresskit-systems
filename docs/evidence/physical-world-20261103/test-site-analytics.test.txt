@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: homepage sends one page view with bounded campaign and hostname-only referrer
+ok 1 - homepage sends one page view with bounded campaign and hostname-only referrer
+  ---
+  duration_ms: 4.498884
+  type: 'test'
+  ...
+# Subtest: tracking is disabled outside the production origin and when DNT is enabled
+ok 2 - tracking is disabled outside the production origin and when DNT is enabled
+  ---
+  duration_ms: 4.256549
+  type: 'test'
+  ...
+# Subtest: contact and both HTTP external link schemes retain their event coverage
+ok 3 - contact and both HTTP external link schemes retain their event coverage
+  ---
+  duration_ms: 2.290339
+  type: 'test'
+  ...
+# Subtest: legacy product links and current catalog links each record one project opening
+ok 4 - legacy product links and current catalog links each record one project opening
+  ---
+  duration_ms: 2.553859
+  type: 'test'
+  ...
+# Subtest: showroom activation tracks successful slice or hologram events without counting the trigger click twice
+ok 5 - showroom activation tracks successful slice or hologram events without counting the trigger click twice
+  ---
+  duration_ms: 1.298597
+  type: 'test'
+  ...
+# Subtest: rejected or unavailable beacon falls back to a single credential-free keepalive POST
+ok 6 - rejected or unavailable beacon falls back to a single credential-free keepalive POST
+  ---
+  duration_ms: 2.144011
+  type: 'test'
+  ...
+# Subtest: invalid referrer and oversized campaign do not leak into events
+ok 7 - invalid referrer and oversized campaign do not leak into events
+  ---
+  duration_ms: 1.03009
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 30.349054

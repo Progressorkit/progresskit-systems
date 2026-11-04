@@ -1,0 +1,55 @@
+ProgressKit Systems — lokalny odbiór hero / core — 2026-11-03
+
+Strona: http://127.0.0.1:8203/
+Proof: http://127.0.0.1:8203/proof/
+
+ZMIANY
+Duże metaliczne logo w centrum, poniżej połowy hero. Puls skali i światła od startu.
+Napis PROGRESSKIT SYSTEMS jako ciemny relief, tło czarno-bordowe z subtelną mgłą.
+Kliknięcie logo lub Poznaj ekosystem uruchamia ciągły lot i skalowanie do rdzenia.
+Projektowe kryształy materializują się przestrzennie. Ciemny materiał przepuszcza światło,
+ma oszlifowane krawędzie, odbicia i powolny ruch. Showroom nie otwiera się od hover/focus.
+Zachowane 19 projektów, teksty kart, statusy, nawigacja. Dodana tylko konieczna instrukcja
+wejścia przy logo. Analytics, API, katalog i podstrony produktów bez zmian.
+
+WERYFIKACJA
+Browser: 22 PASS / 0 FAIL. Chrome 155.0.8059.39.
+JS hero/showroom/lifecycle: 55 PASS / 0 FAIL (bezpośrednie uruchomienie plików testowych).
+Python composition + site/staging: 22 PASS / 0 FAIL.
+npm run check i git diff --check: PASS.
+Widoki: 320, 390, 768, 1440, 1920 px. Pauza, reduced motion, forced colors,
+klawiatura, przerwanie i powtórzenie przejścia, brak WebGL, brak JavaScript.
+Brak błędów JS, brakujących zasobów i żądań zewnętrznych w sesjach testowych.
+Nagranie mobile: emulacja 390x844, dotyk; fizyczny telefon: NOT_RUN.
+Desktop: 1440x900, 23.24 s, H.264 MP4.
+Mobile: 390x844, 19.44 s, H.264 MP4.
+Przejrzano sześć screenów oraz klatki obu nagrań. Ocena estetyczna i odbiór właściciela: OTWARTE.
+Lokalny serwer statyczny nie uruchamia backendu analytics ani formularzy.
+
+ZMIENIONE PLIKI STRONY (10)
+assets/hero-entry.css
+assets/hero-entry.mjs
+assets/hero-strata.svg
+assets/showroom-3d.mjs
+assets/showroom-scene.mjs
+assets/showroom-lifecycle.mjs
+scripts/build-site.py
+scripts/stage-public.py
+index.html
+package.json
+
+ARTEFAKTY
+6 PNG, desktop.mp4, mobile.mp4; źródłowe nagrania WebM; QA.json; logi testów;
+ODBIOR.txt; SHA256SUMS.txt; index.html (galeria); browser-proof.cjs;
+preview-server.py (wyłącznie localhost, jawna lista plików).
+
+URUCHOMIENIE PONOWNE
+python3 docs/evidence/hero-core-20261103/preview-server.py
+Port 8203 musi być wolny. Serwer jest dostępny tylko na tym komputerze.
+Testy przeglądarkowe wymagają lokalnego Chrome, Playwright i FFmpeg.
+W tej sesji użyto PLAYWRIGHT_BROWSERS_PATH=/tmp/pk-hero-playwright
+z dowiązaniem ffmpeg-1011/ffmpeg-linux do /usr/bin/ffmpeg.
+
+GIT
+HEAD przed i po: ca7330bca29396191413618df6cba7ecf09d18ca
+Bez commita, pushu i publikacji. Brak zmian w indeksie Git.

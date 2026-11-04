@@ -1,0 +1,89 @@
+/* Foyer → sealed core → existing project scene. The same mark survives the handoff. */
+body.luxury-world #main > .hero.hero--installation { position:relative; isolation:isolate; height:calc(100svh - 78px); min-height:700px; max-height:1000px; margin:0; padding:0; overflow:hidden; background:#060607; }
+body.luxury-world #main > .hero--installation::before { inset:-10%; opacity:.85; background:radial-gradient(ellipse 45% 40% at 72% 54%,#5d172533,transparent 80%),url('hero-strata.svg') center/cover; animation:entry-haze 17s ease-in-out infinite alternate; }
+body.luxury-world #main > .hero--installation::after { inset:0; height:auto; background:radial-gradient(ellipse at 60% 40%,transparent 25%,#03030499 95%),linear-gradient(0deg,#050505,transparent 18%); }
+body.luxury-world #main .hero--installation .hero__stone-title { position:absolute; inset:0; width:100%; max-width:none; padding:0; z-index:2; pointer-events:none; }
+body.luxury-world #main .hero--installation .hero__discipline { position:absolute; top:15%; left:6%; margin:0; font:9px/1.5 var(--mono); letter-spacing:.28em; color:#b09fa5; }
+body.luxury-world #main .hero--installation h1.stone-word { position:absolute; top:23%; left:5.5%; width:65%; max-width:none; display:flex; flex-direction:column; align-items:flex-start; gap:.1em; margin:0; font:700 clamp(52px,7.3vw,122px)/1.03 "PK Monument",Georgia,serif; transform:none; }
+body.luxury-world #main .hero--installation .stone-line { color:#0a090c; -webkit-text-fill-color:#0a090c; background:none; -webkit-text-stroke:.65px #7b606a5c; text-shadow:1px 2px 1px #9d7d8c45,-2px -3px 2px #000; filter:none; opacity:1; animation:entry-relief 7s ease-in-out infinite alternate; }
+body.luxury-world #main .hero--installation .stone-line--systems { font:400 .25em/1.5 var(--sans); letter-spacing:.62em; padding-left:.12em; }
+body.luxury-world #main .hero--installation .hero__motto { position:absolute; left:6%; top:52%; margin:0; max-width:21ch; color:#e3dade; font:italic 400 clamp(23px,2.4vw,36px)/1.5 "PK Motto",Georgia,serif; }
+body.luxury-world #main .hero--installation .hero__commercial-actions { position:absolute; left:6%; top:74%; margin:0; max-width:360px; gap:10px; pointer-events:auto; }
+body.luxury-world #main .hero__commercial-actions .cta { min-height:44px; padding-inline:23px; }
+body.luxury-world #main .hero__commercial-actions .cta--text { flex-basis:100%; padding:4px 0; font-size:10px; }
+body.luxury-world #main .hero__explore { bottom:28px; left:6%; z-index:5; font-size:9px; }
+body.luxury-world #main .hero--monument .hero__motion-toggle { bottom:32px; right:6%; z-index:5; }
+/* An exploded gimbal, with optical surfaces suspended between aluminium rings. */
+.hero-machine { position:absolute; width:min(48vw,710px); aspect-ratio:1; top:12%; right:0; perspective:1200px; z-index:3; outline-offset:-30px; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+.machine-assembly { position:absolute; inset:12%; transform-style:preserve-3d; transform:rotateX(calc(-16deg + var(--machine-x,0deg))) rotateY(calc(-25deg + var(--machine-y,0deg))) rotateZ(-24deg); animation:machine-drift 9s ease-in-out infinite alternate; }
+.machine-ring { position:absolute; inset:0; border-radius:50%; transform-style:preserve-3d; background:conic-gradient(from 30deg,#0c0c10,#cbd0d5 10%,#5f6269 12%,#17161a 23%,#5b5157 36%,#101014 50%,#a8abb0 65%,#29262e 70%,#6d252e 84%,#0e0c0f); mask:radial-gradient(transparent 61%,#000 61.5%,#000 68%,transparent 68.6%); filter:drop-shadow(3px 7px 2px #000); }
+.machine-ring--outer { transform:translateZ(75px); }
+.machine-ring--rear { transform:translateZ(-70px) scale(.94); opacity:.7; }
+.machine-ring--inner { inset:14%; transform:rotateY(60deg) rotateX(-15deg) translateZ(8px); mask:radial-gradient(transparent 60%,#000 61%,#000 68%,transparent 69%); animation:machine-orbit 24s linear infinite; }
+.machine-ring--rim { inset:4%; transform:translateZ(91px); background:conic-gradient(transparent 10%,#d4d7dc 17%,transparent 31% 60%,#c24a4b 70%,transparent 78%); mask:radial-gradient(transparent 68%,#000 68.4%,#000 69%,transparent 69.4%); }
+.machine-axis { position:absolute; left:48%; top:-9%; height:118%; width:4%; background:linear-gradient(90deg,#050407,#5e6067 35%,#c1c2c8 50%,#161418 85%); transform:translateZ(-30px); border-radius:40%; box-shadow:8px 8px 10px #000b; }
+.machine-lens { position:absolute; inset:23%; border-radius:31% 40% 27% 36%; background:radial-gradient(ellipse at 24% 16%,#d7ebfb44,transparent 32%),linear-gradient(125deg,#6d7d8845,#07090e44 45%,#0e080e80); border:1px solid #a9b5c052; box-shadow:inset 8px 4px 10px #dce9f51a,inset -12px -8px 13px #000a,14px 24px 24px #0008; transform:translateZ(48px) rotateZ(28deg); }
+.machine-lens::before { content:""; position:absolute; inset:11%; border-radius:inherit; border:1px solid #bfd4e326; background:conic-gradient(from 55deg,#07090b55,#849ca218,#08050a77,#b9473c24,#07090b55); transform:translateZ(-16px); }
+.machine-lens::after { content:""; position:absolute; inset:35%; border-radius:50%; background:radial-gradient(ellipse,#f5b186c4,#9f1f2c88 15%,#4d111b66 35%,transparent 72%); animation:machine-ember 4s ease-in-out infinite alternate; }
+.machine-lens i { position:absolute; width:40%; height:40%; inset:30%; border:1px solid #b6c6d629; transform:rotate(45deg); }
+.machine-lens i:nth-child(2) { transform:rotate(65deg) scale(.75); }.machine-lens i:nth-child(3) { transform:rotate(25deg) scale(1.25); }
+.machine-brace { position:absolute; top:45%; left:-6%; width:112%; height:10%; background:repeating-linear-gradient(0deg,#dce0e508 0 1px,transparent 1px 3px),linear-gradient(0deg,#08070a,#525259 35%,#a7a3a9 48%,#222028 58%,#121015); clip-path:polygon(0 30%,10% 0,36% 0,40% 35%,60% 35%,64% 0,90% 0,100% 30%,100% 70%,90% 100%,65% 100%,60% 65%,40% 65%,35% 100%,10% 100%,0 70%); transform:translateZ(-22px) rotate(46deg); }
+.machine-brace--b { transform:translateZ(-40px) rotate(-47deg); opacity:.6; }
+.machine-pin { position:absolute; width:9%; height:16%; left:1%; top:43%; border-radius:4px; background:linear-gradient(90deg,#0b0a0d,#8a8b92 42%,#c6c3c9 48%,#16131a 75%); transform:translateZ(76px); box-shadow:3px 6px 5px #000; }
+.machine-pin--b { left:auto; right:1%; }
+.machine-shadow { position:absolute; inset:76% 8% -2%; background:radial-gradient(ellipse,#000e,transparent 70%); transform:rotate(-12deg); filter:blur(16px); }
+.machine-caption { position:absolute; bottom:2%; left:27%; right:10%; color:#a3969d; font:9px/1.8 var(--mono); letter-spacing:.22em; display:flex; justify-content:space-between; border-top:1px solid #ba9ba322; padding-top:15px; }.machine-caption span { color:#786970; }.machine-caption b { font-size:18px; font-weight:400; }
+/* The main core lives below the foyer, centred inside a thick convex shell. */
+.core-sanctum { position:relative; isolation:isolate; min-height:850px; height:95svh; max-height:1100px; overflow:hidden; scroll-margin-top:65px; background:radial-gradient(ellipse 43% 52% at 50% 56%,#49162355,#0b080d 70%,#050505); }
+.core-sanctum::before { content:""; position:absolute; inset:0; background:url('hero-strata.svg') center/cover; opacity:.55; mask-image:radial-gradient(ellipse,#000,transparent 76%); animation:entry-haze 20s ease-in-out infinite alternate; }
+.core-relief { position:absolute; top:9%; width:100%; text-align:center; font:700 clamp(55px,10vw,156px)/1.1 "PK Monument",Georgia,serif; letter-spacing:-.055em; color:#08070a; -webkit-text-stroke:.6px #765d6940; text-shadow:1px 2px 1px #8d6c7e45,-2px -2px 2px #000; pointer-events:none; }
+.core-relief span { display:block; margin-top:20px; font:400 .18em/1.4 var(--sans); letter-spacing:.7em; padding-left:.7em; }
+body.luxury-world .core-sanctum .hero__insignia { position:absolute; display:block; left:50%; top:57%; width:clamp(370px,39vw,590px); aspect-ratio:1; right:auto; bottom:auto; transform:translate(-50%,-50%); z-index:3; opacity:1; text-decoration:none; border-radius:50%; outline-offset:14px; }
+body.luxury-world .core-sanctum .hero__insignia::before,body.luxury-world .core-sanctum .hero__insignia::after { content:none; }
+.core-shell { position:relative; display:grid; place-items:center; width:100%; height:100%; aspect-ratio:1; border-radius:50%; transform-style:preserve-3d; background:radial-gradient(ellipse at 28% 16%,#c5d9e92b,transparent 32%),radial-gradient(ellipse at 75% 79%,#b02f391c,transparent 48%),radial-gradient(circle,#0b0c1330 38%,#8aa7b51c 66%,#dce0e233 70%,#14131b9c 72%); box-shadow:inset 2px 3px 3px #d3dce95c,inset -2px -4px 3px #08060c,inset -15px -18px 25px #0008,inset 6px 3px 11px #b7cbdc29,0 40px 55px -15px #000c; border:1px solid #9cabb744; animation:sealed-breath 5s ease-in-out infinite; }
+body.luxury-world .core-sanctum .hero__insignia img,.hero-core-flight img { position:relative; width:64%; height:64%; object-fit:contain; z-index:2; animation:none; transform:none; filter:grayscale(.86) brightness(1.07) contrast(1.15) drop-shadow(3px 14px 8px #000c); }
+.core-shell__depth { position:absolute; inset:5%; border-radius:50%; border:1px solid #c0d3e415; box-shadow:inset 0 -5px 15px #acb4c416,inset 8px 3px 35px #05040b80; transform:translateZ(-20px); }
+.core-shell__reflection { position:absolute; inset:2%; z-index:4; border-radius:50%; pointer-events:none; background:radial-gradient(ellipse 35% 8% at 37% 9%,#f1f5ff99,transparent 85%),radial-gradient(ellipse 7% 26% at 91% 44%,#bacfe938,transparent 90%),radial-gradient(ellipse 36% 5% at 60% 95%,#a7aaba42,transparent 90%); transform:rotate(-22deg); animation:lens-reflection 12s ease-in-out infinite alternate; }
+.core-shell__rim { position:absolute; inset:0; border-radius:50%; z-index:4; background:conic-gradient(from 215deg,transparent 8%,#cfdfed73 15%,transparent 23% 47%,#8fa3b94a 57%,transparent 65%,#af4e5566 78%,transparent 85%); mask:radial-gradient(transparent 68.5%,#000 69%,#000 70%,transparent 70.5%); }
+.hero__enter-caption { position:absolute; top:109%; width:100%; text-align:center; color:#b9a6ae; font:10px/1.8 var(--mono); letter-spacing:.19em; }.hero__enter-caption span { margin-left:16px; color:#e3c2ca; }
+.core-well { position:absolute; left:15%; right:15%; top:77%; height:20%; border-radius:50%; background:radial-gradient(ellipse,#000d,transparent 65%); transform:perspective(650px) rotateX(65deg); }
+.core-well::before,.core-well::after { content:""; position:absolute; inset:3%; border:1px solid #a75a6129; border-radius:50%; box-shadow:0 1px 2px #b098a015; }.core-well::after { inset:13%; opacity:.4; }
+.hero-core-flight { position:fixed; z-index:80; pointer-events:none; will-change:transform; animation:none; }.hero-core-flight .core-shell__reflection { animation:none; }
+.hero-entry-flying .hero__insignia { visibility:hidden; }
+#projekty.hero-entry-landing .showroom-scene { opacity:0; }#projekty.hero-entry-landing .scene-core-toggle { visibility:hidden; }
+#projekty.hero-entry-landing .showroom-heading,#projekty.hero-entry-landing .showroom-gates,#projekty.hero-entry-landing .showroom-filterbar { opacity:.1; transition:opacity .25s; }
+#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-viewport { height:clamp(620px,calc(100svh - 150px),850px); }
+@keyframes machine-drift { from { translate:0 5px; } to { translate:0 -7px; } }
+@keyframes machine-orbit { from { transform:rotateY(60deg) rotateX(-15deg) rotateZ(0); } to { transform:rotateY(60deg) rotateX(-15deg) rotateZ(360deg); } }
+@keyframes machine-ember { from { opacity:.45; scale:.8; } to { opacity:1; scale:1.15; } }
+@keyframes sealed-breath { 0%,100% { translate:0 4px; scale:.99; } 50% { translate:0 -4px; scale:1.015; } }
+@keyframes lens-reflection { from { transform:rotate(-22deg); opacity:.62; } to { transform:rotate(10deg); opacity:.95; } }
+@keyframes entry-haze { from { transform:translate(-1%,1%) scale(1); } to { transform:translate(1%,-1%) scale(1.04); } }
+@keyframes entry-relief { from { opacity:.62; } to { opacity:.94; } }
+html[data-interface-motion="paused"] :is(.machine-assembly,.machine-ring,.machine-lens::after,.core-shell,.core-shell__reflection,.stone-line),
+html[data-interface-motion="paused"] :is(.hero--installation,.core-sanctum)::before,
+[data-installation-visible="false"] :is(.machine-assembly,.machine-ring,.machine-lens::after,.core-shell,.core-shell__reflection,.stone-line),
+[data-installation-visible="false"].hero--installation::before,
+[data-installation-visible="false"].core-sanctum::before { animation-play-state:paused!important; }
+@media(max-width:900px) and (min-width:701px) { .hero-machine { top:24%; width:52vw; right:-5%; } body.luxury-world #main .hero--installation .hero__motto { max-width:17ch; font-size:26px; } }
+@media(max-width:700px) {
+  body.luxury-world #main > .hero.hero--installation { height:820px; min-height:820px; max-height:none; }
+  body.luxury-world #main .hero--installation .hero__discipline { top:6%; left:7%; font-size:8px; }
+  body.luxury-world #main .hero--installation h1.stone-word { top:12%; left:6%; width:88%; font-size:10vw; }
+  body.luxury-world #main .hero--installation .hero__motto { top:auto; bottom:175px; left:7%; max-width:25ch; font-size:23px; }
+  body.luxury-world #main .hero--installation .hero__commercial-actions { top:auto; bottom:64px; left:7%; right:7%; gap:7px; }
+  body.luxury-world #main .hero__explore { bottom:13px; font-size:8px; }
+  body.luxury-world #main .hero--monument .hero__motion-toggle { bottom:22px; right:5%; font-size:8px; }
+  .hero-machine { top:22%; right:-4%; width:100%; max-width:460px; }
+  .machine-assembly { inset:15%; }.machine-caption { bottom:7%; left:23%; right:18%; font-size:8px; }
+  .core-sanctum { height:760px; min-height:760px; }.core-relief { top:11%; font-size:10vw; }
+  body.luxury-world .core-sanctum .hero__insignia { width:86vw; max-width:430px; top:51%; }
+  .core-relief span { font-size:.22em; }.hero__enter-caption { font-size:9px; top:113%; }
+  .core-well { left:3%; right:3%; top:73%; }#projekty.showroom-3d-ready:not(.is-slice-open) .showroom-viewport { height:720px; }
+}
+@media(prefers-reduced-motion:reduce) { .hero--installation *,.hero--installation::before,.core-sanctum *,.core-sanctum::before { animation:none!important; } }
+@media(forced-colors:active) { .hero-machine { border:1px solid LinkText; }.machine-assembly { opacity:.4; }body.luxury-world .core-sanctum .hero__insignia { display:block!important; }.core-shell { border:2px solid LinkText; background:Canvas; }body.luxury-world #main .hero--installation .stone-line { color:CanvasText;-webkit-text-fill-color:CanvasText;text-shadow:none;-webkit-text-stroke:0; }.core-relief { display:none; } }
+@media print { .hero-machine,.core-sanctum,.hero-core-flight { display:none!important; } }
+/* Scrolling the flight past a stationary cursor must not activate category
+   previews before the core lands. Wheel/Tab/Escape still interrupt normally. */
+#projekty.hero-entry-landing,#projekty.hero-entry-landing * { pointer-events:none!important; }

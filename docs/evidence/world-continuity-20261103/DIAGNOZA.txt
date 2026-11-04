@@ -1,0 +1,38 @@
+WORLD CONTINUITY — korekta właściciela, 2026-11-03
+ownerVisualApproval: OPEN
+
+PRZYCZYNA, POTWIERDZONA W PRZEGLĄDARCE (audit-before.json)
+1. Hero: własne nieprzezroczyste rgb(6,6,7), osobny obraz komnaty w ::before i gradient dolnej krawędzi w ::after; overflow:hidden.
+2. Core: kolejne, powiększone i inaczej kadrowane zdjęcie komnaty, zamknięte w wysokości sekcji. Starsza reguła world-atmosphere.css dodatkowo wygrywała z klasą Core i nadawała rgb(8,13,18).
+3. Showroom: gradient całej sekcji + context/renderer alpha:false + scene.background z kolejnym kadrem komnaty. CSS maskował brzegi prostokąta sceny.
+4. Dalsze sekcje: własne czarne kolory i gradienty, zdjęcia w pseudo-elementach; Proces odwracał swoje tło scaleX(-1), zmieniając kierunek światła. Footer miał własny gradient.
+5. Sześć osobnych canvasów atmosfery było przyciętych do sekcji; wcześniejszy luxury-world.mjs tworzył dodatkowy globalny renderer za nieprzezroczystym main.
+Przykład: before-edge-rdzen.png — poziome cięcie dokładnie na y=450.
+
+ZMIANA ARCHITEKTURY
+Jedna warstwa .installation-world jest rodzeństwem main i footer, nie dzieckiem sekcji.
+Zawiera jedną komnatę, wspólne światło i jeden viewportowy canvas atmosfery.
+Sekcje przekazują treść i obiekty; ich powierzchnie są przezroczyste, bez granicznych pseudo-elementów, borderów i cieni.
+Własne tła hero/Core i tła dodane przez installation.css usunięto ze źródła. world-continuity.css jawnie neutralizuje odziedziczone skórki starszych sekcji; nie przykrywa ich gradientem.
+Usunięto scene.background i maskę WebGL; renderer ma alpha:true, zerowy kolor/alpha clear.
+Usunięto uruchamianie konkurencyjnego luxury-world.mjs na stronie głównej.
+Pozostały materiały konkretnych obiektów, lokalna konsola kontakt/brief i jej obramowanie, nawigacja, kompozycja oraz kolejność treści.
+
+WSPÓLNY RUCH I ŚWIATŁO
+Jedna pula 116 cząstek, 64 widoczne w mobile. Tożsamość puli i canvasu nie zmienia się pomiędzy sekcjami.
+Daleka konstrukcja, światło i bliska atmosfera korzystają z tej samej ciągłej współrzędnej kamery, z różnymi głębokościami. Nie ma przełączeń ani resetów na progach sekcji.
+Źródło crimson pozostaje po prawej/w głębi, chłodny specular u góry, czerwony bounce od dołu. Światło sceny 3D dopasowano do prawej strony.
+Pauza, reduced-motion, forced-colors i pagehide zatrzymują scheduler. Showroom nadal usypia poza ekranem; globalna atmosfera działa także przy footerze, bo jest stale widoczna.
+
+REFRAKCJA A PRZEZROCZYSTE TŁO
+Three 0.187.0 w renderTransmissionPass ustawia zastępczy kolor biały z alpha .5 dla canvasów alpha. Po usunięciu scene.background ten fallback dawał mleczne wnętrza kryształów.
+Lokalny hook materiału odzyskuje kolor/coverage próbki, odejmując biały wkład fallbacku i przeliczając alpha. Próbki nieprzezroczystych obiektów pozostają bez zmian. Vendor Three nie został zmodyfikowany.
+Premultiplikacja materiałów jest zgodna z canvasem. Zostały fizyczna geometria, IOR, grubość, odbicia i materiały; nie dodano zastępczego prostokąta komnaty do WebGL.
+DOM-owe tło prześwituje w kompozycji alpha; nie jest osobną teksturą refrakcji ani kopią sceny.
+
+ODBIÓR
+Kadry graniczne pokazują połowę poprzedniej i połowę następnej sekcji. Sprawdzenie stylów i pikseli alpha jest techniczne; ocena wrażenia jednej przestrzeni pozostaje oceną właściciela.
+Nagrania: rzeczywisty viewport lokalnego Chrome, kontrolowany powolny scroll, bez montażu i przyspieszania. Mobile to emulacja dotykowa, nie test fizycznego telefonu.
+Układ pozostaje: Hero → Core → Showroom → Usługi → Proces → Ekosystem → Wydania → O mnie → Wyzwania → Technologie → Kontakt/brief → Footer.
+Film desktop zawiera również powrót Technologie → Ekosystem przez istniejący układ treści.
+Bez commita, pushu, publikacji.

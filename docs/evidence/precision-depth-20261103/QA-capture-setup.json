@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-03",
+  "ownerVisualApproval": "OPEN",
+  "mobile": "390x844 Chrome touch emulation; physical device NOT_RUN",
+  "pointer": "Recording-only marker follows actual pointer events; no product UI is simulated.",
+  "checks": [
+    {
+      "name": "capture 1440",
+      "status": "FAIL",
+      "error": "browserContext.newPage: Executable doesn't exist at /home/pawe/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux\n╔═════════════════════════════════════════════════════════════════╗\n║ Video rendering requires ffmpeg binary.                         ║\n║ Downloading it will not affect any of the system-wide settings. ║\n║ Please run the following command:                               ║\n║                                                                 ║\n║     npx playwright install ffmpeg                               ║\n║                                                                 ║\n║ <3 Playwright Team                                              ║\n╚═════════════════════════════════════════════════════════════════╝\n    at context (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/precision-depth-20261103/browser-proof.cjs:15:20)\n    at async capture (/home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/precision-depth-20261103/browser-proof.cjs:30:15)\n    at async /home/pawe/Pulpit/Projekty It/ProgressorKit Systems/docs/evidence/precision-depth-20261103/browser-proof.cjs:90:309"
+    },
+    {
+      "name": "no browser errors, missing assets or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [],
+  "videos": [],
+  "timeline": [],
+  "version": "155.0.8059.39",
+  "PASS": 1,
+  "FAIL": 1
+}

@@ -1,0 +1,206 @@
+/* Material finishing only. Object coordinates, typography, geometry, layout,
+   approved palette and content stay with the existing chapter styles. */
+
+/* The existing atmosphere renderer is composited over the same world. Its
+   shader excludes text/control regions; the canvas never receives input. */
+body.luxury-world > .luxury-atmosphere {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  pointer-events: none;
+  opacity: 1;
+  mix-blend-mode: normal;
+  filter: none;
+}
+body.luxury-world > .luxury-atmosphere[hidden] { display: none; }
+
+/* The opening mark casts a hard contact shadow into a much softer back plane. */
+body.luxury-world .hero__insignia img {
+  filter: grayscale(.62) brightness(.94) contrast(1.22)
+    drop-shadow(-1px -1px 0 #e0e4e440) drop-shadow(4px 11px 2px #000e)
+    drop-shadow(-12px 43px 27px #000e) drop-shadow(20px 15px 35px #3b081a38);
+}
+body.luxury-world .hero__insignia::before {
+  background:
+    linear-gradient(118deg, transparent 39%, #d8d6d327 39.18%, #30282c30 39.5%, transparent 43%),
+    radial-gradient(ellipse 73% 30% at 51% 75%, #4e0a1a69, transparent 82%),
+    linear-gradient(140deg, transparent 26%, #030203b0 50%, #21191d65 54%, transparent 72%);
+}
+body.luxury-world #main > .hero--monument::before {
+  background:
+    linear-gradient(114deg, transparent 43%, #a29c9712 43.12%, #00000065 43.6%, transparent 56%),
+    radial-gradient(ellipse at 74% 59%, #9b233331, transparent 45%),
+    radial-gradient(ellipse 46% 110% at 104% -20%, #c9c2bb10, transparent 75%);
+}
+
+/* Existing Services objects keep their silhouette and renderer. These optical
+   footprints live behind the instrument, never over its copy. */
+body.luxury-world #uslugi .service-object::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 74% -13% -11% 4%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 48% 52%, #000e, #0008 24%, #19040920 48%, transparent 72%);
+  transform: rotate(7deg) skewX(-13deg);
+  pointer-events: none;
+}
+body.luxury-world #uslugi .service-zone--systems .service-object::before {
+  background: radial-gradient(ellipse at 62% 52%, #000f, #1f07105c 30%, #0004 49%, transparent 75%);
+  transform: rotate(-10deg) skewX(10deg);
+}
+body.luxury-world #uslugi .service-object::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse 38% 5% at var(--world-x,24%) 10%, #e7e9ee36, transparent 83%),
+    radial-gradient(ellipse 5% 30% at 96% 59%, #a6aeb51a, transparent 86%);
+  box-shadow: inset 1px 0 #f2ece91a, inset -1px -1px #b9757a0b;
+  opacity: .55;
+  pointer-events: none;
+}
+
+/* A polished face and a shaded rear plane give the existing chambers their
+   thickness. The scroll controller already owns these light coordinates. */
+body.luxury-world #proces .process-face--front {
+  background:
+    radial-gradient(ellipse 27% 7% at var(--process-light-x,24%) var(--process-light-y,12%), #f4f2ef38, transparent 84%),
+    linear-gradient(var(--process-light-angle,108deg), #c8d0dc0b, transparent 43% 78%, #77203114);
+  box-shadow: inset 1px 0 #f5efde4a, inset -2px -1px #020103a6, inset 0 -2px #c1c4cc12;
+}
+body.luxury-world #proces [data-production-state="active"] .process-face--front {
+  background:
+    radial-gradient(ellipse 28% 8% at var(--process-light-x,24%) var(--process-light-y,12%), #fff5e65c, transparent 85%),
+    radial-gradient(ellipse at 68% 80%, #9c1d342b, transparent 54%),
+    linear-gradient(var(--process-light-angle,108deg), #d9dde310, transparent 47%);
+  box-shadow: inset 1px 0 #fff7e570, inset -2px -1px #68132345, 6px 20px 29px -16px #000c;
+}
+body.luxury-world #proces .process-face--back {
+  box-shadow: inset 8px 12px 16px #0007, inset -1px -1px #8f44521d;
+}
+body.luxury-world #proces .process-face--top {
+  box-shadow: inset 0 1px #f2e8d640, inset 0 -1px #000b;
+}
+body.luxury-world #proces .process-face--bottom {
+  box-shadow: inset 0 -2px #000a, 9px 14px 24px -12px #23051063;
+}
+
+/* The human interval receives only a grazing reflection, without adding a
+   second animation; the approved slow light already travels behind the copy. */
+body.luxury-world #main #o-mnie::before {
+  background: linear-gradient(113deg, transparent 35%, #e8cfc308 45%, #d0bab318 48%, transparent 58%);
+}
+body.luxury-world #o-mnie .collaboration::before {
+  background: linear-gradient(transparent, #e7d9c74a, #9b4a5438, transparent);
+}
+
+/* The console is anchored more deeply than the floating specimens. Its upper
+   contact light is cool; the lower occlusion falls into near-black burgundy. */
+body.luxury-world #kontakt .contact {
+  border-top-color: #f2e5d496;
+  background:
+    radial-gradient(ellipse 48% 9% at var(--world-x,78%) 0%, #d9d6cc1c, transparent 84%),
+    repeating-linear-gradient(0deg, #d7d3c503 0 1px, transparent 1px 4px),
+    linear-gradient(132deg, #211b1f6e, #080607df 62%, #210d15a6);
+  box-shadow: inset 1px 1px #fff0d72d, inset 7px 0 #aaa1a009,
+    inset -7px 0 #8e72770d, -23px -18px 65px -25px #000b;
+}
+body.luxury-world #kontakt .contact::before {
+  border-color: #c7b5a52a;
+  background: linear-gradient(112deg, transparent 0 34%, #fff3df05 36%, transparent 40%);
+}
+body.luxury-world #main #brief {
+  background:
+    radial-gradient(ellipse 72% 32% at 88% 96%, #66203727, transparent 75%),
+    repeating-linear-gradient(0deg, #d7d3c503 0 1px, transparent 1px 4px),
+    linear-gradient(132deg, #171216e3, #080607ef 62%, #210d15a6);
+  box-shadow: inset 1px 0 #fff0da1f, inset 7px 0 #aaa1a008,
+    inset -7px 0 #8e72770c, inset 0 -6px #000b,
+    17px 38px 54px -22px #000d, -16px 18px 55px -25px #2807115c;
+}
+body.luxury-world #main #brief::before { border-color: #c7b5a526; }
+body.luxury-world #main #brief .brief-grid textarea {
+  box-shadow: inset 0 7px 13px #000b, inset 2px 0 #000a, 0 1px #e4c7b12b;
+}
+body.luxury-world #main #brief .brief-grid textarea:focus-visible {
+  box-shadow: inset 0 5px 14px #000a, inset 0 -1px #a34b5b38, 0 1px #edc7b146, 0 4px 13px #6e172416;
+}
+body.luxury-world #main #brief .brief__actions .cta--primary {
+  box-shadow: inset 0 1px #fff0ce62, inset 0 -3px #220810b0,
+    3px 6px 7px -3px #000a, 4px 17px 30px -9px #18030a8c;
+}
+
+/* Relief catches a final narrow reflection, then disappears into darkness. */
+body.luxury-world:has(#main > .hero--monument) > footer::before {
+  background:
+    radial-gradient(ellipse 38% 9% at 68% 35%, #9f29332e, transparent 78%),
+    radial-gradient(ellipse 62% 10% at 32% 47%, #5d41431a, transparent 81%),
+    repeating-linear-gradient(165deg, transparent 0 55px, #afa29a04 55px 56px, transparent 56px 112px),
+    linear-gradient(168deg, transparent 39%, #b4aaa11b 39.2%, #020202 40%, transparent 61%),
+    linear-gradient(13deg, #030303 20%, #1b1218 45%, #030303 46%, #0d090b 60%, #020202 82%);
+}
+
+@media (max-width: 700px) {
+  body.luxury-world .hero__insignia img {
+    filter: grayscale(.62) brightness(.92) contrast(1.2)
+      drop-shadow(3px 8px 2px #000e) drop-shadow(-7px 24px 18px #000d);
+  }
+  body.luxury-world #uslugi .service-object::after { opacity: .28; }
+  body.luxury-world #ekosystem .ecosystem-node::before {
+    box-shadow: inset 1px 1px #fff4df1c, inset -4px -3px #000b, inset -6px -4px #aaa2a009;
+  }
+  body.luxury-world #ekosystem .delivery-flow__relationship::before,
+  body.luxury-world #main #technologie .technology-chips::before { opacity: .55; }
+  body.luxury-world #main #technologie .technology-chips::before { opacity: .66; }
+
+  body.luxury-world #main #brief {
+    box-shadow: inset 1px 0 #fff0da14, inset -4px 0 #8e727709, inset 0 -5px #000a,
+      8px 21px 32px -20px #000c;
+  }
+}
+
+@media (forced-colors: active), print {
+  body.luxury-world > .luxury-atmosphere { display: none; }
+  body.luxury-world #uslugi .service-object::before,
+  body.luxury-world #uslugi .service-object::after,
+  body.luxury-world #ekosystem .delivery-flow__relationship::before,
+  body.luxury-world #main #technologie .technology-chips::before { display: none; }
+  body.luxury-world .hero__insignia img { filter: none; }
+  body.luxury-world #proces .process-face,
+  body.luxury-world #ekosystem .ecosystem-node::before,
+  body.luxury-world #ekosystem .ecosystem-node::after,
+  body.luxury-world #main #technologie .technology-group::after,
+  body.luxury-world #kontakt .contact,
+  body.luxury-world #main #brief,
+  body.luxury-world #main #brief .brief-grid textarea,
+  body.luxury-world #main #brief .brief__actions .cta--primary { box-shadow: none !important; }
+  body.luxury-world #main > .hero--monument::before,
+  body.luxury-world #kontakt .contact::before,
+  body.luxury-world #main #o-mnie::before { background: none; }
+}
+@media (forced-colors: active) {
+  body.luxury-world #kontakt .contact,
+  body.luxury-world #main #brief,
+  body.luxury-world #main #brief .brief-grid textarea {
+    background: Canvas;
+    border-color: CanvasText;
+  }
+  body.luxury-world #main #brief .brief-grid textarea:focus-visible {
+    background: Canvas;
+    outline-color: Highlight;
+  }
+}
+@media print {
+  body.luxury-world #kontakt .contact,
+  body.luxury-world #main #brief,
+  body.luxury-world #main #brief .brief-grid textarea,
+  body.luxury-world #main #brief .brief-grid textarea:focus-visible {
+    background: white;
+  }
+}

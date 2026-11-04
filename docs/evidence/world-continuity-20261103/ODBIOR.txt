@@ -1,0 +1,25 @@
+WORLD CONTINUITY — lokalny proof 2026-11-03
+Strona: http://127.0.0.1:8211/
+Galeria: http://127.0.0.1:8211/proof/
+
+Usunięto niezależne tła sekcji i nieprzezroczyste tło WebGL. Jedna globalna komnata, jedno oświetlenie, wspólny canvas i stała pula atmosfery. Szkło zachowuje ciemny materiał po usunięciu białego fallbacku transmisji Three r187.
+
+6 kadrów wejścia + 22 kadry graniczne (11 desktop, 11 mobile).
+Desktop: 4:06, 1440x900. Mobile: 2:00, 390x844, emulacja dotykowa Chrome.
+Nagrania bez montażu i przyspieszania. Desktop wolniejszy niż wcześniejsze 2:24; z postojami na granicach i powrotem Technologie → Ekosystem.
+
+30 kontroli przeglądarkowych PASS / 0 FAIL.
+100 testów JavaScript PASS / 0 FAIL.
+37 testów Python PASS / 0 FAIL.
+Build/check PASS. Staging lokalny: 111 plików, bez publikacji.
+10 chronionych plików katalogu/analytics/kontrolerów bez zmian. Oryginalne logo bez zmian. HEAD bez zmian.
+
+Zmiany tej korekty: 8 plików źródłowych (changed-files.txt). Istniejąca praca i wcześniejsze proofy zachowane.
+Diagnoza: DIAGNOZA.txt. Dowody CSS/WebGL: audit-before.json, audit-after.json, world-checks.json.
+Wyniki wydajności: performance-before.json i performance-after.json; pomiar bez nagrywania.
+
+ownerVisualApproval: OPEN.
+Fizyczny telefon: NOT_RUN. Emulacja nie stanowi odbioru na urządzeniu.
+Bez commita. Bez pushu. Bez publikacji.
+
+Galeria: 37 lokalnych odnośników HTTP 200; oba filmy odtworzone po seek blisko końca, HTTP Range 206; wybór rozdziału działa; brak błędów JS i overflow przy 1440/390 px.

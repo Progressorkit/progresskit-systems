@@ -1,0 +1,257 @@
+{
+  "checks": [
+    {
+      "name": "one global architecture, one atmosphere canvas, no legacy renderer",
+      "status": "PASS",
+      "detail": {
+        "world": 1,
+        "canvas": 1,
+        "old": 0,
+        "sectionCanvas": 0,
+        "fixed": "fixed",
+        "plate": "url(\"http://127.0.0.1:8211/assets/world/installation-chamber.webp\")"
+      }
+    },
+    {
+      "name": "all full-width chapter surfaces transparent, no boundary border/shadow/pseudo",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "start",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "rdzen",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "projekty",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "uslugi",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "proces",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "ekosystem",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "wydania",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "o-mnie",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "wyzwania",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "technologie",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "none",
+          "after": "none"
+        },
+        {
+          "id": "footer",
+          "bg": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "borderTop": "0px",
+          "borderBottom": "0px",
+          "shadow": "none",
+          "before": "\"\"",
+          "after": "none"
+        }
+      ]
+    },
+    {
+      "name": "world lives before any interaction",
+      "status": "PASS",
+      "detail": {
+        "before": 4,
+        "after": 17
+      }
+    },
+    {
+      "name": "global camera progresses continuously and same particle pool survives resize",
+      "status": "PASS",
+      "detail": {
+        "cameraY": 999.9989026922867,
+        "mobileParticles": 64,
+        "depthRates": {
+          "far": 0.065,
+          "mid": 0.12,
+          "ash": 0.025
+        }
+      }
+    },
+    {
+      "name": "transparent WebGL pixels at all four corners after activation; no edge mask",
+      "status": "PASS",
+      "detail": {
+        "alpha": true,
+        "pixels": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "mask": "none"
+      }
+    },
+    {
+      "name": "offscreen showroom sleeps while shared atmosphere continues at footer",
+      "status": "PASS",
+      "detail": {
+        "sceneFrames": 86,
+        "ambientFrames": 96
+      }
+    },
+    {
+      "name": "global pause cancels atmosphere, pointer and timer; resume works",
+      "status": "PASS",
+      "detail": {
+        "pausedFrames": 98
+      }
+    },
+    {
+      "name": "pagehide cancels global loop, persisted pageshow resumes without duplicate canvas",
+      "status": "PASS",
+      "detail": {
+        "syntheticLifecycleEvents": true
+      }
+    },
+    {
+      "name": "dispose releases canvas/listeners and cannot restart scheduler",
+      "status": "PASS",
+      "detail": {
+        "frames": 114,
+        "pending": false,
+        "paused": false,
+        "visible": 3,
+        "canvasCount": 0,
+        "particles": 116,
+        "poolSize": 116,
+        "poolSignature": "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115",
+        "fpsLimit": 24,
+        "disposed": true,
+        "cameraY": 365.88077829208794,
+        "depthRates": {
+          "far": 0.065,
+          "mid": 0.12,
+          "ash": 0.025
+        },
+        "size": {
+          "width": 1000,
+          "height": 625
+        },
+        "coordinateSpace": "global-camera",
+        "sections": [
+          {
+            "id": "start",
+            "visible": true
+          },
+          {
+            "id": "hero-machine",
+            "visible": true
+          },
+          {
+            "id": "rdzen",
+            "visible": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "no JavaScript or WebGL shader errors",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "PASS": 10,
+  "FAIL": 0
+}

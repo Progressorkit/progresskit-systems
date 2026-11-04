@@ -1,0 +1,508 @@
+[
+  {
+    "variant": "current",
+    "median": 16.700000000000728,
+    "p95": 33.29999999999927,
+    "frames": 548,
+    "scene": {
+      "revision": "187",
+      "frames": 1068,
+      "quality": 0,
+      "fps": 60.00393468424168,
+      "cpuFrameMs": 3.900000000372529,
+      "gpuFrameMs": 4.165832,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 37,
+      "triangles": 1608,
+      "geometries": 100,
+      "textures": 28,
+      "rafPending": true,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 72,
+      "coronaRoots": 48,
+      "dpr": 1,
+      "transmissionResolutionScale": 0.65,
+      "buffer": {
+        "width": 1304,
+        "height": 790
+      },
+      "samples": [
+        {
+          "t": 5705.7,
+          "fps": 54.20054200542006,
+          "cpuFrameMs": 1.299999998882413,
+          "gpuFrameMs": 2.031832,
+          "drawCalls": 13,
+          "triangles": 1044,
+          "dpr": 1
+        },
+        {
+          "t": 6722.3,
+          "fps": 54.10190832185715,
+          "cpuFrameMs": 2.700000001117587,
+          "gpuFrameMs": 2.740832,
+          "drawCalls": 19,
+          "triangles": 1316,
+          "dpr": 1
+        },
+        {
+          "t": 7722.3,
+          "fps": 51,
+          "cpuFrameMs": 1.400000000372529,
+          "gpuFrameMs": 3.479333,
+          "drawCalls": 33,
+          "triangles": 1788,
+          "dpr": 1
+        },
+        {
+          "t": 8738.9,
+          "fps": 58.03659256344682,
+          "cpuFrameMs": 2.700000001117587,
+          "gpuFrameMs": 3.970666,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 9738.9,
+          "fps": 59,
+          "cpuFrameMs": 3.800000000745058,
+          "gpuFrameMs": 4.531749,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 10755.5,
+          "fps": 60.00393468424157,
+          "cpuFrameMs": 3,
+          "gpuFrameMs": 7.125833,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 11755.5,
+          "fps": 60,
+          "cpuFrameMs": 2.899999998509884,
+          "gpuFrameMs": 5.418582,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 12772.1,
+          "fps": 60.00393468424157,
+          "cpuFrameMs": 3.300000000745058,
+          "gpuFrameMs": 4.99275,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 13788.7,
+          "fps": 54.10190832185715,
+          "cpuFrameMs": 3.199999999254942,
+          "gpuFrameMs": 4.62575,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 14788.7,
+          "fps": 54,
+          "cpuFrameMs": 5.699999999254942,
+          "gpuFrameMs": 4.596748,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 15788.7,
+          "fps": 49,
+          "cpuFrameMs": 2.800000000745058,
+          "gpuFrameMs": 6.606749,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 16805.3,
+          "fps": 53.118237261459846,
+          "cpuFrameMs": 3,
+          "gpuFrameMs": 9.981333,
+          "drawCalls": 38,
+          "triangles": 1808,
+          "dpr": 1
+        },
+        {
+          "t": 17838.6,
+          "fps": 49.356430852608185,
+          "cpuFrameMs": 2.700000001117587,
+          "gpuFrameMs": 6.529666,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 18855.2,
+          "fps": 51.15089514066485,
+          "cpuFrameMs": 3.099999999627471,
+          "gpuFrameMs": 5.118332,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 19871.8,
+          "fps": 52.13456620106244,
+          "cpuFrameMs": 3.700000001117587,
+          "gpuFrameMs": 4.310833,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 20871.8,
+          "fps": 60,
+          "cpuFrameMs": 2.799999998882413,
+          "gpuFrameMs": 3.470833,
+          "drawCalls": 38,
+          "triangles": 1808,
+          "dpr": 1
+        },
+        {
+          "t": 21888.4,
+          "fps": 58.03659256344666,
+          "cpuFrameMs": 1.800000000745058,
+          "gpuFrameMs": 4.516499,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 22905,
+          "fps": 60.00393468424168,
+          "cpuFrameMs": 2.300000000745058,
+          "gpuFrameMs": 3.681332,
+          "drawCalls": 38,
+          "triangles": 1808,
+          "dpr": 1
+        }
+      ],
+      "phases": [
+        {
+          "id": "glikemia-premium",
+          "phase": "ready",
+          "cut": 0,
+          "facets": 8,
+          "thickness": 0.5599999999999999,
+          "z": -0.08
+        },
+        {
+          "id": "progresskit-mail",
+          "phase": "ready",
+          "cut": 1,
+          "facets": 6,
+          "thickness": 0.6499999999999999,
+          "z": 0.8521315152209004
+        },
+        {
+          "id": "progresskit-translator",
+          "phase": "ready",
+          "cut": 2,
+          "facets": 10,
+          "thickness": 0.7399999999999999,
+          "z": -1.3221137545418307
+        },
+        {
+          "id": "vaeloria",
+          "phase": "ready",
+          "cut": 3,
+          "facets": 8,
+          "thickness": 0.83,
+          "z": 0.6430497054852493
+        },
+        {
+          "id": "progresskit-community",
+          "phase": "ready",
+          "cut": 4,
+          "facets": 7,
+          "thickness": 0.5599999999999999,
+          "z": 0.19861239262530955
+        },
+        {
+          "id": "progresskit-tax",
+          "phase": "ready",
+          "cut": 5,
+          "facets": 8,
+          "thickness": 0.6499999999999999,
+          "z": -1.1743152183605357
+        }
+      ],
+      "camera": "PerspectiveCamera",
+      "depth": true,
+      "corePresentation": "logo"
+    },
+    "cpu": {
+      "TaskDuration": 5.2231380000000005,
+      "ScriptDuration": 2.265676,
+      "LayoutDuration": 0.050904,
+      "RecalcStyleDuration": 0.97518
+    }
+  },
+  {
+    "variant": "previous-atmosphere",
+    "median": 16.69999999999891,
+    "p95": 16.799999999999272,
+    "frames": 594,
+    "scene": {
+      "revision": "187",
+      "frames": 1117,
+      "quality": 0,
+      "fps": 60.00393468424146,
+      "cpuFrameMs": 2.400000000372529,
+      "gpuFrameMs": 5.099665,
+      "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+      "drawCalls": 37,
+      "triangles": 1608,
+      "geometries": 100,
+      "textures": 28,
+      "rafPending": true,
+      "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+      "vendor": "Google Inc. (Intel)",
+      "filaments": 72,
+      "coronaRoots": 48,
+      "dpr": 1,
+      "transmissionResolutionScale": 0.65,
+      "buffer": {
+        "width": 1304,
+        "height": 790
+      },
+      "samples": [
+        {
+          "t": 5299.6,
+          "fps": 53.22237275014513,
+          "cpuFrameMs": 1.400000000372529,
+          "gpuFrameMs": 3.121499,
+          "drawCalls": 13,
+          "triangles": 1044,
+          "dpr": 1
+        },
+        {
+          "t": 6316.2,
+          "fps": 53.1182372614598,
+          "cpuFrameMs": 23.90000000037253,
+          "gpuFrameMs": 2.338416,
+          "drawCalls": 19,
+          "triangles": 1316,
+          "dpr": 1
+        },
+        {
+          "t": 7332.8,
+          "fps": 49.18355301987014,
+          "cpuFrameMs": 1.6000000014901161,
+          "gpuFrameMs": 3.438749,
+          "drawCalls": 32,
+          "triangles": 1588,
+          "dpr": 1
+        },
+        {
+          "t": 8349.4,
+          "fps": 59.020263623844215,
+          "cpuFrameMs": 2.400000000372529,
+          "gpuFrameMs": 5.240498,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 9349.4,
+          "fps": 60,
+          "cpuFrameMs": 3.5,
+          "gpuFrameMs": 3.475416,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 10349.4,
+          "fps": 60,
+          "cpuFrameMs": 3.5,
+          "gpuFrameMs": 3.664083,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 11366,
+          "fps": 60.00393468424157,
+          "cpuFrameMs": 2.900000000372529,
+          "gpuFrameMs": 6.163832,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 12382.6,
+          "fps": 59.020263623844166,
+          "cpuFrameMs": 2.799999998882413,
+          "gpuFrameMs": 4.503499,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 13382.6,
+          "fps": 60,
+          "cpuFrameMs": 4.5,
+          "gpuFrameMs": 3.741415,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 14399.2,
+          "fps": 57.05292150304936,
+          "cpuFrameMs": 3.200000001117587,
+          "gpuFrameMs": 4.149999,
+          "drawCalls": 38,
+          "triangles": 1808,
+          "dpr": 1
+        },
+        {
+          "t": 15399.2,
+          "fps": 60,
+          "cpuFrameMs": 2.300000000745058,
+          "gpuFrameMs": 3.608166,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 16415.8,
+          "fps": 60.00393468424168,
+          "cpuFrameMs": 1.900000000372529,
+          "gpuFrameMs": 3.553333,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 17415.8,
+          "fps": 60,
+          "cpuFrameMs": 2.599999999627471,
+          "gpuFrameMs": 3.483833,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 18415.8,
+          "fps": 60,
+          "cpuFrameMs": 4,
+          "gpuFrameMs": 4.148582,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 19432.4,
+          "fps": 59.02026362384406,
+          "cpuFrameMs": 3.699999999254942,
+          "gpuFrameMs": 3.540916,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 20449,
+          "fps": 57.05292150304946,
+          "cpuFrameMs": 2.199999999254942,
+          "gpuFrameMs": 4.605249,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 21465.6,
+          "fps": 60.00393468424168,
+          "cpuFrameMs": 2.199999999254942,
+          "gpuFrameMs": 3.487832,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        },
+        {
+          "t": 22482.2,
+          "fps": 60.00393468424146,
+          "cpuFrameMs": 3.299999998882413,
+          "gpuFrameMs": 3.406833,
+          "drawCalls": 37,
+          "triangles": 1608,
+          "dpr": 1
+        }
+      ],
+      "phases": [
+        {
+          "id": "glikemia-premium",
+          "phase": "ready",
+          "cut": 0,
+          "facets": 8,
+          "thickness": 0.5599999999999999,
+          "z": -0.08
+        },
+        {
+          "id": "progresskit-mail",
+          "phase": "ready",
+          "cut": 1,
+          "facets": 6,
+          "thickness": 0.6499999999999999,
+          "z": 0.8521315152209004
+        },
+        {
+          "id": "progresskit-translator",
+          "phase": "ready",
+          "cut": 2,
+          "facets": 10,
+          "thickness": 0.7399999999999999,
+          "z": -1.3221137545418307
+        },
+        {
+          "id": "vaeloria",
+          "phase": "ready",
+          "cut": 3,
+          "facets": 8,
+          "thickness": 0.83,
+          "z": 0.6430497054852493
+        },
+        {
+          "id": "progresskit-community",
+          "phase": "ready",
+          "cut": 4,
+          "facets": 7,
+          "thickness": 0.5599999999999999,
+          "z": 0.19861239262530955
+        },
+        {
+          "id": "progresskit-tax",
+          "phase": "ready",
+          "cut": 5,
+          "facets": 8,
+          "thickness": 0.6499999999999999,
+          "z": -1.1743152183605357
+        }
+      ],
+      "camera": "PerspectiveCamera",
+      "depth": true,
+      "corePresentation": "logo"
+    },
+    "cpu": {
+      "TaskDuration": 4.915356999999999,
+      "ScriptDuration": 2.071228,
+      "LayoutDuration": 0.05059,
+      "RecalcStyleDuration": 0.907735
+    }
+  }
+]

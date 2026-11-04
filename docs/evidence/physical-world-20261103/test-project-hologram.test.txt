@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: only same-origin catalogue routes and local raster media become URLs
+ok 1 - only same-origin catalogue routes and local raster media become URLs
+  ---
+  duration_ms: 2.962739
+  type: 'test'
+  ...
+# Subtest: projection starts from the triggering module with bounded fallback coordinates
+ok 2 - projection starts from the triggering module with bounded fallback coordinates
+  ---
+  duration_ms: 3.163313
+  type: 'test'
+  ...
+# Subtest: normalization handles wrappers, duplicates and invalid media without invented stages
+ok 3 - normalization handles wrappers, duplicates and invalid media without invented stages
+  ---
+  duration_ms: 1.325318
+  type: 'test'
+  ...
+# Subtest: approved factual stages survive normalization and render unchanged as text
+ok 4 - approved factual stages survive normalization and render unchanged as text
+  ---
+  duration_ms: 1.441039
+  type: 'test'
+  ...
+# Subtest: unknown, case-altered and executable stages keep the unconfirmed fallback
+ok 5 - unknown, case-altered and executable stages keep the unconfirmed fallback
+  ---
+  duration_ms: 2.698909
+  type: 'test'
+  ...
+# Subtest: unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+ok 6 - unknown IDs never populate or open a dialog; safe real anchors remain a fallback
+  ---
+  duration_ms: 0.378764
+  type: 'test'
+  ...
+# Subtest: data is rendered as text, with a safe case-study CTA and neutral presentation without media
+ok 7 - data is rendered as text, with a safe case-study CTA and neutral presentation without media
+  ---
+  duration_ms: 0.422954
+  type: 'test'
+  ...
+# Subtest: native cancel handler prevents immediate close, reverses presentation and returns focus
+ok 8 - native cancel handler prevents immediate close, reverses presentation and returns focus
+  ---
+  duration_ms: 0.693779
+  type: 'test'
+  ...
+# Subtest: reopen invalidates a closing timer and stale close event, preserving the new project
+ok 9 - reopen invalidates a closing timer and stale close event, preserving the new project
+  ---
+  duration_ms: 0.739954
+  type: 'test'
+  ...
+# Subtest: reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+ok 10 - reduced motion closes immediately and restores focus to the showroom if its trigger disappeared
+  ---
+  duration_ms: 0.684974
+  type: 'test'
+  ...
+# Subtest: changing to reduced motion completes a pending close immediately
+ok 11 - changing to reduced motion completes a pending close immediately
+  ---
+  duration_ms: 1.522187
+  type: 'test'
+  ...
+# Subtest: backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+ok 12 - backdrop drag and inside-to-outside gestures do not dismiss; a short outside click does
+  ---
+  duration_ms: 0.456055
+  type: 'test'
+  ...
+# Subtest: missing native modal support uses normal catalogue navigation
+ok 13 - missing native modal support uses normal catalogue navigation
+  ---
+  duration_ms: 0.236497
+  type: 'test'
+  ...
+# Subtest: external close request targets the active project and destroy releases handlers
+ok 14 - external close request targets the active project and destroy releases handlers
+  ---
+  duration_ms: 0.388362
+  type: 'test'
+  ...
+# Subtest: an obsolete image error cannot hide the next project image
+ok 15 - an obsolete image error cannot hide the next project image
+  ---
+  duration_ms: 0.393886
+  type: 'test'
+  ...
+# Subtest: a close listener may open another project without focus returning behind the modal
+ok 16 - a close listener may open another project without focus returning behind the modal
+  ---
+  duration_ms: 0.320171
+  type: 'test'
+  ...
+# Subtest: reopening and switching projects reset the shared scroller before focus enters the presentation
+ok 17 - reopening and switching projects reset the shared scroller before focus enters the presentation
+  ---
+  duration_ms: 0.378021
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 38.365003

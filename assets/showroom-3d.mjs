@@ -18,7 +18,6 @@ if (root && canvas) {
     lost = false,
     inView = false,
     pointerDown = null,
-    ignoreFocus = false,
     hum = null,
     wanted = false,
     suspendTimer = 0,
@@ -58,7 +57,8 @@ if (root && canvas) {
   function sync() {
     engine?.state({
       running: allowed() && !forced.matches,
-      reduced: reduce.matches,
+      reduced: reduce.matches || root.classList.contains("is-energy-paused") ||
+        document.documentElement.dataset.interfaceMotion === "paused",
     });
     root.dataset.sceneMotion =
       allowed() && !reduce.matches ? "running" : "paused";
@@ -149,12 +149,6 @@ if (root && canvas) {
     engine?.activate();
     wake(true);
   });
-  scope.listen(toggle, "focus", () => {
-    if (!ignoreFocus) {
-      engine?.activate();
-      wake(true);
-    }
-  });
   scope.listen(viewport, "focusin", (event) => {
     const card = event.target.closest(".showroom-card");
     if (card) {
@@ -170,10 +164,8 @@ if (root && canvas) {
       !layout?.open
     ) {
       event.preventDefault();
-      ignoreFocus = true;
       toggle.focus({ preventScroll: true });
       wake(false);
-      ignoreFocus = false;
     }
   });
   scope.listen(canvas, "pointermove", (event) => {
@@ -186,10 +178,6 @@ if (root && canvas) {
     if (event.pointerType !== "touch") {
       const id = engine.hit(event.clientX, event.clientY);
       canvas.style.cursor = id ? "pointer" : "default";
-      if (id === "core" && !awake) {
-        engine.activate();
-        wake(true);
-      }
       relation(id === "core" ? "" : id);
     }
   });
@@ -231,6 +219,7 @@ if (root && canvas) {
     const phases = f.phases.map((p) => `${p.id}:${p.phase}`).join(",");
     if (root.dataset.scenePhases !== phases) root.dataset.scenePhases = phases;
     if (f.core) {
+      toggle.style.setProperty("--core-size", `${f.core.width}px`);
       const x = Math.round(f.core.x * 2) / 2 + "px",
         y = Math.round(f.core.y * 2) / 2 + "px";
       if (toggle.style.left !== x) toggle.style.left = x;
@@ -363,7 +352,7 @@ if (root && canvas) {
       toggle.hidden = false;
       engine.resize();
       wake(
-        root.classList.contains("is-slice-open") ||
+        root.dataset.heroEntryRequested === "true" || root.classList.contains("is-slice-open") ||
           new URL(location.href).searchParams.has("projekt"),
       );
       sync();

@@ -449,35 +449,52 @@ def technology_section(projects):
     # Count each technology once per project, preserving the catalog filter values.
     counts = Counter(technology for project in projects for technology in set(project['technologies']))
     technologies = sorted(counts, key=str.casefold)
-    assigned = set()
-    groups = []
-    for identifier, label, members in TECHNOLOGY_GROUPS:
-        if assigned.intersection(members):
-            raise ValueError('Technology groups must not overlap.')
-        assigned.update(members)
-        selected = [technology for technology in technologies if technology in members]
-        if selected:
-            groups.append((identifier, label, selected))
-    # A newly cataloged technology remains visible until its group is reviewed.
-    unassigned = [technology for technology in technologies if technology not in assigned]
-    if unassigned:
-        groups.append(('other', 'Inne', unassigned))
+    patterns = (
+        ('security', 'Security', r'keystore|identity|biometric|JWT|OAuth|OpenSSL|CNG|DPAPI|Secret Service|ClamAV|EC P-256|SHA-256'),
+        ('mobile', 'Mobile', r'Android|Kotlin|Jetpack|WorkManager|Foreground|Firebase|SharedPreferences|LocalNotification|MAUI|Microcharts'),
+        ('data', 'Data / DB', r'SQL|Sqlite|SQLite|PostGIS|Prisma|Entity Framework|EFCore|Room|JSON|CSV'),
+        ('media', 'AI / Media', r'Whisper|whisper|llama|Qwen|Piper|Ollama|ONNX|ML Kit|Audio|WASAPI|Speech|TextToSpeech|FFmpeg'),
+        ('frontend', 'Frontend', r'HTML|CSS|React|Next\.js|Canvas|Three\.js|WebGL|SkiaSharp|Avalonia|WPF|Qt|Godot|GL Compatibility|Jinja2'),
+        ('backend', 'Backend', r'ASP\.NET|FastAPI|ASGI|Node\.js|SignalR|MailKit|MimeKit|SMTP|Eclipse|Domain/Application|^\.NET'),
+        ('infra', 'Infrastructure', r'Linux|Docker|Caddy|Aspia|GitHub Pages'),
+        ('tools', 'Tools / Delivery', r'^C#|^C\+\+|JavaScript|TypeScript|Python|Bash|PowerShell|GitHub Actions|NSIS|ADB|GDScript|xUnit|Testcontainers|Turborepo|pnpm|Pydantic'),
+    )
+    buckets = {key: [] for key, _, _ in patterns}
+    other = []
+    for technology in technologies:
+        category = next((key for key, _, pattern in patterns if re.search(pattern, technology, re.I)), None)
+        (buckets[category] if category else other).append(technology)
+    order = ['backend', 'frontend', 'mobile', 'data', 'infra', 'security', 'media', 'tools']
+    labels = {key: label for key, label, _ in patterns}
+    labels.update(frontend='Web', data='Data', tools='Delivery')
+    groups = [(key, labels[key], buckets[key]) for key in order if buckets[key]]
+    if other:
+        groups.append(('other', 'Inne', other))
     sections = []
     for identifier, label, members in groups:
+        icons = {
+            'backend': '<rect x="4" y="3" width="24" height="10" rx="2"/><rect x="4" y="19" width="24" height="10" rx="2"/><path d="M8 8h2m4 0h10M8 24h2m4 0h10M16 13v6"/>',
+            'frontend': '<path d="M11 7 3 16l8 9m10-18 8 9-8 9M19 3l-6 26"/>',
+            'mobile': '<rect x="8" y="2" width="16" height="28" rx="3"/><path d="M13 6h6m-5 20h4"/>',
+            'data': '<ellipse cx="16" cy="7" rx="12" ry="5"/><path d="M4 7v18c0 7 24 7 24 0V7M4 16c0 7 24 7 24 0"/>',
+            'infra': '<path d="M16 3v8M5 26v-8h22v8M16 18v8"/><rect x="11" y="2" width="10" height="9"/><path d="M2 26h6m5 0h6m5 0h6"/>',
+            'security': '<path d="m16 2 12 5v9c0 7-12 14-12 14S4 23 4 16V7Z"/><path d="m10 16 4 4 8-9"/>',
+            'media': '<circle cx="16" cy="16" r="11"/><path d="M16 1v5m0 20v5M1 16h5m20 0h5m-19-5 10 5-10 5Z"/>',
+            'tools': '<path d="m7 4 7 7-4 4-7-7c-3 8 4 13 10 10l12 12 5-5-12-12c3-6-2-13-11-9Z"/>',
+        }
+        icon = f'<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1">{icons.get(identifier, icons["tools"])}</svg>'
         chips = ''.join(
-            f'<a class="technology-chip" href="projekty/?technologia={quote(technology, safe="")}">{e(technology)} <span>{counts[technology]}</span></a>'
+            f'<a class="technology-chip" href="projekty/?technologia={quote(technology, safe="")}"><i class="technology-glyph" aria-hidden="true">{icon}</i><span class="technology-name">{e(technology)}</span><span class="technology-count">{counts[technology]}</span></a>'
             for technology in members
         )
-        sections.append(f'<section class="technology-group" aria-labelledby="technology-group-{identifier}"><h3 class="technology-group__title" id="technology-group-{identifier}">{e(label)}</h3><div class="technology-chips">{chips}</div></section>')
+        sample = ' · '.join(members[:3])
+        sections.append(f'<details class="technology-group" name="technology-category" data-technology-family="{identifier}"><summary><span class="technology-sigil" aria-hidden="true">{icon}</span><span class="technology-group__title" id="technology-group-{identifier}">{e(label)}</span><span class="technology-preview">{e(sample)}</span><span class="technology-discover">{len(members):02d} technologii <b aria-hidden="true">+</b></span></summary><div class="technology-chips">{chips}</div></details>')
     return '<section class="section technology-section" id="technologie"><div class="shell" data-reveal><span class="section-kicker">TECHNOLOGIE W PROJEKTACH</span><h2 class="section-title">Warsztat.</h2><p class="section-copy">Wybierz technologię, aby zobaczyć projekty, w których została wykorzystana.</p><div class="technology-groups">'+''.join(sections)+'</div><p class="catalog-link"><a href="projekty/#rozwoj">Sprawdź aktualny stan rozwoju produktów →</a></p></div></section>'
 
 
 def homepage(data):
     projects=data['projects']
-    brand=json.loads((ROOT/'catalog/brand.json').read_text())
-    art='present' if brand['heroBackground'] else 'missing'
-    scene=(ROOT/'templates/hero-scene.svg').read_text().replace('@@LANDSCAPE@@',e(brand['heroBackground'] or '')) if brand['heroBackground'] else ''
-    out=f'''<section id="start" class="hero hero--landscape hero--monument hero--world" data-hero-layout="world" data-hero-art="{art}">{scene}<div class="hero__insignia" aria-hidden="true"><img src="assets/brand/progressorkit-stamp.png" width="440" height="440" alt=""></div><div class="hero__stone-title"><p class="hero__discipline">Aplikacje · systemy · gry</p><h1 class="stone-word" aria-label="PROGRESSKIT SYSTEMS"><span class="stone-line" data-stone="PROGRESSKIT" aria-hidden="true">PROGRESSKIT</span> <span class="stone-line stone-line--systems" data-stone="SYSTEMS" aria-hidden="true">SYSTEMS</span></h1><p class="hero__motto">Technologia ma dawać kontrolę. Nie na odwrót.</p><div class="hero__actions hero__commercial-actions"><a class="cta cta--primary" href="#kontakt">Kontakt</a><a class="cta cta--ghost" href="#uslugi">Usługi</a><a class="cta cta--text" href="glikemia-premium/">Pobierz Glikemia Premium</a></div></div><a class="hero__explore" href="#projekty"><span>Poznaj ekosystem</span><span aria-hidden="true">↓</span></a><button class="hero__motion-toggle" data-hero-motion-toggle type="button" aria-pressed="false">Wstrzymaj ruch sceny</button></section>'''
+    out=(ROOT/'templates/hero-installation.html').read_text()
     spec=importlib.util.spec_from_file_location('showroom_markup',ROOT/'scripts/showroom_markup.py')
     showroom=importlib.util.module_from_spec(spec);spec.loader.exec_module(showroom)
     out+=showroom.render_showroom(projects)
@@ -500,7 +517,7 @@ def homepage(data):
     out+=about
     out+=delivery.render_case_studies()
     out+=technology_section(projects)
-    return out+contact+brief_section()
+    return out+'<div class="installation-console">'+contact+brief_section()+'</div>'
 
 
 def explorer_page(data):
@@ -542,12 +559,19 @@ def render(content, title, description, path, prefix):
         page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('continuity-process','continuity-chapters','technology-field'))
         page_styles+='\n  <link rel="stylesheet" href="assets/material-finish.css">'
         page_styles+='\n  <link rel="stylesheet" href="assets/brand-core-mark.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/hero-entry.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/installation.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/interactions.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/world-continuity.css">'
+        page_styles+='\n  <link rel="stylesheet" href="assets/journey-world.css">'
     page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
     if not path and not prefix:
         page_scripts+='\n  <script type="module" src="assets/showroom-3d.mjs"></script>\n  <script type="module" src="assets/spatial-chapters.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/luxury-world.mjs"></script>'
         page_scripts+='\n  <script type="module" src="assets/continuity-chapters.mjs"></script>\n  <script type="module" src="assets/technology-field.mjs"></script>'
         page_scripts+='\n  <script type="module" src="assets/brand-core-mark.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/hero-entry.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/installation.mjs"></script>'
+        page_scripts+='\n  <script type="module" src="assets/interactions.mjs"></script>'
     if not page_styles:
         template=template.replace('  @@PAGE_STYLES@@\n','')
     if not page_scripts:
@@ -558,7 +582,7 @@ def render(content, title, description, path, prefix):
     if '@@' in template:
         raise ValueError('Unfilled template slot.')
     if not path and not prefix:
-        template=template.replace('<body>','<body class="luxury-world">')
+        template=template.replace('<body>','<body class="luxury-world">\n  <div class="installation-world" aria-hidden="true"><div class="installation-world__architecture"></div><div class="installation-world__light"></div><canvas class="world-embers"></canvas></div>')
     return template
 
 

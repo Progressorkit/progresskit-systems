@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "name": "three proximity objects: CTA and Security also respond to distance",
+      "status": "PASS",
+      "detail": [
+        {
+          "frames": 10,
+          "pending": true,
+          "active": "contact",
+          "intensity": 0.9257381509428575,
+          "alive": 5,
+          "poolSize": 24,
+          "emitted": 5,
+          "arcs": 1,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        },
+        {
+          "frames": 29,
+          "pending": true,
+          "active": "security",
+          "intensity": 0.9257381509428575,
+          "alive": 5,
+          "poolSize": 24,
+          "emitted": 11,
+          "arcs": 2,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      ]
+    },
+    {
+      "name": "rare signal: repeated AI toggle within cooldown does not repeat glitch",
+      "status": "PASS",
+      "detail": {
+        "first": 1,
+        "repeated": 1,
+        "elapsedMs": 10
+      }
+    },
+    {
+      "name": "local brief still exports entered text without sending it",
+      "status": "PASS",
+      "detail": {
+        "filename": "progresskit-brief.txt",
+        "localExport": true
+      }
+    },
+    {
+      "name": "core flight interruption and re-entry remove all temporary objects",
+      "status": "PASS",
+      "detail": {
+        "reentry": true
+      }
+    },
+    {
+      "name": "touch proximity: finite burst, eight live particles maximum, then sleep",
+      "status": "PASS",
+      "detail": {
+        "burst": {
+          "frames": 4,
+          "pending": true,
+          "active": "security",
+          "intensity": 0.85,
+          "alive": 2,
+          "poolSize": 24,
+          "emitted": 2,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        },
+        "after": {
+          "frames": 19,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 6,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    }
+  ],
+  "PASS": 5,
+  "FAIL": 0
+}

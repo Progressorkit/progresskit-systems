@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+ok 1 - Circular indexes wrap in both directions for 14, 4, 3, 2 and 1 project
+  ---
+  duration_ms: 1.603905
+  type: 'test'
+  ...
+# Subtest: Every circular project has a unique signed offset and the selected one is centered
+ok 2 - Every circular project has a unique signed offset and the selected one is centered
+  ---
+  duration_ms: 0.619908
+  type: 'test'
+  ...
+# Subtest: Orbital positions remain distinct on the perspective projection for every real filter size
+ok 3 - Orbital positions remain distinct on the perspective projection for every real filter size
+  ---
+  duration_ms: 7.481681
+  type: 'test'
+  ...
+# Subtest: Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+ok 4 - Actual catalog filters wire only occupied nodes and preserve hologram open, close and rotation
+  ---
+  duration_ms: 87.895352
+  type: 'test'
+  ...
+# Subtest: Energy pause survives category changes and reduced motion cannot be overridden
+ok 5 - Energy pause survives category changes and reduced motion cannot be overridden
+  ---
+  duration_ms: 7.076773
+  type: 'test'
+  ...
+# Subtest: Fractional phases preserve a unique five-node window across both wrap directions
+ok 6 - Fractional phases preserve a unique five-node window across both wrap directions
+  ---
+  duration_ms: 3.663277
+  type: 'test'
+  ...
+# Subtest: Actual animation frames follow a curved trajectory and wire the same live positions
+ok 7 - Actual animation frames follow a curved trajectory and wire the same live positions
+  ---
+  duration_ms: 8.575805
+  type: 'test'
+  ...
+# Subtest: Interrupted rotation continues from its current phase without a snap or duplicated seam
+ok 8 - Interrupted rotation continues from its current phase without a snap or duplicated seam
+  ---
+  duration_ms: 15.937403
+  type: 'test'
+  ...
+# Subtest: Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+ok 9 - Filter, visibility and reduced-motion changes cancel geometry frames at a consistent final pose
+  ---
+  duration_ms: 8.349131
+  type: 'test'
+  ...
+# Subtest: Leaving the viewport cancels a pending neighbor projection and releases its motion work
+ok 10 - Leaving the viewport cancels a pending neighbor projection and releases its motion work
+  ---
+  duration_ms: 2.969777
+  type: 'test'
+  ...
+# Subtest: A delayed projection commits the final module pose before emitting even with dropped frames
+ok 11 - A delayed projection commits the final module pose before emitting even with dropped frames
+  ---
+  duration_ms: 3.577357
+  type: 'test'
+  ...
+# Subtest: Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+ok 12 - Horizontal drag shares the projected phase with cables and a canceled gesture returns on the arc
+  ---
+  duration_ms: 3.972251
+  type: 'test'
+  ...
+# Subtest: Rapid keyboard steps keep focus on a visible, interactive selected module
+ok 13 - Rapid keyboard steps keep focus on a visible, interactive selected module
+  ---
+  duration_ms: 3.69738
+  type: 'test'
+  ...
+# Subtest: Moving state spans the settle interval and repeated steps do not restore wires early
+ok 14 - Moving state spans the settle interval and repeated steps do not restore wires early
+  ---
+  duration_ms: 6.917001
+  type: 'test'
+  ...
+# Subtest: Ring neighbors center fully before opening, with immediate reduced-motion opening
+ok 15 - Ring neighbors center fully before opening, with immediate reduced-motion opening
+  ---
+  duration_ms: 7.942179
+  type: 'test'
+  ...
+# Subtest: Category filter is persistent data selection without clones or source mutation
+ok 16 - Category filter is persistent data selection without clones or source mutation
+  ---
+  duration_ms: 6.808776
+  type: 'test'
+  ...
+# Subtest: All and invalid-category recovery restore all 14 real identities
+ok 17 - All and invalid-category recovery restore all 14 real identities
+  ---
+  duration_ms: 0.233358
+  type: 'test'
+  ...
+# Subtest: A one-project category stays valid and missing selected identity falls back safely
+ok 18 - A one-project category stays valid and missing selected identity falls back safely
+  ---
+  duration_ms: 7.775812
+  type: 'test'
+  ...
+# Subtest: Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+ok 19 - Drag intent suppresses accidental click while leaving vertical gestures to scrolling
+  ---
+  duration_ms: 4.89367
+  type: 'test'
+  ...
+# Subtest: Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+ok 20 - Inertia is bounded and a deliberate horizontal movement cannot produce an unbounded spin
+  ---
+  duration_ms: 0.160698
+  type: 'test'
+  ...
+# Subtest: Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+ok 21 - Wheel ignores vertical and diagonal page scrolling, accepting only horizontal intent
+  ---
+  duration_ms: 6.245158
+  type: 'test'
+  ...
+# Subtest: Deep links roundtrip category/project without rewriting search, UTM or deployment path
+ok 22 - Deep links roundtrip category/project without rewriting search, UTM or deployment path
+  ---
+  duration_ms: 6.358403
+  type: 'test'
+  ...
+# Subtest: Six-slice wheel keeps six distinct usable modules and all real filter sizes
+ok 23 - Six-slice wheel keeps six distinct usable modules and all real filter sizes
+  ---
+  duration_ms: 5.766718
+  type: 'test'
+  ...
+# Subtest: A child losing implicit touch capture does not cancel the viewport swipe
+ok 24 - A child losing implicit touch capture does not cancel the viewport swipe
+  ---
+  duration_ms: 5.133912
+  type: 'test'
+  ...
+# Subtest: An expanded desktop drawer uses the reading stage and leaves vertical wheel scrolling to the page
+ok 25 - An expanded desktop drawer uses the reading stage and leaves vertical wheel scrolling to the page
+  ---
+  duration_ms: 4.67343
+  type: 'test'
+  ...
+# Subtest: Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+ok 26 - Closing a desktop module after page scrolling restores visible focus and navigation releases its flow reservation
+  ---
+  duration_ms: 6.722023
+  type: 'test'
+  ...
+# Subtest: Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+ok 27 - Breakpoint changes and browser Back keep one disclosure and return focus outside closed content
+  ---
+  duration_ms: 5.7703
+  type: 'test'
+  ...
+# Subtest: Hover preserves a closed rotor during and after rotation; explicit activation opens it
+ok 28 - Hover preserves a closed rotor during and after rotation; explicit activation opens it
+  ---
+  duration_ms: 9.644887
+  type: 'test'
+  ...
+# Subtest: Pointer exploration does not open a project or change the URL; clicking still opens it
+ok 29 - Pointer exploration does not open a project or change the URL; clicking still opens it
+  ---
+  duration_ms: 3.533228
+  type: 'test'
+  ...
+# Subtest: Circular sockets retain six unique readable faces for every actual collection size
+ok 30 - Circular sockets retain six unique readable faces for every actual collection size
+  ---
+  duration_ms: 1.309572
+  type: 'test'
+  ...
+# Subtest: Modules follow a continuous circular path with a six-face maximum through the rear handoff
+ok 31 - Modules follow a continuous circular path with a six-face maximum through the rear handoff
+  ---
+  duration_ms: 2.954055
+  type: 'test'
+  ...
+# Subtest: The shipped inline controller presents the first six projects around the hub and reaches all fourteen
+ok 32 - The shipped inline controller presents the first six projects around the hub and reaches all fourteen
+  ---
+  duration_ms: 13.069024
+  type: 'test'
+  ...
+# Subtest: Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately
+ok 33 - Selecting a visible neighbor rotates and settles before extrusion; reduced motion opens immediately
+  ---
+  duration_ms: 7.752258
+  type: 'test'
+  ...
+# Subtest: Rapid inline keyboard turns retain a reachable focus until the requested face arrives
+ok 34 - Rapid inline keyboard turns retain a reachable focus until the requested face arrives
+  ---
+  duration_ms: 6.212929
+  type: 'test'
+  ...
+# Subtest: Filtering a pending inline extrusion cancels it without leaking a hidden panel
+ok 35 - Filtering a pending inline extrusion cancels it without leaking a hidden panel
+  ---
+  duration_ms: 7.162409
+  type: 'test'
+  ...
+# Subtest: Inline analytics event follows successful opening once and excludes cancelled extrusion
+ok 36 - Inline analytics event follows successful opening once and excludes cancelled extrusion
+  ---
+  duration_ms: 5.469247
+  type: 'test'
+  ...
+# Subtest: Capsule sleep removes project interaction without deleting content or changing the URL
+ok 37 - Capsule sleep removes project interaction without deleting content or changing the URL
+  ---
+  duration_ms: 3.107386
+  type: 'test'
+  ...
+# Subtest: Navigation and category selection wake a sleeping capsule through existing controls
+ok 38 - Navigation and category selection wake a sleeping capsule through existing controls
+  ---
+  duration_ms: 4.524357
+  type: 'test'
+  ...
+# Subtest: An open product cannot be hidden by capsule sleep and explicit opening wakes it
+ok 39 - An open product cannot be hidden by capsule sleep and explicit opening wakes it
+  ---
+  duration_ms: 3.124767
+  type: 'test'
+  ...
+# Subtest: Power arrival precedes disclosure and the original content opens exactly once
+ok 40 - Power arrival precedes disclosure and the original content opens exactly once
+  ---
+  duration_ms: 3.674965
+  type: 'test'
+  ...
+# Subtest: Escape and navigation cancel pending power delivery without opening stale content
+ok 41 - Escape and navigation cancel pending power delivery without opening stale content
+  ---
+  duration_ms: 8.25176
+  type: 'test'
+  ...
+# Subtest: Power delivery cannot indefinitely hold content and reduced motion opens immediately
+ok 42 - Power delivery cannot indefinitely hold content and reduced motion opens immediately
+  ---
+  duration_ms: 6.757115
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 361.998496

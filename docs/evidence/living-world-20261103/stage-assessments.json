@@ -1,0 +1,23 @@
+{
+  "A": {
+    "visual": "Wklęsły grawer z maską głębokości, wewnętrznym cieniem i odbiciem krawędzi; trzy zapisane stany przycisku, ugięcie 2 px.",
+    "performance": "Lokalny statyczny filtr SVG i transformacje CSS; bez nowej pętli renderującej.",
+    "coherence": "Ten sam grafit, aluminium i burgund co w mechanizmie."
+  },
+  "B": {
+    "visual": "Drobne crimson sparks na krawędziach CTA, kuli i Security, krótki łuk do kursora; ambient za kulą pozostaje osobny.",
+    "performance": "Jedna pula 24 cząstek, maks. 8 aktywnych na mobile; pętla zatrzymuje się po oddaleniu.",
+    "coherence": "Reakcja przy powierzchni, bez błyskawic na całej stronie."
+  },
+  "C": {
+    "visual": "Scanlines i minimalne przesunięcie kanałów ograniczone do aktywowanego obiektu.",
+    "performance": "280 ms, usuwanie warstwy, przerwa co najmniej 1800 ms; reduced motion wyłącza efekt.",
+    "coherence": "Wybrane aktywacje rdzenia, projektu, AI i przewodnika; bez stałego HUD."
+  },
+  "D": {
+    "visual": "Mały metaliczny dron przy Security, PostgreSQL i Glikemii Premium; podpowiedź zajmuje miejsce w układzie.",
+    "performance": "CSS, jedna współdzielona plakietka, opóźniony hover; brak sieci, audio i modelu AI.",
+    "coherence": "Desktop hover/focus, mobile info/tap, zamknięcie, globalny wyłącznik i static reduced motion."
+  },
+  "ownerVisualApproval": "OPEN"
+}

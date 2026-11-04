@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "name": "eight category summaries; technology inventory hidden until activation",
+      "status": "PASS",
+      "detail": {
+        "labels": [
+          "BACKEND",
+          "WEB",
+          "MOBILE",
+          "DATA",
+          "INFRASTRUCTURE",
+          "SECURITY",
+          "AI / MEDIA",
+          "DELIVERY"
+        ],
+        "open": 0,
+        "glyphs": 110,
+        "exposed": 0
+      }
+    },
+    {
+      "name": "same bounded canvas and particle allocations, filled process side surfaces",
+      "status": "PASS",
+      "detail": {
+        "canvasCount": 6,
+        "pool": 24,
+        "sides": 12,
+        "wireframe": 0,
+        "solid": "url(\"http://127.0.0.1:8209/assets/world/process-crystal.webp\")",
+        "core": "url(\"http://127.0.0.1:8209/assets/world/optical-core.webp\")"
+      }
+    },
+    {
+      "name": "proximity grows with measured cursor distance; sparse far emission and near arcs",
+      "status": "PASS",
+      "detail": [
+        {
+          "intensity": 0.02590221156613711,
+          "emitted": 1,
+          "arcs": 0
+        },
+        {
+          "intensity": 0.4602651245048292,
+          "emitted": 3,
+          "arcs": 0
+        },
+        {
+          "intensity": 0.931826537643004,
+          "emitted": 13,
+          "arcs": 2
+        }
+      ]
+    },
+    {
+      "name": "activated inventory uses three icon columns; guide has no box frame",
+      "status": "PASS",
+      "detail": {
+        "columns": 3,
+        "border": "0px",
+        "shadow": "none",
+        "background": "none",
+        "projection": "polygon(0px 20%, 100% 0px, 100% 100%)"
+      }
+    },
+    {
+      "name": "project hover approaches the camera smoothly and shares proximity pool",
+      "status": "FAIL",
+      "error": "{\"interaction\":{\"frames\":118,\"pending\":true,\"active\":\"project\",\"intensity\":1,\"alive\":3,\"poolSize\":24,\"emitted\":29,\"arcs\":3,\"signalCount\":2,\"signalsActive\":0,\"guideContext\":\"glikemia\",\"guideDisabled\":false,\"guideContexts\":3,\"paused\":false,\"disposed\":false}}"
+    },
+    {
+      "name": "no runtime JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "PASS": 5,
+  "FAIL": 1
+}

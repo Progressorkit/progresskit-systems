@@ -1,0 +1,458 @@
+{
+  "date": "2026-11-03",
+  "browser": "local Chrome, Intel UHD 620",
+  "mobile": "390 × 844 touch/viewport emulation; physical device NOT_RUN",
+  "ownerVisualApproval": "OPEN",
+  "checks": [
+    {
+      "name": "mobile: foyer alive, engraved title, showroom dormant",
+      "status": "PASS",
+      "detail": {
+        "engraving": "url(\"#pk-cutout\")",
+        "machine": "machine-drift",
+        "overflow": false,
+        "awake": "false",
+        "groups": 8,
+        "links": 110,
+        "serviceWebGL": 0
+      }
+    },
+    {
+      "name": "mobile: large lower core has real pulse and ambient embers",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "scale": "1.01478",
+          "translate": "0px -3.93086px"
+        },
+        "after": {
+          "scale": "0.997772",
+          "translate": "0px 1.51293px"
+        },
+        "box": {
+          "x": 27.3046875,
+          "y": 293.8984375,
+          "width": 335.390625,
+          "height": 335.390625
+        },
+        "ambient": {
+          "frames": 67,
+          "pending": true,
+          "paused": false,
+          "visible": 2,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 67,
+              "visible": true
+            },
+            {
+              "id": "rdzen",
+              "frames": 38,
+              "visible": true
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "mobile: uninterrupted core flight and temporary signal",
+      "status": "PASS",
+      "detail": {
+        "box": {
+          "x": 30.224660873413086,
+          "y": 290.9239807128906,
+          "width": 329.5194492340088,
+          "height": 329.5194396972656
+        },
+        "signal": {
+          "frames": 1,
+          "pending": true,
+          "active": "core",
+          "intensity": 0.85,
+          "alive": 1,
+          "poolSize": 24,
+          "emitted": 1,
+          "arcs": 0,
+          "signalCount": 1,
+          "signalsActive": 1,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: crystals materialized, flight cleaned, no overflow",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 142,
+          "quality": 0,
+          "fps": 30,
+          "cpuFrameMs": 0.8999999985098839,
+          "gpuFrameMs": 6.10825,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 11,
+          "triangles": 3704,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": true,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [
+            {
+              "t": 8997.5,
+              "fps": 31,
+              "cpuFrameMs": 1.1000000014901161,
+              "gpuFrameMs": 4.494666,
+              "drawCalls": 7,
+              "triangles": 3480,
+              "dpr": 1
+            },
+            {
+              "t": 10030.7,
+              "fps": 30.003871467286082,
+              "cpuFrameMs": 1.299999998882413,
+              "gpuFrameMs": 2.029833,
+              "drawCalls": 8,
+              "triangles": 3590,
+              "dpr": 1
+            },
+            {
+              "t": 11030.7,
+              "fps": 30,
+              "cpuFrameMs": 3.099999999627471,
+              "gpuFrameMs": 3.5475,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 12030.7,
+              "fps": 30,
+              "cpuFrameMs": 0.8000000007450581,
+              "gpuFrameMs": 4.354,
+              "drawCalls": 12,
+              "triangles": 3904,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 91,
+          "pending": false,
+          "paused": false,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 79,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 62,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 20,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 6,
+          "arcs": 0,
+          "signalCount": 1,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: native project opening, URL and close preserved",
+      "status": "PASS",
+      "detail": {
+        "id": "glikemia-premium"
+      }
+    },
+    {
+      "name": "mobile: offscreen scene and proximity sleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 221,
+          "quality": 0,
+          "fps": 30.000967773153995,
+          "cpuFrameMs": 0.6999999992549419,
+          "gpuFrameMs": 5.924583,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 12,
+          "triangles": 3904,
+          "geometries": 80,
+          "textures": 27,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 720
+          },
+          "samples": [
+            {
+              "t": 8997.5,
+              "fps": 31,
+              "cpuFrameMs": 1.1000000014901161,
+              "gpuFrameMs": 4.494666,
+              "drawCalls": 7,
+              "triangles": 3480,
+              "dpr": 1
+            },
+            {
+              "t": 10030.7,
+              "fps": 30.003871467286082,
+              "cpuFrameMs": 1.299999998882413,
+              "gpuFrameMs": 2.029833,
+              "drawCalls": 8,
+              "triangles": 3590,
+              "dpr": 1
+            },
+            {
+              "t": 11030.7,
+              "fps": 30,
+              "cpuFrameMs": 3.099999999627471,
+              "gpuFrameMs": 3.5475,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 12030.7,
+              "fps": 30,
+              "cpuFrameMs": 0.8000000007450581,
+              "gpuFrameMs": 4.354,
+              "drawCalls": 12,
+              "triangles": 3904,
+              "dpr": 1
+            },
+            {
+              "t": 13064,
+              "fps": 30.000967773153995,
+              "cpuFrameMs": 0.8999999985098839,
+              "gpuFrameMs": 6.966916,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            },
+            {
+              "t": 14097.3,
+              "fps": 30.000967773153995,
+              "cpuFrameMs": 1,
+              "gpuFrameMs": 2.300416,
+              "drawCalls": 11,
+              "triangles": 3704,
+              "dpr": 1
+            }
+          ],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 330,
+          "pending": true,
+          "paused": false,
+          "visible": 1,
+          "canvasCount": 6,
+          "particles": 45,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 79,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 62,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 98,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 122,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 78,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 41,
+              "visible": true
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 39,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 12,
+          "arcs": 0,
+          "signalCount": 6,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "mobile: no page overflow after all interactions",
+      "status": "PASS",
+      "detail": {
+        "width": 390
+      }
+    },
+    {
+      "name": "no browser errors, missing resources or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [
+    "mobile-01-hero.png",
+    "mobile-02-core.png",
+    "mobile-03-core-pulse.png",
+    "mobile-04-transition.png",
+    "mobile-05-showroom.png",
+    "mobile-06-guide-project.png",
+    "mobile-07-project-open.png",
+    "mobile-uslugi.png",
+    "mobile-proces.png",
+    "mobile-guide-security.png",
+    "mobile-ekosystem.png",
+    "mobile-wyzwania.png",
+    "mobile-o-mnie.png",
+    "mobile-technologie.png",
+    "mobile-proximity.png",
+    "mobile-guide-postgres.png",
+    "mobile-kontakt.png",
+    "mobile-brief.png",
+    "mobile-footer.png"
+  ],
+  "videos": [
+    "mobile.webm"
+  ],
+  "version": "155.0.8059.39",
+  "PASS": 8,
+  "FAIL": 0
+}

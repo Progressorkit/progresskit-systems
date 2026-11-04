@@ -176,7 +176,7 @@ class SiteV5Tests(unittest.TestCase):
         self.assertCountEqual(expected.keys(), technologies)
         self.assertEqual(len(expected), len(set(technologies)))
         for technology, count in expected.items():
-            self.assertIn(f'>{escape(technology)} <span>{count}</span></a>', markup)
+            self.assertIn(f'<span class="technology-name">{escape(technology)}</span><span class="technology-count">{count}</span></a>', markup)
 
     def test_unknown_technologies_remain_filterable_and_escape_public_markup(self):
         technology = 'Future <tool> & C#'
@@ -186,7 +186,7 @@ class SiteV5Tests(unittest.TestCase):
         self.assertEqual(1, len(links))
         self.assertEqual([technology], parse_qs(urlsplit(links[0]).query)['technologia'])
         self.assertIn('Inne', ''.join(page.text))
-        self.assertIn('Future &lt;tool&gt; &amp; C# <span>1</span>', markup)
+        self.assertIn('<span class="technology-name">Future &lt;tool&gt; &amp; C#</span><span class="technology-count">1</span>', markup)
         self.assertFalse(any(tag == 'tool' for tag, attrs in page.elements))
 
     def test_unique_ids_and_one_primary_heading_per_page(self):

@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "name": "three proximity objects: CTA and Security also respond to distance",
+      "status": "PASS",
+      "detail": [
+        {
+          "frames": 6,
+          "pending": true,
+          "active": "contact",
+          "intensity": 0.8579093267216246,
+          "alive": 5,
+          "poolSize": 24,
+          "emitted": 5,
+          "arcs": 1,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        },
+        {
+          "frames": 24,
+          "pending": true,
+          "active": "security",
+          "intensity": 0.8579093267216246,
+          "alive": 4,
+          "poolSize": 24,
+          "emitted": 10,
+          "arcs": 2,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": false,
+          "disposed": false
+        }
+      ]
+    },
+    {
+      "name": "rare signal: repeated AI toggle within cooldown does not repeat glitch",
+      "status": "FAIL",
+      "error": "Expected values to be strictly equal:\n\n2 !== 1\n"
+    },
+    {
+      "name": "local brief still exports entered text without sending it",
+      "status": "FAIL",
+      "error": "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================"
+    },
+    {
+      "name": "core flight interruption and re-entry remove all temporary objects",
+      "status": "PASS",
+      "detail": {
+        "reentry": true
+      }
+    },
+    {
+      "name": "touch proximity: finite burst, eight live particles maximum, then sleep",
+      "status": "FAIL",
+      "error": "The expression evaluated to a falsy value:\n\n  assert(burst.emitted>0&&burst.alive<=8)\n"
+    }
+  ],
+  "PASS": 2,
+  "FAIL": 3
+}

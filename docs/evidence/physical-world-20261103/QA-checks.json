@@ -1,0 +1,472 @@
+{
+  "date": "2026-11-03",
+  "ownerVisualApproval": "OPEN",
+  "mobile": "390x844 Chrome touch emulation; physical device NOT_RUN",
+  "pointer": "Recording-only marker follows actual pointer events; no product UI is simulated.",
+  "checks": [
+    {
+      "name": "responsive 320: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 320,
+        "viewport": 320,
+        "box": {
+          "x": 0,
+          "y": 1112.59375,
+          "width": 320,
+          "height": 320,
+          "top": 1112.59375,
+          "right": 320,
+          "bottom": 1432.59375,
+          "left": 0
+        }
+      }
+    },
+    {
+      "name": "responsive 768: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 768,
+        "viewport": 768,
+        "box": {
+          "x": 203.5234375,
+          "y": 1072.7109375,
+          "width": 360.953125,
+          "height": 360.953125,
+          "top": 1072.7109375,
+          "right": 564.4765625,
+          "bottom": 1433.6640625,
+          "left": 203.5234375
+        }
+      }
+    },
+    {
+      "name": "responsive 1366: no overflow, sphere inside viewport",
+      "status": "PASS",
+      "detail": {
+        "width": 1366,
+        "viewport": 1366,
+        "box": {
+          "x": 373,
+          "y": 1009.1875,
+          "width": 620,
+          "height": 620,
+          "top": 1009.1875,
+          "right": 993,
+          "bottom": 1629.1875,
+          "left": 373
+        }
+      }
+    },
+    {
+      "name": "reduce: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 0.8999999985098839,
+          "gpuFrameMs": 268.571239,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 14,
+          "triangles": 1316,
+          "geometries": 100,
+          "textures": 29,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 900
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 0,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 124,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "pause: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 12,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 8.400000000372529,
+          "gpuFrameMs": 3.690416,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 14,
+          "triangles": 1316,
+          "geometries": 100,
+          "textures": 29,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 900
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "ready"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 2,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 124,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 2,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "forced: keyboard activation, static materials, effects asleep",
+      "status": "PASS",
+      "detail": {
+        "entry": "showroom",
+        "awake": "true",
+        "flight": 0,
+        "width": 390,
+        "scene": {
+          "revision": "187",
+          "frames": 11,
+          "quality": 0,
+          "fps": 0,
+          "cpuFrameMs": 1.400000000372529,
+          "gpuFrameMs": 2.587666,
+          "gpuTiming": "EXT_disjoint_timer_query_webgl2",
+          "drawCalls": 10,
+          "triangles": 1248,
+          "geometries": 100,
+          "textures": 29,
+          "rafPending": false,
+          "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+          "vendor": "Google Inc. (Intel)",
+          "filaments": 30,
+          "coronaRoots": 16,
+          "dpr": 1,
+          "transmissionResolutionScale": 0.5,
+          "buffer": {
+            "width": 354,
+            "height": 900
+          },
+          "samples": [],
+          "phases": [
+            {
+              "id": "glikemia-premium",
+              "phase": "charge"
+            }
+          ],
+          "camera": "PerspectiveCamera",
+          "depth": true,
+          "corePresentation": "logo"
+        },
+        "ambient": {
+          "frames": 0,
+          "pending": false,
+          "paused": true,
+          "visible": 0,
+          "canvasCount": 6,
+          "particles": 124,
+          "fpsLimit": 18,
+          "disposed": false,
+          "sections": [
+            {
+              "id": "start",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "rdzen",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "uslugi",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "proces",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "ekosystem",
+              "frames": 0,
+              "visible": false
+            },
+            {
+              "id": "footer",
+              "frames": 0,
+              "visible": false
+            }
+          ]
+        },
+        "interactions": {
+          "frames": 0,
+          "pending": false,
+          "active": null,
+          "intensity": 0,
+          "alive": 0,
+          "poolSize": 24,
+          "emitted": 0,
+          "arcs": 0,
+          "signalCount": 0,
+          "signalsActive": 0,
+          "guideContext": "",
+          "guideDisabled": false,
+          "guideContexts": 3,
+          "paused": true,
+          "disposed": false
+        }
+      }
+    },
+    {
+      "name": "preserved live catalog and navigation; exact static section copy (ecosystem relocates selected details at runtime)",
+      "status": "PASS",
+      "detail": {
+        "nav": true,
+        "cards": true,
+        "payload": true,
+        "copy": [
+          {
+            "id": "uslugi",
+            "same": true
+          },
+          {
+            "id": "ekosystem",
+            "same": true
+          },
+          {
+            "id": "wyzwania",
+            "same": true
+          },
+          {
+            "id": "o-mnie",
+            "same": true
+          },
+          {
+            "id": "kontakt",
+            "same": true
+          },
+          {
+            "id": "brief",
+            "same": true
+          }
+        ],
+        "count": 19
+      }
+    },
+    {
+      "name": "contact and brief: one console, no nested frame",
+      "status": "PASS",
+      "detail": {
+        "background": "none",
+        "border": "0px",
+        "pseudo": "none"
+      }
+    },
+    {
+      "name": "guide: delayed hover, dismiss, global disable, re-enable, no duplicates",
+      "status": "PASS",
+      "detail": {
+        "cycles": 10,
+        "oneGuide": true
+      }
+    },
+    {
+      "name": "global pause also stops visible guide and proximity",
+      "status": "PASS",
+      "detail": {
+        "frames": 0,
+        "pending": false,
+        "active": null,
+        "intensity": 0,
+        "alive": 0,
+        "poolSize": 24,
+        "emitted": 0,
+        "arcs": 0,
+        "signalCount": 3,
+        "signalsActive": 0,
+        "guideContext": "security",
+        "guideDisabled": false,
+        "guideContexts": 3,
+        "paused": true,
+        "disposed": false
+      }
+    },
+    {
+      "name": "WebGL unavailable: native project entry remains usable",
+      "status": "PASS",
+      "detail": {
+        "fallback": true
+      }
+    },
+    {
+      "name": "JavaScript disabled: large logo and native links remain",
+      "status": "PASS",
+      "detail": {
+        "native": true
+      }
+    },
+    {
+      "name": "no browser errors, missing assets or external requests",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "external": [],
+  "screenshots": [],
+  "videos": [],
+  "timeline": [],
+  "version": "155.0.8059.39",
+  "PASS": 13,
+  "FAIL": 0
+}

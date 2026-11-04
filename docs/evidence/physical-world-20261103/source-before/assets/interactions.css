@@ -1,0 +1,87 @@
+/* A / Tactile cutout: an SVG depth mask lights the inside of the milled letter. */
+.optical-defs { position:absolute; pointer-events:none; overflow:hidden; }
+body.luxury-world #main .hero--installation .stone-line,
+body.luxury-world .core-relief { filter:url('#pk-cutout'); -webkit-text-stroke:0; text-shadow:none; }
+body.luxury-world #main :is(.cta,.showroom-controls button,.showroom-all,.guide-trigger),
+body.luxury-world .topbar .nav a[href$="#kontakt"] {
+  position:relative; transform:translate3d(0,0,0);
+  transition:transform .32s cubic-bezier(.22,1.4,.4,1),box-shadow .22s,border-color .22s,background .25s;
+  box-shadow:inset 0 1px #f2dce93b,inset 0 -2px #0009,0 4px 0 #030205,0 7px 16px #0007;
+}
+@media(hover:hover) {
+  body.luxury-world #main :is(.cta,.showroom-controls button,.showroom-all):hover,
+  body.luxury-world .topbar .nav a[href$="#kontakt"]:hover {
+    transform:translate3d(0,-1.5px,3px); border-color:#d2a5b373;
+    box-shadow:inset 0 1px #ffe6f566,inset 0 -2px #0009,0 5px 0 #030205,0 10px 18px #0009;
+  }
+}
+body.luxury-world #main :is(.cta,.showroom-controls button,.showroom-all):is(:active,.is-mechanically-pressed),
+body.luxury-world .topbar .nav a[href$="#kontakt"]:active {
+  transform:translate3d(0,2px,-2px) scale(.995); transition-duration:.07s;
+  box-shadow:inset 2px 4px 7px #000b,inset -1px -1px #d9b9ca29,0 1px 0 #030205;
+  border-color:#8e4d6280;
+}
+@media(prefers-reduced-motion:reduce) {
+  body.luxury-world #main :is(.cta,.showroom-controls button,.showroom-all) { transition:none; transform:none!important; }
+}
+@media(forced-colors:active) {
+  body.luxury-world #main .hero--installation .stone-line,body.luxury-world .core-relief { filter:none; }
+}
+/* B / Surface charge is separate from the ambient fire layer behind the core. */
+.material-sparks { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:36; contain:strict; }
+[data-proximity-object="security"]::after { content:""; position:absolute; inset:0; pointer-events:none; border:1px solid #ba304c; opacity:calc(var(--proximity,0)*.45); clip-path:polygon(0 0,32% 0,32% 1px,1px 1px,1px 40%,0 40%,0 0,100% 100%,69% 100%,69% calc(100% - 1px),calc(100% - 1px) calc(100% - 1px),calc(100% - 1px) 65%,100% 65%,100% 100%); }
+[data-proximity-object="core"] .core-shell__rim { opacity:calc(.65 + var(--proximity,0)*.35); }
+@media(min-width:701px) { body.luxury-world #main .hero--monument .hero__motion-toggle { right:auto; left:calc(6% + 190px); bottom:28px; } }
+@media(forced-colors:active),print { .material-sparks { display:none; } }
+/* C / Signal appears for 280ms on one object, then is removed from the DOM. */
+.signal-film { position:absolute; inset:0; overflow:hidden; pointer-events:none; border-radius:inherit; z-index:7; opacity:0; background:repeating-linear-gradient(0deg,transparent 0 3px,#dec8da18 3px 4px); animation:signal-acquire .28s steps(1,end) both; }
+.signal-film::before,.signal-film::after { content:""; position:absolute; inset:0; background:repeating-linear-gradient(98deg,#ac738011 0 1px,transparent 1px 13px); border-top:1px solid #c5798966; border-bottom:1px solid #a2b4bc44; clip-path:polygon(0 20%,100% 20%,100% 22%,0 22%,0 61%,100% 61%,100% 64%,0 64%); transform:translateX(2px); }
+.signal-film::after { transform:translateX(-2px); opacity:.5; background:linear-gradient(transparent 29%,#ccd8db44 30%,transparent 31%); }
+@keyframes signal-acquire { 0% { opacity:0; } 12% { opacity:.6; transform:translateX(1px); } 32% { opacity:.2; } 48% { opacity:.5; transform:translateX(-1px); } 64% { opacity:.14; transform:none; } 86%,100% { opacity:0; } }
+[data-signal-active] { isolation:isolate; }
+.hero-core-flight[data-signal-active] .core-shell__reflection { opacity:1; }
+@media(max-width:700px) { .signal-film { background:repeating-linear-gradient(0deg,transparent 0 5px,#dec8da0c 5px 6px); }.signal-film::before { opacity:.5; } }
+@media(prefers-reduced-motion:reduce),(forced-colors:active) { .signal-film { display:none; } }
+/* D / The guide occupies space in the chapter; it never covers its content. */
+.guide-dock:empty { display:none; }
+.guide-dock--security { max-width:480px; margin:34px 3% 0 auto; }
+.guide-dock--project { max-width:470px; margin:18px auto 0; }
+.project-guide-label { display:flex; align-items:center; justify-content:center; gap:12px; color:#ab9ca6; font:11px var(--mono); }
+.guide-trigger { display:inline-grid; place-items:center; flex-shrink:0; width:28px; height:28px; min-height:0; margin-left:9px; padding:0; border:1px solid #a8a8b04d; border-radius:50%; color:#dad7df; cursor:pointer; font:italic 12px Georgia,serif; background:linear-gradient(135deg,#3a3943,#111016 48%,#28212d); vertical-align:middle; }
+.guide-trigger:disabled { opacity:.3; cursor:default; }
+#main #proces .production-line h3 { white-space:nowrap; }
+#main .technology-guide-row { display:flex; align-items:center; gap:4px; }
+#main .technology-guide-row .technology-chip { flex:1; min-width:0; }
+#main .technology-guide-row .guide-trigger { margin:0; width:26px; height:26px; }
+.context-guide { position:relative; display:grid; grid-template-columns:66px minmax(0,1fr); align-items:start; gap:14px; width:100%; margin-top:18px; padding:23px 34px 22px 15px; border:1px solid #c6c9d42e; border-left-color:#9a485b6b; background:linear-gradient(120deg,#20212bba,#0a0a12ed 55%,#19101dc9); box-shadow:inset 0 1px #f1e7ff12,inset 0 -6px 12px #0005; border-radius:3px 15px 3px 15px; }
+.context-guide[hidden] { display:none!important; }
+.context-guide__eyebrow { display:block; font:7px/1.7 var(--mono); letter-spacing:.14em; color:#af8f9d; margin:0 0 8px; }
+.context-guide__title { display:block; color:#e5dfe7; font:500 15px/1.4 var(--sans); }
+#main .context-guide p { color:#bdb3c2; font:12px/1.7 var(--sans); margin:8px 0 12px; }
+.guide-close { position:absolute; top:5px; right:5px; width:28px; height:28px; border:0; color:#aea5b2; font:20px/1 var(--sans); background:none; cursor:pointer; }
+.guide-disable,.guide-global-toggle { border:0; padding:4px 0; background:none; color:#a48b9c; font:9px/1.6 var(--mono); text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+.guide-global-toggle { color:inherit; font:inherit; }
+.guide-drone { position:relative; display:block; width:66px; height:62px; perspective:180px; animation:guide-hover 5s ease-in-out infinite alternate; }
+.guide-drone__body { position:absolute; left:17px; top:17px; width:33px; height:28px; border-radius:35% 35% 24% 24%; background:repeating-linear-gradient(0deg,#fff1 0 1px,transparent 1px 3px),linear-gradient(125deg,#bcc2cd,#464852 30%,#18171e 58%,#817b88); box-shadow:inset 1px 1px #fff5,inset -2px -2px #000c,3px 6px 5px #000a; transform:rotateX(-9deg) rotateY(-12deg); }
+.guide-drone__eye { position:absolute; inset:8px 6px 10px; border-radius:4px; background:radial-gradient(ellipse at 60% 40%,#efc2b7 0 4%,#bd465d 8% 17%,#371520 32%,#090b12 65%); border:1px solid #0d0b11; box-shadow:0 1px #b5abb452,inset 0 2px 2px #000; }
+.guide-drone__fin { position:absolute; top:20px; width:22px; height:15px; border:2px solid #8c8995; border-right-color:#24212b; border-bottom-color:#39373f; border-radius:50%; transform:rotateX(55deg) rotateY(-12deg); box-shadow:0 3px 0 #111017; }
+.guide-drone__fin--left { left:0; }.guide-drone__fin--right { right:0; }
+.guide-drone__keel { position:absolute; top:43px; left:29px; width:11px; height:10px; background:linear-gradient(90deg,#777783,#15121b); clip-path:polygon(0 0,100% 0,70% 100%,40% 100%); }
+@keyframes guide-hover { from { transform:translateY(2px) rotate(-2deg); } to { transform:translateY(-2px) rotate(1deg); } }
+.guide-dock--technology .context-guide { display:block; padding:14px 13px; margin:8px 0 15px; }
+.guide-dock--technology .guide-drone { margin:0 auto 8px; }
+.guide-dock--technology .context-guide__eyebrow { font-size:6px; }
+.guide-dock--technology .context-guide__title { font-size:13px; }
+@media(max-width:700px) { .guide-trigger { min-width:34px; min-height:34px; } #main .technology-guide-row .guide-trigger { min-width:30px; min-height:34px; }.context-guide { grid-template-columns:50px minmax(0,1fr); padding:19px 29px 18px 10px; gap:8px; }.guide-drone { scale:.8; transform-origin:left top; }.guide-dock--technology .guide-drone { scale:1; }.guide-dock--security { margin:24px 0 0; }.guide-close { width:32px; height:32px; } }
+html[data-interface-motion="paused"] .guide-drone { animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce) { .guide-drone { animation:none; } }
+@media(forced-colors:active) { .guide-drone { display:none; }.context-guide { display:block; border:1px solid CanvasText; background:Canvas; }.guide-trigger,.guide-close { color:ButtonText; border:1px solid ButtonText; } }
+
+.context-guide[data-guide-visible="false"] .guide-drone { animation-play-state:paused; }
+/* Expanded instruments have room for their inventory and a contextual plaque. */
+#main #technologie .technology-group[open] { grid-column:span 2!important; margin-top:0!important; }
+#main #technologie .technology-group[open] summary { min-height:245px; }
+.guide-dock--technology .context-guide { display:grid; grid-template-columns:66px minmax(0,1fr); gap:12px; padding:18px 32px 18px 12px; }
+.guide-dock--technology .guide-drone { margin:0; }
+.guide-dock--technology .context-guide__eyebrow { font-size:7px; }
+#projekty .guide-dock--project { order:4; width:100%; }

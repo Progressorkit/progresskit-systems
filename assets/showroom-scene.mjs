@@ -4,7 +4,7 @@ import { frameLoop, qualityProfile } from "./showroom-lifecycle.mjs";
 export async function createShowroomScene(canvas, projects, onProject, options = {}) {
   const logoOnly = options.corePresentation === "logo";
   const gl = canvas.getContext("webgl2", {
-    alpha: false,
+    alpha: true,
     antialias: true,
     powerPreference: "low-power",
   });
@@ -12,20 +12,20 @@ export async function createShowroomScene(canvas, projects, onProject, options =
   const renderer = new THREE.WebGLRenderer({
     canvas,
     context: gl,
-    alpha: false,
+    alpha: true,
     antialias: true,
   });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.92;
+  renderer.toneMappingExposure = 1.04;
   const depthBuffer = gl.getContextAttributes().depth;
-  renderer.setClearColor(0x050505, 0);
+  renderer.setClearColor(0x000000, 0);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.info.autoReset = false;
   const scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(42, 1, 0.1, 50);
-  scene.background = new THREE.Color(0x050505);
+  scene.background = null;
   camera.position.set(0.25, 0.45, 11.8);
   camera.lookAt(0, 0, 0);
   const owned = new Set(),
@@ -168,7 +168,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       o.geometry?.dispose();
       o.material?.dispose();
     });
-    const key = new THREE.DirectionalLight(0xe6ecf3, 0.78);
+    const key = new THREE.DirectionalLight(0xe6ecf3, 1.05);
     key.position.set(-4.5, 5, 4);
     key.castShadow = true;
     key.shadow.mapSize.set(512, 512);
@@ -182,13 +182,13 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     key.shadow.normalBias = 0.025;
     key.shadow.bias = -0.0005;
     scene.add(key);
-    const fill = new THREE.HemisphereLight(0xaebdcb, 0x100607, 0.085);
+    const fill = new THREE.HemisphereLight(0xaebdcb, 0x100607, 0.16);
     scene.add(fill);
     const rim = new THREE.PointLight(0xb7cee0, 15, 15, 2);
     rim.position.set(3, 2, -1);
     scene.add(rim);
     const red = new THREE.PointLight(0xe82032, 6, 10, 2);
-    red.position.set(-0.2, 0, -0.6);
+    red.position.set(2.8, -0.4, -1.45);
     scene.add(red);
     scene.fog = new THREE.Fog(0x050505, 13, 24);
     const profilePoints = [
@@ -327,8 +327,31 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         envMap: env.texture,
       }),
     );
-    const glass = own(
+    // Three r187 clears its transmission target to premultiplied white / .5
+    // whenever the main canvas has alpha. Recover the actual covered colour
+    // and alpha before refraction; otherwise that fallback becomes milky glass.
+    // Opaque samples (a=1) stay unchanged. Empty samples (.5,.5,.5,.5) become
+    // transparent black and reveal the one CSS world, without a second plate.
+    function worldTransmission(material) {
+      material.onBeforeCompile = shader => {
+        const chunk = THREE.ShaderChunk.transmission_pars_fragment.replace(
+          'return textureBicubic( transmissionSamplerMap, fragCoord.xy, lod );',
+          `vec4 sampleColor = textureBicubic( transmissionSamplerMap, fragCoord.xy, lod );
+           sampleColor.rgb = max(vec3(0.0), sampleColor.rgb - vec3(1.0 - sampleColor.a));
+           sampleColor.a = clamp(2.0 * sampleColor.a - 1.0, 0.0, 1.0);
+           return sampleColor;`,
+        );
+        shader.fragmentShader = shader.fragmentShader.replace('#include <transmission_pars_fragment>', chunk);
+      };
+      material.customProgramCacheKey = () => 'pk-world-transmission-r187';
+      return material;
+    }
+    const glass = own(worldTransmission(
       new THREE.MeshPhysicalMaterial({
+        // Transmission outputs coverage alpha when it sees the CSS world.
+        // Match the canvas' premultiplied alpha, including specular RGB, so
+        // low-coverage facets cannot composite as opaque white rectangles.
+        premultipliedAlpha: true,
         color: 0xf2f7fa,
         metalness: 0,
         roughness: 0.012,
@@ -343,7 +366,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         envMap: env.texture,
         dispersion: 0,
       }),
-    );
+    ));
     const core = new THREE.Group();
     scene.add(core);
     core.position.set(0, 0.12, 0.85);
@@ -399,6 +422,14 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       lid.castShadow = true;
     }
     const loader = new THREE.TextureLoader();
+    // Architecture and atmosphere belong to the single DOM world behind this
+    // transparent canvas. Keeping a scene background here recreates a banner.
+    if (logoOnly) floor.visible = false;
+    const opticTexture = own(await loader.loadAsync(new URL('./world/optical-core.webp',import.meta.url).href));
+    opticTexture.colorSpace = THREE.SRGBColorSpace;
+    opticTexture.anisotropy = 4;
+    const facetTexture=own(await loader.loadAsync(new URL('./world/crystal-artefact.webp',import.meta.url).href));
+    facetTexture.colorSpace=THREE.SRGBColorSpace;facetTexture.anisotropy=4;
     const logoTexture = own(
       await loader.loadAsync(
         new URL("./brand/progressorkit-stamp.png", import.meta.url).href,
@@ -434,16 +465,39 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       }),
       core,
     );
+    if (logoOnly) logo.material.onBeforeCompile = shader => {
+      shader.fragmentShader = shader.fragmentShader.replace('#include <map_fragment>',
+        '#include <map_fragment>\n diffuseColor.rgb = mix(diffuseColor.rgb, vec3(dot(diffuseColor.rgb, vec3(.2126,.7152,.0722))), .85);');
+    };
+    const coreOrb = new THREE.Group();
+    core.add(coreOrb);
+    const coreFace = mesh(new THREE.PlaneGeometry(2.6,2.6),
+      new THREE.MeshBasicMaterial({map:opticTexture,transparent:true,alphaTest:.01,
+        depthWrite:false,toneMapped:false,side:THREE.DoubleSide}),coreOrb);
+    coreFace.position.z=.16;
+    coreFace.renderOrder=6;
+    coreFace.userData.id='core';
+    // A real extruded annulus remains behind the optical face when the camera
+    // shifts. The centre is an aperture, not a translucent spherical shell.
+    const collarShape=new THREE.Shape(),hole=new THREE.Path();
+    for(let i=0;i<=16;i++){const a=i*Math.PI*2/16,x=Math.cos(a)*1.16,y=Math.sin(a)*1.16;i?collarShape.lineTo(x,y):collarShape.moveTo(x,y);}
+    hole.absarc(0,0,.97,0,Math.PI*2,true);collarShape.holes.push(hole);
+    const collar=mesh(new THREE.ExtrudeGeometry(collarShape,{depth:.48,bevelEnabled:true,bevelSize:.045,bevelThickness:.045,bevelSegments:1,steps:1,curveSegments:32}),
+      worldTransmission(new THREE.MeshPhysicalMaterial({premultipliedAlpha:true,color:0x777077,roughness:.045,metalness:0,transmission:.97,thickness:.4,ior:1.62,attenuationColor:0x40363a,attenuationDistance:2,envMap:env.texture,envMapIntensity:1.85})),coreOrb);
+    collar.position.z=-.43;
     const logoVertices = logo.geometry.getAttribute("position");
     for (let i = 0; i < logoVertices.count; i++) {
       const x = logoVertices.getX(i),
         y = logoVertices.getY(i);
-      logoVertices.setZ(i, -0.045 * (x * x + y * y));
+      const edgeWarp = Math.max(0, Math.hypot(x,y) - .48);
+      logoVertices.setXY(i, x * (1 + edgeWarp * .055), y * (1 + edgeWarp * .025));
+      logoVertices.setZ(i, -0.07 * (x * x + y * y));
     }
     logo.geometry.computeVertexNormals();
     logo.position.set(0, 0.04, -0.03);
     logo.castShadow = true;
-    logo.renderOrder = 2;
+    logo.renderOrder = logoOnly ? 5 : 2;
+    if (logoOnly) logo.material.depthTest = false;
     logo.userData.id = "core";
     // Recessed interior baffle: logo and its shadow sit in front of this deep,
     // narrow chamber. There is no circular plate attached to the emblem.
@@ -545,8 +599,8 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         depthWrite: false,
         blending: THREE.AdditiveBlending,
         uniforms: energyMaterial.uniforms,
-        vertexShader: `uniform float uTime;varying float vLife;void main(){vec3 p=position;float s=dot(position,vec3(23.1,17.7,9.2));vLife=pow(.5+.5*sin(uTime*.7+s),8.);p.y+=sin(uTime*.2+s)*.035;vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;gl_PointSize=clamp(25./-mv.z,1.,3.);}`,
-        fragmentShader: `varying float vLife;void main(){float d=length(gl_PointCoord-.5);gl_FragColor=vec4(1.,.1,.12,exp(-d*d*24.)*vLife*.45);}`,
+        vertexShader: `uniform float uTime;varying float vLife;void main(){vec3 p=position;float s=dot(position,vec3(23.1,17.7,9.2));float phase=fract(uTime*(.045+fract(s)*.04)+fract(s));vLife=sin(phase*3.14159);p.y=-2.4+phase*4.8;p.x+=sin(uTime*.25+s)*.13;vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;gl_PointSize=clamp((22.+fract(s)*35.)/-mv.z,1.,5.);}`,
+        fragmentShader: `varying float vLife;void main(){float d=length(gl_PointCoord-.5);gl_FragColor=vec4(mix(vec3(1.,.12,.06),vec3(1.,.77,.56),exp(-d*d*65.)),exp(-d*d*22.)*vLife*.88);}`,
       }),
     );
     const dust = new THREE.Points(dustGeometry, dustMaterial);
@@ -872,110 +926,64 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     const corona = mesh(coronaGeometry, coronaMaterial, energy);
     corona.frustumCulled = false;
 
+    const cuts=[
+      [[-1.04,.08],[-.7,.67],[.72,.84],[1.09,.53],[1.1,-.4],[.72,-.83],[-.96,-.85],[-1.1,-.43]],
+      [[-1.14,.29],[-.63,.84],[.8,.75],[1.13,-.08],[.68,-.85],[-.94,-.72]],
+      [[-1.12,.27],[-.86,.67],[-.23,.88],[.76,.78],[1.12,.4],[1.16,-.25],[.81,-.72],[.16,-.88],[-.83,-.72],[-1.1,-.3]],
+      [[-1.07,.55],[-.45,.91],[.88,.65],[1.09,.2],[.95,-.66],[.31,-.88],[-.94,-.62],[-1.13,-.15]],
+      [[-1.12,.46],[-.65,.82],[.89,.76],[1.16,.35],[1,-.55],[.63,-.84],[-.98,-.78]],
+      [[-1.1,.14],[-.81,.72],[.42,.91],[1.05,.54],[1.12,-.31],[.59,-.86],[-.79,-.82],[-1.17,-.35]],
+    ];
+    const cutFor=index=>cuts[index%cuts.length].map(([x,y],i)=>[x*(1+Math.sin(index*1.7+i)*.025),y*(1+Math.cos(index*.9+i)*.035)]);
     function crystalGeometry(index) {
-      const count = 14 + (index % 3),
-        verts = [],
-        indices = [],
-        rings = [
-          [0.74, 0.31],
-          [0.98, 0.12],
-          [1, -0.035],
-          [0.55, -0.46],
-        ];
-      for (const [scale, z] of rings)
-        for (let i = 0; i < count; i++) {
-          const angle = (i / count) * Math.PI * 2 + Math.PI / 8,
-            // Precision-cut shoulders, rather than the uneven silhouette of rock.
-            variation = 1 + 0.022 * Math.sin(i * 3.7 + index);
-          verts.push(
-            Math.cos(angle) * scale * variation,
-            Math.sin(angle) * scale * 0.82 * variation,
-            z,
-          );
-        }
-      for (let layer = 0; layer < 3; layer++)
-        for (let i = 0; i < count; i++) {
-          const a = layer * count + i,
-            b = layer * count + ((i + 1) % count),
-            c = (layer + 1) * count + i,
-            d = (layer + 1) * count + ((i + 1) % count);
-          indices.push(a, c, b, b, c, d);
-        }
-      const center = verts.length / 3;
-      verts.push(0, 0, 0.328);
-      for (let i = 0; i < count; i++) indices.push(center, i, (i + 1) % count);
-      for (let i = 1; i < count - 1; i++)
-        indices.push(3 * count, 3 * count + i + 1, 3 * count + i);
-      const g = new THREE.BufferGeometry();
-      g.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
-      g.setIndex(indices);
-      const flat = g.toNonIndexed();
-      g.dispose();
-      flat.computeVertexNormals();
-      // The polished table is a continuous convex surface; only the cut shoulders
-      // keep flat normals. This prevents a fan of opaque-looking grey triangles.
-      const tablePositions = flat.getAttribute("position"),
-        tableNormals = flat.getAttribute("normal"),
-        normal = new THREE.Vector3();
-      for (let i = 0; i < tablePositions.count; i++)
-        if (tablePositions.getZ(i) >= 0.309 && tableNormals.getZ(i) > 0.9) {
-          normal
-            .set(
-              tablePositions.getX(i) * 0.04,
-              tablePositions.getY(i) * 0.06,
-              1,
-            )
-            .normalize();
-          tableNormals.setXYZ(i, normal.x, normal.y, normal.z);
-        }
-      return flat;
+      const cut=cutFor(index),thickness=.82+(index%4)*.16,
+        rings=[[.78,.39],[1,.16],[.98,-.3*thickness],[.72,-.64*thickness]],verts=[],indices=[],count=cut.length;
+      for(const [scale,z] of rings)for(const [x,y] of cut)verts.push(x*scale,y*scale,z);
+      for(let layer=0;layer<3;layer++)for(let i=0;i<count;i++){
+        const a=layer*count+i,b=layer*count+(i+1)%count,c=(layer+1)*count+i,d=(layer+1)*count+(i+1)%count;
+        indices.push(a,b,c,b,d,c);
+      }
+      for(let i=1;i<count-1;i++)indices.push(0,i+1,i);
+      for(let i=1;i<count-1;i++)indices.push(3*count,3*count+i,3*count+i+1);
+      const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setIndex(indices);
+      const flat=g.toNonIndexed();g.dispose();flat.computeVertexNormals();return flat;
+    }
+    function facetGeometry(index){
+      // Different physical silhouettes and bevel widths, sharing the existing
+      // polished optical texture. No rectangular sprite over the real solid.
+      const cut=cutFor(index),n=cut.length,verts=[],uv=[],indices=[];
+      for(const [scale,z] of [[1.08,0],[.77,.10]])for(let i=0;i<n;i++){
+        const [x,y]=cut[i];verts.push(x*scale,y*scale,z+Math.sin(i*2+index)*.018);
+        uv.push(.5+x*scale/2.65,.5+y*scale/1.96);
+      }
+      for(let i=0;i<n;i++){const j=(i+1)%n;indices.push(i,n+i,j,j,n+i,n+j);}
+      const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();return g;
     }
     function label(project) {
-      const c = document.createElement("canvas");
-      c.width = 768;
-      c.height = 512;
-      const ctx = c.getContext("2d");
-      ctx.clearRect(0, 0, 768, 512);
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillStyle = "#e5edf0";
-      ctx.shadowColor = "#000";
-      ctx.shadowBlur = 5;
-      ctx.font = "600 70px system-ui";
-      const words = project.title.split(" "),
-        lines = [""];
-      for (const word of words) {
-        const i = lines.length - 1;
-        if (ctx.measureText(lines[i] + word).width > 540)
-          lines.push(word + " ");
-        else lines[i] += word + " ";
-      }
-      lines.forEach((line, i) => ctx.fillText(line.trim(), 384, 140 + i * 76));
-      ctx.font = "38px ui-monospace,monospace";
-      ctx.fillStyle = "#b7c9d3";
-      ctx.fillText(project.stage, 384, 290 + (lines.length - 1) * 64);
-      ctx.font = "36px system-ui";
-      ctx.fillStyle = "#d4acb4";
-      ctx.fillText(project.action, 384, 365 + (lines.length - 1) * 60);
-      const texture = own(new THREE.CanvasTexture(c));
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.anisotropy = 4;
-      return texture;
+      const c=document.createElement('canvas');c.width=768;c.height=512;
+      const ctx=c.getContext('2d');ctx.textAlign='center';ctx.textBaseline='middle';ctx.shadowColor='#000';ctx.shadowBlur=5;
+      const wrap=(text,font,width)=>{ctx.font=font;const rows=[''];for(const word of text.split(' ')){const i=rows.length-1;if(rows[i]&&ctx.measureText(rows[i]+word).width>width)rows.push(word+' ');else rows[i]+=word+' ';}return rows;};
+      const titles=wrap(project.title,'600 76px system-ui',570),stage=wrap(project.stage,'44px system-ui',605),action=wrap(project.action,'600 44px system-ui',655);
+      const height=titles.length*76+stage.length*48+action.length*48+40;let y=(512-height)/2+38;
+      ctx.fillStyle='#eee9ed';ctx.font='600 76px system-ui';for(const row of titles){ctx.fillText(row.trim(),384,y);y+=76;}
+      y+=15;ctx.fillStyle='#d0c4ce';ctx.font='44px system-ui';for(const row of stage){ctx.fillText(row.trim(),384,y);y+=48;}
+      y+=20;ctx.fillStyle='#e1b9c5';ctx.font='600 44px system-ui';for(const row of action){ctx.fillText(row.trim(),384,y);y+=48;}
+      const texture=own(new THREE.CanvasTexture(c));texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return texture;
     }
     const crystals = projects.map((p, index) => {
       const group = new THREE.Group();
       scene.add(group);
-      const material = own(glass.clone());
-      material.color.set(0xc2ced8);
-      material.roughness = 0.009;
-      material.thickness = 0.54;
-      material.ior = 1.68;
-      material.attenuationColor.set(0x5d6977);
-      material.attenuationDistance = 2.7;
-      material.envMapIntensity = 2.45;
+      const material = own(worldTransmission(glass.clone()));
+      material.color.set(0xf4ecef);
+      material.roughness = 0.025;
+      material.thickness = 0.64;
+      material.ior = 1.52;
+      material.attenuationColor.setHSL(.94+(index%3)*.007,.055+(index%4)*.015,.62);
+      material.attenuationDistance = 5.5;
+      material.envMapIntensity = 1.8;
       material.dispersion = 0;
-      material.specularIntensity = 1.45;
-      material.clearcoat = 1;
+      material.specularIntensity = 1.0;
+      material.clearcoat = 0.65;
       material.clearcoatRoughness = 0.018;
       const body = mesh(crystalGeometry(index), material, group);
       const innerCoatMaterial = own(
@@ -1035,7 +1043,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
       group.add(edges);
       const content = mesh(
-        new THREE.PlaneGeometry(1.6, 1.06),
+        new THREE.PlaneGeometry(1.93, 1.29),
         new THREE.MeshBasicMaterial({
           map: label(p),
           alphaTest: 0.03,
@@ -1046,15 +1054,26 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         }),
         group,
       );
-      content.position.z = 0.18;
+      content.position.z = -.08;
+      content.position.y = index===0?.13:.025;
       material.depthWrite = false;
-      content.renderOrder = 2;
+      content.renderOrder = 3;
+      // The ground optical edge is a separate front surface, in front of the
+      // lettering. Its clear centre retains the actual refractive body behind it.
+      const facetMaterial=own(new THREE.MeshBasicMaterial({map:facetTexture,transparent:true,depthWrite:false,toneMapped:false,side:THREE.DoubleSide}));
+      facetMaterial.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
+        float edgeBand=smoothstep(.53,.82,max(abs(vMapUv.x-.5)*2.,abs(vMapUv.y-.5)*2.));
+        float facetLight=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));
+        diffuseColor.a*=max(.06,max(edgeBand,smoothstep(.025,.16,facetLight)*.92));`);};
+      const facets=mesh(facetGeometry(index),facetMaterial,group);
+      facets.position.z=.43;facets.renderOrder=4;
       return {
         id: p.id,
         index,
         group,
         body,
         content,
+        facets,
         edges,
         edgeMaterial,
         innerCoat,
@@ -1065,7 +1084,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         phase: "dormant",
       };
     });
-    const coreHit = logoOnly ? logo : shell;
+    const coreHit = logoOnly ? coreFace : shell;
     const pickable = [coreHit, ...crystals.map((c) => c.body)];
     function setLayout(detail) {
       awake = detail.awake;
@@ -1081,9 +1100,9 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           continue;
         }
         c.at.set(
-          compact ? 0 : item.point.x * 3.55,
-          compact ? -2.15 : -item.point.y * 2.9,
-          compact ? 0.6 : 0.2 + Math.sin(c.index * 2.3) * 0.45,
+          compact ? 0 : item.point.x * 4.85,
+          compact ? -2.08 : -item.point.y * 3.18,
+          compact ? .5 : -.08 + Math.sin(c.index * 2.3) * 1.25,
         );
         if (awake && c.start === -99)
           c.start = reduced
@@ -1136,6 +1155,8 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         x: ((projected.x + 1) * canvas.clientWidth) / 2,
         y: ((1 - projected.y) * canvas.clientHeight) / 2,
         z: projected.z,
+        width: id === "core" ? (logoOnly ? 2.6 : 1.85) * core.scale.x * canvas.clientHeight /
+          (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.distanceTo(core.position)) : undefined,
       };
     }
     function resize() {
@@ -1148,8 +1169,8 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
       renderer.transmissionResolutionScale = p.transmission;
       camera.aspect = canvas.clientWidth / Math.max(1, canvas.clientHeight);
-      camera.position.z = compact ? 9.9 : 11.8;
-      camera.fov = compact ? 47 : 42;
+      camera.position.z = compact ? 10.3 : 11.8;
+      camera.fov = compact ? 47 : 44;
       camera.updateProjectionMatrix();
       if (changed || metrics.filaments !== p.roots * 3) {
         filament.geometry.dispose();
@@ -1157,7 +1178,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         filament.geometry = filamentGeometry(p.roots);
         inner.visible = !compact;
         rim.visible = !compact;
-        floor.visible = true;
+        floor.visible = !logoOnly;
         glass.dispersion = 0;
         crystals.forEach((c) => {
           c.material.dispersion = 0;
@@ -1179,7 +1200,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       elapsed += dt;
       cursor.lerp(pointer, 1 - Math.exp(-dt * 3.5));
       const power = Math.max(0, 1 - (elapsed - activation) / 2);
-      const baseY = compact ? 1.0 : 0.12;
+      const baseY = compact ? 1.5 : 0.12;
       camera.position.x = cursor.x * 0.13;
       camera.position.y = 0.45 + cursor.y * 0.09;
       camera.lookAt(0, compact ? -0.3 : 0, 0);
@@ -1207,7 +1228,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       energy.rotation.y = reduced ? 0.15 : elapsed * 0.022;
       energyMaterial.uniforms.uTime.value = elapsed;
       energyMaterial.uniforms.uPower.value = power;
-      red.position.set(-0.55, baseY + 0.1, -1.45);
+      red.position.set(2.8, baseY - 0.4, -1.45);
       red.intensity = 2.8 + breath * 0.2 + power * 2 + (active ? 1.1 : 0);
       innerEnergy.visible = !compact;
       skin.visible = !compact;
@@ -1215,12 +1236,14 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       if (logoOnly) {
         // The original emblem now owns the showroom centre. The capsule is
         // presented in the header using a cached render of this same 3D model.
-        core.children.forEach(part => { part.visible = part === logo; });
+        core.children.forEach(part => { part.visible = part === logo || part === coreOrb; });
         core.position.set(0, baseY, 0.85);
-        core.rotation.set(0, 0, 0);
-        core.scale.setScalar(compact ? 1.45 : 1.7);
+        core.rotation.set(cursor.y*.025,cursor.x*.035,0);
+        core.scale.setScalar((compact ? 1.18 : 1.88) * (1 + breath * 0.025));
+        core.position.y += reduced ? 0 : Math.sin(elapsed * 0.65) * 0.018;
         logo.position.set(0, 0, 0);
-        energy.visible = false;
+        energy.visible = true;
+        energy.children.forEach(part => { part.visible = part === dust; });
       }
       if (reduced || dt === 0 || frames % 8 === 0)
         renderer.shadowMap.needsUpdate = true;
@@ -1258,28 +1281,36 @@ export async function createShowroomScene(canvas, projects, onProject, options =
                 : progress < 1
                   ? "transmitting"
                   : "ready";
-        c.group.visible = awake || c.shown;
+        c.group.visible = awake && c.shown;
         c.group.position.copy(c.at);
-        c.group.position.z += c.id === active ? 0.16 : active ? -0.15 : 0;
+        const arrival = reduced ? 1 : THREE.MathUtils.smoothstep(progress, 0, 0.88);
+        c.group.position.x *= 0.22 + 0.78 * arrival;
+        c.group.position.y = baseY + (c.at.y - baseY) * (0.22 + 0.78 * arrival);
+        c.group.position.z -= (1 - arrival) * 1.8;
+        c.focus = THREE.MathUtils.damp(c.focus || 0, c.id === active ? 1 : 0, 5, dt || 1);
+        c.recede = THREE.MathUtils.damp(c.recede || 0, active && c.id !== active ? 1 : 0, 5, dt || 1);
+        c.group.position.z += c.focus * .72 - c.recede * .24;
         c.group.rotation.set(
           0.12 + Math.sin(c.index) * 0.06,
-          -0.25 + Math.sin(c.index * 2) * 0.18 + cursor.x * 0.02,
-          Math.sin(c.index * 3) * 0.1,
+          -0.17 + Math.sin(c.index * 2) * 0.25 + cursor.x * 0.04 - c.focus * .065 + (reduced ? 0 : Math.sin(elapsed * .22 + c.index) * .035),
+          Math.sin(c.index * 3) * 0.1 + (1 - arrival) * (c.index % 2 ? 0.45 : -0.45),
         );
         c.group.position.y += reduced
           ? 0
-          : Math.sin(elapsed * 0.6 + c.index) * 0.025;
+          : Math.sin(elapsed * 0.46 + c.index) * (compact?.025:.055);
         const scale = awake
           ? 0.82 + 0.18 * THREE.MathUtils.smoothstep(progress, 0.15, 0.8)
           : 0.96;
-        c.group.scale.setScalar(scale * (compact ? 1.25 : 1.12));
+        c.group.scale.setScalar(scale * (compact ? 1.36 : 1.5));
         c.body.visible = awake && progress > 0.4;
-        c.innerCoat.visible = awake && progress > 0.7;
+        c.innerCoat.visible = false;
+        c.facets.visible = awake && progress > .5;
         const formed = THREE.MathUtils.smoothstep(progress, 0.38, 0.9);
-        c.body.scale.setScalar(Math.max(0.025, formed));
+        c.body.scale.setScalar(.78 * Math.max(0.025, formed));
         c.innerCoat.scale.setScalar(0.88 * Math.max(0.025, formed));
-        c.material.thickness = 0.06 + 0.48 * formed;
-        c.edges.visible = true;
+        c.facets.scale.setScalar(Math.max(.025,formed));
+        c.material.thickness = 0.08 + (0.48+(c.index%4)*.09) * formed;
+        c.edges.visible = progress < 1;
         c.edgeMaterial.uniforms.uReveal.value = awake
           ? Math.max(0.04, progress * 1.6)
           : 0.025;
@@ -1287,10 +1318,12 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         c.edgeMaterial.uniforms.uActive.value = c.id === active ? 1 : 0;
         c.edgeMaterial.uniforms.uEnergy.value.copy(c.group.position).negate();
         c.content.visible = progress >= 0.98;
-        c.material.transmission = 0.85 + 0.15 * formed;
-        c.material.roughness = 0.009 + (1 - progress) * 0.03;
-        c.material.emissive.setHex(c.id === active ? 0x0b0001 : 0x000000);
-        c.material.emissiveIntensity = c.id === active ? 0.22 : 0;
+        c.material.transmission = 0.88 + 0.1 * formed;
+        c.material.roughness = 0.025 + (1 - progress) * 0.08;
+        c.material.envMapIntensity = 1.8 + c.focus * .6 - c.recede * .15;
+        c.facets.material.color.setScalar(1.12 + c.focus * .25 - c.recede * .11);
+        c.material.emissive.setHex(c.id === active ? 0x44121a : 0x090609);
+        c.material.emissiveIntensity = .1 + c.focus * .08;
       }
       if (
         pendingQuery &&
@@ -1352,7 +1385,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           detail: {
             phases: crystals
               .filter((c) => c.shown)
-              .map((c) => ({ id: c.id, phase: c.phase })),
+              .map((c) => ({ id: c.id, phase: c.phase,cut:c.index%cuts.length,facets:cutFor(c.index).length,thickness:c.material.thickness,z:c.group.position.z })),
             core: location("core"),
             projects: crystals
               .filter((c) => c.shown)
@@ -1412,7 +1445,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           samples: samples.slice(),
           phases: crystals
             .filter((c) => c.shown)
-            .map((c) => ({ id: c.id, phase: c.phase })),
+            .map((c) => ({ id: c.id, phase: c.phase,cut:c.index%cuts.length,facets:cutFor(c.index).length,thickness:c.material.thickness,z:c.group.position.z })),
           camera: "PerspectiveCamera",
           depth: depthBuffer,
           corePresentation: logoOnly ? "logo" : "capsule",

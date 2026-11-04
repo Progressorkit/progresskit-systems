@@ -1,0 +1,22 @@
+[
+  {
+    "script": "browser-proof.cjs",
+    "exit": 0
+  },
+  {
+    "script": "interaction-checks.cjs",
+    "exit": 0
+  },
+  {
+    "script": "world-checks.cjs",
+    "exit": 0
+  },
+  {
+    "script": "controls-checks.cjs",
+    "exit": 1
+  },
+  {
+    "script": "performance.cjs",
+    "exit": 0
+  }
+]

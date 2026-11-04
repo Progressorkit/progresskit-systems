@@ -1,0 +1,14 @@
+PASS responsive 320: no overflow, sphere inside viewport
+PASS responsive 768: no overflow, sphere inside viewport
+PASS responsive 1366: no overflow, sphere inside viewport
+PASS reduce: keyboard activation, static materials, effects asleep
+PASS pause: keyboard activation, static materials, effects asleep
+PASS forced: keyboard activation, static materials, effects asleep
+PASS preserved live catalog and navigation; exact static section copy (ecosystem relocates selected details at runtime)
+PASS contact and brief: one console, no nested frame
+PASS guide: delayed hover, dismiss, global disable, re-enable, no duplicates
+PASS global pause also stops visible guide and proximity
+PASS WebGL unavailable: native project entry remains usable
+PASS JavaScript disabled: large logo and native links remain
+PASS no browser errors, missing assets or external requests
+{"PASS":13,"FAIL":0}
