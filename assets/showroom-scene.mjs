@@ -1,5 +1,5 @@
 import * as THREE from "./vendor/three/three.module.js";
-import { frameLoop, qualityProfile } from "./showroom-lifecycle.mjs";
+import { frameLoop, qualityProfile, coreAwakening } from "./showroom-lifecycle.mjs";
 
 export async function createShowroomScene(canvas, projects, onProject, options = {}) {
   const logoOnly = options.corePresentation === "logo";
@@ -53,7 +53,10 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       active = "",
       pointer = new THREE.Vector2(),
       cursor = new THREE.Vector2(),
-      lastItems = [];
+      lastItems = [],
+      scrollOffset = 0, rendering = false;
+    const awakening = coreAwakening();
+    let sequence = awakening.sample();
     let frames = 0,
       windowFrames = 0,
       windowStart = 0,
@@ -75,6 +78,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       geometries: 0,
       textures: 0,
       rafPending: false,
+      contextLosses: 0, contextRestores: 0, detailChanges: [], coreSegments: 3, links: 0,
     };
     const debug = gl.getExtension("WEBGL_debug_renderer_info");
     metrics.renderer = debug
@@ -83,7 +87,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     metrics.vendor = debug
       ? gl.getParameter(debug.UNMASKED_VENDOR_WEBGL)
       : gl.getParameter(gl.VENDOR);
-    const timerExt = gl.getExtension("EXT_disjoint_timer_query_webgl2");
+    let timerExt = gl.getExtension("EXT_disjoint_timer_query_webgl2");
     let gpuQuery = null,
       pendingQuery = null;
     if (timerExt) metrics.gpuTiming = "EXT_disjoint_timer_query_webgl2";
@@ -428,8 +432,8 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     const opticTexture = own(await loader.loadAsync(new URL('./world/optical-core.webp',import.meta.url).href));
     opticTexture.colorSpace = THREE.SRGBColorSpace;
     opticTexture.anisotropy = 4;
-    const facetTexture=own(await loader.loadAsync(new URL('./world/crystal-artefact.webp',import.meta.url).href));
-    facetTexture.colorSpace=THREE.SRGBColorSpace;facetTexture.anisotropy=4;
+
+
     const logoTexture = own(
       await loader.loadAsync(
         new URL("./brand/progressorkit-stamp.png", import.meta.url).href,
@@ -466,25 +470,72 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       core,
     );
     if (logoOnly) logo.material.onBeforeCompile = shader => {
+      Object.assign(shader.uniforms,coreUniforms);
+      shader.fragmentShader='uniform float uTime,uScan,uPulse,uOnline;\n'+shader.fragmentShader;
       shader.fragmentShader = shader.fragmentShader.replace('#include <map_fragment>',
-        '#include <map_fragment>\n diffuseColor.rgb = mix(diffuseColor.rgb, vec3(dot(diffuseColor.rgb, vec3(.2126,.7152,.0722))), .85);');
+        `#include <map_fragment>
+         diffuseColor.rgb=mix(diffuseColor.rgb,vec3(dot(diffuseColor.rgb,vec3(.2126,.7152,.0722))),.85);
+         diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.87,.97,1.08),uOnline*.3);
+         float scan=exp(-pow((vMapUv.y-uScan)*65.,2.))*uPulse;
+         diffuseColor.rgb+=vec3(.08,.1,.13)*scan*.3;`);
     };
     const coreOrb = new THREE.Group();
     core.add(coreOrb);
-    const coreFace = mesh(new THREE.PlaneGeometry(2.6,2.6),
-      new THREE.MeshBasicMaterial({map:opticTexture,transparent:true,alphaTest:.01,
-        depthWrite:false,toneMapped:false,side:THREE.DoubleSide}),coreOrb);
-    coreFace.position.z=.16;
-    coreFace.renderOrder=6;
+    const coreUniforms = { uTime:{value:0}, uScan: {value:0}, uPulse:{value:0}, uOnline:{value:0} };
+    const faceMaterial = own(new THREE.MeshBasicMaterial({map:opticTexture,transparent:true,alphaTest:.01,
+      depthWrite:false,toneMapped:false,side:THREE.DoubleSide}));
+    faceMaterial.onBeforeCompile = shader => {
+      Object.assign(shader.uniforms,coreUniforms);
+      shader.fragmentShader='uniform float uTime,uScan,uPulse,uOnline;\n'+shader.fragmentShader;
+      shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
+        float scan=exp(-pow((vMapUv.y-uScan)*55.,2.))*uPulse;
+        diffuseColor.rgb=mix(diffuseColor.rgb,vec3(dot(diffuseColor.rgb,vec3(.2126,.7152,.0722))),.45);
+        vec2 radial=vMapUv-.5;
+        float radius=length(radial),angle=atan(radial.y,radial.x);
+        float path=smoothstep(.014,.0,abs(radius-.38));
+        float signal=pow(max(0.,cos(angle-uTime*.6)),18.)*uOnline;
+        diffuseColor.rgb+=vec3(.13,.22,.27)*(scan+path*signal*.65);
+        diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.93,.98,1.05),uOnline*.2);`);
+    };
+    faceMaterial.customProgramCacheKey=()=>'pk-core-segment-scan-v1';
+    const collarMaterial=own(worldTransmission(new THREE.MeshPhysicalMaterial({premultipliedAlpha:true,
+      color:0x777077,roughness:.045,metalness:0,transmission:.97,thickness:.4,ior:1.62,
+      attenuationColor:0x40363a,attenuationDistance:2,envMap:env.texture,envMapIntensity:1.85})));
+    // Repartition the same optical square/UV map and the same 16-sided annulus.
+    // There is one coreOrb, not a second model or a duplicate closed-ring mesh.
+    const segments=[];
+    for(let index=0;index<3;index++){
+      const start=index*Math.PI*2/3,end=(index+1)*Math.PI*2/3,mid=(start+end)/2;
+      const part=new THREE.Group();coreOrb.add(part);
+      const angles=[start,end];
+      for(let k=0;k<64;k++){const angle=k*Math.PI/32;if(angle>start&&angle<end)angles.push(angle);}
+      angles.sort((a,b)=>a-b);
+      const positions=[],uv=[];
+      const squarePoint=angle=>{const x=Math.cos(angle),y=Math.sin(angle),r=1.3/Math.max(Math.abs(x),Math.abs(y));return[x*r,y*r];};
+      const vertex=(x,y)=>{positions.push(x,y,0);uv.push(x/2.6+.5,y/2.6+.5);};
+      for(let k=0;k<angles.length-1;k++){
+        vertex(0,0);vertex(...squarePoint(angles[k]));vertex(...squarePoint(angles[k+1]));
+      }
+      const geometry=new THREE.BufferGeometry();
+      geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+      geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geometry.computeVertexNormals();
+      const face=mesh(geometry,faceMaterial,part);face.position.z=.16;face.renderOrder=6;
+      const shape=new THREE.Shape(),outer=[];
+      const perimeter=[start,end];
+      for(let k=0;k<=16;k++){const angle=k*Math.PI/8;if(angle>start&&angle<end)perimeter.push(angle);}
+      perimeter.sort((a,b)=>a-b);
+      for(const angle of perimeter){const step=Math.PI/8,local=((angle%step)+step)%step-step/2;
+        const r=1.16*Math.cos(step/2)/Math.cos(local);outer.push([Math.cos(angle)*r,Math.sin(angle)*r]);}
+      shape.moveTo(...outer[0]);outer.slice(1).forEach(point=>shape.lineTo(...point));
+      shape.lineTo(Math.cos(end)*.97,Math.sin(end)*.97);shape.absarc(0,0,.97,end,start,true);shape.closePath();
+      const side=mesh(new THREE.ExtrudeGeometry(shape,{depth:.48,bevelEnabled:true,bevelSize:.045,
+        bevelThickness:.045,bevelSegments:1,steps:1,curveSegments:32}),collarMaterial,part);
+      side.position.z=-.43;
+      segments.push({part,direction:new THREE.Vector2(Math.cos(mid),Math.sin(mid))});
+    }
+    // Independent invisible pick target: opening gaps never break logo tapping.
+    const coreFace=mesh(new THREE.PlaneGeometry(2.6,2.6),new THREE.MeshBasicMaterial({visible:false}),coreOrb);
     coreFace.userData.id='core';
-    // A real extruded annulus remains behind the optical face when the camera
-    // shifts. The centre is an aperture, not a translucent spherical shell.
-    const collarShape=new THREE.Shape(),hole=new THREE.Path();
-    for(let i=0;i<=16;i++){const a=i*Math.PI*2/16,x=Math.cos(a)*1.16,y=Math.sin(a)*1.16;i?collarShape.lineTo(x,y):collarShape.moveTo(x,y);}
-    hole.absarc(0,0,.97,0,Math.PI*2,true);collarShape.holes.push(hole);
-    const collar=mesh(new THREE.ExtrudeGeometry(collarShape,{depth:.48,bevelEnabled:true,bevelSize:.045,bevelThickness:.045,bevelSegments:1,steps:1,curveSegments:32}),
-      worldTransmission(new THREE.MeshPhysicalMaterial({premultipliedAlpha:true,color:0x777077,roughness:.045,metalness:0,transmission:.97,thickness:.4,ior:1.62,attenuationColor:0x40363a,attenuationDistance:2,envMap:env.texture,envMapIntensity:1.85})),coreOrb);
-    collar.position.z=-.43;
     const logoVertices = logo.geometry.getAttribute("position");
     for (let i = 0; i < logoVertices.count; i++) {
       const x = logoVertices.getX(i),
@@ -926,172 +977,38 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     const corona = mesh(coronaGeometry, coronaMaterial, energy);
     corona.frustumCulled = false;
 
-    const cuts=[
-      [[-1.04,.08],[-.7,.67],[.72,.84],[1.09,.53],[1.1,-.4],[.72,-.83],[-.96,-.85],[-1.1,-.43]],
-      [[-1.14,.29],[-.63,.84],[.8,.75],[1.13,-.08],[.68,-.85],[-.94,-.72]],
-      [[-1.12,.27],[-.86,.67],[-.23,.88],[.76,.78],[1.12,.4],[1.16,-.25],[.81,-.72],[.16,-.88],[-.83,-.72],[-1.1,-.3]],
-      [[-1.07,.55],[-.45,.91],[.88,.65],[1.09,.2],[.95,-.66],[.31,-.88],[-.94,-.62],[-1.13,-.15]],
-      [[-1.12,.46],[-.65,.82],[.89,.76],[1.16,.35],[1,-.55],[.63,-.84],[-.98,-.78]],
-      [[-1.1,.14],[-.81,.72],[.42,.91],[1.05,.54],[1.12,-.31],[.59,-.86],[-.79,-.82],[-1.17,-.35]],
-    ];
-    const cutFor=index=>cuts[index%cuts.length].map(([x,y],i)=>[x*(1+Math.sin(index*1.7+i)*.025),y*(1+Math.cos(index*.9+i)*.035)]);
-    function crystalGeometry(index) {
-      const cut=cutFor(index),thickness=.82+(index%4)*.16,
-        rings=[[.78,.39],[1,.16],[.98,-.3*thickness],[.72,-.64*thickness]],verts=[],indices=[],count=cut.length;
-      for(const [scale,z] of rings)for(const [x,y] of cut)verts.push(x*scale,y*scale,z);
-      for(let layer=0;layer<3;layer++)for(let i=0;i<count;i++){
-        const a=layer*count+i,b=layer*count+(i+1)%count,c=(layer+1)*count+i,d=(layer+1)*count+(i+1)%count;
-        indices.push(a,b,c,b,d,c);
-      }
-      for(let i=1;i<count-1;i++)indices.push(0,i+1,i);
-      for(let i=1;i<count-1;i++)indices.push(3*count,3*count+i,3*count+i+1);
-      const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setIndex(indices);
-      const flat=g.toNonIndexed();g.dispose();flat.computeVertexNormals();return flat;
-    }
-    function facetGeometry(index){
-      // Different physical silhouettes and bevel widths, sharing the existing
-      // polished optical texture. No rectangular sprite over the real solid.
-      const cut=cutFor(index),n=cut.length,verts=[],uv=[],indices=[];
-      for(const [scale,z] of [[1.08,0],[.77,.10]])for(let i=0;i<n;i++){
-        const [x,y]=cut[i];verts.push(x*scale,y*scale,z+Math.sin(i*2+index)*.018);
-        uv.push(.5+x*scale/2.65,.5+y*scale/1.96);
-      }
-      for(let i=0;i<n;i++){const j=(i+1)%n;indices.push(i,n+i,j,j,n+i,n+j);}
-      const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();return g;
-    }
-    function label(project) {
-      const c=document.createElement('canvas');c.width=768;c.height=512;
-      const ctx=c.getContext('2d');ctx.textAlign='center';ctx.textBaseline='middle';ctx.shadowColor='#000';ctx.shadowBlur=5;
-      const wrap=(text,font,width)=>{ctx.font=font;const rows=[''];for(const word of text.split(' ')){const i=rows.length-1;if(rows[i]&&ctx.measureText(rows[i]+word).width>width)rows.push(word+' ');else rows[i]+=word+' ';}return rows;};
-      const titles=wrap(project.title,'600 76px system-ui',570),stage=wrap(project.stage,'44px system-ui',605),action=wrap(project.action,'600 44px system-ui',655);
-      const height=titles.length*76+stage.length*48+action.length*48+40;let y=(512-height)/2+38;
-      ctx.fillStyle='#eee9ed';ctx.font='600 76px system-ui';for(const row of titles){ctx.fillText(row.trim(),384,y);y+=76;}
-      y+=15;ctx.fillStyle='#d0c4ce';ctx.font='44px system-ui';for(const row of stage){ctx.fillText(row.trim(),384,y);y+=48;}
-      y+=20;ctx.fillStyle='#e1b9c5';ctx.font='600 44px system-ui';for(const row of action){ctx.fillText(row.trim(),384,y);y+=48;}
-      const texture=own(new THREE.CanvasTexture(c));texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return texture;
-    }
-    const crystals = projects.map((p, index) => {
-      const group = new THREE.Group();
-      scene.add(group);
-      const material = own(worldTransmission(glass.clone()));
-      material.color.set(0xf4ecef);
-      material.roughness = 0.025;
-      material.thickness = 0.64;
-      material.ior = 1.52;
-      material.attenuationColor.setHSL(.94+(index%3)*.007,.055+(index%4)*.015,.62);
-      material.attenuationDistance = 5.5;
-      material.envMapIntensity = 1.8;
-      material.dispersion = 0;
-      material.specularIntensity = 1.0;
-      material.clearcoat = 0.65;
-      material.clearcoatRoughness = 0.018;
-      const body = mesh(crystalGeometry(index), material, group);
-      const innerCoatMaterial = own(
-        new THREE.MeshPhysicalMaterial({
-          color: 0x6b7180,
-          metalness: 0.8,
-          roughness: 0.055,
-          transparent: true,
-          opacity: 0.018,
-          depthWrite: false,
-          envMap: env.texture,
-          envMapIntensity: 1.9,
-        }),
-      );
-      const innerCoat = mesh(body.geometry.clone(), innerCoatMaterial, group);
-      innerCoat.scale.setScalar(0.88);
-      innerCoat.position.z = -0.08;
-      body.userData.id = p.id;
-      body.castShadow = false;
-      const edgeGeometry = own(new THREE.EdgesGeometry(body.geometry, 12));
-      const edgeMaterial = own(
-        new THREE.ShaderMaterial({
-          transparent: true,
-          depthWrite: false,
-          blending: THREE.AdditiveBlending,
-          uniforms: {
-            uReveal: { value: 0 },
-            uTime: { value: 0 },
-            uActive: { value: 0 },
-            uEnergy: { value: new THREE.Vector3(0, 0, -1) },
-          },
-          vertexShader: `
-            uniform vec3 uEnergy;
-            varying float vGlint,vEnergy;
-            varying vec3 vPosition;
-            void main(){
-              vPosition=position;
-              vec3 radial=normalize(position);
-              vec3 n=normalize(normalMatrix*radial);
-              vGlint=pow(abs(dot(n,normalize(vec3(-.4,.8,.3)))),9.);
-              vEnergy=pow(max(0.,dot(radial,normalize(uEnergy))),6.);
-              gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);
-            }`,
-          fragmentShader: `
-            uniform float uReveal,uTime,uActive;
-            varying float vGlint,vEnergy;
-            varying vec3 vPosition;
-            void main(){
-              float trace=smoothstep(-1.1,1.1,uReveal*2.3-vPosition.y);
-              float idle=uReveal<.03?pow(max(0.,sin(vPosition.y*4.+vPosition.x*3.)),14.)*.15:1.;
-              float sweep=.46+.54*pow(.5+.5*sin(vPosition.y*3.+vPosition.x*5.+uTime*.3),5.);
-              vec3 reflection=mix(vec3(1.3,1.48,1.6),vec3(1.75,.32,.36),vEnergy*(.32+uActive*.2));
-              gl_FragColor=vec4(reflection,idle*trace*(.027+vGlint*.42)*sweep*(1.+uActive*.2));
-            }`,
-        }),
-      );
-      const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
-      group.add(edges);
-      const content = mesh(
-        new THREE.PlaneGeometry(1.93, 1.29),
-        new THREE.MeshBasicMaterial({
-          map: label(p),
-          alphaTest: 0.03,
-          transparent: true,
-          depthWrite: false,
-          toneMapped: false,
-          side: THREE.DoubleSide,
-        }),
-        group,
-      );
-      content.position.z = -.08;
-      content.position.y = index===0?.13:.025;
-      material.depthWrite = false;
-      content.renderOrder = 3;
-      // The ground optical edge is a separate front surface, in front of the
-      // lettering. Its clear centre retains the actual refractive body behind it.
-      const facetMaterial=own(new THREE.MeshBasicMaterial({map:facetTexture,transparent:true,depthWrite:false,toneMapped:false,side:THREE.DoubleSide}));
-      facetMaterial.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
-        float edgeBand=smoothstep(.53,.82,max(abs(vMapUv.x-.5)*2.,abs(vMapUv.y-.5)*2.));
-        float facetLight=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));
-        diffuseColor.a*=max(.06,max(edgeBand,smoothstep(.025,.16,facetLight)*.92));`);};
-      const facets=mesh(facetGeometry(index),facetMaterial,group);
-      facets.position.z=.43;facets.renderOrder=4;
-      return {
-        id: p.id,
-        index,
-        group,
-        body,
-        content,
-        facets,
-        edges,
-        edgeMaterial,
-        innerCoat,
-        material,
-        at: new THREE.Vector3(),
-        start: -99,
-        shown: false,
-        phase: "dormant",
-      };
+    // Holographic sockets share the existing scene and canonical DOM cards.
+    // Text stays in HTML: crisp at every pixel ratio, selectable and accessible.
+    const nodes = projects.map((p,index) => {
+      const group=new THREE.Group();scene.add(group);
+      const material=own(new THREE.MeshBasicMaterial({color:0xabcbd8,transparent:true,opacity:.12,depthWrite:false}));
+      const body=mesh(new THREE.PlaneGeometry(.16,.16),material,group);
+      body.userData.id=p.id;
+      const edgeMaterial=own(new THREE.LineBasicMaterial({color:0xabcbd8,transparent:true,opacity:.5,depthWrite:false}));
+      const edges=new THREE.LineSegments(own(new THREE.EdgesGeometry(new THREE.PlaneGeometry(.26,.26))),edgeMaterial);group.add(edges);
+      return {id:p.id,index,group,body,edges,material,at:new THREE.Vector3(),start:-99,shown:false,phase:'dormant'};
     });
+    const maxLinkSegments=16,maxLinkVertices=projects.length*maxLinkSegments*2;
+    const linkPositions=new Float32Array(maxLinkVertices*3),linkHighlight=new Float32Array(maxLinkVertices);
+    const linkGeometry=own(new THREE.BufferGeometry());
+    linkGeometry.setAttribute('position',new THREE.BufferAttribute(linkPositions,3).setUsage(THREE.DynamicDrawUsage));
+    linkGeometry.setAttribute('aHighlight',new THREE.BufferAttribute(linkHighlight,1).setUsage(THREE.DynamicDrawUsage));
+    linkGeometry.setDrawRange(0,0);
+    const links=new THREE.LineSegments(linkGeometry,own(new THREE.ShaderMaterial({transparent:true,depthWrite:false,
+      vertexShader:'attribute float aHighlight;varying float vHighlight;void main(){vHighlight=aHighlight;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+      uniforms:{uTime:{value:0}},
+      fragmentShader:'uniform float uTime;varying float vHighlight;void main(){gl_FragColor=vec4(mix(vec3(.38,.55,.63),vec3(.72,.89,.95),vHighlight),.38+vHighlight*.4);}',
+    })));
+    links.frustumCulled=false;links.renderOrder=1;scene.add(links);
+    const linkStart=new THREE.Vector3();
     const coreHit = logoOnly ? coreFace : shell;
-    const pickable = [coreHit, ...crystals.map((c) => c.body)];
+    const pickable = [coreHit, ...nodes.map((c) => c.body)];
     function setLayout(detail) {
       awake = detail.awake;
       open = detail.open;
       lastItems = detail.items;
       const ids = new Set(lastItems.map((item) => item.id));
-      for (const c of crystals) {
+      for (const c of nodes) {
         const item = lastItems.find((p) => p.id === c.id);
         c.shown = Boolean(item);
         if (!item) {
@@ -1099,11 +1016,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           c.start = -99;
           continue;
         }
-        c.at.set(
-          compact ? 0 : item.point.x * 4.85,
-          compact ? -2.08 : -item.point.y * 3.18,
-          compact ? .5 : -.08 + Math.sin(c.index * 2.3) * 1.25,
-        );
+        c.slot=item.slot ?? lastItems.indexOf(item);
         if (awake && c.start === -99)
           c.start = reduced
             ? elapsed - 3
@@ -1111,16 +1024,16 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         if (!awake) c.start = -99;
       }
       if (!ids.has(active)) active = "";
-      if (!loop.running) loop.still();
+      if (!loop.running && !rendering) loop.still();
     }
     function setActive(id) {
       active = id || "";
       onProject?.(active);
-      if (paused) loop.still();
+      if (paused && !rendering) loop.still();
     }
     function activate() {
       activation = elapsed;
-      if (paused) loop.still();
+      if (paused && !rendering) loop.still();
     }
     function hit(clientX, clientY) {
       const rect = canvas.getBoundingClientRect();
@@ -1139,7 +1052,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
               o.parent.visible &&
               (o === coreHit ||
                 (awake &&
-                  crystals.find((c) => c.body === o).phase === "ready")),
+                  nodes.find((c) => c.body === o).phase === "ready")),
           ),
           false,
         )[0]?.object.userData.id || ""
@@ -1147,7 +1060,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
     }
     function location(id) {
       const object =
-        id === "core" ? core : crystals.find((c) => c.id === id)?.group;
+        id === "core" ? core : nodes.find((c) => c.id === id)?.group;
       if (!object) return null;
       object.getWorldPosition(projected);
       projected.project(camera);
@@ -1180,13 +1093,17 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         rim.visible = !compact;
         floor.visible = !logoOnly;
         glass.dispersion = 0;
-        crystals.forEach((c) => {
+        nodes.forEach((c) => {
           c.material.dispersion = 0;
         });
       }
       metrics.filaments = p.roots * 3;
-      corona.geometry.setDrawRange(0, (compact ? 16 : 48) * 72);
-      metrics.coronaRoots = compact ? 16 : 48;
+      corona.geometry.setDrawRange(0,p.coronaRoots*coronaVerticesPerRoot);
+      dustGeometry.setDrawRange(0,p.dust);farGeometry.setDrawRange(0,p.farDust);
+      renderer.shadowMap.enabled=p.shadows&&!logoOnly;
+      metrics.coronaRoots=p.coronaRoots;metrics.dust=p.dust;metrics.farDust=p.farDust;
+      metrics.linkSegments=p.linkSegments;metrics.shadows=renderer.shadowMap.enabled;metrics.facets=false;
+      metrics.targetFPS=p.fps;
       metrics.dpr = p.dpr;
       metrics.transmissionResolutionScale = p.transmission;
       metrics.buffer = { width: canvas.width, height: canvas.height };
@@ -1194,63 +1111,60 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       if (lastItems.length) setLayout({ awake, open, items: lastItems });
       else loop.still();
     }
+    const screenRay=new THREE.Vector3();
+    function screenAnchor(x,y,z,target){
+      screenRay.set(x*2-1,1-y*2,.5).unproject(camera).sub(camera.position).normalize();
+      return target.copy(camera.position).addScaledVector(screenRay,(z-camera.position.z)/screenRay.z);
+    }
     function render(dt, time) {
-      if (dead || lost) return;
-      const started = performance.now();
+      if (dead || lost || rendering) return;
+      rendering=true;
+      try {
+      const started = performance.now(),detail=profile();
       elapsed += dt;
+      sequence=awakening.sample(time);
+      const pulse=sequence.phase==='pulse'?Math.sin(Math.min(1,sequence.seconds/.6)*Math.PI):0;
       cursor.lerp(pointer, 1 - Math.exp(-dt * 3.5));
-      const power = Math.max(0, 1 - (elapsed - activation) / 2);
-      const baseY = compact ? 1.5 : 0.12;
-      camera.position.x = cursor.x * 0.13;
-      camera.position.y = 0.45 + cursor.y * 0.09;
-      camera.lookAt(0, compact ? -0.3 : 0, 0);
-      core.position.y =
-        baseY + (reduced ? 0 : Math.sin(elapsed * 0.65) * 0.035);
-      core.position.x = reduced ? 0 : Math.sin(elapsed * 0.137) * 0.018;
-      core.rotation.y =
-        -0.36 +
-        cursor.x * 0.045 +
-        (reduced ? 0 : Math.sin(elapsed * 0.113) * 0.018);
-      core.rotation.x =
-        0.045 +
-        cursor.y * 0.025 +
-        (reduced ? 0 : Math.cos(elapsed * 0.097) * 0.012);
-      core.rotation.z = 0.1 + (reduced ? 0 : Math.sin(elapsed * 0.081) * 0.012);
-      logo.position.y =
-        0.04 + (reduced ? 0 : Math.sin(elapsed * 0.23 + 0.8) * 0.01);
-      logo.position.z =
-        -0.03 + (reduced ? 0 : Math.cos(elapsed * 0.17) * 0.012);
-      rim.position.x = 3 + (reduced ? 0 : Math.sin(elapsed * 0.12) * 0.16);
-      const breath = reduced ? 0 : 0.5 + Math.sin(elapsed * 0.58) * 0.5;
-      core.scale.setScalar((compact ? 0.9 : 1.12) + breath * 0.008);
-      energy.position.set(0, baseY, -1.65);
-      energy.scale.setScalar((compact ? 0.76 : 1.04) + power * 0.025 + breath * 0.008);
-      energy.rotation.y = reduced ? 0.15 : elapsed * 0.022;
-      energyMaterial.uniforms.uTime.value = elapsed;
-      energyMaterial.uniforms.uPower.value = power;
-      red.position.set(2.8, baseY - 0.4, -1.45);
-      red.intensity = 2.8 + breath * 0.2 + power * 2 + (active ? 1.1 : 0);
-      innerEnergy.visible = !compact;
-      skin.visible = !compact;
-      dust.visible = !compact;
-      if (logoOnly) {
-        // The original emblem now owns the showroom centre. The capsule is
-        // presented in the header using a cached render of this same 3D model.
-        core.children.forEach(part => { part.visible = part === logo || part === coreOrb; });
-        core.position.set(0, baseY, 0.85);
+      const power=Math.max(0,1-(elapsed-activation)/2,pulse);
+      const baseY=compact ? 2.25 : 0.12;
+      camera.position.x=cursor.x*.08;
+      camera.position.y=.45+cursor.y*.06+scrollOffset*.04;
+      camera.position.z=(compact?10.3:11.8)-sequence.opening*.1;
+      camera.lookAt(0,compact?-.3:0,0);camera.updateMatrixWorld();
+      screenAnchor(.5,compact?.21:.49,.85,core.position);
+      core.rotation.set(.045+cursor.y*.025,-.36+cursor.x*.045,.1);
+      core.scale.setScalar(compact ? 0.9 : 1.12);
+      logo.position.set(0,.04,-.03);
+      const breath=reduced ? 0 : 0.5+Math.sin(elapsed*.07)*.2+Math.sin(elapsed*.113+2)*.15;
+      energy.position.set(0,baseY,-1.65);
+      energy.scale.setScalar((compact ? 0.76 : 1.04)+power*.015);
+      energy.rotation.y=.15+cursor.x*.025;
+      energyMaterial.uniforms.uTime.value=elapsed;energyMaterial.uniforms.uPower.value=power;
+      red.position.set(2.8,baseY-.4,-1.45);red.intensity=.5+breath*.08+power*.15;
+      innerEnergy.visible=!compact;skin.visible=!compact;
+      dust.visible=detail.dust>0&&!reduced;farDust.visible=detail.farDust>0&&!reduced;
+      if(logoOnly){
+        core.children.forEach(part=>{part.visible=part===logo||part===coreOrb;});
         core.rotation.set(cursor.y*.025,cursor.x*.035,0);
-        core.scale.setScalar((compact ? 1.18 : 1.88) * (1 + breath * 0.025));
-        core.position.y += reduced ? 0 : Math.sin(elapsed * 0.65) * 0.018;
-        logo.position.set(0, 0, 0);
-        energy.visible = true;
-        energy.children.forEach(part => { part.visible = part === dust; });
+        core.scale.setScalar((compact?.86:1.62)+((compact?.72:Math.min(1.12,canvas.clientWidth*.00112))-(compact?.86:1.62))*sequence.opening);
+        logo.position.set(0,0,0);
+        energy.visible=true;
+        energy.children.forEach(part=>{part.visible=(part===dust&&detail.dust>0&&!reduced)||
+          false;});
       }
-      if (reduced || dt === 0 || frames % 8 === 0)
-        renderer.shadowMap.needsUpdate = true;
+      for(const segment of segments){
+        const distance=sequence.opening*.035;
+        segment.part.position.set(segment.direction.x*distance,segment.direction.y*distance,-sequence.opening*.025);
+      }
+      coreUniforms.uTime.value=reduced?0:elapsed;
+      coreUniforms.uScan.value=Math.min(1,sequence.seconds/.6);
+      coreUniforms.uPulse.value=pulse;
+      coreUniforms.uOnline.value=sequence.reveal;
+      if(renderer.shadowMap.enabled&&(reduced||dt===0||frames%16===0))renderer.shadowMap.needsUpdate=true;
       filamentUniforms.uTime.value = elapsed;
       filamentUniforms.uPower.value = power;
       filamentUniforms.uCursor.value.copy(cursor);
-      const related = crystals.find((c) => c.id === active && c.shown);
+      const related = nodes.find((c) => c.id === active && c.shown);
       if (related) {
         target.copy(related.group.position);
         energy.worldToLocal(target);
@@ -1265,10 +1179,10 @@ export async function createShowroomScene(canvas, projects, onProject, options =
         5,
         dt || 1,
       );
-      for (const c of crystals) {
+      for (const c of nodes) {
         if (!c.shown) continue;
         const age = elapsed - c.start;
-        let progress = awake ? THREE.MathUtils.clamp(age / 2.1, 0, 1) : 0;
+        let progress = awake ? (awakening.wanted ? sequence.reveal : THREE.MathUtils.clamp(age/2.1,0,1)) : 0;
         if (reduced && awake) progress = 1;
         c.phase = !awake
           ? "dormant"
@@ -1282,49 +1196,49 @@ export async function createShowroomScene(canvas, projects, onProject, options =
                   ? "transmitting"
                   : "ready";
         c.group.visible = awake && c.shown;
+        const arrival=reduced?1:THREE.MathUtils.smoothstep(progress,0,.96);
+        const row=compact?c.slot:Math.floor(c.slot/2);
+        const x=compact?.54:(c.slot%2===0?.185:.815);
+        const y=compact?.47+row*.20:.28+row*.225;
+        screenAnchor(x,y,.3,c.at);
         c.group.position.copy(c.at);
-        const arrival = reduced ? 1 : THREE.MathUtils.smoothstep(progress, 0, 0.88);
-        c.group.position.x *= 0.22 + 0.78 * arrival;
-        c.group.position.y = baseY + (c.at.y - baseY) * (0.22 + 0.78 * arrival);
-        c.group.position.z -= (1 - arrival) * 1.8;
-        c.focus = THREE.MathUtils.damp(c.focus || 0, c.id === active ? 1 : 0, 5, dt || 1);
-        c.recede = THREE.MathUtils.damp(c.recede || 0, active && c.id !== active ? 1 : 0, 5, dt || 1);
-        c.group.position.z += c.focus * .72 - c.recede * .24;
-        c.group.rotation.set(
-          0.12 + Math.sin(c.index) * 0.06,
-          -0.17 + Math.sin(c.index * 2) * 0.25 + cursor.x * 0.04 - c.focus * .065 + (reduced ? 0 : Math.sin(elapsed * .22 + c.index) * .035),
-          Math.sin(c.index * 3) * 0.1 + (1 - arrival) * (c.index % 2 ? 0.45 : -0.45),
-        );
-        c.group.position.y += reduced
-          ? 0
-          : Math.sin(elapsed * 0.46 + c.index) * (compact?.025:.055);
-        const scale = awake
-          ? 0.82 + 0.18 * THREE.MathUtils.smoothstep(progress, 0.15, 0.8)
-          : 0.96;
-        c.group.scale.setScalar(scale * (compact ? 1.36 : 1.5));
-        c.body.visible = awake && progress > 0.4;
-        c.innerCoat.visible = false;
-        c.facets.visible = awake && progress > .5;
-        const formed = THREE.MathUtils.smoothstep(progress, 0.38, 0.9);
-        c.body.scale.setScalar(.78 * Math.max(0.025, formed));
-        c.innerCoat.scale.setScalar(0.88 * Math.max(0.025, formed));
-        c.facets.scale.setScalar(Math.max(.025,formed));
-        c.material.thickness = 0.08 + (0.48+(c.index%4)*.09) * formed;
-        c.edges.visible = progress < 1;
-        c.edgeMaterial.uniforms.uReveal.value = awake
-          ? Math.max(0.04, progress * 1.6)
-          : 0.025;
-        c.edgeMaterial.uniforms.uTime.value = elapsed + c.index;
-        c.edgeMaterial.uniforms.uActive.value = c.id === active ? 1 : 0;
-        c.edgeMaterial.uniforms.uEnergy.value.copy(c.group.position).negate();
-        c.content.visible = progress >= 0.98;
-        c.material.transmission = 0.88 + 0.1 * formed;
-        c.material.roughness = 0.025 + (1 - progress) * 0.08;
-        c.material.envMapIntensity = 1.8 + c.focus * .6 - c.recede * .15;
-        c.facets.material.color.setScalar(1.12 + c.focus * .25 - c.recede * .11);
-        c.material.emissive.setHex(c.id === active ? 0x44121a : 0x090609);
-        c.material.emissiveIntensity = .1 + c.focus * .08;
+        c.group.position.z-=(1-arrival)*.3;
+        c.group.scale.setScalar(.6+.4*arrival);
+        c.body.visible=false;
+        c.edges.visible=false;
+        c.material.opacity=arrival*(c.id===active?.75:.22);
+        c.edges.material.opacity=arrival*(c.id===active?.9:.5);
       }
+      let linkVertices=0,linkCount=0;
+      if(awake&&sequence.reveal>0){
+        for(const node of nodes){
+          if(!node.shown)continue;
+          const end=node.group.position;
+          const dx=end.x-core.position.x,dy=end.y-core.position.y,length=Math.hypot(dx,dy)||1;
+          linkStart.set(core.position.x+dx/length*core.scale.x*1.16,core.position.y+dy/length*core.scale.x*1.16,.62);
+          if(compact)linkStart.set(core.position.x-core.scale.x*.8,core.position.y-core.scale.x*.7,.62);
+          for(let step=0;step<detail.linkSegments;step++)for(const corner of [0,1]){
+            const t=(step+corner)/detail.linkSegments*sequence.reveal,offset=linkVertices*3;
+            if(compact){
+              screenAnchor(.07,.33,.45,target);
+              const elbowY=end.y;
+              if(t<.22){linkPositions[offset]=linkStart.x+(target.x-linkStart.x)*t/.22;linkPositions[offset+1]=linkStart.y+(target.y-linkStart.y)*t/.22;}
+              else if(t<.78){linkPositions[offset]=target.x;linkPositions[offset+1]=target.y+(elbowY-target.y)*(t-.22)/.56;}
+              else {linkPositions[offset]=target.x+(end.x-target.x)*(t-.78)/.22;linkPositions[offset+1]=elbowY;}
+            }else{
+              linkPositions[offset]=linkStart.x+(end.x-linkStart.x)*t;
+              linkPositions[offset+1]=linkStart.y+(end.y-linkStart.y)*t+Math.sin(t*Math.PI)*.05;
+            }
+            linkPositions[offset+2]=linkStart.z+(end.z-linkStart.z)*t+Math.sin(t*Math.PI)*.16;
+            linkHighlight[linkVertices]=Math.max(node.id===active?.8:0, reduced?0:Math.pow(Math.max(0,Math.cos((t-elapsed*.18)*Math.PI*2)),24)*.6);linkVertices++;
+          }
+          linkCount++;
+        }
+      }
+      linkGeometry.setDrawRange(0,linkVertices);links.visible=linkVertices>0;
+      linkGeometry.attributes.position.needsUpdate=true;linkGeometry.attributes.aHighlight.needsUpdate=true;
+      metrics.links=linkCount;metrics.linkVertices=linkVertices;metrics.maxLinkVertices=maxLinkVertices;
+      metrics.awakening={...sequence};
       if (
         pendingQuery &&
         gl.getQueryParameter(pendingQuery, gl.QUERY_RESULT_AVAILABLE)
@@ -1375,6 +1289,8 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           windowStart = time;
           if (slow >= 3 && quality < 2) {
             quality++;
+            metrics.detailChanges.push({level:quality,fps:metrics.fps,cpuFrameMs:cpu,gpuFrameMs:metrics.gpuFrameMs});
+            if(metrics.detailChanges.length>8)metrics.detailChanges.shift();
             slow = 0;
             queueMicrotask(resize);
           }
@@ -1383,20 +1299,23 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       canvas.dispatchEvent(
         new CustomEvent("showroom:frame", {
           detail: {
-            phases: crystals
+            awakening: {...sequence},
+            phases: nodes
               .filter((c) => c.shown)
-              .map((c) => ({ id: c.id, phase: c.phase,cut:c.index%cuts.length,facets:cutFor(c.index).length,thickness:c.material.thickness,z:c.group.position.z })),
+              .map((c) => ({ id: c.id, phase: c.phase,facets:0,thickness:0,z:c.group.position.z })),
             core: location("core"),
-            projects: crystals
+            projects: nodes
               .filter((c) => c.shown)
-              .map((c) => ({ id: c.id, ...location(c.id) })),
+              .map((c) => ({ id: c.id, reveal: sequence.reveal, ...location(c.id) })),
           },
         }),
       );
+      } finally { rendering=false; }
     }
     const loop = frameLoop(render, { fps: 60 });
     function state(next) {
       const previousPause = paused;
+      awakening.suspend(Boolean(next.clockPaused || document.hidden));
       if ("reduced" in next) reduced = next.reduced;
       if ("running" in next) paused = !next.running;
       if (previousPause !== paused) {
@@ -1406,7 +1325,7 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       }
       if (paused || reduced || lost) loop.stop();
       else loop.start();
-      if (!lost && (paused || reduced)) loop.still();
+      if (!lost && !rendering && (paused || reduced)) loop.still();
       metrics.rafPending = loop.pending;
     }
     function dispose() {
@@ -1432,6 +1351,14 @@ export async function createShowroomScene(canvas, projects, onProject, options =
       setLayout,
       setActive,
       activate,
+      awaken(value,{immediate=false,startedAt=performance.now()}={}) {
+        sequence=awakening.set(value,{immediate,startedAt});
+        if(!value){awake=false;active='';nodes.forEach(c=>{c.group.visible=false;c.start=-99;});links.visible=false;linkGeometry.setDrawRange(0,0);}
+        if(!lost&&!rendering&&!loop.running)loop.still();
+        return {...sequence};
+      },
+      visibility(hidden){awakening.suspend(Boolean(hidden));},
+      scroll(value){scrollOffset=THREE.MathUtils.clamp(value,-1,1);if(paused&&!rendering)loop.still();},
       resize,
       hit,
       location,
@@ -1443,22 +1370,30 @@ export async function createShowroomScene(canvas, projects, onProject, options =
           ...metrics,
           rafPending: loop.pending,
           samples: samples.slice(),
-          phases: crystals
+          phases: nodes
             .filter((c) => c.shown)
-            .map((c) => ({ id: c.id, phase: c.phase,cut:c.index%cuts.length,facets:cutFor(c.index).length,thickness:c.material.thickness,z:c.group.position.z })),
+            .map((c) => ({ id: c.id, phase: c.phase,facets:0,thickness:0,z:c.group.position.z })),
           camera: "PerspectiveCamera",
           depth: depthBuffer,
           corePresentation: logoOnly ? "logo" : "capsule",
+          awakening: awakening.sample(),contextLost:lost,clockSuspended:awakening.suspended,
+          projectLabels:projects.map(project=>({id:project.id,title:project.title,development:project.development||'Etap do potwierdzenia'})),
         };
       },
       contextLost() {
         lost = true;
+        metrics.contextLosses++;metrics.gpuFrameMs=null;metrics.gpuTiming='context-lost';
         pendingQuery = null;
         gpuQuery = null;
         loop.stop();
       },
       contextRestored() {
         lost = false;
+        metrics.contextRestores++;
+        timerExt=gl.getExtension('EXT_disjoint_timer_query_webgl2');
+        metrics.gpuTiming=timerExt?'EXT_disjoint_timer_query_webgl2':'unavailable';
+        metrics.gpuFrameMs=null;pendingQuery=null;gpuQuery=null;
+        windowStart=0;windowFrames=0;slow=0;
         const oldEnv = env;
         owned.delete(env);
         env.dispose();

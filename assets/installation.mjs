@@ -42,6 +42,10 @@ if (root && world) {
   // Pool identity survives scrolling, chapter changes, resizing and charging.
   const particles=Array.from({length:116},(_,id)=>({id,x:rand(),phase:rand(),speed:.014+rand()*.024,z:rand(),wave:rand()*6.28,life:.3+rand()*.65}));
   const count=()=>compact.matches?64:particles.length;
+  // Smooth, bounded illumination changes with unrelated intervals. The room and
+  // mounted objects stay still at idle; there is no periodic camera dolly/bob.
+  const lightSample=(step,channel)=>{let value=Math.imul(step+channel*997,1597334677);value=Math.imul(value^(value>>>16),2246822519);return(value>>>0)/4294967295*2-1;};
+  const lightDrift=(time,interval,channel)=>{const step=Math.floor(time/interval),u=time/interval-step,v=u*u*(3-2*u);return lightSample(step,channel)*(1-v)+lightSample(step+1,channel)*v;};
   function resize(){
     w=innerWidth;h=innerHeight;scale=Math.min(.75,1000/w,800/h);
     canvas.width=Math.max(1,Math.round(w*scale));canvas.height=Math.max(1,Math.round(h*scale));
@@ -57,46 +61,47 @@ if (root && world) {
     raf=0;if(paused()||dead)return;
     const dt=last?Math.min(.1,(now-last)/1000):0;last=now;elapsed+=dt;
     cameraY+=(scrollTarget-cameraY)*Math.min(1,dt*9);
-    perspective.x+=(perspective.tx-perspective.x)*.09;perspective.y+=(perspective.ty-perspective.y)*.09;
+    const follow=1-Math.exp(-dt*5);
+    perspective.x+=(perspective.tx-perspective.x)*follow;perspective.y+=(perspective.ty-perspective.y)*follow;
     const depth=1-Math.exp(-Math.max(0,cameraY)/6500);
     const desktopLiving=w>=1000&&fine.matches, t=elapsed;
     zone=sampleJourney(stops,cameraY);
     updateBays(cameraY);
     world.dataset.zone=zone.id;
-    const drift=desktopLiving?Math.sin(t*.29)*8:0;
+    const ambience=lightDrift(t,23,1)*.025+lightDrift(t,47,2)*.015;
     const travel=desktopLiving?1:.38;
     // Far architecture, middle illumination and near ash have distinct rates,
     // all derived from the same unsegmented camera coordinate.
-    world.style.setProperty('--world-scale',String(1+(zone.scale-1)*travel+(desktopLiving?(1-Math.cos(t*.3))*.006:0)));
-    world.style.setProperty('--world-far-x',`${zone.x*w*travel+perspective.x*(desktopLiving?-30:-4)+drift}px`);
-    world.style.setProperty('--world-far-y',`${zone.y*h*travel-perspective.y*7+(desktopLiving?Math.sin(t*.22)*5:0)}px`);
-    world.style.setProperty('--world-mid-x',`${zone.x*w*.3*travel+perspective.x*(desktopLiving?-58:-12)+drift*2}px`);
-    world.style.setProperty('--world-mid-y',`${depth*-h*.12-perspective.y*7}px`);
-    if(desktopLiving){world.style.setProperty('--world-breath',String(.78+zone.heat*.12+Math.sin(t*.62)*.16));world.style.setProperty('--world-specular-x',`${Math.sin(t*.18)*w*.055+perspective.x*38}px`);}
-    for(const e of visible){e.style.setProperty('--depth-near-x',`${perspective.x*3}deg`);e.style.setProperty('--depth-near-y',`${perspective.y*-2}deg`);if(desktopLiving){e.style.setProperty('--light-x',`${48+perspective.x*50}%`);e.style.setProperty('--light-y',`${35+perspective.y*40}%`);}}
+    world.style.setProperty('--world-scale',String(1+(zone.scale-1)*travel));
+    world.style.setProperty('--world-far-x',`${zone.x*w*travel+perspective.x*(desktopLiving?-10:-4)}px`);
+    world.style.setProperty('--world-far-y',`${zone.y*h*travel-perspective.y*4}px`);
+    world.style.setProperty('--world-mid-x',`${zone.x*w*.3*travel+perspective.x*(desktopLiving?-24:-12)}px`);
+    world.style.setProperty('--world-mid-y',`${depth*-h*.12-perspective.y*4}px`);
+    if(desktopLiving){world.style.setProperty('--world-breath',String(.84+zone.heat*.08+ambience));world.style.setProperty('--world-specular-x',`${zone.x*w*.05+perspective.x*20}px`);}
+    for(const e of visible){e.style.setProperty('--depth-near-x',`${perspective.x*1.5}deg`);e.style.setProperty('--depth-near-y',`${perspective.y*-1}deg`);e.style.setProperty('--core-light',String(.8+ambience));e.style.setProperty('--ember-light',String(.72+ambience));e.style.setProperty('--relief-light',String(.97+ambience*.4));if(desktopLiving){e.style.setProperty('--light-x',`${48+perspective.x*50}%`);e.style.setProperty('--light-y',`${35+perspective.y*40}%`);}}
     ctx.setTransform(scale,0,0,scale,0,0);ctx.clearRect(0,0,w,h);
     if(desktopLiving)drawArchitecture(ctx,w,h,zone,t,perspective.x,perspective.y);
     const nearTravel=cameraY*.025;
-    ctx.globalAlpha=.22;ctx.drawImage(haze,w*.1+Math.sin(t*.018)*w*.025-perspective.x*2,h*.08-depth*h*.03,w*.9,h*.65);
-    ctx.globalAlpha=desktopLiving?.42+zone.core*.13:.2;ctx.drawImage(haze,w*-.1+Math.sin(t*(desktopLiving?.32:.033)+2)*w*.045-perspective.x*8,h*.36-depth*h*.07+Math.cos(t*.021)*h*.035,w*1.25,h*.5);
-    ctx.globalAlpha=desktopLiving?.34:.13;ctx.drawImage(haze,w*.3+Math.cos(t*(desktopLiving?.26:.047))*w*.12-perspective.x*(desktopLiving?66:18),h*.63-depth*h*.12,w*.95,h*.42);
+    ctx.globalAlpha=.22+ambience*.25;ctx.drawImage(haze,w*.1-perspective.x*2,h*.08-depth*h*.03,w*.9,h*.65);
+    ctx.globalAlpha=desktopLiving? 0.42+zone.core*.13+ambience:.2;ctx.drawImage(haze,w*-.1-perspective.x*8,h*.36-depth*h*.07,w*1.25,h*.5);
+    ctx.globalAlpha=desktopLiving? 0.34+lightDrift(t,37,3)*.02:.13;ctx.drawImage(haze,w*.3-perspective.x*(desktopLiving?24:12),h*.63-depth*h*.12,w*.95,h*.42);
     if(desktopLiving){
-      ctx.globalAlpha=.62+Math.sin(t*.7)*.24;ctx.drawImage(reflection,w*(.33+Math.sin(t*.38)*.12)-perspective.x*28,h*(.78-depth*.03),w*.75,h*.18);
-      ctx.globalAlpha=.35+Math.sin(t*.43+1)*.16;ctx.drawImage(reflection,w*(.57+Math.cos(t*.15)*.035),h*.91,w*.42,h*.12);
+      ctx.globalAlpha=.56+lightDrift(t,31,4)*.025;ctx.drawImage(reflection,w*.33-perspective.x*12,h*(.78-depth*.03),w*.75,h*.18);
+      ctx.globalAlpha=.32+lightDrift(t,41,5)*.02;ctx.drawImage(reflection,w*.57-perspective.x*6,h*.91,w*.42,h*.12);
     }
     const heat=ctx.createRadialGradient(w*.87,h*.62,0,w*.87,h*.62,w*.48);
     heat.addColorStop(0,desktopLiving?'#ae242e40':'#a2212426');heat.addColorStop(.4,'#77102116');heat.addColorStop(1,'#3b0a1400');
-    ctx.globalAlpha=desktopLiving?.35+zone.heat*.8+Math.sin(t*.43)*.2:.7+Math.sin(t*.43)*.14;ctx.fillStyle=heat;ctx.fillRect(0,0,w,h);
+    ctx.globalAlpha=desktopLiving? 0.35+zone.heat*.8+ambience:.7+ambience*.5;ctx.fillStyle=heat;ctx.fillRect(0,0,w,h);
     const energy=1+Math.max(0,(charge-now)/2100)*.6;
     for(let i=0;i<count();i++){
       const a=particles[i];
       const phase=((a.phase+t*a.speed*(desktopLiving?1.55:1)+nearTravel*(.3+a.z*.7)/h)%1+1)%1;
       const fade=Math.sin(phase*Math.PI)*a.life;
-      let x=w*(.03+a.x*.94)+Math.sin(t*.23+a.wave)*(8+a.z*14)-perspective.x*(3+a.z*18);
+      let x=w*(.03+a.x*.94)+lightDrift(t+a.wave*9,29+(i%13),i+7)*(3+a.z*5)-perspective.x*(3+a.z*18);
       let y=h*(1.1-phase*1.2);
-      if(desktopLiving&&i>82&&zone.core>.05){const cx=w*(.5+Math.sin(a.wave+t*.17)*(.14+a.z*.18));x+=(cx-x)*zone.core;y+=(h*(.9-phase*.9)-y)*zone.core;}
-      const size=(desktopLiving?.85:.6)+a.z*(desktopLiving?2.3:1.9);
-      ctx.globalAlpha=Math.min(1,fade*(desktopLiving?.72+zone.heat*.2+a.z*.5:.55+a.z*.5)*energy);
+      if(desktopLiving&&i>82&&zone.core>.05){const cx=w*(.5+(a.x-.5)*(.36+a.z*.28));x+=(cx-x)*zone.core;y+=(h*(.9-phase*.9)-y)*zone.core;}
+      const size=(desktopLiving? 0.85:.6)+a.z*(desktopLiving?2.3:1.9);
+      ctx.globalAlpha=Math.min(1,fade*(desktopLiving? 0.72+zone.heat*.2+a.z*.5:.55+a.z*.5)*energy);
       ctx.drawImage(sprite,x-size*2,y-size*2,size*4,size*4);
       if(a.z>.78){ctx.strokeStyle='#ef9b7166';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(x+1,y+size*4);ctx.lineTo(x,y);ctx.stroke();}
     }
@@ -105,12 +110,12 @@ if (root && world) {
   function schedule(){if(!raf&&!timer&&!dead&&!paused())timer=setTimeout(()=>{timer=0;raf=requestAnimationFrame(draw);},1000/(compact.matches?18:24));}
   function sync(){if(paused()){stop();if(reduce.matches||forced.matches)ctx.clearRect(0,0,canvas.width,canvas.height);}else schedule();}
   const machine=document.querySelector('.hero-machine');let point=null;
-  on(document,'pointermove',e=>{if(!fine.matches||paused()||e.pointerType==='touch')return;perspective.tx=e.clientX/innerWidth-.5;perspective.ty=e.clientY/innerHeight-.5;},{passive:true});
+  on(document,'pointermove',e=>{if(!fine.matches||paused()||e.pointerType==='touch')return;perspective.tx=Math.max(-.5,Math.min(.5,e.clientX/innerWidth-.5));perspective.ty=Math.max(-.5,Math.min(.5,e.clientY/innerHeight-.5));},{passive:true});
   on(machine,'pointermove',e=>{
     if(!fine.matches||paused()||e.pointerType==='touch')return;point={x:e.clientX,y:e.clientY};
-    if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;const b=machine.getBoundingClientRect();machine.style.setProperty('--machine-x',`${((point.y-b.top)/b.height-.5)*-7}deg`);machine.style.setProperty('--machine-y',`${((point.x-b.left)/b.width-.5)*9}deg`);});
+    if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;const b=machine.getBoundingClientRect();machine.style.setProperty('--machine-x',`${Math.max(-.5,Math.min(.5,(point.y-b.top)/b.height-.5))*-3}deg`);machine.style.setProperty('--machine-y',`${Math.max(-.5,Math.min(.5,(point.x-b.left)/b.width-.5))*4}deg`);});
   },{passive:true});
-  on(machine,'pointerleave',()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;machine.style.removeProperty('--machine-x');machine.style.removeProperty('--machine-y');});
+  on(machine,'pointerleave',()=>{cancelAnimationFrame(pointerFrame);pointerFrame=0;if(paused())return;machine.style.removeProperty('--machine-x');machine.style.removeProperty('--machine-y');});
   on(window,'scroll',()=>{scrollTarget=scrollY;updateBays(scrollY);},{passive:true});
   on(window,'resize',()=>{resize();sync();},{passive:true});
   const journeyObserver=new ResizeObserver(measureJourney);journeyObserver.observe(document.querySelector('#main'));
@@ -119,6 +124,6 @@ if (root && world) {
   on(window,'progresskit:motionchange',sync);on(document,'visibilitychange',sync);on(reduce,'change',sync);on(forced,'change',sync);on(compact,'change',sync);
   function dispose(){if(dead)return;dead=true;stop();observer.disconnect();journeyObserver.disconnect();listeners.splice(0).forEach(f=>f());canvas.remove();}
   on(window,'pagehide',e=>{leaving=true;sync();if(!e.persisted)dispose();});on(window,'pageshow',()=>{leaving=false;scrollTarget=scrollY;sync();});
-  root.installation={metrics:()=>({frames,pending:!!(raf||timer||pointerFrame),paused:paused(),visible:visible.size,canvasCount:dead?0:1,particles:count(),poolSize:particles.length,poolSignature:particles.map(p=>p.id).join(','),fpsLimit:compact.matches?18:24,disposed:dead,cameraY,elapsed,zone:{...zone},desktopLiving:w>=1000&&fine.matches,depthRates:{far:.065,mid:.12,ash:.025},size:{width:canvas.width,height:canvas.height},coordinateSpace:'global-camera',sections:objects.map(e=>({id:e.id||e.className,visible:visible.has(e)}))}),dispose};
+  root.installation={metrics:()=>({frames,pending:!!(raf||timer||pointerFrame),paused:paused(),visible:visible.size,canvasCount:dead?0:1,particles:count(),poolSize:particles.length,poolSignature:particles.map(p=>p.id).join(','),fpsLimit:compact.matches?18:24,disposed:dead,cameraY,elapsed,zone:{...zone},desktopLiving:w>=1000&&fine.matches,depthRates:{far:.065,mid:.12,ash:.025},size:{width:canvas.width,height:canvas.height},idleCameraMotion:false,coordinateSpace:'global-camera',sections:objects.map(e=>({id:e.id||e.className,visible:visible.has(e)}))}),dispose};
   resize();sync();
 }

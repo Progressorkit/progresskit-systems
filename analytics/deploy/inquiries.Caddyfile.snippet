@@ -1,0 +1,40 @@
+# LOCAL CANDIDATE ONLY. Insert inside the HTTPS progresskit.pl site block,
+# before existing API handlers and file_server/SPA fallback. Caddy >=2.8.
+@inquiry_private path /internal /internal/*
+@inquiry_token {
+	path /api/project-inquiries/token
+	method GET
+}
+@inquiry_submit {
+	path /api/project-inquiries
+	method POST
+}
+@inquiry_other path /api/project-inquiries /api/project-inquiries/*
+@inquiry_namespace path /api/project-inquiries /api/project-inquiries/* /internal /internal/*
+
+# A bounded handle participates in existing site-level handle sorting; the
+# inner route keeps exact proxy branches before the namespace catch-all denial.
+handle @inquiry_namespace {
+	route {
+		handle @inquiry_private {
+			respond 404
+		}
+		handle @inquiry_token {
+			reverse_proxy analytics:8091
+		}
+		handle @inquiry_submit {
+			request_body {
+				max_size 160KB
+			}
+			reverse_proxy analytics:8091
+		}
+		# No public GET receipt/list/detail, wildcard API proxy, OPTIONS or other methods.
+		handle @inquiry_other {
+			respond 404
+		}
+	}
+}
+
+# Body data is never logged by the app. Exclude access metadata at this proxy too.
+@inquiry_no_access_log path /api/project-inquiries /api/project-inquiries/* /internal /internal/*
+log_skip @inquiry_no_access_log

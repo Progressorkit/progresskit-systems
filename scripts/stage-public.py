@@ -25,6 +25,8 @@ def public_files():
         'assets/world/installation-chamber.webp','assets/world/optical-core.webp','assets/world/crystal-artefact.webp','assets/world/process-crystal.webp',
         'assets/material-finish.css','assets/hero-entry.css','assets/hero-entry.mjs','assets/hero-strata.svg','assets/installation.css','assets/world-continuity.css','assets/world-journey.mjs','assets/journey-world.css','assets/premium-controls.css','assets/premium-controls.mjs','assets/installation.mjs','assets/interactions.css','assets/interactions.mjs',
         'assets/brand-core-mark.css','assets/brand-core-mark.mjs',
+        'assets/client-inquiry.css','assets/client-inquiry.mjs',
+        'assets/product-presentation.css','assets/product-downloads.mjs',
         'assets/brand/progresskit-core-mark.webm',
         'assets/showroom-3d.css','assets/showroom-3d.mjs','assets/showroom-scene.mjs','assets/showroom-lifecycle.mjs',
         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',

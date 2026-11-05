@@ -1,5 +1,6 @@
 """Structural regressions for the owner's corrected composition; not visual approval."""
 from collections import Counter
+from html import escape
 from html.parser import HTMLParser
 import importlib.util
 import json
@@ -64,6 +65,34 @@ class OwnerCorrectionTests(unittest.TestCase):
         self.assertNotIn('Wybrane projekty',self.source)
         self.assertNotIn('selected-work-grid',self.source)
 
+    def test_showroom_preserves_functional_copy_and_exposes_confirmed_development(self):
+        spec=importlib.util.spec_from_file_location('owner_showroom_markup',ROOT/'scripts/showroom_markup.py')
+        markup=importlib.util.module_from_spec(spec);spec.loader.exec_module(markup)
+        rendered=markup.render_showroom(self.data)
+        self.assertEqual(len(self.data),rendered.count('data-confirmed-stage='))
+        for project in self.data:
+            with self.subTest(project=project['id']):
+                card=rendered.split('data-project-id="'+project['id']+'"',1)[1].split('</article>',1)[0]
+                stage=escape(project.get('stage') or 'Etap do potwierdzenia',quote=True)
+                functional=escape(project.get('portfolio',{}).get('functionalStatus') or project.get('stage') or 'Etap do potwierdzenia',quote=True)
+                self.assertIn('<span class="showroom-card__stage">'+functional+'</span>',card)
+                self.assertIn('data-confirmed-stage="'+stage+'" aria-label="Etap rozwoju: '+stage+'">'+stage+'</span>',card)
+                self.assertIn('aria-describedby="showroom-development-'+project['id']+'"',card)
+                self.assertIn('id="showroom-development-'+project['id']+'"',card)
+        self.assertEqual(1,rendered.count('data-core-close'))
+        self.assertIn('data-core-close hidden aria-label="Zamknij rdzeń ProgressKit"',rendered)
+        self.assertEqual(1,rendered.count('data-core-status role="status" aria-live="polite" aria-atomic="true"'))
+
+    def test_confirmed_stage_is_escaped_in_both_attribute_and_visible_text(self):
+        spec=importlib.util.spec_from_file_location('owner_showroom_escaping',ROOT/'scripts/showroom_markup.py')
+        markup=importlib.util.module_from_spec(spec);spec.loader.exec_module(markup)
+        project=dict(self.data[0],stage='Beta "preview" <unsafe> & draft')
+        rendered=markup.render_showroom([project])
+        expected=escape(project['stage'],quote=True)
+        self.assertIn('data-confirmed-stage="'+expected+'"',rendered)
+        self.assertIn('aria-label="Etap rozwoju: '+expected+'">'+expected+'</span>',rendered)
+        self.assertNotIn('<unsafe>',rendered)
+
     def test_about_ctas_and_single_brief_remain_functional(self):
         self.assertEqual(1,self.home.ids.count('o-mnie'))
         self.assertEqual(1,self.home.ids.count('brief'))
@@ -87,7 +116,26 @@ class OwnerCorrectionTests(unittest.TestCase):
         self.assertIn('data-stone="SYSTEMS"',self.source)
         self.assertIn('assets/brand/progressorkit-stamp.png',self.home.images)
         brand=json.loads((ROOT/'catalog/brand.json').read_text())
-        if brand['heroBackground'] is None:
+        if 'hero--installation' in self.home.classes:
+            # The retained foyer/Core flow uses a declared procedural environment,
+            # rather than the older single landscape SVG. Keep original branding
+            # and the real handoff, and require every decorative source locally.
+            self.assertIn('data-hero-layout="world"',self.source)
+            self.assertIn('data-hero-art="procedural"',self.source)
+            self.assertEqual(1,self.home.ids.count('rdzen'))
+            core=self.source.split('<section id="rdzen"',1)[1].split('</section>',1)[0]
+            self.assertIn('data-hero-enter',core)
+            self.assertIn('href="#projekty"',core)
+            self.assertIn('src="assets/brand/progressorkit-stamp.png"',core)
+            for stylesheet,asset in (
+                ('world-continuity.css','installation-chamber.webp'),
+                ('hero-entry.css','optical-core.webp'),
+            ):
+                self.assertIn("world/"+asset,(ROOT/'assets'/stylesheet).read_text())
+                self.assertTrue((ROOT/'assets/world'/asset).is_file())
+            if brand['heroBackground'] is not None:
+                self.assertTrue((ROOT/brand['heroBackground']).is_file())
+        elif brand['heroBackground'] is None:
             self.assertIn('data-hero-art="missing"',self.source)
             self.assertIn('No substitute landscape',(ROOT/'assets/hero.css').read_text())
             self.assertEqual('OPEN',brand['ownerVisualApproval'])

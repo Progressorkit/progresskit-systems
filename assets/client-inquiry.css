@@ -1,0 +1,40 @@
+/* The existing optical console holds native, readable contact controls. */
+body.luxury-world #main #brief>form { grid-column:1/-1; min-width:0; width:100%; }
+body.luxury-world #main #brief .brief-contact { margin:34px 0 38px; padding:25px; min-width:0; border:1px solid #a896ae40; border-left:3px solid #806174; border-radius:3px 14px 3px 3px; background:linear-gradient(120deg,#b8b9cc0c,transparent 70%),#08091085; }
+body.luxury-world #main #brief .brief-contact legend { padding:0 10px; color:#eee7ef; font-size:20px; font-weight:600; }
+#brief .brief-contact p,#brief .inquiry-privacy { font-size:14px; line-height:1.7; color:#c8becb; }
+#brief .brief-contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; margin-top:24px; }
+#brief .brief-contact-grid label { display:grid; gap:12px; min-width:0; font-size:16px; color:#e2d8e3; }
+body.luxury-world #main #brief :is(input,select,textarea) { width:100%; min-width:0; min-height:48px; padding:13px 15px; font:16px/1.6 var(--sans); color:#eee7ef; border:1px solid #97839e80; border-top-color:#030409; border-radius:3px 8px 3px 3px; box-shadow:inset 3px 6px 12px #000b,inset 0 -1px #c7badb40; background:#0b0b13; }
+body.luxury-world #main #brief .brief-grid textarea { font-size:16px; }
+body.luxury-world #main #brief :is(input,select,textarea):focus-visible { outline:2px solid #d5b6c6; outline-offset:4px; }
+#brief select option { color:#eee7ef; background:#141019; }
+#brief .inquiry-privacy { margin:34px 0 0; max-width:88ch; }
+#brief [data-inquiry-status] { font:500 16px/1.65 var(--sans); max-width:86ch; margin-top:24px; overflow-wrap:anywhere; }
+#brief [data-inquiry-status][data-state="accepted"] { padding:18px; border-left:3px solid #b5d8c1; background:#223a2b88; color:#e4f5e8; }
+#brief [data-inquiry-status]:is([data-state="error"],[data-state="uncertain"]) { padding:18px; border-left:3px solid #d197a9; background:#3a172580; color:#f7dbe4; }
+#brief [data-brief-status] { font-size:14px; color:#c8becb; }
+#brief .inquiry-trap { position:absolute!important; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+#brief button:disabled { cursor:wait; opacity:.65; }
+#brief [data-inquiry-field]:disabled { opacity:.85; cursor:default; }
+#brief .brief-print { display:none; }
+@media(max-width:700px) {
+ body.luxury-world #main #brief .brief-contact { padding:20px 14px; }
+ #brief .brief-contact-grid { grid-template-columns:1fr; gap:24px; }
+ #brief .brief__actions { display:grid; grid-template-columns:1fr; }
+ #brief .brief__actions .cta { width:100%; }
+}
+@media(forced-colors:active) {
+ body.luxury-world #main #brief :is(input,select,textarea),body.luxury-world #main #brief .brief-contact { color:CanvasText; background:Canvas; border:1px solid CanvasText; }
+}
+@media print {
+ body:has([data-project-inquiry]) { color:#000!important; background:#fff!important; }
+ body:has([data-project-inquiry]) :is(.installation-world,.topbar,body>footer,#main>section,.installation-console #kontakt) { display:none!important; }
+ body:has([data-project-inquiry]) #main,body.luxury-world #main>.installation-console,body.luxury-world #main .installation-console>#brief { display:block!important; width:100%!important; max-width:none; padding:0!important; margin:0!important; border:0!important; color:#000!important; background:#fff!important; box-shadow:none!important; transform:none!important; overflow:visible!important; }
+ body:has([data-project-inquiry]) :is(.installation-console,#brief)::before,body:has([data-project-inquiry]) :is(.installation-console,#brief)::after { display:none!important; }
+ #brief form>:not(.brief-print),#brief .brief__heading>p { display:none!important; }
+ #brief .brief-print { display:block!important; color:#000; font:12pt/1.5 system-ui,sans-serif; }
+ #brief .brief-print h4 { margin:20pt 0 6pt; color:#000; font-size:13pt; break-after:avoid; }
+ #brief .brief-print p { white-space:pre-wrap; overflow-wrap:anywhere; max-width:none; color:#000!important; }
+ body.luxury-world #main #brief .brief__heading h3,body.luxury-world #main #brief .section-kicker { color:#000; }
+}

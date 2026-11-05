@@ -7,7 +7,7 @@ if (hero && showroom) {
   const toggle = showroom.querySelector('[data-capsule-toggle]');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   let flight = null, frame = 0, busy = false;
-  const wake = () => document.dispatchEvent(new CustomEvent('progresskit:showroom-wake', {detail: {awake: true}}));
+  const request = (awake, startedAt = performance.now()) => document.dispatchEvent(new CustomEvent('progresskit:core-request', {detail: {awake, startedAt}}));
   const destination = () => {
     const box = stage.getBoundingClientRect();
     const size = Number.parseFloat(toggle.style.getPropertyValue('--core-size')) || (innerWidth <= 700 ? 190 : 240);
@@ -21,14 +21,17 @@ if (hero && showroom) {
     showroom.classList.remove('hero-entry-landing');
   };
   const finish = (focus = true) => {
-    clear(); wake();
+    clear();
     hero.closest('section').dataset.entryState = 'showroom';
-    if (focus) stage.focus({preventScroll: true});
+    if (focus) (toggle.hidden ? stage : toggle).focus({preventScroll: true});
   };
   function enter(event) {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (busy) return;
+    if (showroom.classList.contains('is-awake')) { request(false); return; }
+    const activatedAt = performance.now();
+    request(true, activatedAt);
     showroom.dataset.heroEntryRequested = 'true';
     const still = reduce.matches || matchMedia('(forced-colors: active)').matches || document.documentElement.dataset.interfaceMotion === 'paused';
     // WebGL failure retains the native project list and an immediate accessible entry.
@@ -40,7 +43,7 @@ if (hero && showroom) {
     const startScroll = scrollY;
     const box = stage.getBoundingClientRect();
     const topbar = document.querySelector('.topbar').getBoundingClientRect().height;
-    const targetScroll = startScroll + box.top - topbar - Math.max(12, (innerHeight - topbar - box.height) / 2);
+    const targetScroll = startScroll + box.top - topbar - 12;
     flight = mark.cloneNode(true); flight.className = `${mark.className} hero-core-flight`; flight.alt = ''; flight.setAttribute('aria-hidden', 'true');
     Object.assign(flight.style, {left: `${from.left}px`, top: `${from.top}px`, width: `${from.width}px`, height: `${from.height}px`, filter: getComputedStyle(mark).filter});
     document.body.append(flight);
@@ -48,14 +51,14 @@ if (hero && showroom) {
     hero.closest('section').dataset.entryState = 'entering';
     showroom.classList.add('hero-entry-landing');
     document.dispatchEvent(new CustomEvent('progresskit:core-charge'));
-    const start = performance.now(), duration = 1850;
+    const start = activatedAt, duration = 600;
     const ease = t => t * t * (3 - 2 * t);
     const tick = now => {
       if (!busy) return;
       if (reduce.matches || document.documentElement.dataset.interfaceMotion === 'paused') {
         window.scrollTo({top: targetScroll, behavior: 'instant'}); finish(); return;
       }
-      const t = Math.max(0, Math.min(1, (now - start - 260) / duration)), k = ease(t);
+      const t = Math.max(0, Math.min(1, (now - start) / duration)), k = ease(t);
       window.scrollTo({top: startScroll + (targetScroll - startScroll) * k, behavior: 'instant'});
       const to = destination();
       // Destination is measured in the moving viewport; compensate the
@@ -71,10 +74,17 @@ if (hero && showroom) {
     frame = requestAnimationFrame(tick);
   }
   hero.addEventListener('click', enter);
+  document.addEventListener('progresskit:showroom-wake', event => {
+    if (busy && event.detail?.awake === false) { clear(); hero.closest('section').dataset.entryState = 'idle'; hero.focus({preventScroll:true}); }
+  });
   // The foyer's native #rdzen link leads to the large core, without activating it.
   // User scrolling/navigation can interrupt safely; there is never a scroll lock.
   for (const type of ['wheel', 'touchstart']) window.addEventListener(type, () => {if (busy) finish(false);}, {passive: true});
-  window.addEventListener('keydown', e => {if (busy && ['Escape','Tab','PageDown','PageUp','Home','End','ArrowDown','ArrowUp'].includes(e.key)) finish(false);});
+  window.addEventListener('keydown', e => {
+    if (!busy) return;
+    if (e.key === 'Escape') { clear(); request(false); hero.focus({preventScroll:true}); }
+    else if (['Tab','PageDown','PageUp','Home','End','ArrowDown','ArrowUp'].includes(e.key)) finish(false);
+  });
   window.addEventListener('resize', () => {if (busy) finish(false);});
   window.addEventListener('pagehide', clear);
   document.addEventListener('visibilitychange', () => {if (document.hidden && busy) finish(false);});

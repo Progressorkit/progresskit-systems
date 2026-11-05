@@ -277,6 +277,9 @@ def health():
 # Product API shares the existing service; product records use a separate persistent database.
 from product import router as product_router, connect as product_connect
 app.include_router(product_router)
+# Client inquiries reuse this service and its persistent SQLite infrastructure.
+from inquiries import router as inquiry_router
+app.include_router(inquiry_router)
 # This private dashboard is a server-owned constant. Its exact inline CSS/JS is
 # hash-authorized only for '/', while API responses retain the strict policy.
 app.add_middleware(SecurityHeadersMiddleware, trusted_inline_pages={'/': dashboard()})

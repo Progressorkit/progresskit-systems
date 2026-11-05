@@ -13,7 +13,7 @@ function mount(projects=records,{slices=false,narrow=false,capsule=false}={}){
   const timers=new Map(),frames=new Map(),documentEvents={},windowEvents={},opened=[],openedPoses=[],intersections=[];
   function element(){return{events:{},dataset:{},properties:new Map(),classes:new Set(),hidden:false,inert:false,
     addEventListener(key,fn){(this.events[key]??=[]).push(fn)},setAttribute(key,value){this[key]=value},focus(){focused=this},closest(){return null},
-    get classList(){const node=this;return{toggle(key,on){on?node.classes.add(key):node.classes.delete(key)},add(key){node.classes.add(key)},remove(key){node.classes.delete(key)}}},
+    get classList(){const node=this;return{contains(key){return node.classes.has(key)},toggle(key,on){on?node.classes.add(key):node.classes.delete(key)},add(key){node.classes.add(key)},remove(key){node.classes.delete(key)}}},
     get style(){const node=this;return{setProperty(key,value){node.properties.set(key,value)},removeProperty(key){node.properties.delete(key)},set zIndex(value){node.zIndex=value},get display(){return node.properties.get('display')||''},set display(value){node.properties.set('display',value)}}}};}
   const cards=projects.map(project=>{
     const card=element(),link=element(),panel=element(),body=element(),close=element();
@@ -625,14 +625,45 @@ test('Capsule sleep removes project interaction without deleting content or chan
   assert.equal(ui.url.href,before);
 });
 
-test('Navigation and category selection wake a sleeping capsule through existing controls',()=>{
-  const ui=mount(records,{slices:true,capsule:true});
+test('Navigation and category selection request Awakening before exposing sleeping projects',()=>{
+  const ui=mount(records,{slices:true,capsule:true}),requests=[];
+  ui.document.addEventListener('progresskit:core-request',event=>requests.push(event.detail.awake));
   ui.notify('progresskit:showroom-wake',{awake:false});
   ui.fire(ui.buttons[1],'click');ui.tick(700);
-  assert.equal(ui.active().dataset.projectId,'project-1');assert.equal(ui.active().inert,false);
+  assert.equal(ui.active().dataset.projectId,'project-1');assert.equal(ui.active().inert,true);
+  assert.deepEqual(requests,[true]);
+  ui.notify('progresskit:showroom-wake',{awake:true});
+  assert.equal(ui.active().inert,false);
   ui.notify('progresskit:showroom-wake',{awake:false});
   ui.fire(ui.gate('games'),'click');ui.tick(700);
-  assert.equal(ui.active().dataset.projectId,'project-3');assert.equal(ui.active().inert,false);
+  assert.equal(ui.active().dataset.projectId,'project-3');assert.equal(ui.active().inert,true);
+  assert.deepEqual(requests,[true,true]);
+  ui.notify('progresskit:showroom-wake',{awake:true});
+  assert.equal(ui.active().inert,false);
+});
+
+test('Hover never awakens a closed Core, while Enter requests the sequence',()=>{
+  const ui=mount(records,{slices:true,capsule:true}),requests=[];
+  ui.document.addEventListener('progresskit:core-request',event=>requests.push(event.detail.awake));
+  ui.notify('progresskit:showroom-wake',{awake:false});
+  ui.fire(ui.gate('mobile'),'pointerenter',{pointerType:'mouse'});ui.tick(700);
+  assert.equal(ui.active().dataset.projectId,'project-0');
+  assert.equal(ui.active().inert,true);assert.deepEqual(requests,[]);
+  ui.fire(ui.viewport,'keydown',{key:'Enter'});ui.tick(700);
+  assert.deepEqual(requests,[true]);assert.equal(ui.cards[0].panel.hidden,true);
+});
+
+test('3D disclosure waits for CORE ONLINE; fallback native presentations remain available',()=>{
+  const ui=mount(records,{slices:true,capsule:true});
+  ui.root.classes.add('showroom-3d-ready');
+  for(const phase of ['idle','pulse','opening','reveal','closing']) {
+    ui.root.dataset.awakening=phase;
+    ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(700);
+    assert.equal(ui.cards[0].panel.hidden,true,phase);
+  }
+  ui.root.dataset.awakening='online';
+  ui.fire(ui.root,'click',{target:ui.cards[0].link});ui.tick(700);
+  assert.equal(ui.cards[0].panel.hidden,false);
 });
 
 test('An open product cannot be hidden by capsule sleep and explicit opening wakes it',()=>{

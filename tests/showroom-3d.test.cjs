@@ -107,3 +107,48 @@ test("Cadence keeps fractional time on irregular displays and adapts to mobile F
   assert.ok(draws >= 47 && draws <= 50);
   loop.destroy();
 });
+
+
+test("Core awakening uses one sampled 2.2s clock with mechanical opening before links", async () => {
+  const { coreAwakening } = await mod();
+  let time = 1000;
+  const clock = coreAwakening(() => time);
+  assert.equal(clock.sample().phase, 'idle');
+  clock.set(true, { startedAt: 1000 });
+  for (const [at,phase] of [[1000,'pulse'],[1599,'pulse'],[1600,'opening'],[2399,'opening'],[2400,'reveal'],[3199,'reveal'],[3200,'online']]) {
+    time=at; const frame=clock.sample(); assert.equal(frame.phase,phase);
+    if(at<2400) assert.equal(frame.reveal,0);
+    assert.ok(frame.opening>=0 && frame.opening<=1);
+  }
+  assert.equal(clock.sample().opening,1);
+  assert.equal(clock.sample().reveal,1);
+  clock.set(false); time+=175;
+  assert.equal(clock.sample().phase,'closing');
+  assert.ok(Math.abs(clock.sample().opening-.5)<1e-9);
+  assert.equal(clock.sample().reveal,0);
+  time+=175; assert.equal(clock.sample().phase,'idle');
+});
+
+test("Awakening catches up offscreen, freezes only explicit suspension and can finish immediately", async () => {
+  const { coreAwakening } = await mod();
+  let time=0; const clock=coreAwakening(()=>time);
+  clock.set(true,{startedAt:0}); time=400;
+  clock.suspend(true); time=10400;
+  assert.equal(clock.sample().seconds,.4);
+  clock.suspend(false); time=10600;
+  assert.equal(clock.sample().phase,'opening');
+  time=20000; assert.equal(clock.sample().phase,'online');
+  clock.set(false,{immediate:true}); assert.deepEqual(clock.sample(),{phase:'idle',seconds:0,opening:0,reveal:0});
+  clock.set(true,{immediate:true}); assert.equal(clock.sample().phase,'online');
+  assert.equal(clock.sample().reveal,1);
+});
+
+test("Detail reduction removes actual corona, particles, link vertices and shadows without lowering target cadence", async () => {
+  const { qualityProfile } = await mod();
+  for(const width of [390,1440]) {
+    const full=qualityProfile(width,2,0), low=qualityProfile(width,2,2);
+    for(const key of ['coronaRoots','dust','farDust','linkSegments','transmission']) assert.ok(low[key]<full[key],key);
+    assert.equal(low.shadows,false); assert.equal(low.facets,false);
+    assert.equal(low.fps,full.fps);
+  }
+});

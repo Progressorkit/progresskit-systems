@@ -177,10 +177,14 @@ class SiteV4CompatibilityTests(unittest.TestCase):
             self.assertIn(phrase, self.product)
         counters = [attrs for _, attrs in self.pages['product'].elements if 'data-download-count' in attrs]
         self.assertGreaterEqual(len(counters), 1)
-        reader = (ROOT / 'glikemia-premium/product.js').read_text()
-        self.assertIn("getJSON('/api/glikemia/downloads')", reader)
+        reader = (ROOT / 'assets/product-downloads.mjs').read_text()
+        self.assertIn("const endpoint = '/api/glikemia/downloads'", reader)
+        for relative in ('glikemia-premium/index.html', 'projekty/glikemia-premium/index.html'):
+            markup = (ROOT / relative).read_text()
+            self.assertIn('assets/product-downloads.mjs', markup)
+            self.assertIn('data-download-count', markup)
         self.assertIn('Number.isSafeInteger(data.downloads)', reader)
-        self.assertIn("credentials: 'omit'", reader)
+        self.assertIn("credentials:'omit'", reader)
         self.assertIn('Licznik pobrań chwilowo niedostępny', reader)
 
     def test_legacy_product_urls_stay_public_with_correct_canonical_targets(self):

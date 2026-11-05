@@ -8,15 +8,6 @@ async function getJSON(path) {
   if (!response.ok) throw new Error('Usługa jest chwilowo niedostępna. Spróbuj ponownie później.');
   return response.json();
 }
-async function refreshCount() {
-  try {
-    const data = await getJSON('/api/glikemia/downloads');
-    if (!Number.isSafeInteger(data.downloads) || data.downloads < 0) throw new Error();
-    document.querySelectorAll('[data-download-count]').forEach(el => { el.textContent = `${new Intl.NumberFormat('pl-PL').format(data.downloads)} pobrań APK`; });
-  } catch {
-    document.querySelectorAll('[data-download-count]').forEach(el => { el.textContent = 'Licznik pobrań chwilowo niedostępny'; });
-  }
-}
 async function loadReviews() {
   const list = document.querySelector('#review-list');
   try {
@@ -47,11 +38,4 @@ form.addEventListener('submit', async event => {
     form.reset(); await prepareForm(); statusLine.textContent = data.message;
   } catch (error) { await prepareForm(); statusLine.textContent = error.message || 'Nie udało się wysłać opinii.'; }
 });
-document.querySelectorAll('a[href="/download/glikemia-premium"]').forEach(link => link.addEventListener('click', () => {
-  // Download completion is asynchronous and may take longer than a fixed 1.5 s.
-  // Refresh a few times without tracking the visitor; the API only returns the aggregate counter.
-  [4000, 12000, 30000].forEach(delay => setTimeout(refreshCount, delay));
-}));
-window.addEventListener('pageshow', refreshCount);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshCount(); });
 loadReviews(); prepareForm();

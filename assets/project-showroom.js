@@ -163,7 +163,9 @@ if (typeof document !== 'undefined') {
         const point = inlineSlices ? ProjectShowroom.mechanism(offset, state.items.length)
           : ProjectShowroom.orbit(offset, state.items.length);
         const selected = included && index === state.index;
-        const shown = included && (narrowLayout.matches ? selected : point.visible);
+        const network = root.classList.contains('showroom-3d-ready');
+        const slot = included ? ProjectShowroom.wrap(index - state.index, state.items.length) : 99;
+        const shown = included && (network ? slot < (narrowLayout.matches ? 3 : 6) : (narrowLayout.matches ? selected : point.visible));
         card.hidden = false;
         card.classList.toggle('is-orbit-hidden', !shown);
         card.classList.toggle('is-active', selected);
@@ -176,9 +178,9 @@ if (typeof document !== 'undefined') {
         card.style.setProperty('--showroom-opacity', shown ? point.opacity.toFixed(6) : '0');
         card.style.zIndex = String(!shown ? 0 : point.depth >= 0 ? 10 + Math.round(point.depth * 6) : 2 + Math.round((point.depth + 1) * 3));
         card.inert = !awake || locked || !shown || Boolean(sliceCard && card !== sliceCard);
-        card.setAttribute('aria-hidden', String(!awake || !included || !shown || (sliceCard ? card !== sliceCard : !selected)));
-        card.querySelector('[data-showroom-open]').tabIndex = awake && !locked && selected && shown && !sliceCard ? 0 : -1;
-        if (shown) visible.push({id:card.dataset.projectId, point, selected});
+        card.setAttribute('aria-hidden', String(!awake || !included || !shown || (sliceCard ? card !== sliceCard : (!network && !selected))));
+        card.querySelector('[data-showroom-open]').tabIndex = awake && !locked && (network || selected) && shown && !sliceCard ? 0 : -1;
+        if (shown) visible.push({id:card.dataset.projectId, point, selected, slot});
         if (included) card.setAttribute('aria-label', `${byId.get(card.dataset.projectId).name} · ${index + 1} z ${state.items.length}`);
       }
       if (pendingKeyboardFocus && document.activeElement === viewport) {
@@ -354,7 +356,7 @@ if (typeof document !== 'undefined') {
       render(false, false);
       syncUrl();
       panel.querySelector('.project-slice__body').scrollTop = 0;
-      if (!reducedMotion.matches && typeof card.animate === 'function') {
+      if (!reducedMotion.matches && typeof card.animate === 'function' && !root.classList.contains('showroom-3d-ready')) {
         const after = card.getBoundingClientRect();
         const x = before.left - after.left, y = before.top - after.top;
         const sx = before.width / after.width, sy = before.height / after.height;
@@ -366,10 +368,14 @@ if (typeof document !== 'undefined') {
         sliceAnimations.push(panel.animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:240,delay:220,fill:'backwards'}));
       }
       if (focus) panel.querySelector('[data-slice-close]').focus({preventScroll:true});
+      if (root.classList.contains('showroom-3d-ready')) {
+        card.scrollIntoView({block:'start',behavior:'instant'});
+      }
       document.dispatchEvent(new CustomEvent('progresskit:slice-open', {detail:{id}}));
     }
     function move(delta) {
-      awake = true;
+      if (!awake && capsule) document.dispatchEvent(new CustomEvent('progresskit:core-request', {detail:{awake:true}}));
+      else awake = true;
       if (locked || state.items.length < 2) return;
       const focusedSlice = sliceCard?.contains(document.activeElement);
       closeSlice(false, false);
@@ -390,6 +396,7 @@ if (typeof document !== 'undefined') {
     function requestOpen(id, trigger, fromHistory = false) {
       const project = byId.get(id);
       if (!project || (locked && !fromHistory)) return;
+      if (!fromHistory && capsule && root.classList.contains('showroom-3d-ready') && root.dataset.awakening !== 'online') return;
       awake = true;
       if (inlineSlices) {
         if (sliceCard?.dataset.projectId === id) return;
@@ -397,7 +404,7 @@ if (typeof document !== 'undefined') {
         endPreview(); cancelOpen();
         if (!state.items.some(item => item.id === id)) state = ProjectShowroom.select(projects, '', id);
         state.index = state.items.findIndex(item => item.id === id);
-        render(true, !fromHistory);
+        render(true, !fromHistory && !root.classList.contains('showroom-3d-ready'));
         root.classList.add('is-projecting');
         const dispatch = () => {
           finishPhase();
@@ -482,7 +489,8 @@ if (typeof document !== 'undefined') {
     gates.forEach(gate => {
       gate.addEventListener('click', () => {
         if (locked) return;
-        awake = true;
+        if (!awake && capsule) document.dispatchEvent(new CustomEvent('progresskit:core-request', {detail:{awake:true}}));
+        else awake = true;
         closeSlice(false, false);
         stopGesture();
         endPreview(false);
@@ -491,7 +499,7 @@ if (typeof document !== 'undefined') {
         render(); syncUrl();
       });
       gate.addEventListener('pointerenter', event => {
-        if (locked || sliceCard || !finePointer.matches || event.pointerType === 'touch') return;
+        if (!awake || locked || sliceCard || !finePointer.matches || event.pointerType === 'touch') return;
         // A pointer-only preview must not make a keyboard user's focused link
         // disappear. Clicking a gate still selects its category explicitly.
         const focusedProject = document.activeElement?.closest?.('[data-showroom-open]');
@@ -535,7 +543,9 @@ if (typeof document !== 'undefined') {
       } else if (event.key === 'Escape' && openTimer && !locked) {
         event.preventDefault(); cancelOpen(); openId = ''; syncUrl();
       } else if ((event.key === 'Enter' || event.key === ' ') && event.target === viewport) {
-        event.preventDefault(); requestOpen(active().id, byCard.get(active().id).querySelector('[data-showroom-open]'));
+        event.preventDefault();
+        if (!awake && capsule) document.dispatchEvent(new CustomEvent('progresskit:core-request', {detail:{awake:true}}));
+        else requestOpen(active().id, byCard.get(active().id).querySelector('[data-showroom-open]'));
       }
     });
     viewport.addEventListener('pointerdown', event => {

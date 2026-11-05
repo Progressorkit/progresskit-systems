@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "Hover does not start; pointer leave does not close",
+      "status": "PASS"
+    },
+    {
+      "name": "Secondary settings available, sound off by default, pause cancels RAF",
+      "status": "PASS"
+    },
+    {
+      "name": "Real WebGL loss, semantic fallback and restoration of six connections",
+      "status": "PASS"
+    },
+    {
+      "name": "Four cycles retain one canvas and stable geometry/texture counts",
+      "detail": [
+        {
+          "geometries": 11,
+          "textures": 6,
+          "canvas": 1
+        },
+        {
+          "geometries": 11,
+          "textures": 6,
+          "canvas": 1
+        },
+        {
+          "geometries": 11,
+          "textures": 6,
+          "canvas": 1
+        },
+        {
+          "geometries": 11,
+          "textures": 6,
+          "canvas": 1
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "name": "Close during startup prevents delayed reopening",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "PASS": 5,
+  "FAIL": 0
+}

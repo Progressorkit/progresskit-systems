@@ -1,0 +1,141 @@
+{
+  "checks": [
+    {
+      "name": "1440: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 6,
+        "links": 6,
+        "buffer": {
+          "width": 1304,
+          "height": 718
+        }
+      }
+    },
+    {
+      "name": "1440: all19 project names and real stages fit every window",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "1440: non-selected node opens canonical project, description/status/link and Escape returns to network",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "1440: close, keyboard reactivation and Escape",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "1024: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 6,
+        "links": 6,
+        "buffer": {
+          "width": 909,
+          "height": 718
+        }
+      }
+    },
+    {
+      "name": "768: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 6,
+        "links": 6,
+        "buffer": {
+          "width": 666,
+          "height": 718
+        }
+      }
+    },
+    {
+      "name": "700: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 3,
+        "links": 3,
+        "buffer": {
+          "width": 664,
+          "height": 658
+        }
+      }
+    },
+    {
+      "name": "390: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 3,
+        "links": 3,
+        "buffer": {
+          "width": 354,
+          "height": 658
+        }
+      }
+    },
+    {
+      "name": "390: all19 project names and real stages fit every window",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "390: non-selected node opens canonical project, description/status/link and Escape returns to network",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "390: close, keyboard reactivation and Escape",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "320: visible linked terminals, readable non-overlapping labels, Core, no overflow",
+      "status": "PASS",
+      "detail": {
+        "count": 3,
+        "links": 3,
+        "buffer": {
+          "width": 284,
+          "height": 658
+        }
+      }
+    },
+    {
+      "name": "320: all19 project names and real stages fit every window",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "320: non-selected node opens canonical project, description/status/link and Escape returns to network",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "320: close, keyboard reactivation and Escape",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "{\"reducedMotion\":\"reduce\"}: native project presentation fallback",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "{\"forcedColors\":\"active\"}: native project presentation fallback",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "name": "No JavaScript exceptions or HTTP errors on checked local routes",
+      "status": "PASS",
+      "detail": {}
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "scope": "Actual local Chrome/ANGLE. Mobile emulation, not physical-device acceptance. No production or external SMTP.",
+  "PASS": 18,
+  "FAIL": 0
+}

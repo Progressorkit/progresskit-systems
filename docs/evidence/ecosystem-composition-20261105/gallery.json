@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "name": "1440: gallery images and responsive layout",
+      "status": "PASS"
+    },
+    {
+      "name": "ecosystem-desktop.mp4 actual playback",
+      "status": "PASS",
+      "state": {
+        "time": 0.678814,
+        "duration": 22.68,
+        "width": 1440,
+        "src": "ecosystem-desktop.mp4",
+        "error": null
+      }
+    },
+    {
+      "name": "ecosystem-mobile.mp4 actual playback",
+      "status": "PASS",
+      "state": {
+        "time": 0.715623,
+        "duration": 20.8,
+        "width": 390,
+        "src": "ecosystem-mobile.mp4",
+        "error": null
+      }
+    },
+    {
+      "name": "Private source, DB and secrets not served",
+      "status": "PASS"
+    },
+    {
+      "name": "390: gallery images and responsive layout",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "PASS": 5,
+  "FAIL": 0
+}

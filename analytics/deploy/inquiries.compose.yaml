@@ -1,0 +1,61 @@
+# LOCAL CANDIDATE ONLY. Merge after the reviewed existing service Compose files.
+# Requires modern Compose supporting !reset. No host ports are published.
+x-inquiries-image: &inquiries-image
+  image: progresskit-analytics:${PK_INQUIRIES_IMAGE_TAG:?Set reviewed immutable candidate tag}
+  build:
+    context: ${PK_INQUIRIES_BUILD_CONTEXT:?Set absolute analytics source directory}
+
+x-inquiries-common: &inquiries-common
+  PK_PRODUCT_DB: /data/product.db
+  PK_INQUIRIES_DB: /data/product.db
+  PK_PUBLIC_ORIGIN: ${PK_PUBLIC_ORIGIN:?Set exact production HTTPS origin}
+  PK_INQUIRIES_RETENTION_DAYS: ${PK_INQUIRIES_RETENTION_DAYS:-180}
+
+services:
+  analytics:
+    <<: *inquiries-image
+    user: "${PK_INQUIRIES_UID:?Set existing service data owner UID}:${PK_INQUIRIES_GID:?Set existing service data owner GID}"
+    ports: !reset []
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8091", "--no-access-log", "--proxy-headers", "--forwarded-allow-ips", "${PK_INQUIRIES_TRUSTED_PROXY_IPS:?Set only reviewed exact Caddy proxy IPs}"]
+    environment:
+      <<: *inquiries-common
+      PK_INQUIRIES_HMAC_SECRET_FILE: /run/secrets/inquiry_hmac
+      PK_INQUIRIES_READ_TOKEN_FILE: /run/secrets/inquiry_read
+    volumes:
+      - ${PK_INQUIRIES_DATA_DIR:?Set existing persistent analytics data directory}:/data
+    secrets:
+      - source: inquiry_hmac
+        target: inquiry_hmac
+      - source: inquiry_read
+        target: inquiry_read
+
+  inquiry-worker:
+    <<: *inquiries-image
+    user: "${PK_INQUIRIES_UID:?Set existing service data owner UID}:${PK_INQUIRIES_GID:?Set existing service data owner GID}"
+    restart: unless-stopped
+    init: true
+    command: ["python", "inquiry_worker.py"]
+    ports: []
+    environment:
+      <<: *inquiries-common
+      PK_INQUIRIES_SMTP_HOST: ${PK_INQUIRIES_SMTP_HOST:?Set reviewed SMTP hostname}
+      PK_INQUIRIES_SMTP_PORT: ${PK_INQUIRIES_SMTP_PORT:?Set SMTP TLS port}
+      PK_INQUIRIES_SMTP_MODE: ${PK_INQUIRIES_SMTP_MODE:?Set starttls or ssl}
+      PK_INQUIRIES_SMTP_USERNAME: ${PK_INQUIRIES_SMTP_USERNAME:?Set authenticated SMTP username}
+      PK_INQUIRIES_SMTP_PASSWORD_FILE: /run/secrets/inquiry_smtp_password
+      PK_INQUIRIES_SMTP_FROM: ${PK_INQUIRIES_SMTP_FROM:-notifications@progresskit.pl}
+    volumes:
+      - ${PK_INQUIRIES_DATA_DIR:?Set existing persistent analytics data directory}:/data
+    secrets:
+      - source: inquiry_smtp_password
+        target: inquiry_smtp_password
+    networks:
+      default: {}
+
+secrets:
+  inquiry_hmac:
+    file: ${PK_INQUIRIES_HMAC_SECRET_FILE:?Set absolute owner-only HMAC secret file}
+  inquiry_read:
+    file: ${PK_INQUIRIES_READ_TOKEN_FILE:?Set absolute distinct private API token file}
+  inquiry_smtp_password:
+    file: ${PK_INQUIRIES_SMTP_PASSWORD_FILE:?Set absolute owner-only SMTP secret file}

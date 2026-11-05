@@ -1,0 +1,214 @@
+{
+  "status": "READY_FOR_LOCAL_OWNER_REVIEW",
+  "ownerVisualApproval": "OPEN",
+  "previousVisualReview": "REJECTED",
+  "productionDeployment": false,
+  "commit": false,
+  "push": false,
+  "changedFiles": [
+    "index.html",
+    "assets/showroom-scene.mjs",
+    "assets/project-showroom.js",
+    "assets/showroom-3d.mjs",
+    "assets/hero-entry.mjs",
+    "assets/world-continuity.css",
+    "scripts/showroom_markup.py"
+  ],
+  "sourceHashes": {
+    "index.html": "757a4cb33010004aa5abc59e2175d84ec9fd5a24c6ed903516bd1fbffe4e5a6d",
+    "assets/showroom-scene.mjs": "011fcdc9113db2e326f98b948a95bb1d6bbf29bec31f2c9e8e518d259b95ed4d",
+    "assets/project-showroom.js": "65ce3420ff3fbdaa03840ee343b2eda04d95f8f9de21188afa2e10d9f80b69b6",
+    "assets/showroom-3d.mjs": "73b1e1ebb8fc1c20d81612aebd70a8752471634458b8e2d075b263339c208e78",
+    "assets/hero-entry.mjs": "8526d4f1c8d9e21a4b9205d9bd182813ef7b4650aecbcd8b7d7b9f46f2fcfd31",
+    "assets/world-continuity.css": "16072a36a4f0dc953b0990434c14d4613108581cd23301f0c8006a5ecbdd7e56",
+    "scripts/showroom_markup.py": "3ea56428ceecdf8061b1b3192c47e6798d8d6ab3a166923363b502eb54221fe5"
+  },
+  "regressionTests": 118,
+  "browserChecks": 69,
+  "details": {
+    "composition": 18,
+    "lifecycle": 5,
+    "navigation": 43,
+    "formAndCounter": 3
+  },
+  "protectedUnchanged": {
+    "catalog/projects.json": true,
+    "catalog/brand.json": true,
+    "assets/client-inquiry.mjs": true,
+    "assets/client-inquiry.css": true,
+    "assets/product-downloads.mjs": true,
+    "analytics/inquiries.py": true,
+    "analytics/product.py": true,
+    "analytics/app.py": true
+  },
+  "performance": {
+    "scope": "Serial 6-second local lab samples, real ANGLE, no video recording or parallel browser. Before files from source-before. Mobile Chrome emulation; not physical-device or field CWV.",
+    "runs": [
+      {
+        "width": 1440,
+        "state": "before",
+        "rafFPS": 58.66862228740958,
+        "rafP95": 16.799999999999272,
+        "cpuMedian": 3.2000000029802322,
+        "gpuMedian": 5.015499,
+        "fps": 60.00393468424157,
+        "targetFPS": 60,
+        "drawCalls": 44,
+        "geometries": 107,
+        "textures": 26,
+        "quality": 0,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "buffer": {
+          "width": 1304,
+          "height": 790
+        }
+      },
+      {
+        "width": 1440,
+        "state": "after",
+        "rafFPS": 58.50772069211973,
+        "rafP95": 16.799999999999272,
+        "cpuMedian": 1.6999999955296516,
+        "gpuMedian": 2.652333,
+        "fps": 57.04730992426474,
+        "targetFPS": 60,
+        "drawCalls": 14,
+        "geometries": 49,
+        "textures": 6,
+        "quality": 0,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "buffer": {
+          "width": 1304,
+          "height": 718
+        }
+      },
+      {
+        "width": 390,
+        "state": "before",
+        "rafFPS": 60.00300015000751,
+        "rafP95": 16.700000000000728,
+        "cpuMedian": 2.0999999940395355,
+        "gpuMedian": 3.286749,
+        "fps": 30.003871467286082,
+        "targetFPS": 30,
+        "drawCalls": 19,
+        "geometries": 107,
+        "textures": 26,
+        "quality": 0,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "buffer": {
+          "width": 354,
+          "height": 900
+        }
+      },
+      {
+        "width": 390,
+        "state": "after",
+        "rafFPS": 60.00200006666889,
+        "rafP95": 16.799999999999272,
+        "cpuMedian": 1.1000000014901161,
+        "gpuMedian": 0.459916,
+        "fps": 30,
+        "targetFPS": 30,
+        "drawCalls": 14,
+        "geometries": 49,
+        "textures": 6,
+        "quality": 0,
+        "renderer": "ANGLE (Intel, Mesa Intel(R) UHD Graphics 620 (KBL GT2), OpenGL 4.6)",
+        "buffer": {
+          "width": 354,
+          "height": 658
+        }
+      }
+    ],
+    "errors": [],
+    "status": "PASS"
+  },
+  "recordings": {
+    "scope": "Actual unsped desktop/mobile browser recordings. Full sequence: idle, activation, project selection, presentation, close panel, close network. Synthetic mobile viewport.",
+    "runs": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900,
+        "events": [
+          {
+            "event": "ready",
+            "seconds": 3.74
+          },
+          {
+            "event": "before-activation",
+            "seconds": 5.936
+          },
+          {
+            "event": "activation",
+            "seconds": 8.664
+          },
+          {
+            "event": "network",
+            "seconds": 11.293
+          },
+          {
+            "event": "project-open",
+            "seconds": 16.149
+          },
+          {
+            "event": "panel-closed",
+            "seconds": 19.977
+          },
+          {
+            "event": "core-closed",
+            "seconds": 21.641
+          }
+        ]
+      },
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844,
+        "events": [
+          {
+            "event": "ready",
+            "seconds": 2.29
+          },
+          {
+            "event": "before-activation",
+            "seconds": 4.26
+          },
+          {
+            "event": "activation",
+            "seconds": 5.759
+          },
+          {
+            "event": "network",
+            "seconds": 8.616
+          },
+          {
+            "event": "project-open",
+            "seconds": 9.412
+          },
+          {
+            "event": "project-actions",
+            "seconds": 14.039
+          },
+          {
+            "event": "panel-closed",
+            "seconds": 17.002
+          },
+          {
+            "event": "core-closed",
+            "seconds": 18.409
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "status": "PASS"
+  },
+  "limitations": [
+    "Mobile is Chrome emulation, not a physical phone.",
+    "Six-second serial performance samples, not field CWV. CSS canvas dimensions differ because composition changed.",
+    "No fresh whole-site SAST or SCA; existing SAST release limitation remains open. Dependencies unchanged; scoped secret scan: zero findings.",
+    "Production SMTP and deployment remain outside local approval."
+  ]
+}

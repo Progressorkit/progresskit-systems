@@ -2,9 +2,10 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt requirements.lock ./
+RUN pip install --no-cache-dir --upgrade pip==26.2.0 \
+    && pip install --no-cache-dir -r requirements.lock
 
-COPY app.py product.py owner.py security_headers.py ./
+COPY app.py product.py owner.py security_headers.py inquiries.py inquiry_worker.py ./
 
 CMD ["uvicorn","app:app","--host","0.0.0.0","--port","8091","--no-access-log"]

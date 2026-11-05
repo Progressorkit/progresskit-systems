@@ -1,0 +1,533 @@
+{
+  "date": "2026-11-05",
+  "scope": "Real local HTTPS navigation; desktop1440x1000 and mobile390x844 touch emulation; reduced motion enabled for deterministic carousel regression. No production writes or downloads. Unrelated inquiry token minting is intentionally blocked only in this navigation harness to preserve the separate real-form test abuse budget.",
+  "checks": [
+    {
+      "name": "1440: homepage -> glikemia-premium",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/glikemia-premium/",
+        "name": "Glikemia Premium",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-mail",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-mail/",
+        "name": "ProgressKit Mail",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-translator",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-translator/",
+        "name": "ProgressKit Translator",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> vaeloria",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/vaeloria/",
+        "name": "Vaeloria",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-community",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-community/",
+        "name": "ProgressKit Community / Lud&Pra",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-tax",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-tax/",
+        "name": "ProgressKit Tax",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> adivara",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/adivara/",
+        "name": "Adivara",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> gotrans360",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/gotrans360/",
+        "name": "GoTrans360",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> ignira",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/ignira/",
+        "name": "Ignira",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> obserwator",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/obserwator/",
+        "name": "Obserwator",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> kan-system",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/kan-system/",
+        "name": "KAN SYSTEM",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-systems",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-systems/",
+        "name": "ProgressKit Systems",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-analytics",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-analytics/",
+        "name": "ProgressKit Analytics",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-infrastructure",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-infrastructure/",
+        "name": "Zaplecze ProgressKit",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-notes",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-notes/",
+        "name": "ProgressKit Notes",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-offgrid",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-offgrid/",
+        "name": "ProgressKit OffGrid",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> reel-agent",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/reel-agent/",
+        "name": "ProgressKit Reel Agent",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-remote",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-remote/",
+        "name": "ProgressKit Remote",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: homepage -> progresskit-vault-key",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-vault-key/",
+        "name": "ProgressKit Vault Key",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "1440: public alias /progresskit-mail/",
+      "status": "PASS",
+      "detail": {
+        "path": "/progresskit-mail/",
+        "http": 200,
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "h1": "ProgressKit Mail"
+      }
+    },
+    {
+      "name": "1440: public alias /glikemia-premium/",
+      "status": "PASS",
+      "detail": {
+        "path": "/glikemia-premium/",
+        "http": 200,
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "h1": "Glikemia Premium"
+      }
+    },
+    {
+      "name": "390: homepage -> glikemia-premium",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/glikemia-premium/",
+        "name": "Glikemia Premium",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-mail",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-mail/",
+        "name": "ProgressKit Mail",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-translator",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-translator/",
+        "name": "ProgressKit Translator",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> vaeloria",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/vaeloria/",
+        "name": "Vaeloria",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-community",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-community/",
+        "name": "ProgressKit Community / Lud&Pra",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-tax",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-tax/",
+        "name": "ProgressKit Tax",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> adivara",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/adivara/",
+        "name": "Adivara",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> gotrans360",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/gotrans360/",
+        "name": "GoTrans360",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> ignira",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/ignira/",
+        "name": "Ignira",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> obserwator",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/obserwator/",
+        "name": "Obserwator",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> kan-system",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/kan-system/",
+        "name": "KAN SYSTEM",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-systems",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-systems/",
+        "name": "ProgressKit Systems",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-analytics",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-analytics/",
+        "name": "ProgressKit Analytics",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-infrastructure",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-infrastructure/",
+        "name": "Zaplecze ProgressKit",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-notes",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-notes/",
+        "name": "ProgressKit Notes",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-offgrid",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-offgrid/",
+        "name": "ProgressKit OffGrid",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> reel-agent",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/reel-agent/",
+        "name": "ProgressKit Reel Agent",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-remote",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-remote/",
+        "name": "ProgressKit Remote",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: homepage -> progresskit-vault-key",
+      "status": "PASS",
+      "detail": {
+        "http": 200,
+        "path": "/projekty/progresskit-vault-key/",
+        "name": "ProgressKit Vault Key",
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "buttonSizes": []
+      }
+    },
+    {
+      "name": "390: public alias /progresskit-mail/",
+      "status": "PASS",
+      "detail": {
+        "path": "/progresskit-mail/",
+        "http": 200,
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "h1": "ProgressKit Mail"
+      }
+    },
+    {
+      "name": "390: public alias /glikemia-premium/",
+      "status": "PASS",
+      "detail": {
+        "path": "/glikemia-premium/",
+        "http": 200,
+        "sharedStylesheet": true,
+        "noOverflow": true,
+        "h1": "Glikemia Premium"
+      }
+    },
+    {
+      "name": "no browser exceptions or external requests",
+      "status": "PASS",
+      "detail": {
+        "errors": 0,
+        "external": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "screenshots": [
+    "navigation-1440-glikemia-premium.png",
+    "navigation-1440-progresskit-mail.png",
+    "navigation-1440-vaeloria.png",
+    "navigation-1440-progresskit-tax.png",
+    "navigation-1440-mail-alias.png",
+    "navigation-1440-glikemia-distribution.png",
+    "navigation-390-glikemia-premium.png",
+    "navigation-390-progresskit-mail.png",
+    "navigation-390-vaeloria.png",
+    "navigation-390-progresskit-tax.png",
+    "navigation-390-mail-alias.png",
+    "navigation-390-glikemia-distribution.png"
+  ],
+  "browser": "155.0.8059.39",
+  "PASS": 43,
+  "FAIL": 0
+}

@@ -355,13 +355,7 @@ if (typeof document !== 'undefined') {
   }
 
   document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
-  document.querySelector('[data-download-brief]')?.addEventListener('click', () => {
-    const content = ['ProgressKit Systems: opis projektu', ...[...document.querySelectorAll('.brief label')].map(label => `${label.firstChild.textContent.trim()}\n${label.querySelector('textarea').value}\n`), 'Kontakt: pawel@progresskit.pl'].join('\n\n');
-    const url = URL.createObjectURL(new Blob([content], {type:'text/plain;charset=utf-8'}));
-    const link = document.createElement('a'); link.href = url; link.download = 'progresskit-brief.txt'; link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    document.querySelector('[data-brief-status]').textContent = 'Przygotowano lokalny plik briefu.';
-  });
+  // Brief exports and confirmed server submission live in client-inquiry.mjs.
 
   // Retain first-party analytics only on the existing production origin.
   // Queries, brief fields and search input are never included in the payload.

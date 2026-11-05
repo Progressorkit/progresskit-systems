@@ -1,0 +1,131 @@
+{
+  "checks": [
+    {
+      "command": [
+        "node",
+        "tests/catalog-filters.test.cjs"
+      ],
+      "code": 0,
+      "tests": 13,
+      "log": "regression-0.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/hero-space.test.cjs"
+      ],
+      "code": 0,
+      "tests": 8,
+      "log": "regression-1.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/interface-life.test.cjs"
+      ],
+      "code": 0,
+      "tests": 8,
+      "log": "regression-2.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/project-hologram.test.cjs"
+      ],
+      "code": 0,
+      "tests": 17,
+      "log": "regression-3.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/project-showroom.test.cjs"
+      ],
+      "code": 0,
+      "tests": 44,
+      "log": "regression-4.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/showroom-3d.test.cjs"
+      ],
+      "code": 0,
+      "tests": 8,
+      "log": "regression-5.log"
+    },
+    {
+      "command": [
+        "node",
+        "tests/site-analytics.test.cjs"
+      ],
+      "code": 0,
+      "tests": 7,
+      "log": "regression-6.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_homepage_composition.py"
+      ],
+      "code": 0,
+      "tests": 4,
+      "log": "regression-7.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_owner_correction.py"
+      ],
+      "code": 0,
+      "tests": 9,
+      "log": "regression-8.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "code": 0,
+      "tests": 0,
+      "log": "regression-9.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "code": 0,
+      "tests": 0,
+      "log": "regression-10.log"
+    }
+  ],
+  "totalTests": 118,
+  "failures": 0,
+  "protectedUnchanged": {
+    "catalog/projects.json": true,
+    "catalog/brand.json": true,
+    "assets/client-inquiry.mjs": true,
+    "assets/client-inquiry.css": true,
+    "assets/product-downloads.mjs": true,
+    "analytics/inquiries.py": true,
+    "analytics/product.py": true,
+    "analytics/app.py": true
+  },
+  "headUnchanged": true,
+  "staged": ""
+}

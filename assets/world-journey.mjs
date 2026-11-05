@@ -27,7 +27,7 @@ export function sampleJourney(stops,y){
    the edge. Drawn in the existing low-resolution ambient canvas. */
 export function drawArchitecture(ctx,w,h,state,t,px,py){
  const polygon=(points,color)=>{ctx.fillStyle=color;ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x*w,y*h):ctx.moveTo(x*w,y*h));ctx.closePath();ctx.fill();};
- const phase=state.portal,shift=state.x*.2+px*.012,aperture=.05*Math.sin(t*.08);
+ const phase=state.portal,shift=state.x*.2+px*.006,aperture=0;
  ctx.globalAlpha=phase*.9;
  for(const side of [-1,1]){
   const x=side<0?-.075+shift:.94+shift,dir=side<0?1:-1;
@@ -51,7 +51,7 @@ export function drawArchitecture(ctx,w,h,state,t,px,py){
  }
  // Thick staggered laboratory housings at the two sides of the chamber.
  for(let i=0;i<3;i++)for(const side of [-1,1]){
-  const x=side<0?-.05+i*.028:1.02-i*.035,y=.16+i*.19,dx=side<0?.16:-.16;
+  const x=side<0?-.05+i*.028:1.02-i*.035,y=.16+i*.19,dx=side<0? 0.16:-.16;
   ctx.globalAlpha=state.lab*(.75-i*.12);
   const grad=ctx.createLinearGradient(0,y*h,0,(y+.16)*h);grad.addColorStop(0,'#62616b');grad.addColorStop(.06,'#14151c');grad.addColorStop(.7,'#06070d');grad.addColorStop(1,'#27202a');
   polygon([[x,y],[x+dx,y+.025],[x+dx*.9,y+.16],[x,y+.19]],grad);
