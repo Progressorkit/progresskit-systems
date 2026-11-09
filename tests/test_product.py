@@ -95,7 +95,7 @@ class ProductTests(unittest.TestCase):
         from preview import app as preview_app
         preview = TestClient(preview_app)
         for path in ('/glikemia-premium/', '/progresskit-mail/',
-                     '/glikemia-premium/product.js', '/assets/site-v5.css',
+                     '/glikemia-premium/product.js', '/assets/world.css',
                      '/assets/projects/mail/mail-splash.webp', '/assets/projects/glikemia/product-measurement.webp',
                      '/api/glikemia/downloads', '/api/glikemia/reviews'):
             self.assertEqual(preview.get(path).status_code, 200)
@@ -120,6 +120,80 @@ class ProductTests(unittest.TestCase):
         self.assertEqual(client.get(path, headers={'Range': 'nonsense'}).status_code, 400)
         self.assertEqual(client.get(path, headers={'Range': 'bytes=1-', 'If-Range': '"stale"'}).status_code, 200)
         self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 1)
+
+    def test_repeated_prefetch_headers_never_transfer_or_count(self):
+        # An intermediary can append a field rather than joining its values.
+        # The speculative marker must be honored in every position and case.
+        for path in ('/download/glikemia-premium', '/downloads/glikemia-premium.apk'):
+            for header in ('Purpose', 'Sec-Purpose', 'X-Purpose', 'X-Moz'):
+                for marker in ('Prefetch', 'Prerender'):
+                    with self.subTest(path=path, header=header, marker=marker):
+                        response = client.get(path, headers=[(header, 'navigate'), (header, marker)])
+                        self.assertEqual(response.status_code, 204)
+                        self.assertEqual(response.content, b'')
+                        self.assertEqual(response.headers['cache-control'], 'no-store')
+        self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 0)
+
+    def test_full_file_ranges_and_repeated_counter_reads_do_not_increment(self):
+        apk = Path(temporary.name) / 'complete-range.apk'
+        content = b'synthetic full-file range fixture'
+        apk.write_bytes(content)
+        with patch.object(product, 'APK_PATH', apk):
+            for value in ('bytes=0-', f'bytes=0-{len(content)-1}', f'bytes=-{len(content)}'):
+                with self.subTest(range=value):
+                    response = client.get('/download/glikemia-premium', headers={'Range': value})
+                    self.assertEqual(response.status_code, 206)
+                    self.assertEqual(response.content, content)
+            for _ in range(3):
+                response = client.get('/api/glikemia/downloads')
+                self.assertEqual(response.json(), {'downloads': 0})
+                self.assertEqual(response.headers['cache-control'], 'no-store')
+
+    def test_multiple_chunks_count_only_after_final_send_and_disable_pathsend(self):
+        apk = Path(temporary.name) / 'multi-chunk.apk'
+        content = b'x' * (product.CountedAPKResponse.chunk_size * 2 + 7)
+        apk.write_bytes(content)
+        sent = []
+        async def run():
+            async def send(message):
+                sent.append(message)
+                # No early increment even during the final awaited send.
+                with product.connect() as db:
+                    self.assertEqual(db.execute('SELECT total FROM downloads WHERE id=1').fetchone()[0], 0)
+            async def receive():
+                raise AssertionError('ASGI 2.4 observes send failures.')
+            await product.CountedAPKResponse(apk)(
+                {'type': 'http', 'method': 'GET', 'headers': [],
+                 'extensions': {'http.response.pathsend': {}},
+                 'asgi': {'version': '3.0', 'spec_version': '2.4'}}, receive, send)
+        asyncio.run(run())
+        self.assertFalse(any(message['type'] == 'http.response.pathsend' for message in sent))
+        bodies = [message for message in sent if message['type'] == 'http.response.body']
+        self.assertEqual(len(bodies), 3)
+        self.assertEqual(b''.join(message['body'] for message in bodies), content)
+        self.assertEqual([message.get('more_body', False) for message in bodies], [True, True, False])
+        self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 1)
+
+    def test_disconnect_after_successful_chunk_never_counts(self):
+        apk = Path(temporary.name) / 'mid-body-disconnect.apk'
+        apk.write_bytes(b'x' * (product.CountedAPKResponse.chunk_size + 7))
+        body_count = 0
+        async def run():
+            async def send(message):
+                nonlocal body_count
+                if message['type'] == 'http.response.body':
+                    body_count += 1
+                    if body_count == 2:
+                        raise OSError('simulated disconnect after first chunk')
+            async def receive():
+                raise AssertionError('ASGI 2.4 observes send failures.')
+            await product.CountedAPKResponse(apk)(
+                {'type': 'http', 'method': 'GET', 'headers': [], 'extensions': {},
+                 'asgi': {'version': '3.0', 'spec_version': '2.4'}}, receive, send)
+        with self.assertRaisesRegex(OSError, 'after first chunk'):
+            asyncio.run(run())
+        self.assertEqual(body_count, 2)
+        self.assertEqual(client.get('/api/glikemia/downloads').json()['downloads'], 0)
 
     def test_failed_file_open_not_counted(self):
         with patch('starlette.responses.anyio.open_file', side_effect=PermissionError('fixture')):

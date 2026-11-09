@@ -10,35 +10,21 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def public_files():
     data=json.loads((ROOT/'catalog/projects.json').read_text())
+    # Only the current installation is shipped. Historical redesign modules stay
+    # in source history, but cannot silently add another runtime/style layer.
     files={
         'index.html','404.html','robots.txt','sitemap.xml','og-progresskit.jpg',
-        'assets/site-v4.css','assets/site-v5.css','assets/site-v5.js','assets/hero.css',
-        'assets/hero-monument.css','assets/home-atmosphere.css','assets/hero-space.js',
-        'assets/engineering-exhibit.css','assets/engineering-exhibit.js',
-        'assets/brand-atmosphere.css',
-        'assets/project-slices.css','assets/delivery.css','assets/project-mechanism.css','assets/visual-acceptance.css',
-        'assets/interface-life.css','assets/interface-life.js','assets/ecosystem-system.css','assets/ecosystem-system.js','assets/owner-finish.css',
-        'assets/world-atmosphere.css','assets/world-sections.css',
-        'assets/spatial-chapters.css','assets/spatial-chapters.mjs',
-        'assets/luxury-world.css','assets/luxury-world.mjs','assets/luxury-chapters.css','assets/luxury-showroom.css','assets/black-finish.svg',
-        'assets/continuity-process.css','assets/continuity-chapters.css','assets/continuity-chapters.mjs','assets/technology-field.css','assets/technology-field.mjs',
-        'assets/world/installation-chamber.webp','assets/world/optical-core.webp','assets/world/crystal-artefact.webp','assets/world/process-crystal.webp',
-        'assets/material-finish.css','assets/hero-entry.css','assets/hero-entry.mjs','assets/hero-strata.svg','assets/installation.css','assets/world-continuity.css','assets/world-journey.mjs','assets/journey-world.css','assets/premium-controls.css','assets/premium-controls.mjs','assets/installation.mjs','assets/interactions.css','assets/interactions.mjs',
-        'assets/brand-core-mark.css','assets/brand-core-mark.mjs',
-        'assets/client-inquiry.css','assets/client-inquiry.mjs',
-        'assets/product-presentation.css','assets/product-downloads.mjs',
-        'assets/brand/progresskit-core-mark.webm',
-        'assets/showroom-3d.css','assets/showroom-3d.mjs','assets/showroom-scene.mjs','assets/showroom-lifecycle.mjs',
+        'assets/site-v5.js','assets/world.css','assets/world.mjs',
+        'assets/world-scene.mjs','assets/world-grain.svg',
+        'assets/project-world.css','assets/project-world.mjs',
+        'assets/client-inquiry.mjs','assets/product-downloads.mjs',
         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',
-        'assets/project-showroom.css','assets/project-showroom.js','assets/project-hologram.css','assets/project-hologram.js',
-        'assets/brand/stone-material.svg','assets/brand/monument-serif-bold.ttf','assets/brand/motto-serif-italic.ttf','assets/brand/monument-font-license.txt',
-        'assets/brand/red-aluminium-reconstruction.jpg','assets/brand/footer-forest-mountains-reconstruction.png',
-        'assets/brand/cinematic-valley-v1.webp',
-        'assets/progresskit-product-shell.css',
+        'assets/brand/monument-serif-bold.ttf','assets/brand/monument-font-license.txt',
         'assets/brand/progressorkit-primary.png','assets/brand/progressorkit-stamp.png',
-        'glikemia-premium/index.html','glikemia-premium/product.css','glikemia-premium/product.js',
+        'glikemia-premium/index.html','glikemia-premium/product.js',
         'assets/projects/glikemia/product-measurement.webp','assets/projects/glikemia/product-language.webp',
-        'assets/projects/glikemia/product-qr.png','progresskit-mail/index.html','prywatnosc/index.html','projekty/index.html',
+        'assets/projects/glikemia/product-qr.png',
+        'progresskit-mail/index.html','prywatnosc/index.html','projekty/index.html',
     }
     for p in data['projects']:
         files.add(f'projekty/{p["slug"]}/index.html')

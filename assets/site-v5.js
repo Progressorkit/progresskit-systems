@@ -26,6 +26,14 @@ const CatalogFilters = {
     }
     return next;
   },
+  homepageTarget(url) {
+    const original = new URL(url);
+    if (!['q','technologia','etap','typ','kategoria','projekt'].some(key => original.searchParams.get(key))) return null;
+    const target = new URL('projekty/', original);
+    target.search = original.search;
+    target.hash = '#projekty';
+    return target.href;
+  },
   setOpenProject(cards, id) {
     cards.forEach(card => { card.details.open = card.id === id && !card.node.hidden; });
   },
@@ -189,13 +197,10 @@ if (typeof document !== 'undefined') {
     restoreCategory();
     window.addEventListener('popstate', restoreCategory);
   }
-  // Preserve bookmarked search URLs for both the earlier panels and the showroom.
-  if (categoryBrowser || document.querySelector('[data-showroom]')) {
-    const params = new URLSearchParams(location.search);
-    if (['q','technologia','etap'].some(key => params.get(key))) {
-      const target = new URL('projekty/', location.href); target.search = location.search; target.hash = '#projekty';
-      location.replace(target.href);
-    }
+  // Retain bookmarked filters and direct project selections from older homepages.
+  if (categoryBrowser || document.querySelector('[data-showroom]') || document.body.classList.contains('world-home')) {
+    const target = CatalogFilters.homepageTarget(location.href);
+    if (target) location.replace(target);
   }
 
   // Reveal is an enhancement: no class hides content unless an observer exists.

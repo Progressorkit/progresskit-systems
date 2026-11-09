@@ -86,8 +86,10 @@ class CountedAPKResponse(FileResponse):
 @router.get('/download/glikemia-premium')
 @router.get('/downloads/glikemia-premium.apk')
 def download(request: Request):
-    purpose = ' '.join(request.headers.get(name, '') for name in
-                       ('purpose', 'sec-purpose', 'x-purpose', 'x-moz')).lower()
+    # HTTP field lines may repeat; inspect every value so a proxy appending a
+    # prefetch/prerender marker cannot turn a speculative request into a count.
+    purpose = ' '.join(value for name in ('purpose', 'sec-purpose', 'x-purpose', 'x-moz')
+                       for value in request.headers.getlist(name)).lower()
     if 'prefetch' in purpose or 'prerender' in purpose:
         return Response(status_code=204, headers={'Cache-Control': 'no-store'})
     if not APK_PATH.is_file():

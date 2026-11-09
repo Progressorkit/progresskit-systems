@@ -17,21 +17,16 @@
   <meta name="twitter:description" content="@@DESCRIPTION@@">
   <meta name="twitter:image" content="https://progresskit.pl/og-progresskit.jpg">
   <link rel="icon" href="@@ROOT@@assets/brand/progressorkit-stamp.png" type="image/png">
-  <link rel="stylesheet" href="@@ROOT@@assets/site-v4.css">
-  <link rel="stylesheet" href="@@ROOT@@assets/site-v5.css">
-  <link rel="stylesheet" href="@@ROOT@@assets/hero.css">
   @@PAGE_STYLES@@
-  <link rel="stylesheet" href="@@ROOT@@assets/premium-controls.css">
-  <script type="module" src="@@ROOT@@assets/premium-controls.mjs"></script>
   <script src="@@ROOT@@assets/site-v5.js" defer></script>
   @@PAGE_SCRIPTS@@
 </head>
-<body>
+<body class="@@BODY_CLASS@@" data-core-state="idle">
+  <div class="world-environment" aria-hidden="true"><div class="world-environment__light"></div><div class="world-environment__grain"></div><div class="world-environment__spine"></div></div>
   <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="topbar">
     <div class="shell topbar__inner">
       <a class="brand" href="@@ROOT@@#start" aria-label="ProgressKit Systems, start">
-        <span class="brand__mark" aria-hidden="true"><img src="@@ROOT@@assets/brand/progressorkit-stamp.png" width="48" height="48" alt=""></span>
         <span><span class="brand__title">PROGRESSKIT SYSTEMS</span></span>
       </a>
       <nav class="nav" aria-label="Główna nawigacja">@@NAV@@</nav>
@@ -41,6 +36,7 @@
   </header>
   <noscript><nav class="shell fallback-nav" aria-label="Nawigacja bez JavaScript">@@NAV@@</nav></noscript>
   <main id="main" tabindex="-1">@@CONTENT@@</main>
+  <aside class="world-guide" aria-label="ProgressKit Guide"><button type="button" class="guide-trigger" data-guide-toggle aria-controls="guide-panel" aria-expanded="false" data-proximity><span class="guide-glyph" aria-hidden="true">◈</span><span>GUIDE</span></button><div class="guide-panel" id="guide-panel" hidden><span class="eyebrow">PROGRESSKIT GUIDE</span><p data-guide-copy>Każdy artefakt otwiera projekt: jego możliwości, architekturę i rzeczywisty etap rozwoju.</p><div class="guide-topics"><button type="button" data-guide-topic="projects">Projekty</button><button type="button" data-guide-topic="technology">Technologie</button><button type="button" data-guide-topic="security">Security</button></div></div></aside>
   <footer>
     <div class="shell footer__inner">
       <div class="footer-brand"><img src="@@ROOT@@assets/brand/progressorkit-stamp.png" width="40" height="40" alt="" aria-hidden="true"><div><strong>PROGRESSKIT SYSTEMS</strong></div></div>

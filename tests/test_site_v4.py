@@ -77,9 +77,9 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         self.assertEqual('e3831e7e735b90303ecbdd8524e02ebc82ada52d513ec7de4b19c74371385f9a',
                          hashlib.sha256(retained_css.encode()).hexdigest())
         styles = self.pages['home'].references('link', 'href')
-        self.assertIn('assets/site-v4.css', styles)
-        self.assertIn('assets/site-v5.css', styles)
-        self.assertLess(styles.index('assets/site-v4.css'), styles.index('assets/site-v5.css'))
+        self.assertIn('assets/world.css', styles)
+        self.assertNotIn('assets/site-v4.css', styles)
+        self.assertNotIn('assets/site-v5.css', styles)
 
     def test_glikemia_distribution_cta_keeps_counted_backend_route(self):
         home_links = self.pages['home'].references('a', 'href')
@@ -104,14 +104,16 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         expected = {'progresskit-mail': 'ProgressKit Mail', 'adivara': 'Adivara',
                     'gotrans360': 'GoTrans360', 'obserwator': 'Obserwator', 'kan-system': 'KAN SYSTEM'}
         records = {project['id']: project for project in self.catalog}
-        case_links = set(self.pages['home'].references('a', 'href'))
+        catalogue = Markup((ROOT/'projekty/index.html').read_text())
+        case_links = set(catalogue.references('a', 'href'))
+        self.assertIn('projekty/', self.pages['home'].references('a', 'href'))
         for identifier, name in expected.items():
             with self.subTest(project=identifier):
-                self.assertIn('projekty/' + identifier + '/', case_links)
+                self.assertIn(identifier + '/', case_links)
                 self.assertIn(name, records[identifier]['name'])
-                self.assertIn(name, self.home)
+                self.assertIn(name, ' '.join(catalogue.text))
         words = re.sub(r'\W+', ' ', ' '.join(self.pages['home'].text)).upper()
-        self.assertIn('TECHNOLOGIA MA DAWAĆ KONTROLĘ NIE NA ODWRÓT', words)
+        self.assertIn('TECHNOLOGIA POD TWOJĄ KONTROLĄ', words)
         self.assertIn('TikTok: @progresskit', self.home)
         self.assertNotIn('facebook.com', self.home.lower())
 
@@ -148,17 +150,6 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         self.assertEqual([], project['links'])
 
     def test_product_pages_share_brand_navigation_and_contact(self):
-        shell = (ROOT / 'assets/progresskit-product-shell.css').read_text()
-        product_css = (ROOT / 'glikemia-premium/product.css').read_text()
-        site_css = (ROOT / 'assets/site-v5.css').read_text()
-        self.assertIn("@import url('../assets/progresskit-product-shell.css')", product_css)
-        self.assertIn('--pk-signal:#ef1b2d', shell)
-        self.assertIn('--product-accent:#79a9c5', product_css)
-        mail_accent = re.search(r'\.catalog-card\[data-id="progresskit-mail"\]\s*\{[^}]*--product-accent:(#[0-9a-fA-F]{6})', site_css)
-        self.assertIsNotNone(mail_accent, 'Mail lost its product accent.')
-        red, green, blue = (int(mail_accent.group(1)[i:i + 2], 16) for i in (1, 3, 5))
-        self.assertGreater(red, green)
-        self.assertGreater(red, blue)
         for name in ('product', 'mail'):
             page = self.pages[name]
             with self.subTest(page=name):
@@ -168,8 +159,11 @@ class SiteV4CompatibilityTests(unittest.TestCase):
                 self.assertTrue(any(tag == 'header' for tag, _ in page.elements))
                 self.assertTrue(any(tag == 'footer' for tag, _ in page.elements))
                 self.assertIn('mailto:pawel@progresskit.pl', page.references('a', 'href'))
-        self.assertIn('../assets/site-v4.css', self.pages['mail'].references('link', 'href'))
-        self.assertIn('../assets/site-v5.css', self.pages['mail'].references('link', 'href'))
+                styles=[Path(urlsplit(ref).path).name for ref in page.references('link','href')]
+                self.assertIn('world.css',styles)
+                self.assertIn('project-world.css',styles)
+                self.assertNotIn('site-v4.css',styles)
+                self.assertNotIn('site-v5.css',styles)
 
     def test_counter_copy_and_reader_keep_completed_full_transfer_semantics(self):
         for phrase in ('Liczba zakończonych pełnych pobrań APK.', 'Wznowienia/Range', 'prefetch',

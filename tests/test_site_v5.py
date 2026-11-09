@@ -262,9 +262,11 @@ class SiteV5Tests(unittest.TestCase):
 
     def test_homepage_links_to_all_cases_and_cases_expose_evidence(self):
         home_links = {attrs.get('href') for tag, attrs in self.pages['index.html'].elements if tag == 'a'}
+        self.assertIn('projekty/', home_links)
+        catalogue_links = {attrs.get('href') for tag, attrs in self.pages['projekty/index.html'].elements if tag == 'a'}
         for project in self.data['projects']:
             with self.subTest(project=project['id']):
-                self.assertIn('projekty/' + project['slug'] + '/', home_links)
+                self.assertIn(project['slug'] + '/', catalogue_links)
                 page = self.pages['projekty/' + project['slug'] + '/index.html']
                 for source in project['sources']:
                     self.assertIn('source-' + source['id'], page.ids)

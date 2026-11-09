@@ -11,6 +11,8 @@ const vm = require('node:vm');
 function mount({url = 'https://progresskit.pl/', dnt, beacon = true, referrer = ''} = {}) {
   const listeners = new Map(), requests = [], beacons = [], diagnostics = [];
   const document = {
+    // This fixture intentionally has no optional catalogue/homepage UI.
+    body: {classList: {contains: () => false}},
     referrer,
     querySelector: () => null,
     querySelectorAll: () => [],

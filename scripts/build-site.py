@@ -359,37 +359,82 @@ def evidenced_features(p):
         f'<a href="#source-{e(source)}" aria-label="Źródło funkcji {index+1}">[{n+1}]</a>' for n,source in enumerate(references[index]))+'</span>' if index<len(references) else '')+'</li>' for index,text in enumerate(p['features']))+'</ul>'
 
 
-def full_case(p, prefix='../../'):
-    def section(id_,title,body):
-        return f'<section class="case-section" id="{id_}"><h2>{title}</h2>{body}</section>'
-    out = f'''<header class="case-hero"><div class="shell"><p class="breadcrumb"><a href="{prefix}#projekty">← Eksplorator projektów</a> / {e(CATEGORIES[p['category']][0])}</p><span class="section-kicker">{e(CATEGORIES[p['category']][0])}</span><h1>{e(p['name'])}</h1><p class="section-copy">{e(p['summary'])}</p><div class="status-row"><span class="status-chip">{stage(p)}</span><time class="status-chip" datetime="{p['updatedAt']}">Źródła: {p['updatedAt']}</time></div><nav class="case-index" aria-label="W tej prezentacji"><a href="#problem">Problem</a><a href="#architektura">Architektura</a><a href="#funkcje">Funkcje</a><a href="#platformy">Platformy</a><a href="#weryfikacja">Dowody</a><a href="#galeria">Galeria</a><a href="#wyzwania">Wyzwania</a><a href="#rozwoj">Rozwój</a><a href="#dostep">Dostęp</a></nav></div></header><div class="shell case-content">'''
-    if not p.get('portfolio'):
-        out = out.replace('<a href="#platformy">Platformy</a><a href="#weryfikacja">Dowody</a>', '')
-    if p['id']=='glikemia-premium':
-        out=out.replace('<nav class="case-index"','<p class="product-download-count"><span data-download-count aria-live="polite">Licznik pobrań: ładowanie…</span><small>Liczba zakończonych pełnych pobrań APK; nie liczba instalacji ani unikalnych użytkowników.</small></p><nav class="case-index"',1)
-    out += section('problem','Od potrzeby do produktu',f'<h3>Dla kogo</h3>{items(p["audiences"])}<h3>Problem</h3><p>{e(p["problem"])}</p><h3>Dlaczego powstał</h3><p>{e(p["motivation"])}</p><h3>Rozwiązanie</h3><p>{e(p["solution"])}</p>')
-    out += section('architektura','Architektura i technologie','<ul class="architecture">'+''.join(f'<li>{e(x)}</li>' for x in p['architecture'])+'</ul><p class="tech-line">'+e(' / '.join(p['technologies']))+'</p>')
+def project_release():
+    """Release labels come from the shipped APK manifest, never a second copy."""
+    release=json.loads((ROOT/'downloads/glikemia-premium.json').read_text())
+    release['size']=f'{release["bytes"]/1_000_000:.2f}'.replace('.',',')+' MB'
+    return release
+
+
+def project_download_console(prefix, *, detailed=False):
+    release=project_release()
+    details=''
+    if detailed:
+        details=f'''<details class="project-file-details"><summary>Suma SHA-256 i szczegóły pliku</summary><p>APK podpisany cyfrowo i dystrybuowany bezpośrednio przez ProgressKit.</p><dl><dt>Wersja</dt><dd>{e(release['version'])} ({release['versionCode']})</dd><dt>Rozmiar</dt><dd>{release['bytes']:,} bajtów</dd><dt>Android</dt><dd>7.0 lub nowszy · minSdk {release['minSdk']}</dd></dl><p>SHA-256 pliku APK</p><code class="checksum">{e(release['sha256'])}</code><div class="project-file-qr"><img src="{prefix}assets/projects/glikemia/product-qr.png" width="100" height="100" alt="Kod QR do strony Glikemia Premium na progresskit.pl" loading="lazy"><p>Otwórz tę stronę na telefonie.<br>Zeskanuj aparatem telefonu z Androidem. Kod prowadzi wyłącznie do progresskit.pl.</p></div></details>'''
+    return f'''<div class="project-download-console" data-download-console><div class="project-download-action"><a class="world-control world-control--primary" data-proximity data-download-apk href="/download/glikemia-premium"><span aria-hidden="true">↓</span> POBIERZ APK <span aria-hidden="true">↗</span></a><p class="project-release-meta">Wersja {e(release['version'])} <span>·</span> Android 7.0+ <span>·</span> {e(release['size'])}</p></div><div class="project-download-metric"><span class="project-eyebrow">POBRANIA</span><span data-download-count aria-live="polite">Licznik pobrań: ładowanie…</span><small>Zakończone pełne pobrania APK</small></div><details class="project-counter-details"><summary>Co oznacza licznik?</summary><p>Liczba zakończonych pełnych pobrań APK. Wznowienia/Range i wykrywalny prefetch nie są naliczane; to nie jest liczba unikalnych użytkowników ani instalacji.</p></details>{details}</div>'''
+
+
+def project_artifact(p, prefix):
+    """A physical display uses only reviewed source media; no fabricated app UI."""
+    if p['gallery']:
+        img=p['gallery'][0]
+        portrait=img['height']>img['width']*1.3
+        kind='phone' if portrait else 'display'
+        secondary=''
+        if p['id']=='glikemia-premium' and len(p['gallery'])>1:
+            other=p['gallery'][1]
+            secondary=f'<div class="project-artifact__secondary" aria-hidden="true"><img src="{prefix}{e(other["src"])}" width="{other["width"]}" height="{other["height"]}" alt="" decoding="async"></div>'
+        return f'''<figure class="project-artifact project-artifact--{kind}" data-proximity data-project-artifact><div class="project-artifact__orbit" aria-hidden="true"></div><div class="project-artifact__plinth" aria-hidden="true"></div>{secondary}<a class="project-artifact__screen" href="#galeria" aria-label="Zobacz rzeczywiste ekrany: {e(p['name'])}"><img src="{prefix}{e(img['src'])}" width="{img['width']}" height="{img['height']}" alt="{e(img['alt'])}" fetchpriority="high" decoding="async"></a><figcaption><span aria-hidden="true">●</span> RZECZYWISTY EKRAN PRODUKTU <span aria-hidden="true">/ 01</span></figcaption></figure>'''
+    return f'''<figure class="project-artifact project-artifact--core" data-proximity data-project-artifact><div class="project-artifact__orbit" aria-hidden="true"></div><div class="project-artifact__plinth" aria-hidden="true"></div><div class="project-artifact__crystal" aria-hidden="true"><span>{e(CATEGORIES[p['category']][1])}</span><i></i><i></i></div><figcaption>{e(CATEGORIES[p['category']][0]).upper()} <span aria-hidden="true">/ {e(p['id']).upper()}</span></figcaption></figure>'''
+
+
+def full_case(p, prefix='../../', distribution=False):
+    is_glikemia=p['id']=='glikemia-premium'
+    chapter_number=0
+    def section(id_,title,body,eyebrow='POZNAJ PROJEKT'):
+        nonlocal chapter_number
+        chapter_number+=1
+        return f'<section class="project-chapter case-section" id="{id_}" aria-labelledby="chapter-{id_}"><header class="project-chapter-heading"><span class="project-chapter-number" aria-hidden="true">{chapter_number:02d}</span><div><p class="project-eyebrow">{eyebrow}</p><h2 id="chapter-{id_}">{title}</h2></div></header><div class="project-chapter-body">{body}</div></section>'
+    nav=[('problem','Idea'),('architektura','Architektura'),('funkcje','Funkcje'),('galeria','Ekrany')]
     if p.get('portfolio'):
-        out += section('platformy','Stan produktu i platform',portfolio_readiness(p))
-    out += section('funkcje','Potwierdzony zakres',evidenced_features(p)+'<h3>Wyniki i granice weryfikacji</h3>'+items(p['results']))
+        nav += [('platformy','Platformy'),('weryfikacja','Dowody')]
+    nav += [('wyzwania','Wyzwania'),('rozwoj','Rozwój'),('dostep','Pobierz' if is_glikemia else 'Dostęp')]
+    if distribution:
+        nav += [('installation','Instalacja'),('feedback','Opinie')]
+    title='Glikemia <em>Premium</em>' if is_glikemia else e(p['name'])
+    lead='Twój dziennik. Twoje dane.' if is_glikemia else e(p['summary'])
+    subtitle='Zapisuj pomiary, przeglądaj historię i przygotuj raport PDF. Dane dziennika pozostają lokalnie na Twoim telefonie.' if is_glikemia else e(p['problem'])
+    facts=[('Android','Aplikacja mobilna'),('Offline','Dane na urządzeniu'),('PDF','Historia i wykresy')] if is_glikemia else [(e(t),'') for t in p['technologies'][:4]]
+    fact_markup=''.join(f'<li><strong>{title_}</strong><span>{description}</span></li>' for title_,description in facts)
+    actions=project_download_console(prefix) if is_glikemia else f'<div class="project-hero-actions"><a class="world-control world-control--primary" data-proximity href="#problem">WEJDŹ W PROJEKT <span aria-hidden="true">↓</span></a><a class="world-control" data-proximity href="#dostep">Dostęp i kontakt</a></div>'
+    guide='Dane pozostają lokalnie na urządzeniu. Licznik pobrań i opinie należą do strony, nie do chmury pomiarów.' if is_glikemia else 'Poznaj zakres produktu, materiały i opisane dowody. Każdy wynik zachowuje swój kontekst i datę.'
+    out=f'''<article class="project-world" data-project-id="{e(p['id'])}"><header class="project-world-hero"><div class="project-hero-wayfinding"><a href="{prefix}#projekty" class="project-return" data-proximity>← EKOSYSTEM</a><span>PROGRESSKIT / {e(CATEGORIES[p['category']][0]).upper()}</span><span class="project-location" aria-hidden="true">PROJECT CHAMBER / 01</span></div><div class="project-hero-stage"><div class="project-hero-copy"><p class="project-eyebrow"><span class="project-status-light" aria-hidden="true"></span>{e(p['stage'] or stage(p))}</p><h1 class="project-title">{title}</h1><p class="project-hero-value">{lead}</p><p class="project-hero-description">{subtitle}</p><ul class="project-product-facts" aria-label="Najważniejsze informacje">{fact_markup}</ul>{actions}</div>{project_artifact(p,prefix)}</div><div class="project-hero-footer"><span class="project-guide-note"><span aria-hidden="true">◇</span> {guide}</span><a href="#problem">ODKRYJ WIĘCEJ <span aria-hidden="true">↓</span></a></div></header><nav class="project-chapter-rail" data-project-chapters aria-label="W tej prezentacji">{''.join(f'<a href="#{id_}" data-proximity><span>{i+1:02d}</span>{label}</a>' for i,(id_,label) in enumerate(nav))}</nav><div class="project-story">'''
+    out+=section('problem','Od potrzeby do produktu.',f'<div class="project-story-pair"><article class="project-glass-plate"><span class="project-eyebrow">POTRZEBA</span><h3>Problem</h3><p>{e(p["problem"])}</p><h3>Dla kogo</h3>{items(p["audiences"])}</article><article class="project-glass-plate project-glass-plate--lit"><span class="project-eyebrow">ODPOWIEDŹ</span><h3>Rozwiązanie</h3><p>{e(p["solution"])}</p><h3>Dlaczego powstał</h3><p>{e(p["motivation"])}</p></article></div>','IDEA / ZASTOSOWANIE')
+    architecture=''.join(f'<li><span class="project-flow-index" aria-hidden="true">{i+1:02d}</span><p>{e(value)}</p></li>' for i,value in enumerate(p['architecture']))
+    tech=''.join(f'<li>{e(t)}</li>' for t in p['technologies'])
+    out+=section('architektura','Technologia pod powierzchnią.',f'<ol class="project-architecture-flow">{architecture}</ol><ul class="project-technology-tags" aria-label="Technologie projektu">{tech}</ul>','ARCHITEKTURA / POŁĄCZENIA')
+    out+=section('funkcje','Zaprojektowane do działania.',f'<div class="project-feature-grid">{evidenced_features(p)}</div><details class="project-disclosure"><summary>Wyniki i granice weryfikacji</summary>{items(p["results"])}</details>','FUNKCJE / POTWIERDZONY ZAKRES')
+    out+=section('galeria','Zajrzyj do środka.',('<span id="screenshots" class="project-anchor" aria-hidden="true"></span>' if distribution else '')+gallery(p,prefix),'PRAWDZIWE EKRANY / BEZ MAKIET')
     if p.get('portfolio'):
-        out += section('weryfikacja','Dowody i testy',portfolio_verification(p))
-    out += section('galeria','Materiały z produktu',gallery(p,prefix))
-    if p['cases']:
-        out += section('wyzwania','Wyzwania i rozwiązania',''.join(case_detail(c) for c in p['cases']))
-    else:
-        out += section('wyzwania','Wyzwania inżynieryjne','<p>Brak wystarczających źródeł do opisania potwierdzonego incydentu i jego rozwiązania.</p>')
-    out += section('rozwoj','Aktualny etap i dalsza droga',f'<p><strong>{stage(p)}</strong> · {e(p["availability"])}</p><h3>Do potwierdzenia lub ukończenia</h3>{items(p["remaining"])}<h3>Planowane kierunki</h3>'+ (items(p['planned']) if p['planned'] else '<p>Brak potwierdzonego publicznego planu kolejnych funkcji.</p>'))
-    links = ''.join(f'<p><a href="{e(link["url"])}" target="_blank" rel="noopener noreferrer">{e(link["label"])} ↗</a></p>' for link in p['links']+p['videos'])
+        out+=section('platformy','Produkt, platformy, dostępność.',portfolio_readiness(p),'STAN PRODUKTU')
+        out+=section('weryfikacja','Dowody z kontekstem.',portfolio_verification(p),'WERYFIKACJA / DATY / ŚRODOWISKA')
+    challenges=''.join(f'<details class="project-disclosure"><summary>{e(c["problem"])}</summary>{case_detail(c)}</details>' for c in p['cases']) if p['cases'] else '<p>Brak wystarczających źródeł do opisania potwierdzonego incydentu i jego rozwiązania.</p>'
+    out+=section('wyzwania','Decyzje, które robią różnicę.',challenges,'WYZWANIA INŻYNIERYJNE')
+    out+=section('rozwoj','Następne kroki.',f'<p class="project-current-stage"><strong>{stage(p)}</strong> · {e(p["availability"])}</p><div class="project-story-pair"><article class="project-glass-plate"><h3>Do potwierdzenia lub ukończenia</h3>{items(p["remaining"])}</article><article class="project-glass-plate"><h3>Planowane kierunki</h3>'+ (items(p['planned']) if p['planned'] else '<p>Brak potwierdzonego publicznego planu kolejnych funkcji.</p>')+'</article></div>','ROZWÓJ / OTWARTE KIERUNKI')
+    links=''.join(f'<a class="world-control" data-proximity href="{e(link["url"])}" target="_blank" rel="noopener noreferrer">{e(link["label"])} ↗</a>' for link in p['links']+p['videos'])
     if p['repository']:
-        links += f'<p><a href="{e(p["repository"])}" target="_blank" rel="noopener noreferrer">Publiczne repozytorium ↗</a></p>'
-    # Existing product route retained; release CTA lives behind its separate operational gate.
-    if p['id'] == 'glikemia-premium':
-        links += f'<p><a href="{prefix}glikemia-premium/">Strona aplikacji i dystrybucji →</a></p>'
-    out += section('dostep','Dostęp do projektu',f'<p>{e(p["availability"])}</p>'+links+f'<p><a href="mailto:pawel@progresskit.pl?subject={p["slug"]}">Zapytaj o projekt →</a></p>')
-    sources = ''.join(f'<li id="source-{e(s["id"])}"><strong>{e(s["label"])}</strong> · {e(s["kind"])} · <code>{e(s["revision"])}</code><br>{e(s["scope"])}</li>' for s in p['sources'])
-    out += section('zrodla','Podstawa prezentacji',f'<p>Zakres ustalono na podstawie kodu i materiałów wymienionych poniżej. Wyniki historycznych testów zachowują datę oraz zakres; nie oznaczają ponownego testu ani potwierdzenia produkcji.</p><ul class="source-list">{sources}</ul>')
-    return out+'</div>'
+        links+=f'<a class="world-control" data-proximity href="{e(p["repository"])}" target="_blank" rel="noopener noreferrer">Publiczne repozytorium ↗</a>'
+    if is_glikemia:
+        links+=f'<a class="world-control" data-proximity href="{prefix}glikemia-premium/">Strona aplikacji i dystrybucji →</a><a class="world-control" data-proximity href="{prefix}glikemia-premium/#feedback">Opinie użytkowników →</a>'
+        download_details=f'<div id="download-details">{project_download_console(prefix,detailed=True)}</div><p>Android · Bezpłatnie · Bez konta · Bez reklam</p><p>Aplikacja jest cyfrowym dziennikiem glikemii i nie zastępuje profesjonalnej porady medycznej.</p><p><a href="https://progressorkit.github.io/GlikemiaPremium-Privacy/" target="_blank" rel="noopener noreferrer">Polityka prywatności aplikacji ↗</a></p>'
+    else:
+        download_details=''
+    out+=section('dostep','Gotowy na Twoim urządzeniu.' if is_glikemia else 'Poznaj projekt bliżej.',download_details+f'<details class="project-disclosure"><summary>Etap i zakres dostępności</summary><p>{e(p["availability"])}</p><p>{e(p["summary"])}</p></details><div class="project-access-links">'+links+f'<a class="world-control" data-proximity href="mailto:pawel@progresskit.pl?subject={p["slug"]}">Zapytaj o projekt →</a></div>','DYSTRYBUCJA / KONTAKT')
+    if distribution:
+        out+=(ROOT/'templates/glikemia-distribution.html').read_text().replace('@@ROOT@@',prefix)
+    sources=''.join(f'<li id="source-{e(s["id"])}"><strong>{e(s["label"])}</strong> · {e(s["kind"])} · <code>{e(s["revision"])}</code><br>{e(s["scope"])}</li>' for s in p['sources'])
+    out+=section('zrodla','Podstawa prezentacji.',f'<p>Zakres ustalono na podstawie kodu i materiałów wymienionych poniżej. Wyniki historycznych testów zachowują datę oraz zakres; nie oznaczają ponownego testu ani potwierdzenia produkcji.</p><details class="project-disclosure" data-project-sources><summary>Źródła i rewizje ({len(p["sources"])})</summary><ul class="source-list">{sources}</ul></details><time class="project-source-date" datetime="{p["updatedAt"]}">Przegląd źródeł: {p["updatedAt"]}</time>','TRANSPARENTNOŚĆ')
+    return out+'</div></article>'
 
 
 def explorer_section(data):
@@ -507,29 +552,19 @@ def technology_section(projects):
 def homepage(data):
     projects=data['projects']
     out=(ROOT/'templates/hero-installation.html').read_text()
-    spec=importlib.util.spec_from_file_location('showroom_markup',ROOT/'scripts/showroom_markup.py')
-    showroom=importlib.util.module_from_spec(spec);spec.loader.exec_module(showroom)
-    out+=showroom.render_showroom(projects)
-    public_projects=[{
-        'id':p['id'],'name':p['name'],'category':p['category'],
-        'categoryLabel':CATEGORIES[p['category']][0], 'summary':p['summary'],
-        'problem':p['problem'],'stage':p['stage'] or 'Etap do potwierdzenia',
-        'technologies':p['technologies'],'gallery':p['gallery'],'url':project_url(p),
-    } for p in projects]
-    serialized=json.dumps(public_projects,ensure_ascii=False,separators=(',',':')).replace('&','\\u0026').replace('<','\\u003c').replace('>','\\u003e')
-    out+='<script type="application/json" id="showroom-data">'+serialized+'</script>'
-    out+=(ROOT/'templates/project-hologram.html').read_text()
+    featured=projects[:6]
+    artifacts=[]
+    for i,p in enumerate(featured):
+        glyph=('◈','⌁','△','⌘','◇','◎')[i]
+        artifacts.append(f'''<a class="artifact-card artifact-card--{i+1}" href="{project_url(p)}" data-proximity data-project-id="{p['id']}"><span class="artifact-card__index">{i+1:02d} / {e(CATEGORIES[p['category']][0])}</span><div class="artifact-object" aria-hidden="true"><i class="artifact-object__back"></i><i class="artifact-object__face">{glyph}</i><i class="artifact-object__edge"></i></div><span class="artifact-card__status">{stage(p)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="artifact-card__enter">Wejdź do projektu <b aria-hidden="true">↗</b></span></a>''')
+    out+='<section class="world-zone world-projects" id="projekty" data-world-zone="projects"><div class="shell"><header class="zone-heading"><div><span class="eyebrow">02 / KOLEKCJA</span><h2>Wybierz swój<br><em>punkt wejścia.</em></h2></div><p>Każdy obiekt prowadzi do innego produktu.<br>Jedna idea: technologia, która rozwiązuje realny problem.</p></header><div class="artifact-grid">'+''.join(artifacts)+'</div><a class="world-control catalog-entry" href="projekty/">Wszystkie '+str(len(projects))+' projektów i elementów zaplecza <span>↗</span></a></div></section>'
     spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
     delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
     about_services,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
     about,services=about_services.split('<!-- SERVICES -->')
-    out+=services
-    out+=production_section()
-    out+=delivery.render_delivery(projects)
-    out+=about
-    out+=delivery.render_case_studies()
-    out+=technology_section(projects)
-    return out+'<div class="installation-console">'+contact+brief_section()+'</div>'
+    out+='<div class="world-zone" data-world-zone="engineering">'+services+production_section()+delivery.render_case_studies()+technology_section(projects)+'</div>'
+    out+='<div class="world-zone" data-world-zone="ecosystem">'+delivery.render_delivery(projects)+about+'</div>'
+    return out+'<div class="world-zone installation-console" data-world-zone="contact">'+contact+brief_section()+'</div>'
 
 
 def explorer_page(data):
@@ -554,56 +589,22 @@ def privacy_page():
 
 def render(content, title, description, path, prefix):
     template=(ROOT/'templates/site.html').read_text()
-    nav=''.join(f'<a href="{prefix}#{id_}">{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
-    page_styles=''
-    if not path and not prefix:
-        page_styles='\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('hero-monument','project-showroom','project-hologram','home-atmosphere','engineering-exhibit','brand-atmosphere','project-slices','delivery'))
-        page_styles+='\n  <link rel="preload" href="assets/brand/monument-serif-bold.ttf" as="font" type="font/ttf" crossorigin>'
-    page_styles+=('\n  ' if page_styles else '')+f'<link rel="stylesheet" href="{prefix}assets/visual-acceptance.css">'
-    if not path and not prefix:
-        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('interface-life','ecosystem-system','owner-finish','project-mechanism'))
-    page_styles+='\n  '+f'<link rel="stylesheet" href="{prefix}assets/world-atmosphere.css">'
-    if not path and not prefix:
-        page_styles+='\n  <link rel="stylesheet" href="assets/world-sections.css">\n  <link rel="stylesheet" href="assets/spatial-chapters.css">'
-    if not path and not prefix:
-        page_styles+='\n  <link rel="stylesheet" href="assets/showroom-3d.css">'
-        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('luxury-world','luxury-chapters','luxury-showroom'))
-        page_styles+='\n  '+'\n  '.join(f'<link rel="stylesheet" href="assets/{name}.css">' for name in ('continuity-process','continuity-chapters','technology-field'))
-        page_styles+='\n  <link rel="stylesheet" href="assets/material-finish.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/brand-core-mark.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/hero-entry.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/installation.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/interactions.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/world-continuity.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/journey-world.css">'
-        page_styles+='\n  <link rel="stylesheet" href="assets/client-inquiry.css">'
-    page_scripts='\n  '.join(f'<script src="assets/{name}.js" defer></script>' for name in ('hero-space','project-hologram','project-showroom','interface-life','ecosystem-system')) if not path and not prefix else ''
-    if not path and not prefix:
-        page_scripts+='\n  <script type="module" src="assets/showroom-3d.mjs"></script>\n  <script type="module" src="assets/spatial-chapters.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/continuity-chapters.mjs"></script>\n  <script type="module" src="assets/technology-field.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/brand-core-mark.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/hero-entry.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/installation.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/interactions.mjs"></script>'
-        page_scripts+='\n  <script type="module" src="assets/client-inquiry.mjs"></script>'
-    product_page=path.startswith('projekty/') or path=='progresskit-mail/'
-    if product_page:
-        page_styles+=f'\n  <link rel="stylesheet" href="{prefix}assets/product-presentation.css">'
-    if path=='projekty/glikemia-premium/':
-        page_scripts+=('\n  ' if page_scripts else '')+f'<script type="module" src="{prefix}assets/product-downloads.mjs"></script>'
-    if not page_styles:
-        template=template.replace('  @@PAGE_STYLES@@\n','')
-    if not page_scripts:
-        template=template.replace('  @@PAGE_SCRIPTS@@\n','')
-    slots={'TITLE':e(title),'DESCRIPTION':e(description),'CANONICAL':'https://progresskit.pl/'+path,'ROOT':prefix,'NAV':nav,'CONTENT':content,'PAGE_STYLES':page_styles,'PAGE_SCRIPTS':page_scripts}
+    home=not path and not prefix
+    product_page=(path.startswith('projekty/') and path!='projekty/') or path in ('progresskit-mail/','glikemia-premium/')
+    nav=''.join(f'<a href="{prefix}#{id_}" data-proximity>{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
+    styles=['world'] + (['project-world'] if product_page else [])
+    scripts=['world.mjs'] + (['world-scene.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
+    if path in ('projekty/glikemia-premium/','glikemia-premium/'):
+        scripts.append('product-downloads.mjs')
+    page_styles='\n  '.join(f'<link rel="stylesheet" href="{prefix}assets/{name}.css">' for name in styles)
+    page_scripts='\n  '.join(f'<script type="module" src="{prefix}assets/{name}"></script>' for name in scripts)
+    if path=='glikemia-premium/':
+        page_scripts+=f'\n  <script src="{prefix}glikemia-premium/product.js" defer></script>'
+    slots={'TITLE':e(title),'DESCRIPTION':e(description),'CANONICAL':'https://progresskit.pl/'+path,'ROOT':prefix,'NAV':nav,'CONTENT':content,'PAGE_STYLES':page_styles,'PAGE_SCRIPTS':page_scripts,'BODY_CLASS':'progresskit-world'+(' world-home' if home else ' project-world-page' if product_page else ' world-catalog')}
     for name,value in slots.items():
         template=template.replace('@@'+name+'@@',value)
     if '@@' in template:
         raise ValueError('Unfilled template slot.')
-    if not path and not prefix:
-        template=template.replace('<body>','<body class="luxury-world">\n  <div class="installation-world" aria-hidden="true"><div class="installation-world__architecture"></div><div class="installation-world__light"></div><canvas class="world-embers"></canvas></div>')
-    elif product_page:
-        template=template.replace('<body>','<body class="product-presentation product-case">')
     return template
 
 
@@ -617,9 +618,6 @@ def generated(data):
     if background is not None:
         if not isinstance(background,str) or not re.fullmatch(r'assets/brand/[a-z0-9-]+\.(webp|jpg|png)',background) or not (ROOT/background).is_file():
             raise ValueError('Approved hero background must be an existing local brand asset.')
-        outputs['assets/hero.css']=f':root {{ --approved-hero-image: url("../{background}"); }}\n'
-    else:
-        outputs['assets/hero.css']='/* Approved mountain/moon/wall source missing. No substitute landscape. Owner visual approval OPEN. */\n'
     for p in data['projects']:
         path=project_url(p)
         outputs[path+'index.html']=render(full_case(p),p['name']+': projekt i case study | ProgressKit',p['summary'],path,'../../')
@@ -628,10 +626,7 @@ def generated(data):
     outputs['progresskit-mail/index.html']=render(full_case(mail,'../'),mail['name']+': projekt | ProgressKit',mail['summary'],'projekty/'+mail['slug']+'/','../')
     outputs['prywatnosc/index.html']=render(privacy_page(),'Prywatność i operator | ProgressKit Systems','Informacja o prywatności katalogu, analityce i zgłoszeniach projektów ProgressKit Systems.','prywatnosc/','../')
     glikemia=next(p for p in data['projects'] if p['id']=='glikemia-premium')
-    distribution=(ROOT/'templates/glikemia-distribution.html').read_text()
-    for key,value in {'DESCRIPTION':e(glikemia['summary']),'STAGE':stage(glikemia),'AVAILABILITY':e(glikemia['availability']),'FEATURES':''.join(f'<article class="card"><p>{e(feature)}</p></article>' for feature in glikemia['features'])}.items():
-        distribution=distribution.replace('@@'+key+'@@',value)
-    outputs['glikemia-premium/index.html']=distribution
+    outputs['glikemia-premium/index.html']=render(full_case(glikemia,'../',distribution=True),'Glikemia Premium: prywatny dziennik glikemii na Android | ProgressKit',glikemia['summary'],'glikemia-premium/','../')
     outputs['404.html']=render('<section class="shell privacy"><h1>Nie znaleziono strony.</h1><p><a href="/">Wróć do ProgressKit →</a></p></section>','Nie znaleziono strony | ProgressKit','Ta strona nie istnieje.','','/').replace('<meta name="description"','<meta name="robots" content="noindex">\n<meta name="description"')
     urls=['','projekty/','glikemia-premium/','prywatnosc/']+[project_url(p) for p in data['projects']]
     outputs['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>https://progresskit.pl/{url}</loc></url>\n' for url in urls)+'</urlset>\n'

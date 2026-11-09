@@ -18,30 +18,26 @@
   <meta name="twitter:description" content="Ta strona nie istnieje.">
   <meta name="twitter:image" content="https://progresskit.pl/og-progresskit.jpg">
   <link rel="icon" href="/assets/brand/progressorkit-stamp.png" type="image/png">
-  <link rel="stylesheet" href="/assets/site-v4.css">
-  <link rel="stylesheet" href="/assets/site-v5.css">
-  <link rel="stylesheet" href="/assets/hero.css">
-  <link rel="stylesheet" href="/assets/visual-acceptance.css">
-  <link rel="stylesheet" href="/assets/world-atmosphere.css">
-  <link rel="stylesheet" href="/assets/premium-controls.css">
-  <script type="module" src="/assets/premium-controls.mjs"></script>
+  <link rel="stylesheet" href="/assets/world.css">
   <script src="/assets/site-v5.js" defer></script>
+  <script type="module" src="/assets/world.mjs"></script>
 </head>
-<body>
+<body class="progresskit-world world-catalog" data-core-state="idle">
+  <div class="world-environment" aria-hidden="true"><div class="world-environment__light"></div><div class="world-environment__grain"></div><div class="world-environment__spine"></div></div>
   <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="topbar">
     <div class="shell topbar__inner">
       <a class="brand" href="/#start" aria-label="ProgressKit Systems, start">
-        <span class="brand__mark" aria-hidden="true"><img src="/assets/brand/progressorkit-stamp.png" width="48" height="48" alt=""></span>
         <span><span class="brand__title">PROGRESSKIT SYSTEMS</span></span>
       </a>
-      <nav class="nav" aria-label="Główna nawigacja"><a href="/#projekty">Projekty</a><a href="/#uslugi">Usługi</a><a href="/#proces">Proces</a><a href="/#wyzwania">Wyzwania</a><a href="/#technologie">Technologie</a><a href="/#o-mnie">O mnie</a><a href="/#ekosystem">Ekosystem</a><a href="/#wydania">Wydania</a><a href="/#kontakt">Kontakt</a></nav>
+      <nav class="nav" aria-label="Główna nawigacja"><a href="/#projekty" data-proximity>Projekty</a><a href="/#uslugi" data-proximity>Usługi</a><a href="/#proces" data-proximity>Proces</a><a href="/#wyzwania" data-proximity>Wyzwania</a><a href="/#technologie" data-proximity>Technologie</a><a href="/#o-mnie" data-proximity>O mnie</a><a href="/#ekosystem" data-proximity>Ekosystem</a><a href="/#wydania" data-proximity>Wydania</a><a href="/#kontakt" data-proximity>Kontakt</a></nav>
       <button class="menu-btn" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
-    <nav id="mobile-menu" class="mobile-panel" aria-label="Nawigacja mobilna" hidden><a href="/#projekty">Projekty</a><a href="/#uslugi">Usługi</a><a href="/#proces">Proces</a><a href="/#wyzwania">Wyzwania</a><a href="/#technologie">Technologie</a><a href="/#o-mnie">O mnie</a><a href="/#ekosystem">Ekosystem</a><a href="/#wydania">Wydania</a><a href="/#kontakt">Kontakt</a></nav>
+    <nav id="mobile-menu" class="mobile-panel" aria-label="Nawigacja mobilna" hidden><a href="/#projekty" data-proximity>Projekty</a><a href="/#uslugi" data-proximity>Usługi</a><a href="/#proces" data-proximity>Proces</a><a href="/#wyzwania" data-proximity>Wyzwania</a><a href="/#technologie" data-proximity>Technologie</a><a href="/#o-mnie" data-proximity>O mnie</a><a href="/#ekosystem" data-proximity>Ekosystem</a><a href="/#wydania" data-proximity>Wydania</a><a href="/#kontakt" data-proximity>Kontakt</a></nav>
   </header>
-  <noscript><nav class="shell fallback-nav" aria-label="Nawigacja bez JavaScript"><a href="/#projekty">Projekty</a><a href="/#uslugi">Usługi</a><a href="/#proces">Proces</a><a href="/#wyzwania">Wyzwania</a><a href="/#technologie">Technologie</a><a href="/#o-mnie">O mnie</a><a href="/#ekosystem">Ekosystem</a><a href="/#wydania">Wydania</a><a href="/#kontakt">Kontakt</a></nav></noscript>
+  <noscript><nav class="shell fallback-nav" aria-label="Nawigacja bez JavaScript"><a href="/#projekty" data-proximity>Projekty</a><a href="/#uslugi" data-proximity>Usługi</a><a href="/#proces" data-proximity>Proces</a><a href="/#wyzwania" data-proximity>Wyzwania</a><a href="/#technologie" data-proximity>Technologie</a><a href="/#o-mnie" data-proximity>O mnie</a><a href="/#ekosystem" data-proximity>Ekosystem</a><a href="/#wydania" data-proximity>Wydania</a><a href="/#kontakt" data-proximity>Kontakt</a></nav></noscript>
   <main id="main" tabindex="-1"><section class="shell privacy"><h1>Nie znaleziono strony.</h1><p><a href="/">Wróć do ProgressKit →</a></p></section></main>
+  <aside class="world-guide" aria-label="ProgressKit Guide"><button type="button" class="guide-trigger" data-guide-toggle aria-controls="guide-panel" aria-expanded="false" data-proximity><span class="guide-glyph" aria-hidden="true">◈</span><span>GUIDE</span></button><div class="guide-panel" id="guide-panel" hidden><span class="eyebrow">PROGRESSKIT GUIDE</span><p data-guide-copy>Każdy artefakt otwiera projekt: jego możliwości, architekturę i rzeczywisty etap rozwoju.</p><div class="guide-topics"><button type="button" data-guide-topic="projects">Projekty</button><button type="button" data-guide-topic="technology">Technologie</button><button type="button" data-guide-topic="security">Security</button></div></div></aside>
   <footer>
     <div class="shell footer__inner">
       <div class="footer-brand"><img src="/assets/brand/progressorkit-stamp.png" width="40" height="40" alt="" aria-hidden="true"><div><strong>PROGRESSKIT SYSTEMS</strong></div></div>

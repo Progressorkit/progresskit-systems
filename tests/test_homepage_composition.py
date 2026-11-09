@@ -42,11 +42,16 @@ class HomepageCompositionTests(unittest.TestCase):
 
     def test_one_interactive_project_collection_contains_all_catalogue_identities(self):
         projects = [attrs['data-project-id'] for tag, attrs, _ in self.page.elements
-                    if tag == 'article' and 'showroom-card' in attrs.get('class', '').split()]
-        self.assertEqual(len(self.data['projects']), len(projects))
-        self.assertTrue({'glikemia-premium','progresskit-mail','progresskit-translator','vaeloria','progresskit-community','progresskit-tax','adivara','gotrans360','ignira','obserwator','kan-system','progresskit-systems','progresskit-analytics','progresskit-infrastructure'}.issubset(projects))
-        self.assertEqual([project['id'] for project in self.data['projects']], projects)
-        self.assertEqual(1, sum('data-showroom' in attrs for _, attrs, _ in self.page.elements))
+                    if tag == 'a' and 'artifact-card' in attrs.get('class', '').split()]
+        self.assertGreater(len(projects), 0)
+        self.assertEqual(len(projects), len(set(projects)))
+        self.assertTrue(set(projects).issubset(p['id'] for p in self.data['projects']))
+        self.assertIn('glikemia-premium', projects)
+        self.assertEqual(1, sum('data-world-scene' in attrs for _, attrs, _ in self.page.elements))
+        catalogue = Composition(BUILDER.generated(self.data)['projekty/index.html'])
+        identities = [attrs['data-id'] for _, attrs, _ in catalogue.elements
+                      if 'catalog-card' in attrs.get('class', '').split()]
+        self.assertEqual([p['id'] for p in self.data['projects']], identities)
         for _, attrs, _ in self.page.elements:
             self.assertNotIn('data-engineering-select', attrs)
             self.assertNotIn('data-engineering-case', attrs)
@@ -67,15 +72,14 @@ class HomepageCompositionTests(unittest.TestCase):
         before = copy.deepcopy(self.data)
         markup = BUILDER.homepage(self.data)
         self.assertEqual(before, self.data)
-        payload = re.search(r'<script type="application/json" id="showroom-data">(.*?)</script>',
-                            markup, re.S)
-        self.assertIsNotNone(payload)
-        records = json.loads(payload.group(1))
-        self.assertEqual([project['id'] for project in self.data['projects']],
-                         [record['id'] for record in records])
-        for project, record in zip(self.data['projects'], records):
-            for key in ('name', 'category', 'summary', 'problem', 'technologies', 'gallery'):
-                self.assertEqual(project[key], record[key])
+        for project in self.data['projects']:
+            case = BUILDER.full_case(project)
+            for key in ('name', 'summary', 'problem'):
+                # The title may intentionally split the product name over lines.
+                if key == 'name' and project['id'] == 'glikemia-premium':
+                    self.assertIn('Glikemia <em>Premium</em>', case)
+                else:
+                    self.assertIn(escape(project[key], quote=True), case)
 
     def test_full_case_routes_retain_original_analyses_and_download_entry_points(self):
         generated = BUILDER.generated(self.data)
@@ -90,8 +94,8 @@ class HomepageCompositionTests(unittest.TestCase):
             for analysis in project['cases']:
                 self.assertIn(escape(analysis['problem'], quote=True), case)
                 self.assertIn(escape(analysis['verification'], quote=True), case)
-        self.assertIn('href="glikemia-premium/"', self.markup)
-        self.assertIn('href="/download/glikemia-premium"', self.markup)
+        self.assertIn('href="glikemia-premium/"', generated['index.html'])
+        self.assertIn('href="/download/glikemia-premium"', generated['projekty/glikemia-premium/index.html'])
         self.assertIn('href="projekty/"', self.markup)
 
 
