@@ -16,6 +16,7 @@ def public_files():
         'index.html','404.html','robots.txt','sitemap.xml','og-progresskit.jpg',
         'assets/site-v5.js','assets/world.css','assets/world.mjs',
         'assets/world-scene.mjs','assets/world-grain.svg',
+        'assets/living-experience.css','assets/living-experience.mjs',
         'assets/project-world.css','assets/project-world.mjs',
         'assets/client-inquiry.mjs','assets/product-downloads.mjs',
         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',
@@ -29,6 +30,11 @@ def public_files():
     for p in data['projects']:
         files.add(f'projekty/{p["slug"]}/index.html')
         files.update(image['src'] for image in p['gallery'])
+    # Separate presentation media: genuine DEMO screens and the game's intro art.
+    for scene in json.loads((ROOT/'catalog/living-media.json').read_text()).values():
+        files.update(image['src'] for image in scene.get('images', []))
+        if scene.get('backdrop'):
+            files.add(scene['backdrop']['src'])
     brand=json.loads((ROOT/'catalog/brand.json').read_text())
     if brand['heroBackground']:
         files.add(brand['heroBackground'])

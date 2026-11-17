@@ -36,7 +36,7 @@ class OwnerCorrectionTests(unittest.TestCase):
 
     def test_homepage_section_order_matches_owner_composition(self):
         expected=['start','projekty','wyzwania','technologie','o-mnie','kontakt','brief']
-        self.assertEqual(expected,[id_ for id_ in self.home.sections if id_ in expected])
+        self.assertEqual(expected,[id_ for id_ in self.home.ids if id_ in expected])
         self.assertLess(self.source.index('id="projekty"'),self.source.index('id="o-mnie"'))
 
     def test_all_categories_and_projects_remain_in_the_dedicated_catalogue(self):
@@ -105,14 +105,14 @@ class OwnerCorrectionTests(unittest.TestCase):
         self.assertIn('projekty/',self.home.links)
         self.assertNotIn('href="projekty/projekty/',index)
 
-    def test_hero_uses_one_core_and_preserves_the_original_brand_asset_as_fallback(self):
+    def test_hero_uses_one_core_and_original_brand_asset_throughout_the_journey(self):
         self.assertIn('assets/brand/progressorkit-stamp.png',self.home.images)
         self.assertEqual(1,self.source.count('data-world-scene'))
         self.assertEqual(1,self.source.count('data-core-activate'))
         self.assertEqual(1,self.home.ids.count('rdzen'))
         self.assertNotIn('data-hero-enter',self.source)
         self.assertNotIn('data-brand-core-mark',self.source)
-        self.assertEqual(1,self.home.classes.count('core-fallback'))
+        self.assertEqual(1,self.home.classes.count('living-identity'))
         brand=json.loads((ROOT/'catalog/brand.json').read_text())
         self.assertEqual('OPEN',brand['ownerVisualApproval'])
         self.assertTrue((ROOT/'assets/brand/progressorkit-stamp.png').is_file())

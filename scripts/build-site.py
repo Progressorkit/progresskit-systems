@@ -551,13 +551,9 @@ def technology_section(projects):
 
 def homepage(data):
     projects=data['projects']
-    out=(ROOT/'templates/hero-installation.html').read_text()
-    featured=projects[:6]
-    artifacts=[]
-    for i,p in enumerate(featured):
-        glyph=('◈','⌁','△','⌘','◇','◎')[i]
-        artifacts.append(f'''<a class="artifact-card artifact-card--{i+1}" href="{project_url(p)}" data-proximity data-project-id="{p['id']}"><span class="artifact-card__index">{i+1:02d} / {e(CATEGORIES[p['category']][0])}</span><div class="artifact-object" aria-hidden="true"><i class="artifact-object__back"></i><i class="artifact-object__face">{glyph}</i><i class="artifact-object__edge"></i></div><span class="artifact-card__status">{stage(p)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="artifact-card__enter">Wejdź do projektu <b aria-hidden="true">↗</b></span></a>''')
-    out+='<section class="world-zone world-projects" id="projekty" data-world-zone="projects"><div class="shell"><header class="zone-heading"><div><span class="eyebrow">02 / KOLEKCJA</span><h2>Wybierz swój<br><em>punkt wejścia.</em></h2></div><p>Każdy obiekt prowadzi do innego produktu.<br>Jedna idea: technologia, która rozwiązuje realny problem.</p></header><div class="artifact-grid">'+''.join(artifacts)+'</div><a class="world-control catalog-entry" href="projekty/">Wszystkie '+str(len(projects))+' projektów i elementów zaplecza <span>↗</span></a></div></section>'
+    spec=importlib.util.spec_from_file_location('living_markup',ROOT/'scripts/living_markup.py')
+    living=importlib.util.module_from_spec(spec);spec.loader.exec_module(living)
+    out=living.render(projects, stage, project_url)
     spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
     delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
     about_services,contact=(ROOT/'templates/about-contact.html').read_text().split('<!-- CONTACT -->')
@@ -592,8 +588,8 @@ def render(content, title, description, path, prefix):
     home=not path and not prefix
     product_page=(path.startswith('projekty/') and path!='projekty/') or path in ('progresskit-mail/','glikemia-premium/')
     nav=''.join(f'<a href="{prefix}#{id_}" data-proximity>{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
-    styles=['world'] + (['project-world'] if product_page else [])
-    scripts=['world.mjs'] + (['world-scene.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
+    styles=['world'] + (['living-experience'] if home else []) + (['project-world'] if product_page else [])
+    scripts=['world.mjs'] + (['living-experience.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
     if path in ('projekty/glikemia-premium/','glikemia-premium/'):
         scripts.append('product-downloads.mjs')
     page_styles='\n  '.join(f'<link rel="stylesheet" href="{prefix}assets/{name}.css">' for name in styles)

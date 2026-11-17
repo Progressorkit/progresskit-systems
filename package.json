@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "build": "npm run vendor:three && python3 scripts/build-site.py",
-    "check": "node scripts/vendor-three.cjs --check && python3 scripts/build-site.py --check && node --check assets/site-v5.js && node --check assets/world.mjs && node --check assets/world-scene.mjs && node --check assets/project-world.mjs && node --check assets/client-inquiry.mjs && node --check assets/product-downloads.mjs && node --check glikemia-premium/product.js",
+    "check": "node scripts/vendor-three.cjs --check && python3 scripts/build-site.py --check && node --check assets/site-v5.js && node --check assets/world.mjs && node --check assets/world-scene.mjs && node --check assets/living-experience.mjs && node --check assets/project-world.mjs && node --check assets/client-inquiry.mjs && node --check assets/product-downloads.mjs && node --check glikemia-premium/product.js",
     "test": "node --test tests/*.test.cjs",
-    "vendor:three": "node scripts/vendor-three.cjs"
+    "vendor:three": "node scripts/vendor-three.cjs",
+    "test:living": "node scripts/verify-living-experience.cjs"
   },
   "dependencies": {
     "three": "0.187.0"

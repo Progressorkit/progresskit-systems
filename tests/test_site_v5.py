@@ -344,6 +344,7 @@ class SiteV5Tests(unittest.TestCase):
             (root / 'catalog').mkdir()
             (root / 'catalog/projects.json').write_text((ROOT / 'catalog/projects.json').read_text())
             (root / 'catalog/brand.json').write_text((ROOT / 'catalog/brand.json').read_text())
+            (root / 'catalog/living-media.json').write_text((ROOT / 'catalog/living-media.json').read_text())
             decoys = ['docs/private-report.txt', 'analytics/private.db',
                       'assets/projects/raw/production-capture.png',
                       'assets/cinematic/user-preview.mp4', 'assets/cinematic/unreviewed.webm',
