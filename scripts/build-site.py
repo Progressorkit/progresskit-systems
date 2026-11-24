@@ -308,7 +308,7 @@ def card(p):
     return f'''<article class="catalog-card" data-id="{p['id']}" data-category="{p['category']}" data-classification="{e(classification)}" data-stage="{e(p['stage'] or '')}" data-search="{e(search)}" data-technologies="{e(json.dumps(p['technologies'],ensure_ascii=False))}">
       <div class="card-top"><span class="card-category">{e(category)} · {e(kind)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="card-stage">{stage(p)}</span></div>{preview}
       <details class="project-drawer" id="projekt-{p['id']}"><summary aria-controls="drawer-{p['id']}">Odkryj projekt <span class="sr-only">{e(p['name'])}</span></summary>
-      <div class="drawer-content" id="drawer-{p['id']}"><h4>Problem</h4><p>{e(p['problem'])}</p><h4>Rozwiązanie</h4><p>{e(p['solution'])}</p><h4>Dla kogo</h4><p>{e(' · '.join(p['audiences']))}</p><h4>Potwierdzony zakres</h4>{items(p['features'][:4])}<h4>Stan i dostęp</h4><p>{e(p['availability'])}</p><p class="tech-line">{e(' / '.join(p['technologies']))}</p><time class="updated" datetime="{p['updatedAt']}">Przegląd źródeł: {p['updatedAt']}</time><a class="cta cta--ghost" href="{project_url(p)}">Pełne case study →</a></div></details></article>'''
+      <div class="drawer-content" id="drawer-{p['id']}"><h4>Problem</h4><p>{e(p['problem'])}</p><h4>Rozwiązanie</h4><p>{e(p['solution'])}</p><h4>Dla kogo</h4><p>{e(' · '.join(p['audiences']))}</p><h4>Potwierdzony zakres</h4>{items(p['features'][:4])}<h4>Stan i dostęp</h4><p>{e(p['availability'])}</p><p class="tech-line">{e(' / '.join(p['technologies']))}</p><time class="updated" datetime="{p['updatedAt']}">Przegląd źródeł: {p['updatedAt']}</time><a class="cta cta--ghost" href="{(p['id']+'/' if p['id'] in ('echo-worlds','taskpet') else project_url(p))}">Pełne case study →</a></div></details></article>'''
 
 
 def gallery(p, prefix):
@@ -588,8 +588,9 @@ def render(content, title, description, path, prefix):
     home=not path and not prefix
     product_page=(path.startswith('projekty/') and path!='projekty/') or path in ('progresskit-mail/','glikemia-premium/')
     nav=''.join(f'<a href="{prefix}#{id_}" data-proximity>{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
-    styles=['world'] + (['living-experience'] if home else []) + (['project-world'] if product_page else [])
-    scripts=['world.mjs'] + (['living-experience.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
+    game_page=path in ('echo-worlds/','taskpet/')
+    styles=['world'] + (['games'] if game_page else []) + (['living-experience'] if home else []) + (['project-world'] if product_page else [])
+    scripts=['world.mjs'] + (['games.mjs'] if game_page else []) + (['living-experience.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
     if path in ('projekty/glikemia-premium/','glikemia-premium/'):
         scripts.append('product-downloads.mjs')
     page_styles='\n  '.join(f'<link rel="stylesheet" href="{prefix}assets/{name}.css">' for name in styles)
@@ -601,6 +602,9 @@ def render(content, title, description, path, prefix):
         template=template.replace('@@'+name+'@@',value)
     if '@@' in template:
         raise ValueError('Unfilled template slot.')
+    if game_page:
+        game_id='echo' if path=='echo-worlds/' else 'taskpet'
+        template=template.replace('https://progresskit.pl/og-progresskit.jpg','https://progresskit.pl/assets/games/'+game_id+'/og.webp')
     return template
 
 
@@ -624,7 +628,12 @@ def generated(data):
     glikemia=next(p for p in data['projects'] if p['id']=='glikemia-premium')
     outputs['glikemia-premium/index.html']=render(full_case(glikemia,'../',distribution=True),'Glikemia Premium: prywatny dziennik glikemii na Android | ProgressKit',glikemia['summary'],'glikemia-premium/','../')
     outputs['404.html']=render('<section class="shell privacy"><h1>Nie znaleziono strony.</h1><p><a href="/">Wróć do ProgressKit →</a></p></section>','Nie znaleziono strony | ProgressKit','Ta strona nie istnieje.','','/').replace('<meta name="description"','<meta name="robots" content="noindex">\n<meta name="description"')
-    urls=['','projekty/','glikemia-premium/','prywatnosc/']+[project_url(p) for p in data['projects']]
+    games_spec=importlib.util.spec_from_file_location("games_markup",ROOT/"scripts/games_markup.py")
+    games=importlib.util.module_from_spec(games_spec);games_spec.loader.exec_module(games)
+    render_game=games.render_game
+    for slug,kind,title,description in [('echo-worlds','echo','ECHO WORLDS — sześć krain match-3 | ProgressKit','Odkryj sześć krain ECHO WORLDS: 600 poziomów, autentyczne plansze i demonstracja match-3. 0.10.0 Alpha.'),('taskpet','taskpet','TaskPet — zadania, pupil i Twój pokój | ProgressKit','Poznaj TaskPet: sześć oryginalnych pupili, interaktywny pokój 3D i pokaz zadanie → nagroda → rozwój. Publiczna wersja w przygotowaniu.')]:
+        outputs[slug+'/index.html']=render(render_game(kind),title,description,slug+'/','../')
+    urls=['','echo-worlds/','taskpet/','projekty/','glikemia-premium/','prywatnosc/']+[project_url(p) for p in data['projects']]
     outputs['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>https://progresskit.pl/{url}</loc></url>\n' for url in urls)+'</urlset>\n'
     outputs['robots.txt']='User-agent: *\nAllow: /\nDisallow: /_analytics/\nDisallow: /api/\nDisallow: /download/\nDisallow: /downloads/\nSitemap: https://progresskit.pl/sitemap.xml\n'
     return outputs

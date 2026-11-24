@@ -29,7 +29,7 @@ class LivingTests(unittest.TestCase):
         self.assertEqual({p['id'] for p in self.data['projects']},{a['data-project-id'] for a in links})
         self.assertEqual(len(self.data['projects']),len(links))
         for p in self.data['projects']:
-            self.assertIn(B.project_url(p),[a['href'] for a in links])
+            self.assertIn(p['id']+'/' if p['id'] in ('echo-worlds','taskpet') else B.project_url(p),[a['href'] for a in links])
     def test_main_scenes_use_exact_catalogue_facts_and_reviewed_media(self):
         public=module('living_stager','scripts/stage-public.py').public_files()
         for p in self.data['projects']:
@@ -77,6 +77,7 @@ class LivingTests(unittest.TestCase):
         scripts=[a['src'] for tag,a in Elements(output).elements if tag=='script']
         self.assertIn('assets/living-experience.mjs',scripts)
         self.assertTrue(all('://' not in src for src in scripts))
-        self.assertNotIn('three.module.js',(ROOT/'assets/world-scene.mjs').read_text())
+        self.assertIn("import('./vendor/three/three.module.js')",(ROOT/'assets/world-scene.mjs').read_text())
+        self.assertIn('WebGLRenderer',(ROOT/'assets/world-scene.mjs').read_text())
 
 if __name__=='__main__': unittest.main()

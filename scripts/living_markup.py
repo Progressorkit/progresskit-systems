@@ -50,9 +50,10 @@ def render(projects, stage, project_url):
         identifier = e(project['id'])
         tone = SCENES.get(project['id'], ('', '', 'other', []))[2]
         name = project['name'].removeprefix('ProgressKit ')
-        nodes.append(f'''<a class="artifact-card living-node" href="{project_url(project)}" data-project-id="{identifier}" data-node-index="{index}" data-tone="{tone}" aria-label="Poznaj {e(project['name'])}">
+        poster=('<span class="living-node__poster">'+picture(project['gallery'][0],'')+'</span>') if project['id'] in ('echo-worlds','taskpet') else ''
+        nodes.append(f'''<a class="artifact-card living-node" href="{project["id"]+"/" if project["id"] in ("echo-worlds","taskpet") else project_url(project)}" data-project-id="{identifier}" data-node-index="{index}" data-tone="{tone}" aria-label="Poznaj {e(project['name'])}" title="{e(project['name']+': '+stage(project)+' — '+project['summary'])}">
           <span class="living-hex" aria-hidden="true"><svg viewBox="0 0 160 180"><path d="M80 3 157 47 157 133 80 177 3 133 3 47Z"/><path d="M80 12 149 52 149 128 80 168 11 128 11 52Z"/></svg><b>{index+1:02d}</b></span>
-          <span class="living-node__name">{e(name)}</span>{media(project)}</a>''')
+          <span class="living-node__name">{e(name)}</span>{poster}<span class="living-node__detail">{stage(project)}<small>{e(project["summary"])}</small></span>{media(project)}</a>''')
         if project['id'] not in FEATURED:
             continue
         number, label, _, images = SCENES[project['id']]

@@ -1,6 +1,6 @@
 /* One stage; geometry and light are sampled from the same scroll position. */
 .living-journey{--scene-rgb:150,170,190;--light-x:65%;--light-y:25%;--scene-progress:0;position:relative;isolation:isolate}
-.living-stage{position:relative;overflow:clip;min-height:650px;background:radial-gradient(ellipse at var(--light-x) var(--light-y),rgba(var(--scene-rgb),.14),transparent 62%),linear-gradient(125deg,#07090c,#10141b 55%,#080a0d);color:#e9e5e2}
+.living-stage{display:flow-root;position:relative;overflow:clip;min-height:650px;background:radial-gradient(ellipse at var(--light-x) var(--light-y),rgba(var(--scene-rgb),.14),transparent 62%),linear-gradient(125deg,#07090c,#10141b 55%,#080a0d);color:#e9e5e2}
 .living-stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .living-light{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 38%,rgba(var(--scene-rgb),.07) 49%,transparent 67%);transform:translateX(var(--beam-x,0%));opacity:.8}
 .living-watermark{position:absolute;top:14%;width:100%;text-align:center;font-size:clamp(80px,20vw,370px);font-weight:600;letter-spacing:-.075em;line-height:1;color:rgba(var(--scene-rgb),.045);pointer-events:none}
@@ -82,7 +82,7 @@
 .living-ready .living-watermark{top:auto;bottom:9%;left:5%;width:auto;font-size:clamp(70px,15vw,270px);text-align:left;letter-spacing:-.065em;color:rgba(var(--scene-rgb),.065);z-index:1}
 .living-ready .living-identity{position:absolute;left:0;top:0;width:min(64vw,83vh,950px);margin:0;transform-origin:center;will-change:transform;z-index:4}
 .living-ready .living-identity img{filter:drop-shadow(12px 22px 12px #0008)}
-.living-ready .living-identity:after{content:'';position:absolute;inset:0 0 0;aspect-ratio:1;background:linear-gradient(110deg,transparent 20%,#eff9ff2b var(--shine,50%),transparent 70%);mask:url('./brand/progressorkit-stamp.png') center top/100% auto no-repeat;pointer-events:none}
+.living-ready .living-identity:after{content:'';position:absolute;inset:0 0 0;aspect-ratio:1;background:linear-gradient(110deg,transparent 20%,#eff9ff2b var(--shine,50%),transparent 70%);mask:url('./brand/progresskit-mark-hero.webp') center top/100% auto no-repeat;pointer-events:none}
 .living-ready .living-identity>span{position:absolute;top:100%;left:0;right:0;font-size:10px;letter-spacing:.6em;margin-top:-1%}
 .living-ready .living-identity b{display:none}
 .living-ready .living-intro{position:absolute;left:5%;top:34%;padding:0;max-width:35%;z-index:5}
@@ -291,4 +291,34 @@ body.world-home .guide-panel .eyebrow,body.world-home .guide-glyph{color:var(--l
  .living-journey .living-node:is(:hover,:focus-visible,[data-near=true]) .living-hex path:first-child{fill:Canvas;stroke:Highlight}
  .living-journey .living-node:is(:hover,:focus-visible,[data-near=true]) .living-hex path:last-child{stroke:Highlight}
  .living-journey .living-provenance,.living-journey .living-hud{background:Canvas;box-shadow:none}
+}
+/* Public product previews and readable status on the existing spatial nodes. */
+.living-node__poster{display:none}.living-node__detail{display:none}.living-ready .living-node__detail{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:220px;padding:12px;background:#131a22;border:1px solid #a7b8c5;color:#f7f9fc;font-size:14px;line-height:1.5;pointer-events:none;box-shadow:0 8px 24px #000b;z-index:20}.living-node__detail small{display:block;font-size:14px;color:#d1d8e2;margin-top:6px}.living-ready .living-node:is(:hover,:focus-visible) .living-node__detail{display:block}.living-ready .living-node__poster{display:block;position:absolute;inset:10px 15px 35px;border-radius:50%;overflow:hidden;pointer-events:none;z-index:-1;opacity:.6}.living-node__poster img{width:100%;height:100%;object-fit:cover}
+
+/* Reserve the landing stage before enhancement and load only visible media. */
+.living-light{visibility:hidden}.living-ready .living-light{visibility:visible}
+.living-ready .living-node:not([data-media-visible=true]) .living-media{display:none}
+.living-ready:not([data-forest-visible=true]) .living-backdrop{display:none}
+@media(scripting:enabled){.living-journey:not(.living-ready):not(.living-static) .living-stage{height:100svh;min-height:0}}
+
+/* The WebGL lights carry depth; omit the full-stage painted beam which shifts at enhancement. */
+.living-journey .living-light{display:none}
+@media(scripting:enabled){.living-journey:not(.living-static) .living-nodes{position:absolute;inset:0;display:block;padding:0}.living-journey:not(.living-ready):not(.living-static) .living-nodes{visibility:hidden}}
+@media(scripting:enabled){.living-journey:not(.living-ready):not(.living-static) :is(.living-watermark,.living-map-heading){visibility:hidden}}
+.living-ready:not([data-scene="1"]) .living-node__poster{display:none}
+/* Match the enhanced hero's first pose before its module has loaded. */
+@media(scripting:enabled){
+ .living-journey:not(.living-ready):not(.living-static) .living-intro{position:absolute;left:5%;top:34%;padding:0;max-width:35%;z-index:5}
+ .living-journey:not(.living-ready):not(.living-static) .living-activation{position:absolute;left:5%;bottom:12%;padding:0;z-index:5;max-width:31%}
+ .living-journey:not(.living-ready):not(.living-static) .living-identity{position:absolute;left:69%;top:46%;width:min(64vw,83vh,950px);margin:0;transform:translate(-50%,-50%);z-index:4}
+ @media(max-width:999px){
+  .living-journey:not(.living-ready):not(.living-static) .living-intro{left:7%;right:7%;top:60%;max-width:none;text-align:center}
+  .living-journey:not(.living-ready):not(.living-static) .living-activation{left:7%;right:7%;bottom:10%;max-width:none;text-align:center}
+  .living-journey:not(.living-ready):not(.living-static) .living-identity{left:50%;top:29%;width:min(78vw,55vh)}
+ }
+ @media(max-width:600px){
+  .living-journey:not(.living-ready):not(.living-static) .living-intro{top:55%}
+  .living-journey:not(.living-ready):not(.living-static) .living-identity{width:min(90vw,44vh)}
+ }
+ @media(max-width:600px) and (max-height:680px){.living-journey:not(.living-ready):not(.living-static) .living-identity{top:30%;width:min(88vw,41vh)}}
 }

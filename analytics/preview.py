@@ -2,13 +2,16 @@
 from pathlib import Path
 import importlib.util
 from fastapi import FastAPI
+from starlette.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, RedirectResponse
 from product import router
 from inquiries import router as inquiry_router
 from security_headers import SecurityHeadersMiddleware
 root = Path(__file__).resolve().parents[1]
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
-app.add_middleware(SecurityHeadersMiddleware, media_pages=('/', '/index.html'))
+# Match the release's recommended HTTP compression for text/module responses.
+app.add_middleware(GZipMiddleware, minimum_size=1024)
+app.add_middleware(SecurityHeadersMiddleware, media_pages=('/', '/index.html', '/echo-worlds/', '/echo-worlds/index.html', '/taskpet/', '/taskpet/index.html'))
 app.include_router(router)
 app.include_router(inquiry_router)
 spec=importlib.util.spec_from_file_location('stage_public',root/'scripts/stage-public.py')

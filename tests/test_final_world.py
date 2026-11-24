@@ -59,7 +59,7 @@ class FinalWorldTests(unittest.TestCase):
         artifacts = self.home.classes('artifact-card')
         self.assertGreaterEqual(len(artifacts), 1)
         self.assertTrue(all(tag == 'a' for tag, _ in artifacts))
-        expected = Counter(f'/projekty/{p["slug"]}/' for p in self.data['projects'])
+        expected = Counter('/'+p['id']+'/' if p['id'] in ('echo-worlds','taskpet') else f'/projekty/{p["slug"]}/' for p in self.data['projects'])
         actual = Counter('/' + attrs['href'].lstrip('/') for _, attrs in artifacts)
         self.assertEqual(len(actual), len(artifacts))
         self.assertTrue(set(actual).issubset(expected))

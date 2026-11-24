@@ -125,13 +125,13 @@ function initialize(root) {
     // Decode the current and next shot before it unfolds; hidden lazy images otherwise
     // may not be requested by the browser until the sticky scene is already visible.
     nodes.slice(0,5).forEach((node,index)=>{
-      if(index+2>sample.to+1||warmed.has(index))return;
+      if(sample.from===0||index+2>sample.to+1||warmed.has(index))return;
       warmed.add(index);
       const images=[...node.querySelectorAll('img')];if(index===3)images.push(root.querySelector('.living-backdrop'));
       images.forEach(img=>{img.loading='eager';img.decode().then(schedule,()=>{});});
     });
     const forest=weight(5,sample),tax=weight(3,sample),phone=weight(4,sample),remote=weight(6,sample);
-    root.style.setProperty('--forest',forest.toFixed(4));root.style.setProperty('--paper',tax.toFixed(4));root.style.setProperty('--phone',phone.toFixed(4));root.style.setProperty('--remote',remote.toFixed(4));
+    root.dataset.forestVisible=String(forest>.001);root.style.setProperty('--forest',forest.toFixed(4));root.style.setProperty('--paper',tax.toFixed(4));root.style.setProperty('--phone',phone.toFixed(4));root.style.setProperty('--remote',remote.toFixed(4));
     const backdrop=root.querySelector('.living-backdrop');backdrop.style.opacity=forest.toFixed(4);
     backdrop.style.transform=`translate3d(${presence*-6}px,${vertical*-3}px,0) scale(${1.08+(1-forest)*.24})`;
     const stageCarrier=index=>{
@@ -201,6 +201,7 @@ function initialize(root) {
       const size=mobile?(height<=680?[62,70]:[72,82]):width>=1800?[150,174]:[124,144];
       const proximity=pose.index===near&&map>.6?1:0;
       node.style.transform=`translate3d(${pose.x*width-size[0]/2}px,${pose.y*height-size[1]/2-proximity*3}px,0) scale(${pose.scale+proximity*.025})`;
+      node.dataset.mediaVisible=String(pose.media>.001);
       node.style.setProperty('--label',mix(1-pose.media,1,reveal).toFixed(4));node.style.setProperty('--media',pose.media.toFixed(4));node.style.setProperty('--spread',pose.spread.toFixed(4));
       const labelOffset=pose.index<5?objectSizes[pose.index].h/(mobile?2.8:3)/2+18:size[1]/2;
       node.style.setProperty('--label-offset',`${mix(size[1]/2,labelOffset,reveal)}px`);
@@ -268,5 +269,5 @@ function initialize(root) {
   const resizer=new ResizeObserver(()=>{needsMeasure=true;schedule();});resizer.observe(stage);
   on(window,'pagehide',event=>{pageActive=false;cancelAnimationFrame(frame);frame=0;canvas.dataset.motion='hidden';if(!event.persisted){scope.abort();observer.disconnect();resizer.disconnect();}});
   on(window,'pageshow',()=>{pageActive=true;needsMeasure=true;schedule();navigate(location.hash);});
-  setMode();navigate(location.hash);
+  setMode();render();navigate(location.hash);
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-24",
   "projects": [
     {
       "id": "glikemia-premium",
@@ -5250,6 +5250,224 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-vault-key-audit",
+            "historical": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "echo-worlds",
+      "slug": "echo-worlds",
+      "name": "ECHO WORLDS",
+      "category": "games",
+      "summary": "Match-3 fantasy 0.10.0 Alpha: sześć krain, 600 poziomów kampanii i 60 lokacji. Publiczne wydanie pozostaje w przygotowaniu.",
+      "problem": "Zapewnić przemyślaną podróż match-3 z różnymi krainami, celami i stopniowym odkrywaniem kampanii.",
+      "audiences": [
+        "Osoby zainteresowane rozwijanymi grami ProgressKit na Androida"
+      ],
+      "motivation": "Rozwijać autorski produkt z lokalnym postępem i uczciwie opisanym zakresem.",
+      "solution": "Klient Godot łączy plansze match-3 z kampanią fantasy. Katalog poziomów i lokacji jest odczytywany przez grę, a postęp zachowuje stabilne identyfikatory.",
+      "features": [
+        "600 definicji poziomów głównych: sześć krain po 100 prób i dziesięć lokacji w każdej krainie.",
+        "Zamiana sąsiednich run, kaskady, osiem typów przeszkód i progresja kampanii.",
+        "Autorskie boostery i lokalny postęp; płatności Play wymagają oddzielnej konfiguracji i weryfikacji."
+      ],
+      "technologies": [
+        "Godot 4.6.3",
+        "GDScript",
+        "Android",
+        "JSON"
+      ],
+      "stage": "Alpha",
+      "availability": "W przygotowaniu. Brak potwierdzonego publicznego wydania Google Play.",
+      "updatedAt": "2026-11-24",
+      "architecture": [
+        "Godot/GDScript, finite_board jako silnik planszy i stabilne identyfikatory poziomów. Definicje JSON, lokalny zapis v10. Płatności i chmura mają odrębną konfigurację."
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/echo-worlds/preview.webp",
+          "width": 768,
+          "height": 403,
+          "alt": "ECHO WORLDS — oryginalny materiał prezentacyjny",
+          "caption": "Materiał z repozytorium produktu. Grafika prezentacyjna; nie jest nowym testem Androida."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "label": "Interaktywna prezentacja",
+          "url": "https://progresskit.pl/echo-worlds/"
+        }
+      ],
+      "repository": null,
+      "results": [
+        "Odczytano aktualny kod i istniejące historyczne rendery; sam przegląd nie jest nowym testem gry ani fizycznego Androida."
+      ],
+      "cases": [],
+      "planned": [],
+      "remaining": [
+        "Fizyczny test aktualnego APK i ręczna ocena balansu.",
+        "Publiczne wydanie oraz osobne potwierdzenie konfiguracji Play."
+      ],
+      "sources": [
+        {
+          "id": "echo-worlds-code-audit",
+          "label": "ECHO WORLDS — przegląd źródeł i materiałów",
+          "kind": "code",
+          "revision": "Odczyt 2026-11-24; bieżący checkout roboczy.",
+          "scope": "Inwentaryzacja rzeczywistego katalogu treści, kodu interakcji i zapisanych renderów. Bez nowego testu Androida."
+        }
+      ],
+      "coverage": "partial",
+      "portfolio": {
+        "classification": "product",
+        "aliases": [
+          "ECHO WORLDS"
+        ],
+        "functionalStatus": "600 poziomów · Alpha 0.10.0",
+        "distributionStatus": "Publiczna dystrybucja w przygotowaniu.",
+        "productionStatus": "Wersja rozwijana; brak deklaracji gotowości produkcyjnej lub wydania w Google Play.",
+        "platforms": [
+          {
+            "name": "Android",
+            "implementation": "Istniejący klient Godot i moduły Androida.",
+            "verification": "W tym przeglądzie nie uruchamiano nowego APK ani fizycznego telefonu.",
+            "distribution": "W przygotowaniu.",
+            "limits": "Materiały Linux/Godot i starszych buildów nie zastępują akceptacji aktualnego Androida."
+          }
+        ],
+        "featureSources": [
+          [
+            "echo-worlds-code-audit"
+          ],
+          [
+            "echo-worlds-code-audit"
+          ],
+          [
+            "echo-worlds-code-audit"
+          ]
+        ],
+        "verification": [
+          {
+            "date": "2026-11-24",
+            "revision": "Przegląd bieżących źródeł.",
+            "environment": "Linux, odczyt lokalny",
+            "scope": "Kod oraz istniejące materiały z profili testowych.",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano nowej sesji rozgrywki w ramach inwentaryzacji marketingowej.",
+            "source": "echo-worlds-code-audit",
+            "historical": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "taskpet",
+      "slug": "taskpet",
+      "name": "ProgressKit TaskPet",
+      "category": "games",
+      "summary": "Organizer zadań i wirtualny chowaniec na Androida. Zadania nagradzają XP i monetami, a pokój można wyposażać. Wersja publiczna w przygotowaniu.",
+      "problem": "Połączyć codzienną aktywność z czytelnym postępem i spójnym światem gry.",
+      "audiences": [
+        "Osoby zainteresowane rozwijanymi grami ProgressKit na Androida"
+      ],
+      "motivation": "Rozwijać autorski produkt z lokalnym postępem i uczciwie opisanym zakresem.",
+      "solution": "Godot przedstawia pokój i organizuje interakcje, a natywny moduł Kotlin przechowuje autorytatywny stan, obsługuje alarmy, przypomnienia i widżety.",
+      "features": [
+        "Zadania jednorazowe, codzienne, tygodniowe i dwutygodniowe, godziny oraz przypomnienia.",
+        "Ukończenie zadania przyznaje jednokrotnie XP i monety; istniejący zapis zachowuje postęp.",
+        "Sześć kanonicznych gatunków BABY: smok, pajączek, kotek, piesek, papużka i małpka.",
+        "Pokój z wyposażeniem, sklep za monety, minigra owocowa, widżety Android i istniejący moduł budzika."
+      ],
+      "technologies": [
+        "Godot 4.6.3",
+        "GDScript",
+        "Kotlin",
+        "Android"
+      ],
+      "stage": "Wersja testowa",
+      "availability": "W przygotowaniu. Brak potwierdzonego publicznego wydania Google Play.",
+      "updatedAt": "2026-11-24",
+      "architecture": [
+        "Godot/GDScript prezentuje pokój i organizer. Kotlin NativeStore pozostaje właścicielem trwałego stanu. Alarmy, przypomnienia i widżety korzystają z istniejących adapterów Androida."
+      ],
+      "gallery": [
+        {
+          "src": "assets/projects/taskpet/preview.webp",
+          "width": 900,
+          "height": 1000,
+          "alt": "ProgressKit TaskPet — oryginalny materiał prezentacyjny",
+          "caption": "Materiał z repozytorium produktu. Grafika prezentacyjna; nie jest nowym testem Androida."
+        }
+      ],
+      "videos": [],
+      "links": [
+        {
+          "label": "Interaktywna prezentacja",
+          "url": "https://progresskit.pl/taskpet/"
+        }
+      ],
+      "repository": null,
+      "results": [
+        "Odczytano aktualny kod i istniejące historyczne rendery; sam przegląd nie jest nowym testem gry ani fizycznego Androida."
+      ],
+      "cases": [],
+      "planned": [],
+      "remaining": [
+        "Publiczne wydanie pozostaje w przygotowaniu.",
+        "Płatności Google Play są nieaktywne bez osobnej konfiguracji i weryfikacji."
+      ],
+      "sources": [
+        {
+          "id": "taskpet-code-audit",
+          "label": "ProgressKit TaskPet — przegląd źródeł i materiałów",
+          "kind": "code",
+          "revision": "Odczyt 2026-11-24; bieżący checkout roboczy.",
+          "scope": "Inwentaryzacja rzeczywistego katalogu treści, kodu interakcji i zapisanych renderów. Bez nowego testu Androida."
+        }
+      ],
+      "coverage": "partial",
+      "portfolio": {
+        "classification": "product",
+        "aliases": [
+          "ProgressKit TaskPet"
+        ],
+        "functionalStatus": "Organizer i wirtualny chowaniec",
+        "distributionStatus": "Publiczna dystrybucja w przygotowaniu.",
+        "productionStatus": "Wersja rozwijana; brak deklaracji gotowości produkcyjnej lub wydania w Google Play.",
+        "platforms": [
+          {
+            "name": "Android",
+            "implementation": "Istniejący klient Godot i moduły Androida.",
+            "verification": "W tym przeglądzie nie uruchamiano nowego APK ani fizycznego telefonu.",
+            "distribution": "W przygotowaniu.",
+            "limits": "Materiały Linux/Godot i starszych buildów nie zastępują akceptacji aktualnego Androida."
+          }
+        ],
+        "featureSources": [
+          [
+            "taskpet-code-audit"
+          ],
+          [
+            "taskpet-code-audit"
+          ],
+          [
+            "taskpet-code-audit"
+          ],
+          [
+            "taskpet-code-audit"
+          ]
+        ],
+        "verification": [
+          {
+            "date": "2026-11-24",
+            "revision": "Przegląd bieżących źródeł.",
+            "environment": "Linux, odczyt lokalny",
+            "scope": "Kod oraz istniejące materiały z profili testowych.",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano nowej sesji rozgrywki w ramach inwentaryzacji marketingowej.",
+            "source": "taskpet-code-audit",
             "historical": false
           }
         ]

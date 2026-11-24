@@ -134,6 +134,9 @@ def image_dimensions(path):
             if length < 2:
                 break
             offset += length
+    if path.suffix=='.svg':
+        tree=ET.fromstring(raw)
+        return int(tree.attrib['width']),int(tree.attrib['height'])
     raise ValueError('Unsupported or malformed image: ' + str(path))
 
 
@@ -334,6 +337,9 @@ class SiteV5Tests(unittest.TestCase):
                     # so replacing its contents requires an explicit review.
                     self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(),
                                      'ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733')
+                elif name in {'assets/games/taskpet/presentation-vertical.mp4': '101d48176e351d82f12c4405a9d3c83ee06b95c59f2dabe69a0fe090e9cb7639', 'assets/games/taskpet/presentation-landscape.mp4': '7b73f7c857037321848d420d64b50f7ad01ed8929c126e7ca4d20711d517626c', 'assets/games/echo/presentation-vertical.mp4': '7179b15d72920ff44e2d535a7c6c054b94675758f4e09f214945136c1d9cd955', 'assets/games/echo/presentation-landscape.mp4': 'c568466d6bdbf3034c0b23f8c904c3d826970a627f5f01dc0db21f1df746dbe4'}:
+                    reviewed={'assets/games/taskpet/presentation-vertical.mp4': '101d48176e351d82f12c4405a9d3c83ee06b95c59f2dabe69a0fe090e9cb7639', 'assets/games/taskpet/presentation-landscape.mp4': '7b73f7c857037321848d420d64b50f7ad01ed8929c126e7ca4d20711d517626c', 'assets/games/echo/presentation-vertical.mp4': '7179b15d72920ff44e2d535a7c6c054b94675758f4e09f214945136c1d9cd955', 'assets/games/echo/presentation-landscape.mp4': 'c568466d6bdbf3034c0b23f8c904c3d826970a627f5f01dc0db21f1df746dbe4'}
+                    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),reviewed[name])
                 else:
                     self.assertNotIn(path.suffix, {'.sqlite', '.db', '.json', '.log', '.apk', '.zip', '.mp4', '.webm', '.env'})
                 self.assertTrue((ROOT / path).is_file())
@@ -345,6 +351,7 @@ class SiteV5Tests(unittest.TestCase):
             (root / 'catalog/projects.json').write_text((ROOT / 'catalog/projects.json').read_text())
             (root / 'catalog/brand.json').write_text((ROOT / 'catalog/brand.json').read_text())
             (root / 'catalog/living-media.json').write_text((ROOT / 'catalog/living-media.json').read_text())
+            (root / 'catalog/games-media.json').write_text((ROOT / 'catalog/games-media.json').read_text())
             decoys = ['docs/private-report.txt', 'analytics/private.db',
                       'assets/projects/raw/production-capture.png',
                       'assets/cinematic/user-preview.mp4', 'assets/cinematic/unreviewed.webm',

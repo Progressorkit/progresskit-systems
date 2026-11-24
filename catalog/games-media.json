@@ -1,0 +1,261 @@
+{
+  "echo": {
+    "worlds": [
+      {
+        "id": "awakening",
+        "name": "Wyspa Przebudzenia",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/awakening-board.webp",
+        "color": "#bca36c",
+        "image": "assets/games/echo/awakening-board.webp",
+        "description": "Świetlisty las, szałasy Strażników i ścieżki wśród korzeni.",
+        "art": "assets/games/echo/awakening-art.webp"
+      },
+      {
+        "id": "storm",
+        "name": "Wyspa Burz",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/storm-board.webp",
+        "color": "#a8b7ee",
+        "image": "assets/games/echo/storm-board.webp",
+        "description": "Bazaltowa przystań, niebo burz i ślady dawnego rezonansu.",
+        "art": "assets/games/echo/storm-art.webp"
+      },
+      {
+        "id": "caverns",
+        "name": "Jaskinie Echa",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/caverns-board.webp",
+        "color": "#ad8cdb",
+        "image": "assets/games/echo/caverns-board.webp",
+        "description": "Kamienne komnaty, kryształowe żyły i podziemne źródła.",
+        "art": "assets/games/echo/caverns-art.webp"
+      },
+      {
+        "id": "witch",
+        "name": "Kraina Wiedźmy",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/witch-board.webp",
+        "color": "#ce8dc0",
+        "image": "assets/games/echo/witch-board.webp",
+        "description": "Magiczna chata, zioła, mikstury i stare zaklęcia.",
+        "art": "assets/games/echo/witch-art.webp"
+      },
+      {
+        "id": "underwater",
+        "name": "Zatopiona Kraina",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/underwater-board.webp",
+        "color": "#68c7cc",
+        "image": "assets/games/echo/underwater-board.webp",
+        "description": "Zatopione ruiny, korale i kamienne świątynie w głębinach.",
+        "art": "assets/games/echo/underwater-art.webp"
+      },
+      {
+        "id": "moon",
+        "name": "Księżycowa Kraina",
+        "levels": 100,
+        "locations": 10,
+        "gameplay": "assets/games/echo/moon-board.webp",
+        "color": "#d8d3f2",
+        "image": "assets/games/echo/moon-board.webp",
+        "description": "Srebrne łuki, gwiezdne znaki i księżycowe sanktuarium.",
+        "art": "assets/games/echo/moon-art.webp"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "assets/games/echo/gameplay.webp",
+        "alt": "Prawdziwa rozgrywka ECHO WORLDS 0.10.0",
+        "caption": "Rzeczywisty render Godot/Linux: Szałasy Strażników, ruchy, cele i przeszkody. To nie jest fizyczny Android.",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "src": "assets/games/echo/atlas.webp",
+        "alt": "Prawdziwy atlas Księżycowej Krainy ECHO WORLDS",
+        "caption": "Rzeczywisty render atlasu Godot/Linux z wersji 0.10.0; dziesięć prób na stronę lokacji.",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "hero": "assets/games/echo/hero-responsive.webp",
+    "thumbnail": "assets/games/echo/thumbnail.webp",
+    "og": "assets/games/echo/og.webp",
+    "version": "0.10.0 Alpha",
+    "levels": 600,
+    "locations": 60,
+    "boosters": [
+      {
+        "id": "hammer",
+        "name": "Młotek",
+        "image": "assets/games/echo/booster-hammer.webp"
+      },
+      {
+        "id": "bomb",
+        "name": "Bomba",
+        "image": "assets/games/echo/booster-bomb.webp"
+      },
+      {
+        "id": "rocket",
+        "name": "Rakieta",
+        "image": "assets/games/echo/booster-rocket.webp"
+      },
+      {
+        "id": "shuffle",
+        "name": "Tasowanie",
+        "image": "assets/games/echo/booster-shuffle.webp"
+      },
+      {
+        "id": "prism",
+        "name": "Pryzmat",
+        "image": "assets/games/echo/booster-prism.webp"
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "brick",
+        "name": "Cegły",
+        "image": "assets/games/echo/obstacle-brick.webp"
+      }
+    ],
+    "runes": "assets/games/echo/runes.webp",
+    "video": "assets/games/echo/presentation-landscape.mp4",
+    "verticalVideo": "assets/games/echo/presentation-vertical.mp4",
+    "videoCaption": "20-sekundowa prezentacja oryginalnych zasobów i historycznych renderów aplikacji. Przejścia slajdów, bez symulowania gameplayu i bez dźwięku.",
+    "lineup": "assets/games/echo/six-worlds.webp"
+  },
+  "taskpet": {
+    "species": [
+      {
+        "id": "dragon",
+        "name": "Smok",
+        "image": "assets/games/taskpet/dragon.webp",
+        "description": "Łagodny odkrywca, który kocha magiczne iskry.",
+        "portrait": "assets/games/taskpet/dragon-portrait.webp",
+        "thumbnail": "assets/games/taskpet/dragon-thumbnail.webp"
+      },
+      {
+        "id": "spider",
+        "name": "Pajączek",
+        "image": "assets/games/taskpet/spider.webp",
+        "description": "Ciekawski obserwator i mistrz małych kryjówek.",
+        "portrait": "assets/games/taskpet/spider-portrait.webp",
+        "thumbnail": "assets/games/taskpet/spider-thumbnail.webp"
+      },
+      {
+        "id": "kitten",
+        "name": "Kotek",
+        "image": "assets/games/taskpet/kitten.webp",
+        "description": "Czuły kompan, zawsze gotów na wspólną zabawę.",
+        "portrait": "assets/games/taskpet/kitten-portrait.webp",
+        "thumbnail": "assets/games/taskpet/kitten-thumbnail.webp"
+      },
+      {
+        "id": "puppy",
+        "name": "Piesek",
+        "image": "assets/games/taskpet/puppy.webp",
+        "description": "Wesoły przyjaciel, który uwielbia być blisko.",
+        "portrait": "assets/games/taskpet/puppy-portrait.webp",
+        "thumbnail": "assets/games/taskpet/puppy-thumbnail.webp"
+      },
+      {
+        "id": "parrot",
+        "name": "Papużka",
+        "image": "assets/games/taskpet/parrot.webp",
+        "description": "Żywa dusza, wypatrująca tajemnic z góry.",
+        "portrait": "assets/games/taskpet/parrot-portrait.webp",
+        "thumbnail": "assets/games/taskpet/parrot-thumbnail.webp"
+      },
+      {
+        "id": "monkey",
+        "name": "Małpka",
+        "image": "assets/games/taskpet/monkey.webp",
+        "description": "Psotna i bystra, pierwsza do nowych przygód.",
+        "portrait": "assets/games/taskpet/monkey-portrait.webp",
+        "thumbnail": "assets/games/taskpet/monkey-thumbnail.webp"
+      }
+    ],
+    "furniture": [
+      {
+        "id": "moon-cushion",
+        "name": "Księżycowe legowisko",
+        "image": "assets/games/taskpet/furniture-moon-cushion.svg",
+        "description": "Miejsce odpoczynku w oryginalnej palecie pokoju."
+      },
+      {
+        "id": "crystal-lamp",
+        "name": "Lampa kryształowa",
+        "image": "assets/games/taskpet/furniture-crystal-lamp.svg",
+        "description": "Fioletowy kryształ i srebrna podstawa."
+      },
+      {
+        "id": "arcane-shelf",
+        "name": "Półka zaklęć",
+        "image": "assets/games/taskpet/furniture-arcane-shelf.svg",
+        "description": "Księgi i drobne magiczne skarby."
+      },
+      {
+        "id": "play-ball",
+        "name": "Miękka piłka",
+        "image": "assets/games/taskpet/furniture-play-ball.svg",
+        "description": "Istniejąca zabawka do wspólnej zabawy z pupilem."
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "assets/games/taskpet/game-room.webp",
+        "alt": "Prawdziwy ekran pokoju TaskPet z kotkiem",
+        "caption": "Historyczny render aplikacji Godot na profilu testowym; portret BABY, bez prywatnych zadań.",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "src": "assets/games/taskpet/organizer.webp",
+        "alt": "Prawdziwy formularz zadania TaskPet",
+        "caption": "Historyczny ekran aplikacji z przykładowym zadaniem „Podlać paprotkę”; nowszy kod rozszerza cykle i przypomnienia.",
+        "width": 450,
+        "height": 924
+      },
+      {
+        "src": "assets/games/taskpet/reward.webp",
+        "alt": "Prawdziwy ekran nagrody za zadanie TaskPet",
+        "caption": "Historyczny ekran z syntetycznym zadaniem „Przesadzić paprotkę”: +10 XP i +5 monet.",
+        "width": 450,
+        "height": 924
+      }
+    ],
+    "hero": "assets/games/taskpet/room.webp",
+    "thumbnail": "assets/games/taskpet/thumbnail.webp",
+    "og": "assets/games/taskpet/og.webp",
+    "rooms": [
+      {
+        "id": "original",
+        "name": "Komnata chowańca",
+        "image": "assets/games/taskpet/room.webp"
+      },
+      {
+        "id": "starlit",
+        "name": "Gwiezdna alkowa",
+        "image": "assets/games/taskpet/room-starlit.webp"
+      },
+      {
+        "id": "moonlit",
+        "name": "Księżycowa Komnata",
+        "image": "assets/games/taskpet/room-moonlit.webp"
+      }
+    ],
+    "widgetScreenshot": "assets/games/taskpet/widget.webp",
+    "speciesNote": "Aktualne sześć gatunków z katalogu aplikacji. Miś pozostaje gatunkiem historycznym; lisek i królik nie są obecnie zasobami aplikacji.",
+    "animationNote": "Animowana prezentacja 2.5D oryginalnych portretów BABY; to nie modele ani rigi 3D.",
+    "video": "assets/games/taskpet/presentation-landscape.mp4",
+    "verticalVideo": "assets/games/taskpet/presentation-vertical.mp4",
+    "videoCaption": "20-sekundowa prezentacja oryginalnych zasobów i historycznych renderów aplikacji. Przejścia slajdów, bez symulowania gameplayu i bez dźwięku.",
+    "lineup": "assets/games/taskpet/six-species.webp"
+  }
+}

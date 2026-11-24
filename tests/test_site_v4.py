@@ -154,7 +154,7 @@ class SiteV4CompatibilityTests(unittest.TestCase):
             page = self.pages[name]
             with self.subTest(page=name):
                 self.assertIn('progresskit systems', ' '.join(page.text).lower())
-                self.assertTrue(any(Path(urlsplit(src).path).name == 'progressorkit-stamp.png'
+                self.assertTrue(any(Path(urlsplit(src).path).name in ('progressorkit-stamp.png','progresskit-mark-small.webp')
                                     for src in page.references('img', 'src')))
                 self.assertTrue(any(tag == 'header' for tag, _ in page.elements))
                 self.assertTrue(any(tag == 'footer' for tag, _ in page.elements))

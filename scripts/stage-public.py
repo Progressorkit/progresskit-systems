@@ -14,6 +14,7 @@ def public_files():
     # in source history, but cannot silently add another runtime/style layer.
     files={
         'index.html','404.html','robots.txt','sitemap.xml','og-progresskit.jpg',
+        'echo-worlds/index.html','taskpet/index.html','assets/living/mail-demo-optimized.webp','assets/games.css','assets/games.mjs','assets/games-scene.mjs',
         'assets/site-v5.js','assets/world.css','assets/world.mjs',
         'assets/world-scene.mjs','assets/world-grain.svg',
         'assets/living-experience.css','assets/living-experience.mjs',
@@ -21,6 +22,7 @@ def public_files():
         'assets/client-inquiry.mjs','assets/product-downloads.mjs',
         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',
         'assets/brand/monument-serif-bold.ttf','assets/brand/monument-font-license.txt',
+        'assets/brand/progresskit-mark-small.webp','assets/brand/progresskit-mark-hero.webp',
         'assets/brand/progressorkit-primary.png','assets/brand/progressorkit-stamp.png',
         'glikemia-premium/index.html','glikemia-premium/product.js',
         'assets/projects/glikemia/product-measurement.webp','assets/projects/glikemia/product-language.webp',
@@ -35,6 +37,17 @@ def public_files():
         files.update(image['src'] for image in scene.get('images', []))
         if scene.get('backdrop'):
             files.add(scene['backdrop']['src'])
+    # Explicit public media manifest; local provenance and private distribution stay outside staging.
+    media=json.loads((ROOT/'catalog/games-media.json').read_text())
+    def public_media(value):
+        if isinstance(value,dict):
+            for child in value.values(): public_media(child)
+        elif isinstance(value,list):
+            for child in value: public_media(child)
+        elif isinstance(value,str) and value.startswith('assets/games/'):
+            if '..' in Path(value).parts or Path(value).suffix not in ('.webp','.png','.jpg','.svg','.mp4'): raise ValueError('Unsafe game media path')
+            files.add(value)
+    public_media(media)
     brand=json.loads((ROOT/'catalog/brand.json').read_text())
     if brand['heroBackground']:
         files.add(brand['heroBackground'])
