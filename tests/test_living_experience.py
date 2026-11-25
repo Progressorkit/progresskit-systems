@@ -24,7 +24,7 @@ class LivingTests(unittest.TestCase):
     def setUp(self):
         self.data=B.read_catalog();self.markup=L.render(self.data['projects'],B.stage,B.project_url)
         self.page=Elements(self.markup)
-    def test_all_nineteen_catalogue_items_have_unique_native_links(self):
+    def test_all_catalogue_items_have_unique_native_links(self):
         links=[a for tag,a in self.page.elements if 'data-project-id' in a]
         self.assertEqual({p['id'] for p in self.data['projects']},{a['data-project-id'] for a in links})
         self.assertEqual(len(self.data['projects']),len(links))
@@ -40,14 +40,12 @@ class LivingTests(unittest.TestCase):
         for a in images:
             self.assertIn(a['src'],public)
             self.assertTrue((ROOT/a['src']).is_file())
-        for p in self.data['projects']:
-            if p['id'] in ('progresskit-tax','progresskit-remote'):
-                self.assertEqual([],p['gallery'])
-        self.assertEqual(1,self.markup.count('Nie jest ekranem aplikacji ani telemetrią.'))
-        self.assertIn('dane DEMO',self.markup)
+        # The Tax chapter pairs the actual desktop office with the native Android client.
+        for image in [L.EXHIBITS['progresskit-tax']['hero'],L.EXHIBITS['progresskit-tax']['android'],
+                      L.EXHIBITS['vaeloria']['hero'],L.EXHIBITS['taskpet']['hero']]:
+            self.assertIn(image['src'],[a['src'] for a in images])
         self.assertIn('test bez sieci pocztowej',self.markup)
-        self.assertIn('nie render rozgrywki',self.markup)
-        self.assertIn('assets/living/tax-documents.webp',self.markup)
+        self.assertNotIn('class="living-hex" aria-hidden="true"><b>',self.markup)
     def test_every_chapter_and_marker_has_one_unique_identifier(self):
         ids=[a['id'] for _,a in self.page.elements if 'id' in a]
         self.assertEqual(len(ids),len(set(ids)))

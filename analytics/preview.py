@@ -1,5 +1,6 @@
 """Local preview exposes only explicitly public paths, never the repository root."""
 from pathlib import Path
+import json
 import importlib.util
 from fastapi import FastAPI
 from starlette.middleware.gzip import GZipMiddleware
@@ -11,7 +12,11 @@ root = Path(__file__).resolve().parents[1]
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 # Match the release's recommended HTTP compression for text/module responses.
 app.add_middleware(GZipMiddleware, minimum_size=1024)
-app.add_middleware(SecurityHeadersMiddleware, media_pages=('/', '/index.html', '/echo-worlds/', '/echo-worlds/index.html', '/taskpet/', '/taskpet/index.html'))
+media_routes = {'/', '/echo-worlds/', '/taskpet/'}
+for slug, exhibit in json.loads((root/'catalog/product-showcases.json').read_text()).items():
+    if exhibit.get('video'):
+        media_routes.add('/projekty/' + slug + '/')
+app.add_middleware(SecurityHeadersMiddleware, media_pages=media_routes | {path+'index.html' for path in media_routes})
 app.include_router(router)
 app.include_router(inquiry_router)
 spec=importlib.util.spec_from_file_location('stage_public',root/'scripts/stage-public.py')

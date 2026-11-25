@@ -50,15 +50,16 @@ test('Reveal restores clickable objects before finale folds them into the core',
   }
 });
 
-test('The shared physical carrier has continuous numeric geometry and eight matching corners',async()=>{
- const {portalPose,carrierPath,mix}=await modulePromise;
- for(let stage=0;stage<8;stage++){
-  const a=portalPose(stage),b=portalPose(stage+1);
-  for(let i=0;i<=20;i++){
-   const t=i/20,p=Object.fromEntries(Object.keys(a).map(k=>[k,mix(a[k],b[k],t)]));
-   assert(Object.values(p).every(Number.isFinite));assert(p.w>0&&p.h>0);
-   const path=carrierPath(p.cut);assert(path.startsWith('M'));assert(path.endsWith('Z'));assert(!path.includes('NaN'));
-  }
+test('Camera travel is reversible and adjacent product media never coexist',async()=>{
+ const {chamberPose,sceneExposure,sampleTimeline,STOPS}=await modulePromise;
+ const cameras=new Set();
+ for(const stop of STOPS)cameras.add(JSON.stringify(chamberPose(sampleTimeline(stop))));
+ assert.equal(cameras.size,STOPS.length);
+ for(let step=0;step<=1000;step++){
+   const sample=sampleTimeline(step/100),camera=chamberPose(sample);
+   assert(Object.values(camera).every(Number.isFinite));
+   assert(camera.zoom>=1);
+   const visible=STOPS.filter((_,i)=>sceneExposure(i,sample)>0);
+   assert(visible.length<=1,'Two exhibit exposures overlap at '+sample.progress);
  }
- assert.notEqual(carrierPath(portalPose(1).cut),carrierPath(portalPose(2).cut));
 });

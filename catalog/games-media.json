@@ -70,16 +70,30 @@
     ],
     "screenshots": [
       {
-        "src": "assets/games/echo/gameplay.webp",
-        "alt": "Prawdziwa rozgrywka ECHO WORLDS 0.10.0",
-        "caption": "Rzeczywisty render Godot/Linux: Szałasy Strażników, ruchy, cele i przeszkody. To nie jest fizyczny Android.",
+        "src": "assets/projects/echo-worlds/victory.webp",
+        "alt": "ECHO WORLDS: rzeczywisty ekran zwycięstwa, zapisany render Godot/Linux 24.11.2026.",
+        "caption": "ECHO WORLDS: rzeczywisty ekran zwycięstwa, zapisany render Godot/Linux 24.11.2026.",
         "width": 390,
         "height": 844
       },
       {
-        "src": "assets/games/echo/atlas.webp",
-        "alt": "Prawdziwy atlas Księżycowej Krainy ECHO WORLDS",
-        "caption": "Rzeczywisty render atlasu Godot/Linux z wersji 0.10.0; dziesięć prób na stronę lokacji.",
+        "src": "assets/projects/echo-worlds/defeat.webp",
+        "alt": "ECHO WORLDS: zakończenie próby po wyczerpaniu ruchów; zapisany render Godot/Linux 24.11.2026.",
+        "caption": "ECHO WORLDS: zakończenie próby po wyczerpaniu ruchów; zapisany render Godot/Linux 24.11.2026.",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "src": "assets/projects/echo-worlds/current-board.webp",
+        "alt": "ECHO WORLDS 0.10.0: prawdziwa plansza z limitami ruchów i celami; render Godot/Linux 24.11.2026.",
+        "caption": "ECHO WORLDS 0.10.0: prawdziwa plansza z limitami ruchów i celami; render Godot/Linux 24.11.2026.",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "src": "assets/projects/echo-worlds/current-atlas.webp",
+        "alt": "ECHO WORLDS 0.10.0: atlas Księżycowej Krainy; rzeczywisty render Godot/Linux 24.11.2026.",
+        "caption": "ECHO WORLDS 0.10.0: atlas Księżycowej Krainy; rzeczywisty render Godot/Linux 24.11.2026.",
         "width": 390,
         "height": 844
       }
@@ -125,10 +139,12 @@
       }
     ],
     "runes": "assets/games/echo/runes.webp",
-    "video": "assets/games/echo/presentation-landscape.mp4",
+    "video": "assets/projects/echo-worlds/gameplay-review.mp4",
     "verticalVideo": "assets/games/echo/presentation-vertical.mp4",
-    "videoCaption": "20-sekundowa prezentacja oryginalnych zasobów i historycznych renderów aplikacji. Przejścia slajdów, bez symulowania gameplayu i bez dźwięku.",
-    "lineup": "assets/games/echo/six-worlds.webp"
+    "videoCaption": "Archiwalny gameplay Android ze Sprintu 004 B. Pokazuje wcześniejszy wariant zasad; aktualną kampanię 0.10.0 przedstawiają zrzuty powyżej.",
+    "lineup": "assets/games/echo/six-worlds.webp",
+    "videoPoster": "assets/projects/echo-worlds/current-board.webp",
+    "versionNote": "Prace są wstrzymane. Kod wskazuje 0.10.0 Alpha, później niż historyczne 0.5.0. Gra nie jest przedstawiana jako publicznie wydana; konfiguracja i produkcyjna akceptacja płatności pozostają odrębne."
   },
   "taskpet": {
     "species": [
@@ -209,25 +225,46 @@
     ],
     "screenshots": [
       {
-        "src": "assets/games/taskpet/game-room.webp",
-        "alt": "Prawdziwy ekran pokoju TaskPet z kotkiem",
-        "caption": "Historyczny render aplikacji Godot na profilu testowym; portret BABY, bez prywatnych zadań.",
-        "width": 390,
-        "height": 844
+        "src": "assets/projects/taskpet/current-room.webp",
+        "alt": "TaskPet OWNER 17: rzeczywisty pokój, smok i pięć ikon nawigacji. Android 36, emulator, 24.11.2026.",
+        "caption": "TaskPet OWNER 17: rzeczywisty pokój, smok i pięć ikon nawigacji. Android 36, emulator, 24.11.2026.",
+        "width": 720,
+        "height": 1600
       },
       {
-        "src": "assets/games/taskpet/organizer.webp",
-        "alt": "Prawdziwy formularz zadania TaskPet",
-        "caption": "Historyczny ekran aplikacji z przykładowym zadaniem „Podlać paprotkę”; nowszy kod rozszerza cykle i przypomnienia.",
-        "width": 450,
-        "height": 924
+        "src": "assets/projects/taskpet/current-tasks.webp",
+        "alt": "TaskPet OWNER 17: organizer z przykładowymi zadaniami QA, cyklami i stanem przypomnień. Emulator 24.11.2026.",
+        "caption": "TaskPet OWNER 17: organizer z przykładowymi zadaniami QA, cyklami i stanem przypomnień. Emulator 24.11.2026.",
+        "width": 720,
+        "height": 1600
       },
       {
-        "src": "assets/games/taskpet/reward.webp",
-        "alt": "Prawdziwy ekran nagrody za zadanie TaskPet",
-        "caption": "Historyczny ekran z syntetycznym zadaniem „Przesadzić paprotkę”: +10 XP i +5 monet.",
-        "width": 450,
-        "height": 924
+        "src": "assets/projects/taskpet/current-alarm.webp",
+        "alt": "TaskPet OWNER 17: istniejący natywny moduł budzika. Android 36, emulator 24.11.2026.",
+        "caption": "TaskPet OWNER 17: istniejący natywny moduł budzika. Android 36, emulator 24.11.2026.",
+        "width": 720,
+        "height": 1600
+      },
+      {
+        "src": "assets/projects/taskpet/current-widget.webp",
+        "alt": "TaskPet OWNER 17: panel widżetów i prywatności podglądu. Emulator 24.11.2026.",
+        "caption": "TaskPet OWNER 17: panel widżetów i prywatności podglądu. Emulator 24.11.2026.",
+        "width": 720,
+        "height": 1600
+      },
+      {
+        "src": "assets/projects/taskpet/current-fruit.webp",
+        "alt": "TaskPet OWNER 17: prawdziwa minigra owocowa po wznowieniu rundy. Emulator 24.11.2026.",
+        "caption": "TaskPet OWNER 17: prawdziwa minigra owocowa po wznowieniu rundy. Emulator 24.11.2026.",
+        "width": 720,
+        "height": 1600
+      },
+      {
+        "src": "assets/projects/taskpet/current-shop.webp",
+        "alt": "TaskPet OWNER 17: istniejący sklep i wyposażenie. Emulator 24.11.2026; płatności Play nieaktywne.",
+        "caption": "TaskPet OWNER 17: istniejący sklep i wyposażenie. Emulator 24.11.2026; płatności Play nieaktywne.",
+        "width": 720,
+        "height": 1600
       }
     ],
     "hero": "assets/games/taskpet/room.webp",
@@ -253,9 +290,11 @@
     "widgetScreenshot": "assets/games/taskpet/widget.webp",
     "speciesNote": "Aktualne sześć gatunków z katalogu aplikacji. Miś pozostaje gatunkiem historycznym; lisek i królik nie są obecnie zasobami aplikacji.",
     "animationNote": "Animowana prezentacja 2.5D oryginalnych portretów BABY; to nie modele ani rigi 3D.",
-    "video": "assets/games/taskpet/presentation-landscape.mp4",
+    "video": "assets/projects/taskpet/gameplay-review.mp4",
     "verticalVideo": "assets/games/taskpet/presentation-vertical.mp4",
-    "videoCaption": "20-sekundowa prezentacja oryginalnych zasobów i historycznych renderów aplikacji. Przejścia slajdów, bez symulowania gameplayu i bez dźwięku.",
-    "lineup": "assets/games/taskpet/six-species.webp"
+    "videoCaption": "Rzeczywisty fragment minigry OWNER 17 na emulatorze Android 36, 24.11.2026. Pełna aplikacja nie jest uruchamiana w przeglądarce.",
+    "lineup": "assets/games/taskpet/six-species.webp",
+    "videoPoster": "assets/projects/taskpet/current-fruit.webp",
+    "versionNote": "Najnowszy raport potwierdza prywatną wersję OWNER 17,0.9.3-owner.17. Wersja PUBLIC pozostaje w przygotowaniu. Strona nie udostępnia prywatnego APK, narzędzi właściciela ani płatności Google Play. Fizyczny odbiór tego wydania pozostaje otwarty."
   }
 }

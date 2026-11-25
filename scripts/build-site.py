@@ -14,6 +14,12 @@ import unicodedata
 from urllib.parse import quote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+SHOWCASE_SPEC = importlib.util.spec_from_file_location('product_showcase', ROOT/'scripts/product_showcase.py')
+showcase = importlib.util.module_from_spec(SHOWCASE_SPEC)
+SHOWCASE_SPEC.loader.exec_module(showcase)
+LIVING_SPEC = importlib.util.spec_from_file_location('living_markup', ROOT/'scripts/living_markup.py')
+living = importlib.util.module_from_spec(LIVING_SPEC)
+LIVING_SPEC.loader.exec_module(living)
 AUDIT_DATE = date.today()  # Reject future evidence; no frozen historical review ceiling.
 STAGES = {'Koncepcja', 'Prototyp', 'W rozwoju', 'Alpha', 'Beta', 'Wersja testowa', 'Finalizacja', 'Dostępny APK', 'Dostępny', 'Utrzymywany', 'Wstrzymany', 'Archiwalny'}
 CATEGORIES = {
@@ -306,7 +312,7 @@ def card(p):
         img = p['gallery'][0]
         preview = f'<img class="card-preview" src="{e(img["src"])}" width="{img["width"]}" height="{img["height"]}" alt="{e(img["alt"])}" loading="lazy" decoding="async">'
     return f'''<article class="catalog-card" data-id="{p['id']}" data-category="{p['category']}" data-classification="{e(classification)}" data-stage="{e(p['stage'] or '')}" data-search="{e(search)}" data-technologies="{e(json.dumps(p['technologies'],ensure_ascii=False))}">
-      <div class="card-top"><span class="card-category">{e(category)} · {e(kind)}</span><h3>{e(p['name'])}</h3><p>{e(p['summary'])}</p><span class="card-stage">{stage(p)}</span></div>{preview}
+      <div class="card-top"><span class="card-category">{e(category)} · {e(kind)}</span><h3><a href="{project_url(p)}">{e(p['name'])}</a></h3><p>{e(p['summary'])}</p><span class="card-stage">{stage(p)}</span></div>{preview}
       <details class="project-drawer" id="projekt-{p['id']}"><summary aria-controls="drawer-{p['id']}">Odkryj projekt <span class="sr-only">{e(p['name'])}</span></summary>
       <div class="drawer-content" id="drawer-{p['id']}"><h4>Problem</h4><p>{e(p['problem'])}</p><h4>Rozwiązanie</h4><p>{e(p['solution'])}</p><h4>Dla kogo</h4><p>{e(' · '.join(p['audiences']))}</p><h4>Potwierdzony zakres</h4>{items(p['features'][:4])}<h4>Stan i dostęp</h4><p>{e(p['availability'])}</p><p class="tech-line">{e(' / '.join(p['technologies']))}</p><time class="updated" datetime="{p['updatedAt']}">Przegląd źródeł: {p['updatedAt']}</time><a class="cta cta--ghost" href="{(p['id']+'/' if p['id'] in ('echo-worlds','taskpet') else project_url(p))}">Pełne case study →</a></div></details></article>'''
 
@@ -385,10 +391,17 @@ def project_artifact(p, prefix):
             other=p['gallery'][1]
             secondary=f'<div class="project-artifact__secondary" aria-hidden="true"><img src="{prefix}{e(other["src"])}" width="{other["width"]}" height="{other["height"]}" alt="" decoding="async"></div>'
         return f'''<figure class="project-artifact project-artifact--{kind}" data-proximity data-project-artifact><div class="project-artifact__orbit" aria-hidden="true"></div><div class="project-artifact__plinth" aria-hidden="true"></div>{secondary}<a class="project-artifact__screen" href="#galeria" aria-label="Zobacz rzeczywiste ekrany: {e(p['name'])}"><img src="{prefix}{e(img['src'])}" width="{img['width']}" height="{img['height']}" alt="{e(img['alt'])}" fetchpriority="high" decoding="async"></a><figcaption><span aria-hidden="true">●</span> RZECZYWISTY EKRAN PRODUKTU <span aria-hidden="true">/ 01</span></figcaption></figure>'''
-    return f'''<figure class="project-artifact project-artifact--core" data-proximity data-project-artifact><div class="project-artifact__orbit" aria-hidden="true"></div><div class="project-artifact__plinth" aria-hidden="true"></div><div class="project-artifact__crystal" aria-hidden="true"><span>{e(CATEGORIES[p['category']][1])}</span><i></i><i></i></div><figcaption>{e(CATEGORIES[p['category']][0]).upper()} <span aria-hidden="true">/ {e(p['id']).upper()}</span></figcaption></figure>'''
+    platforms = p.get('portfolio',{}).get('platforms',[])
+    items_ = ''.join(f'<li>{e(platform["name"])}</li>' for platform in platforms)
+    status = p.get('portfolio',{}).get('functionalStatus') or p['stage'] or p['name']
+    return f'''<figure class="project-artifact project-artifact--schematic" data-project-artifact><div class="product-schematic">{living.product_symbol(p)}<figcaption>{e(status)}</figcaption><ul aria-label="Platformy i zakres">{items_}</ul></div></figure>'''
+
 
 
 def full_case(p, prefix='../../', distribution=False):
+    featured = showcase.render_featured(p,prefix)
+    if featured is not None:
+        return featured
     is_glikemia=p['id']=='glikemia-premium'
     chapter_number=0
     def section(id_,title,body,eyebrow='POZNAJ PROJEKT'):
@@ -408,10 +421,10 @@ def full_case(p, prefix='../../', distribution=False):
     fact_markup=''.join(f'<li><strong>{title_}</strong><span>{description}</span></li>' for title_,description in facts)
     actions=project_download_console(prefix) if is_glikemia else f'<div class="project-hero-actions"><a class="world-control world-control--primary" data-proximity href="#problem">WEJDŹ W PROJEKT <span aria-hidden="true">↓</span></a><a class="world-control" data-proximity href="#dostep">Dostęp i kontakt</a></div>'
     guide='Dane pozostają lokalnie na urządzeniu. Licznik pobrań i opinie należą do strony, nie do chmury pomiarów.' if is_glikemia else 'Poznaj zakres produktu, materiały i opisane dowody. Każdy wynik zachowuje swój kontekst i datę.'
-    out=f'''<article class="project-world" data-project-id="{e(p['id'])}"><header class="project-world-hero"><div class="project-hero-wayfinding"><a href="{prefix}#projekty" class="project-return" data-proximity>← EKOSYSTEM</a><span>PROGRESSKIT / {e(CATEGORIES[p['category']][0]).upper()}</span><span class="project-location" aria-hidden="true">PROJECT CHAMBER / 01</span></div><div class="project-hero-stage"><div class="project-hero-copy"><p class="project-eyebrow"><span class="project-status-light" aria-hidden="true"></span>{e(p['stage'] or stage(p))}</p><h1 class="project-title">{title}</h1><p class="project-hero-value">{lead}</p><p class="project-hero-description">{subtitle}</p><ul class="project-product-facts" aria-label="Najważniejsze informacje">{fact_markup}</ul>{actions}</div>{project_artifact(p,prefix)}</div><div class="project-hero-footer"><span class="project-guide-note"><span aria-hidden="true">◇</span> {guide}</span><a href="#problem">ODKRYJ WIĘCEJ <span aria-hidden="true">↓</span></a></div></header><nav class="project-chapter-rail" data-project-chapters aria-label="W tej prezentacji">{''.join(f'<a href="#{id_}" data-proximity><span>{i+1:02d}</span>{label}</a>' for i,(id_,label) in enumerate(nav))}</nav><div class="project-story">'''
+    out=f'''<article class="project-world" data-project-id="{e(p['id'])}"><header class="project-world-hero"><div class="project-hero-wayfinding"><a href="{prefix}#projekty" class="project-return" data-proximity>← EKOSYSTEM</a><span>PROGRESSKIT / {e(CATEGORIES[p['category']][0]).upper()}</span><span class="project-location" aria-hidden="true">PREZENTACJA PROJEKTU</span></div><div class="project-hero-stage"><div class="project-hero-copy"><p class="project-eyebrow"><span class="project-status-light" aria-hidden="true"></span>{e(p['stage'] or stage(p))}</p><h1 class="project-title">{title}</h1><p class="project-hero-value">{lead}</p><p class="project-hero-description">{subtitle}</p><ul class="project-product-facts" aria-label="Najważniejsze informacje">{fact_markup}</ul>{actions}</div>{project_artifact(p,prefix)}</div><div class="project-hero-footer"><span class="project-guide-note"><span aria-hidden="true">◇</span> {guide}</span><a href="#problem">ODKRYJ WIĘCEJ <span aria-hidden="true">↓</span></a></div></header><nav class="project-chapter-rail" data-project-chapters aria-label="W tej prezentacji">{''.join(f'<a href="#{id_}" data-proximity><span>{i+1:02d}</span>{label}</a>' for i,(id_,label) in enumerate(nav))}</nav><div class="project-story">'''
     out+=section('problem','Od potrzeby do produktu.',f'<div class="project-story-pair"><article class="project-glass-plate"><span class="project-eyebrow">POTRZEBA</span><h3>Problem</h3><p>{e(p["problem"])}</p><h3>Dla kogo</h3>{items(p["audiences"])}</article><article class="project-glass-plate project-glass-plate--lit"><span class="project-eyebrow">ODPOWIEDŹ</span><h3>Rozwiązanie</h3><p>{e(p["solution"])}</p><h3>Dlaczego powstał</h3><p>{e(p["motivation"])}</p></article></div>','IDEA / ZASTOSOWANIE')
     architecture=''.join(f'<li><span class="project-flow-index" aria-hidden="true">{i+1:02d}</span><p>{e(value)}</p></li>' for i,value in enumerate(p['architecture']))
-    tech=''.join(f'<li>{e(t)}</li>' for t in p['technologies'])
+    tech=''.join(f'<li><span class="technology-sigil" aria-hidden="true">{technology_icon(key)}</span><span><strong>{e(label)}</strong>{e(", ".join(items_))}</span></li>' for key,label,items_ in technology_groups(p['technologies']))
     out+=section('architektura','Technologia pod powierzchnią.',f'<ol class="project-architecture-flow">{architecture}</ol><ul class="project-technology-tags" aria-label="Technologie projektu">{tech}</ul>','ARCHITEKTURA / POŁĄCZENIA')
     out+=section('funkcje','Zaprojektowane do działania.',f'<div class="project-feature-grid">{evidenced_features(p)}</div><details class="project-disclosure"><summary>Wyniki i granice weryfikacji</summary>{items(p["results"])}</details>','FUNKCJE / POTWIERDZONY ZAKRES')
     out+=section('galeria','Zajrzyj do środka.',('<span id="screenshots" class="project-anchor" aria-hidden="true"></span>' if distribution else '')+gallery(p,prefix),'PRAWDZIWE EKRANY / BEZ MAKIET')
@@ -502,19 +515,16 @@ def production_section():
     return (ROOT/'templates/production-line.html').read_text()
 
 
-def technology_section(projects):
-    # Count each technology once per project, preserving the catalog filter values.
-    counts = Counter(technology for project in projects for technology in set(project['technologies']))
-    technologies = sorted(counts, key=str.casefold)
+def technology_groups(technologies):
     patterns = (
-        ('security', 'Security', r'keystore|identity|biometric|JWT|OAuth|OpenSSL|CNG|DPAPI|Secret Service|ClamAV|EC P-256|SHA-256'),
-        ('mobile', 'Mobile', r'Android|Kotlin|Jetpack|WorkManager|Foreground|Firebase|SharedPreferences|LocalNotification|MAUI|Microcharts'),
-        ('data', 'Data / DB', r'SQL|Sqlite|SQLite|PostGIS|Prisma|Entity Framework|EFCore|Room|JSON|CSV'),
+        ('security', 'Bezpieczeństwo', r'keystore|identity|biometric|JWT|OAuth|OpenSSL|CNG|DPAPI|Secret Service|ClamAV|EC P-256|SHA-256'),
+        ('mobile', 'Aplikacje mobilne', r'Android|Kotlin|Jetpack|WorkManager|Foreground|Firebase|SharedPreferences|LocalNotification|MAUI|Microcharts'),
+        ('data', 'Bazy i zapis danych', r'SQL|Sqlite|SQLite|PostGIS|Prisma|Entity Framework|EFCore|Room|JSON|CSV'),
         ('media', 'AI / Media', r'Whisper|whisper|llama|Qwen|Piper|Ollama|ONNX|ML Kit|Audio|WASAPI|Speech|TextToSpeech|FFmpeg'),
         ('frontend', 'Frontend', r'HTML|CSS|React|Next\.js|Canvas|Three\.js|WebGL|SkiaSharp|Avalonia|WPF|Qt|Godot|GL Compatibility|Jinja2'),
         ('backend', 'Backend', r'ASP\.NET|FastAPI|ASGI|Node\.js|SignalR|MailKit|MimeKit|SMTP|Eclipse|Domain/Application|^\.NET'),
-        ('infra', 'Infrastructure', r'Linux|Docker|Caddy|Aspia|GitHub Pages'),
-        ('tools', 'Tools / Delivery', r'^C#|^C\+\+|JavaScript|TypeScript|Python|Bash|PowerShell|GitHub Actions|NSIS|ADB|GDScript|xUnit|Testcontainers|Turborepo|pnpm|Pydantic'),
+        ('infra', 'Infrastruktura', r'Linux|Docker|Caddy|Aspia|GitHub Pages'),
+        ('tools', 'Narzędzia i testy', r'^C#|^C\+\+|JavaScript|TypeScript|Python|Bash|PowerShell|GitHub Actions|NSIS|ADB|GDScript|xUnit|Testcontainers|Turborepo|pnpm|Pydantic'),
     )
     buckets = {key: [] for key, _, _ in patterns}
     other = []
@@ -523,23 +533,35 @@ def technology_section(projects):
         (buckets[category] if category else other).append(technology)
     order = ['backend', 'frontend', 'mobile', 'data', 'infra', 'security', 'media', 'tools']
     labels = {key: label for key, label, _ in patterns}
-    labels.update(frontend='Web', data='Data', tools='Delivery')
+
     groups = [(key, labels[key], buckets[key]) for key in order if buckets[key]]
     if other:
         groups.append(('other', 'Inne', other))
+    return groups
+
+
+def technology_icon(identifier):
+    icons = {
+        'backend': '<rect x="4" y="3" width="24" height="10" rx="2"/><rect x="4" y="19" width="24" height="10" rx="2"/><path d="M8 8h2m4 0h10M8 24h2m4 0h10M16 13v6"/>',
+        'frontend': '<path d="M11 7 3 16l8 9m10-18 8 9-8 9M19 3l-6 26"/>',
+        'mobile': '<rect x="8" y="2" width="16" height="28" rx="3"/><path d="M13 6h6m-5 20h4"/>',
+        'data': '<ellipse cx="16" cy="7" rx="12" ry="5"/><path d="M4 7v18c0 7 24 7 24 0V7M4 16c0 7 24 7 24 0"/>',
+        'infra': '<path d="M16 3v8M5 26v-8h22v8M16 18v8"/><rect x="11" y="2" width="10" height="9"/><path d="M2 26h6m5 0h6m5 0h6"/>',
+        'security': '<path d="m16 2 12 5v9c0 7-12 14-12 14S4 23 4 16V7Z"/><path d="m10 16 4 4 8-9"/>',
+        'media': '<circle cx="16" cy="16" r="11"/><path d="M16 1v5m0 20v5M1 16h5m20 0h5m-19-5 10 5-10 5Z"/>',
+        'tools': '<path d="m7 4 7 7-4 4-7-7c-3 8 4 13 10 10l12 12 5-5-12-12c3-6-2-13-11-9Z"/>',
+    }
+    return f'<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1">{icons.get(identifier, icons["tools"])}</svg>'
+
+
+def technology_section(projects):
+    # Count each technology once per project, preserving the catalog filter values.
+    counts = Counter(technology for project in projects for technology in set(project['technologies']))
+    technologies = sorted(counts, key=str.casefold)
+    groups = technology_groups(technologies)
     sections = []
     for identifier, label, members in groups:
-        icons = {
-            'backend': '<rect x="4" y="3" width="24" height="10" rx="2"/><rect x="4" y="19" width="24" height="10" rx="2"/><path d="M8 8h2m4 0h10M8 24h2m4 0h10M16 13v6"/>',
-            'frontend': '<path d="M11 7 3 16l8 9m10-18 8 9-8 9M19 3l-6 26"/>',
-            'mobile': '<rect x="8" y="2" width="16" height="28" rx="3"/><path d="M13 6h6m-5 20h4"/>',
-            'data': '<ellipse cx="16" cy="7" rx="12" ry="5"/><path d="M4 7v18c0 7 24 7 24 0V7M4 16c0 7 24 7 24 0"/>',
-            'infra': '<path d="M16 3v8M5 26v-8h22v8M16 18v8"/><rect x="11" y="2" width="10" height="9"/><path d="M2 26h6m5 0h6m5 0h6"/>',
-            'security': '<path d="m16 2 12 5v9c0 7-12 14-12 14S4 23 4 16V7Z"/><path d="m10 16 4 4 8-9"/>',
-            'media': '<circle cx="16" cy="16" r="11"/><path d="M16 1v5m0 20v5M1 16h5m20 0h5m-19-5 10 5-10 5Z"/>',
-            'tools': '<path d="m7 4 7 7-4 4-7-7c-3 8 4 13 10 10l12 12 5-5-12-12c3-6-2-13-11-9Z"/>',
-        }
-        icon = f'<svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1">{icons.get(identifier, icons["tools"])}</svg>'
+        icon = technology_icon(identifier)
         chips = ''.join(
             f'<a class="technology-chip" href="projekty/?technologia={quote(technology, safe="")}"><i class="technology-glyph" aria-hidden="true">{icon}</i><span class="technology-name">{e(technology)}</span><span class="technology-count">{counts[technology]}</span></a>'
             for technology in members
@@ -551,8 +573,6 @@ def technology_section(projects):
 
 def homepage(data):
     projects=data['projects']
-    spec=importlib.util.spec_from_file_location('living_markup',ROOT/'scripts/living_markup.py')
-    living=importlib.util.module_from_spec(spec);spec.loader.exec_module(living)
     out=living.render(projects, stage, project_url)
     spec=importlib.util.spec_from_file_location('delivery_markup',ROOT/'scripts/delivery_markup.py')
     delivery=importlib.util.module_from_spec(spec);spec.loader.exec_module(delivery)
@@ -567,9 +587,11 @@ def explorer_page(data):
     content='<header class="case-hero"><div class="shell"><p class="breadcrumb"><a href="./#projekty">← Kategorie na stronie głównej</a></p><span class="section-kicker">PROGRESSKIT</span><h1>Eksplorator projektów</h1><p class="section-copy">Katalog produktów, realizacji i zaplecza technicznego.</p></div></header>'+explorer_section(data)+development_section(data['projects'])
     # This page is one directory below the homepage. Keep generated card links and assets relative.
     content=content.replace('href="projekty/','href="').replace('src="assets/','src="../assets/').replace('href="./#projekty"','href="../#projekty"')
+    for slug in ('taskpet','echo-worlds'):
+        content = content.replace(f'class="cta cta--ghost" href="{slug}/"', f'class="cta cta--ghost" href="../{slug}/"')
     return content
 
-PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRESSKIT SYSTEMS</span><h1>Prywatność witryny</h1><p>Informacja o działaniu tej wersji witryny, przegląd: 5 listopada 2026 r. Kontakt w sprawach danych: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>.</p>@@OPERATOR@@<h2>Oglądanie katalogu</h2><p>Wyszukiwanie i filtry działają w Twojej przeglądarce. Wybrane filtry mogą znajdować się w adresie strony, aby można było go udostępnić. Treść wyszukiwania nie jest dołączana do zdarzeń analitycznych.</p><h2>Własna analityka</h2><p>Na domenie progresskit.pl witryna wysyła do własnego endpointu rodzaj zdarzenia (otwarcie strony lub projektu, kontakt, link zewnętrzny), ścieżkę strony bez zapytania i fragmentu, domenę strony odsyłającej i poprawne oznaczenia kampanii UTM. Kod analityki nie używa cookies, localStorage, identyfikatora urządzenia ani zewnętrznych trackerów. Nie wysyła treści briefu ani wyszukiwania.</p><p>Baza zdarzeń nie ma pól na IP i User-Agent. Serwer i pośrednie warstwy sieci mogą prowadzić osobne dzienniki techniczne; ich konfiguracja wymaga sprawdzenia przez operatora. W dostępnej konfiguracji backendu nie ustalono automatycznej retencji zdarzeń. Te kwestie pozostają do potwierdzenia przed wdrożeniem. Ta informacja nie zastępuje polityk prywatności poszczególnych aplikacji.</p><h2 id="zgloszenia">Zgłoszenia projektów i kontakt</h2><p>Przycisk „Wyślij projekt” przekazuje dane przez szyfrowane połączenie HTTPS do własnego backendu ProgressKit. Potwierdzenie „Zgłoszenie przyjęte”, numer i data pojawiają się wyłącznie po trwałym zapisaniu zgłoszenia. Awaria powiadomienia e-mail nie usuwa zapisu; powiadomienia mają osobną kolejkę ponowień. Formularz nie uruchamia programu pocztowego. Odrębne linki z adresem e-mail nadal mogą otworzyć Twój program pocztowy.</p><p>Administratorem jest operator wskazany powyżej. Przetwarzamy imię i nazwisko lub nazwę firmy, adres e-mail, typ klienta, opis problemu, opcjonalny telefon i pozostałe odpowiedzi, numer zgłoszenia, datę i status. Wymagane pola służą odpowiedzi na zapytanie i przygotowaniu współpracy; bez nich nie można przyjąć zgłoszenia. Podstawą są działania na Twoje żądanie przed zawarciem umowy (art. 6 ust. 1 lit. b RODO), a przy kontakcie przedstawiciela firmy lub propozycji współpracy — uzasadniony interes w prowadzeniu korespondencji (art. 6 ust. 1 lit. f). Nie używamy tych danych do marketingu, profilowania ani zautomatyzowanych decyzji.</p><p>Dostęp do pełnych zgłoszeń ma wyłącznie upoważniony operator przez prywatny odczyt. Powiadomienie na skrzynkę operatora zawiera tylko numer, datę, typ i status, bez danych kontaktowych i opisu. Dane mogą technicznie przetwarzać dostawcy hostingu i poczty na zlecenie operatora; ich zakres i zasady ewentualnego transferu poza EOG wymagają potwierdzenia przez operatora przed uruchomieniem. Nie publikujemy zgłoszeń.</p><p>Zgłoszenia są przechowywane do 180 dni od przyjęcia; wygasłe rekordy są niedostępne w prywatnym API i następnie usuwane w cyklu dobowym wraz z kolejką powiadomień. Skróty HMAC adresu sieciowego i adresu e-mail używane do limitów znikają po wygaśnięciu krótkich okien ograniczeń, nie później niż przy dobowym czyszczeniu. Nie zapisujemy surowego IP ani User-Agent w zgłoszeniach. Token formularza wygasa po 30 minutach. Kopie zapasowe i dzienniki infrastruktury mają osobny cykl retencji; operator musi zatwierdzić i wdrożyć ich ograniczony okres przed uruchomieniem formularza.</p><p>Masz prawo żądać dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, a gdy ma zastosowanie — przenoszenia danych i sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie. Kontakt: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>. Możesz wnieść skargę do właściwego organu nadzorczego, w szczególności w państwie zwykłego pobytu, miejsca pracy lub domniemanego naruszenia (art. 77 RODO). Nie wpisuj haseł, kluczy dostępowych ani danych szczególnie chronionych.</p><p>Przed wysłaniem pola pozostają tylko w otwartej karcie; nie zapisujemy ich w cookies ani localStorage. TXT i PDF to lokalne eksporty, które same nie wysyłają zgłoszenia i nie są potwierdzeniem przyjęcia. Po błędzie treść pozostaje w tej karcie. Po utracie odpowiedzi ponowienie tej samej próby korzysta z zabezpieczenia przed duplikatem.</p><h2>Glikemia Premium</h2><p>Strona dystrybucji ma osobną informację o liczniku pobrań, opiniach i moderacji przy formularzu. Opinie są publiczne dopiero po moderacji. Nie wpisuj w nie danych zdrowotnych.</p><h2>Linki zewnętrzne</h2><p>Serwisy otwierane przez linki prowadzą własne zasady przetwarzania danych. Materiały galerii są serwowane lokalnie; witryna nie osadza zewnętrznych odtwarzaczy.</p></article>'''
+PRIVACY = '''<article class="shell privacy"><span class="section-kicker">PROGRESSKIT SYSTEMS</span><h1>Prywatność witryny</h1><p>Informacja o działaniu tej wersji witryny, przegląd: 5 listopada 2026 r. Kontakt w sprawach danych: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>.</p>@@OPERATOR@@<h2>Oglądanie katalogu</h2><p>Wyszukiwanie i filtry działają w Twojej przeglądarce. Wybrane filtry mogą znajdować się w adresie strony, aby można było go udostępnić. Treść wyszukiwania nie jest dołączana do zdarzeń analitycznych.</p><h2>Własna analityka</h2><p>Na domenie progresskit.pl witryna wysyła do własnego endpointu rodzaj zdarzenia (otwarcie strony lub projektu, kontakt, link zewnętrzny), ścieżkę strony bez zapytania i fragmentu, domenę strony odsyłającej i poprawne oznaczenia kampanii UTM. Kod analityki nie używa cookies, localStorage, identyfikatora urządzenia ani zewnętrznych trackerów. Nie wysyła treści briefu ani wyszukiwania.</p><p>Baza zdarzeń nie ma pól na IP i User-Agent. Serwer i pośrednie warstwy sieci mogą prowadzić osobne dzienniki techniczne; ich konfiguracja wymaga sprawdzenia przez operatora. W dostępnej konfiguracji backendu nie ustalono automatycznej retencji zdarzeń. Te kwestie pozostają do potwierdzenia przed wdrożeniem. Ta informacja nie zastępuje polityk prywatności poszczególnych aplikacji.</p><h2 id="zgloszenia">Zgłoszenia projektów, pilotaż ProgressKit Mail i kontakt</h2><p>Formularz pilotażu Mail zbiera nazwę firmy, e-mail i opcjonalną wiadomość, oznaczoną jako zgłoszenie do pilotażu. Korzysta z opisanych poniżej zasad, zabezpieczeń i praw. Zgłoszenie nie uruchamia skrzynki, abonamentu ani newslettera.</p><p>Przycisk „Wyślij projekt” przekazuje dane przez szyfrowane połączenie HTTPS do własnego backendu ProgressKit. Potwierdzenie „Zgłoszenie przyjęte”, numer i data pojawiają się wyłącznie po trwałym zapisaniu zgłoszenia. Awaria powiadomienia e-mail nie usuwa zapisu; powiadomienia mają osobną kolejkę ponowień. Formularz nie uruchamia programu pocztowego. Odrębne linki z adresem e-mail nadal mogą otworzyć Twój program pocztowy.</p><p>Administratorem jest operator wskazany powyżej. Przetwarzamy imię i nazwisko lub nazwę firmy, adres e-mail, typ klienta, opis problemu, opcjonalny telefon i pozostałe odpowiedzi, numer zgłoszenia, datę i status. Wymagane pola służą odpowiedzi na zapytanie i przygotowaniu współpracy; bez nich nie można przyjąć zgłoszenia. Podstawą są działania na Twoje żądanie przed zawarciem umowy (art. 6 ust. 1 lit. b RODO), a przy kontakcie przedstawiciela firmy lub propozycji współpracy — uzasadniony interes w prowadzeniu korespondencji (art. 6 ust. 1 lit. f). Nie używamy tych danych do marketingu, profilowania ani zautomatyzowanych decyzji.</p><p>Dostęp do pełnych zgłoszeń ma wyłącznie upoważniony operator przez prywatny odczyt. Powiadomienie na skrzynkę operatora zawiera tylko numer, datę, typ i status, bez danych kontaktowych i opisu. Dane mogą technicznie przetwarzać dostawcy hostingu i poczty na zlecenie operatora; ich zakres i zasady ewentualnego transferu poza EOG wymagają potwierdzenia przez operatora przed uruchomieniem. Nie publikujemy zgłoszeń.</p><p>Zgłoszenia są przechowywane do 180 dni od przyjęcia; wygasłe rekordy są niedostępne w prywatnym API i następnie usuwane w cyklu dobowym wraz z kolejką powiadomień. Skróty HMAC adresu sieciowego i adresu e-mail używane do limitów znikają po wygaśnięciu krótkich okien ograniczeń, nie później niż przy dobowym czyszczeniu. Nie zapisujemy surowego IP ani User-Agent w zgłoszeniach. Token formularza wygasa po 30 minutach. Kopie zapasowe i dzienniki infrastruktury mają osobny cykl retencji; operator musi zatwierdzić i wdrożyć ich ograniczony okres przed uruchomieniem formularza.</p><p>Masz prawo żądać dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, a gdy ma zastosowanie — przenoszenia danych i sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie. Kontakt: <a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a>. Możesz wnieść skargę do właściwego organu nadzorczego, w szczególności w państwie zwykłego pobytu, miejsca pracy lub domniemanego naruszenia (art. 77 RODO). Nie wpisuj haseł, kluczy dostępowych ani danych szczególnie chronionych.</p><p>Przed wysłaniem pola pozostają tylko w otwartej karcie; nie zapisujemy ich w cookies ani localStorage. TXT i PDF to lokalne eksporty, które same nie wysyłają zgłoszenia i nie są potwierdzeniem przyjęcia. Po błędzie treść pozostaje w tej karcie. Po utracie odpowiedzi ponowienie tej samej próby korzysta z zabezpieczenia przed duplikatem.</p><h2>Glikemia Premium</h2><p>Strona dystrybucji ma osobną informację o liczniku pobrań, opiniach i moderacji przy formularzu. Opinie są publiczne dopiero po moderacji. Nie wpisuj w nie danych zdrowotnych.</p><h2>Linki zewnętrzne</h2><p>Serwisy otwierane przez linki prowadzą własne zasady przetwarzania danych. Materiały galerii są serwowane lokalnie; witryna nie osadza zewnętrznych odtwarzaczy.</p></article>'''
 
 
 
@@ -583,21 +605,33 @@ def privacy_page():
     return PRIVACY.replace('@@OPERATOR@@',block)
 
 
-def render(content, title, description, path, prefix):
+def render(content, title, description, path, prefix, projects=None):
     template=(ROOT/'templates/site.html').read_text()
     home=not path and not prefix
     product_page=(path.startswith('projekty/') and path!='projekty/') or path in ('progresskit-mail/','glikemia-premium/')
     nav=''.join(f'<a href="{prefix}#{id_}" data-proximity>{label}</a>' for id_,label in [('projekty','Projekty'),('uslugi','Usługi'),('proces','Proces'),('wyzwania','Wyzwania'),('technologie','Technologie'),('o-mnie','O mnie'),('ekosystem','Ekosystem'),('wydania','Wydania'),('kontakt','Kontakt')])
     game_page=path in ('echo-worlds/','taskpet/')
-    styles=['world'] + (['games'] if game_page else []) + (['living-experience'] if home else []) + (['project-world'] if product_page else [])
+    styles=['materials', 'world'] + (['games'] if game_page else []) + (['living-experience'] if home else []) + (['project-world'] if product_page else [])
     scripts=['world.mjs'] + (['games.mjs'] if game_page else []) + (['living-experience.mjs','client-inquiry.mjs'] if home else []) + (['project-world.mjs'] if product_page else [])
+    if 'data-showcase=' in content:
+        styles.append('product-showcase')
+        scripts.append('product-showcase.mjs')
     if path in ('projekty/glikemia-premium/','glikemia-premium/'):
         scripts.append('product-downloads.mjs')
     page_styles='\n  '.join(f'<link rel="stylesheet" href="{prefix}assets/{name}.css">' for name in styles)
+    scene_entry = '<script src="assets/scene-entry.js"></script>\n  ' if home else ''
     page_scripts='\n  '.join(f'<script type="module" src="{prefix}assets/{name}"></script>' for name in scripts)
     if path=='glikemia-premium/':
         page_scripts+=f'\n  <script src="{prefix}glikemia-premium/product.js" defer></script>'
-    slots={'TITLE':e(title),'DESCRIPTION':e(description),'CANONICAL':'https://progresskit.pl/'+path,'ROOT':prefix,'NAV':nav,'CONTENT':content,'PAGE_STYLES':page_styles,'PAGE_SCRIPTS':page_scripts,'BODY_CLASS':'progresskit-world'+(' world-home' if home else ' project-world-page' if product_page else ' world-catalog')}
+    project_id = path.strip('/').split('/')[-1] or 'progresskit-systems'
+    options = []
+    for item in sorted(projects or read_catalog()['projects'], key=lambda row: row['name'].casefold()):
+        destination = prefix + item['id'] + '/' if item['id'] in ('taskpet','echo-worlds') else project_url(item, prefix)
+        selected = ' selected' if item['id'] == project_id or (project_id in ('projekty','prywatnosc') and item['id']=='progresskit-systems') else ''
+        options.append(f'<option value="{e(item["id"])}" data-href="{e(destination)}" data-summary="{e(item["summary"])}" data-feature="{e(next(iter(item["features"]),item["solution"]))}" data-technology="{e(", ".join(item["technologies"]) or next(iter(item["architecture"]), "Technologie wymagają potwierdzenia w źródłach."))}"{selected}>{e(item["name"])}</option>')
+    motion = '<button type="button" class="motion-control" data-motion-toggle aria-pressed="false">Wstrzymaj ruch</button>' if home else ''
+    slots={'GUIDE_OPTIONS':''.join(options),'MOTION':motion,'TITLE':e(title),'DESCRIPTION':e(description),'CANONICAL':'https://progresskit.pl/'+path,'ROOT':prefix,'NAV':nav,'CONTENT':content,'PAGE_STYLES':page_styles,'PAGE_SCRIPTS':page_scripts,'BODY_CLASS':'progresskit-world'+(' world-home' if home else ' project-world-page' if product_page else ' world-catalog')}
+    slots['SCENE_ENTRY'] = scene_entry
     for name,value in slots.items():
         template=template.replace('@@'+name+'@@',value)
     if '@@' in template:
@@ -609,8 +643,10 @@ def render(content, title, description, path, prefix):
 
 
 def generated(data):
-    outputs={'index.html':render(homepage(data),'ProgressKit Systems: aplikacje, systemy i gry','Ekosystem ProgressKit: aplikacje Android, SaaS, platformy, gry i realizacje WWW. Problemy, rozwiązania i stan produktów potwierdzony w źródłach.','','')}
-    outputs['projekty/index.html']=render(explorer_page(data),'Eksplorator projektów | ProgressKit Systems','Wyszukaj aplikacje, SaaS, platformy, gry i realizacje ProgressKit według kategorii, technologii i etapu.','projekty/','../')
+    def page(*args):
+        return render(*args, projects=data['projects'])
+    outputs={'index.html':page(homepage(data),'ProgressKit Systems: aplikacje, systemy i gry','Ekosystem ProgressKit: aplikacje Android, SaaS, platformy, gry i realizacje WWW. Problemy, rozwiązania i stan produktów potwierdzony w źródłach.','','')}
+    outputs['projekty/index.html']=page(explorer_page(data),'Eksplorator projektów | ProgressKit Systems','Wyszukaj aplikacje, SaaS, platformy, gry i realizacje ProgressKit według kategorii, technologii i etapu.','projekty/','../')
     brand=json.loads((ROOT/'catalog/brand.json').read_text())
     if set(brand)!={'heroBackground','heroSourceStatus','ownerVisualApproval'}:
         raise ValueError('Invalid brand configuration.')
@@ -620,20 +656,19 @@ def generated(data):
             raise ValueError('Approved hero background must be an existing local brand asset.')
     for p in data['projects']:
         path=project_url(p)
-        outputs[path+'index.html']=render(full_case(p),p['name']+': projekt i case study | ProgressKit',p['summary'],path,'../../')
-    # Existing V4 Mail URL stays valid and uses the same catalog and renderer.
-    mail=next(p for p in data['projects'] if p['id']=='progresskit-mail')
-    outputs['progresskit-mail/index.html']=render(full_case(mail,'../'),mail['name']+': projekt | ProgressKit',mail['summary'],'projekty/'+mail['slug']+'/','../')
-    outputs['prywatnosc/index.html']=render(privacy_page(),'Prywatność i operator | ProgressKit Systems','Informacja o prywatności katalogu, analityce i zgłoszeniach projektów ProgressKit Systems.','prywatnosc/','../')
+        outputs[path+'index.html']=page(full_case(p),p['name']+': projekt i case study | ProgressKit',p['summary'],path,'../../')
+    # Sales landing; the reviewed case study remains under /projekty/progresskit-mail/.
+    outputs['progresskit-mail/index.html']=(ROOT/'templates/mail-pilot/index.html').read_text()
+    outputs['prywatnosc/index.html']=page(privacy_page(),'Prywatność i operator | ProgressKit Systems','Informacja o prywatności katalogu, analityce i zgłoszeniach projektów ProgressKit Systems.','prywatnosc/','../')
     glikemia=next(p for p in data['projects'] if p['id']=='glikemia-premium')
-    outputs['glikemia-premium/index.html']=render(full_case(glikemia,'../',distribution=True),'Glikemia Premium: prywatny dziennik glikemii na Android | ProgressKit',glikemia['summary'],'glikemia-premium/','../')
-    outputs['404.html']=render('<section class="shell privacy"><h1>Nie znaleziono strony.</h1><p><a href="/">Wróć do ProgressKit →</a></p></section>','Nie znaleziono strony | ProgressKit','Ta strona nie istnieje.','','/').replace('<meta name="description"','<meta name="robots" content="noindex">\n<meta name="description"')
+    outputs['glikemia-premium/index.html']=page(full_case(glikemia,'../',distribution=True),'Glikemia Premium: prywatny dziennik glikemii na Android | ProgressKit',glikemia['summary'],'glikemia-premium/','../')
+    outputs['404.html']=page('<section class="shell privacy"><h1>Nie znaleziono strony.</h1><p><a href="/">Wróć do ProgressKit →</a></p></section>','Nie znaleziono strony | ProgressKit','Ta strona nie istnieje.','','/').replace('<meta name="description"','<meta name="robots" content="noindex">\n<meta name="description"')
     games_spec=importlib.util.spec_from_file_location("games_markup",ROOT/"scripts/games_markup.py")
     games=importlib.util.module_from_spec(games_spec);games_spec.loader.exec_module(games)
     render_game=games.render_game
     for slug,kind,title,description in [('echo-worlds','echo','ECHO WORLDS — sześć krain match-3 | ProgressKit','Odkryj sześć krain ECHO WORLDS: 600 poziomów, autentyczne plansze i demonstracja match-3. 0.10.0 Alpha.'),('taskpet','taskpet','TaskPet — zadania, pupil i Twój pokój | ProgressKit','Poznaj TaskPet: sześć oryginalnych pupili, interaktywny pokój 3D i pokaz zadanie → nagroda → rozwój. Publiczna wersja w przygotowaniu.')]:
-        outputs[slug+'/index.html']=render(render_game(kind),title,description,slug+'/','../')
-    urls=['','echo-worlds/','taskpet/','projekty/','glikemia-premium/','prywatnosc/']+[project_url(p) for p in data['projects']]
+        outputs[slug+'/index.html']=page(render_game(kind),title,description,slug+'/','../')
+    urls=['','echo-worlds/','taskpet/','projekty/','glikemia-premium/','progresskit-mail/','prywatnosc/']+[project_url(p) for p in data['projects']]
     outputs['sitemap.xml']='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>https://progresskit.pl/{url}</loc></url>\n' for url in urls)+'</urlset>\n'
     outputs['robots.txt']='User-agent: *\nAllow: /\nDisallow: /_analytics/\nDisallow: /api/\nDisallow: /download/\nDisallow: /downloads/\nSitemap: https://progresskit.pl/sitemap.xml\n'
     return outputs

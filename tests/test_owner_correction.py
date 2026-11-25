@@ -105,8 +105,14 @@ class OwnerCorrectionTests(unittest.TestCase):
         self.assertIn('projekty/',self.home.links)
         self.assertNotIn('href="projekty/projekty/',index)
 
-    def test_hero_uses_one_core_and_original_brand_asset_throughout_the_journey(self):
-        self.assertIn('assets/brand/progressorkit-stamp.png',self.home.images)
+    def test_hero_uses_one_original_mechanism_throughout_the_journey(self):
+        self.assertEqual(1,self.home.images.count('assets/brand/optical-core.webp'))
+        for leaf in range(1,7):
+            self.assertEqual(1,self.home.images.count(f'assets/brand/iris-leaf-{leaf}.webp'))
+        self.assertIn('core-sigil',self.home.classes)
+        self.assertIn('core-smoked-glass',self.home.classes)
+        self.assertNotIn('core-brand',self.home.classes)
+        self.assertEqual(1,self.source.count('data-original-mechanism'))
         self.assertEqual(1,self.source.count('data-world-scene'))
         self.assertEqual(1,self.source.count('data-core-activate'))
         self.assertEqual(1,self.home.ids.count('rdzen'))

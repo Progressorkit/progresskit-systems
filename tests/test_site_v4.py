@@ -52,9 +52,10 @@ class SiteV4CompatibilityTests(unittest.TestCase):
     def setUpClass(cls):
         cls.home = (ROOT / 'index.html').read_text()
         cls.product = (ROOT / 'glikemia-premium/index.html').read_text()
-        cls.mail = (ROOT / 'progresskit-mail/index.html').read_text()
+        cls.mail = (ROOT / 'projekty/progresskit-mail/index.html').read_text()
+        cls.landing = (ROOT / 'progresskit-mail/index.html').read_text()
         cls.pages = {name: Markup(value) for name, value in
-                     [('home', cls.home), ('product', cls.product), ('mail', cls.mail)]}
+                     [('home', cls.home), ('product', cls.product), ('mail', cls.mail), ('landing', cls.landing)]}
         cls.catalog = json.loads((ROOT / 'catalog/projects.json').read_text())['projects']
         spec = importlib.util.spec_from_file_location('v4_compat_public_stager', ROOT / 'scripts/stage-public.py')
         stager = importlib.util.module_from_spec(spec)
@@ -71,8 +72,9 @@ class SiteV4CompatibilityTests(unittest.TestCase):
             with self.subTest(asset=name):
                 self.assertEqual(digest, hashlib.sha256((ROOT / name).read_bytes()).hexdigest())
                 self.assertIn(name, self.public_files)
-        # Owner selected the original copper desktop variant for all visible brand signatures.
-        self.assertIn('assets/brand/progressorkit-stamp.png', self.pages['home'].references('img', 'src'))
+        # Historical brand assets are retained above. The new hero uses the original machine.
+        self.assertIn('assets/brand/optical-core.webp', self.pages['home'].references('img', 'src'))
+        self.assertIn('assets/brand/progresskit-mark-small.webp', self.pages['home'].references('link', 'href'))
         retained_css = (ROOT / 'assets/site-v4.css').read_text().strip()
         self.assertEqual('e3831e7e735b90303ecbdd8524e02ebc82ada52d513ec7de4b19c74371385f9a',
                          hashlib.sha256(retained_css.encode()).hexdigest())
@@ -125,7 +127,7 @@ class SiteV4CompatibilityTests(unittest.TestCase):
         }
         project = next(item for item in self.catalog if item['id'] == 'progresskit-mail')
         self.assertEqual(set(expected), {image['src'] for image in project['gallery']})
-        displayed = {urlsplit(urljoin('https://progresskit.pl/progresskit-mail/', source)).path.lstrip('/')
+        displayed = {urlsplit(urljoin('https://progresskit.pl/projekty/progresskit-mail/', source)).path.lstrip('/')
                      for source in self.pages['mail'].references('img', 'src')}
         for name, digest in expected.items():
             with self.subTest(screenshot=name):
@@ -184,7 +186,7 @@ class SiteV4CompatibilityTests(unittest.TestCase):
     def test_legacy_product_urls_stay_public_with_correct_canonical_targets(self):
         expected = {
             'glikemia-premium/index.html': ('product', 'https://progresskit.pl/glikemia-premium/'),
-            'progresskit-mail/index.html': ('mail', 'https://progresskit.pl/projekty/progresskit-mail/'),
+            'progresskit-mail/index.html': ('landing', 'https://progresskit.pl/progresskit-mail/'),
         }
         for name, (key, canonical) in expected.items():
             with self.subTest(legacy_route=name):

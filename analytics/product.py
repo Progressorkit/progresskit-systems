@@ -63,13 +63,15 @@ class CountedAPKResponse(FileResponse):
 
         async def observed_send(message):
             nonlocal status, complete, expected, transferred
-            await send(message)  # A failed/disconnected send must never be counted.
+            # Middleware may replace the ASGI body or mutate headers while sending.
+            # Observe the original file bytes. Only a successful response reaches the DB.
             if message['type'] == 'http.response.start':
                 status = message['status']
                 expected = int(dict(message.get('headers', [])).get(b'content-length', b'0'))
             elif message['type'] == 'http.response.body':
                 transferred += len(message.get('body', b''))
                 complete = not message.get('more_body', False)
+            await send(message)
 
         # Do not delegate transfer to pathsend: observe actual ASGI body completion.
         scope = dict(scope, extensions={k: v for k, v in scope.get('extensions', {}).items()

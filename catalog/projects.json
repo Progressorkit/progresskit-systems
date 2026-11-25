@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-11-24",
+  "asOf": "2026-11-25",
   "projects": [
     {
       "id": "glikemia-premium",
@@ -36,8 +36,8 @@
         "Plugin.LocalNotification"
       ],
       "stage": "Dostępny APK",
-      "availability": "Istnieje APK 1.0. Lokalna kopia i źródłowy plik mają teraz identyczne 80 235 954 bajty i SHA-256; publikacji Play ani nowej instalacji nie zweryfikowano.",
-      "updatedAt": "2026-11-02",
+      "availability": "Istniejący podpisany APK 1.0 jest plikiem publicznej dystrybucji. W audycie potwierdzono identyczne 80 235 954 B i SHA-256 kopii źródłowej oraz dystrybucyjnej; nie wykonywano nowego builda ani instalacji.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         ".NET MAUI na Androidzie, View Models + lokalne usługi SQLite Async Connection.",
         "Glucose Measurement Policy normalizuje wejście; Measurement Record Persistence odpowiada za paginację i stabilną kolejność.",
@@ -187,6 +187,13 @@
           "kind": "report",
           "revision": "304292713f9d9fbda88d37715ec22f08f5c91de2 + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "glikemia-premium-ecosystem-review-20261125",
+          "label": "Glikemia Premium — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "304292713f9d + lokalne zmiany konfiguracji",
+          "scope": "Kod MAUI, QA_LOG i RELEASE_CHECKLIST; identyczny hash lokalnego Release 1.0 oraz pliku dystrybucyjnego. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -283,6 +290,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "glikemia-premium-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "304292713f9d + lokalne zmiany konfiguracji",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "glikemia-premium-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -340,8 +357,8 @@
         "OAuth PKCE"
       ],
       "stage": "Wersja testowa",
-      "availability": "Lokalne APK/DEB/TAR.GZ/EXE/ZIP o różnych zakresach odbioru. Linux 1.0.0-10 i Windows instalatory nie są podpisanym publicznym wydaniem.",
-      "updatedAt": "2026-11-02",
+      "availability": "Istnieją rozwijane klienty Android, Linux i Windows oraz zaplecze. RELEASE_GATE z 11.11.2026 zachowuje klient NO-GO i hosting komercyjny NO-GO.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Android: Kotlin/Compose, moduły app/domain/data/security; Room, WorkManager i Angus Mail.",
         "Desktop: wspólny .NET Core dla poczty i kont; Avalonia na Linux i WPF na Windows; osobne adaptery Secret Service oraz DPAPI/CNG.",
@@ -371,7 +388,9 @@
         "Historycznie potwierdzono Android IMAP/MIME, kontrolowane SMTP/Sent i online FCM; nie jest to pusty prototyp.",
         "Aktualne pliki desktopowe zgadzają się ze 195-plikowym manifestem źródeł kandydata z 27.10.2026.",
         "Aktualnie istnieją DEB/TAR.GZ 1.0.0-10 oraz niepodpisany instalator Windows; zakres fizycznej akceptacji pozostaje osobny.",
-        "02.11.2026: ponownie wykonano gotowe zestawy Release —607 PASS,30 niewykonanych; oddzielne izolowane integracje TLS/keyring/powiadomień22 PASS. Nie wykonano nowego builda ani testu prawdziwej skrzynki."
+        "02.11.2026: ponownie wykonano gotowe zestawy Release —607 PASS,30 niewykonanych; oddzielne izolowane integracje TLS/keyring/powiadomień22 PASS. Nie wykonano nowego builda ani testu prawdziwej skrzynki.",
+        "Raport odwołania sesji z 11.11.2026 opisuje 63 testy integracyjne i 12 po restore, 19 testów polityki oraz prawdziwe próby IMAP/SMTP w izolowanym laboratorium.",
+        "Pełny RELEASE_GATE nadal odmawia komercyjnego GO; lokalny lab nie jest odbiorem fizycznego Androida ani wszystkich platform."
       ],
       "cases": [
         {
@@ -606,6 +625,13 @@
           "kind": "test",
           "revision": "Te same gotowe biblioteki Release; sumy SHA-256 zapisane w audycie.",
           "scope": "Nowe uruchomienie: tymczasowe CA/CRL, loopback TLS, własny D-Bus/keyring i testowy serwis powiadomień."
+        },
+        {
+          "id": "progresskit-mail-ecosystem-review-20261125",
+          "label": "ProgressKit Mail — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "c9b669ce0a2c + lokalne zmiany; raport laboratoryjny 11.11.2026",
+          "scope": "Klienci Android/.NET i najnowszy RELEASE_GATE oraz raport odwołania sesji z 11.11.2026; komercyjne wydanie nadal NO-GO. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -614,7 +640,7 @@
         "aliases": [],
         "functionalStatus": "Poczta Android, Linux i Windows",
         "distributionStatus": "Lokalne APK/DEB/TAR.GZ/EXE/ZIP o różnych zakresach odbioru. Linux 1.0.0-10 i Windows instalatory nie są podpisanym publicznym wydaniem.",
-        "productionStatus": "UNKNOWN / NOT RELEASE APPROVED. Historia zawiera rzeczywiste testy infrastruktury, ale brak świeżej zgodności aktualnego source z produkcją; zmiana hasła nie ma zamkniętej integracji produkcyjnej.",
+        "productionStatus": "Klient i hosting komercyjny NO-GO według RELEASE_GATE z 11.11.2026; wybrane laboratoryjne PASS nie zamykają całości.",
         "platforms": [
           {
             "name": "Android",
@@ -697,6 +723,16 @@
           ]
         ],
         "verification": [
+          {
+            "date": "2026-11-11",
+            "revision": "c9b669ce0a2c + lokalne zmiany; raport laboratoryjny 11.11.2026",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "Odwołanie sesji i izolowany lab protokołów",
+            "status": "BLOCKED",
+            "result": "Zapisane 63 integracyjne, 12 po restore i 19 testów polityki; globalny RELEASE_GATE pozostaje BLOCKED.",
+            "source": "progresskit-mail-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-10-27",
             "revision": "HEAD c9b669ce + niezatwierdzony snapshot 2026-10-27; dokładny commit testowanego working tree nie jest dostępny",
@@ -795,7 +831,7 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-mail-audit",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -805,7 +841,7 @@
             "status": "PASS",
             "result": "271 PASS / 0 FAIL / 14 niewykonanych. Nie jest testem rzeczywistej skrzynki ani pełną kompilacją bieżących źródeł.",
             "source": "mail-current-core",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -815,7 +851,7 @@
             "status": "PASS",
             "result": "106 PASS / 0 FAIL / 4 niewykonanych. Nie jest testem rzeczywistej skrzynki ani pełną kompilacją bieżących źródeł.",
             "source": "mail-current-linux",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -825,7 +861,7 @@
             "status": "PASS",
             "result": "40 PASS / 0 FAIL / 1 niewykonanych. Nie jest testem rzeczywistej skrzynki ani pełną kompilacją bieżących źródeł.",
             "source": "mail-current-linux-security",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -835,7 +871,7 @@
             "status": "PASS",
             "result": "190 PASS / 0 FAIL / 11 niewykonanych. Nie jest testem rzeczywistej skrzynki ani pełną kompilacją bieżących źródeł.",
             "source": "mail-current-server-no-db",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -845,6 +881,16 @@
             "status": "PASS",
             "result": "22 PASS / 0 FAIL. Zakres częściowo pokrywa wcześniejsze pominięcia; nie jest testem serwera produkcyjnego ani dostarczalności.",
             "source": "mail-current-native",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "c9b669ce0a2c + lokalne zmiany; raport laboratoryjny 11.11.2026",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-mail-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -884,8 +930,8 @@
         "SharedPreferences"
       ],
       "stage": "W rozwoju",
-      "availability": "Lokalny podpisany Debug APK 0.2.2 został historycznie zaktualizowany na Redmi przez install -r; aktualny lokalny plik ma ten sam hash co raport. Publiczne wydanie UNKNOWN.",
-      "updatedAt": "2026-11-02",
+      "availability": "Istnieje lokalny APK 0.2.2 i zapis instalacji aktualizacyjnej na fizycznym Androidzie. Raport rozdziela testy funkcjonalne od niepotwierdzonej latencji, routingu ASR i jakości całego toru audio.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Compose UI i foreground Translator Service wiążą cykl życia użytkownika z Translator Engine.",
         "Session Controller kontroluje generacje callbacków, watchdog, retry i anulowanie.",
@@ -1008,6 +1054,13 @@
           "kind": "report",
           "revision": "6932b069982e43cbcc91957c72334ee80798de4b",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-translator-ecosystem-review-20261125",
+          "label": "ProgressKit Translator — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "6932b069982e",
+          "scope": "Kod silnika SpeechRecognizer, TtsVoiceSelector i raport V0_2_2_ASR; lokalny APK 0.2.2 istnieje. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -1016,7 +1069,7 @@
         "aliases": [],
         "functionalStatus": "Tłumacz rozmów Android",
         "distributionStatus": "Lokalny podpisany Debug APK 0.2.2 został historycznie zaktualizowany na Redmi przez install -r; aktualny lokalny plik ma ten sam hash co raport. Publiczne wydanie UNKNOWN.",
-        "productionStatus": "Brak własnego backendu produktu. Brak dowodu finalnego komercyjnego wydania; bramki offline, routingu i opóźnienia pozostają otwarte.",
+        "productionStatus": "Wersja rozwijana; 123 JVM i historyczne próby Androida nie zamykają pomiaru opóźnienia ani fizycznego odbioru audio.",
         "platforms": [
           {
             "name": "Android",
@@ -1055,6 +1108,16 @@
         "verification": [
           {
             "date": "2026-10-13",
+            "revision": "6932b069982e",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "ASR/TTS 0.2.2 — zapisane testy i instalacja",
+            "status": "PASS",
+            "result": "123 JVM PASS; raport Androida rozdziela 39 funkcjonalnych PASS i 1 diagnostykę; część fizycznych prób pozostaje PENDING.",
+            "source": "progresskit-translator-ecosystem-review-20261125",
+            "historical": true
+          },
+          {
+            "date": "2026-10-13",
             "revision": "UNRECORDED: working tree przed lokalnym commitem 0.2.2; raport nie koduje testowanego SHA.",
             "environment": "Linux / Gradle JVM i emulator Android; osobno historyczna instalacja Redmi oraz capability probe bez funkcjonalnego lokalnego ASR.",
             "scope": "123 JVM, 39 funkcjonalnych Android + 1 diagnostyka, lint 0 errors / 18 warnings; nie nowy run. · JVM",
@@ -1081,6 +1144,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-translator-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "6932b069982e",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-translator-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -1091,29 +1164,22 @@
       "slug": "vaeloria",
       "name": "Vaeloria",
       "category": "games",
-      "summary": "Działający prototyp gry fantasy: eksploracja 3D, kolekcja istot, turowa walka, dziesięciu rywali AI, sześć strategii i lokalny turniej. Rozgrywka ma konkretne raporty desktopowe i fizycznego Androida.",
+      "summary": "Rozwijana gra fantasy z kartami, tworzeniem EOS, kampanią i eksploracją Earth 3D. Kod obejmuje prolog, misję wejścia do lasu oraz trwały obóz; docelowa jakość artystyczna pozostaje otwarta.",
       "problem": "Przygodowy świat, kolekcja stworzeń i walka potrzebują wspólnego postępu oraz oprawy, która mieści się w budżecie telefonu.",
       "audiences": [
         "Gracze zainteresowani eksploracją fantasy i taktycznymi pojedynkami",
         "Uczestnicy prywatnych testów rozwijanej gry"
       ],
       "motivation": "Połączyć podróż bohatera EOS, odkrywanie świata i budowanie drużyny stworzeń w jednym doświadczeniu.",
-      "solution": "Klient Godot integruje postać EOS, onboarding, kampanię Ziemi, las 3D, lokalne pojedynki i turnieje z jednym silnikiem domenowym. JSON zapisuje profil i oddzielną historię rywalizacji. Osobne API kont oraz czatu istnieje, ale nie realizuje multiplayerowej walki.",
+      "solution": "Godot/C# łączy menu, karty i tworzenie EOS z kampanią, walką oraz eksploracją. Prolog prowadzi do istniejącej misji i lasu, a obóz zapisuje realne zasoby, wyposażenie i budowle.",
       "features": [
-        "Kreator EOS z imieniem, fryzurą, kolorem włosów, strojem i aurą; onboarding, wybór starterów i samouczek prowadzą do rzeczywistej kampanii.",
-        "Eksploracja 3D: chód/bieg, kamera ze spring arm i kolizją, sterowanie klawiaturą, myszą i dotykiem; las zawiera ścieżki, mosty i interakcje.",
-        "Minimapa odkrywa sektory i znaczniki, zapisuje postęp oraz rozróżnia zebrane obiekty. Skrytki i diamenty aktualizują rzeczywistą kolekcję i zasoby po udanym zapisie.",
-        "Turowy Combat Engine rozstrzyga ataki, zdolności, MP, obrażenia, relacje żywiołów i statusy oraz odrzuca akcje niezgodne z aktywną turą.",
-        "Dziesięciu lokalnych rywali ma własne tożsamości EOS, drużyny i trudności. Sześć strategii to Aggressive, Defensive, Balanced, Control, Support i Elemental Specialist; wagi wpływają na wybory, nie dodają ukrytych bonusów statystyk.",
-        "Human i AI przekazują wersjonowane komendy do tej samej sesji pojedynku. Obserwacja AI zawiera własną rękę i ujawnione przywołania przeciwnika; Remote jest obecnie odłączonym adapterem.",
-        "Lokalna liga liczy punkty z faktycznych wyników; turniej wymaga ośmiu różnych AI i rozgrywa siedmiomeczową drabinkę. Replay komend weryfikuje wynik; remis lub limit jawnie zatrzymuje drabinkę.",
-        "Iria, Sylvara i Veyron wędrują po trzech autorskich trasach lasu, zatrzymują się blisko gracza i udostępniają wejście do lokalnego pojedynku. Oddalone rigi są usypiane; brak symulowania walk w tle eksploracji.",
-        "Arena jest sceną 3D z przeciwnymi EOS i Portalem Więzi. Przywołania, efekty zdolności i reakcje odczytują stan silnika; prezentacja nie uruchamia ponownie reguł walki.",
-        "Plansza ma 25 kryształów w układzie 5×5. Gracz wybiera łańcuch, a domena sprawdza sąsiedztwo i dozwolone efekty; soczewki kryształów są wspólnym widokiem kampanii i pojedynków.",
-        "Profil JSONV1, checkpointy i nagrody zapisują się atomowo z kopią poprzedniego zapisu; ukończone węzły i rejestry łupów chronią przed powtórnym odbiorem. Zapis nie jest snapshotem trwającej walki.",
-        "Zaimplementowano API rejestracji/logowania, rotację sesji i refresh, wylogowanie oraz klienta konta. Jest to odrębny system od zapisu i gry offline.",
-        "Czat globalny wykorzystuje Signal R i PostgreSQL, historię, zgłoszenia wiadomości oraz blokowanie użytkowników; nie jest dowodem sieciowej rozgrywki Pv P.",
-        "Profile Low/Medium/High ograniczają koszt prezentacji, a Reduce Motion redukuje ruch ambientów. Efekty lasu stosują Multi Mesh, odległość i frustum zamiast osobnej ciężkiej sceny dla minimapy."
+        "Menu i rzeczywiste ekrany kolekcji, podglądu oraz ujawniania kart.",
+        "Tworzenie EOS i prezentacja postaci w istniejącym modelu stanu gry.",
+        "Kampania, drużyna, walka i statusy z rzeczywistym wpływem na stan rozgrywki.",
+        "Intro Earth z możliwością pominięcia, kontrolą końca odtwarzania, fallbackiem i misją wejściową.",
+        "Eksploracja Earth 3D oraz przejście do istniejącego lasu z zachowaniem zapisu.",
+        "Obóz: zbieranie zasobów, ekwipunek, rzemiosło, budowanie, skrzynia i trwały postęp.",
+        "Własne materiały świata i postaci oraz zapisane kadry z aktualnych scen; docelowy odbiór artystyczny pozostaje otwarty."
       ],
       "technologies": [
         "Godot4.6.3.NET",
@@ -1131,24 +1197,66 @@
       ],
       "stage": "W rozwoju",
       "availability": "Udokumentowane lokalne i historycznie publiczne preview Android/Windows; APKdebug/Windows unsigned. Bez deklaracji sklepowego wydania ani finalnego odbioru platform.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Natywny klient Godot 4.6.3 .NET/net 9.0. Osobne biblioteki Domain, Application i Infrastructure na net 8.0 oddzielają reguły walki/karty/AI od scen i renderowania. Lokalne profile oraz rywalizacja używają JSON i atomowych adapterów plikowych. Osobne API ASP.NET Core/EFCore/PostgreSQL obsługuje konto, sesje, portal i Signal R chat. Offline AI nie wymaga serwera walk; Remote Player Agent jest rozłączony, więc implementacji kont/czatu nie wolno przedstawiać jako Pv P."
       ],
       "gallery": [
         {
-          "src": "assets/projects/vaeloria/earth-exploration.webp",
-          "alt": "Vaeloria: eksploracja trójwymiarowego lasu Earth na telefonie",
-          "caption": "Rzeczywista trasa Earth na Redmi z zatwierdzonego publicznego preview. Oprawa prototypowa; renderer diagnostyczny odpowiada produkcyjnej ścieżce.",
-          "width": 1080,
-          "height": 2400
+          "src": "assets/projects/vaeloria/current-world.webp",
+          "alt": "Vaeloria: rzeczywisty las 3D, EOS i zbieranie zasobów; render Godot/Linux 08.11.2026.",
+          "caption": "Vaeloria: rzeczywisty las 3D, EOS i zbieranie zasobów; render Godot/Linux 08.11.2026.",
+          "width": 1280,
+          "height": 720
         },
         {
-          "src": "assets/projects/vaeloria/tactical-battle.webp",
-          "alt": "Vaeloria: walka taktyczna samouczka z przeciwnikiem Iria BOT",
-          "caption": "Rzeczywisty ekran areny tutorialu na Redmi z publicznego preview; przeciwnik oznaczony jako BOT. To nie jest rozgrywka PvP.",
-          "width": 1080,
-          "height": 2400
+          "src": "assets/projects/vaeloria/current-camp.webp",
+          "alt": "Vaeloria: zbudowany obóz, warsztat i rozmieszczenie obiektów; render Godot/Linux 08.11.2026.",
+          "caption": "Vaeloria: zbudowany obóz, warsztat i rozmieszczenie obiektów; render Godot/Linux 08.11.2026.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-intro.webp",
+          "alt": "Vaeloria: kadr prologu Zew Ziemi w aplikacji, 09.11.2026. Materiał fabularny do zatwierdzenia.",
+          "caption": "Vaeloria: kadr prologu Zew Ziemi w aplikacji, 09.11.2026. Materiał fabularny do zatwierdzenia.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-menu.webp",
+          "alt": "Vaeloria: rzeczywiste menu gry; zapisany render wcześniejszego sprintu.",
+          "caption": "Vaeloria: rzeczywiste menu gry; zapisany render wcześniejszego sprintu.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-creator.webp",
+          "alt": "Vaeloria: rzeczywisty kreator EOS z testowego profilu. Zapisany render wcześniejszego sprintu; model w lesie pokazano osobno.",
+          "caption": "Vaeloria: rzeczywisty kreator EOS z testowego profilu. Zapisany render wcześniejszego sprintu; model w lesie pokazano osobno.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-cards.webp",
+          "alt": "Vaeloria: rzeczywista kolekcja kart i ich oprawa; zapisany render wcześniejszego sprintu.",
+          "caption": "Vaeloria: rzeczywista kolekcja kart i ich oprawa; zapisany render wcześniejszego sprintu.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-arena.webp",
+          "alt": "Vaeloria: rzeczywista arena, ręka kart i kryształy; zapisany render Godot/Linux.",
+          "caption": "Vaeloria: rzeczywista arena, ręka kart i kryształy; zapisany render Godot/Linux.",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "assets/projects/vaeloria/current-inventory.webp",
+          "alt": "Vaeloria: rzeczywisty ekwipunek obozu; render Godot/Linux 08.11.2026.",
+          "caption": "Vaeloria: rzeczywisty ekwipunek obozu; render Godot/Linux 08.11.2026.",
+          "width": 1280,
+          "height": 720
         }
       ],
       "videos": [],
@@ -1160,10 +1268,9 @@
       ],
       "repository": null,
       "results": [
-        "Kod obecnego checkoutu potwierdza 10 rywali,6 strategii,3 leśnych wędrowców,turniej 8 AI i 25 kryształów. To inwentaryzacja implementacji, a nie nowa sesja gameplayu.",
-        "Odczytano historyczny plik 270 symulacji:156Side AWins/114Side BWins,270Replay Verified=true. Nie uruchamiano ponownie symulatora.",
-        "Odczytano raport fizycznego OPPO:18 kontroli, pełne zwycięstwa i siedmiomeczowy turniej; odrębne dane konkretnego APK.",
-        "Najpóźniejszy raport EOS13.10 zachowuje osobne ograniczenia sztuki i performance; późniejsza publiczna dystrybucja 14.10 nie nadaje automatycznie PASS nowemu APK ani Windows."
+        "Raport integracji prologu z 09.11.2026: końcowy Debug build i 515 testów .NET PASS, 7 SKIP.",
+        "Zapisane sesje obejmują pominięcie i naturalny koniec intro, fallback, misję, las i ponowne uruchomienie z zachowaniem postępu.",
+        "Aktualny przegląd graficzny pozostawia jakość docelową PARTIAL oraz odbiór artystyczny otwarty."
       ],
       "cases": [
         {
@@ -1183,12 +1290,9 @@
         "Rozwój funkcji online oddzielnie od lokalnej ligi i turniejów"
       ],
       "remaining": [
-        "Finalne assety EOS/świata/istot, rig/animacje i zgodność artystyczna z docelowym kierunkiem.",
-        "Powtarzalne profile performance, długie trasy i test termiczny zamiast krótkich nieruchomych próbek FPS.",
-        "Odbiór nowego publicznego APK na urządzeniu i fizyczna instalacja/runtime Windows.",
-        "Siedem integracji API pominiętych w późniejszych zestawach wymaga izolowanego PostgreSQL.",
-        "Pv P i sieciowe sterowanie walką pozostają przyszłym zakresem; konto/czat nie zamykają tej bramki.",
-        "Pozostałe światy, szersza kampania, ekonomia i finalny balans to rozwój poza obecnym Lasem Ziemi."
+        "Docelowy model, materiały i animacja EOS wymagają dalszego odbioru artystycznego.",
+        "Najnowszy prolog i obóz nie mają końcowego potwierdzenia na fizycznym Androidzie.",
+        "Materiały narracyjne pozostają robocze do zatwierdzenia kanonu; testy funkcjonalne nie są akceptacją grafiki."
       ],
       "sources": [
         {
@@ -1379,15 +1483,22 @@
           "kind": "report",
           "revision": "0716317aeb73e328c515504056f6eece669d8eb3 + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "vaeloria-ecosystem-review-20261125",
+          "label": "Vaeloria — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "06ce820b6a94 + lokalne zmiany",
+          "scope": "Sceny menu, kart, tworzenia EOS i EarthStoryProlog; ForestCampService i aktualny przegląd graficzny PARTIAL. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
       "portfolio": {
         "classification": "product",
         "aliases": [],
-        "functionalStatus": "Grywalny prototyp 3D",
-        "distributionStatus": "Udokumentowane lokalne i historycznie publiczne preview Android/Windows; APKdebug/Windows unsigned. Bez deklaracji sklepowego wydania ani finalnego odbioru platform.",
-        "productionStatus": "Publiczna witryna i wybrane preview miały historycznie potwierdzone wdrożenie 14.10.2026. Finalna produkcyjna gra, publiczne Pv P i kompletna bramka nowych artefaktów nie są potwierdzone.",
+        "functionalStatus": "Karty, EOS i eksploracja Earth 3D",
+        "distributionStatus": "Źródła i lokalne kandydaty; brak potwierdzonego publicznego wydania.",
+        "productionStatus": "Rozwój funkcjonalny trwa; jakość artystyczna PARTIAL i brak końcowego odbioru najnowszego Androida.",
         "platforms": [
           {
             "name": "Linux desktop",
@@ -1420,49 +1531,38 @@
         ],
         "featureSources": [
           [
-            "vaeloria-f01"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f02"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f03"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f04"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f05"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f06"
+            "vaeloria-ecosystem-review-20261125"
           ],
           [
-            "vaeloria-f07"
-          ],
-          [
-            "vaeloria-f08"
-          ],
-          [
-            "vaeloria-f09"
-          ],
-          [
-            "vaeloria-f10"
-          ],
-          [
-            "vaeloria-f11"
-          ],
-          [
-            "vaeloria-f12"
-          ],
-          [
-            "vaeloria-f13"
-          ],
-          [
-            "vaeloria-f14"
+            "vaeloria-ecosystem-review-20261125"
           ]
         ],
         "verification": [
+          {
+            "date": "2026-11-09",
+            "revision": "06ce820b6a94 + lokalne zmiany",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "Integracja prologu, misji i istniejącego lasu",
+            "status": "PASS",
+            "result": "Raport: Debug PASS; 515 testów .NET PASS i 7 SKIP; zapisane lokalne sesje nie są fizycznym odbiorem Androida.",
+            "source": "vaeloria-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-10-12",
             "revision": "baza a77edc4,checkpoint f50d7b6; kod sprintu w ówczesnym dirtyworktree",
@@ -1571,7 +1671,7 @@
             "status": "NOT RUN",
             "result": "Wynik dotyczy wyłącznie opisanego zakresu. Nie uruchamiano Godota,telefonu,Windows ani serwera.",
             "source": "vaeloria-v11",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -1581,6 +1681,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "vaeloria-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "06ce820b6a94 + lokalne zmiany",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "vaeloria-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -1628,9 +1738,9 @@
         "Caddy (historyczne lokalne testyHTTPS)",
         "Docker (izolowane testy)"
       ],
-      "stage": "Finalizacja",
-      "availability": "Zaimplementowany frontend WWW i backend; nowy target publicznej bety nie ma potwierdzonego wdrożenia. Lud&Pra i Progress Kit Community liczone jako jeden produkt.",
-      "updatedAt": "2026-11-02",
+      "stage": "W rozwoju",
+      "availability": "Platforma i środowiska kwalifikacji istnieją. Publiczna beta pozostaje BLOCKED przez otwarte bramki operacyjne, prawne i obsadę moderacji.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Modularny monolit ASP.NET Core/.NET 10 z modułami Identity, Users, Communities, Content, Moderation i Notifications; EF Core/PostgreSQL. Next.js/React/TypeScript komunikuje się z API, bez bezpośredniego dostępu frontendu do bazy. Wersjonowane migracje, kontrola sesji i serwerowe reguły widoczności są wspólne dla widoków i mediów."
       ],
@@ -1792,6 +1902,13 @@
           "kind": "report",
           "revision": "c64296e0dfd67182ec368a00432b4c2ea3b36968 + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-community-ecosystem-review-20261125",
+          "label": "ProgressKit Community / Lud&Pra — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "c64296e0dfd6",
+          "scope": "Kod Next.js/API oraz PUBLIC_BETA_GATE; testy transportu poczty nie zamykają bramek publicznej bety. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -1800,9 +1917,9 @@
         "aliases": [
           "Lud&Pra"
         ],
-        "functionalStatus": "Platforma społecznościowa",
+        "functionalStatus": "Platforma społecznościowa — beta",
         "distributionStatus": "Zaimplementowany frontend WWW i backend; nowy target publicznej bety nie ma potwierdzonego wdrożenia. Lud&Pra i Progress Kit Community liczone jako jeden produkt.",
-        "productionStatus": "PUBLIC BETA BLOCKED według ostatnich odczytanych raportów; brak publikacji legalu i potwierdzonej obsady/warunków organizacyjnych. Obecnego zdalnego środowiska nie sprawdzano.",
+        "productionStatus": "PUBLIC BETA BLOCKED. Zapisane testy usług i dostarczenia poczty nie zamykają obsady moderacji ani wszystkich bramek operacyjnych.",
         "platforms": [
           {
             "name": "Backend/API",
@@ -1946,6 +2063,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-community-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "c64296e0dfd6",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-community-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -1956,34 +2083,24 @@
       "slug": "progresskit-tax",
       "name": "ProgressKit Tax",
       "category": "saas",
-      "summary": "Rozbudowany system biurowo-księgowy: kartoteki osób i firm, sprawy PL/DE/NL, dokumenty, workflow, księgi i ewidencje, raporty oraz portal Android. Wdrożenie produkcyjne i odbiór reguł księgowych są odrębne.",
-      "problem": "Dane osób prywatnych, firm, dokumentów i rozliczeń międzynarodowych są rozproszone, a korekty księgowe muszą zachowywać spójną historię.",
+      "summary": "Jeden system dla biura rachunkowego: backend, panel WWW i portal Android. Obejmuje tożsamość i MFA, izolację biur, klientów, sprawy oraz dokumenty; zakres księgowości i bramki produkcyjne pozostają jawnie ograniczone.",
+      "problem": "Biuro rachunkowe potrzebuje wspólnego obiegu klientów, spraw i dokumentów, z kontrolą dostępu oraz rozdzieleniem danych różnych biur.",
       "audiences": [
         "Polskie biura rachunkowo-podatkowe",
         "Klienci indywidualni ze sprawami PL/DE/NL",
         "Przedsiębiorcy i reprezentanci spółek"
       ],
       "motivation": "Uporządkować pracę biura i wymianę dokumentów z klientem w jednym systemie, z jawną historią operacji i zakresem dostępu.",
-      "solution": "Łączy kartoteki biura, przydzielanie pracy, weryfikację dokumentów i moduły księgowe w jednym modelu organizacji i uprawnień. Pozwala rozdzielić pracę osoby prowadzącej sprawę od niezależnego zatwierdzenia oraz udostępnić klientowi wyłącznie jawnie przyznany zakres spraw i dokumentów.",
+      "solution": "ASP.NET Core i PostgreSQL obsługują wspólną domenę, autoryzację oraz dokumenty. Panel WWW służy pracy biura, a klient Kotlin/Android daje portal do tego samego systemu.",
       "features": [
-        "Rejestracja i logowanie, potwierdzanie konta, odzyskiwanie dostępu, kontrola sesji i wieloskładnikowego uwierzytelniania.",
-        "Model wielu biur z członkostwem i rolami Owner, Manager, Staff, Reviewer oraz Client; rozdzielone uprawnienia do osób i firm.",
-        "Kartoteki osób, JDG i spółek z adresami, identyfikatorami podatkowymi oraz powiązaniem firmy z osobą; wyszukiwanie i stronicowanie rejestrów.",
-        "Rejestr spraw PL/DE/NL z rokiem podatkowym, krajami, statusem i przypisanym pracownikiem. Ten obieg organizuje pracę nad sprawą; nie jest deklaracją automatycznego obliczania lub wysyłania zeznań.",
-        "Osobna obsługa administracyjna firm oraz lista członków możliwych do przypisania do pracy.",
-        "Wersjonowany workflow z przydzielaniem pracy, niezależnym zatwierdzeniem, historią i archiwizacją spraw.",
-        "Prywatny upload, lista i pobieranie dokumentów, obieg zatwierdzania oraz ponowne skanowanie. Role biura i portal klienta stosują odrębne granice odczytu.",
-        "Kontrola przesyłanych dokumentów, skanowanie i rozróżnienie plików zaakceptowanych, objętych kwarantanną oraz błędów kontroli.",
-        "Kontrola integralności dokumentu towarzyszy pobieraniu i obiegowi zatwierdzania.",
-        "Plan kont roku z tworzeniem, historią oraz importem i eksportem; moduł WWW udostępnia te operacje przez rzeczywiste API.",
-        "Dziennik księgowy z odczytem pozycji, tworzeniem dekretów, korektą i pełnym stornem; kontrola bilansowania i niezmienności zapisów ma warstwę bazodanową.",
-        "Rejestry KPiR i ryczałtu, w tym warianty kolumn i reguł 2026 oraz powiązane korekty zastępujące. Techniczna implementacja nie oznacza merytorycznego zatwierdzenia reguł księgowych.",
-        "Zestawienie obrotów i sald z bilansem otwarcia, karta konta oraz raportowanie okresowe z kontrolą sum.",
-        "Eksport danych raportowych do CSV i PDF z panelu WWW.",
-        "Kontrola zamykania i ponownego otwierania okresów, historia operacji oraz osobne uprawnienia administracyjne.",
-        "Kokpit biura z kolejką pracy i interwencjami, szybkie działania, rejestry, audyt oraz responsywny interfejs pracownika.",
-        "Portal Android: logowanie klienta, wybór biura, przegląd spraw i dokumentów oraz wysyłanie i pobieranie plików.",
-        "Przygotowane kontrakty integracji KSeF/JPK i lokalny fundament AI Office. Integracje urzędowe oraz zewnętrzne adaptery nie są wdrożonymi funkcjami produkcyjnymi."
+        "Jeden backend dla panelu biura WWW i portalu klienta na Androidzie.",
+        "Tożsamość użytkowników, role oraz istniejące mechanizmy MFA i wymaganego zapisania personelu do MFA.",
+        "Oddzielenie biur i uprawnień do klientów, spraw oraz dokumentów.",
+        "Obsługa klientów i spraw z kontrolą dostępu do powiązanych danych.",
+        "Prywatny magazyn dokumentów, walidacja, skanowanie ClamAV i kontrolowany obieg weryfikacji.",
+        "Wersjonowanie, ślad audytowy i uprawnienia przy zmianach statusu oraz ocenie dokumentu.",
+        "Zaimplementowane, ograniczone scenariusze rozliczeń PIT i workflow JDG/spółki; pełne pokrycie księgowości nie jest deklarowane.",
+        "Rzeczywisty portal Kotlin/Android obejmuje własne logowanie, sesję, obsługę MFA i widoki danych wspólnego systemu."
       ],
       "technologies": [
         "C#",
@@ -2001,19 +2118,58 @@
         "CSV / PDF"
       ],
       "stage": "W rozwoju",
-      "availability": "Lokalne buildy WWW/API i Debug APK. Publiczne wydanie aplikacji niepotwierdzone.",
-      "updatedAt": "2026-11-02",
+      "availability": "Istnieją backend, klient WWW i aplikacja Android jednego systemu. Aktualna macierz kwalifikacji i globalny Security Gate pozostają BLOCKED; brak deklaracji gotowości produkcyjnej.",
+      "updatedAt": "2026-11-25",
       "architecture": [
-        "Modularny backend ASP.NET Core i EF Core/PostgreSQL, panel Next.js/React/TypeScript korzystający z API oraz odrębny natywny Android Kotlin/Compose. Organizacja, kategorie danych i granty portalu są egzekwowane także po stronie serwera. Historyczne katalogi src/mobile nie opisują aktualnego natywnego klienta android/."
+        "ASP.NET Core/.NET i PostgreSQL stanowią wspólny backend domeny oraz autoryzacji.",
+        "Panel WWW Next.js/React prezentuje klientów, sprawy, dokumenty i przepływy weryfikacji.",
+        "Kotlin/Android korzysta z tego samego zaplecza przez istniejący portal API.",
+        "Izolacja biur, role, MFA, prywatny magazyn dokumentów i skan ClamAV są odrębnymi kontrolami; każda ma własne granice weryfikacji."
       ],
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/projects/tax/desktop-demo.webp",
+          "alt": "ProgressKit Tax: rzeczywisty kokpit WWW biura; wyłącznie syntetyczne dane DEMO, 25.10.2026. Kadr górnej części strony.",
+          "caption": "ProgressKit Tax: rzeczywisty kokpit WWW biura; wyłącznie syntetyczne dane DEMO, 25.10.2026. Kadr górnej części strony.",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "src": "assets/projects/tax/android-login-20261125.webp",
+          "alt": "Rzeczywisty ekran logowania natywnej aplikacji ProgressKit Tax na Androidzie",
+          "caption": "Świeży ekran natywnej aplikacji Android 0.4.0-debug, 25.11.2026: logowanie i pole MFA, bez uwierzytelniania i danych osobowych. Emulator Android.",
+          "width": 648,
+          "height": 1440
+        },
+        {
+          "src": "assets/projects/tax/cases-demo.webp",
+          "alt": "ProgressKit Tax: rzeczywisty rejestr spraw; syntetyczne dane DEMO, 25.10.2026.",
+          "caption": "ProgressKit Tax: rzeczywisty rejestr spraw; syntetyczne dane DEMO, 25.10.2026.",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "src": "assets/projects/tax/documents-demo.webp",
+          "alt": "ProgressKit Tax: rzeczywisty obieg dokumentów i wyniki skanowania; syntetyczne dane DEMO, 25.10.2026.",
+          "caption": "ProgressKit Tax: rzeczywisty obieg dokumentów i wyniki skanowania; syntetyczne dane DEMO, 25.10.2026.",
+          "width": 1440,
+          "height": 1317
+        },
+        {
+          "src": "assets/projects/tax/workflow-demo.webp",
+          "alt": "ProgressKit Tax: kontrola drugiej osoby i panel zatwierdzania; syntetyczne dane DEMO, 25.10.2026.",
+          "caption": "ProgressKit Tax: kontrola drugiej osoby i panel zatwierdzania; syntetyczne dane DEMO, 25.10.2026.",
+          "width": 1440,
+          "height": 1000
+        }
+      ],
       "videos": [],
       "links": [],
       "repository": null,
       "results": [
-        "W ramach historycznego Dashboard 02 utrwalono pełny wynik 981 backend i 218 frontend oraz osobne dowody przeglądarek.",
-        "Natywny portal ma starszy, konkretny raport testu fizycznego telefonu; nie utożsamiono go z nowszym lokalnym buildem.",
-        "Wersjonowanie, niezależny approval, kwarantanna i kontrola ksiąg mają negatywne regresje, a nie wyłącznie formularze UI."
+        "Macierz z 09.11.2026 obejmuje 141 wymagań: 57 DONE, 20 PARTIAL, 40 TODO, 14 BLOCKED, 7 NOT TESTED i 3 NOT APPLICABLE.",
+        "Raport 02E potwierdza naprawę renderowania weryfikacji dokumentu; 9 testów komponentu PASS po zachowaniu wcześniejszego FAIL.",
+        "W 02E nie powtarzano pełnego Browser E2E. Google High i globalny Security Gate pozostają BLOCKED."
       ],
       "cases": [
         {
@@ -2032,11 +2188,10 @@
         "Przygotowanie kontrolowanego wydania produkcyjnego i Android Release"
       ],
       "remaining": [
-        "Osobny merytoryczny i prawny odbiór reguł księgowych oraz profili podatkowych.",
-        "KSeF/JPK i zagraniczne wysyłki urzędowe są kontraktami/planem; brak wdrożonego połączenia i produkcyjnej wysyłki.",
-        "Zamknięcie otwartych ustaleń vendor/build-tooling odnotowanych w 01B i ponowny pełny security gate; nie oceniano aktualnych advisory online.",
-        "Produkcyjny transport poczty/MFA/klucze, backup i recovery, monitoring, retencja i pełny odbiór środowiska.",
-        "Podpisany Android Release, dystrybucja i ponowna weryfikacja fizycznego urządzenia dla bieżącego wydania."
+        "Globalny Security Gate i otwarty Google High wymagają osobnej kwalifikacji.",
+        "Pełny Browser E2E procesu dokumentów po poprawce 02E pozostaje NOT TESTED.",
+        "VAT/JPK, pełna rachunkowość i zamknięcie formalnych wymagań nie wynikają z wąskiego scenariusza PIT/JDG.",
+        "Końcowa akceptacja branżowa i produkcyjna oraz bieżący odbiór fizycznego Androida pozostają odrębne."
       ],
       "sources": [
         {
@@ -2199,15 +2354,22 @@
           "kind": "report",
           "revision": "e002ebe2d16bccf552a2a86ac66dc15c702de79e + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-tax-ecosystem-review-20261125",
+          "label": "ProgressKit Tax — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "83919352c4c4 + lokalne zmiany",
+          "scope": "Moduły Identity/MFA, Clients, Documents i Accounting, klient WWW i Android oraz macierz 141 wymagań i raport 02E. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
       "portfolio": {
         "classification": "product",
         "aliases": [],
-        "functionalStatus": "System biurowo-księgowy",
-        "distributionStatus": "Lokalne buildy WWW/API i Debug APK. Publiczne wydanie aplikacji niepotwierdzone.",
-        "productionStatus": "Lokalne środowisko rozwoju i testów. Produkcja, odbiór księgowy i integracje urzędowe nie są zatwierdzone.",
+        "functionalStatus": "Biuro WWW, backend i portal Android",
+        "distributionStatus": "Lokalne środowiska i artefakty testowe; brak zatwierdzonego wydania produkcyjnego.",
+        "productionStatus": "Globalny Security Gate BLOCKED. Zaimplementowany zakres i wybrane PASS nie zamykają wymagań branżowych ani produkcyjnych.",
         "platforms": [
           {
             "name": "Backend API",
@@ -2233,61 +2395,41 @@
         ],
         "featureSources": [
           [
-            "progresskit-tax-f01"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f02"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f03"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f04"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f05"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f06"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f07"
+            "progresskit-tax-ecosystem-review-20261125"
           ],
           [
-            "progresskit-tax-f08"
-          ],
-          [
-            "progresskit-tax-f09"
-          ],
-          [
-            "progresskit-tax-f10"
-          ],
-          [
-            "progresskit-tax-f11"
-          ],
-          [
-            "progresskit-tax-f12"
-          ],
-          [
-            "progresskit-tax-f13"
-          ],
-          [
-            "progresskit-tax-f14"
-          ],
-          [
-            "progresskit-tax-f15"
-          ],
-          [
-            "progresskit-tax-f16"
-          ],
-          [
-            "progresskit-tax-f17"
-          ],
-          [
-            "progresskit-tax-f18"
+            "progresskit-tax-ecosystem-review-20261125"
           ]
         ],
         "verification": [
+          {
+            "date": "2026-11-09",
+            "revision": "83919352c4c4 + lokalne zmiany",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "Production Completion 02E i macierz 141 wymagań",
+            "status": "BLOCKED",
+            "result": "57 DONE; globalny gate nadal BLOCKED. Naprawa panelu i testy komponentów nie zastępują pełnego Browser E2E.",
+            "source": "progresskit-tax-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-10-25",
             "revision": "5816877",
@@ -2376,6 +2518,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-tax-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "83919352c4c4 + lokalne zmiany",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-tax-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -2420,7 +2572,7 @@
       ],
       "stage": "W rozwoju",
       "availability": "Źródła backendu i dokumentacja; niepotwierdzona publiczna dystrybucja lub interfejs klienta.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Warstwy Domain, Application, Infrastructure i API na .NET 10; EF Core/PostgreSQL, ASP.NET Identity oraz JWT. Centralny scope zasobów podopiecznego uzupełnia granicę tenantową. Część testów używa SQLite, a migracje i API mają scenariusze PostgreSQL/Testcontainers."
       ],
@@ -2546,6 +2698,13 @@
           "kind": "report",
           "revision": "17bc746dd93f872b62cbd42694d4dfe99f3f72c4 + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "adivara-ecosystem-review-20261125",
+          "label": "Adivara — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "17bc746dd93f",
+          "scope": "Aktualny HEAD oraz security-gate-1 i sec-001-remediation; naprawa SEC-001 nie zastępuje ponownego Security Gate. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -2554,7 +2713,7 @@
         "aliases": [],
         "functionalStatus": "Backend wielu organizacji",
         "distributionStatus": "Źródła backendu i dokumentacja; niepotwierdzona publiczna dystrybucja lub interfejs klienta.",
-        "productionStatus": "Brak potwierdzonego produkcyjnego SaaS i kompletnego interfejsu operacyjnego.",
+        "productionStatus": "SEC-001: REMEDIATED — PENDING SECURITY RE-GATE. Historyczny Security Gate FAIL nie został zamieniony w PASS; całość nie ma potwierdzonego wydania produkcyjnego.",
         "platforms": [
           {
             "name": "Backend/API",
@@ -2629,6 +2788,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "adivara-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "17bc746dd93f",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "adivara-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -2669,7 +2838,7 @@
       ],
       "stage": "Prototyp",
       "availability": "Lokalne repozytorium i historyczne buildy; brak potwierdzonego wdrożenia.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Dwa interfejsy Next.js: dyspozytor i pasażer.",
         "API Node.js i Prisma; frontend nie korzysta jeszcze z całości API.",
@@ -2777,6 +2946,13 @@
           "kind": "report",
           "revision": "27cf7155683fba95ff321334a80839e5a9995d58",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "gotrans360-ecosystem-review-20261125",
+          "label": "GoTrans360 — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "27cf7155683f",
+          "scope": "Zagnieżdżone repo transportowe: aplikacje API, dispatcher, passenger, driver oraz historyczny QA_LOG. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -2847,6 +3023,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "gotrans360-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "27cf7155683f",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "gotrans360-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -2879,7 +3065,7 @@
       ],
       "stage": null,
       "availability": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Statyczne HTML, rozdzielone arkusze CSS i skrypt interakcji.",
         "Formularz działa lokalnie; kontakt prowadzi do wybranej aplikacji społecznościowej."
@@ -2969,6 +3155,13 @@
           "kind": "report",
           "revision": "0ac253980bfc4e4e2d27bf9fd4bda4d8e7c035f8",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "ignira-ecosystem-review-20261125",
+          "label": "Ignira — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "0ac253980bfc",
+          "scope": "Witryna Maria-Salon odpowiada realizacji Ignira; bieżący commit jest zgodny z wcześniej opisanymi źródłami. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -3015,7 +3208,7 @@
             "status": "PASS",
             "result": "Kontrola składni; nie oznacza testu interakcji ani wdrożenia.",
             "source": "ignira-v01",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -3025,6 +3218,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "ignira-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "0ac253980bfc",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "ignira-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -3054,8 +3257,8 @@
         "JavaScript"
       ],
       "stage": null,
-      "availability": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
-      "updatedAt": "2026-11-02",
+      "availability": "Zachowano wcześniejszy opis realizacji i publicznych źródeł. Lokalnego checkoutu produktu ani bieżącego wdrożenia nie potwierdzono w tym audycie.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Osobne statyczne dokumenty HTML, CSS i skrypty narracji.",
         "Odsyłacze PDF oraz formularze i zakup obsługiwane poza witryną."
@@ -3132,19 +3335,25 @@
           "kind": "report",
           "revision": "03f9bbf50afc52392f595b2f0688fe1b9a8e0f99",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "obserwator-ecosystem-review-20261125",
+          "label": "Obserwator — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Zachowane źródła katalogowe z 02.11.2026; brak lokalnego checkoutu produktu",
+          "scope": "Porównano zachowane dane portfolio z inwentarzem lokalnym; aktualnego kodu ani publicznego runtime tej realizacji nie weryfikowano. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
       "portfolio": {
         "classification": "realization",
         "aliases": [
-          "Marek Zaworski",
-          "Lejek Sprzedażowy",
-          "marekzaworski.github.io"
+          "Serwis literacki",
+          "Lejek Sprzedażowy"
         ],
         "functionalStatus": "Serwis autorski",
         "distributionStatus": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
-        "productionStatus": "Aktualne wdrożenie nie zostało zweryfikowane.",
+        "productionStatus": "Brak lokalnego checkoutu w obecnym inwentarzu; wcześniejszy opis realizacji nie jest nowym potwierdzeniem publicznego runtime.",
         "platforms": [
           {
             "name": "WWW",
@@ -3174,7 +3383,7 @@
             "status": "NOT RUN",
             "result": "Odczytano źródła i ich tożsamość. Nie uruchamiano aplikacji ani testów produktu.",
             "source": "obserwator-v01",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -3184,6 +3393,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "obserwator-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Zachowane źródła katalogowe z 02.11.2026; brak lokalnego checkoutu produktu",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "obserwator-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -3206,7 +3425,7 @@
       "technologies": [],
       "stage": null,
       "availability": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [],
       "gallery": [],
       "videos": [],
@@ -3236,6 +3455,13 @@
           "kind": "report",
           "revision": "961c50c9820544dd8c32139d82cf8621b328f79d",
           "scope": "Zmiana nazwy RWR na KAN SYSTEM"
+        },
+        {
+          "id": "kan-system-ecosystem-review-20261125",
+          "label": "KAN SYSTEM — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Historyczna realizacja; brak lokalnego kodu produktu",
+          "scope": "Potwierdzono zachowany wpis historyczny i aliasy; aplikacji nie odnaleziono w aktualnym lokalnym inwentarzu. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -3246,7 +3472,7 @@
           "System zarządzania kontrolerami biletów",
           "KAN"
         ],
-        "functionalStatus": "Realizacja historyczna",
+        "functionalStatus": "Realizacja historyczna — kod nieodnaleziony",
         "distributionStatus": "Brak nowego potwierdzenia aktualnej publicznej dystrybucji.",
         "productionStatus": "Aktualne wdrożenie nie zostało zweryfikowane.",
         "platforms": [
@@ -3278,6 +3504,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "kan-system-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Historyczna realizacja; brak lokalnego kodu produktu",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "kan-system-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -3327,7 +3563,7 @@
       ],
       "stage": "W rozwoju",
       "availability": "Lokalny kandydat portfolio. Bieżące zmiany katalogu i wyglądu wymagają regresji, odbioru wizualnego oraz potwierdzenia publicznego wdrożenia.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Generator Python i katalog JSON → statyczne HTML/CSS/Java Script; lokalnie dostarczane moduły Three.js dla showroomu i niewielkiej sceny Usług; CSS3D/Canvas dla Procesu; Fast API jest oddzielnym backendem analityki i dystrybucji produktu, nie serwerem katalogowym."
       ],
@@ -3498,6 +3734,13 @@
           "kind": "report",
           "revision": "e19fe9f67f9190420c5ec4662c80d94a5fa92f67 + lokalne zmiany robocze",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-systems-ecosystem-review-20261125",
+          "label": "ProgressKit Systems — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "b0a19cdc2536 + lokalne zmiany",
+          "scope": "Katalog, generator i istniejące moduły WebGL; porównanie publicznego katalogu 19 wpisów z lokalnym katalogiem 21 wpisów. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -3505,8 +3748,8 @@
         "classification": "product",
         "aliases": [],
         "functionalStatus": "Portfolio i showroom 3D",
-        "distributionStatus": "Lokalny kandydat portfolio. Bieżące zmiany katalogu i wyglądu wymagają regresji, odbioru wizualnego oraz potwierdzenia publicznego wdrożenia.",
-        "productionStatus": "Bieżące zmiany są lokalnym kandydatem. Wymagają odbioru wizualnego i osobnego potwierdzenia publicznego wdrożenia.",
+        "distributionStatus": "Publiczna witryna ma starszy katalog 19 wpisów; lokalny katalog zawiera 21 wpisów. Ten sprint nie wdraża zmian.",
+        "productionStatus": "Istniejąca publiczna witryna działa, ale lokalny kandydat i jego wygląd wymagają odrębnego odbioru; ownerVisualApproval pozostaje OPEN.",
         "platforms": [
           {
             "name": "WWW desktop",
@@ -3629,6 +3872,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-systems-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "b0a19cdc2536 + lokalne zmiany",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-systems-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -3670,7 +3923,7 @@
       ],
       "stage": "W rozwoju",
       "availability": "Kod i kontener do samodzielnego wdrożenia; nie potwierdzono bieżącego publicznego wydania i danych produkcyjnych.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Własny frontend wysyła ograniczone zdarzenia do backendu FastAPI i SQLite. Oddzielna część produktu obsługuje pobrania i opinie. Panel operatora jest narzędziem wewnętrznym."
       ],
@@ -3788,6 +4041,13 @@
           "kind": "report",
           "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
           "scope": "Odczyt definicji testów, bez wykonania"
+        },
+        {
+          "id": "progresskit-analytics-ecosystem-review-20261125",
+          "label": "ProgressKit Analytics — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "b0a19cdc2536; moduł analityki istniejącej witryny",
+          "scope": "app.py/product.py/inquiries.py; licznik ukończonych transferów i moderacja opinii; bez zapisu do danych analitycznych. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -3796,7 +4056,7 @@
         "aliases": [],
         "functionalStatus": "Własna analityka",
         "distributionStatus": "Kod i kontener do samodzielnego wdrożenia; nie potwierdzono bieżącego publicznego wydania i danych produkcyjnych.",
-        "productionStatus": "Bieżący produkcyjny przepływ danych nie został odrębnie potwierdzony w audycie.",
+        "productionStatus": "Narzędzie własnego ekosystemu. Licznik pobrań dotyczy ukończonych transferów, nie instalacji ani unikalnych użytkowników; audyt nie zapisuje do statystyk.",
         "platforms": [
           {
             "name": "Backend HTTP",
@@ -3867,7 +4127,7 @@
             "status": "NOT RUN",
             "result": "Odczytano źródła i ich tożsamość. Nie uruchamiano aplikacji ani testów produktu.",
             "source": "progresskit-analytics-v02",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -3877,6 +4137,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-analytics-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "b0a19cdc2536; moduł analityki istniejącej witryny",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-analytics-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -3917,7 +4187,7 @@
       ],
       "stage": "W rozwoju",
       "availability": "Artefakty statyczne i konfiguracje do wdrożenia; zaplecze nie jest osobnym produktem komercyjnym.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Statyczne pliki publiczne + osobny kontener API + reverse proxy + trwałe dane poza wydaniem. Repozytorium zawiera fragmenty Compose/Caddy i narzędzia pakowania, lecz nie kompletny, zweryfikowany stan infrastruktury produkcyjnej."
       ],
@@ -4007,6 +4277,13 @@
           "kind": "report",
           "revision": "WORKTREE@e19fe9f67f9190420c5ec4662c80d94a5fa92f67",
           "scope": "Kod narzędzi i zachowane raporty lokalne; brak testu infrastruktury zdalnej"
+        },
+        {
+          "id": "progresskit-infrastructure-ecosystem-review-20261125",
+          "label": "Zaplecze ProgressKit — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "b0a19cdc2536; narzędzia wydania istniejącej witryny",
+          "scope": "Skrypty budowania, stagingu, kontroli publikacji i pakowania; kopia V5 Review i backup nie są nowymi produktami. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
@@ -4015,7 +4292,7 @@
         "aliases": [],
         "functionalStatus": "Zaplecze wydania i usług",
         "distributionStatus": "Artefakty statyczne i konfiguracje do wdrożenia; zaplecze nie jest osobnym produktem komercyjnym.",
-        "productionStatus": "Konfiguracje i narzędzia istnieją. Nie wykonywano nowego odbioru serwera, backupu ani odtwarzania produkcji.",
+        "productionStatus": "Zaplecze i konfiguracje wymagają kwalifikacji konkretnego środowiska. Audyt katalogu nie uruchamia wdrożenia ani zmian serwera.",
         "platforms": [
           {
             "name": "Narzędzia lokalnego wydania",
@@ -4067,7 +4344,7 @@
             "status": "NOT RUN",
             "result": "Odczytano źródła i ich tożsamość. Nie uruchamiano aplikacji ani testów produktu.",
             "source": "progresskit-infrastructure-v01",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -4077,6 +4354,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-infrastructure-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "b0a19cdc2536; narzędzia wydania istniejącej witryny",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-infrastructure-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -4118,8 +4405,8 @@
         "NSIS — źródło instalatora"
       ],
       "stage": "Prototyp",
-      "availability": "Źródła i procedury pakowania są przygotowane; brak zweryfikowanego ZIP/EXE.",
-      "updatedAt": "2026-11-02",
+      "availability": "Źródła i istniejące wcześniejsze DLL testowe są dostępne; raport 04.11.2026 nie potwierdza świeżego publishu, instalatora Windows ani rzeczywistej inferencji lokalnego AI.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Avalonia na .NET 10, lokalna baza SQLite i pliki sesji/WAV/TXT. Windows-only NAudio/WASAPI dostarcza audio do segmentów PCM. Oddzielne procesy whisper-cli i llama-cli obsługują adaptery ASR i notatek. Kod model managera przygotowuje jednorazowe pobranie modeli; dalszy zamierzony przepływ jest lokalny. Brak potwierdzenia pełnego przebiegu offline na Windows."
       ],
@@ -4130,7 +4417,8 @@
       "results": [
         "Pełny Rebuild z 30.10.2026 zakończył się kodem 0, bez błędów i z 22 ostrzeżeniami CA1416. Ten późniejszy dowód sesji zastępuje wcześniejsze BUILD BLOCKED w nieodświeżonym raporcie.",
         "Późniejsze raporty agentów tej samej sesji opisują 25 PASS Core, 8 PASS AI i 8 PASS skryptów jako oddzielne zestawy. Nie są sumowane ze starszymi 32 testami i nie są nowym uruchomieniem z 02.11.",
-        "W aktualnym odczycie istnieją bin/Release aplikacji i testów; artifacts/ pozostaje pusty."
+        "W aktualnym odczycie istnieją bin/Release aplikacji i testów; artifacts/ pozostaje pusty.",
+        "Raport finalizacji 04.11.2026: RELEASE READY NO; 8 Python PASS, wcześniejsze DLL 25 Core i 8 AI oznaczono PREBUILT/STALE."
       ],
       "cases": [
         {
@@ -4263,6 +4551,13 @@
           "kind": "report",
           "revision": "Odczyt źródeł 2026-11-02; identyfikator rewizji nie jest dostępny.",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-notes-ecosystem-review-20261125",
+          "label": "ProgressKit Notes — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Źródła bez działającej historii Git; raport 04.11.2026",
+          "scope": "Kod Avalonia, WASAPI, SQLite i adapterów lokalnego AI oraz NOTES_FINISH_REPORT z 04.11.2026; brak gotowego wydania Windows. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -4271,7 +4566,7 @@
         "aliases": [],
         "functionalStatus": "Aplikacja desktopowa",
         "distributionStatus": "Źródła i procedury pakowania są przygotowane; brak zweryfikowanego ZIP/EXE.",
-        "productionStatus": "Brak potwierdzonego wydania dla użytkownika końcowego.",
+        "productionStatus": "RELEASE READY NO: brak zweryfikowanych narzędzi/modeli Windows, rzeczywistej inferencji i końcowego odbioru całego przepływu.",
         "platforms": [
           {
             "name": "Windows 11 x64",
@@ -4373,7 +4668,7 @@
             "status": "NOT RUN",
             "result": "Wynik dotyczy wyłącznie opisanego zakresu. Nie wykonywano instalacji ani nagrywania w tym audycie.",
             "source": "progresskit-notes-v06",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -4383,6 +4678,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-notes-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Źródła bez działającej historii Git; raport 04.11.2026",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-notes-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -4392,38 +4697,55 @@
       "id": "progresskit-offgrid",
       "slug": "progresskit-offgrid",
       "name": "ProgressKit OffGrid",
-      "category": "technology",
-      "summary": "Koncepcja komunikacji bez Internetu. Nie odnaleziono kodu, uruchamialnego prototypu ani testu urządzeń; Bluetooth, Wi-Fi Direct, mesh, głos i SOS pozostają założeniami badawczymi.",
-      "problem": "Rozważane przesyłanie wiadomości w sytuacjach braku dostępu do Internetu.",
+      "category": "mobile",
+      "summary": "Lokalny komunikator Android–Android przez Bluetooth Classic/RFCOMM: tekst, trwała kolejka, zgoda obu stron i potwierdzenie dostarczenia ACK. Istnieje debug APK 0.1.0; fizyczny transfer między telefonami nie został odebrany.",
+      "problem": "Dwie osoby potrzebują wymienić krótkie wiadomości bez Internetu i serwera, z jasnym rozróżnieniem zapisu, wysłania i dostarczenia.",
       "audiences": [
-        "Odbiorcy przyszłego projektu badawczo-rozwojowego komunikacji lokalnej"
+        "Osoby testujące lokalną wymianę tekstu między dwoma telefonami Android"
       ],
-      "motivation": "Zbadać możliwość komunikacji lokalnej podczas braku dostępu do sieci.",
-      "solution": "Etap koncepcji: zlecenie właściciela opisuje Bluetooth/Wi-Fi Direct, mesh/store-and-forward, szyfrowane wiadomości oraz przyszłe PTT/SOS. Audyt nie potwierdza implementacji tych funkcji.",
-      "features": [],
-      "technologies": [],
-      "stage": "Koncepcja",
-      "availability": "Brak potwierdzonej dystrybucji.",
-      "updatedAt": "2026-11-02",
-      "architecture": [],
+      "motivation": "Zbudować prosty, kontrolowany przepływ offline z trwałą historią i uczciwymi stanami dostarczenia.",
+      "solution": "Natywna aplikacja Kotlin korzysta z bezpiecznego RFCOMM i systemowego parowania Bluetooth. Własny protokół obsługuje zgodę sesji, zapis przed ACK, deduplikację i ograniczone ponawianie.",
+      "features": [
+        "Bezpośredni tekst przez Bluetooth Classic/RFCOMM bez konta, serwera i Internetu.",
+        "Systemowe parowanie urządzeń oraz osobna zgoda obu stron na konkretną sesję aplikacji.",
+        "Trwała historia, kolejka i identyfikatory wiadomości zachowywane po restarcie procesu.",
+        "Rozróżnienie oczekuje, wysłano i dostarczono; ACK dopiero po trwałym zapisie odbiorcy.",
+        "Deduplikacja i ograniczone automatyczne ponawianie, z ręczną próbą zachowującą identyfikator.",
+        "Obsługa odmowy uprawnień, wyłączonego radia, nieprawidłowych ramek i zerwania łącza."
+      ],
+      "technologies": [
+        "Kotlin",
+        "Android",
+        "Bluetooth Classic",
+        "RFCOMM"
+      ],
+      "stage": "Wersja testowa",
+      "availability": "Istnieje lokalny debug APK 0.1.0 oraz źródła. Raport z 15.11.2026 zawiera 38 testów JVM i 7 testów emulatora; prawdziwy transfer dwóch telefonów pozostaje NOT RUN.",
+      "updatedAt": "2026-11-25",
+      "architecture": [
+        "MainActivity zarządza wyborem urządzeń, zgodą sesji i widokiem historii.",
+        "OffGridService obsługuje bezpieczne sockety Bluetooth Classic i istniejący bond Androida.",
+        "Protocol, Messenger i MessageStore zapewniają ograniczone ramki, trwałą kolejkę, deduplikację i zapis odbiorcy przed ACK.",
+        "Nie ma backendu ani uprawnienia INTERNET; historia pozostaje w prywatnym katalogu aplikacji."
+      ],
       "gallery": [],
       "videos": [],
       "links": [],
       "repository": null,
       "results": [
-        "Koncepcję rozliczono jawnie; nie odnaleziono implementacji ani wyniku testu urządzeń."
+        "Odnaleziono aktualny kod Kotlin i istniejący debug APK 0.1.0; wcześniejszy opis samej koncepcji jest nieaktualny.",
+        "Raport 15.11.2026: 38/38 JVM i 7/7 testów Androida na emulatorze; Lint bez błędów, z 11 ostrzeżeniami.",
+        "Instalacja i uruchomienie na telefonach nie dowodzą wzajemnie zaakceptowanej wymiany wiadomości; fizyczny transfer i ACK pozostają NOT RUN."
       ],
       "cases": [],
       "planned": [
-        "Wybór i prototyp kanału komunikacji lokalnej.",
-        "Badanie topologii mesh i przekazywania store-and-forward.",
-        "Projekt uwierzytelniania i szyfrowania wiadomości.",
-        "Osobna ocena wykonalności głosu/PTT/SOS."
+        "Odbiór dwukierunkowej rozmowy, ACK, ponawiania i wygaszonego ekranu na dwóch telefonach."
       ],
       "remaining": [
-        "Odnaleźć kod lub wersjonowaną dokumentację techniczną, jeżeli istnieje w innym miejscu.",
-        "Przygotować minimalny build/prototyp i test dwóch rzeczywistych urządzeń przed opisaniem łączności jako działającej.",
-        "Zweryfikować model bezpieczeństwa i ograniczenia platform zanim pojawią się deklaracje szyfrowania/SOS."
+        "Właściwy test fizycznego transferu Android–Android i ACK nie został wykonany.",
+        "Zasięg, bateria i zachowanie OEM po wygaszeniu ekranu wymagają pomiarów.",
+        "Brak mesh, Wi-Fi Direct, PTT, SOS i niezależnego szyfrowania treści end-to-end.",
+        "Brak eksportu/usuwania historii jest jawnym ograniczeniem pierwszego etapu."
       ],
       "sources": [
         {
@@ -4439,26 +4761,62 @@
           "kind": "report",
           "revision": "Rewizja historycznego przebiegu nie została utrwalona.",
           "scope": "Nie odnaleziono kodu/artefaktu w ograniczonym zakresie audytu."
+        },
+        {
+          "id": "progresskit-offgrid-ecosystem-review-20261125",
+          "label": "ProgressKit OffGrid — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Repozytorium bez pierwszego commita; kod i APK 0.1.0 z 15.11.2026",
+          "scope": "MainActivity, OffGridService oraz Protocol/MessageStore/Messenger; raport 15.11.2026 i istniejący debug APK 0.1.0. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
       "portfolio": {
-        "classification": "concept",
+        "classification": "product",
         "aliases": [],
-        "functionalStatus": "Koncepcja komunikacji offline",
-        "distributionStatus": "Brak potwierdzonej dystrybucji.",
-        "productionStatus": "Brak podstaw do deklaracji wdrożenia.",
+        "functionalStatus": "Komunikator Bluetooth Android",
+        "distributionStatus": "Lokalny debug APK 0.1.0; brak publicznego wydania.",
+        "productionStatus": "Etap testowy. Fizyczna dwukierunkowa wymiana i praca po wygaszeniu ekranu nie mają odbioru.",
         "platforms": [
           {
-            "name": "Niepotwierdzone",
-            "implementation": "Brak odnalezionej implementacji.",
-            "verification": "NOT RUN — brak artefaktu.",
-            "distribution": "Brak potwierdzonej paczki.",
-            "limits": "Bluetooth/Wi-Fi Direct/mesh/crypto/PTT/SOS są planem, nie listą ukończonych funkcji."
+            "name": "Android",
+            "implementation": "Kotlin i natywne API Androida, bezpieczny RFCOMM, lokalna historia i kolejka.",
+            "verification": "Zapisany raport 15.11.2026: 38 JVM i 7 testów emulatora PASS; fizyczny transfer NOT RUN.",
+            "distribution": "Lokalny debug APK 0.1.0; Android 8.0+.",
+            "limits": "Parowanie urządzeń nie jest niezależnym E2EE ani uwierzytelnieniem konkretnego pakietu aplikacji."
           }
         ],
-        "featureSources": [],
+        "featureSources": [
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ],
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ],
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ],
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ],
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ],
+          [
+            "progresskit-offgrid-ecosystem-review-20261125"
+          ]
+        ],
         "verification": [
+          {
+            "date": "2026-11-15",
+            "revision": "Repozytorium bez pierwszego commita; kod i APK 0.1.0 z 15.11.2026",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "Rdzeń protokołu i operacje Androida na emulatorze",
+            "status": "PASS",
+            "result": "38/38 JVM i 7/7 emulatora PASS; testy symulowane nie dowodzą radiowego transferu między telefonami.",
+            "source": "progresskit-offgrid-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-11-02",
             "revision": "Rewizja historycznego przebiegu nie została utrwalona.",
@@ -4467,7 +4825,7 @@
             "status": "NOT RUN",
             "result": "Wynik dotyczy wyłącznie opisanego zakresu. Brak źródeł nie upoważnia do oznaczenia PASS/FAIL funkcji.",
             "source": "progresskit-offgrid-v01",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -4477,6 +4835,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-offgrid-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Repozytorium bez pierwszego commita; kod i APK 0.1.0 z 15.11.2026",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-offgrid-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -4517,11 +4885,19 @@
       ],
       "stage": "Wersja testowa",
       "availability": "Narzędzie wewnętrzne. Film i głos pozostają lokalnymi próbami technicznymi.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Jednoużytkownikowy lokalny panel Fast API/Jinja 2, SQLite WAL, pojedynczy worker i izolowane katalogi zadań. Planista używa lokalnego API Ollama, lektor lokalnego Piper, renderer i walidator oddzielnych procesów FFmpeg/FFprobe. Brak chmurowej publikacji, kont i systemu wielodostępnego."
       ],
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "assets/projects/reel-agent/render-output-20261101.png",
+          "alt": "Kadr rzeczywistego wyniku renderu Reel Agent z pustym formularzem Glikemia Premium i napisami.",
+          "caption": "Kadr z lokalnego renderu testowego FFmpeg z 01.11.2026. To wynik narzędzia, nie panel Reel Agent. Obraz bez audio; prawa komercyjne użytego w próbie głosu pozostają otwarte.",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
       "videos": [],
       "links": [],
       "repository": null,
@@ -4660,18 +5036,27 @@
           "kind": "report",
           "revision": "Odczyt źródeł 2026-11-02; identyfikator rewizji nie jest dostępny.",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "reel-agent-ecosystem-review-20261125",
+          "label": "ProgressKit Reel Agent — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Wspólny katalog pod dwiema nazwami; raport E2E 01.11.2026",
+          "scope": "Źródła lokalnego panelu i pipeline oraz rzeczywisty raport E2E z 01.11.2026; obie nazwy katalogu wskazują ten sam obiekt. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "verified",
       "portfolio": {
         "classification": "internal_tool",
         "aliases": [
-          "Reel Agent",
-          "Lokalny agent rolek"
+          "Lokalny agent rolek",
+          "PROGRESSKIT REEL AGENT",
+          "ProgressKit Reel Agent",
+          "Reel Agent"
         ],
         "functionalStatus": "Lokalny pipeline wideo",
         "distributionStatus": "Narzędzie wewnętrzne. Film i głos pozostają lokalnymi próbami technicznymi.",
-        "productionStatus": "Brak publicznej usługi komercyjnej; publikacja materiału z obecnym głosem zablokowana do wyjaśnienia praw.",
+        "productionStatus": "Lokalny E2E techniczny ma zapisane dowody. Komercyjne prawa użytego głosu pozostają nierozstrzygnięte; nie publikować prób jako zaakceptowanej kampanii.",
         "platforms": [
           {
             "name": "Linux — lokalna stacja robocza",
@@ -4756,7 +5141,7 @@
             "status": "PASS",
             "result": "1 PASS / 0 FAIL / 0 SKIP. Tylko kontrola istniejącego lokalnego artefaktu, nie nowy E2E.",
             "source": "reel-agent-v05",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -4766,7 +5151,7 @@
             "status": "PASS",
             "result": "1 PASS / 0 FAIL / 0 SKIP. Bez publikowania MP4/audio; bez deklaracji oceny treści lub praw głosu.",
             "source": "reel-agent-v06",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -4776,6 +5161,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "reel-agent-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Wspólny katalog pod dwiema nazwami; raport E2E 01.11.2026",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "reel-agent-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -4813,8 +5208,8 @@
         "PowerShell — przygotowana ścieżka build"
       ],
       "stage": "W rozwoju",
-      "availability": "Istnieją lokalne pakiety próbne; zabezpieczony Host i gotowy pakiet dla użytkownika końcowego BLOCKED.",
-      "updatedAt": "2026-11-02",
+      "availability": "Istnieje lokalny klient Linux 0.3.0 i starsze pakiety próbne Aspia. Ograniczony Host Windows oraz pełna rzeczywista sesja pozostają nieodebrane.",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Aspia 3.1.2 dostarcza silnik i role klienta, Hosta, Routera oraz Relaya. ProgressKit rozwija integrację, pakowanie i ograniczony profil Hosta. Przygotowane źródła Windows wymagają osobnej kompilacji i odbioru."
       ],
@@ -4951,6 +5346,13 @@
           "kind": "report",
           "revision": "Odczyt źródeł 2026-11-02; identyfikator rewizji nie jest dostępny.",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-remote-ecosystem-review-20261125",
+          "label": "ProgressKit Remote — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Źródła bez działającej historii Git; klient Linux 0.3.0 i raport 31.10.2026",
+          "scope": "Klient Linux 0.3.0, adapter Aspia i patch ograniczonego Hosta; starszy katalog jest wariantem tego samego projektu. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -4960,9 +5362,9 @@
           "ProgressKit Remote Access",
           "Aspia Router/Relay"
         ],
-        "functionalStatus": "Integracja pomocy zdalnej",
-        "distributionStatus": "Istnieją lokalne pakiety próbne; zabezpieczony Host i gotowy pakiet dla użytkownika końcowego BLOCKED.",
-        "productionStatus": "Historycznie potwierdzono procesy Routera i Relaya. Kompletna usługa pulpitu zdalnego nie została odebrana.",
+        "functionalStatus": "Klient Linux i integracja zdalnej pomocy",
+        "distributionStatus": "Lokalny DEB Linux 0.3.0 i historyczne pakiety próbne Windows; nie są gotowym zestawem do bezobsługowej instalacji.",
+        "productionStatus": "Gotowy ograniczony Host Windows i pełny proces pomocy BLOCKED; patch źródłowy nie jest dowodem przebudowanego EXE.",
         "platforms": [
           {
             "name": "Linux — klient natywny",
@@ -5068,7 +5470,7 @@
             "status": "NOT RUN",
             "result": "Wynik dotyczy wyłącznie opisanego zakresu. Nie uruchamiano Windows, serwera ani urządzeń w tym audycie.",
             "source": "progresskit-remote-v06",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -5078,6 +5480,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-remote-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Źródła bez działającej historii Git; klient Linux 0.3.0 i raport 31.10.2026",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-remote-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -5113,7 +5525,7 @@
       ],
       "stage": "Prototyp",
       "availability": "Wyłącznie developerskie źródła i debug APK.",
-      "updatedAt": "2026-11-02",
+      "updatedAt": "2026-11-25",
       "architecture": [
         "Android Kotlin / Android Key Store / androidx.biometric oraz Linux Python / OpenSSL. ADB i run-as służą demonstracji w debug APK. Brak zaufanej rejestracji/przypięcia klucza telefonu, transportu Bluetooth i kompletnego Vault."
       ],
@@ -5192,6 +5604,13 @@
           "kind": "report",
           "revision": "Odczyt źródeł 2026-11-02; identyfikator rewizji nie jest dostępny.",
           "scope": "Studium implementacji na podstawie kodu i wskazanych raportów; ograniczenia uruchomienia są jawne."
+        },
+        {
+          "id": "progresskit-vault-key-ecosystem-review-20261125",
+          "label": "ProgressKit Vault Key — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "Źródła lokalnego prototypu; brak metadanych Git",
+          "scope": "MainActivity, KeystoreSigner, debugowy transport ADB i klient Linux; bez dowodu produkcyjnego parowania lub konkretnego urządzenia. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -5200,7 +5619,7 @@
         "aliases": [],
         "functionalStatus": "Demonstrator klucza Android",
         "distributionStatus": "Wyłącznie developerskie źródła i debug APK.",
-        "productionStatus": "Nie jest produkcyjnym Vault ani kompletnym uwierzytelnianiem urządzeń.",
+        "productionStatus": "Prototyp developerski. Brak produkcyjnego parowania, docelowego transportu i dowodu hardware-backed dla konkretnego urządzenia.",
         "platforms": [
           {
             "name": "Android",
@@ -5240,7 +5659,7 @@
             "status": "NOT RUN",
             "result": "Wynik dotyczy wyłącznie opisanego zakresu. Nie uruchamiano ADB ani nie ingerowano w urządzenie.",
             "source": "progresskit-vault-key-v01",
-            "historical": false
+            "historical": true
           },
           {
             "date": "2026-11-02",
@@ -5250,6 +5669,16 @@
             "status": "NOT RUN",
             "result": "Odczyt źródeł nie zastępuje uruchomienia aplikacji, testów urządzeń ani potwierdzenia produkcji.",
             "source": "progresskit-vault-key-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "Źródła lokalnego prototypu; brak metadanych Git",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "progresskit-vault-key-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -5260,17 +5689,19 @@
       "slug": "echo-worlds",
       "name": "ECHO WORLDS",
       "category": "games",
-      "summary": "Match-3 fantasy 0.10.0 Alpha: sześć krain, 600 poziomów kampanii i 60 lokacji. Publiczne wydanie pozostaje w przygotowaniu.",
+      "summary": "Wstrzymana gra logiczna Puzzle First z mechaniką match-3. Lokalny preview 0.10.0 Alpha obejmuje sześć krain i 600 poziomów głównych; nie jest publicznym wydaniem.",
       "problem": "Zapewnić przemyślaną podróż match-3 z różnymi krainami, celami i stopniowym odkrywaniem kampanii.",
       "audiences": [
         "Osoby zainteresowane rozwijanymi grami ProgressKit na Androida"
       ],
       "motivation": "Rozwijać autorski produkt z lokalnym postępem i uczciwie opisanym zakresem.",
-      "solution": "Klient Godot łączy plansze match-3 z kampanią fantasy. Katalog poziomów i lokacji jest odczytywany przez grę, a postęp zachowuje stabilne identyfikatory.",
+      "solution": "Godot prowadzi kampanię match-3 z ograniczoną liczbą ruchów, celami planszy i zapisem progresji. Oddzielne ekrany zwycięstwa i porażki pokazują wynik próby.",
       "features": [
-        "600 definicji poziomów głównych: sześć krain po 100 prób i dziesięć lokacji w każdej krainie.",
-        "Zamiana sąsiednich run, kaskady, osiem typów przeszkód i progresja kampanii.",
-        "Autorskie boostery i lokalny postęp; płatności Play wymagają oddzielnej konfiguracji i weryfikacji."
+        "Mechanika match-3: zamiana sąsiednich elementów, dopasowania, cele planszy i ograniczona liczba ruchów.",
+        "Sześć krain po 100 poziomów głównych i atlas 60 lokacji; próby poboczne pozostają osobno.",
+        "Sekwencja Puzzle First prowadzi przez wybór próby, rozgrywkę i odrębne ekrany zwycięstwa lub porażki.",
+        "Lokalny zapis progresji, ukończeń, gwiazdek, aktywnej planszy i ekwipunku.",
+        "Istniejące materiały świata, plansz i rzeczywisty gameplay pochodzą z rozwijanego projektu Godot."
       ],
       "technologies": [
         "Godot 4.6.3",
@@ -5278,37 +5709,59 @@
         "Android",
         "JSON"
       ],
-      "stage": "Alpha",
-      "availability": "W przygotowaniu. Brak potwierdzonego publicznego wydania Google Play.",
-      "updatedAt": "2026-11-24",
+      "stage": "Wstrzymany",
+      "availability": "Kod i lokalny APK preview 0.10.0 Alpha istnieją. Prace są wstrzymane; brak potwierdzonego publicznego wydania.",
+      "updatedAt": "2026-11-25",
       "architecture": [
-        "Godot/GDScript, finite_board jako silnik planszy i stabilne identyfikatory poziomów. Definicje JSON, lokalny zapis v10. Płatności i chmura mają odrębną konfigurację."
+        "Godot i GDScript: silnik planszy match-3, atlas, interfejs i zapis lokalnego postępu.",
+        "Kampania sześciu krain obejmuje po 100 prób: 24 oryginalne definicje i 576 rozszerzonych. Próby poboczne są oddzielne.",
+        "Zapis zachowuje ukończenia, gwiazdki, ekwipunek i aktywną planszę.",
+        "Kod zaplecza i testy mechanik konta lub płatności nie oznaczają produkcyjnej integracji sklepowej."
       ],
       "gallery": [
         {
-          "src": "assets/projects/echo-worlds/preview.webp",
-          "width": 768,
-          "height": 403,
-          "alt": "ECHO WORLDS — oryginalny materiał prezentacyjny",
-          "caption": "Materiał z repozytorium produktu. Grafika prezentacyjna; nie jest nowym testem Androida."
+          "src": "assets/projects/echo-worlds/current-board.webp",
+          "alt": "ECHO WORLDS 0.10.0: prawdziwa plansza z limitami ruchów i celami; render Godot/Linux 24.11.2026.",
+          "caption": "ECHO WORLDS 0.10.0: prawdziwa plansza z limitami ruchów i celami; render Godot/Linux 24.11.2026.",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "src": "assets/projects/echo-worlds/current-atlas.webp",
+          "alt": "ECHO WORLDS 0.10.0: atlas Księżycowej Krainy; rzeczywisty render Godot/Linux 24.11.2026.",
+          "caption": "ECHO WORLDS 0.10.0: atlas Księżycowej Krainy; rzeczywisty render Godot/Linux 24.11.2026.",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "src": "assets/projects/echo-worlds/victory.webp",
+          "alt": "ECHO WORLDS: rzeczywisty ekran zwycięstwa, zapisany render Godot/Linux 24.11.2026.",
+          "caption": "ECHO WORLDS: rzeczywisty ekran zwycięstwa, zapisany render Godot/Linux 24.11.2026.",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "src": "assets/projects/echo-worlds/defeat.webp",
+          "alt": "ECHO WORLDS: zakończenie próby po wyczerpaniu ruchów; zapisany render Godot/Linux 24.11.2026.",
+          "caption": "ECHO WORLDS: zakończenie próby po wyczerpaniu ruchów; zapisany render Godot/Linux 24.11.2026.",
+          "width": 390,
+          "height": 844
         }
       ],
       "videos": [],
-      "links": [
-        {
-          "label": "Interaktywna prezentacja",
-          "url": "https://progresskit.pl/echo-worlds/"
-        }
-      ],
+      "links": [],
       "repository": null,
       "results": [
-        "Odczytano aktualny kod i istniejące historyczne rendery; sam przegląd nie jest nowym testem gry ani fizycznego Androida."
+        "Sprint 013 z 24.11.2026 deklaruje preview 0.10.0 (21), 600 poziomów głównych i 60 lokacji.",
+        "Zapisany raport QA obejmuje 41 zestawów Godot i 39 369 asercji; są to dowody z 24.11, nie nowa regresja tego audytu.",
+        "Decyzja właściciela: prace wstrzymane. Brak publikacji i produkcyjnego uruchomienia płatności."
       ],
       "cases": [],
       "planned": [],
       "remaining": [
-        "Fizyczny test aktualnego APK i ręczna ocena balansu.",
-        "Publiczne wydanie oraz osobne potwierdzenie konfiguracji Play."
+        "Projekt pozostaje wstrzymany.",
+        "Publiczna dystrybucja i produkcyjne płatności nie zostały potwierdzone.",
+        "Testy lokalnych scenariuszy lub zaplecza nie są końcowym odbiorem sklepu ani fizycznych urządzeń."
       ],
       "sources": [
         {
@@ -5317,6 +5770,13 @@
           "kind": "code",
           "revision": "Odczyt 2026-11-24; bieżący checkout roboczy.",
           "scope": "Inwentaryzacja rzeczywistego katalogu treści, kodu interakcji i zapisanych renderów. Bez nowego testu Androida."
+        },
+        {
+          "id": "echo-worlds-ecosystem-review-20261125",
+          "label": "ECHO WORLDS — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "04523d262dd7 + lokalne zmiany; preview 0.10.0 (21)",
+          "scope": "project.godot i Sprint 013: sześć krain, 600 poziomów głównych; stan wstrzymania prac według decyzji właściciela. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -5325,30 +5785,53 @@
         "aliases": [
           "ECHO WORLDS"
         ],
-        "functionalStatus": "600 poziomów · Alpha 0.10.0",
-        "distributionStatus": "Publiczna dystrybucja w przygotowaniu.",
-        "productionStatus": "Wersja rozwijana; brak deklaracji gotowości produkcyjnej lub wydania w Google Play.",
+        "functionalStatus": "Match-3 Alpha — prace wstrzymane",
+        "distributionStatus": "Lokalny preview 0.10.0 Alpha; brak publicznego wydania.",
+        "productionStatus": "Projekt wstrzymany. Lokalna implementacja i testy nie są produkcyjnym uruchomieniem gry lub płatności.",
         "platforms": [
           {
             "name": "Android",
-            "implementation": "Istniejący klient Godot i moduły Androida.",
-            "verification": "W tym przeglądzie nie uruchamiano nowego APK ani fizycznego telefonu.",
-            "distribution": "W przygotowaniu.",
-            "limits": "Materiały Linux/Godot i starszych buildów nie zastępują akceptacji aktualnego Androida."
+            "implementation": "Istniejący lokalny APK preview 0.10.0 Alpha oraz źródła Godot.",
+            "verification": "Raport eksportu Sprint 013: podpis, manifest i zawartość APK sprawdzone 24.11.2026.",
+            "distribution": "Wyłącznie lokalny preview; publiczne wydanie niepotwierdzone.",
+            "limits": "Brak nowego odbioru fizycznego Androida w tym audycie; prace wstrzymane."
+          },
+          {
+            "name": "Godot / Linux",
+            "implementation": "Uruchamialny projekt i sceny kampanii, planszy oraz wyniku.",
+            "verification": "Zapisane regresje i rendery Sprint 013, bez powtórzenia 25.11.2026.",
+            "distribution": "Źródła i lokalne materiały testowe.",
+            "limits": "Nie deklaruje gotowego publicznego wydania PC."
           }
         ],
         "featureSources": [
           [
-            "echo-worlds-code-audit"
+            "echo-worlds-ecosystem-review-20261125"
           ],
           [
-            "echo-worlds-code-audit"
+            "echo-worlds-ecosystem-review-20261125"
           ],
           [
-            "echo-worlds-code-audit"
+            "echo-worlds-ecosystem-review-20261125"
+          ],
+          [
+            "echo-worlds-ecosystem-review-20261125"
+          ],
+          [
+            "echo-worlds-ecosystem-review-20261125"
           ]
         ],
         "verification": [
+          {
+            "date": "2026-11-24",
+            "revision": "04523d262dd7 + lokalne zmiany; preview 0.10.0 (21)",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "Sprint 013 — sześć krain i 600 prób",
+            "status": "PASS",
+            "result": "41 zestawów i 39 369 asercji Godot według zachowanego raportu; brak nowego testu podczas audytu.",
+            "source": "echo-worlds-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-11-24",
             "revision": "Przegląd bieżących źródeł.",
@@ -5357,6 +5840,16 @@
             "status": "NOT RUN",
             "result": "Nie uruchamiano nowej sesji rozgrywki w ramach inwentaryzacji marketingowej.",
             "source": "echo-worlds-code-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "04523d262dd7 + lokalne zmiany; preview 0.10.0 (21)",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "echo-worlds-ecosystem-review-20261125",
             "historical": false
           }
         ]
@@ -5367,18 +5860,22 @@
       "slug": "taskpet",
       "name": "ProgressKit TaskPet",
       "category": "games",
-      "summary": "Organizer zadań i wirtualny chowaniec na Androida. Zadania nagradzają XP i monetami, a pokój można wyposażać. Wersja publiczna w przygotowaniu.",
-      "problem": "Połączyć codzienną aktywność z czytelnym postępem i spójnym światem gry.",
+      "summary": "Organizer osobisty i gra z wirtualnym zwierzakiem: zadania, rozwój chowańca, pokój, meble i minigra. Istnieje podpisany prywatny OWNER 17; przyszły PUBLIC nie został wydany.",
+      "problem": "Codzienne zadania potrzebują czytelnego organizera i motywacji, która zachowuje postęp oraz nie myli zabawy z wykonaniem zadania.",
       "audiences": [
         "Osoby zainteresowane rozwijanymi grami ProgressKit na Androida"
       ],
-      "motivation": "Rozwijać autorski produkt z lokalnym postępem i uczciwie opisanym zakresem.",
-      "solution": "Godot przedstawia pokój i organizuje interakcje, a natywny moduł Kotlin przechowuje autorytatywny stan, obsługuje alarmy, przypomnienia i widżety.",
+      "motivation": "Połączyć organizację dnia z opieką nad chowańcem i urządzaniem własnego pokoju.",
+      "solution": "Godot prezentuje pokój i organizer, a istniejący moduł Kotlin przechowuje autorytatywny stan, obsługuje przypomnienia, budzik i widżety. Lokalny postęp nie wymaga konta.",
       "features": [
-        "Zadania jednorazowe, codzienne, tygodniowe i dwutygodniowe, godziny oraz przypomnienia.",
-        "Ukończenie zadania przyznaje jednokrotnie XP i monety; istniejący zapis zachowuje postęp.",
-        "Sześć kanonicznych gatunków BABY: smok, pajączek, kotek, piesek, papużka i małpka.",
-        "Pokój z wyposażeniem, sklep za monety, minigra owocowa, widżety Android i istniejący moduł budzika."
+        "Sześć gatunków chowańca; wykluwanie po 100 XP, reakcje i kosmetyczna aura zachowują istniejący postęp.",
+        "Pokój z wyposażeniem, ustawianiem mebli, warstwami, odbiciem, cofnięciem ustawienia i trwałym zapisem.",
+        "Zadania jednorazowe i cykliczne z terminami; wykonanie przyznaje XP i monety jednokrotnie.",
+        "Lokalne przypomnienia oraz istniejący natywny budzik z harmonogramami, powiadomieniami i uprawnieniami Androida.",
+        "Widżet chowańca oraz lista zadań z konfiguracją i domyślnie ukrytymi nazwami zadań.",
+        "Minigra ze spadającymi owocami: spokojne pierwsze 18 sekund, płynny wzrost trudności, pauza, odtworzenie rundy i ograniczone nagrody.",
+        "Pięć ikon: POKÓJ, ZADANIA, BUDZIK, WIDGET, OPCJE; budzik jest pośrodku, pasek znika podczas rozgrywki.",
+        "Sklep za monety, ekwipunek i mechanizmy uprawnień Premium; rzeczywiste płatności Google Play pozostają nieaktywne."
       ],
       "technologies": [
         "Godot 4.6.3",
@@ -5387,36 +5884,75 @@
         "Android"
       ],
       "stage": "Wersja testowa",
-      "availability": "W przygotowaniu. Brak potwierdzonego publicznego wydania Google Play.",
-      "updatedAt": "2026-11-24",
+      "availability": "Istnieje prywatny OWNER 0.9.3-owner.17 na Androida. APK i dostęp OWNER nie są udostępniane w portfolio. PUBLIC i Google Play pozostają w przygotowaniu.",
+      "updatedAt": "2026-11-25",
       "architecture": [
-        "Godot/GDScript prezentuje pokój i organizer. Kotlin NativeStore pozostaje właścicielem trwałego stanu. Alarmy, przypomnienia i widżety korzystają z istniejących adapterów Androida."
+        "Godot 4.6.3 i GDScript odpowiadają za pokój, chowańca, minigrę i pięć głównych wejść nawigacji.",
+        "Kotlin NativeStore oraz osobny zapis gry zachowują zadania, XP, monety, wyposażenie i jednorazowe nagrody.",
+        "Istniejące adaptery Androida obsługują lokalne przypomnienia, budzik, uprawnienia i dwa widżety.",
+        "OWNER to prywatny podpisany wariant testowy. Mechanizmy płatnej zawartości nie oznaczają uruchomionego sklepu Google Play."
       ],
       "gallery": [
         {
-          "src": "assets/projects/taskpet/preview.webp",
-          "width": 900,
-          "height": 1000,
-          "alt": "ProgressKit TaskPet — oryginalny materiał prezentacyjny",
-          "caption": "Materiał z repozytorium produktu. Grafika prezentacyjna; nie jest nowym testem Androida."
+          "src": "assets/projects/taskpet/current-room.webp",
+          "alt": "TaskPet OWNER 17: rzeczywisty pokój, smok i pięć ikon nawigacji. Android 36, emulator, 24.11.2026.",
+          "caption": "TaskPet OWNER 17: rzeczywisty pokój, smok i pięć ikon nawigacji. Android 36, emulator, 24.11.2026.",
+          "width": 720,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/taskpet/current-tasks.webp",
+          "alt": "TaskPet OWNER 17: organizer z przykładowymi zadaniami QA, cyklami i stanem przypomnień. Emulator 24.11.2026.",
+          "caption": "TaskPet OWNER 17: organizer z przykładowymi zadaniami QA, cyklami i stanem przypomnień. Emulator 24.11.2026.",
+          "width": 720,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/taskpet/current-alarm.webp",
+          "alt": "TaskPet OWNER 17: istniejący natywny moduł budzika. Android 36, emulator 24.11.2026.",
+          "caption": "TaskPet OWNER 17: istniejący natywny moduł budzika. Android 36, emulator 24.11.2026.",
+          "width": 720,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/taskpet/current-widget.webp",
+          "alt": "TaskPet OWNER 17: panel widżetów i prywatności podglądu. Emulator 24.11.2026.",
+          "caption": "TaskPet OWNER 17: panel widżetów i prywatności podglądu. Emulator 24.11.2026.",
+          "width": 720,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/taskpet/current-fruit.webp",
+          "alt": "TaskPet OWNER 17: prawdziwa minigra owocowa po wznowieniu rundy. Emulator 24.11.2026.",
+          "caption": "TaskPet OWNER 17: prawdziwa minigra owocowa po wznowieniu rundy. Emulator 24.11.2026.",
+          "width": 720,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/taskpet/current-shop.webp",
+          "alt": "TaskPet OWNER 17: istniejący sklep i wyposażenie. Emulator 24.11.2026; płatności Play nieaktywne.",
+          "caption": "TaskPet OWNER 17: istniejący sklep i wyposażenie. Emulator 24.11.2026; płatności Play nieaktywne.",
+          "width": 720,
+          "height": 1600
         }
       ],
       "videos": [],
-      "links": [
-        {
-          "label": "Interaktywna prezentacja",
-          "url": "https://progresskit.pl/taskpet/"
-        }
-      ],
+      "links": [],
       "repository": null,
       "results": [
-        "Odczytano aktualny kod i istniejące historyczne rendery; sam przegląd nie jest nowym testem gry ani fizycznego Androida."
+        "Raport OWNER17 z 24.11.2026: podpisany ARM64 Release, 163 testy JVM i 18 zestawów Godot obejmujących 1195 asercji.",
+        "Zapisane próby emulatora obejmują aktualizację OWNER16→17 z zachowaniem danych, pięć ikon, budzik, widżety i minigrę. To nie jest odbiór fizycznego telefonu.",
+        "Kod i raport odróżniają prywatny OWNER od niewydanego PUBLIC; płatności Google Play pozostają nieaktywne."
       ],
       "cases": [],
-      "planned": [],
+      "planned": [
+        "Osobne przygotowanie wariantu PUBLIC i procesu Google Play.",
+        "Dalszy odbiór fizycznych urządzeń oraz zaakceptowanego zakresu płatnej zawartości."
+      ],
       "remaining": [
-        "Publiczne wydanie pozostaje w przygotowaniu.",
-        "Płatności Google Play są nieaktywne bez osobnej konfiguracji i weryfikacji."
+        "Fizyczna terminowość powiadomień, dźwięk i wibracja na konkretnych telefonach wymagają dalszej weryfikacji.",
+        "Bramki PUBLIC, Google Play i produkcyjnej monetyzacji pozostają otwarte.",
+        "Materiały i dostęp prywatnego OWNER nie stają się publiczną dystrybucją."
       ],
       "sources": [
         {
@@ -5425,6 +5961,13 @@
           "kind": "code",
           "revision": "Odczyt 2026-11-24; bieżący checkout roboczy.",
           "scope": "Inwentaryzacja rzeczywistego katalogu treści, kodu interakcji i zapisanych renderów. Bez nowego testu Androida."
+        },
+        {
+          "id": "taskpet-ecosystem-review-20261125",
+          "label": "ProgressKit TaskPet — audyt ekosystemu 25.11.2026",
+          "kind": "report",
+          "revision": "d351816e1ffc; podpisany OWNER 0.9.3-owner.17",
+          "scope": "Sceny Godot i moduły Androida, raport OWNER17, build i zapisane dowody emulatora; bez prywatnego APK i adresów dostępu w portfolio. Odczyt źródeł i zapisanych dowodów; bez nowego builda lub testu produktu."
         }
       ],
       "coverage": "partial",
@@ -5433,33 +5976,55 @@
         "aliases": [
           "ProgressKit TaskPet"
         ],
-        "functionalStatus": "Organizer i wirtualny chowaniec",
-        "distributionStatus": "Publiczna dystrybucja w przygotowaniu.",
-        "productionStatus": "Wersja rozwijana; brak deklaracji gotowości produkcyjnej lub wydania w Google Play.",
+        "functionalStatus": "Organizer i gra z chowańcem",
+        "distributionStatus": "Prywatny podpisany OWNER17; PUBLIC niewydany.",
+        "productionStatus": "OWNER TEST/BETA. Brak deklaracji gotowości publicznego wydania lub produkcyjnych płatności.",
         "platforms": [
           {
             "name": "Android",
-            "implementation": "Istniejący klient Godot i moduły Androida.",
-            "verification": "W tym przeglądzie nie uruchamiano nowego APK ani fizycznego telefonu.",
-            "distribution": "W przygotowaniu.",
-            "limits": "Materiały Linux/Godot i starszych buildów nie zastępują akceptacji aktualnego Androida."
+            "implementation": "Godot/GDScript oraz natywne moduły Kotlin, istniejący podpisany OWNER17 ARM64.",
+            "verification": "Raport 24.11.2026: 163 JVM, 1195 asercji Godot i próby Androida na emulatorze z translacją ARM64.",
+            "distribution": "Prywatny OWNER 0.9.3-owner.17; bez APK OWNER w publicznej prezentacji.",
+            "limits": "Fizyczny telefon BLOCKED w tym wydaniu; PUBLIC i Google Play wymagają osobnego odbioru."
           }
         ],
         "featureSources": [
           [
-            "taskpet-code-audit"
+            "taskpet-ecosystem-review-20261125"
           ],
           [
-            "taskpet-code-audit"
+            "taskpet-ecosystem-review-20261125"
           ],
           [
-            "taskpet-code-audit"
+            "taskpet-ecosystem-review-20261125"
           ],
           [
-            "taskpet-code-audit"
+            "taskpet-ecosystem-review-20261125"
+          ],
+          [
+            "taskpet-ecosystem-review-20261125"
+          ],
+          [
+            "taskpet-ecosystem-review-20261125"
+          ],
+          [
+            "taskpet-ecosystem-review-20261125"
+          ],
+          [
+            "taskpet-ecosystem-review-20261125"
           ]
         ],
         "verification": [
+          {
+            "date": "2026-11-24",
+            "revision": "d351816e1ffc; podpisany OWNER 0.9.3-owner.17",
+            "environment": "Zapisane dowody produktu; ponownie odczytane podczas audytu",
+            "scope": "OWNER17 — build, regresja i zapisane próby Androida",
+            "status": "PASS",
+            "result": "163 JVM i 1195 asercji Godot PASS; podpisany Release i emulator nie zastępują fizycznego odbioru.",
+            "source": "taskpet-ecosystem-review-20261125",
+            "historical": true
+          },
           {
             "date": "2026-11-24",
             "revision": "Przegląd bieżących źródeł.",
@@ -5468,6 +6033,16 @@
             "status": "NOT RUN",
             "result": "Nie uruchamiano nowej sesji rozgrywki w ramach inwentaryzacji marketingowej.",
             "source": "taskpet-code-audit",
+            "historical": true
+          },
+          {
+            "date": "2026-11-25",
+            "revision": "d351816e1ffc; podpisany OWNER 0.9.3-owner.17",
+            "environment": "Lokalny audyt kodu, dokumentacji i istniejących artefaktów",
+            "scope": "Aktualizacja inwentarza i granic gotowości",
+            "status": "NOT RUN",
+            "result": "Nie uruchamiano produktu, nowego builda ani urządzenia. Zachowane wyniki mają własną datę i zakres.",
+            "source": "taskpet-ecosystem-review-20261125",
             "historical": false
           }
         ]

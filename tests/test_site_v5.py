@@ -325,6 +325,13 @@ class SiteV5Tests(unittest.TestCase):
     def test_public_allowlist_excludes_private_source_and_unreviewed_media(self):
         forbidden = {'docs', 'analytics', 'catalog', 'templates', 'scripts', 'tests',
                      '.git', '.agents', '.codex', '.aws', 'downloads', 'deploy', 'infra'}
+        reviewed_videos = {'assets/games/taskpet/presentation-vertical.mp4': '101d48176e351d82f12c4405a9d3c83ee06b95c59f2dabe69a0fe090e9cb7639',
+            'assets/games/taskpet/presentation-landscape.mp4': '7b73f7c857037321848d420d64b50f7ad01ed8929c126e7ca4d20711d517626c',
+            'assets/games/echo/presentation-vertical.mp4': '7179b15d72920ff44e2d535a7c6c054b94675758f4e09f214945136c1d9cd955',
+            'assets/games/echo/presentation-landscape.mp4': 'c568466d6bdbf3034c0b23f8c904c3d826970a627f5f01dc0db21f1df746dbe4',
+            'assets/projects/taskpet/gameplay-review.mp4': 'b62818b934cd5a517b3cc09612975176d27f41db384d1cc6221bf207c24146a6',
+            'assets/projects/echo-worlds/gameplay-review.mp4': 'c9c2030e4cebdd47260fb6c1a76211352dcb2868fad38e6c7d814bd90cc83cb5',
+            'assets/projects/vaeloria/gameplay-review.mp4': '04ef4ffd4b51eb7fd048fdeffd0c55638d13eaaee5a8dd19a9412aed6abe8cf9'}
         for name in self.public:
             with self.subTest(file=name):
                 path = Path(name)
@@ -337,9 +344,8 @@ class SiteV5Tests(unittest.TestCase):
                     # so replacing its contents requires an explicit review.
                     self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(),
                                      'ac12d42a65b4c354839dfb305357f40330231de75dd8eda0c1f692c43fa0b733')
-                elif name in {'assets/games/taskpet/presentation-vertical.mp4': '101d48176e351d82f12c4405a9d3c83ee06b95c59f2dabe69a0fe090e9cb7639', 'assets/games/taskpet/presentation-landscape.mp4': '7b73f7c857037321848d420d64b50f7ad01ed8929c126e7ca4d20711d517626c', 'assets/games/echo/presentation-vertical.mp4': '7179b15d72920ff44e2d535a7c6c054b94675758f4e09f214945136c1d9cd955', 'assets/games/echo/presentation-landscape.mp4': 'c568466d6bdbf3034c0b23f8c904c3d826970a627f5f01dc0db21f1df746dbe4'}:
-                    reviewed={'assets/games/taskpet/presentation-vertical.mp4': '101d48176e351d82f12c4405a9d3c83ee06b95c59f2dabe69a0fe090e9cb7639', 'assets/games/taskpet/presentation-landscape.mp4': '7b73f7c857037321848d420d64b50f7ad01ed8929c126e7ca4d20711d517626c', 'assets/games/echo/presentation-vertical.mp4': '7179b15d72920ff44e2d535a7c6c054b94675758f4e09f214945136c1d9cd955', 'assets/games/echo/presentation-landscape.mp4': 'c568466d6bdbf3034c0b23f8c904c3d826970a627f5f01dc0db21f1df746dbe4'}
-                    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),reviewed[name])
+                elif name in reviewed_videos:
+                    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(), reviewed_videos[name])
                 else:
                     self.assertNotIn(path.suffix, {'.sqlite', '.db', '.json', '.log', '.apk', '.zip', '.mp4', '.webm', '.env'})
                 self.assertTrue((ROOT / path).is_file())
@@ -352,6 +358,7 @@ class SiteV5Tests(unittest.TestCase):
             (root / 'catalog/brand.json').write_text((ROOT / 'catalog/brand.json').read_text())
             (root / 'catalog/living-media.json').write_text((ROOT / 'catalog/living-media.json').read_text())
             (root / 'catalog/games-media.json').write_text((ROOT / 'catalog/games-media.json').read_text())
+            (root / 'catalog/product-showcases.json').write_text((ROOT / 'catalog/product-showcases.json').read_text())
             decoys = ['docs/private-report.txt', 'analytics/private.db',
                       'assets/projects/raw/production-capture.png',
                       'assets/cinematic/user-preview.mp4', 'assets/cinematic/unreviewed.webm',

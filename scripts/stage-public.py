@@ -14,10 +14,20 @@ def public_files():
     # in source history, but cannot silently add another runtime/style layer.
     files={
         'index.html','404.html','robots.txt','sitemap.xml','og-progresskit.jpg',
-        'echo-worlds/index.html','taskpet/index.html','assets/living/mail-demo-optimized.webp','assets/games.css','assets/games.mjs','assets/games-scene.mjs',
-        'assets/site-v5.js','assets/world.css','assets/world.mjs',
+        'echo-worlds/index.html','taskpet/index.html','assets/games.css','assets/games.mjs','assets/games-scene.mjs',
+        'assets/site-v5.js','assets/materials.css','assets/world.css','assets/world.mjs',
         'assets/world-scene.mjs','assets/world-grain.svg',
-        'assets/living-experience.css','assets/living-experience.mjs',
+        'assets/brand/optical-core-small.webp','assets/brand/inspection-drone.webp',
+        'assets/brand/iris-bearing-mask.svg','assets/brand/iris-glass.webp','assets/brand/mechanism-specular.webp',
+        *(f'assets/brand/iris-leaf-{i}.webp' for i in range(1,7)),
+        'assets/brand/mechanism-ports.webp','assets/brand/alloy-grain.webp',
+        'assets/assistant/robot-body.webp','assets/assistant/robot-eye.webp','assets/assistant/robot-antenna.webp',
+        'assets/assistant/robot-left-module.webp','assets/assistant/robot-right-module.webp',
+        'assets/brand/foundry-gallery.webp','assets/brand/foundry-gallery-small.webp',
+        'assets/world/crystal-artefact.webp','assets/world/cut-sheet.webp','assets/brand/engraved-nameplate.webp',
+        'assets/forge-atmosphere.mjs','assets/crystal-geometry.mjs',
+        'assets/product-showcase.css','assets/product-showcase.mjs',
+        'assets/living-experience.css','assets/living-experience.mjs','assets/scene-entry.js',
         'assets/project-world.css','assets/project-world.mjs',
         'assets/client-inquiry.mjs','assets/product-downloads.mjs',
         'assets/vendor/three/three.module.js','assets/vendor/three/three.core.js','assets/vendor/three/LICENSE',
@@ -27,7 +37,8 @@ def public_files():
         'glikemia-premium/index.html','glikemia-premium/product.js',
         'assets/projects/glikemia/product-measurement.webp','assets/projects/glikemia/product-language.webp',
         'assets/projects/glikemia/product-qr.png',
-        'progresskit-mail/index.html','prywatnosc/index.html','projekty/index.html',
+        'progresskit-mail/index.html','progresskit-mail/pilot.js','progresskit-mail/styles.css',
+        'progresskit-mail/assets/brand.png','progresskit-mail/assets/mail-synthetic.png','prywatnosc/index.html','projekty/index.html',
     }
     for p in data['projects']:
         files.add(f'projekty/{p["slug"]}/index.html')
@@ -39,15 +50,16 @@ def public_files():
             files.add(scene['backdrop']['src'])
     # Explicit public media manifest; local provenance and private distribution stay outside staging.
     media=json.loads((ROOT/'catalog/games-media.json').read_text())
-    def public_media(value):
+    def public_media(value, prefix):
         if isinstance(value,dict):
-            for child in value.values(): public_media(child)
+            for child in value.values(): public_media(child, prefix)
         elif isinstance(value,list):
-            for child in value: public_media(child)
-        elif isinstance(value,str) and value.startswith('assets/games/'):
+            for child in value: public_media(child, prefix)
+        elif isinstance(value,str) and value.startswith(prefix):
             if '..' in Path(value).parts or Path(value).suffix not in ('.webp','.png','.jpg','.svg','.mp4'): raise ValueError('Unsafe game media path')
             files.add(value)
-    public_media(media)
+    public_media(media, 'assets/games/')
+    public_media(json.loads((ROOT/'catalog/product-showcases.json').read_text()), 'assets/projects/')
     brand=json.loads((ROOT/'catalog/brand.json').read_text())
     if brand['heroBackground']:
         files.add(brand['heroBackground'])

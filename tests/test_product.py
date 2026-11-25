@@ -39,6 +39,18 @@ class ProductTests(unittest.TestCase):
     def post(self,data,**kw):
         return client.post('/api/glikemia/reviews',json=data,headers={'Origin':product.ORIGIN},**kw)
 
+    def test_completed_compressed_transfer_counts_original_file_once(self):
+        from starlette.middleware.gzip import GZipMiddleware
+        fixture = Path(temporary.name) / 'compressible.apk'
+        fixture.write_bytes(b'APK test' * 24000)
+        with patch.object(product, 'APK_PATH', fixture), TestClient(GZipMiddleware(app, minimum_size=100)) as compressed:
+            response = compressed.get('/download/glikemia-premium', headers={'Accept-Encoding':'gzip'})
+            self.assertEqual(response.headers['content-encoding'], 'gzip')
+            self.assertEqual(response.content, fixture.read_bytes())
+            partial = compressed.get('/download/glikemia-premium', headers={'Range':'bytes=0-99'})
+            self.assertEqual(partial.status_code, 206)
+            self.assertEqual(client.get('/api/glikemia/downloads').json(), {'downloads':1})
+
     def test_download_hash_persistence_and_headers(self):
         self.assertEqual(client.get('/api/glikemia/downloads').json(),{'downloads':0})
         metadata=json.loads((workspace/'downloads/glikemia-premium.json').read_text())

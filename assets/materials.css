@@ -1,0 +1,77 @@
+/* Cool aluminium and black optical glass. The narrow shoulder-grain tile is
+   sampled from the same source plate as the working iris in the hero. */
+:root{
+  --glass-reflection:linear-gradient(161deg,#ffffff29 0%,#d9dce60b 16%,transparent 37%,#05060724 55%,#e8e8e80b 57%,transparent 75%);
+  --glass-face:linear-gradient(175deg,#56575be6 0%,#282a2fdf 36%,#141519e3 51%,#191b20de 85%,#393a40cb);
+  --glass:radial-gradient(ellipse at var(--px,28%) var(--py,0%),#eff1f421,transparent 52%),var(--glass-reflection),var(--glass-face);
+  --glass-lit:radial-gradient(ellipse at var(--px,28%) var(--py,0%),#ff8d7e54,transparent 63%),var(--glass-reflection),linear-gradient(172deg,#9e333ce0,#771423de 42%,#3d070de0 55%,#701923df 94%);
+  --glass-panel:var(--glass-reflection),linear-gradient(151deg,#41434a9c,#15171bd6 38%,#111113de 74%,#35373d94);
+  --rim:#a3a8ac52;
+  --depth:inset 0 2px 3px #ebeef357,inset 0 -5px 7px #06070bd4,0 3px 1px #07080acc,0 8px 18px #0007;
+  --glass-depth-pressed:inset 0 4px 9px #050507ae,inset 0 -1px 3px #d1d3d238,0 1px 2px #08090bb3;
+  --glass-panel-depth:inset 0 3px 7px #d5dbe23b,inset 0 -6px 12px #0505099e,0 14px 36px #0008;
+  --glass-filter:blur(10px) saturate(1.16);
+  --glass-focus:#f0d9cf;
+}
+
+/* Decorative layers never intercept native links, selection or touch scroll.
+   A pseudo element is deliberately not used for sparks: disclosure signs and
+   active chapter markers already own those slots. */
+:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,.guide-topics button,.gallery-dialog button,.exhibit-lightbox>button,.mobile-panel a,.project-chapter-rail a,.exhibit-rail a,summary,[data-glass-control]){
+  position:relative;
+  isolation:isolate;
+  -webkit-backdrop-filter:var(--glass-filter);
+  backdrop-filter:var(--glass-filter);
+}
+:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,.guide-topics button,.gallery-dialog button,.exhibit-lightbox>button,.mobile-panel a,.project-chapter-rail a,.exhibit-rail a,summary,[data-glass-control])::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+
+  background:radial-gradient(ellipse at 38% -17%,#e7edf92e,transparent 57%),url("brand/alloy-grain.webp") 0 0/88px 30px repeat;
+  pointer-events:none;
+  z-index:-1;
+}
+.glass-sparks{
+  position:absolute!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:inherit;
+  background:none!important;
+  overflow:clip;
+  pointer-events:none!important;
+  color:transparent!important;
+  z-index:1;
+}
+.glass-sparks::before,.glass-sparks::after{
+  content:"";
+  position:absolute;
+  left:clamp(5px,var(--px,50%),calc(100% - 18px));
+  top:2px;
+  width:14px;
+  height:5px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 45%,#fff4e9 0 1px,transparent 1.6px),radial-gradient(circle at 80% 70%,#e8d2cb 0 .7px,transparent 1.3px);
+  filter:drop-shadow(0 0 3px #f7d7c7b3);
+  opacity:var(--proximity,0);
+  pointer-events:none;
+}
+.glass-sparks::after{top:auto;bottom:2px;left:clamp(5px,calc(100% - var(--px,50%)),calc(100% - 18px));opacity:calc(var(--proximity,0)*.55);transform:scale(.7)}
+[data-proximity="near"]>.glass-sparks::before,[data-proximity="edge"]>.glass-sparks::before,[data-proximity="surface"]>.glass-sparks::before{animation:glass-scintillation 1.6s ease-in-out infinite}
+@keyframes glass-scintillation{0%,100%{opacity:calc(var(--proximity,0)*.4);translate:-1px 0}48%{opacity:var(--proximity,0);translate:2px 0}72%{opacity:calc(var(--proximity,0)*.55);translate:0 1px}}
+/* The Mail pilot stays usable without scripts. Its native hover/focus glint
+   has a finite lifetime and never starts network or pointer tracking code. */
+:is(.button,.nav-cta):not([data-glass-control])::after{content:"";position:absolute;left:24%;top:2px;width:20px;height:4px;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse,#fff0dc 0 1px,transparent 2px);filter:drop-shadow(0 0 3px #eacbeba6);opacity:0}
+@media(hover:hover) and (pointer:fine){:is(.button,.nav-cta):not([data-glass-control]):is(:hover,:focus-visible)::after{animation:glass-native-glint .9s ease-out both}}
+@keyframes glass-native-glint{0%{opacity:0;translate:-8px 0}35%{opacity:.85}100%{opacity:.2;translate:14px 0}}
+:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,.guide-topics button,.gallery-dialog button,.exhibit-lightbox>button,.mobile-panel a,.project-chapter-rail a,.exhibit-rail a,summary,[data-glass-control]):is(:active,[data-glass-pressed="true"]):not(:disabled):not(input,select,textarea){translate:0 2px;box-shadow:var(--glass-depth-pressed)}
+:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,.guide-topics button,.gallery-dialog button,.exhibit-lightbox>button,.mobile-panel a,.project-chapter-rail a,.exhibit-rail a,summary,[data-glass-control]):focus-visible{outline:2px solid var(--glass-focus);outline-offset:4px;border-color:#f3d8c8b8}
+@media(hover:none),(pointer:coarse){:root{--glass-filter:blur(6px) saturate(1.1)}.glass-sparks::before,.glass-sparks::after{animation:none}}
+@media(prefers-reduced-motion:reduce){.glass-sparks{display:none!important}[data-glass-control],.button,.nav-cta{transition:none!important}:is(.button,.nav-cta)::after{display:none}}
+body[data-motion="paused"] .glass-sparks{display:none!important}
+@media(forced-colors:active){.glass-sparks{display:none!important}:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,summary,[data-glass-control]){background:Canvas!important;color:ButtonText;border-color:ButtonText!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}:is(.world-control,.cta,.plain-button,.category,.button,.nav-cta,.menu-btn,.guide-trigger,.nav a,summary,[data-glass-control])::before{display:none}}

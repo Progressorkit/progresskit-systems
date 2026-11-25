@@ -1,33 +1,51 @@
 <section id="start" class="living-journey" aria-label="Świat ProgressKit" data-living-journey data-world-zone="core">
   <div class="living-stage">
-    <div class="living-architecture" aria-hidden="true"><i></i><i></i><i></i><span>PROGRESSKIT / SYSTEMS</span></div>
-    <div class="living-floor" aria-hidden="true"></div>
-    <canvas data-world-scene aria-hidden="true"></canvas>
+    <div class="living-architecture chamber-plate" aria-hidden="true"></div>
+    <canvas class="forge-atmosphere" data-forge-atmosphere aria-hidden="true"></canvas>
+    <div class="living-foreground chamber-plate" aria-hidden="true"></div>
     @@LIVING_BACKDROP@@
     <div class="living-vista-shade" aria-hidden="true"></div>
-    <div class="living-light" aria-hidden="true"></div>
-    <div class="living-portal" aria-hidden="true">
-      <svg viewBox="0 0 1000 800" preserveAspectRatio="none"><defs><linearGradient id="living-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9edf1"/><stop offset=".18" stop-color="#53616e"/><stop offset=".48" stop-color="#161e26"/><stop offset=".67" stop-color="#e2e9ed"/><stop offset=".84" stop-color="#55606b"/><stop offset="1" stop-color="#222931"/></linearGradient><linearGradient id="living-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6e9f0"/><stop offset=".45" stop-color="#576b7b"/><stop offset=".6" stop-color="#8a2939"/><stop offset="1" stop-color="#e2b69d"/></linearGradient></defs><path class="living-portal__depth"/><path class="living-portal__metal"/><path class="living-portal__edge"/></svg>
-      <span class="living-portal__index">PK — 001</span><span class="living-portal__rule"></span>
+    <canvas data-world-scene aria-hidden="true"></canvas>
+    <div class="living-identity" id="rdzen">
+      <div class="core-machine" data-original-mechanism role="img" aria-label="Mechaniczny rdzeń ProgressKit ze srebrnym znakiem pod przydymioną soczewką i sześcioma ruchomymi łopatkami">
+        <picture class="core-housing" aria-hidden="true"><source media="(max-width:640px)" srcset="assets/brand/optical-core-small.webp"><img src="@@LIVING_HOUSING@@" width="1536" height="1024" alt="" fetchpriority="high"></picture>
+        <div class="core-well" aria-hidden="true">
+          <div class="core-furnace"><span class="core-cinder-cloud"></span><span class="core-cinder-cloud"></span></div>
+          <img class="core-sigil" src="assets/brand/progresskit-mark-hero.webp" width="550" height="550" alt="">
+          <span class="core-glass-carriage"><span class="core-smoked-glass"></span></span>
+        </div>
+        <div class="core-rotor" aria-hidden="true">
+          <img class="core-blade" data-iris-blade="1" src="assets/brand/iris-leaf-1.webp" width="888" height="888" alt="">
+          <img class="core-blade" data-iris-blade="2" src="assets/brand/iris-leaf-2.webp" width="888" height="888" alt="">
+          <img class="core-blade" data-iris-blade="3" src="assets/brand/iris-leaf-3.webp" width="888" height="888" alt="">
+          <img class="core-blade" data-iris-blade="4" src="assets/brand/iris-leaf-4.webp" width="888" height="888" alt="">
+          <img class="core-blade" data-iris-blade="5" src="assets/brand/iris-leaf-5.webp" width="888" height="888" alt="">
+          <img class="core-blade" data-iris-blade="6" src="assets/brand/iris-leaf-6.webp" width="888" height="888" alt="">
+          <div class="core-ports">
+            <i class="core-combustion"></i>
+            <svg class="core-embers" viewBox="0 0 100 100" aria-hidden="true"><defs><g id="core-cinders"><circle cx="0" cy="0" r=".43"/><ellipse cx="1.6" cy="2.4" rx=".22" ry=".56"/><circle cx="-1.2" cy="4.5" r=".24"/><circle cx="2.6" cy="7.1" r=".32"/></g></defs><g><use href="#core-cinders" x="44" y="9"/><use href="#core-cinders" x="5" y="44"/><use href="#core-cinders" x="93" y="65"/></g><g><use href="#core-cinders" x="52" y="97"/><use href="#core-cinders" x="10" y="74"/><use href="#core-cinders" x="92" y="32"/></g></svg>
+          </div>
+        </div>
+        <span class="core-metal-light" aria-hidden="true"></span>
+      </div>
+      <span class="core-engraving" aria-hidden="true"><img src="assets/brand/engraved-nameplate.webp" width="1000" height="108" alt="PROGRESSKIT SYSTEMS"></span>
     </div>
-    <div class="living-foreground" aria-hidden="true"><i></i><i></i></div>
-    <div class="living-watermark" aria-hidden="true">SYSTEMS</div>
-    <div class="living-identity" id="rdzen"><picture><source srcset="assets/brand/progresskit-mark-hero.webp" type="image/webp"><img src="assets/brand/progressorkit-stamp.png" width="1254" height="1254" alt="ProgressKit Systems" fetchpriority="high"></picture><span aria-hidden="true">PROGRESSKIT <b>SYSTEMS</b></span></div>
     <header class="living-intro" data-living-part="intro">
-      <p class="eyebrow">Niezależny ekosystem technologii / 01</p>
-      <h1>Technologia.<br><em>Pod Twoją <span class="living-keyword">kontrolą.</span></em></h1>
-      <p>Aplikacje, systemy i światy.<br>Odkryj, co je łączy.</p>
+      <p class="eyebrow">Technologia pod Twoją kontrolą</p>
+      <h1>Aplikacje, systemy<br><em>i gry.</em></h1>
+      <p class="intro-copy">Poznaj aplikacje ProgressKit, zajrzyj do gier i sprawdź, jak powstały.</p>
+      <div class="living-activation">
+        <button class="world-control world-control--primary" type="button" hidden data-js-only data-core-activate aria-pressed="false" aria-describedby="core-state"><span aria-hidden="true">⏻</span><span data-core-label>Aktywuj rdzeń</span></button>
+        <a href="projekty/" class="living-entry-link">Katalog projektów</a>
+        <p class="sr-only" id="core-state" data-core-status role="status">Aktywacja otwiera mapę projektów.</p>
+      </div>
+      <dl class="studio-facts"><div><dt>Projekty</dt><dd>@@LIVING_COUNT@@</dd></div><div><dt>Gry</dt><dd>@@LIVING_GAMES@@</dd></div><div><dt>Kategorie</dt><dd>@@LIVING_CATEGORIES@@</dd></div></dl>
     </header>
-    <div class="living-activation" data-living-part="intro">
-      <button class="world-control world-control--primary" type="button" hidden data-js-only data-core-activate aria-pressed="false" aria-describedby="core-state"><span aria-hidden="true">⏻</span><span>Aktywuj rdzeń<small>Odkryj, co jest w środku</small></span><span aria-hidden="true">↗</span></button>
-      <p id="core-state" data-core-status role="status">Zbliż się. Każdy projekt zaczyna się tutaj.</p>
-      <a href="#projekty" class="living-entry-link">Przewiń, aby odkryć ekosystem ↓</a>
-    </div>
     <span id="projekty" class="living-marker" data-stop="1.45"></span>
-    <header class="living-map-heading" data-living-part="map"><span class="eyebrow">Jedna przestrzeń / @@LIVING_COUNT@@ projektów</span><h2>Wszystko zaczyna się<br><em>od połączenia.</em></h2><p>Wybierz heksagon. Odkryj jego świat.</p></header>
+    <header class="living-map-heading" data-living-part="map"><span class="eyebrow">Katalog ProgressKit · @@LIVING_COUNT@@ projektów</span><h2>Mapa projektów</h2><p>Wybierz kryształ, aby poznać projekt.</p></header>
     <div class="living-nodes" aria-label="Projekty ProgressKit">@@LIVING_NODES@@</div>
     <nav class="living-map-controls" aria-label="Nawigacja mapy" data-living-part="map">
-      <div class="living-paging" hidden data-map-paging><button type="button" data-map-step="-1" aria-label="Poprzednia grupa projektów">←</button><span data-map-position aria-live="polite">1 / 4</span><button type="button" data-map-step="1" aria-label="Następna grupa projektów">→</button></div>
+      <div class="living-paging" hidden data-map-paging><button type="button" data-map-step="-1" aria-label="Poprzednia grupa projektów">←</button><span data-map-position aria-live="polite">1 / @@LIVING_GROUPS@@</span><button type="button" data-map-step="1" aria-label="Następna grupa projektów">→</button></div>
       <a href="projekty/" class="world-control">Katalog i filtry <span>↗</span></a>
     </nav>
     <div class="living-chapters">@@LIVING_CHAPTERS@@</div>
@@ -35,6 +53,6 @@
     <div class="living-reveal" data-living-part="reveal"><span class="eyebrow">06 / Odkrywanie warstw</span><h2>Osobne produkty.<br><em>Wspólna idea.</em></h2><p>Interfejs, logika i infrastruktura.<br>Każda warstwa ma swoje miejsce.</p><a href="projekty/" class="world-control world-control--primary">Odkryj wszystkie projekty ↗</a></div>
     <span id="tozsamosc" class="living-marker" data-stop="10"></span>
     <div class="living-finale" data-living-part="finale"><span class="eyebrow">ProgressKit Systems</span><h2>Twój pomysł.<br><em>Następne połączenie.</em></h2><div><a class="world-control world-control--primary" href="#kontakt">Porozmawiajmy ↗</a><a href="mailto:pawel@progresskit.pl">pawel@progresskit.pl</a></div></div>
-    <div class="living-hud"><span data-living-state>INITIALIZATION</span><span class="living-hud__note">Wizualna opowieść o ekosystemie</span><button type="button" class="motion-control" hidden data-js-only data-motion-toggle aria-pressed="false">Wstrzymaj ruch</button><span class="living-progress" aria-hidden="true"><i></i></span></div>
+    <div class="living-hud" aria-hidden="true"><span data-living-state>Rdzeń</span><span class="living-progress"><i></i></span></div>
   </div>
 </section>
